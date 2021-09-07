@@ -128,6 +128,7 @@ void HC12_Init(uint32_t baud){
   UART1_OutString("AT+B9600\n");  // UART baud rate set to 9600
   Clock_Delay1ms(50);
   HC12_ReadAllInput();
+  // Important because need to make it work with other groups
   UART1_OutString("AT+C007\n");   // channel 7 selected (001 to 100 valid)
   Clock_Delay1ms(50);
   HC12_ReadAllInput();
