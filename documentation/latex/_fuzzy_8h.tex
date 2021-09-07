@@ -1,0 +1,70 @@
+\hypertarget{_fuzzy_8h}{}\doxysection{inc/\+Fuzzy.h File Reference}
+\label{_fuzzy_8h}\index{inc/Fuzzy.h@{inc/Fuzzy.h}}
+
+
+Fuzzy Logic functions.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em 8-\/bit fuzzy variable having values from true (255,254,253,...,2,1,0) false \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga82d9a7093bd3b7918d355b3284346802}{not}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1)
+\begin{DoxyCompactList}\small\item\em Complement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga80c32cc652c6e87036e30b75b64d9b0c}{or}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2)
+\begin{DoxyCompactList}\small\item\em Fuzzy or. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga062ad2061883d8d7cdb0aa9d07ac1d82}{or3}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u3)
+\begin{DoxyCompactList}\small\item\em Fuzzy or. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_gab1ba04b9574077fd061d648f7b6c66fb}{and}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2)
+\begin{DoxyCompactList}\small\item\em Fuzzy and. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_gaa4d65305d09b58f7c12e93272097d7b7}{and3}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u3)
+\begin{DoxyCompactList}\small\item\em Fuzzy and. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gac86399f7281d31defb0c53bc1f8276e7}{umin32}} (uint32\+\_\+t u1, uint32\+\_\+t u2)
+\begin{DoxyCompactList}\small\item\em minimum \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga6f07812bace46b2508dbebfe1f73cdff}{min32}} (int32\+\_\+t n1, int32\+\_\+t n2, int32\+\_\+t n3)
+\begin{DoxyCompactList}\small\item\em minimum \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga5ef897aa479083ee0735ff044e1b7a38}{Min\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga3147baa2bec716bdc731a1542d5e7c8b}{Center\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t CENTER, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_gae8bf90094c65b2e5e16c93a16c7055a4}{Left\+Right\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t LEFT, const int32\+\_\+t RIGHT, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga92d909efc7baf21dc50b0030d986d626}{Max\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{group___math_ga224391a7d27869607dc73d463a0b5c8a}{Fuzzy\+Char}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} fuz)
+\begin{DoxyCompactList}\small\item\em convert fuzzy variable to ASCII character \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fuzzy Logic functions. 
+
+{\bfseries{Fuzzy logic}} is a design pattern for digital controllers. The key principle is true/false conditions can take on a spectrum of possibilities from definitely true (255) to definitely false (0). For example, a fuzzy logic value of 128 means maybe. Like any controller, a fuzzy logic controller\+: collects information from input sensors, performs calculations, makes decisions, and affects the system by outputting to actuators. Also similar to other controllers, the goal is to drive the system into a desired state. In a fuzzy logic controller, {\bfseries{crisp inputs}} are the sensor measurements with units, and {\bfseries{crisp outputs}} are the actuator commands with units. A {\bfseries{fuzzy membership set}} is a collection of variables, having values from~\newline
+ true (255,254,253,...,2,1,0) false.~\newline
+ The {\bfseries{input membership set}} defines the status of the system, and the fuzzy values are derived from the sensors. The {\bfseries{output membership set}} defines the status of the actuators, and the values describe what the controller intends to do in order to drive the system into the desired state. More specifically, a fuzzy logic performs these steps\+:~\newline
+ 1) {\bfseries{Measurements}}\+: collect {\bfseries{crisp inputs}} from sensors. ~\newline
+ 2) {\bfseries{Fuzzification}}\+: converts crisp inputs to input fuzzy variables.~\newline
+ 3) {\bfseries{Fuzzy logic}}\+: converts input fuzzy variables to output fuzzy variables. ~\newline
+ 4) {\bfseries{Defuzzification}}\+: converts output fuzzy variables to actuator commands, and perform outputs.~\newline
+ \begin{DoxyVersion}{Version}
+Any 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+December 22, 2019 
+\end{DoxyDate}

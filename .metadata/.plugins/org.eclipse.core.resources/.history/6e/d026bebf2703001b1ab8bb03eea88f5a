@@ -1,0 +1,68 @@
+/*
+ * Fona.c
+ *
+ *  Created on: Sep 30, 2020
+ *      Author: ValvanoJonathan
+ *
+
+JST 2-pin - this is the battery input connector. It works with any of our Lipoly batteries but since the charge rate is
+500mA (and the cellular module can spike high current draw!) we suggest our 500mAh (https://adafru.it/drL) or
+1200mAh (http://adafru.it/258)batteries. You can also connect a JST cable here if you have other plans. See the
+cable photo for polarity, red is + and black is gnd. (http://adafru.it/261)
+
+MicroUSB connector - this is the LiPoly/LiIon battery charging port. The SIM800 has a USB interface but its ONLY
+for reprogramming the module with an expensive and unavailable IDE. So charge only! The charge rate is
+500mA max.
+
+Headset jack - this is a 'standard' TRRS 3.5mm phone headset jack with stereo earphone and mono
+microphone. Any 'iPhone' or 'Android' compatible (but not iPhone original) should work. (https://adafru.it/fbK) We
+tried about 10 different ones, and basically the more expensive once are more comfortable and louder but our
+official iPhone headset mic did not work for unknown reasons. Sleeve is Mic+, first ring is ground, then the
+second ring and tip are for stereo audio. The module does not have stereo out so we just tied both together.
+
+Vio - THIS IS THE MOST IMPORTANT PIN! This is the pin that you MUST drive with an external voltage from 3V-
+5V to set the logic level converter. The converter also buffers the indicator LEDs so NOTHING will appear to
+work unless this pin is powered! You should set the voltage to whatever voltage your microcontroller uses for
+logic. A 5V micro (like Arduino) should have it be 5V, a 3V logic micro should set it to 3V.
+
+VBAT & GND - these are the same pins as the 2-pin JST connector. Connect to a 3.7V/4.2V Lipoly/LiIon battery.
+Do not power from a power supply or LDO. Use only a battery, at least 500mA, 1000mAh+ is best since there
+can be 2A spikes of current
+© Adafruit Industries https://learn.adafruit.com/adafruit-fona-mini-gsm-gprs-cellular-phonemodule
+Page 9 of 83
+
+Key - This is also a super important pin (but not as important as Vio). This is the power on/off indicator. Its also
+tied to the button in the top left. Tie this pin to ground for 2 seconds to turn the module on or off. It's not a level
+signal so it isn't like "low is off, high is on" - instead you must pulse it for 2 seconds to turn off/on. The module
+comes by default off. Tie this permanently to ground if you never want your micro to turn off the FONA for power
+saving
+
+PS - this is the Power Status pin. It is low when the module is off and high when the module has power. If you're
+using the Key button or pin, you can monitor this pad to see when the module's booted up. This is tied to the Pwr
+LED too.
+
+NS - this is the Network Status pin. It pulses to signal the current status of the module. This is also tied to the Net
+LED so for more detail see the LEDs section below.
+Reset - this is module hard reset pin. By default it has a high pull-up (module not in reset). If you absolutely got
+the module in a bad space, toggle this pin low for 100ms to perform a hard reset.
+
+RX & TX - OK now that I made you read all that you can actually use the UART pins. The module uses UART to
+send and receive commands and data. These pins are auto-baud so whatever baud rate you send "AT" after
+reset or boot is the baud rate is used. RX is into the module, TX is out of the module.
+
+RI - this is the Ring Indicator. It is basically the 'interrupt' out pin from the module. It is by default high and will
+pulse low for 120ms when a call is received. It can also be configured to pulse when an SMS is received.
+
+SPK+ and - : This is for connecting an external 8 ohm speaker, max 1W. You can configure the module to route
+calls and FM radio to the headset or the external audio. The two pins are differential so they don't have output
+DC blocking capacitors. You cannot connect this to a stereo, powered speakers or other non-differential
+amplifier without adding a 100uF+ blocking cap in series to the + pin and then not using the - pin. Instead, your
+amp should use GND for the - reference
+
+MIC + and -: this is for connecting an external electret microphone, it will bias the mic with 2V. Most electrets will
+work just fine. No extra circuitry is required for the mic such as a biaser or amplifier, just wire it up directly!
+ */
+
+
+
+

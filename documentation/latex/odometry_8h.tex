@@ -1,0 +1,131 @@
+\hypertarget{odometry_8h}{}\doxysection{inc/odometry.h File Reference}
+\label{odometry_8h}\index{inc/odometry.h@{inc/odometry.h}}
+
+
+Count wheel rotations and maintain robot position and angle.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___math_ga0240ac851181b84ac374872dc5434ee4}{N}}~360
+\begin{DoxyCompactList}\small\item\em counts/rotation, just one edge of one tach \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_gaf316c33cc298530f245e8b55330e86b5}{D}}~70000
+\begin{DoxyCompactList}\small\item\em wheel diameter 0.\+0001cm \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga649b8f01fd6c0f47ff3cbddaeba63bfb}{W}}~140000
+\begin{DoxyCompactList}\small\item\em wheel base 0.\+0001 cm \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_gac4cf4b2ab929bd23951a8676eeac086b}{C}}~219910
+\begin{DoxyCompactList}\small\item\em wheel circumference 0.\+0001cm \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga598a3330b3c21701223ee0ca14316eca}{PI}}~8192
+\begin{DoxyCompactList}\small\item\em representation of pi radians \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga4912c64aec0c943b7985db6cb61ff83a}{TWOPI}}~(2$\ast$\mbox{\hyperlink{group___math_ga598a3330b3c21701223ee0ca14316eca}{PI}})
+\begin{DoxyCompactList}\small\item\em 6.\+28... \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga1711232abf72723b5216c206e6bbb175}{NORTH}}~4096
+\begin{DoxyCompactList}\small\item\em direction that is north \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga072a1ef1143314441742097b799be322}{EAST}}~0
+\begin{DoxyCompactList}\small\item\em direction that is east \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_gaf3830320fe6287f717dca9669f417950}{SOUTH}}~-\/4096
+\begin{DoxyCompactList}\small\item\em direction that is south \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga755da365a2f771fdb9e15af22fee7d74}{WEST}}~-\/8192
+\begin{DoxyCompactList}\small\item\em direction that is west \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga366f8ce059270987f00bcb23c257fb7d}{XYTOLERANCE}}~10000
+\begin{DoxyCompactList}\small\item\em tolerance in x,y goal seeking, 1 cm \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga16237058dff97699eb4b43ac7b0bd747}{THETATOLERANCE}}~(4096/90)
+\begin{DoxyCompactList}\small\item\em tolerance in angle goal seeking, 1 deg \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___math_ga8a4285c43463011b934d1dc0a3859496}{Robot\+State}} \{ \newline
+\mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496ace07053ab96611cd775428c007e656d5}{ISSTOPPED}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496ad6fe78e0386eac3ae353deeea8cc594d}{GOFORWARD}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a6d29aaa5d43a8a093bab2eb5cb507024}{HARDRIGHT}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a197222c68aa4452dbfdff4f9dceb6319}{HARDLEFT}}
+, \newline
+\mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a3dbc276b101f7ed5681985d862403b5f}{SOFTRIGHT}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a089e76cbc1d5480e2dbaeb6478948b1f}{SOFTLEFT}}
+ \}
+\begin{DoxyCompactList}\small\item\em robot state \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___math_gaacc2094ed70be2908e2a418d23359cdb}{Odometry\+Command}} \{ \newline
+\mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdba679ee5320d66c8322e310daeb2ee99b8}{STOP}}
+, \mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdbabfd8096bb487bcc6e415690aa471e07c}{FORWARDTOX}}
+, \mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdbaac75e57abf4c81fe1d59596950c77a51}{FORWARDTOY}}
+, \mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdbae205a455dad48f89553db33164a364cf}{LEFTTOTH}}
+, \newline
+\mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdba891f6209cf73e4ed66044e2781328993}{RIGHTTOTH}}
+ \}
+\begin{DoxyCompactList}\small\item\em Odometry Commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___math_ga02038c8bfaf26fb3cf26f87c700ace21}{Odometry\+\_\+\+Init}} (int32\+\_\+t initx, int32\+\_\+t inity, int32\+\_\+t init\+Theta)
+\begin{DoxyCompactList}\small\item\em Initialize odometry module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga57e039201476eac111718cd0389008e2}{Odometry\+\_\+\+Update}} (int32\+\_\+t LCount, int32\+\_\+t RCount)
+\begin{DoxyCompactList}\small\item\em Compute new position/angle of the robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga65bc6118c80d609922568caef39d5534}{Odometry\+\_\+\+Set\+Power}} (uint32\+\_\+t fast, uint32\+\_\+t slow)
+\begin{DoxyCompactList}\small\item\em Set power levels. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga445ed3ce2b8e40f5f1b289c5f2e10877}{Odometry\+\_\+\+GetX}} (void)
+\begin{DoxyCompactList}\small\item\em Get X position. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gada122c001d23df57126239baedd3dd41}{Odometry\+\_\+\+GetY}} (void)
+\begin{DoxyCompactList}\small\item\em Get y position. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga010212b0f335a235e37853f1566eb789}{Odometry\+\_\+\+Get\+Angle}} (void)
+\begin{DoxyCompactList}\small\item\em Get theta angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1ef75bf637013d317fd67af7d24d9487}{Odometry\+\_\+\+Get}} (int32\+\_\+t $\ast$x, int32\+\_\+t $\ast$y, int32\+\_\+t $\ast$theta)
+\begin{DoxyCompactList}\small\item\em Get the current robot position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gaca159286d03bad83e4e2fc74a6e3700a}{Update\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em update position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga9fdb7496922bfb0c2ae56d7104c04701}{Display}} (void)
+\begin{DoxyCompactList}\small\item\em OLED output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga6ad9dab3cc94b0686b23feab2651be89}{Wait\+Until\+Bumper\+Touched}} (void)
+\begin{DoxyCompactList}\small\item\em Wait until bumper touched. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga26dd48a17bfa7e00662f4243b373903c}{Stop\+Until\+Bumper\+Touched}} (void)
+\begin{DoxyCompactList}\small\item\em Stop and wait until bumper touched. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga0321334343b11ceb82d4c0b3928a3568}{Forward\+Until\+Crash}} (void)
+\begin{DoxyCompactList}\small\item\em Go until bumper touched. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga229d2f3384b996c6934c7c8285487297}{Forward\+UntilX}} (int32\+\_\+t desiredX)
+\begin{DoxyCompactList}\small\item\em Forward Until X goal. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga2b083e4a98e3da0f1e24567106672570}{Forward\+UntilY}} (int32\+\_\+t desiredY)
+\begin{DoxyCompactList}\small\item\em Forward Until Y goal. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga47488781167f4a2b93cd7fdc2f862c59}{Soft\+Left\+Until\+Th}} (int32\+\_\+t desired\+Th)
+\begin{DoxyCompactList}\small\item\em Soft Left Until Theta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1cb6e48d29c4e844c7fe377dfb96ac01}{Forward\+Until\+XStart}} (int32\+\_\+t thedesiredX)
+\begin{DoxyCompactList}\small\item\em start going Forward Until X \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gad1e3cf20ecb159bdbf93ba0f48d3d6d1}{Forward\+Until\+XStatus}} (void)
+\begin{DoxyCompactList}\small\item\em check status of Forward Until X command \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga9a85769742970a3c73e420a95995b610}{Forward\+Until\+YStart}} (int32\+\_\+t thedesiredY)
+\begin{DoxyCompactList}\small\item\em start going Forward Until Y \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga959131ec407a757e0b5d52a9025c4a87}{Forward\+Until\+YStatus}} (void)
+\begin{DoxyCompactList}\small\item\em check status of Forward Until Y command \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1c5406d6e8a5d440d0a293cc331abd09}{Soft\+Left\+Until\+Th\+Start}} (int32\+\_\+t thedesired\+Th)
+\begin{DoxyCompactList}\small\item\em start going Forward Until Y \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gafc7799ed6f9df6cf864de783d8c20651}{Forward\+Until\+Th\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em check status of soft left until theta command \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gab7c3f2212f4dd0a6a17dca002ed7478d}{Check\+Goal}} (void)
+\begin{DoxyCompactList}\small\item\em check status of odometry command \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Count wheel rotations and maintain robot position and angle. 
+
+Inputs to the system are left and right tachometer counts. System is called periodically, e.\+g., every 20 to 40 ms. Private global variables from the system are position (x,y) and orientation theta. \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This system will need calibration to your particular robot, adjust N D W C for your robot 
+\end{DoxyWarning}
+\begin{DoxyDate}{Date}
+July 31, 2019
+\end{DoxyDate}
+Although tested with the Pololu \#3542 Romi Encoder connected to Pololu RSLK 1.\+1 interface board, the module should operate with any 2 wheel differential drive robot. 

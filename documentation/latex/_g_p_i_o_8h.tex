@@ -1,0 +1,178 @@
+\hypertarget{_g_p_i_o_8h}{}\doxysection{inc/\+GPIO.h File Reference}
+\label{_g_p_i_o_8h}\index{inc/GPIO.h@{inc/GPIO.h}}
+
+
+Digital input/output from Launch\+Pad to CC2650.  
+
+
+{\ttfamily \#include \char`\"{}msp.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga360fc047a56e59fddb8f60da16d4dcd7}{Set\+MRDY}}()~(P1-\/$>$OUT $\vert$= 0x80)
+\begin{DoxyCompactList}\small\item\em defining DEFAULT means option 4, without the definition means options 1,2,3 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga18a92d4c00d8048436ff0ead58bab501}{Clear\+MRDY}}()~(P1-\/$>$OUT \&= $\sim$0x80)
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_gae92a6c3bd3d92adffd14d58a43f8b3b4}{Set\+Reset}}()~(P6-\/$>$OUT $\vert$= 0x80)
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_gae462f4edaec1b2049180f5dec996399e}{Clear\+Reset}}()~(P6-\/$>$OUT \&= $\sim$0x80)
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga4ca2a8f9a90d5bac37ceff5a5e5ee0f0}{Read\+SRDY}}()~(P5-\/$>$IN\&0x04)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___b_l_e_ga90363099dc984eccffd2a7ad34def32d}{GPIO\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize MRDY (out), SRDY (in), RESET (out) GPIO pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Digital input/output from Launch\+Pad to CC2650. 
+
+\begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019
+\end{DoxyDate}
+There are two possible hardware connections between MSP432 to CC2650 The \#define DEFAULT selects which connection to use. These two hardware possibilities can deployed into four options. There are two projects that can be used with these four options\+: {\bfseries{Very\+Simple\+Application\+Processor\+\_\+\+MSP432}} and {\bfseries{Application\+Processor\+\_\+\+MSP432}}.
+
+\hypertarget{_g_p_i_o_8h_gpio_terms}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Terminology}\label{_g_p_i_o_8h_gpio_terms}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Legend }&\cellcolor{\tableheadbgcolor}\textbf{ TI part number }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Legend }&\cellcolor{\tableheadbgcolor}\textbf{ TI part number }\\\cline{1-2}
+\endhead
+CC2650\+BP &BOOSTXL-\/\+CC2650\+MA \\\cline{1-2}
+CC2650\+LP &LAUNCHXL-\/\+CC2650 \\\cline{1-2}
+MSP432 &MSP-\/\+EXP432\+P401R \\\cline{1-2}
+TM4\+C123 &EK-\/\+TM4\+C123\+GXL \\\cline{1-2}
+MKII &BOOSTXL-\/\+EDUMKII \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+Options 1,2,3 allow the use of the MKII I/O boosterpack together with the CC2650. Option 4 can be used with TI-\/\+RSLK MAX robot
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+{\bfseries{Option 1}}\+: the CC2650\+BP is tethered to the MSP432 using 7 wires. No reprogramming CC2650\+BP is needed.~\newline
+ This configuration has MSP432 plugged into the MKII, and a 7-\/wire cable to the CC2650\+BP.~\newline
+ For option 1, do NOT include the \#define DEFAULT 1. \hypertarget{_g_p_i_o_8h_gpio_option1}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 1}\label{_g_p_i_o_8h_gpio_option1}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+BP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+BP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO0\+\_\+\+TXD &UART from CC2650\+BP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO1\+\_\+\+RXD &UART from MSP432 to CC2650\+BP \\\cline{1-4}
+MRDY &J2.\+14 TM4\+C123 PB6, MSP432 P1.\+7 &J1.\+2 IOID\+\_\+7 &Master ready from MSP432 to CC2650\+BP \\\cline{1-4}
+SRDY &J2.\+12 TM4\+C123 PA3, MSP432 P5.\+2 &J2.\+19 IOID\+\_\+8 &Slave ready from CC2650\+BP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+
+{\bfseries{Option 2}}\+: The CC2650\+BP is reprogrammed with a custom version of the SNP. You reprogram the CC2650\+BP with simple\+\_\+np\+\_\+cc2650bp\+\_\+uart\+\_\+pm\+\_\+xsbl\+\_\+mooc\+\_\+custom.\+hex.~\newline
+ This configuration has a three board stack\+: CC2650\+BP+\+MSP432+\+MKII~\newline
+ In other words these three boards are connected together\+: BOOSTXL-\/\+CC2650\+MA, MSP-\/\+EXP432\+P401R, and BOOSTXL-\/\+EDUMKII.~\newline
+ For option 2, do NOT include the \#define DEFAULT 1. \hypertarget{_g_p_i_o_8h_gpio_option2}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 2}\label{_g_p_i_o_8h_gpio_option2}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+BP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+BP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO0\+\_\+\+TXD &UART from CC2650\+BP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO1\+\_\+\+RXD &UART from MSP432 to CC2650\+BP \\\cline{1-4}
+MRDY &J2.\+14 TM4\+C123 PB6, MSP432 P1.\+7 &J1.\+14 DIO8 &Master ready from MSP432 to CC2650\+BP \\\cline{1-4}
+SRDY &J2.\+12 TM4\+C123 PA3, MSP432 P5.\+2 &J2.\+12 DIO14 &Slave ready from CC2650\+BP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+
+{\bfseries{Option 3}}\+: The CC2650\+LP is reprogrammed with a custom version of the SNP. You reprogram the CC2650\+LP with simple\+\_\+np\+\_\+cc2650lp\+\_\+uart\+\_\+pm\+\_\+xsbl\+\_\+mooc\+\_\+custom.\+hex.~\newline
+ This configuration has a three board stack\+: CC2650\+LP+\+MSP432+\+MKII~\newline
+ In other words these three boards are connected together\+: LAUNCHXL-\/\+CC2650, MSP-\/\+EXP432\+P401R, and BOOSTXL-\/\+EDUMKII.~\newline
+ Remove the Rx and Tx jumpers on CC2650\+LP.~\newline
+ It is optional, but we suggest you also remove the two LED jumpers on Red, Green LEDs on the CC2650 Launch\+Pad. We also recommend you place insulting tape over the set of 11 jumpers in middle, before stacking.~\newline
+ For option 3, do NOT include the \#define DEFAULT 1. \hypertarget{_g_p_i_o_8h_gpio_option3}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 3}\label{_g_p_i_o_8h_gpio_option3}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+LP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+LP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+LP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+LP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO3\+\_\+\+TXD &UART from CC2650\+LP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO2\+\_\+\+RXD &UART from MSP432 to CC2650\+LP \\\cline{1-4}
+MRDY &J2.\+14 TM4\+C123 PB6, MSP432 P1.\+7 &J2.\+14 DIO12 &Master ready from MSP432 to CC2650\+LP \\\cline{1-4}
+SRDY &J2.\+12 TM4\+C123 PA3, MSP432 P5.\+2 &J2.\+12 DIO14 &Slave ready from CC2650\+LP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+
+{\bfseries{Option 4}}\+: Use this setup with CC2650\+BP without a MKII. This runs with the default version of SNP that ships on the BOOSTXL-\/\+CC2650\+MA.~\newline
+ This configuration has a two board stack\+: CC2650\+BP+\+MSP432~\newline
+ In other words these two boards are connected together\+: BOOSTXL-\/\+CC2650\+MA and MSP-\/\+EXP432\+P401R.~\newline
+ This version will work with the TI-\/\+RSLK MAX robot For option 4, DO include the \#define DEFAULT 1. \hypertarget{_g_p_i_o_8h_gpio_option4}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 4}\label{_g_p_i_o_8h_gpio_option4}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+BP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+BP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO0\+\_\+\+TXD &UART from CC2650\+BP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO1\+\_\+\+RXD &UART from MSP432 to CC2650\+BP \\\cline{1-4}
+MRDY &J1.\+2 TM4\+C123 PB5, MSP432 P6.\+0 &J1.\+2 IOID\+\_\+7 &Master ready from MSP432 to CC2650\+BP \\\cline{1-4}
+SRDY &J2.\+19 TM4\+C123 PB2, MSP432 P2.\+5 &J2.\+19 IOID\+\_\+8 &Slave ready from CC2650\+BP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+\end{DoxyRemark}

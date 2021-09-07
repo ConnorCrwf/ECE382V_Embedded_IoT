@@ -1,0 +1,73 @@
+\hypertarget{_reflectance_8h}{}\doxysection{inc/\+Reflectance.h File Reference}
+\label{_reflectance_8h}\index{inc/Reflectance.h@{inc/Reflectance.h}}
+
+
+Provide functions for the QTR-\/8\+RC reflectance sensor array. Pololu part number 3672.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}{Reflectance\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the GPIO pins for the QTR-\/8\+RC reflectance sensor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga139f16024daa08baa1cdfa00bb0c3fa8}{Reflectance\+\_\+\+Read}} (uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Read the eight sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gaa22dec68ae7198f36322850ac7a422ff}{Reflectance\+\_\+\+Center}} (uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Read the two center sensors. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga77217ca37755bfbc38ec0eaaf4e7c49a}{Reflectance\+\_\+\+Position}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Perform sensor integration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga5c1cd82fe48fdf60b8ac1bcfd34cb0d0}{Reflectance\+\_\+\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Beging reading the eight sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gaf0b599174bf91c1b0199f95037ca78be}{Reflectance\+\_\+\+End}} (void)
+\begin{DoxyCompactList}\small\item\em Read the eight sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga665be9652ede693c19726a8da1d324cd}{Reflectance\+\_\+\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get last reading of the eight sensors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide functions for the QTR-\/8\+RC reflectance sensor array. Pololu part number 3672. 
+
+Provide functions to take measurements using a QTRX reflectance sensor array (Pololu part number 3672). This works by outputting to the sensor, waiting, then reading the digital value of each of the eight phototransistors. The more reflective the target surface is, the faster the voltage decays. The time to wait is a function of~\newline
+ 1) reflectance of surface~\newline
+ 2) electrical resistance and capacitance of the GPIO pin~\newline
+ 3) distance to surface~\newline
+ For these reasons, you will have to experimentally verify which time works best for your system. \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019
+\end{DoxyDate}
+\hypertarget{_reflectance_8h_QTR_ports}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{QTRX reflectance sensor array}\label{_reflectance_8h_QTR_ports}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ QTRX function }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ QTRX function }\\\cline{1-2}
+\endhead
+P5.\+3 &reflectance IR LED output \\\cline{1-2}
+P7.\+0 &reflectance sensor 1 right, robot off road to left \\\cline{1-2}
+P7.\+1 &reflectance sensor 2 \\\cline{1-2}
+P7.\+2 &reflectance sensor 3 \\\cline{1-2}
+P7.\+3 &reflectance sensor 4 center \\\cline{1-2}
+P7.\+4 &reflectance sensor 5 center \\\cline{1-2}
+P7.\+5 &reflectance sensor 6 \\\cline{1-2}
+P7.\+6 &reflectance sensor 7 \\\cline{1-2}
+P7.\+7 &reflectance sensor 8 left, robot off road to right \\\cline{1-2}
+\end{longtabu}

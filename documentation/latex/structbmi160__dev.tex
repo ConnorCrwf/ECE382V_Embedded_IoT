@@ -1,0 +1,141 @@
+\hypertarget{structbmi160__dev}{}\doxysection{bmi160\+\_\+dev Struct Reference}
+\label{structbmi160__dev}\index{bmi160\_dev@{bmi160\_dev}}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__dev_a88e300db221e7a0382f2a4c289b9557d}{chip\+\_\+id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__dev_a1e6927fa1486224044e568f9c370519b}{id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__dev_ad1a3c78c21bf9e3bf2dc75fa6452f829}{interface}}
+\item 
+enum \mbox{\hyperlink{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8e}{bmi160\+\_\+any\+\_\+sig\+\_\+motion\+\_\+active\+\_\+interrupt\+\_\+state}} \mbox{\hyperlink{structbmi160__dev_ada62f2da193927af0d0cc69e41d7b3be}{any\+\_\+sig\+\_\+sel}}
+\item 
+struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} \mbox{\hyperlink{structbmi160__dev_a0931ab6940184f600ba357c9924c43b4}{accel\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} \mbox{\hyperlink{structbmi160__dev_abfdae354e2aba360960ee99483ab72c9}{prev\+\_\+accel\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} \mbox{\hyperlink{structbmi160__dev_afcc10745957c7d02cfb97386cbe55041}{gyro\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} \mbox{\hyperlink{structbmi160__dev_ad5928a86f8c18cf9f6e9a6a2a912419c}{prev\+\_\+gyro\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__aux__cfg}{bmi160\+\_\+aux\+\_\+cfg}} \mbox{\hyperlink{structbmi160__dev_a128a221aab2131c8e66e9ba3a7d9227a}{aux\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__aux__cfg}{bmi160\+\_\+aux\+\_\+cfg}} \mbox{\hyperlink{structbmi160__dev_a9301012c9ebf591e8bae1c85e5999644}{prev\+\_\+aux\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__fifo__frame}{bmi160\+\_\+fifo\+\_\+frame}} $\ast$ \mbox{\hyperlink{structbmi160__dev_a82e533b7bc5b02df081c726032c81365}{fifo}}
+\item 
+bmi160\+\_\+com\+\_\+fptr\+\_\+t \mbox{\hyperlink{structbmi160__dev_aaef77e53f69b5ba182d0679486403211}{read}}
+\item 
+bmi160\+\_\+com\+\_\+fptr\+\_\+t \mbox{\hyperlink{structbmi160__dev_a9349d5faee790b6906a38d9432b0ac8b}{write}}
+\item 
+bmi160\+\_\+delay\+\_\+fptr\+\_\+t \mbox{\hyperlink{structbmi160__dev_a92d21f87b64b45bb00c7ff1dfe1515ef}{delay\+\_\+ms}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__dev_a6efc2f376e963a3fe810643a03c636b5}{read\+\_\+write\+\_\+len}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__dev_a8c62bd8c20c3426e8aa30c7053f950d3}{dummy\+\_\+byte}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structbmi160__dev_a0931ab6940184f600ba357c9924c43b4}\label{structbmi160__dev_a0931ab6940184f600ba357c9924c43b4}} 
+\index{bmi160\_dev@{bmi160\_dev}!accel\_cfg@{accel\_cfg}}
+\index{accel\_cfg@{accel\_cfg}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{accel\_cfg}{accel\_cfg}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} accel\+\_\+cfg}
+
+Structure to configure Accel sensor \mbox{\Hypertarget{structbmi160__dev_ada62f2da193927af0d0cc69e41d7b3be}\label{structbmi160__dev_ada62f2da193927af0d0cc69e41d7b3be}} 
+\index{bmi160\_dev@{bmi160\_dev}!any\_sig\_sel@{any\_sig\_sel}}
+\index{any\_sig\_sel@{any\_sig\_sel}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{any\_sig\_sel}{any\_sig\_sel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8e}{bmi160\+\_\+any\+\_\+sig\+\_\+motion\+\_\+active\+\_\+interrupt\+\_\+state}} any\+\_\+sig\+\_\+sel}
+
+Hold active interrupts status for any and sig motion 0 -\/ Any-\/motion enable, 1 -\/ Sig-\/motion enable, -\/1 neither any-\/motion nor sig-\/motion selected \mbox{\Hypertarget{structbmi160__dev_a128a221aab2131c8e66e9ba3a7d9227a}\label{structbmi160__dev_a128a221aab2131c8e66e9ba3a7d9227a}} 
+\index{bmi160\_dev@{bmi160\_dev}!aux\_cfg@{aux\_cfg}}
+\index{aux\_cfg@{aux\_cfg}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{aux\_cfg}{aux\_cfg}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmi160__aux__cfg}{bmi160\+\_\+aux\+\_\+cfg}} aux\+\_\+cfg}
+
+Structure to configure the auxiliary sensor \mbox{\Hypertarget{structbmi160__dev_a88e300db221e7a0382f2a4c289b9557d}\label{structbmi160__dev_a88e300db221e7a0382f2a4c289b9557d}} 
+\index{bmi160\_dev@{bmi160\_dev}!chip\_id@{chip\_id}}
+\index{chip\_id@{chip\_id}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{chip\_id}{chip\_id}}
+{\footnotesize\ttfamily uint8\+\_\+t chip\+\_\+id}
+
+Chip Id \mbox{\Hypertarget{structbmi160__dev_a92d21f87b64b45bb00c7ff1dfe1515ef}\label{structbmi160__dev_a92d21f87b64b45bb00c7ff1dfe1515ef}} 
+\index{bmi160\_dev@{bmi160\_dev}!delay\_ms@{delay\_ms}}
+\index{delay\_ms@{delay\_ms}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{delay\_ms}{delay\_ms}}
+{\footnotesize\ttfamily bmi160\+\_\+delay\+\_\+fptr\+\_\+t delay\+\_\+ms}
+
+Delay function pointer \mbox{\Hypertarget{structbmi160__dev_a8c62bd8c20c3426e8aa30c7053f950d3}\label{structbmi160__dev_a8c62bd8c20c3426e8aa30c7053f950d3}} 
+\index{bmi160\_dev@{bmi160\_dev}!dummy\_byte@{dummy\_byte}}
+\index{dummy\_byte@{dummy\_byte}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{dummy\_byte}{dummy\_byte}}
+{\footnotesize\ttfamily uint8\+\_\+t dummy\+\_\+byte}
+
+For switching from I2C to SPI \mbox{\Hypertarget{structbmi160__dev_a82e533b7bc5b02df081c726032c81365}\label{structbmi160__dev_a82e533b7bc5b02df081c726032c81365}} 
+\index{bmi160\_dev@{bmi160\_dev}!fifo@{fifo}}
+\index{fifo@{fifo}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{fifo}{fifo}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmi160__fifo__frame}{bmi160\+\_\+fifo\+\_\+frame}}$\ast$ fifo}
+
+FIFO related configurations \mbox{\Hypertarget{structbmi160__dev_afcc10745957c7d02cfb97386cbe55041}\label{structbmi160__dev_afcc10745957c7d02cfb97386cbe55041}} 
+\index{bmi160\_dev@{bmi160\_dev}!gyro\_cfg@{gyro\_cfg}}
+\index{gyro\_cfg@{gyro\_cfg}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{gyro\_cfg}{gyro\_cfg}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} gyro\+\_\+cfg}
+
+Structure to configure Gyro sensor \mbox{\Hypertarget{structbmi160__dev_a1e6927fa1486224044e568f9c370519b}\label{structbmi160__dev_a1e6927fa1486224044e568f9c370519b}} 
+\index{bmi160\_dev@{bmi160\_dev}!id@{id}}
+\index{id@{id}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint8\+\_\+t id}
+
+Device Id \mbox{\Hypertarget{structbmi160__dev_ad1a3c78c21bf9e3bf2dc75fa6452f829}\label{structbmi160__dev_ad1a3c78c21bf9e3bf2dc75fa6452f829}} 
+\index{bmi160\_dev@{bmi160\_dev}!interface@{interface}}
+\index{interface@{interface}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{interface}{interface}}
+{\footnotesize\ttfamily uint8\+\_\+t interface}
+
+0 -\/ I2C , 1 -\/ SPI Interface \mbox{\Hypertarget{structbmi160__dev_abfdae354e2aba360960ee99483ab72c9}\label{structbmi160__dev_abfdae354e2aba360960ee99483ab72c9}} 
+\index{bmi160\_dev@{bmi160\_dev}!prev\_accel\_cfg@{prev\_accel\_cfg}}
+\index{prev\_accel\_cfg@{prev\_accel\_cfg}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{prev\_accel\_cfg}{prev\_accel\_cfg}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} prev\+\_\+accel\+\_\+cfg}
+
+Structure to hold previous/old accel config parameters. This is used at driver level to prevent overwriting of same data, hence user does not change it in the code \mbox{\Hypertarget{structbmi160__dev_a9301012c9ebf591e8bae1c85e5999644}\label{structbmi160__dev_a9301012c9ebf591e8bae1c85e5999644}} 
+\index{bmi160\_dev@{bmi160\_dev}!prev\_aux\_cfg@{prev\_aux\_cfg}}
+\index{prev\_aux\_cfg@{prev\_aux\_cfg}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{prev\_aux\_cfg}{prev\_aux\_cfg}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmi160__aux__cfg}{bmi160\+\_\+aux\+\_\+cfg}} prev\+\_\+aux\+\_\+cfg}
+
+Structure to hold previous/old aux config parameters. This is used at driver level to prevent overwriting of same data, hence user does not change it in the code \mbox{\Hypertarget{structbmi160__dev_ad5928a86f8c18cf9f6e9a6a2a912419c}\label{structbmi160__dev_ad5928a86f8c18cf9f6e9a6a2a912419c}} 
+\index{bmi160\_dev@{bmi160\_dev}!prev\_gyro\_cfg@{prev\_gyro\_cfg}}
+\index{prev\_gyro\_cfg@{prev\_gyro\_cfg}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{prev\_gyro\_cfg}{prev\_gyro\_cfg}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}} prev\+\_\+gyro\+\_\+cfg}
+
+Structure to hold previous/old gyro config parameters. This is used at driver level to prevent overwriting of same data, hence user does not change it in the code \mbox{\Hypertarget{structbmi160__dev_aaef77e53f69b5ba182d0679486403211}\label{structbmi160__dev_aaef77e53f69b5ba182d0679486403211}} 
+\index{bmi160\_dev@{bmi160\_dev}!read@{read}}
+\index{read@{read}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily bmi160\+\_\+com\+\_\+fptr\+\_\+t read}
+
+Read function pointer \mbox{\Hypertarget{structbmi160__dev_a6efc2f376e963a3fe810643a03c636b5}\label{structbmi160__dev_a6efc2f376e963a3fe810643a03c636b5}} 
+\index{bmi160\_dev@{bmi160\_dev}!read\_write\_len@{read\_write\_len}}
+\index{read\_write\_len@{read\_write\_len}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{read\_write\_len}{read\_write\_len}}
+{\footnotesize\ttfamily uint16\+\_\+t read\+\_\+write\+\_\+len}
+
+User set read/write length \mbox{\Hypertarget{structbmi160__dev_a9349d5faee790b6906a38d9432b0ac8b}\label{structbmi160__dev_a9349d5faee790b6906a38d9432b0ac8b}} 
+\index{bmi160\_dev@{bmi160\_dev}!write@{write}}
+\index{write@{write}!bmi160\_dev@{bmi160\_dev}}
+\doxysubsubsection{\texorpdfstring{write}{write}}
+{\footnotesize\ttfamily bmi160\+\_\+com\+\_\+fptr\+\_\+t write}
+
+Write function pointer 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{bmi160__defs_8h}{bmi160\+\_\+defs.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{bmi160_8h}{}\doxysection{inc/bmi160.h File Reference}
+\label{bmi160_8h}\index{inc/bmi160.h@{inc/bmi160.h}}
+{\ttfamily \#include \char`\"{}bmi160\+\_\+defs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a2e8b832a4cb12b441cba7371d73f6a}{bmi160\+\_\+init}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is the entry point for sensor.\+It performs the selection of I2\+C/\+SPI read mechanism according to the selected interface and reads the chip-\/id of bmi160 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9bebc4a575526f49e625a87de9478e04}{bmi160\+\_\+get\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the data from the given register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5bea435582a9fdb2c331f64b61e0d6c5}{bmi160\+\_\+set\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the given data to the register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa047f8bacbc2a9c14ff70841304c04d0}{bmi160\+\_\+soft\+\_\+reset}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API resets and restarts the device. All register values are overwritten with default parameters. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab098d2c7fda2965b1699ae13d2a8ffc8}{bmi160\+\_\+set\+\_\+sens\+\_\+conf}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API configures the power mode, range and bandwidth of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga897ca5f1bfbcd1385ace2c05f9f4aef6}{bmi160\+\_\+set\+\_\+power\+\_\+mode}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacf4792d76eafc7607a097c79fcadb92a}{bmi160\+\_\+get\+\_\+power\+\_\+mode}} (struct \mbox{\hyperlink{structbmi160__pmu__status}{bmi160\+\_\+pmu\+\_\+status}} $\ast$pmu\+\_\+status, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API gets the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga86fb957a2384daa2ac17345d76b7e976}{bmi160\+\_\+get\+\_\+sensor\+\_\+data}} (uint8\+\_\+t select\+\_\+sensor, struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$accel, struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$gyro, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads sensor data, stores it in the \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} structure pointer passed by the user. The user can ask for accel data ,gyro data or both sensor data using bmi160\+\_\+select\+\_\+sensor enum. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga62ebd142768bea09f93ab63786dc3cca}{bmi160\+\_\+set\+\_\+int\+\_\+config}} (struct \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}} $\ast$int\+\_\+config, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API configures the necessary interrupt based on the user settings in the \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5a9e71230b2c94b2e609c63def130abf}{bmi160\+\_\+set\+\_\+step\+\_\+counter}} (uint8\+\_\+t step\+\_\+cnt\+\_\+enable, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API enables the step counter feature. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga69193a88550ccf1d99e413dcb5f81730}{bmi160\+\_\+read\+\_\+step\+\_\+counter}} (uint16\+\_\+t $\ast$step\+\_\+val, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the step counter value. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab7dba610f920f63a03e84d80be2aa4db}{bmi160\+\_\+aux\+\_\+read}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$aux\+\_\+data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the mention no of byte of data from the given register address of auxiliary sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2c95d58ed7b50773fae5d97173fc6cb6}{bmi160\+\_\+aux\+\_\+write}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$aux\+\_\+data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the mention no of byte of data to the given register address of auxiliary sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf9a909f6c1b3be1b33658b2f17632d35}{bmi160\+\_\+aux\+\_\+init}} (const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API initialize the auxiliary sensor in order to access it. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae2a0b717765bc2ee40c0fb92d2f819d2}{bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode}} (uint8\+\_\+t $\ast$data\+\_\+addr, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to setup the auxiliary sensor of bmi160 in auto mode Thus enabling the auto update of 8 bytes of data from auxiliary sensor to BMI160 register address 0x04 to 0x0B. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1a57c45da550b97a5361e84b12f2d2a4}{bmi160\+\_\+config\+\_\+aux\+\_\+mode}} (const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API configures the 0x4C register and settings like Auxiliary sensor manual enable/ disable and aux burst read length. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae1f173b8b1e4ba2601016cc5fe8edc29}{bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode}} (uint8\+\_\+t $\ast$aux\+\_\+data, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to read the raw uncompensated auxiliary sensor data of 8 bytes from BMI160 register address 0x04 to 0x0B. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6f83dc85a8173886ffe58e381fd9e0b8}{bmi160\+\_\+perform\+\_\+self\+\_\+test}} (uint8\+\_\+t select\+\_\+sensor, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This is used to perform self test of accel/gyro of the BMI160 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads data from the fifo buffer. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0b471abfa1d28d5797b5de9c9b457a53}{bmi160\+\_\+set\+\_\+fifo\+\_\+flush}} (const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes fifo\+\_\+flush command to command register.\+This action clears all data in the Fifo without changing fifo configuration settings. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac5cead9788329ba97addba76997de01e}{bmi160\+\_\+set\+\_\+fifo\+\_\+config}} (uint8\+\_\+t config, uint8\+\_\+t enable, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the FIFO configuration in the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga50cbe9d86cba2bb6ef91fdaf3f2ce529}{bmi160\+\_\+set\+\_\+fifo\+\_\+down}} (uint8\+\_\+t fifo\+\_\+down, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to configure the down sampling ratios of the accel and gyro data for FIFO.\+Also, it configures filtered or pre-\/filtered data for the fifo for accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa348ae8d5aa3b20363b49876abff5c69}{bmi160\+\_\+set\+\_\+fifo\+\_\+wm}} (uint8\+\_\+t fifo\+\_\+wm, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the FIFO watermark level in the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae548739f4185fa7fef8cb718ec6bd91d}{bmi160\+\_\+extract\+\_\+accel}} (struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$accel\+\_\+data, uint8\+\_\+t $\ast$accel\+\_\+length, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API parses and extracts the accelerometer frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \char`\"{}accel\+\_\+data\char`\"{} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9b2caa7d4a697e555856dfc6d1c17990}{bmi160\+\_\+extract\+\_\+gyro}} (struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$gyro\+\_\+data, uint8\+\_\+t $\ast$gyro\+\_\+length, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API parses and extracts the gyro frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \char`\"{}gyro\+\_\+data\char`\"{} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab21ca26b7df608549e5d1bd583e4d52a}{bmi160\+\_\+extract\+\_\+aux}} (struct \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}} $\ast$aux\+\_\+data, uint8\+\_\+t $\ast$aux\+\_\+len, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API parses and extracts the aux frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9a12ab7ac43b795f4b6faddde505eb88}{bmi160\+\_\+start\+\_\+foc}} (const struct \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} $\ast$foc\+\_\+conf, struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$offset, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API starts the FOC of accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac6d11bee70aafd12449413c0fce3f014}{bmi160\+\_\+get\+\_\+offsets}} (struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$offset, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads and stores the offset values of accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae8fd008b08b8a1fc1aadce8e9ebfc1e6}{bmi160\+\_\+set\+\_\+offsets}} (const struct \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} $\ast$foc\+\_\+conf, const struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$offset, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the offset values of accel and gyro to the sensor but these values will be reset on POR or soft reset. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga273ec1cf6a992e0050ce12f33ee4c070}{bmi160\+\_\+update\+\_\+nvm}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the image registers values to NVM which is stored even after POR or soft reset. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53cb6c4b0f60f54bd49b7ff980e3e1d4}{bmi160\+\_\+get\+\_\+int\+\_\+status}} (enum \mbox{\hyperlink{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}{bmi160\+\_\+int\+\_\+status\+\_\+sel}} int\+\_\+status\+\_\+sel, union \mbox{\hyperlink{unionbmi160__int__status}{bmi160\+\_\+int\+\_\+status}} $\ast$int\+\_\+status, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API gets the interrupt status from the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copyright (c) 2020 Bosch Sensortec GmbH. All rights reserved.
+
+BSD-\/3-\/\+Clause
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+
+
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}\+AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+\begin{DoxyDate}{Date}
+10/01/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+3.\+8.\+1
+\end{DoxyVersion}
+\hypertarget{bmm150_8h_BMI160}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{BMI160 on BP-\/\+BASSENSORSMKII connected to MSP432}\label{bmm150_8h_BMI160}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ BMI160 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ BMI160 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endhead
+SDO &BMI160 pin 1 &3.\+3V (I2C address = 0x69) \\\cline{1-3}
+ASDx &BMI160 pin 2 &P6.\+4 I2C data SDA\+\_\+S \\\cline{1-3}
+ASCx &BMI160 pin 3 &P6.\+5 I2C clock SCL\+\_\+S \\\cline{1-3}
+INT1 &BMI160 pin 4 &P4.\+1 input from the interrupt pin \\\cline{1-3}
+VDDIO &BMI160 pin 5 &3.\+3V \\\cline{1-3}
+GNDIO &BMI160 pin 6 &ground \\\cline{1-3}
+GND &BMI160 pin 7 &ground \\\cline{1-3}
+VDD &BMI160 pin 8 &3.\+3V \\\cline{1-3}
+INT2 &BMI160 pin 9 &P5.\+0/\+ERB cannot be used on RSLK due to conflict with right shaft encoder \\\cline{1-3}
+OCSB &BMI160 pin 10 &not connected (unused SPI for slave) \\\cline{1-3}
+OSDO &BMI160 pin 11 &not connected (unused SPI for slave) \\\cline{1-3}
+CSB &BMI160 pin 12 &3.\+3V (protocol select = I2C) \\\cline{1-3}
+SCX &BMI160 pin 13 &I2C clock to BMM150 Three-\/\+Axis Geomagnetic Sensor slave (I2C address = 0x13) \\\cline{1-3}
+SDX &BMI160 pin 14 &I2C data to BMM150 Three-\/\+Axis Geomagnetic Sensor slave (I2C address = 0x13) \\\cline{1-3}
+\end{longtabu}

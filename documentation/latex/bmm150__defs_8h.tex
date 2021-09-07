@@ -1,0 +1,530 @@
+\hypertarget{bmm150__defs_8h}{}\doxysection{inc/bmm150\+\_\+defs.h File Reference}
+\label{bmm150__defs_8h}\index{inc/bmm150\_defs.h@{inc/bmm150\_defs.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbmm150__trim__registers}{bmm150\+\_\+trim\+\_\+registers}}
+\begin{DoxyCompactList}\small\item\em bmm150 trim data structure \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__int__ctrl__settings}{bmm150\+\_\+int\+\_\+ctrl\+\_\+settings}}
+\begin{DoxyCompactList}\small\item\em bmm150 interrupt pin settings \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__settings}{bmm150\+\_\+settings}}
+\begin{DoxyCompactList}\small\item\em bmm150 sensor settings \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__raw__mag__data}{bmm150\+\_\+raw\+\_\+mag\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em bmm150 un-\/compensated (raw) magnetometer data \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__mag__data}{bmm150\+\_\+mag\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em bmm150 compensated magnetometer data in int16\+\_\+t format \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}
+\begin{DoxyCompactList}\small\item\em bmm150 device structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(x)~x
+\item 
+\#define {\bfseries UINT8\+\_\+C}(x)~x\#\#U
+\item 
+\#define {\bfseries INT16\+\_\+C}(x)~x
+\item 
+\#define {\bfseries UINT16\+\_\+C}(x)~x\#\#U
+\item 
+\#define {\bfseries INT32\+\_\+C}(x)~x
+\item 
+\#define {\bfseries UINT32\+\_\+C}(x)~x\#\#U
+\item 
+\#define {\bfseries INT64\+\_\+C}(x)~x\#\#LL
+\item 
+\#define {\bfseries UINT64\+\_\+C}(x)~x\#\#ULL
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ C standard macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries NULL}~((void $\ast$) 0)
+\item 
+\#define {\bfseries TRUE}~UINT8\+\_\+C(1)
+\item 
+\#define {\bfseries FALSE}~UINT8\+\_\+C(0)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ API success code}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+OK}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(0)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ API error codes}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+E\+\_\+\+NULL\+\_\+\+PTR}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/1)
+\item 
+\#define {\bfseries BMM150\+\_\+\+E\+\_\+\+DEV\+\_\+\+NOT\+\_\+\+FOUND}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/2)
+\item 
+\#define {\bfseries BMM150\+\_\+\+E\+\_\+\+INVALID\+\_\+\+CONFIG}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/3)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ API warning codes}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+YZ\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(1)
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XZ\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(2)
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+Z\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(3)
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XY\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(4)
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+Y\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(5)
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+X\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(6)
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XYZ\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(7)
+\item 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(8)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ CHIP ID \& SOFT RESET VALUES $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+CHIP\+\_\+\+ID}~UINT8\+\_\+C(0x32)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SET\+\_\+\+SOFT\+\_\+\+RESET}~UINT8\+\_\+C(0x82)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ POWER MODE DEFINTIONS $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+NORMAL\+\_\+\+MODE}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+FORCED\+\_\+\+MODE}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SLEEP\+\_\+\+MODE}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SUSPEND\+\_\+\+MODE}~UINT8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ I2C ADDRESS $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+DEFAULT\+\_\+\+I2\+C\+\_\+\+ADDRESS}~UINT8\+\_\+C(0x10)
+\item 
+\#define {\bfseries BMM150\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+\+CSB\+\_\+\+LOW\+\_\+\+SDO\+\_\+\+HIGH}~UINT8\+\_\+C(0x11)
+\item 
+\#define {\bfseries BMM150\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+\+CSB\+\_\+\+HIGH\+\_\+\+SDO\+\_\+\+LOW}~UINT8\+\_\+C(0x12)
+\item 
+\#define {\bfseries BMM150\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+\+CSB\+\_\+\+HIGH\+\_\+\+SDO\+\_\+\+HIGH}~UINT8\+\_\+C(0x13)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Power mode settings $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CNTRL\+\_\+\+DISABLE}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CNTRL\+\_\+\+ENABLE}~UINT8\+\_\+C(0x01)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Sensor delay time settings $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+SOFT\+\_\+\+RESET\+\_\+\+DELAY}~UINT8\+\_\+C(1)
+\item 
+\#define {\bfseries BMM150\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+DELAY}~UINT8\+\_\+C(2)
+\item 
+\#define {\bfseries BMM150\+\_\+\+START\+\_\+\+UP\+\_\+\+TIME}~UINT8\+\_\+C(3)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+DELAY}~UINT8\+\_\+C(4)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ ENABLE/\+DISABLE DEFINITIONS $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+XY\+\_\+\+CHANNEL\+\_\+\+ENABLE}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+XY\+\_\+\+CHANNEL\+\_\+\+DISABLE}~UINT8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Register Address}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+CHIP\+\_\+\+ID\+\_\+\+ADDR}~UINT8\+\_\+C(0x40)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+X\+\_\+\+LSB}~UINT8\+\_\+C(0x42)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+READY\+\_\+\+STATUS}~UINT8\+\_\+C(0x48)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INTERRUPT\+\_\+\+STATUS}~UINT8\+\_\+C(0x4A)
+\item 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CONTROL\+\_\+\+ADDR}~UINT8\+\_\+C(0x4B)
+\item 
+\#define {\bfseries BMM150\+\_\+\+OP\+\_\+\+MODE\+\_\+\+ADDR}~UINT8\+\_\+C(0x4C)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+CONFIG\+\_\+\+ADDR}~UINT8\+\_\+C(0x4D)
+\item 
+\#define {\bfseries BMM150\+\_\+\+AXES\+\_\+\+ENABLE\+\_\+\+ADDR}~UINT8\+\_\+C(0x4E)
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+ADDR}~UINT8\+\_\+C(0x4F)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+ADDR}~UINT8\+\_\+C(0x50)
+\item 
+\#define {\bfseries BMM150\+\_\+\+REP\+\_\+\+XY\+\_\+\+ADDR}~UINT8\+\_\+C(0x51)
+\item 
+\#define {\bfseries BMM150\+\_\+\+REP\+\_\+\+Z\+\_\+\+ADDR}~UINT8\+\_\+C(0x52)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Macros to select the sensor settings to be set by the user}\par
+{\em These values are internal for API implementation. Don\textquotesingle{}t relate this to data sheet. }\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+\+SEL}~UINT16\+\_\+C(1)
+\item 
+\#define {\bfseries BMM150\+\_\+\+CONTROL\+\_\+\+MEASURE\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 1)
+\item 
+\#define {\bfseries BMM150\+\_\+\+XY\+\_\+\+REP\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 2)
+\item 
+\#define {\bfseries BMM150\+\_\+\+Z\+\_\+\+REP\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 3)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+PIN\+\_\+\+EN\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 4)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+PIN\+\_\+\+EN\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 5)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+POLARITY\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 6)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 7)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+POLARITY\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 8)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 9)
+\item 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 10)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 11)
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 12)
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+SETTING\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 13)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+SETTING\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 14)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ DATA RATE DEFINITIONS $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+10\+HZ}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+02\+HZ}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+06\+HZ}~UINT8\+\_\+C(0x02)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+08\+HZ}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+15\+HZ}~UINT8\+\_\+C(0x04)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+20\+HZ}~UINT8\+\_\+C(0x05)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+25\+HZ}~UINT8\+\_\+C(0x06)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+30\+HZ}~UINT8\+\_\+C(0x07)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ TRIM REGISTERS $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+X1}~UINT8\+\_\+C(0x5D)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Y1}~UINT8\+\_\+C(0x5E)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z4\+\_\+\+LSB}~UINT8\+\_\+C(0x62)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z4\+\_\+\+MSB}~UINT8\+\_\+C(0x63)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+X2}~UINT8\+\_\+C(0x64)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Y2}~UINT8\+\_\+C(0x65)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z2\+\_\+\+LSB}~UINT8\+\_\+C(0x68)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z2\+\_\+\+MSB}~UINT8\+\_\+C(0x69)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z1\+\_\+\+LSB}~UINT8\+\_\+C(0x6A)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z1\+\_\+\+MSB}~UINT8\+\_\+C(0x6B)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XYZ1\+\_\+\+LSB}~UINT8\+\_\+C(0x6C)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XYZ1\+\_\+\+MSB}~UINT8\+\_\+C(0x6D)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z3\+\_\+\+LSB}~UINT8\+\_\+C(0x6E)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z3\+\_\+\+MSB}~UINT8\+\_\+C(0x6F)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XY2}~UINT8\+\_\+C(0x70)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XY1}~UINT8\+\_\+C(0x71)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Threshold interrupt setting macros for x,y,z axes selection}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+THRESHOLD\+\_\+X}~UINT8\+\_\+C(0x06)
+\item 
+\#define {\bfseries BMM150\+\_\+\+THRESHOLD\+\_\+Y}~UINT8\+\_\+C(0x05)
+\item 
+\#define {\bfseries BMM150\+\_\+\+THRESHOLD\+\_\+Z}~UINT8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ User configurable interrupt setting macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+ENABLE}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+DISABLE}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ACTIVE\+\_\+\+HIGH\+\_\+\+POLARITY}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ACTIVE\+\_\+\+LOW\+\_\+\+POLARITY}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+LATCHED}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+NON\+\_\+\+LATCHED}~UINT8\+\_\+C(0x00)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Interrupt status}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+X}~UINT16\+\_\+C(0x0001)
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Y}~UINT16\+\_\+C(0x0002)
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Z}~UINT16\+\_\+C(0x0004)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+X}~UINT16\+\_\+C(0x0008)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Y}~UINT16\+\_\+C(0x0010)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Z}~UINT16\+\_\+C(0x0020)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERFLOW\+\_\+\+INT}~UINT16\+\_\+C(0x0040)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT}~UINT16\+\_\+C(0x0080)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+READY\+\_\+\+INT}~UINT16\+\_\+C(0x0100)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Macros for bit masking}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+PWR\+\_\+\+CNTRL\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+CONTROL\+\_\+\+MEASURE\+\_\+\+MSK}~UINT8\+\_\+C(0x38)
+\item 
+\#define {\bfseries BMM150\+\_\+\+CONTROL\+\_\+\+MEASURE\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CONTROL\+\_\+\+BIT\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CONTROL\+\_\+\+BIT\+\_\+\+POS}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+OP\+\_\+\+MODE\+\_\+\+MSK}~UINT8\+\_\+C(0x06)
+\item 
+\#define {\bfseries BMM150\+\_\+\+OP\+\_\+\+MODE\+\_\+\+POS}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ODR\+\_\+\+MSK}~UINT8\+\_\+C(0x38)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ODR\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+X\+\_\+\+MSK}~UINT8\+\_\+C(0x\+F8)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+X\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Y\+\_\+\+MSK}~UINT8\+\_\+C(0x\+F8)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Y\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Z\+\_\+\+MSK}~UINT8\+\_\+C(0x\+FE)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Z\+\_\+\+POS}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RHALL\+\_\+\+MSK}~UINT8\+\_\+C(0x\+FC)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RHALL\+\_\+\+POS}~UINT8\+\_\+C(0x02)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+MSK}~UINT8\+\_\+C(0x\+C0)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+POS}~UINT8\+\_\+C(0x06)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x80)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(0x07)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+PIN\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+PIN\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(0x06)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+POLARITY\+\_\+\+MSK}~UINT8\+\_\+C(0x04)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+POLARITY\+\_\+\+POS}~UINT8\+\_\+C(0x02)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+MSK}~UINT8\+\_\+C(0x02)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+POS}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+POLARITY\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x80)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT\+\_\+\+POS}~UINT8\+\_\+C(0x07)
+\item 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+INT\+\_\+\+POS}~UINT8\+\_\+C(0x06)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x38)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x07)
+\item 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+STATUS\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ OVERFLOW DEFINITIONS $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+XYAXES\+\_\+\+FLIP\+\_\+\+OVERFLOW\+\_\+\+ADCVAL}~INT16\+\_\+C(-\/4096)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ZAXIS\+\_\+\+HALL\+\_\+\+OVERFLOW\+\_\+\+ADCVAL}~INT16\+\_\+C(-\/16384)
+\item 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+OUTPUT}~INT16\+\_\+C(-\/32768)
+\item 
+\#define {\bfseries BMM150\+\_\+\+NEGATIVE\+\_\+\+SATURATION\+\_\+Z}~INT16\+\_\+C(-\/32767)
+\item 
+\#define {\bfseries BMM150\+\_\+\+POSITIVE\+\_\+\+SATURATION\+\_\+Z}~UINT16\+\_\+C(32767)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ PRESET MODE DEFINITIONS $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+LOWPOWER}~UINT8\+\_\+C(0x01)
+\item 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+REGULAR}~UINT8\+\_\+C(0x02)
+\item 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+HIGHACCURACY}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+ENHANCED}~UINT8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ PRESET MODES -\/ REPETITIONS-\/\+XY RATES}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOWPOWER\+\_\+\+REPXY}~UINT8\+\_\+C(1)
+\item 
+\#define {\bfseries BMM150\+\_\+\+REGULAR\+\_\+\+REPXY}~UINT8\+\_\+C(4)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ENHANCED\+\_\+\+REPXY}~UINT8\+\_\+C(7)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGHACCURACY\+\_\+\+REPXY}~UINT8\+\_\+C(23)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ PRESET MODES -\/ REPETITIONS-\/Z RATES}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+LOWPOWER\+\_\+\+REPZ}~UINT8\+\_\+C(2)
+\item 
+\#define {\bfseries BMM150\+\_\+\+REGULAR\+\_\+\+REPZ}~UINT8\+\_\+C(14)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ENHANCED\+\_\+\+REPZ}~UINT8\+\_\+C(26)
+\item 
+\#define {\bfseries BMM150\+\_\+\+HIGHACCURACY\+\_\+\+REPZ}~UINT8\+\_\+C(82)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Register read lengths $<$br$>$}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+LEN}~UINT8\+\_\+C(5)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SETTING\+\_\+\+DATA\+\_\+\+LEN}~UINT8\+\_\+C(8)
+\item 
+\#define {\bfseries BMM150\+\_\+\+XYZR\+\_\+\+DATA\+\_\+\+LEN}~UINT8\+\_\+C(8)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Self test selection macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST}~UINT8\+\_\+C(0)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ADVANCED\+\_\+\+SELF\+\_\+\+TEST}~UINT8\+\_\+C(1)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Self test settings}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+DISABLE\+\_\+\+XY\+\_\+\+AXIS}~UINT8\+\_\+C(0x03)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+REP\+\_\+Z}~UINT8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Advanced self-\/test current settings}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+DISABLE\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+CURRENT}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ENABLE\+\_\+\+NEGATIVE\+\_\+\+CURRENT}~UINT8\+\_\+C(0x02)
+\item 
+\#define {\bfseries BMM150\+\_\+\+ENABLE\+\_\+\+POSITIVE\+\_\+\+CURRENT}~UINT8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Normal self-\/test status}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+STATUS\+\_\+\+XYZ\+\_\+\+FAIL}~UINT8\+\_\+C(0x00)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+STATUS\+\_\+\+SUCCESS}~UINT8\+\_\+C(0x07)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Typedefs}
+\begin{Indent}\textbf{ TYPE DEFINITIONS}\par
+\begin{DoxyCompactItemize}
+\item 
+typedef int8\+\_\+t($\ast$ \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}{bmm150\+\_\+com\+\_\+fptr\+\_\+t}}) (uint8\+\_\+t dev\+\_\+id, uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$read\+\_\+data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Bus communication function pointer which should be mapped to the platform specific read and write functions of the user. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga529b0dd2bf61b40fd771adfee5c78beb}{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}}) (uint32\+\_\+t)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Macro to SET and GET BITS of a register}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BMM150\+\_\+\+SET\+\_\+\+BITS}(reg\+\_\+data,  bitname,  data)
+\item 
+\#define {\bfseries BMM150\+\_\+\+GET\+\_\+\+BITS}(reg\+\_\+data,  bitname)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SET\+\_\+\+BITS\+\_\+\+POS\+\_\+0}(reg\+\_\+data,  bitname,  data)
+\item 
+\#define {\bfseries BMM150\+\_\+\+GET\+\_\+\+BITS\+\_\+\+POS\+\_\+0}(reg\+\_\+data,  bitname)~(reg\+\_\+data \& (bitname\#\#\+\_\+\+MSK))
+\item 
+enum \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga479329e9f54743abfe872741fcce4ae9}{bmm150\+\_\+intf}} \{ \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9ad7bdf3f9fb3ede40544dff5ad13b06ee}{BMM150\+\_\+\+SPI\+\_\+\+INTF}}
+, \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9a519204c91f338db8c681885c191d0caa}{BMM150\+\_\+\+I2\+C\+\_\+\+INTF}}
+ \}
+\begin{DoxyCompactList}\small\item\em Interface selection Enums. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copyright (c) 2020 Bosch Sensortec GmbH. All rights reserved.
+
+BSD-\/3-\/\+Clause
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+
+
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}\+AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+\begin{DoxyDate}{Date}
+10/01/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+3
+\end{DoxyVersion}

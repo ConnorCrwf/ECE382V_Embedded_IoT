@@ -1,0 +1,27 @@
+/**
+ * @file      mainPage.h
+ * @brief     Doxygen text for main page./*
+
+ *  Created on: Oct 3, 2020
+ *      Author: ValvanoJonathan
+ */
+/*!
+ * \mainpage ABBU Documentation Description
+ * June 24, 2020
+
+ * \section sec1 Level of Concern
+\par
+The level of concern is quite high. The device is intended to replace manual bagging. So, if the device were to fail, the operator could revert to manual respiration.
+\par
+When paired with a bag valve resuscitator, the Automated Bag Breathing Unit (ABBU) is intended to provide continuous or intermittent ventilatory support for the care of the individuals who require mechanical ventilation. ABBU was designed to meet the ventilator shortage caused by the COVID-19 pandemic. The use environment is for institutional use. Institutional use includes ICU or other hospital environments including intra-hospital transport.
+ * \image html ABBUside.png width=800px
+ * \image latex ABBUside.png "ABBU Front Panel" width=15cm
+
+#ifndef MAINPAGE_H_
+#define MAINPAGE_H_
+
+
+
+
+
+#endif /* MAINPAGE_H_ */

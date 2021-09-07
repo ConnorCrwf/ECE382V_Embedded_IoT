@@ -1,0 +1,86 @@
+\hypertarget{_fona_8h}{}\doxysection{inc/\+Fona.h File Reference}
+\label{_fona_8h}\index{inc/Fona.h@{inc/Fona.h}}
+
+
+Provide functions to send text messages via SMS using Fona.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___fona_gaf88b3d8851f26733dfeb48c41e68abad}{FONA\+\_\+\+DEBUG}}~1
+\begin{DoxyCompactList}\small\item\em Define for enabling FONA debug output to UART0. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___fona_gae0449dd90e20194f9f4ba79d8eb029d1}{SMS\+\_\+\+SIM}}~1
+\begin{DoxyCompactList}\small\item\em Save SMS on SIM, Fona\+\_\+\+Set\+SMSStorage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___fona_ga2f4da7f4d977b8001c4c3fc53bda41e8}{SMS\+\_\+\+FONA}}~0
+\begin{DoxyCompactList}\small\item\em Save SMS on Fona, Fona\+\_\+\+Set\+SMSStorage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___fona_gab8decec0a3ee48eca32a70b3f2f98cce}{Fona\+\_\+\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em reset Fona \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___fona_ga33244a2d030d5660d51e870c7d5f498b}{Fona\+\_\+\+Init}} (uint32\+\_\+t baud)
+\begin{DoxyCompactList}\small\item\em Initialize Fona. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___fona_gad2172ab89c74fabccc7f0a8631e349b9}{Fona\+\_\+\+Send\+SMS}} (uint8\+\_\+t phone\mbox{[}$\,$\mbox{]}, uint8\+\_\+t message\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Send an SMS Message from a buffer provided. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___fona_ga9cecc6ca366f2c73474a1f56e81059ce}{Fona\+\_\+\+Set\+SMSStorage}} (int place)
+\begin{DoxyCompactList}\small\item\em Set the preferred SMS storage SMS\+\_\+\+SIM = 1 for storage on the SIM.~\newline
+ SMS\+\_\+\+FONA= 0 for storage on the FONA chip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___fona_ga84fae501706eb779c989cf5a70466e5f}{Fona\+\_\+\+Set\+SMSInterrupt}} (int n)
+\begin{DoxyCompactList}\small\item\em configure RI pin n=0 off~\newline
+ n=1 On(\+TCPIP,\+FTP and URC control RI PIN)~\newline
+ n=2 On(only TCPIP control RI PIN) \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___fona_ga0044b57181638a6a0418c87799e5fa35}{Fona\+\_\+\+Get\+Num\+SMS}} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of SMS messages. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___fona_gaa664f621556d29950e3f9e6b9b66de74}{Fona\+\_\+\+Read\+SMS}} (uint32\+\_\+t message\+\_\+index, char $\ast$smsbuff, uint32\+\_\+t maxlen, uint32\+\_\+t $\ast$readlen)
+\begin{DoxyCompactList}\small\item\em Read an SMS message into a provided buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___fona_ga054d300d6c000c4e0789806b17500039}{Fona\+\_\+\+Delete\+SMS}} (uint8\+\_\+t message\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Delete an SMS Message. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___fona_gaea33317caa98bf1c133c3f7a6d263ab0}{Fona\+\_\+\+Get\+SMSSender}} (uint32\+\_\+t message\+\_\+index, char $\ast$sender, int senderlen)
+\begin{DoxyCompactList}\small\item\em Retrieve the sender of the specified SMS message and copy it as a string to the sender buffer. Up to senderlen characters of the sender will be copied and a null terminator will be added if less than senderlen characters are copied to the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide functions to send text messages via SMS using Fona. 
+
+Configure Adafruit FONA Cellular Module \begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2020 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+October 3, 2020
+\end{DoxyDate}
+\hypertarget{_fona_8h_FONAports}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{MSP432 connected to Fona}\label{_fona_8h_FONAports}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Fona }&\cellcolor{\tableheadbgcolor}\textbf{ Connection }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Fona }&\cellcolor{\tableheadbgcolor}\textbf{ Connection }\\\cline{1-2}
+\endhead
+Bat &to 3.\+7V Li\+Ion battery, also on JST-\/2 \\\cline{1-2}
+GND &to MSP432 ground and battery ground, also on JST-\/2 \\\cline{1-2}
++SPKR &to speaker+ \\\cline{1-2}
+-\/SPKR &to speaker-\/ \\\cline{1-2}
+Rst &to J2.\+18, MSP432 GPIO output, P3.\+0 \\\cline{1-2}
+PS &not connected \\\cline{1-2}
+Key &grounded \\\cline{1-2}
+RI &not connected \\\cline{1-2}
+TX &to J1.\+3, MSP432 UCA2\+RXD P3.\+2 \\\cline{1-2}
+RX &to J1.\+4, MSP432 UCA2\+TXD P3.\+3 \\\cline{1-2}
+NS &not connected \\\cline{1-2}
+Vio &to 3.\+3V \\\cline{1-2}
+\end{longtabu}

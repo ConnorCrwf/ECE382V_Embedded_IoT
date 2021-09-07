@@ -1,0 +1,160 @@
+/*
+ * Fona.h
+ *
+*/
+// Jonathan Valvano
+// Sept 30, 2020
+
+/* This example accompanies the book
+   "Embedded Systems: Introduction to Robotics,
+   Jonathan W. Valvano, ISBN: 9781074544300, copyright (c) 2020
+ For more information about my classes, my research, and my books, see
+ http://users.ece.utexas.edu/~valvano/
+
+Simplified BSD License (FreeBSD License)
+Copyright (c) 2020, Jonathan Valvano, All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The views and conclusions contained in the software and documentation are
+those of the authors and should not be interpreted as representing official
+policies, either expressed or implied, of the FreeBSD Project.
+
+
+
+// built-in LED1 connected to P1.0
+// P1.0, P2.0 are an output to profiling scope/logic analyzer
+// Fona pin connection
+ * Bat     to 3.7V LiIon battery, also on JST-2
+ * GND     to MSP432 ground and battery ground, also on JST-2
+ * +SPKR   to speaker+
+ * -SPKR   to speaker-
+ * Rst     to J2.18, MSP432 GPIO output, P3.0
+ * PS      not connected
+ * Key     grounded
+ * RI      not connected
+ * TX      to J1.3, MSP432 UCA2RXD P3.2
+ * RX      to J1.4, MSP432 UCA2TXD P3.3
+ * NS      not connected
+ * Vio     to 3.3V
+// 2 GND
+// 1 VCC 1N4004 diode to +5V Vin (plus side of diode on +5V)
+JST 2-pin - this is the battery input connector. It works with any of our Lipoly batteries but since the charge rate is
+500mA (and the cellular module can spike high current draw!) we suggest our 500mAh (https://adafru.it/drL) or
+1200mAh (http://adafru.it/258)batteries. You can also connect a JST cable here if you have other plans. See the
+cable photo for polarity, red is + and black is gnd. (http://adafru.it/261)
+
+MicroUSB connector - this is the LiPoly/LiIon battery charging port. The SIM800 has a USB interface but its ONLY
+for reprogramming the module with an expensive and unavailable IDE. So charge only! The charge rate is
+500mA max.
+
+Headset jack - this is a 'standard' TRRS 3.5mm phone headset jack with stereo earphone and mono
+microphone. Any 'iPhone' or 'Android' compatible (but not iPhone original) should work. (https://adafru.it/fbK) We
+tried about 10 different ones, and basically the more expensive once are more comfortable and louder but our
+official iPhone headset mic did not work for unknown reasons. Sleeve is Mic+, first ring is ground, then the
+second ring and tip are for stereo audio. The module does not have stereo out so we just tied both together.
+
+Vio - THIS IS THE MOST IMPORTANT PIN! This is the pin that you MUST drive with an external voltage from 3V-
+5V to set the logic level converter. The converter also buffers the indicator LEDs so NOTHING will appear to
+work unless this pin is powered! You should set the voltage to whatever voltage your microcontroller uses for
+logic. A 5V micro (like Arduino) should have it be 5V, a 3V logic micro should set it to 3V.
+
+VBAT & GND - these are the same pins as the 2-pin JST connector. Connect to a 3.7V/4.2V Lipoly/LiIon battery.
+Do not power from a power supply or LDO. Use only a battery, at least 500mA, 1000mAh+ is best since there
+can be 2A spikes of current
+
+Key - This is also a super important pin (but not as important as Vio). This is the power on/off indicator. Its also
+tied to the button in the top left. Tie this pin to ground for 2 seconds to turn the module on or off. It's not a level
+signal so it isn't like "low is off, high is on" - instead you must pulse it for 2 seconds to turn off/on. The module
+comes by default off. Tie this permanently to ground if you never want your micro to turn off the FONA for power
+saving
+
+PS - this is the Power Status pin. It is low when the module is off and high when the module has power. If you're
+using the Key button or pin, you can monitor this pad to see when the module's booted up. This is tied to the Pwr
+LED too.
+
+NS - this is the Network Status pin. It pulses to signal the current status of the module. This is also tied to the Net
+LED so for more detail see the LEDs section below.
+
+Reset - this is module hard reset pin. By default it has a high pull-up (module not in reset). If you absolutely got
+the module in a bad space, toggle this pin low for 100ms to perform a hard reset.
+
+RX & TX - OK now that I made you read all that you can actually use the UART pins. The module uses UART to
+send and receive commands and data. These pins are auto-baud so whatever baud rate you send "AT" after
+reset or boot is the baud rate is used. RX is into the module, TX is out of the module.
+
+RI - this is the Ring Indicator. It is basically the 'interrupt' out pin from the module. It is by default high and will
+pulse low for 120ms when a call is received. It can also be configured to pulse when an SMS is received.
+
+SPK+ and - : This is for connecting an external 8 ohm speaker, max 1W. You can configure the module to route
+calls and FM radio to the headset or the external audio. The two pins are differential so they don't have output
+DC blocking capacitors. You cannot connect this to a stereo, powered speakers or other non-differential
+amplifier without adding a 100uF+ blocking cap in series to the + pin and then not using the - pin. Instead, your
+amp should use GND for the - reference
+
+MIC + and -: this is for connecting an external electret microphone, it will bias the mic with 2V. Most electrets will
+work just fine. No extra circuitry is required for the mic such as a biaser or amplifier, just wire it up directly!
+
+LEDs
+PWR - Blue! Lit when the module is booted and running
+
+NET - Red! You can use this for checking the current state without sending an AT command:
+- 64ms on, 800ms off - the module is running but hasn't made connection to the cellular network yet
+- 64ms on, 3 seconds off - the module has made contact with the cellular network and can send/receive voice
+and SMS
+- 64ms on, 300ms off - the GPRS data connection you requested is active
+By watching the blinks you can get a visual feedback on whats going on.
+
+Charging - Orange! This is next to the microUSB jack. Indicates the onboard lipo charger is charging
+Done - Green! This is next to the JST jack. Indicates that the battery charging is done and the battery is full
+
+Other Breakout Pins
+We scattered a few other breakouts around the board.
+
+Buzzer and PWM (Top right) - These are tied to the PWM output of the module! The PWM capability is quite nice,
+it can set any frequency and duty cycle. The PWM pin is directly output from the module and is 0-2.8Vpp. The
+Buzzer output has a NPN drive transistor so it can run a small vibration motor. Bz+ is the VBat voltage, Bz- is
+toggled on and off to ground.
+
+ADC (left middle) - the SIM800 has an ADC that can read 0-2.8VDC from this pin, referenced to ground. It also
+has an internal battery ADC so you can use this for a sensor or something. You can query the voltage from the
+UART. 2.8V max, people!
+
+5V (left middle) - this is the USB 5V from the microUSB connector when its in and powered. Good if you need to
+know when the microUSB is plugged in and/or want to recharge the battery from an external plug.
+
+2.8V test point - We have a test point for the 2.8V internal regulator, its off to the right.
+ */
+
+#include <stdint.h>
+#define FONA_DEBUG 1
+void Fona_Reset(void);
+void Fona_Init(uint32_t baud);
+/**
+ * @brief Send an SMS Message from a buffer provided
+ *
+ * @param phone The SMS address buffer
+ * @param message The SMS message buffer
+ * @return 1: success, 0: failure
+ */
+int Fona_SendSMS(uint8_t phone[],uint8_t message[]);
+
+

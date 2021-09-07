@@ -1,0 +1,74 @@
+\hypertarget{_p_w_m_8h}{}\doxysection{inc/\+PWM.h File Reference}
+\label{_p_w_m_8h}\index{inc/PWM.h@{inc/PWM.h}}
+
+
+Provide PWM output functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_ga30466ffa13c6c4fd40144227ef363bf8}{PWM\+\_\+\+Init12}} (uint16\+\_\+t period, uint16\+\_\+t duty1, uint16\+\_\+t duty2)
+\begin{DoxyCompactList}\small\item\em PWM on P2.\+4, P2.\+5. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga67279a853e2fd8357fbfc4652c7793c0}{PWM\+\_\+\+Init1}} (uint16\+\_\+t period, uint16\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em PWM1 on P2.\+4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gae25a5246037006a691d27dd40d91282a}{PWM\+\_\+\+Duty1}} (uint16\+\_\+t duty1)
+\begin{DoxyCompactList}\small\item\em set duty cycle on PWM1 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga0c452e91e79d683b80169b2286ac606e}{PWM\+\_\+\+Duty2}} (uint16\+\_\+t duty2)
+\begin{DoxyCompactList}\small\item\em set duty cycle on PWM2 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gad41764ae6f143e84fc95f31041d908dc}{PWM\+\_\+\+Init34}} (uint16\+\_\+t period, uint16\+\_\+t duty3, uint16\+\_\+t duty4)
+\begin{DoxyCompactList}\small\item\em PWM on P2.\+6, P2.\+7. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gab2ebe175ab9a4f725f311aecd0440a4f}{PWM\+\_\+\+Duty3}} (uint16\+\_\+t duty3)
+\begin{DoxyCompactList}\small\item\em set duty cycle on PWM3 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga79062311b4e71ddb7f7d2536799a7a97}{PWM\+\_\+\+Duty4}} (uint16\+\_\+t duty4)
+\begin{DoxyCompactList}\small\item\em set duty cycle on PWM4 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga000086df667f9035e1a158c06dadc068}{PWM\+\_\+\+Robot\+Arm\+Init}} (uint16\+\_\+t period, uint16\+\_\+t duty0, uint16\+\_\+t duty1, uint16\+\_\+t duty2)
+\begin{DoxyCompactList}\small\item\em PWM on P2.\+4 P3.\+5 P5.\+7. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga7cf7fa9dd591fc47a70eb389c27d6f5d}{PWM\+\_\+\+Robot\+Arm\+Duty0}} (uint16\+\_\+t duty0)
+\begin{DoxyCompactList}\small\item\em set duty cycle on P2.\+4 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gaa3026ee8a0bb9b919a51298d28b8095f}{PWM\+\_\+\+Robot\+Arm\+Duty1}} (uint16\+\_\+t duty1)
+\begin{DoxyCompactList}\small\item\em set duty cycle on P3.\+5 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga3f004fca2909b3fb6ffb4f6f7def2770}{PWM\+\_\+\+Robot\+Arm\+Duty2}} (uint16\+\_\+t duty2)
+\begin{DoxyCompactList}\small\item\em set duty cycle on P5.\+7 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___m_s_p432_gaefca40b2021e7721efc07f759b08aa18}{PWM\+\_\+\+Robot\+Arm\+Get\+Duty0}} (void)
+\begin{DoxyCompactList}\small\item\em get duty cycle on P2.\+4 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga53dc1e421fc2fe72a044cf4b791dff0f}{PWM\+\_\+\+Robot\+Arm\+Get\+Duty1}} (void)
+\begin{DoxyCompactList}\small\item\em get duty cycle on P3.\+5 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___m_s_p432_gafb8b080f544726bf699ef5742a079e1a}{PWM\+\_\+\+Robot\+Arm\+Get\+Duty2}} (void)
+\begin{DoxyCompactList}\small\item\em get duty cycle on P5.\+7 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide PWM output functions. 
+
+Four Timer\+A0 PWM outputs \begin{DoxyRemark}{Remarks}
+PWM on P2.\+4 using Timer\+A0 TA0.\+CCR1 
+
+PWM on P2.\+5 using Timer\+A0 TA0.\+CCR2 
+
+PWM on P2.\+6 using Timer\+A0 TA0.\+CCR3 
+
+PWM on P2.\+7 using Timer\+A0 TA0.\+CCR4 
+
+MCLK = SMCLK = 3MHz DCO; ACLK = 32.\+768k\+Hz 
+
+TACCR0 generates a square wave of freq ACLK/1024 =32Hz 
+\end{DoxyRemark}
+\begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

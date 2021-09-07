@@ -1,0 +1,62 @@
+\hypertarget{structbmi160__int__pin__settg}{}\doxysection{bmi160\+\_\+int\+\_\+pin\+\_\+settg Struct Reference}
+\label{structbmi160__int__pin__settg}\index{bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__int__pin__settg_a6e7275f1296541197e11f753b17a1a08}{output\+\_\+en}}\+: 1
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__int__pin__settg_a67d2711cb31805d3bc28865d162064a9}{output\+\_\+mode}}\+: 1
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__int__pin__settg_ac9fec4caa8df0b7e88d23e4a0dfff43a}{output\+\_\+type}}\+: 1
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__int__pin__settg_af43c7dc483058c2504a7d8c68439190b}{edge\+\_\+ctrl}}\+: 1
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__int__pin__settg_ae6a608edba6b8e6cf099dbf7a345ffcc}{input\+\_\+en}}\+: 1
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__int__pin__settg_a0da253f69f742615baa735ad49f7d898}{latch\+\_\+dur}}\+: 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structbmi160__int__pin__settg_af43c7dc483058c2504a7d8c68439190b}\label{structbmi160__int__pin__settg_af43c7dc483058c2504a7d8c68439190b}} 
+\index{bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}!edge\_ctrl@{edge\_ctrl}}
+\index{edge\_ctrl@{edge\_ctrl}!bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}}
+\doxysubsubsection{\texorpdfstring{edge\_ctrl}{edge\_ctrl}}
+{\footnotesize\ttfamily uint16\+\_\+t edge\+\_\+ctrl}
+
+0 -\/ level trigger , 1 -\/ edge trigger ~\newline
+ \mbox{\Hypertarget{structbmi160__int__pin__settg_ae6a608edba6b8e6cf099dbf7a345ffcc}\label{structbmi160__int__pin__settg_ae6a608edba6b8e6cf099dbf7a345ffcc}} 
+\index{bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}!input\_en@{input\_en}}
+\index{input\_en@{input\_en}!bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}}
+\doxysubsubsection{\texorpdfstring{input\_en}{input\_en}}
+{\footnotesize\ttfamily uint16\+\_\+t input\+\_\+en}
+
+To enable either INT1 or INT2 pin as input. 0 -\/ input disabled ,1 -\/ input enabled \mbox{\Hypertarget{structbmi160__int__pin__settg_a0da253f69f742615baa735ad49f7d898}\label{structbmi160__int__pin__settg_a0da253f69f742615baa735ad49f7d898}} 
+\index{bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}!latch\_dur@{latch\_dur}}
+\index{latch\_dur@{latch\_dur}!bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}}
+\doxysubsubsection{\texorpdfstring{latch\_dur}{latch\_dur}}
+{\footnotesize\ttfamily uint16\+\_\+t latch\+\_\+dur}
+
+latch duration \mbox{\Hypertarget{structbmi160__int__pin__settg_a6e7275f1296541197e11f753b17a1a08}\label{structbmi160__int__pin__settg_a6e7275f1296541197e11f753b17a1a08}} 
+\index{bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}!output\_en@{output\_en}}
+\index{output\_en@{output\_en}!bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}}
+\doxysubsubsection{\texorpdfstring{output\_en}{output\_en}}
+{\footnotesize\ttfamily uint16\+\_\+t output\+\_\+en}
+
+To enable either INT1 or INT2 pin as output. 0-\/ output disabled ,1-\/ output enabled \mbox{\Hypertarget{structbmi160__int__pin__settg_a67d2711cb31805d3bc28865d162064a9}\label{structbmi160__int__pin__settg_a67d2711cb31805d3bc28865d162064a9}} 
+\index{bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}!output\_mode@{output\_mode}}
+\index{output\_mode@{output\_mode}!bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}}
+\doxysubsubsection{\texorpdfstring{output\_mode}{output\_mode}}
+{\footnotesize\ttfamily uint16\+\_\+t output\+\_\+mode}
+
+0 -\/ push-\/pull 1-\/ open drain,only valid if output\+\_\+en is set 1 \mbox{\Hypertarget{structbmi160__int__pin__settg_ac9fec4caa8df0b7e88d23e4a0dfff43a}\label{structbmi160__int__pin__settg_ac9fec4caa8df0b7e88d23e4a0dfff43a}} 
+\index{bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}!output\_type@{output\_type}}
+\index{output\_type@{output\_type}!bmi160\_int\_pin\_settg@{bmi160\_int\_pin\_settg}}
+\doxysubsubsection{\texorpdfstring{output\_type}{output\_type}}
+{\footnotesize\ttfamily uint16\+\_\+t output\+\_\+type}
+
+0 -\/ active low , 1 -\/ active high level. if output\+\_\+en is 1,this applies to interrupts,else PMU\+\_\+trigger 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{bmi160__defs_8h}{bmi160\+\_\+defs.\+h}}\end{DoxyCompactItemize}

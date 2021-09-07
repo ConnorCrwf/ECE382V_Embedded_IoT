@@ -1,0 +1,42 @@
+\hypertarget{_clock_8h}{}\doxysection{inc/\+Clock.h File Reference}
+\label{_clock_8h}\index{inc/Clock.h@{inc/Clock.h}}
+
+
+Provide functions that initialize the MSP432 clock module.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_ga6af2755c894e5587fbc63a8a6ad084db}{Clock\+\_\+\+Init48\+MHz}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize clock to 48 MHz. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga9cba0654b940955562e7154f6b6c58f6}{Clock\+\_\+\+Get\+Freq}} (void)
+\begin{DoxyCompactList}\small\item\em Returns current clock bus frequency in Hz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga975183291bc39bd04257c1458ecc4521}{Clock\+\_\+\+Delay1ms}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Software implementation of a busy-\/wait delay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gac04076eda7102f291926b439cc713176}{Clock\+\_\+\+Delay1us}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Software implementation of a busy-\/wait delay. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide functions that initialize the MSP432 clock module. 
+
+Reconfigure MSP432 to run at 48 MHz \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

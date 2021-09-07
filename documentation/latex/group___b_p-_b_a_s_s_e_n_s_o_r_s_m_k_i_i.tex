@@ -1,0 +1,2672 @@
+\hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i}{}\doxysection{BP-\/\+BASSENSORSMKII}
+\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i}\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+
+
+Building Automation Sensors Booster\+Pack.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbmm150__trim__registers}{bmm150\+\_\+trim\+\_\+registers}}
+\begin{DoxyCompactList}\small\item\em bmm150 trim data structure \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__int__ctrl__settings}{bmm150\+\_\+int\+\_\+ctrl\+\_\+settings}}
+\begin{DoxyCompactList}\small\item\em bmm150 interrupt pin settings \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__settings}{bmm150\+\_\+settings}}
+\begin{DoxyCompactList}\small\item\em bmm150 sensor settings \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__raw__mag__data}{bmm150\+\_\+raw\+\_\+mag\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em bmm150 un-\/compensated (raw) magnetometer data \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__mag__data}{bmm150\+\_\+mag\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em bmm150 compensated magnetometer data in int16\+\_\+t format \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}
+\begin{DoxyCompactList}\small\item\em bmm150 device structure \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{union_o_p_t3001___result}{OPT3001\+\_\+\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}} 
+\#define {\bfseries INT8\+\_\+C}(x)~S8\+\_\+C(x)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacd2aa09844a8a245cf7fdbb808e215e5}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacd2aa09844a8a245cf7fdbb808e215e5}} 
+\#define {\bfseries UINT8\+\_\+C}(x)~U8\+\_\+C(x)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga838b261fec725cb0f5d5b6769d3521e7}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga838b261fec725cb0f5d5b6769d3521e7}} 
+\#define {\bfseries INT16\+\_\+C}(x)~S16\+\_\+C(x)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1cb39a2cfaf899fd38730c7637807708}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1cb39a2cfaf899fd38730c7637807708}} 
+\#define {\bfseries UINT16\+\_\+C}(x)~U16\+\_\+C(x)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad78650fb7726f4e99205406569ef403d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad78650fb7726f4e99205406569ef403d}} 
+\#define {\bfseries INT32\+\_\+C}(x)~S32\+\_\+C(x)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2451a7ede7ebd810357f1503e9898ea6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2451a7ede7ebd810357f1503e9898ea6}} 
+\#define {\bfseries UINT32\+\_\+C}(x)~U32\+\_\+C(x)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga93d102802b35d3b8abae9bbe7f0fed75}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga93d102802b35d3b8abae9bbe7f0fed75}} 
+\#define {\bfseries INT64\+\_\+C}(x)~S64\+\_\+C(x)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga134ae84400d184ed2570e3270d5472c2}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga134ae84400d184ed2570e3270d5472c2}} 
+\#define {\bfseries UINT64\+\_\+C}(x)~U64\+\_\+C(x)
+\item 
+\#define \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(x)~x
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacd2aa09844a8a245cf7fdbb808e215e5}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacd2aa09844a8a245cf7fdbb808e215e5}} 
+\#define {\bfseries UINT8\+\_\+C}(x)~x\#\#U
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga838b261fec725cb0f5d5b6769d3521e7}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga838b261fec725cb0f5d5b6769d3521e7}} 
+\#define {\bfseries INT16\+\_\+C}(x)~x
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1cb39a2cfaf899fd38730c7637807708}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1cb39a2cfaf899fd38730c7637807708}} 
+\#define {\bfseries UINT16\+\_\+C}(x)~x\#\#U
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad78650fb7726f4e99205406569ef403d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad78650fb7726f4e99205406569ef403d}} 
+\#define {\bfseries INT32\+\_\+C}(x)~x
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2451a7ede7ebd810357f1503e9898ea6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2451a7ede7ebd810357f1503e9898ea6}} 
+\#define {\bfseries UINT32\+\_\+C}(x)~x\#\#U
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga93d102802b35d3b8abae9bbe7f0fed75}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga93d102802b35d3b8abae9bbe7f0fed75}} 
+\#define {\bfseries INT64\+\_\+C}(x)~x\#\#LL
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga134ae84400d184ed2570e3270d5472c2}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga134ae84400d184ed2570e3270d5472c2}} 
+\#define {\bfseries UINT64\+\_\+C}(x)~x\#\#ULL
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7ff5d79063995fe80672f0b1b54414a0}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7ff5d79063995fe80672f0b1b54414a0}} 
+\#define {\bfseries FOURTEEN\+\_\+\+BIT}~0
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga227e6599c591d4031ed94b1484bef592}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga227e6599c591d4031ed94b1484bef592}} 
+\#define {\bfseries ELEVEN\+\_\+\+BIT}~1
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga00f357f23114a5cdffa63b0d15b8dd1a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga00f357f23114a5cdffa63b0d15b8dd1a}} 
+\#define {\bfseries NINE\+\_\+\+BIT}~2
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1925ae08bce4547be44e6a669b23f62d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1925ae08bce4547be44e6a669b23f62d}} 
+\#define {\bfseries TEMP\+\_\+\+AND\+\_\+\+HUMID}~0
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga82718a8e948978113baad8f7cedc0182}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga82718a8e948978113baad8f7cedc0182}} 
+\#define {\bfseries TEMP\+\_\+\+ONLY}~1
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5f1978f321b670e25c603fd78ce29ade}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5f1978f321b670e25c603fd78ce29ade}} 
+\#define {\bfseries HUMID\+\_\+\+ONLY}~2
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad8906c0208cd948e4f5fe79a920a3b7d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad8906c0208cd948e4f5fe79a920a3b7d}} 
+\#define {\bfseries ACTIVE\+\_\+\+LOW}~0
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga80c342b08fadc7974d3a31817aafaf06}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga80c342b08fadc7974d3a31817aafaf06}} 
+\#define {\bfseries ACTIVE\+\_\+\+HIGH}~1
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabff6a5cd4e26a87de79a69a619348829}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabff6a5cd4e26a87de79a69a619348829}} 
+\#define {\bfseries LEVEL\+\_\+\+MODE}~0
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaba8ceda5c666772bfd30d30b5307395a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaba8ceda5c666772bfd30d30b5307395a}} 
+\#define {\bfseries COMPARATOR\+\_\+\+MODE}~1
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8187a9af791c0a44ba67edd9cf266961}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8187a9af791c0a44ba67edd9cf266961}} 
+\#define {\bfseries MANUAL}~0
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae0a1183431d86617670185119b1416fb}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae0a1183431d86617670185119b1416fb}} 
+\#define {\bfseries TWO\+\_\+\+MINS}~1
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga84cfd7a2545cf46bb555c7843e5f742b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga84cfd7a2545cf46bb555c7843e5f742b}} 
+\#define {\bfseries ONE\+\_\+\+MINS}~2
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0d5db0f736eb865ea93efb3a312a72e4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0d5db0f736eb865ea93efb3a312a72e4}} 
+\#define {\bfseries TEN\+\_\+\+SECONDS}~3
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga3c03473eaac73433428e1313953445fe}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga3c03473eaac73433428e1313953445fe}} 
+\#define {\bfseries FIVE\+\_\+\+SECONDS}~4
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9c60929726732b53a735f891c3dc2566}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9c60929726732b53a735f891c3dc2566}} 
+\#define {\bfseries ONE\+\_\+\+HZ}~5
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab5e8c1235b48cba8f05cbf18c1f086c6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab5e8c1235b48cba8f05cbf18c1f086c6}} 
+\#define {\bfseries TWO\+\_\+\+HZ}~6
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf1ac7d49fb8a2c294d9adf1c87231395}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf1ac7d49fb8a2c294d9adf1c87231395}} 
+\#define {\bfseries FIVE\+\_\+\+HZ}~7
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a2e8b832a4cb12b441cba7371d73f6a}{bmi160\+\_\+init}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is the entry point for sensor.\+It performs the selection of I2\+C/\+SPI read mechanism according to the selected interface and reads the chip-\/id of bmi160 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9bebc4a575526f49e625a87de9478e04}{bmi160\+\_\+get\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the data from the given register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5bea435582a9fdb2c331f64b61e0d6c5}{bmi160\+\_\+set\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the given data to the register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa047f8bacbc2a9c14ff70841304c04d0}{bmi160\+\_\+soft\+\_\+reset}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API resets and restarts the device. All register values are overwritten with default parameters. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab098d2c7fda2965b1699ae13d2a8ffc8}{bmi160\+\_\+set\+\_\+sens\+\_\+conf}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API configures the power mode, range and bandwidth of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga897ca5f1bfbcd1385ace2c05f9f4aef6}{bmi160\+\_\+set\+\_\+power\+\_\+mode}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacf4792d76eafc7607a097c79fcadb92a}{bmi160\+\_\+get\+\_\+power\+\_\+mode}} (struct \mbox{\hyperlink{structbmi160__pmu__status}{bmi160\+\_\+pmu\+\_\+status}} $\ast$pmu\+\_\+status, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API gets the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga86fb957a2384daa2ac17345d76b7e976}{bmi160\+\_\+get\+\_\+sensor\+\_\+data}} (uint8\+\_\+t select\+\_\+sensor, struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$accel, struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$gyro, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads sensor data, stores it in the \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} structure pointer passed by the user. The user can ask for accel data ,gyro data or both sensor data using bmi160\+\_\+select\+\_\+sensor enum. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga62ebd142768bea09f93ab63786dc3cca}{bmi160\+\_\+set\+\_\+int\+\_\+config}} (struct \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}} $\ast$int\+\_\+config, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API configures the necessary interrupt based on the user settings in the \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5a9e71230b2c94b2e609c63def130abf}{bmi160\+\_\+set\+\_\+step\+\_\+counter}} (uint8\+\_\+t step\+\_\+cnt\+\_\+enable, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API enables the step counter feature. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga69193a88550ccf1d99e413dcb5f81730}{bmi160\+\_\+read\+\_\+step\+\_\+counter}} (uint16\+\_\+t $\ast$step\+\_\+val, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the step counter value. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab7dba610f920f63a03e84d80be2aa4db}{bmi160\+\_\+aux\+\_\+read}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$aux\+\_\+data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the mention no of byte of data from the given register address of auxiliary sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2c95d58ed7b50773fae5d97173fc6cb6}{bmi160\+\_\+aux\+\_\+write}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$aux\+\_\+data, uint16\+\_\+t len, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the mention no of byte of data to the given register address of auxiliary sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf9a909f6c1b3be1b33658b2f17632d35}{bmi160\+\_\+aux\+\_\+init}} (const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API initialize the auxiliary sensor in order to access it. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae2a0b717765bc2ee40c0fb92d2f819d2}{bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode}} (uint8\+\_\+t $\ast$data\+\_\+addr, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to setup the auxiliary sensor of bmi160 in auto mode Thus enabling the auto update of 8 bytes of data from auxiliary sensor to BMI160 register address 0x04 to 0x0B. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1a57c45da550b97a5361e84b12f2d2a4}{bmi160\+\_\+config\+\_\+aux\+\_\+mode}} (const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API configures the 0x4C register and settings like Auxiliary sensor manual enable/ disable and aux burst read length. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae1f173b8b1e4ba2601016cc5fe8edc29}{bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode}} (uint8\+\_\+t $\ast$aux\+\_\+data, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to read the raw uncompensated auxiliary sensor data of 8 bytes from BMI160 register address 0x04 to 0x0B. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6f83dc85a8173886ffe58e381fd9e0b8}{bmi160\+\_\+perform\+\_\+self\+\_\+test}} (uint8\+\_\+t select\+\_\+sensor, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This is used to perform self test of accel/gyro of the BMI160 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads data from the fifo buffer. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0b471abfa1d28d5797b5de9c9b457a53}{bmi160\+\_\+set\+\_\+fifo\+\_\+flush}} (const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes fifo\+\_\+flush command to command register.\+This action clears all data in the Fifo without changing fifo configuration settings. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac5cead9788329ba97addba76997de01e}{bmi160\+\_\+set\+\_\+fifo\+\_\+config}} (uint8\+\_\+t config, uint8\+\_\+t enable, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the FIFO configuration in the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga50cbe9d86cba2bb6ef91fdaf3f2ce529}{bmi160\+\_\+set\+\_\+fifo\+\_\+down}} (uint8\+\_\+t fifo\+\_\+down, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to configure the down sampling ratios of the accel and gyro data for FIFO.\+Also, it configures filtered or pre-\/filtered data for the fifo for accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa348ae8d5aa3b20363b49876abff5c69}{bmi160\+\_\+set\+\_\+fifo\+\_\+wm}} (uint8\+\_\+t fifo\+\_\+wm, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the FIFO watermark level in the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae548739f4185fa7fef8cb718ec6bd91d}{bmi160\+\_\+extract\+\_\+accel}} (struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$accel\+\_\+data, uint8\+\_\+t $\ast$accel\+\_\+length, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API parses and extracts the accelerometer frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \char`\"{}accel\+\_\+data\char`\"{} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9b2caa7d4a697e555856dfc6d1c17990}{bmi160\+\_\+extract\+\_\+gyro}} (struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$gyro\+\_\+data, uint8\+\_\+t $\ast$gyro\+\_\+length, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API parses and extracts the gyro frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \char`\"{}gyro\+\_\+data\char`\"{} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab21ca26b7df608549e5d1bd583e4d52a}{bmi160\+\_\+extract\+\_\+aux}} (struct \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}} $\ast$aux\+\_\+data, uint8\+\_\+t $\ast$aux\+\_\+len, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API parses and extracts the aux frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9a12ab7ac43b795f4b6faddde505eb88}{bmi160\+\_\+start\+\_\+foc}} (const struct \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} $\ast$foc\+\_\+conf, struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$offset, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API starts the FOC of accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac6d11bee70aafd12449413c0fce3f014}{bmi160\+\_\+get\+\_\+offsets}} (struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$offset, const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads and stores the offset values of accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae8fd008b08b8a1fc1aadce8e9ebfc1e6}{bmi160\+\_\+set\+\_\+offsets}} (const struct \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} $\ast$foc\+\_\+conf, const struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$offset, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the offset values of accel and gyro to the sensor but these values will be reset on POR or soft reset. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga273ec1cf6a992e0050ce12f33ee4c070}{bmi160\+\_\+update\+\_\+nvm}} (struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the image registers values to NVM which is stored even after POR or soft reset. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53cb6c4b0f60f54bd49b7ff980e3e1d4}{bmi160\+\_\+get\+\_\+int\+\_\+status}} (enum \mbox{\hyperlink{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}{bmi160\+\_\+int\+\_\+status\+\_\+sel}} int\+\_\+status\+\_\+sel, union \mbox{\hyperlink{unionbmi160__int__status}{bmi160\+\_\+int\+\_\+status}} $\ast$int\+\_\+status, struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API gets the interrupt status from the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab4897d93fb8406c61d6bfab44de8c054}{bmm150\+\_\+init}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is the entry point, Call this API before using other APIs. This API reads the chip-\/id of the sensor which is the first step to verify the sensor and also it configures the read mechanism of SPI and I2C interface. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga88285b4abe005f21a5cc9392dddb9de9}{bmm150\+\_\+set\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the given data to the register address of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac3b65c846fa1d826b2addbbef4292a9c}{bmm150\+\_\+get\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the data from the given register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad53c0f1cab22067aaff73d0f172a9dbe}{bmm150\+\_\+soft\+\_\+reset}} (const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to perform soft-\/reset of the sensor where all the registers are reset to their default values except 0x4B. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b8ebfb4d731d5880ef87ecffc72a43b}{bmm150\+\_\+set\+\_\+op\+\_\+mode}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to set the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6e4a56abf879bb4ad9a263d79974d120}{bmm150\+\_\+get\+\_\+op\+\_\+mode}} (uint8\+\_\+t $\ast$op\+\_\+mode, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to get the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafbd9773c2f5c5645d60231f0ba7e8626}{bmm150\+\_\+set\+\_\+presetmode}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to set the preset mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga96ceb625f7af0bf71a8a7ad8aa67fe2b}{bmm150\+\_\+set\+\_\+sensor\+\_\+settings}} (uint16\+\_\+t desired\+\_\+settings, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the sensor settings based on the desired\+\_\+settings and the dev structure configuration. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga12db4420b434ac786c10494dd3f80e7f}{bmm150\+\_\+get\+\_\+sensor\+\_\+settings}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API gets all the sensor settings and updates the dev structure. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabdb1f4947a1e2639326420a9fc7a2b12}{bmm150\+\_\+read\+\_\+mag\+\_\+data}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the magnetometer data from registers 0x42 to 0x49 and updates the dev structure with compensated mag data in micro-\/tesla. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaabaad6846eae116f278af4c87d432b2f}{bmm150\+\_\+perform\+\_\+self\+\_\+test}} (uint8\+\_\+t self\+\_\+test\+\_\+mode, struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to perform the complete self test (both normal and advanced) for the BMM150 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadee930eb8e5ef947b87ee8c217780143}{bmm150\+\_\+get\+\_\+interrupt\+\_\+status}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API obtains the status flags of all interrupt which is used to check for the assertion of interrupts. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabc0895a5c1c847e18e33daf5cd69c1b6}{bmm150\+\_\+aux\+\_\+mag\+\_\+data}} (uint8\+\_\+t $\ast$aux\+\_\+data, struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to compensate the raw mag data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae614cb044b4924a3e82543dfa1588c0a}{HDC2080\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize HDC2080. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae849493d17f837c628f1c810bb67e2af}{HDC2080\+\_\+\+Set\+Temp\+Res}} (int resolution)
+\begin{DoxyCompactList}\small\item\em Set resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7ccf9c7511f78f5a45ddd998bc302ac5}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7ccf9c7511f78f5a45ddd998bc302ac5}} 
+void {\bfseries HDC2080\+\_\+\+Set\+Humid\+Res} (int resolution)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaed728382237b0e62b3dd4a46da10dce}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaed728382237b0e62b3dd4a46da10dce}} 
+void {\bfseries HDC2080\+\_\+\+Set\+Measurement\+Mode} (int mode)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac0429a3a84f1583f30db47fe5b91b95c}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac0429a3a84f1583f30db47fe5b91b95c}} 
+void {\bfseries HDC2080\+\_\+\+Trigger\+Measurement} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf5681a5d7f7b26f5e84deb9e529e8b90}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf5681a5d7f7b26f5e84deb9e529e8b90}} 
+void {\bfseries HDC2080\+\_\+\+Reset} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8870e23a9f231e5774a5a46ad8d17d26}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8870e23a9f231e5774a5a46ad8d17d26}} 
+void {\bfseries HDC2080\+\_\+\+Enable\+Interrupt} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga552f078988d49dc30226e643c9c0e829}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga552f078988d49dc30226e643c9c0e829}} 
+void {\bfseries HDC2080\+\_\+\+Disable\+Interrupt} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a17ecefb08a4101681d1d25371b5bb9}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a17ecefb08a4101681d1d25371b5bb9}} 
+void {\bfseries HDC2080\+\_\+\+Set\+Rate} (int rate)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaed0e6344c2920833260cc45848e8bd58}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaed0e6344c2920833260cc45848e8bd58}} 
+void {\bfseries HDC2080\+\_\+\+Set\+Interrupt\+Polarity} (int polarity)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga24b47b78626aa4cd2072b1db0cdb87a9}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga24b47b78626aa4cd2072b1db0cdb87a9}} 
+void {\bfseries HDC2080\+\_\+\+Set\+Interrupt\+Mode} (int mode)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga14734bc34737749dc0c989f4612ec79d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga14734bc34737749dc0c989f4612ec79d}} 
+uint8\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Interrupt\+Status} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae6300dc6c71a7b372853ac5e05c8e9fe}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae6300dc6c71a7b372853ac5e05c8e9fe}} 
+void {\bfseries HDC2080\+\_\+\+Clear\+Max\+Temp} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf17e24386a1b68a96878192a141cdf0d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf17e24386a1b68a96878192a141cdf0d}} 
+void {\bfseries HDC2080\+\_\+\+Clear\+Max\+Humidity} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga85ee75172b12be4a0d6b0ccb7970da59}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga85ee75172b12be4a0d6b0ccb7970da59}} 
+int32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Max\+Temp} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad3a219e5d9c74e681358cf94a643ecb5}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad3a219e5d9c74e681358cf94a643ecb5}} 
+uint32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Max\+Humidity} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0709338d4e37e56aa5f79244daf5505e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0709338d4e37e56aa5f79244daf5505e}} 
+void {\bfseries HDC2080\+\_\+\+Enable\+Threshold\+Interrupt} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1d018d752c042a6df6f9683d8e5fffa8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1d018d752c042a6df6f9683d8e5fffa8}} 
+void {\bfseries HDC2080\+\_\+\+Disable\+Threshold\+Interrupt} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6d016e75a5eb73c344b755e0c950b1e0}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6d016e75a5eb73c344b755e0c950b1e0}} 
+void {\bfseries HDC2080\+\_\+\+Enable\+DRDYInterrupt} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae8c04953d945f3b1d21d93ab6c4a1251}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae8c04953d945f3b1d21d93ab6c4a1251}} 
+void {\bfseries HDC2080\+\_\+\+Disable\+DRDYInterrupt} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab9de9a9619bf08de973aef003092da0f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab9de9a9619bf08de973aef003092da0f}} 
+int32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Temperature} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga269ca67ddfe742b8dc88b6471a0e4e6a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga269ca67ddfe742b8dc88b6471a0e4e6a}} 
+uint32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Humidity} (void)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacccfd1c8b53cb8b154cbab377d9cd9e9}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacccfd1c8b53cb8b154cbab377d9cd9e9}} 
+void {\bfseries HDC2080\+\_\+\+Enable\+Heater} (void)
+\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga75ff1bf3940f1760945f74a147547333}{OPT3001\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize OPT3001. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{union_o_p_t3001___result}{OPT3001\+\_\+\+Result}} \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac896869fc163b39f9e92a972fbbd592b}{OPT3001\+\_\+\+Read\+Light}} (void)
+\begin{DoxyCompactList}\small\item\em return last OPT3001 measurement \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53c4064a5e46f7cd1834ddeb7f67a2af}{TMP117\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize TMP117. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga84b50d453da6c785bac3a1aaac9165a3}{TMP117\+\_\+\+Arm}} (void($\ast$pt)(int16\+\_\+t t))
+\begin{DoxyCompactList}\small\item\em Initialize TMP117 with interrupts. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga964a0743881d4ef3ca92f08990a632d5}{TMP117\+\_\+\+Read\+Temperature}} (void)
+\begin{DoxyCompactList}\small\item\em return last TMP117 measurement \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macro to SET and GET BITS of a register}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga479329e9f54743abfe872741fcce4ae9}{bmm150\+\_\+intf}} \{ \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9ad7bdf3f9fb3ede40544dff5ad13b06ee}{BMM150\+\_\+\+SPI\+\_\+\+INTF}}
+, \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9a519204c91f338db8c681885c191d0caa}{BMM150\+\_\+\+I2\+C\+\_\+\+INTF}}
+ \}
+\begin{DoxyCompactList}\small\item\em Interface selection Enums. \end{DoxyCompactList}\item 
+\#define {\bfseries BMM150\+\_\+\+SET\+\_\+\+BITS}(reg\+\_\+data,  bitname,  data)
+\item 
+\#define {\bfseries BMM150\+\_\+\+GET\+\_\+\+BITS}(reg\+\_\+data,  bitname)
+\item 
+\#define {\bfseries BMM150\+\_\+\+SET\+\_\+\+BITS\+\_\+\+POS\+\_\+0}(reg\+\_\+data,  bitname,  data)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab901d7ff4cfb84e13576f813e84019ec}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab901d7ff4cfb84e13576f813e84019ec}} 
+\#define {\bfseries BMM150\+\_\+\+GET\+\_\+\+BITS\+\_\+\+POS\+\_\+0}(reg\+\_\+data,  bitname)~(reg\+\_\+data \& (bitname\#\#\+\_\+\+MSK))
+\end{DoxyCompactItemize}
+\doxysubsection*{TYPE DEFINITIONS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}} 
+typedef int8\+\_\+t($\ast$ \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}{bmm150\+\_\+com\+\_\+fptr\+\_\+t}}) (uint8\+\_\+t dev\+\_\+id, uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$read\+\_\+data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Bus communication function pointer which should be mapped to the platform specific read and write functions of the user. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga529b0dd2bf61b40fd771adfee5c78beb}{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}}) (uint32\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsection*{C standard macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga070d2ce7b6bb7e5c05602aa8c308d0c4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga070d2ce7b6bb7e5c05602aa8c308d0c4}} 
+\#define {\bfseries NULL}~((void $\ast$) 0)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa8cecfc5c5c054d2875c03e77b7be15d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa8cecfc5c5c054d2875c03e77b7be15d}} 
+\#define {\bfseries TRUE}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa93f0eb578d23995850d61f7d61c55c1}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa93f0eb578d23995850d61f7d61c55c1}} 
+\#define {\bfseries FALSE}~UINT8\+\_\+C(0)
+\end{DoxyCompactItemize}
+\doxysubsection*{API success code}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaeab15ff61e3bf4171b5f519bf7dc560}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaeab15ff61e3bf4171b5f519bf7dc560}} 
+\#define {\bfseries BMM150\+\_\+\+OK}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(0)
+\end{DoxyCompactItemize}
+\doxysubsection*{API error codes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga888858436e873087738b04b5cf6cad6f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga888858436e873087738b04b5cf6cad6f}} 
+\#define {\bfseries BMM150\+\_\+\+E\+\_\+\+NULL\+\_\+\+PTR}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/1)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga15beb9eb9d22b3580f6e556c032c28b7}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga15beb9eb9d22b3580f6e556c032c28b7}} 
+\#define {\bfseries BMM150\+\_\+\+E\+\_\+\+DEV\+\_\+\+NOT\+\_\+\+FOUND}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/2)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8ea6d4a62d190271e5d81d9ba841fc52}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8ea6d4a62d190271e5d81d9ba841fc52}} 
+\#define {\bfseries BMM150\+\_\+\+E\+\_\+\+INVALID\+\_\+\+CONFIG}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/3)
+\end{DoxyCompactItemize}
+\doxysubsection*{API warning codes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga94a6319fda586fe44e57b3c636c73bad}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga94a6319fda586fe44e57b3c636c73bad}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+YZ\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(1)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga04a430294261593fc994ecb3dd89b8dd}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga04a430294261593fc994ecb3dd89b8dd}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XZ\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(2)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga80f345c728c74ab2bfcbb524d20cdc52}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga80f345c728c74ab2bfcbb524d20cdc52}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+Z\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(3)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae80db964b313a18fd830f0ba981f1b84}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae80db964b313a18fd830f0ba981f1b84}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XY\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(4)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2c30d87bf583772b372b6022102c42c8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2c30d87bf583772b372b6022102c42c8}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+Y\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(5)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga03302a1dd8a9a0860853db609facb02a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga03302a1dd8a9a0860853db609facb02a}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+X\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(6)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2f7e1d70f3762cc2f0c15c88f3c54b0f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2f7e1d70f3762cc2f0c15c88f3c54b0f}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XYZ\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(7)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadfdfb6f13d803880acf88a0c4d5a933a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadfdfb6f13d803880acf88a0c4d5a933a}} 
+\#define {\bfseries BMM150\+\_\+\+W\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(8)
+\end{DoxyCompactItemize}
+\doxysubsection*{CHIP ID \& SOFT RESET VALUES $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4f3e92e863e3bc56eb68e7fd7edad30f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4f3e92e863e3bc56eb68e7fd7edad30f}} 
+\#define {\bfseries BMM150\+\_\+\+CHIP\+\_\+\+ID}~UINT8\+\_\+C(0x32)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad4e1a7316da5f4ef680fc284dbb97f1d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad4e1a7316da5f4ef680fc284dbb97f1d}} 
+\#define {\bfseries BMM150\+\_\+\+SET\+\_\+\+SOFT\+\_\+\+RESET}~UINT8\+\_\+C(0x82)
+\end{DoxyCompactItemize}
+\doxysubsection*{POWER MODE DEFINTIONS $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga59038d30adf852a9189271be212916d0}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga59038d30adf852a9189271be212916d0}} 
+\#define {\bfseries BMM150\+\_\+\+NORMAL\+\_\+\+MODE}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf473dd93df57b0a43966fbb08c58f3fd}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf473dd93df57b0a43966fbb08c58f3fd}} 
+\#define {\bfseries BMM150\+\_\+\+FORCED\+\_\+\+MODE}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaa3f3198d96e944305377175fd55da1a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaa3f3198d96e944305377175fd55da1a}} 
+\#define {\bfseries BMM150\+\_\+\+SLEEP\+\_\+\+MODE}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga367ff57502c166a70c7c2dc72a5dcc43}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga367ff57502c166a70c7c2dc72a5dcc43}} 
+\#define {\bfseries BMM150\+\_\+\+SUSPEND\+\_\+\+MODE}~UINT8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\doxysubsection*{I2C ADDRESS $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacec262689d340c2160a64008a669aa17}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacec262689d340c2160a64008a669aa17}} 
+\#define {\bfseries BMM150\+\_\+\+DEFAULT\+\_\+\+I2\+C\+\_\+\+ADDRESS}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac04e274fd3110a712d57a83a66f56574}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac04e274fd3110a712d57a83a66f56574}} 
+\#define {\bfseries BMM150\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+\+CSB\+\_\+\+LOW\+\_\+\+SDO\+\_\+\+HIGH}~UINT8\+\_\+C(0x11)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga36e8f78f8495e6f498604c2c725c21fd}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga36e8f78f8495e6f498604c2c725c21fd}} 
+\#define {\bfseries BMM150\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+\+CSB\+\_\+\+HIGH\+\_\+\+SDO\+\_\+\+LOW}~UINT8\+\_\+C(0x12)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga3294feea0bdf7c0f8590e1feddf23906}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga3294feea0bdf7c0f8590e1feddf23906}} 
+\#define {\bfseries BMM150\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+\+CSB\+\_\+\+HIGH\+\_\+\+SDO\+\_\+\+HIGH}~UINT8\+\_\+C(0x13)
+\end{DoxyCompactItemize}
+\doxysubsection*{Power mode settings $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a5d9c2dd81e018449133ec0271a8469}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a5d9c2dd81e018449133ec0271a8469}} 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CNTRL\+\_\+\+DISABLE}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8b4324eb9f0ee083a20ef9e328ea227f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8b4324eb9f0ee083a20ef9e328ea227f}} 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CNTRL\+\_\+\+ENABLE}~UINT8\+\_\+C(0x01)
+\end{DoxyCompactItemize}
+\doxysubsection*{Sensor delay time settings $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae444e3a85c42d159494a3aaa009acf96}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae444e3a85c42d159494a3aaa009acf96}} 
+\#define {\bfseries BMM150\+\_\+\+SOFT\+\_\+\+RESET\+\_\+\+DELAY}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaec6af2af456b44f31f53c69235028ed6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaec6af2af456b44f31f53c69235028ed6}} 
+\#define {\bfseries BMM150\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+DELAY}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf14f592affbc3c378989438565e1021e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf14f592affbc3c378989438565e1021e}} 
+\#define {\bfseries BMM150\+\_\+\+START\+\_\+\+UP\+\_\+\+TIME}~UINT8\+\_\+C(3)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8971ae38df387b4423cd88b82aa2342d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8971ae38df387b4423cd88b82aa2342d}} 
+\#define {\bfseries BMM150\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+DELAY}~UINT8\+\_\+C(4)
+\end{DoxyCompactItemize}
+\doxysubsection*{ENABLE/\+DISABLE DEFINITIONS $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaf00be9e69422a82831aa42631ba8899}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaaf00be9e69422a82831aa42631ba8899}} 
+\#define {\bfseries BMM150\+\_\+\+XY\+\_\+\+CHANNEL\+\_\+\+ENABLE}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2f287eb0d76864537f15213886090aff}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2f287eb0d76864537f15213886090aff}} 
+\#define {\bfseries BMM150\+\_\+\+XY\+\_\+\+CHANNEL\+\_\+\+DISABLE}~UINT8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\doxysubsection*{Register Address}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0c3d28ca135139ff161d04d4a62e97b1}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0c3d28ca135139ff161d04d4a62e97b1}} 
+\#define {\bfseries BMM150\+\_\+\+CHIP\+\_\+\+ID\+\_\+\+ADDR}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga97183a59b8ef57948cd3c8553e84e2d6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga97183a59b8ef57948cd3c8553e84e2d6}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+X\+\_\+\+LSB}~UINT8\+\_\+C(0x42)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac980d0255f3e86bebed102696b46dc41}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac980d0255f3e86bebed102696b46dc41}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+READY\+\_\+\+STATUS}~UINT8\+\_\+C(0x48)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4c316e2cf4b161c229b432e93ba69387}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4c316e2cf4b161c229b432e93ba69387}} 
+\#define {\bfseries BMM150\+\_\+\+INTERRUPT\+\_\+\+STATUS}~UINT8\+\_\+C(0x4A)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf5a0a241dbf7482c2d4981d464c04674}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf5a0a241dbf7482c2d4981d464c04674}} 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CONTROL\+\_\+\+ADDR}~UINT8\+\_\+C(0x4B)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4aa63fdab9b4aebde8973bc159e3119e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4aa63fdab9b4aebde8973bc159e3119e}} 
+\#define {\bfseries BMM150\+\_\+\+OP\+\_\+\+MODE\+\_\+\+ADDR}~UINT8\+\_\+C(0x4C)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9a3c738a8f096327529103205394eb3a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9a3c738a8f096327529103205394eb3a}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+CONFIG\+\_\+\+ADDR}~UINT8\+\_\+C(0x4D)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga89a8feee9832b4c066996a14538fa2de}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga89a8feee9832b4c066996a14538fa2de}} 
+\#define {\bfseries BMM150\+\_\+\+AXES\+\_\+\+ENABLE\+\_\+\+ADDR}~UINT8\+\_\+C(0x4E)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac62a25e704f97becd8244199611ff717}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac62a25e704f97becd8244199611ff717}} 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+ADDR}~UINT8\+\_\+C(0x4F)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabd2e2ad720f86ad0d9e6ece900b6628d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabd2e2ad720f86ad0d9e6ece900b6628d}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+ADDR}~UINT8\+\_\+C(0x50)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9c6f8a06b24b62550a7f2015607b6f52}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9c6f8a06b24b62550a7f2015607b6f52}} 
+\#define {\bfseries BMM150\+\_\+\+REP\+\_\+\+XY\+\_\+\+ADDR}~UINT8\+\_\+C(0x51)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6ce4d850289faf75a778b68bd1a3c33e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6ce4d850289faf75a778b68bd1a3c33e}} 
+\#define {\bfseries BMM150\+\_\+\+REP\+\_\+\+Z\+\_\+\+ADDR}~UINT8\+\_\+C(0x52)
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros to select the sensor settings to be set by the user}
+\label{_amgrpc91c1720e4fa9c470a7fd37fa7d67f97}%
+These values are internal for API implementation. Don\textquotesingle{}t relate this to data sheet. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8a148647b00f427aa281d599f82808cd}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8a148647b00f427aa281d599f82808cd}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+\+SEL}~UINT16\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga51721809d21583d12cdd9c3ff5ecd915}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga51721809d21583d12cdd9c3ff5ecd915}} 
+\#define {\bfseries BMM150\+\_\+\+CONTROL\+\_\+\+MEASURE\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 1)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac00bc4d1e75cfbc1c662a24203c025f3}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac00bc4d1e75cfbc1c662a24203c025f3}} 
+\#define {\bfseries BMM150\+\_\+\+XY\+\_\+\+REP\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 2)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0c23f45dd9c1715af8fc1196a453a967}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0c23f45dd9c1715af8fc1196a453a967}} 
+\#define {\bfseries BMM150\+\_\+\+Z\+\_\+\+REP\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 3)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae41907b55a2922bb2ec57b3ff4c937be}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae41907b55a2922bb2ec57b3ff4c937be}} 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+PIN\+\_\+\+EN\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 4)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2545bda4d960ac6b3ff3ff2e1eab1fb1}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2545bda4d960ac6b3ff3ff2e1eab1fb1}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+PIN\+\_\+\+EN\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 5)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1db8e08e38c5608d98da56929e31edb8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1db8e08e38c5608d98da56929e31edb8}} 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+POLARITY\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 6)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga864cced2dc2198714a983caabcc15104}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga864cced2dc2198714a983caabcc15104}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 7)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga42d80018b6fbba8660ec651f4bff3a68}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga42d80018b6fbba8660ec651f4bff3a68}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+POLARITY\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 8)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga027182e11bafb47085f223dc3092088a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga027182e11bafb47085f223dc3092088a}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 9)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafc6359bc656da3823dbbb0d67bf37c4b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafc6359bc656da3823dbbb0d67bf37c4b}} 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 10)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1ddcd00f6d852367029a73faed433075}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1ddcd00f6d852367029a73faed433075}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 11)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaadddd8d5c6a55cd7f76497ca2c8a8d4a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaadddd8d5c6a55cd7f76497ca2c8a8d4a}} 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 12)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga92295b9050f0ab7c77f997374a224a6d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga92295b9050f0ab7c77f997374a224a6d}} 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+SETTING\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 13)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafe347f30221ea77ea52121b65f30f63a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafe347f30221ea77ea52121b65f30f63a}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+SETTING\+\_\+\+SEL}~UINT16\+\_\+C(1 $<$$<$ 14)
+\end{DoxyCompactItemize}
+\doxysubsection*{DATA RATE DEFINITIONS $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga49bd59d71923ec7365532fe85932eba8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga49bd59d71923ec7365532fe85932eba8}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+10\+HZ}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2d1c67e005d23558b15d69d13cb24a2e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2d1c67e005d23558b15d69d13cb24a2e}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+02\+HZ}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaae81f66171c9443f458ba233953a34d6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaae81f66171c9443f458ba233953a34d6}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+06\+HZ}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf52fa42e52cc3a250f028f86035974ee}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf52fa42e52cc3a250f028f86035974ee}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+08\+HZ}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2720c433abcb58b10a05e2df4e19eb51}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2720c433abcb58b10a05e2df4e19eb51}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+15\+HZ}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaec2da85c333c50753ea44752763b0c4a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaec2da85c333c50753ea44752763b0c4a}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+20\+HZ}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab0a3a07222ec43ae4ccabd44bf35f47d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab0a3a07222ec43ae4ccabd44bf35f47d}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+25\+HZ}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga110129672608d8f357074ea7e3a911fa}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga110129672608d8f357074ea7e3a911fa}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+30\+HZ}~UINT8\+\_\+C(0x07)
+\end{DoxyCompactItemize}
+\doxysubsection*{TRIM REGISTERS $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6f4842863a3a45a1dda8aeab5380a704}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6f4842863a3a45a1dda8aeab5380a704}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+X1}~UINT8\+\_\+C(0x5D)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga76d7f35a931f9f71e39ed60e13a9d5e4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga76d7f35a931f9f71e39ed60e13a9d5e4}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Y1}~UINT8\+\_\+C(0x5E)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga90c5e736eab103bb8298afe5ceff3142}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga90c5e736eab103bb8298afe5ceff3142}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z4\+\_\+\+LSB}~UINT8\+\_\+C(0x62)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab2d62243fc52243237e257c184e0ff3f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab2d62243fc52243237e257c184e0ff3f}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z4\+\_\+\+MSB}~UINT8\+\_\+C(0x63)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga321605f1e28728eb836756584f18a5c3}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga321605f1e28728eb836756584f18a5c3}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+X2}~UINT8\+\_\+C(0x64)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad48401100ea30b4fe0751f83d3596e57}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad48401100ea30b4fe0751f83d3596e57}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Y2}~UINT8\+\_\+C(0x65)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf5e2f18c796516955708266a654224f0}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf5e2f18c796516955708266a654224f0}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z2\+\_\+\+LSB}~UINT8\+\_\+C(0x68)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabfd26fc351558a45693119519e14ca7a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabfd26fc351558a45693119519e14ca7a}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z2\+\_\+\+MSB}~UINT8\+\_\+C(0x69)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4b86d52b09ddfdba715a35c3f8e77f2f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4b86d52b09ddfdba715a35c3f8e77f2f}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z1\+\_\+\+LSB}~UINT8\+\_\+C(0x6A)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa7fc2c149bac3c4c037a900a9ca6151f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa7fc2c149bac3c4c037a900a9ca6151f}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z1\+\_\+\+MSB}~UINT8\+\_\+C(0x6B)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4dd67e60e4ca6ceba96c7822abc31a2b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga4dd67e60e4ca6ceba96c7822abc31a2b}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XYZ1\+\_\+\+LSB}~UINT8\+\_\+C(0x6C)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae379d42737c29ce3bdf8a21fa4569364}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae379d42737c29ce3bdf8a21fa4569364}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XYZ1\+\_\+\+MSB}~UINT8\+\_\+C(0x6D)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab9ac3938b949b6200668a9f0b8701920}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab9ac3938b949b6200668a9f0b8701920}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z3\+\_\+\+LSB}~UINT8\+\_\+C(0x6E)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b42131d3183394d176bc988f6ef6b36}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b42131d3183394d176bc988f6ef6b36}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+Z3\+\_\+\+MSB}~UINT8\+\_\+C(0x6F)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae4930ced79355b8039ded668e72cf241}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae4930ced79355b8039ded668e72cf241}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XY2}~UINT8\+\_\+C(0x70)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafda35398d4e1b971ea8801da17341120}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafda35398d4e1b971ea8801da17341120}} 
+\#define {\bfseries BMM150\+\_\+\+DIG\+\_\+\+XY1}~UINT8\+\_\+C(0x71)
+\end{DoxyCompactItemize}
+\doxysubsection*{Threshold interrupt setting macros for x,y,z axes selection}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacc67ab3ab69ac01c5103473f2fc5fbfd}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacc67ab3ab69ac01c5103473f2fc5fbfd}} 
+\#define {\bfseries BMM150\+\_\+\+THRESHOLD\+\_\+X}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga40e3722bf5968c28a08a68cfbf8a45ef}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga40e3722bf5968c28a08a68cfbf8a45ef}} 
+\#define {\bfseries BMM150\+\_\+\+THRESHOLD\+\_\+Y}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8eee4adc9c27238b3559a3d120d28ca4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8eee4adc9c27238b3559a3d120d28ca4}} 
+\#define {\bfseries BMM150\+\_\+\+THRESHOLD\+\_\+Z}~UINT8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\doxysubsection*{User configurable interrupt setting macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae70c03de48f609fd7c0ce910ccc367c4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae70c03de48f609fd7c0ce910ccc367c4}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+ENABLE}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafb571f959248cb5c9c64a7dcf843fe27}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafb571f959248cb5c9c64a7dcf843fe27}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+DISABLE}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga486c396fdf712cc623b9e9d35dd3f127}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga486c396fdf712cc623b9e9d35dd3f127}} 
+\#define {\bfseries BMM150\+\_\+\+ACTIVE\+\_\+\+HIGH\+\_\+\+POLARITY}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2987930ff7b045e01a53bdf6eecbe253}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2987930ff7b045e01a53bdf6eecbe253}} 
+\#define {\bfseries BMM150\+\_\+\+ACTIVE\+\_\+\+LOW\+\_\+\+POLARITY}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga74a1dcf326f7e6a2117e6901b2a0025f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga74a1dcf326f7e6a2117e6901b2a0025f}} 
+\#define {\bfseries BMM150\+\_\+\+LATCHED}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadd32543d7b560e6e0c457ce5de5a5c86}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadd32543d7b560e6e0c457ce5de5a5c86}} 
+\#define {\bfseries BMM150\+\_\+\+NON\+\_\+\+LATCHED}~UINT8\+\_\+C(0x00)
+\end{DoxyCompactItemize}
+\doxysubsection*{Interrupt status}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b4a34979bafaf4f5919e7ce680c6594}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b4a34979bafaf4f5919e7ce680c6594}} 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+X}~UINT16\+\_\+C(0x0001)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6d41304b2bc0d6a614b20ef4a8df28ee}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6d41304b2bc0d6a614b20ef4a8df28ee}} 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Y}~UINT16\+\_\+C(0x0002)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabb7931fd88fddf1812cdac483a16cf88}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabb7931fd88fddf1812cdac483a16cf88}} 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Z}~UINT16\+\_\+C(0x0004)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaab2697fd37ee109424df56b4a83592e2}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaab2697fd37ee109424df56b4a83592e2}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+X}~UINT16\+\_\+C(0x0008)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa2d11bef91a5ee5c846867a37aacc12e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa2d11bef91a5ee5c846867a37aacc12e}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Y}~UINT16\+\_\+C(0x0010)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga34046beb28da9e25f319d78eab0cd856}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga34046beb28da9e25f319d78eab0cd856}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+Z}~UINT16\+\_\+C(0x0020)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga472bff91fb59430c5185dc0a8e2bc6f4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga472bff91fb59430c5185dc0a8e2bc6f4}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERFLOW\+\_\+\+INT}~UINT16\+\_\+C(0x0040)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga83a08bda67047a910e93c2608ffe1e54}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga83a08bda67047a910e93c2608ffe1e54}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT}~UINT16\+\_\+C(0x0080)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae80f53d4692065b51a8df454404fdf05}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae80f53d4692065b51a8df454404fdf05}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+READY\+\_\+\+INT}~UINT16\+\_\+C(0x0100)
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros for bit masking}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6656c33f4ff3c1c007e9b82335cf38ab}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6656c33f4ff3c1c007e9b82335cf38ab}} 
+\#define {\bfseries BMM150\+\_\+\+PWR\+\_\+\+CNTRL\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga545c4a7ba4722500d6a2821aabe0e699}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga545c4a7ba4722500d6a2821aabe0e699}} 
+\#define {\bfseries BMM150\+\_\+\+CONTROL\+\_\+\+MEASURE\+\_\+\+MSK}~UINT8\+\_\+C(0x38)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaab1625dbd6972438a129d2e32f08a16d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaab1625dbd6972438a129d2e32f08a16d}} 
+\#define {\bfseries BMM150\+\_\+\+CONTROL\+\_\+\+MEASURE\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae25146f0841521534b67f6fa5fa5218d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae25146f0841521534b67f6fa5fa5218d}} 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CONTROL\+\_\+\+BIT\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0c2108207a9b05c12663216db43cd953}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0c2108207a9b05c12663216db43cd953}} 
+\#define {\bfseries BMM150\+\_\+\+POWER\+\_\+\+CONTROL\+\_\+\+BIT\+\_\+\+POS}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2ed8b124283f5a8b052fd31ae7dda569}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2ed8b124283f5a8b052fd31ae7dda569}} 
+\#define {\bfseries BMM150\+\_\+\+OP\+\_\+\+MODE\+\_\+\+MSK}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafda9fb86796f4c4b4e703f492ce216ed}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafda9fb86796f4c4b4e703f492ce216ed}} 
+\#define {\bfseries BMM150\+\_\+\+OP\+\_\+\+MODE\+\_\+\+POS}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac356fd2c804c2da853436e16201bb39e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac356fd2c804c2da853436e16201bb39e}} 
+\#define {\bfseries BMM150\+\_\+\+ODR\+\_\+\+MSK}~UINT8\+\_\+C(0x38)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaeac8b4bc79e2f9daac20ffd475a73e05}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaeac8b4bc79e2f9daac20ffd475a73e05}} 
+\#define {\bfseries BMM150\+\_\+\+ODR\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga952f91e7cac473b70e866b23aece8fbf}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga952f91e7cac473b70e866b23aece8fbf}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+X\+\_\+\+MSK}~UINT8\+\_\+C(0x\+F8)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5adc2f4ea07bcedf8e77630b5edfa3cf}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5adc2f4ea07bcedf8e77630b5edfa3cf}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+X\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab32d9400291b2a4663f4b58a66e69987}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab32d9400291b2a4663f4b58a66e69987}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Y\+\_\+\+MSK}~UINT8\+\_\+C(0x\+F8)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa592871f97a623ce6e2afe45303a2953}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa592871f97a623ce6e2afe45303a2953}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Y\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga986d5cc7d9446cfe96bdb780abce74c7}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga986d5cc7d9446cfe96bdb780abce74c7}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Z\+\_\+\+MSK}~UINT8\+\_\+C(0x\+FE)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabe646b483626271a96bcbd9d708e1dbb}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabe646b483626271a96bcbd9d708e1dbb}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+Z\+\_\+\+POS}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gade03ff196c69db24827960ee95a1aecb}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gade03ff196c69db24827960ee95a1aecb}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RHALL\+\_\+\+MSK}~UINT8\+\_\+C(0x\+FC)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8e3d956394d8e5726469aec9389fd205}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8e3d956394d8e5726469aec9389fd205}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+RHALL\+\_\+\+POS}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac8eb6d7fd78c6fbb64b1cd9ab6972797}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac8eb6d7fd78c6fbb64b1cd9ab6972797}} 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5f989ad279daee6ed020efff2ead4303}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5f989ad279daee6ed020efff2ead4303}} 
+\#define {\bfseries BMM150\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+MSK}~UINT8\+\_\+C(0x\+C0)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf48a3b129a2fc9a8dea057dd317a52bd}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf48a3b129a2fc9a8dea057dd317a52bd}} 
+\#define {\bfseries BMM150\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+POS}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac7886d152790cca4273e3647d08e6cef}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac7886d152790cca4273e3647d08e6cef}} 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga3fb2e35230df5f0cdc466596f7eaa27c}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga3fb2e35230df5f0cdc466596f7eaa27c}} 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0ff5eed97208678cd89b05882e150f6b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0ff5eed97208678cd89b05882e150f6b}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+PIN\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga98d2ca4d86fac35900d4d5f755ab7940}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga98d2ca4d86fac35900d4d5f755ab7940}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+PIN\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga88024ceb300ad8a9b1ee5a4255c8a84f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga88024ceb300ad8a9b1ee5a4255c8a84f}} 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+POLARITY\+\_\+\+MSK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2f5563c023d45dc5bcf09a1689ce429b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2f5563c023d45dc5bcf09a1689ce429b}} 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+POLARITY\+\_\+\+POS}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7aab5f095a25947b16fc5a9b122f344b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7aab5f095a25947b16fc5a9b122f344b}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+MSK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacfc902bb655b1d2e2e4256a5085e6064}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacfc902bb655b1d2e2e4256a5085e6064}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+POS}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2643a7722210bda41ea1b611b3ab107c}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2643a7722210bda41ea1b611b3ab107c}} 
+\#define {\bfseries BMM150\+\_\+\+INT\+\_\+\+POLARITY\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8ac2909be129e0632c0244eb7b9deaa2}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga8ac2909be129e0632c0244eb7b9deaa2}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9823c43fea416cf8009de77da5572295}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9823c43fea416cf8009de77da5572295}} 
+\#define {\bfseries BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT\+\_\+\+POS}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac79f5b0b52b9eee50e374245c4524161}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac79f5b0b52b9eee50e374245c4524161}} 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa4edc012c386f7c193bf3e40a325a14b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa4edc012c386f7c193bf3e40a325a14b}} 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+INT\+\_\+\+POS}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga575e4da1c0354a8230f9af750bfb262f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga575e4da1c0354a8230f9af750bfb262f}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x38)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1cca3f6e5ae12231a6fe398dd1ac64e8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1cca3f6e5ae12231a6fe398dd1ac64e8}} 
+\#define {\bfseries BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+POS}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1b8658f2d5484f74cb604ef530e0967a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1b8658f2d5484f74cb604ef530e0967a}} 
+\#define {\bfseries BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga43243b4162867b9812cbc9e8ac59f881}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga43243b4162867b9812cbc9e8ac59f881}} 
+\#define {\bfseries BMM150\+\_\+\+DRDY\+\_\+\+STATUS\+\_\+\+MSK}~UINT8\+\_\+C(0x01)
+\end{DoxyCompactItemize}
+\doxysubsection*{OVERFLOW DEFINITIONS $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5b1ad35c05f2ab9b39dc5539ee6e57fd}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5b1ad35c05f2ab9b39dc5539ee6e57fd}} 
+\#define {\bfseries BMM150\+\_\+\+XYAXES\+\_\+\+FLIP\+\_\+\+OVERFLOW\+\_\+\+ADCVAL}~INT16\+\_\+C(-\/4096)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga75ac50a30d683f82dca4bda240f0211b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga75ac50a30d683f82dca4bda240f0211b}} 
+\#define {\bfseries BMM150\+\_\+\+ZAXIS\+\_\+\+HALL\+\_\+\+OVERFLOW\+\_\+\+ADCVAL}~INT16\+\_\+C(-\/16384)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga85e4e11bb8df5c7f08393c5c053f7313}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga85e4e11bb8df5c7f08393c5c053f7313}} 
+\#define {\bfseries BMM150\+\_\+\+OVERFLOW\+\_\+\+OUTPUT}~INT16\+\_\+C(-\/32768)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabc605b18893625684b0437db47363897}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabc605b18893625684b0437db47363897}} 
+\#define {\bfseries BMM150\+\_\+\+NEGATIVE\+\_\+\+SATURATION\+\_\+Z}~INT16\+\_\+C(-\/32767)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga370302c1b320bb1de22d96aa6a48fbd9}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga370302c1b320bb1de22d96aa6a48fbd9}} 
+\#define {\bfseries BMM150\+\_\+\+POSITIVE\+\_\+\+SATURATION\+\_\+Z}~UINT16\+\_\+C(32767)
+\end{DoxyCompactItemize}
+\doxysubsection*{PRESET MODE DEFINITIONS $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53d45f7abf598fb71d42b9b802527b38}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53d45f7abf598fb71d42b9b802527b38}} 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+LOWPOWER}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0a5b6e8ffa9b48919a9249391e8adf6c}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0a5b6e8ffa9b48919a9249391e8adf6c}} 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+REGULAR}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae42ffc1cb14641aace57f88405accfee}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae42ffc1cb14641aace57f88405accfee}} 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+HIGHACCURACY}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabe068b7f463f2d0792dfec9cf789356b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabe068b7f463f2d0792dfec9cf789356b}} 
+\#define {\bfseries BMM150\+\_\+\+PRESETMODE\+\_\+\+ENHANCED}~UINT8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\doxysubsection*{PRESET MODES -\/ REPETITIONS-\/\+XY RATES}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga07a88e2e2f239df21553d8d2d3fd95ad}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga07a88e2e2f239df21553d8d2d3fd95ad}} 
+\#define {\bfseries BMM150\+\_\+\+LOWPOWER\+\_\+\+REPXY}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga189401c65c20987dae0f7e321e72e67d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga189401c65c20987dae0f7e321e72e67d}} 
+\#define {\bfseries BMM150\+\_\+\+REGULAR\+\_\+\+REPXY}~UINT8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga64544c94f65746a876d6479eb3ae42c9}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga64544c94f65746a876d6479eb3ae42c9}} 
+\#define {\bfseries BMM150\+\_\+\+ENHANCED\+\_\+\+REPXY}~UINT8\+\_\+C(7)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf6800e431a1e315906bc9a8c9e172756}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf6800e431a1e315906bc9a8c9e172756}} 
+\#define {\bfseries BMM150\+\_\+\+HIGHACCURACY\+\_\+\+REPXY}~UINT8\+\_\+C(23)
+\end{DoxyCompactItemize}
+\doxysubsection*{PRESET MODES -\/ REPETITIONS-\/Z RATES}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga682d10df47d33d319c82923a6bf7bfda}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga682d10df47d33d319c82923a6bf7bfda}} 
+\#define {\bfseries BMM150\+\_\+\+LOWPOWER\+\_\+\+REPZ}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5f230032f15c2a0e47e15fbeb3b3926d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5f230032f15c2a0e47e15fbeb3b3926d}} 
+\#define {\bfseries BMM150\+\_\+\+REGULAR\+\_\+\+REPZ}~UINT8\+\_\+C(14)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadb0f53226732ebf188d21abc690f7153}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadb0f53226732ebf188d21abc690f7153}} 
+\#define {\bfseries BMM150\+\_\+\+ENHANCED\+\_\+\+REPZ}~UINT8\+\_\+C(26)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga587d2ac2387b13f243a0f5c71bb5c7aa}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga587d2ac2387b13f243a0f5c71bb5c7aa}} 
+\#define {\bfseries BMM150\+\_\+\+HIGHACCURACY\+\_\+\+REPZ}~UINT8\+\_\+C(82)
+\end{DoxyCompactItemize}
+\doxysubsection*{Register read lengths $<$br$>$}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga15617244bfffcdf36950aeaca026e93a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga15617244bfffcdf36950aeaca026e93a}} 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+LEN}~UINT8\+\_\+C(5)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaea226b4dde4c023c6ef6a99368a512a0}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaea226b4dde4c023c6ef6a99368a512a0}} 
+\#define {\bfseries BMM150\+\_\+\+SETTING\+\_\+\+DATA\+\_\+\+LEN}~UINT8\+\_\+C(8)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabab200d34d4e3982f583931419a95084}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabab200d34d4e3982f583931419a95084}} 
+\#define {\bfseries BMM150\+\_\+\+XYZR\+\_\+\+DATA\+\_\+\+LEN}~UINT8\+\_\+C(8)
+\end{DoxyCompactItemize}
+\doxysubsection*{Self test selection macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga21a50f901e3c91533b1039783ff3c3e8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga21a50f901e3c91533b1039783ff3c3e8}} 
+\#define {\bfseries BMM150\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST}~UINT8\+\_\+C(0)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga984a8b62f060a27edc983be819891ed8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga984a8b62f060a27edc983be819891ed8}} 
+\#define {\bfseries BMM150\+\_\+\+ADVANCED\+\_\+\+SELF\+\_\+\+TEST}~UINT8\+\_\+C(1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Self test settings}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga135d16dc4d0b11f1ef9cdd3473eb20f6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga135d16dc4d0b11f1ef9cdd3473eb20f6}} 
+\#define {\bfseries BMM150\+\_\+\+DISABLE\+\_\+\+XY\+\_\+\+AXIS}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad0fc8ca82bf767772bf6de22435586f3}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad0fc8ca82bf767772bf6de22435586f3}} 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+REP\+\_\+Z}~UINT8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\doxysubsection*{Advanced self-\/test current settings}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf43ab256292412c2da888afc50fe8614}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf43ab256292412c2da888afc50fe8614}} 
+\#define {\bfseries BMM150\+\_\+\+DISABLE\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+CURRENT}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab61c664178d7c5b228c042e3f9d76cf6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab61c664178d7c5b228c042e3f9d76cf6}} 
+\#define {\bfseries BMM150\+\_\+\+ENABLE\+\_\+\+NEGATIVE\+\_\+\+CURRENT}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2a1b4df27073e27003c9e401b4f6b941}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2a1b4df27073e27003c9e401b4f6b941}} 
+\#define {\bfseries BMM150\+\_\+\+ENABLE\+\_\+\+POSITIVE\+\_\+\+CURRENT}~UINT8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\doxysubsection*{Normal self-\/test status}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae36796ee91096d08d9606752d23edb49}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae36796ee91096d08d9606752d23edb49}} 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+STATUS\+\_\+\+XYZ\+\_\+\+FAIL}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga183c425a68051efb83f90bb211d62093}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga183c425a68051efb83f90bb211d62093}} 
+\#define {\bfseries BMM150\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+STATUS\+\_\+\+SUCCESS}~UINT8\+\_\+C(0x07)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Building Automation Sensors Booster\+Pack. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1a1f0cdb09dd61a91f387f93157311c4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1a1f0cdb09dd61a91f387f93157311c4}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!BMM150\_GET\_BITS@{BMM150\_GET\_BITS}}
+\index{BMM150\_GET\_BITS@{BMM150\_GET\_BITS}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{BMM150\_GET\_BITS}{BMM150\_GET\_BITS}}
+{\footnotesize\ttfamily \#define BMM150\+\_\+\+GET\+\_\+\+BITS(\begin{DoxyParamCaption}\item[{}]{reg\+\_\+data,  }\item[{}]{bitname }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                  ((reg\_data \& (bitname\#\#\_MSK)) >> \(\backslash\)}
+\DoxyCodeLine{                                                  (bitname\#\#\_POS))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafbc97840719e10a8a79d1a4d5c75ad11}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafbc97840719e10a8a79d1a4d5c75ad11}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!BMM150\_SET\_BITS@{BMM150\_SET\_BITS}}
+\index{BMM150\_SET\_BITS@{BMM150\_SET\_BITS}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{BMM150\_SET\_BITS}{BMM150\_SET\_BITS}}
+{\footnotesize\ttfamily \#define BMM150\+\_\+\+SET\+\_\+\+BITS(\begin{DoxyParamCaption}\item[{}]{reg\+\_\+data,  }\item[{}]{bitname,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((reg\_data \& \string~(bitname\#\#\_MSK)) | \(\backslash\)}
+\DoxyCodeLine{     ((data << bitname\#\#\_POS) \& bitname\#\#\_MSK))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga35fc7e7348501e95041bf3b9578d4be3}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga35fc7e7348501e95041bf3b9578d4be3}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!BMM150\_SET\_BITS\_POS\_0@{BMM150\_SET\_BITS\_POS\_0}}
+\index{BMM150\_SET\_BITS\_POS\_0@{BMM150\_SET\_BITS\_POS\_0}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{BMM150\_SET\_BITS\_POS\_0}{BMM150\_SET\_BITS\_POS\_0}}
+{\footnotesize\ttfamily \#define BMM150\+\_\+\+SET\+\_\+\+BITS\+\_\+\+POS\+\_\+0(\begin{DoxyParamCaption}\item[{}]{reg\+\_\+data,  }\item[{}]{bitname,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((reg\_data \& \string~(bitname\#\#\_MSK)) | \(\backslash\)}
+\DoxyCodeLine{     (data \& bitname\#\#\_MSK))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!INT8\_C@{INT8\_C}}
+\index{INT8\_C@{INT8\_C}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{INT8\_C}{INT8\_C}}
+{\footnotesize\ttfamily \#define INT8\+\_\+C(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+\textbackslash{} header files 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga529b0dd2bf61b40fd771adfee5c78beb}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga529b0dd2bf61b40fd771adfee5c78beb}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_delay\_fptr\_t@{bmm150\_delay\_fptr\_t}}
+\index{bmm150\_delay\_fptr\_t@{bmm150\_delay\_fptr\_t}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_delay\_fptr\_t}{bmm150\_delay\_fptr\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ bmm150\+\_\+delay\+\_\+fptr\+\_\+t) (uint32\+\_\+t)}
+
+delay function pointer 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga479329e9f54743abfe872741fcce4ae9}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga479329e9f54743abfe872741fcce4ae9}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_intf@{bmm150\_intf}}
+\index{bmm150\_intf@{bmm150\_intf}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_intf}{bmm150\_intf}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga479329e9f54743abfe872741fcce4ae9}{bmm150\+\_\+intf}}}
+
+
+
+Interface selection Enums. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMM150\_SPI\_INTF@{BMM150\_SPI\_INTF}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!BMM150\_SPI\_INTF@{BMM150\_SPI\_INTF}}}\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9ad7bdf3f9fb3ede40544dff5ad13b06ee}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9ad7bdf3f9fb3ede40544dff5ad13b06ee}} 
+BMM150\+\_\+\+SPI\+\_\+\+INTF&SPI interface \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMM150\_I2C\_INTF@{BMM150\_I2C\_INTF}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!BMM150\_I2C\_INTF@{BMM150\_I2C\_INTF}}}\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9a519204c91f338db8c681885c191d0caa}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gga479329e9f54743abfe872741fcce4ae9a519204c91f338db8c681885c191d0caa}} 
+BMM150\+\_\+\+I2\+C\+\_\+\+INTF&I2C interface \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf9a909f6c1b3be1b33658b2f17632d35}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaf9a909f6c1b3be1b33658b2f17632d35}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_aux\_init@{bmi160\_aux\_init}}
+\index{bmi160\_aux\_init@{bmi160\_aux\_init}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_aux\_init()}{bmi160\_aux\_init()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+aux\+\_\+init (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API initialize the auxiliary sensor in order to access it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab7dba610f920f63a03e84d80be2aa4db}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab7dba610f920f63a03e84d80be2aa4db}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_aux\_read@{bmi160\_aux\_read}}
+\index{bmi160\_aux\_read@{bmi160\_aux\_read}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_aux\_read()}{bmi160\_aux\_read()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+aux\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the mention no of byte of data from the given register address of auxiliary sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Address of register to read. \\
+\hline
+\mbox{\texttt{ in}}  & {\em aux\+\_\+data} & \+: Pointer to store the read data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes to read. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2c95d58ed7b50773fae5d97173fc6cb6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga2c95d58ed7b50773fae5d97173fc6cb6}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_aux\_write@{bmi160\_aux\_write}}
+\index{bmi160\_aux\_write@{bmi160\_aux\_write}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_aux\_write()}{bmi160\_aux\_write()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+aux\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the mention no of byte of data to the given register address of auxiliary sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Address of register to write. \\
+\hline
+\mbox{\texttt{ in}}  & {\em aux\+\_\+data} & \+: Pointer to write data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes to write. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1a57c45da550b97a5361e84b12f2d2a4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1a57c45da550b97a5361e84b12f2d2a4}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_config\_aux\_mode@{bmi160\_config\_aux\_mode}}
+\index{bmi160\_config\_aux\_mode@{bmi160\_config\_aux\_mode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_config\_aux\_mode()}{bmi160\_config\_aux\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+config\+\_\+aux\+\_\+mode (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API configures the 0x4C register and settings like Auxiliary sensor manual enable/ disable and aux burst read length. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae548739f4185fa7fef8cb718ec6bd91d}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae548739f4185fa7fef8cb718ec6bd91d}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_extract\_accel@{bmi160\_extract\_accel}}
+\index{bmi160\_extract\_accel@{bmi160\_extract\_accel}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_extract\_accel()}{bmi160\_extract\_accel()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+extract\+\_\+accel (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$}]{accel\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{accel\+\_\+length,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API parses and extracts the accelerometer frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \char`\"{}accel\+\_\+data\char`\"{} structure instance. 
+
+\begin{DoxyNote}{Note}
+The bmi160\+\_\+extract\+\_\+accel API should be called only after reading the FIFO data by calling the \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data()}} API.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em accel\+\_\+data} & \+: Structure instance of \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} where the accelerometer data in FIFO is stored. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em accel\+\_\+length} & \+: Number of valid accelerometer frames (x,y,z axes data) read out from fifo. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+accel\+\_\+length is updated with the number of valid accelerometer frames extracted from fifo (1 accel frame = 6 bytes) at the end of execution of this API.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab21ca26b7df608549e5d1bd583e4d52a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab21ca26b7df608549e5d1bd583e4d52a}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_extract\_aux@{bmi160\_extract\_aux}}
+\index{bmi160\_extract\_aux@{bmi160\_extract\_aux}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_extract\_aux()}{bmi160\_extract\_aux()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+extract\+\_\+aux (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}} $\ast$}]{aux\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+len,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API parses and extracts the aux frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}} structure instance. 
+
+\begin{DoxyNote}{Note}
+The bmi160\+\_\+extract\+\_\+aux API should be called only after reading the FIFO data by calling the \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data()}} API.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em aux\+\_\+data} & \+: Structure instance of \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}} where the aux data in FIFO is stored. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em aux\+\_\+len} & \+: Number of valid aux frames (8bytes) read out from FIFO. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+aux\+\_\+len is updated with the number of valid aux frames extracted from fifo (1 aux frame = 8 bytes) at the end of execution of this API.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9b2caa7d4a697e555856dfc6d1c17990}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9b2caa7d4a697e555856dfc6d1c17990}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_extract\_gyro@{bmi160\_extract\_gyro}}
+\index{bmi160\_extract\_gyro@{bmi160\_extract\_gyro}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_extract\_gyro()}{bmi160\_extract\_gyro()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+extract\+\_\+gyro (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$}]{gyro\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{gyro\+\_\+length,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API parses and extracts the gyro frames from FIFO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} API and stores it in the \char`\"{}gyro\+\_\+data\char`\"{} structure instance. 
+
+\begin{DoxyNote}{Note}
+The bmi160\+\_\+extract\+\_\+gyro API should be called only after reading the FIFO data by calling the \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data()}} API.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em gyro\+\_\+data} & \+: Structure instance of \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} where the gyro data in FIFO is stored. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em gyro\+\_\+length} & \+: Number of valid gyro frames (x,y,z axes data) read out from fifo. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+gyro\+\_\+length is updated with the number of valid gyro frames extracted from fifo (1 gyro frame = 6 bytes) at the end of execution of this API.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac37108690acb5072d5c19a0f4e677634}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac37108690acb5072d5c19a0f4e677634}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_get\_fifo\_data@{bmi160\_get\_fifo\_data}}
+\index{bmi160\_get\_fifo\_data@{bmi160\_get\_fifo\_data}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_get\_fifo\_data()}{bmi160\_get\_fifo\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+fifo\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads data from the fifo buffer. 
+
+\begin{DoxyNote}{Note}
+User has to allocate the FIFO buffer along with corresponding fifo length from his side before calling this API as mentioned in the readme.\+md
+
+User must specify the number of bytes to read from the FIFO in dev-\/$>$fifo-\/$>$length , It will be updated by the number of bytes actually read from FIFO after calling this API
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53cb6c4b0f60f54bd49b7ff980e3e1d4}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53cb6c4b0f60f54bd49b7ff980e3e1d4}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_get\_int\_status@{bmi160\_get\_int\_status}}
+\index{bmi160\_get\_int\_status@{bmi160\_get\_int\_status}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_get\_int\_status()}{bmi160\_get\_int\_status()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+int\+\_\+status (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}{bmi160\+\_\+int\+\_\+status\+\_\+sel}}}]{int\+\_\+status\+\_\+sel,  }\item[{union \mbox{\hyperlink{unionbmi160__int__status}{bmi160\+\_\+int\+\_\+status}} $\ast$}]{int\+\_\+status,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API gets the interrupt status from the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int\+\_\+status\+\_\+sel} & \+: Enum variable to select either individual or all the interrupt status bits. \\
+\hline
+\mbox{\texttt{ in}}  & {\em int\+\_\+status} & \+: pointer variable to get the interrupt status from the sensor. param\mbox{[}in\mbox{]} dev \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac6d11bee70aafd12449413c0fce3f014}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac6d11bee70aafd12449413c0fce3f014}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_get\_offsets@{bmi160\_get\_offsets}}
+\index{bmi160\_get\_offsets@{bmi160\_get\_offsets}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_get\_offsets()}{bmi160\_get\_offsets()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+offsets (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$}]{offset,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads and stores the offset values of accel and gyro. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em offset} & \+: Structure instance of \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} in which the offset values are read and stored \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacf4792d76eafc7607a097c79fcadb92a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gacf4792d76eafc7607a097c79fcadb92a}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_get\_power\_mode@{bmi160\_get\_power\_mode}}
+\index{bmi160\_get\_power\_mode@{bmi160\_get\_power\_mode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_get\_power\_mode()}{bmi160\_get\_power\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+power\+\_\+mode (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__pmu__status}{bmi160\+\_\+pmu\+\_\+status}} $\ast$}]{pmu\+\_\+status,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API gets the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em power\+\_\+mode} & \+: Power mode of the sensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+power\+\_\+mode Macros possible values for pmu\+\_\+status-\/$>$aux\+\_\+pmu\+\_\+status \+:
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+AUX\+\_\+\+PMU\+\_\+\+SUSPEND
+\item BMI160\+\_\+\+AUX\+\_\+\+PMU\+\_\+\+NORMAL
+\item BMI160\+\_\+\+AUX\+\_\+\+PMU\+\_\+\+LOW\+\_\+\+POWER
+\end{DoxyItemize}
+
+power\+\_\+mode Macros possible values for pmu\+\_\+status-\/$>$gyro\+\_\+pmu\+\_\+status \+:
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+GYRO\+\_\+\+PMU\+\_\+\+SUSPEND
+\item BMI160\+\_\+\+GYRO\+\_\+\+PMU\+\_\+\+NORMAL
+\item BMI160\+\_\+\+GYRO\+\_\+\+PMU\+\_\+\+FSU
+\end{DoxyItemize}
+
+power\+\_\+mode Macros possible values for pmu\+\_\+status-\/$>$accel\+\_\+pmu\+\_\+status \+:
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+ACCEL\+\_\+\+PMU\+\_\+\+SUSPEND
+\item BMI160\+\_\+\+ACCEL\+\_\+\+PMU\+\_\+\+NORMAL
+\item BMI160\+\_\+\+ACCEL\+\_\+\+PMU\+\_\+\+LOW\+\_\+\+POWER
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9bebc4a575526f49e625a87de9478e04}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9bebc4a575526f49e625a87de9478e04}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_get\_regs@{bmi160\_get\_regs}}
+\index{bmi160\_get\_regs@{bmi160\_get\_regs}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_get\_regs()}{bmi160\_get\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the data from the given register address of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be read \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & \+: Pointer to data buffer to store the read data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes of data to be read. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For most of the registers auto address increment applies, with the exception of a few special registers, which trap the address. For e.\+g., Register address -\/ 0x24(\+BMI160\+\_\+\+FIFO\+\_\+\+DATA\+\_\+\+ADDR)
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga86fb957a2384daa2ac17345d76b7e976}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga86fb957a2384daa2ac17345d76b7e976}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_get\_sensor\_data@{bmi160\_get\_sensor\_data}}
+\index{bmi160\_get\_sensor\_data@{bmi160\_get\_sensor\_data}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_get\_sensor\_data()}{bmi160\_get\_sensor\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+sensor\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{select\+\_\+sensor,  }\item[{struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$}]{accel,  }\item[{struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} $\ast$}]{gyro,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads sensor data, stores it in the \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}} structure pointer passed by the user. The user can ask for accel data ,gyro data or both sensor data using bmi160\+\_\+select\+\_\+sensor enum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em select\+\_\+sensor} & \+: enum to choose accel,gyro or both sensor data \\
+\hline
+\mbox{\texttt{ out}}  & {\em accel} & \+: Structure pointer to store accel data \\
+\hline
+\mbox{\texttt{ out}}  & {\em gyro} & \+: Structure pointer to store gyro data \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a2e8b832a4cb12b441cba7371d73f6a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga7a2e8b832a4cb12b441cba7371d73f6a}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_init@{bmi160\_init}}
+\index{bmi160\_init@{bmi160\_init}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_init()}{bmi160\_init()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is the entry point for sensor.\+It performs the selection of I2\+C/\+SPI read mechanism according to the selected interface and reads the chip-\/id of bmi160 sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6f83dc85a8173886ffe58e381fd9e0b8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6f83dc85a8173886ffe58e381fd9e0b8}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_perform\_self\_test@{bmi160\_perform\_self\_test}}
+\index{bmi160\_perform\_self\_test@{bmi160\_perform\_self\_test}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_perform\_self\_test()}{bmi160\_perform\_self\_test()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+perform\+\_\+self\+\_\+test (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{select\+\_\+sensor,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This is used to perform self test of accel/gyro of the BMI160 sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em select\+\_\+sensor} & \+: enum to choose accel or gyro for self test \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+self test can be performed either for accel/gyro at any instant. \begin{DoxyVerb}value of select_sensor       |  Inference
+\end{DoxyVerb}
+ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- BMI160\+\_\+\+ACCEL\+\_\+\+ONLY $\vert$ Accel self test enabled BMI160\+\_\+\+GYRO\+\_\+\+ONLY $\vert$ Gyro self test enabled BMI160\+\_\+\+BOTH\+\_\+\+ACCEL\+\_\+\+AND\+\_\+\+GYRO $\vert$ NOT TO BE USED
+
+The return value of this API gives us the result of self test.
+
+Performing self test does soft reset of the sensor, User can set the desired settings after performing the self test.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error / +ve value -\/$>$ Self-\/test fail\\
+\hline
+\end{DoxyRetVals}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Return value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Result of self test    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Return value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Result of self test    }\\\cline{1-2}
+\endhead
+BMI160\+\_\+\+OK   &Self test success    \\\cline{1-2}
+BMI160\+\_\+\+W\+\_\+\+GYRO\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+FAIL   &Gyro self test fail    \\\cline{1-2}
+BMI160\+\_\+\+W\+\_\+\+ACCEl\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+FAIL   &Accel self test fail   \\\cline{1-2}
+\end{longtabu}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae1f173b8b1e4ba2601016cc5fe8edc29}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae1f173b8b1e4ba2601016cc5fe8edc29}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_read\_aux\_data\_auto\_mode@{bmi160\_read\_aux\_data\_auto\_mode}}
+\index{bmi160\_read\_aux\_data\_auto\_mode@{bmi160\_read\_aux\_data\_auto\_mode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_read\_aux\_data\_auto\_mode()}{bmi160\_read\_aux\_data\_auto\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to read the raw uncompensated auxiliary sensor data of 8 bytes from BMI160 register address 0x04 to 0x0B. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em aux\+\_\+data} & \+: Pointer to user array of length 8 bytes Ensure that the aux\+\_\+data array is of length 8 bytes \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga69193a88550ccf1d99e413dcb5f81730}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga69193a88550ccf1d99e413dcb5f81730}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_read\_step\_counter@{bmi160\_read\_step\_counter}}
+\index{bmi160\_read\_step\_counter@{bmi160\_read\_step\_counter}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_read\_step\_counter()}{bmi160\_read\_step\_counter()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+read\+\_\+step\+\_\+counter (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{step\+\_\+val,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the step counter value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em step\+\_\+val} & \+: Pointer to store the step counter value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae2a0b717765bc2ee40c0fb92d2f819d2}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae2a0b717765bc2ee40c0fb92d2f819d2}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_aux\_auto\_mode@{bmi160\_set\_aux\_auto\_mode}}
+\index{bmi160\_set\_aux\_auto\_mode@{bmi160\_set\_aux\_auto\_mode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_aux\_auto\_mode()}{bmi160\_set\_aux\_auto\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data\+\_\+addr,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to setup the auxiliary sensor of bmi160 in auto mode Thus enabling the auto update of 8 bytes of data from auxiliary sensor to BMI160 register address 0x04 to 0x0B. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data\+\_\+addr} & \+: Starting address of aux. sensor\textquotesingle{}s data register (BMI160 registers 0x04 to 0x0B will be updated with 8 bytes of data from auxiliary sensor starting from this register address.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Set the value of auxiliary polling rate by setting dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr to the required value from the table before calling this API
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Auxiliary ODR (Hz)    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Auxiliary ODR (Hz)    }\\\cline{1-2}
+\endhead
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+0\+\_\+78\+HZ   &25/32    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+1\+\_\+56\+HZ   &25/16    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+3\+\_\+12\+HZ   &25/8    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+6\+\_\+25\+HZ   &25/4    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+12\+\_\+5\+HZ   &25/2    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+25\+HZ   &25    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+50\+HZ   &50    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+100\+HZ   &100    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+200\+HZ   &200    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+400\+HZ   &400    \\\cline{1-2}
+BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+800\+HZ   &800   \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyNote}{Note}
+\+: Other values of dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr are reserved and not for use
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac5cead9788329ba97addba76997de01e}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac5cead9788329ba97addba76997de01e}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_fifo\_config@{bmi160\_set\_fifo\_config}}
+\index{bmi160\_set\_fifo\_config@{bmi160\_set\_fifo\_config}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_fifo\_config()}{bmi160\_set\_fifo\_config()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{config,  }\item[{uint8\+\_\+t}]{enable,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API sets the FIFO configuration in the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & \+: variable used to specify the FIFO configurations which are to be enabled or disabled in the sensor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: User can set either set one or more or all FIFO configurations by ORing the below mentioned macros. \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endhead
+BMI160\+\_\+\+FIFO\+\_\+\+TIME   &0x02    \\\cline{1-2}
+BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT2   &0x04    \\\cline{1-2}
+BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT1   &0x08    \\\cline{1-2}
+BMI160\+\_\+\+FIFO\+\_\+\+HEADER   &0x10    \\\cline{1-2}
+BMI160\+\_\+\+FIFO\+\_\+\+AUX   &0x20    \\\cline{1-2}
+BMI160\+\_\+\+FIFO\+\_\+\+ACCEL   &0x40    \\\cline{1-2}
+BMI160\+\_\+\+FIFO\+\_\+\+GYRO   &0x80   \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enable} & \+: Parameter used to enable or disable the above FIFO configuration \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status of bus communication result 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga50cbe9d86cba2bb6ef91fdaf3f2ce529}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga50cbe9d86cba2bb6ef91fdaf3f2ce529}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_fifo\_down@{bmi160\_set\_fifo\_down}}
+\index{bmi160\_set\_fifo\_down@{bmi160\_set\_fifo\_down}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_fifo\_down()}{bmi160\_set\_fifo\_down()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+down (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{fifo\+\_\+down,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to configure the down sampling ratios of the accel and gyro data for FIFO.\+Also, it configures filtered or pre-\/filtered data for the fifo for accel and gyro. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fifo\+\_\+down} & \+: variable used to specify the FIFO down configurations which are to be enabled or disabled in the sensor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The user must select one among the following macros to select down-\/sampling ratio for accel \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endhead
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ZERO   &0x00    \\\cline{1-2}
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ONE   &0x10    \\\cline{1-2}
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+TWO   &0x20    \\\cline{1-2}
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+THREE   &0x30    \\\cline{1-2}
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+FOUR   &0x40    \\\cline{1-2}
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+FIVE   &0x50    \\\cline{1-2}
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+SIX   &0x60    \\\cline{1-2}
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+SEVEN   &0x70   \\\cline{1-2}
+\end{longtabu}
+
+
+The user must select one among the following macros to select down-\/sampling ratio for gyro \begin{DoxyVerb}config                               |   Value
+-------------------------------------|---------------------------
+BMI160_GYRO_FIFO_DOWN_ZERO           |   0x00
+BMI160_GYRO_FIFO_DOWN_ONE            |   0x01
+BMI160_GYRO_FIFO_DOWN_TWO            |   0x02
+BMI160_GYRO_FIFO_DOWN_THREE          |   0x03
+BMI160_GYRO_FIFO_DOWN_FOUR           |   0x04
+BMI160_GYRO_FIFO_DOWN_FIVE           |   0x05
+BMI160_GYRO_FIFO_DOWN_SIX            |   0x06
+BMI160_GYRO_FIFO_DOWN_SEVEN          |   0x07
+\end{DoxyVerb}
+ 
+
+The user can enable filtered accel data by the following macro \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endhead
+BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+FILT\+\_\+\+EN   &0x80   \\\cline{1-2}
+\end{longtabu}
+
+
+The user can enable filtered gyro data by the following macro \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value    }\\\cline{1-2}
+\endhead
+BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+FILT\+\_\+\+EN   &0x08   \\\cline{1-2}
+\end{longtabu}
+
+
+\+: By ORing the above mentioned macros, the user can select the required FIFO down config settings
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status of bus communication result 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0b471abfa1d28d5797b5de9c9b457a53}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga0b471abfa1d28d5797b5de9c9b457a53}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_fifo\_flush@{bmi160\_set\_fifo\_flush}}
+\index{bmi160\_set\_fifo\_flush@{bmi160\_set\_fifo\_flush}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_fifo\_flush()}{bmi160\_set\_fifo\_flush()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+flush (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes fifo\+\_\+flush command to command register.\+This action clears all data in the Fifo without changing fifo configuration settings. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa348ae8d5aa3b20363b49876abff5c69}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa348ae8d5aa3b20363b49876abff5c69}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_fifo\_wm@{bmi160\_set\_fifo\_wm}}
+\index{bmi160\_set\_fifo\_wm@{bmi160\_set\_fifo\_wm}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_fifo\_wm()}{bmi160\_set\_fifo\_wm()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+wm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{fifo\+\_\+wm,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API sets the FIFO watermark level in the sensor. 
+
+\begin{DoxyNote}{Note}
+The FIFO watermark is issued when the FIFO fill level is equal or above the watermark level and units of watermark is 4 bytes.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fifo\+\_\+wm} & \+: Variable used to set the FIFO water mark level \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga62ebd142768bea09f93ab63786dc3cca}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga62ebd142768bea09f93ab63786dc3cca}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_int\_config@{bmi160\_set\_int\_config}}
+\index{bmi160\_set\_int\_config@{bmi160\_set\_int\_config}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_int\_config()}{bmi160\_set\_int\_config()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+int\+\_\+config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}} $\ast$}]{int\+\_\+config,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API configures the necessary interrupt based on the user settings in the \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}} structure instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int\+\_\+config} & \+: Structure instance of \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae8fd008b08b8a1fc1aadce8e9ebfc1e6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae8fd008b08b8a1fc1aadce8e9ebfc1e6}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_offsets@{bmi160\_set\_offsets}}
+\index{bmi160\_set\_offsets@{bmi160\_set\_offsets}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_offsets()}{bmi160\_set\_offsets()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+offsets (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} $\ast$}]{foc\+\_\+conf,  }\item[{const struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$}]{offset,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the offset values of accel and gyro to the sensor but these values will be reset on POR or soft reset. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em foc\+\_\+conf} & \+: Structure instance of \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} which has the FOC configuration \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & \+: Structure instance in which user updates offset values which are to be written in the sensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Offsets can be set by user like offset-\/$>$off\+\_\+acc\+\_\+x = 10; where 1LSB = 3.\+9mg and for gyro 1LSB = 0.\+061degrees/second
+
+BMI160 offset values for xyz axes of accel should be within range of BMI160\+\_\+\+ACCEL\+\_\+\+MIN\+\_\+\+OFFSET (-\/128) to BMI160\+\_\+\+ACCEL\+\_\+\+MAX\+\_\+\+OFFSET (127)
+
+BMI160 offset values for xyz axes of gyro should be within range of BMI160\+\_\+\+GYRO\+\_\+\+MIN\+\_\+\+OFFSET (-\/512) to BMI160\+\_\+\+GYRO\+\_\+\+MAX\+\_\+\+OFFSET (511)
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga897ca5f1bfbcd1385ace2c05f9f4aef6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga897ca5f1bfbcd1385ace2c05f9f4aef6}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_power\_mode@{bmi160\_set\_power\_mode}}
+\index{bmi160\_set\_power\_mode@{bmi160\_set\_power\_mode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_power\_mode()}{bmi160\_set\_power\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+power\+\_\+mode (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API sets the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5bea435582a9fdb2c331f64b61e0d6c5}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5bea435582a9fdb2c331f64b61e0d6c5}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_regs@{bmi160\_set\_regs}}
+\index{bmi160\_set\_regs@{bmi160\_set\_regs}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_regs()}{bmi160\_set\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the given data to the register address of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be written. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & \+: Pointer to data buffer which is to be written in the sensor. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes of data to write.. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab098d2c7fda2965b1699ae13d2a8ffc8}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab098d2c7fda2965b1699ae13d2a8ffc8}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_sens\_conf@{bmi160\_set\_sens\_conf}}
+\index{bmi160\_set\_sens\_conf@{bmi160\_set\_sens\_conf}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_sens\_conf()}{bmi160\_set\_sens\_conf()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+sens\+\_\+conf (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API configures the power mode, range and bandwidth of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5a9e71230b2c94b2e609c63def130abf}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga5a9e71230b2c94b2e609c63def130abf}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_set\_step\_counter@{bmi160\_set\_step\_counter}}
+\index{bmi160\_set\_step\_counter@{bmi160\_set\_step\_counter}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_set\_step\_counter()}{bmi160\_set\_step\_counter()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+step\+\_\+counter (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{step\+\_\+cnt\+\_\+enable,  }\item[{const struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API enables the step counter feature. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em step\+\_\+cnt\+\_\+enable} & \+: value to enable or disable \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa047f8bacbc2a9c14ff70841304c04d0}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaa047f8bacbc2a9c14ff70841304c04d0}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_soft\_reset@{bmi160\_soft\_reset}}
+\index{bmi160\_soft\_reset@{bmi160\_soft\_reset}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_soft\_reset()}{bmi160\_soft\_reset()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+soft\+\_\+reset (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API resets and restarts the device. All register values are overwritten with default parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9a12ab7ac43b795f4b6faddde505eb88}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga9a12ab7ac43b795f4b6faddde505eb88}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_start\_foc@{bmi160\_start\_foc}}
+\index{bmi160\_start\_foc@{bmi160\_start\_foc}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_start\_foc()}{bmi160\_start\_foc()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+start\+\_\+foc (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} $\ast$}]{foc\+\_\+conf,  }\item[{struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}} $\ast$}]{offset,  }\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API starts the FOC of accel and gyro. 
+
+\begin{DoxyNote}{Note}
+FOC should not be used in low-\/power mode of sensor
+
+Accel FOC targets values of +1g , 0g , -\/1g Gyro FOC always targets value of 0 dps
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em foc\+\_\+conf} & \+: Structure instance of \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}} which has the FOC configuration \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em offset} & \+: Structure instance to store Offset values read from sensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Pre-\/requisites for triggering FOC in accel , Set the following, Enable the acc\+\_\+off\+\_\+en Ex \+: foc\+\_\+conf.\+acc\+\_\+off\+\_\+en = BMI160\+\_\+\+ENABLE;
+\end{DoxyNote}
+Set the desired target values of FOC to each axes (x,y,z) by using the following macros
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+DISABLED
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+POSITIVE\+\_\+G
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+NEGATIVE\+\_\+G
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+0G
+\end{DoxyItemize}
+
+Ex \+: foc\+\_\+conf.\+foc\+\_\+acc\+\_\+x = BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+0G; foc\+\_\+conf.\+foc\+\_\+acc\+\_\+y = BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+0G; foc\+\_\+conf.\+foc\+\_\+acc\+\_\+z = BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+POSITIVE\+\_\+G;
+
+\begin{DoxyNote}{Note}
+Pre-\/requisites for triggering FOC in gyro , Set the following parameters,
+\end{DoxyNote}
+Ex \+: foc\+\_\+conf.\+foc\+\_\+gyr\+\_\+en = BMI160\+\_\+\+ENABLE; foc\+\_\+conf.\+gyro\+\_\+off\+\_\+en = BMI160\+\_\+\+ENABLE;
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga273ec1cf6a992e0050ce12f33ee4c070}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga273ec1cf6a992e0050ce12f33ee4c070}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmi160\_update\_nvm@{bmi160\_update\_nvm}}
+\index{bmi160\_update\_nvm@{bmi160\_update\_nvm}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmi160\_update\_nvm()}{bmi160\_update\_nvm()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+update\+\_\+nvm (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the image registers values to NVM which is stored even after POR or soft reset. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabc0895a5c1c847e18e33daf5cd69c1b6}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabc0895a5c1c847e18e33daf5cd69c1b6}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_aux\_mag\_data@{bmm150\_aux\_mag\_data}}
+\index{bmm150\_aux\_mag\_data@{bmm150\_aux\_mag\_data}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_aux\_mag\_data()}{bmm150\_aux\_mag\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+aux\+\_\+mag\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to compensate the raw mag data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em aux\+\_\+data} & \+: Raw mag data obtained from BMI160 registers \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status and self test result. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadee930eb8e5ef947b87ee8c217780143}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadee930eb8e5ef947b87ee8c217780143}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_get\_interrupt\_status@{bmm150\_get\_interrupt\_status}}
+\index{bmm150\_get\_interrupt\_status@{bmm150\_get\_interrupt\_status}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_get\_interrupt\_status()}{bmm150\_get\_interrupt\_status()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+interrupt\+\_\+status (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API obtains the status flags of all interrupt which is used to check for the assertion of interrupts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The status flags of all the interrupts are stored in the dev-\/$>$int\+\_\+status.
+
+The value of dev-\/$>$int\+\_\+status is performed a bitwise AND operation with predefined interrupt status macros to find the interrupt status which is either set or reset.
+\end{DoxyNote}
+Ex. if (dev-\/$>$int\+\_\+status \& BMM150\+\_\+\+DATA\+\_\+\+READY\+\_\+\+INT) \{ Occurrence of data ready interrupt \} else \{ No interrupt occurred \}
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status and self test result. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6e4a56abf879bb4ad9a263d79974d120}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6e4a56abf879bb4ad9a263d79974d120}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_get\_op\_mode@{bmm150\_get\_op\_mode}}
+\index{bmm150\_get\_op\_mode@{bmm150\_get\_op\_mode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_get\_op\_mode()}{bmm150\_get\_op\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+op\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{op\+\_\+mode,  }\item[{const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to get the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em op\+\_\+mode} & \+: power mode of the sensor. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ op\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Power mode    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ op\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Power mode    }\\\cline{1-2}
+\endhead
+0x00   &BMM150\+\_\+\+NORMAL\+\_\+\+MODE    \\\cline{1-2}
+0x01   &BMM150\+\_\+\+FORCED\+\_\+\+MODE    \\\cline{1-2}
+0x03   &BMM150\+\_\+\+SLEEP\+\_\+\+MODE    \\\cline{1-2}
+0x04   &BMM150\+\_\+\+SUSPEND\+\_\+\+MODE   \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac3b65c846fa1d826b2addbbef4292a9c}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac3b65c846fa1d826b2addbbef4292a9c}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_get\_regs@{bmm150\_get\_regs}}
+\index{bmm150\_get\_regs@{bmm150\_get\_regs}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_get\_regs()}{bmm150\_get\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{reg\+\_\+data,  }\item[{uint8\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the data from the given register address of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be read \\
+\hline
+\mbox{\texttt{ out}}  & {\em reg\+\_\+data} & \+: Pointer to data buffer to store the read data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes of data to be read. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga12db4420b434ac786c10494dd3f80e7f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga12db4420b434ac786c10494dd3f80e7f}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_get\_sensor\_settings@{bmm150\_get\_sensor\_settings}}
+\index{bmm150\_get\_sensor\_settings@{bmm150\_get\_sensor\_settings}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_get\_sensor\_settings()}{bmm150\_get\_sensor\_settings()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+sensor\+\_\+settings (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API gets all the sensor settings and updates the dev structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab4897d93fb8406c61d6bfab44de8c054}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab4897d93fb8406c61d6bfab44de8c054}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_init@{bmm150\_init}}
+\index{bmm150\_init@{bmm150\_init}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_init()}{bmm150\_init()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is the entry point, Call this API before using other APIs. This API reads the chip-\/id of the sensor which is the first step to verify the sensor and also it configures the read mechanism of SPI and I2C interface. 
+
+CPP guard
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaabaad6846eae116f278af4c87d432b2f}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaabaad6846eae116f278af4c87d432b2f}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_perform\_self\_test@{bmm150\_perform\_self\_test}}
+\index{bmm150\_perform\_self\_test@{bmm150\_perform\_self\_test}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_perform\_self\_test()}{bmm150\_perform\_self\_test()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+perform\+\_\+self\+\_\+test (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{self\+\_\+test\+\_\+mode,  }\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to perform the complete self test (both normal and advanced) for the BMM150 sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em self\+\_\+test\+\_\+mode} & \+: The type of self test to be performed \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ self\+\_\+test\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Self test enabled    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ self\+\_\+test\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Self test enabled    }\\\cline{1-2}
+\endhead
+0   &BMM150\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST    \\\cline{1-2}
+1   &BMM150\+\_\+\+ADVANCED\+\_\+\+SELF\+\_\+\+TEST   \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyNote}{Note}
+The return value of this API gives us the result of self test.
+
+Performing advanced self test does soft reset of the sensor, User can set the desired settings after performing the advanced self test.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of API execution status and self test result. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error\\
+\hline
+\end{DoxyRetVals}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Return value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Result of self test    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Return value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Result of self test    }\\\cline{1-2}
+\endhead
+0   &BMM150\+\_\+\+OK    \\\cline{1-2}
+1   &BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+YZ\+\_\+\+FAIL    \\\cline{1-2}
+2   &BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XZ\+\_\+\+FAIL    \\\cline{1-2}
+3   &BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+Z\+\_\+\+FAIL    \\\cline{1-2}
+4   &BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XY\+\_\+\+FAIL    \\\cline{1-2}
+5   &BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+Y\+\_\+\+FAIL    \\\cline{1-2}
+6   &BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+X\+\_\+\+FAIL    \\\cline{1-2}
+7   &BMM150\+\_\+\+W\+\_\+\+NORMAL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+XYZ\+\_\+\+FAIL    \\\cline{1-2}
+8   &BMM150\+\_\+\+W\+\_\+\+ADV\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+FAIL   \\\cline{1-2}
+\end{longtabu}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabdb1f4947a1e2639326420a9fc7a2b12}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabdb1f4947a1e2639326420a9fc7a2b12}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_read\_mag\_data@{bmm150\_read\_mag\_data}}
+\index{bmm150\_read\_mag\_data@{bmm150\_read\_mag\_data}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_read\_mag\_data()}{bmm150\_read\_mag\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+read\+\_\+mag\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the magnetometer data from registers 0x42 to 0x49 and updates the dev structure with compensated mag data in micro-\/tesla. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The output mag data can be obtained either in int16\+\_\+t or float format using this API. 
+
+Enable the macro \char`\"{}\+BMM150\+\_\+\+USE\+\_\+\+FLOATING\+\_\+\+POINT\char`\"{} in the \mbox{\hyperlink{bmm150__defs_8h}{bmm150\+\_\+defs.\+h}} file and call this API to get the mag data in float, disable this macro to get the mag data in int16\+\_\+t format
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mag data output(micro-\/tesla)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mag data in dev structure(int16\+\_\+t/float)    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mag data output(micro-\/tesla)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mag data in dev structure(int16\+\_\+t/float)    }\\\cline{1-2}
+\endhead
+X-\/axis data   &dev-\/$>$data.\+x    \\\cline{1-2}
+Y-\/axis data   &dev-\/$>$data.\+y    \\\cline{1-2}
+Z-\/axis data   &dev-\/$>$data.\+z   \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b8ebfb4d731d5880ef87ecffc72a43b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b8ebfb4d731d5880ef87ecffc72a43b}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_set\_op\_mode@{bmm150\_set\_op\_mode}}
+\index{bmm150\_set\_op\_mode@{bmm150\_set\_op\_mode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_set\_op\_mode()}{bmm150\_set\_op\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+op\+\_\+mode (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to set the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+pwr\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Power mode    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+pwr\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Power mode    }\\\cline{1-2}
+\endhead
+0x00   &BMM150\+\_\+\+NORMAL\+\_\+\+MODE    \\\cline{1-2}
+0x01   &BMM150\+\_\+\+FORCED\+\_\+\+MODE    \\\cline{1-2}
+0x03   &BMM150\+\_\+\+SLEEP\+\_\+\+MODE    \\\cline{1-2}
+0x04   &BMM150\+\_\+\+SUSPEND\+\_\+\+MODE   \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafbd9773c2f5c5645d60231f0ba7e8626}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafbd9773c2f5c5645d60231f0ba7e8626}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_set\_presetmode@{bmm150\_set\_presetmode}}
+\index{bmm150\_set\_presetmode@{bmm150\_set\_presetmode}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_set\_presetmode()}{bmm150\_set\_presetmode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+presetmode (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to set the preset mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+preset\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Preset mode    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+preset\+\_\+mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Preset mode    }\\\cline{1-2}
+\endhead
+0x01   &BMM150\+\_\+\+PRESETMODE\+\_\+\+LOWPOWER    \\\cline{1-2}
+0x02   &BMM150\+\_\+\+PRESETMODE\+\_\+\+REGULAR    \\\cline{1-2}
+0x03   &BMM150\+\_\+\+PRESETMODE\+\_\+\+HIGHACCURACY    \\\cline{1-2}
+0x04   &BMM150\+\_\+\+PRESETMODE\+\_\+\+ENHANCED   \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga88285b4abe005f21a5cc9392dddb9de9}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga88285b4abe005f21a5cc9392dddb9de9}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_set\_regs@{bmm150\_set\_regs}}
+\index{bmm150\_set\_regs@{bmm150\_set\_regs}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_set\_regs()}{bmm150\_set\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{reg\+\_\+data,  }\item[{uint8\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the given data to the register address of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be written. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg\+\_\+data} & \+: Pointer to data buffer which is to be written in the reg\+\_\+addr of sensor. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes of data to write.. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga96ceb625f7af0bf71a8a7ad8aa67fe2b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga96ceb625f7af0bf71a8a7ad8aa67fe2b}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_set\_sensor\_settings@{bmm150\_set\_sensor\_settings}}
+\index{bmm150\_set\_sensor\_settings@{bmm150\_set\_sensor\_settings}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_set\_sensor\_settings()}{bmm150\_set\_sensor\_settings()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+sensor\+\_\+settings (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{desired\+\_\+settings,  }\item[{const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API sets the sensor settings based on the desired\+\_\+settings and the dev structure configuration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em desired\+\_\+settings} & \+: Selection macro for selecting the setting. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Assign the sensor setting macros (multiple macros can be set by doing a bitwise-\/\+OR operation) to the desired\+\_\+settings parameter of this API to perform the corresponding setting.
+
+threshold interrupt for each axes are set by using bitwise AND operation of the following macros
+\begin{DoxyItemize}
+\item BMM150\+\_\+\+THRESHOLD\+\_\+X
+\item BMM150\+\_\+\+THRESHOLD\+\_\+Y
+\item BMM150\+\_\+\+THRESHOLD\+\_\+Z
+\end{DoxyItemize}
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ desired\+\_\+settings   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Selected sensor setting macros    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ desired\+\_\+settings   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Selected sensor setting macros    }\\\cline{1-2}
+\endhead
+0x0001   &BMM150\+\_\+\+DATA\+\_\+\+RATE\+\_\+\+SEL    \\\cline{1-2}
+0x0002   &BMM150\+\_\+\+CONTROL\+\_\+\+MEASURE\+\_\+\+SEL    \\\cline{1-2}
+0x0004   &BMM150\+\_\+\+XY\+\_\+\+REP\+\_\+\+SEL    \\\cline{1-2}
+0x0008   &BMM150\+\_\+\+Z\+\_\+\+REP\+\_\+\+SEL    \\\cline{1-2}
+0x0010   &BMM150\+\_\+\+DRDY\+\_\+\+PIN\+\_\+\+EN\+\_\+\+SEL    \\\cline{1-2}
+0x0020   &BMM150\+\_\+\+INT\+\_\+\+PIN\+\_\+\+EN\+\_\+\+SEL    \\\cline{1-2}
+0x0040   &BMM150\+\_\+\+DRDY\+\_\+\+POLARITY\+\_\+\+SEL    \\\cline{1-2}
+0x0080   &BMM150\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+SEL    \\\cline{1-2}
+0x0100   &BMM150\+\_\+\+INT\+\_\+\+POLARITY\+\_\+\+SEL    \\\cline{1-2}
+0x0200   &BMM150\+\_\+\+DATA\+\_\+\+OVERRUN\+\_\+\+INT\+\_\+\+SEL    \\\cline{1-2}
+0x0400   &BMM150\+\_\+\+OVERFLOW\+\_\+\+INT\+\_\+\+SEL    \\\cline{1-2}
+0x0800   &BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+SEL    \\\cline{1-2}
+0x1000   &BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+INT\+\_\+\+SEL    \\\cline{1-2}
+0x2000   &BMM150\+\_\+\+LOW\+\_\+\+THRESHOLD\+\_\+\+SETTING\+\_\+\+SEL    \\\cline{1-2}
+0x4000   &BMM150\+\_\+\+HIGH\+\_\+\+THRESHOLD\+\_\+\+SETTING\+\_\+\+SEL   \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad53c0f1cab22067aaff73d0f172a9dbe}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad53c0f1cab22067aaff73d0f172a9dbe}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!bmm150\_soft\_reset@{bmm150\_soft\_reset}}
+\index{bmm150\_soft\_reset@{bmm150\_soft\_reset}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{bmm150\_soft\_reset()}{bmm150\_soft\_reset()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+soft\+\_\+reset (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to perform soft-\/reset of the sensor where all the registers are reset to their default values except 0x4B. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae614cb044b4924a3e82543dfa1588c0a}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae614cb044b4924a3e82543dfa1588c0a}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!HDC2080\_Init@{HDC2080\_Init}}
+\index{HDC2080\_Init@{HDC2080\_Init}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{HDC2080\_Init()}{HDC2080\_Init()}}
+{\footnotesize\ttfamily void HDC2080\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize HDC2080. 
+
+Initialize HDC2080 temperature sensor. Runs in continuous mode, so user calls HDC2080\+\_\+\+Read\+Humidity and HDC2080\+\_\+\+Read\+Temperature to get most recent measurements 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae849493d17f837c628f1c810bb67e2af}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae849493d17f837c628f1c810bb67e2af}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!HDC2080\_SetTempRes@{HDC2080\_SetTempRes}}
+\index{HDC2080\_SetTempRes@{HDC2080\_SetTempRes}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{HDC2080\_SetTempRes()}{HDC2080\_SetTempRes()}}
+{\footnotesize\ttfamily void HDC2080\+\_\+\+Set\+Temp\+Res (\begin{DoxyParamCaption}\item[{int}]{resolution }\end{DoxyParamCaption})}
+
+
+
+Set resolution. 
+
+Set resolution on HDC2080 sensor. This function assume you have previously called HDC2080\+\_\+\+Init. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+light 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga75ff1bf3940f1760945f74a147547333}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga75ff1bf3940f1760945f74a147547333}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!OPT3001\_Init@{OPT3001\_Init}}
+\index{OPT3001\_Init@{OPT3001\_Init}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{OPT3001\_Init()}{OPT3001\_Init()}}
+{\footnotesize\ttfamily void OPT3001\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize OPT3001. 
+
+Initialize OPT3001 temperature sensor. Runs in continuous mode, so user calls OPT3001\+\_\+\+Read\+Light to get most recent measurement 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac896869fc163b39f9e92a972fbbd592b}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac896869fc163b39f9e92a972fbbd592b}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!OPT3001\_ReadLight@{OPT3001\_ReadLight}}
+\index{OPT3001\_ReadLight@{OPT3001\_ReadLight}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{OPT3001\_ReadLight()}{OPT3001\_ReadLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{union_o_p_t3001___result}{OPT3001\+\_\+\+Result}} OPT3001\+\_\+\+Read\+Light (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+return last OPT3001 measurement 
+
+Read last measurement from OPT3001 sensor. This function assume you have previously called OPT3001\+\_\+\+Init. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+light 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+lux = 0.\+01$\ast$(2$^\wedge$\+Exponent)$\ast$\+Result 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga84b50d453da6c785bac3a1aaac9165a3}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga84b50d453da6c785bac3a1aaac9165a3}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!TMP117\_Arm@{TMP117\_Arm}}
+\index{TMP117\_Arm@{TMP117\_Arm}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{TMP117\_Arm()}{TMP117\_Arm()}}
+{\footnotesize\ttfamily void TMP117\+\_\+\+Arm (\begin{DoxyParamCaption}\item[{void($\ast$)(int16\+\_\+t t)}]{pt }\end{DoxyParamCaption})}
+
+
+
+Initialize TMP117 with interrupts. 
+
+Initialize and activate TMP117 alarm interrupts to run user task when new data ready. This function calls TMP117\+\_\+\+Init, uses ONE-\/\+SHOT mode. 
+\begin{DoxyParams}{Parameters}
+{\em task} & is a pointer to a user function called when data ready \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Units of temperature are 0.\+0078125 C, range is -\/256 to +255 C 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53c4064a5e46f7cd1834ddeb7f67a2af}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga53c4064a5e46f7cd1834ddeb7f67a2af}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!TMP117\_Init@{TMP117\_Init}}
+\index{TMP117\_Init@{TMP117\_Init}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{TMP117\_Init()}{TMP117\_Init()}}
+{\footnotesize\ttfamily void TMP117\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize TMP117. 
+
+Initialize TMP117 temperature sensor. Runs in continuous mode, so user calls TMP117\+\_\+\+Read\+Temperature to get most recent measurement 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga964a0743881d4ef3ca92f08990a632d5}\label{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga964a0743881d4ef3ca92f08990a632d5}} 
+\index{BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}!TMP117\_ReadTemperature@{TMP117\_ReadTemperature}}
+\index{TMP117\_ReadTemperature@{TMP117\_ReadTemperature}!BP-\/BASSENSORSMKII@{BP-\/BASSENSORSMKII}}
+\doxysubsubsection{\texorpdfstring{TMP117\_ReadTemperature()}{TMP117\_ReadTemperature()}}
+{\footnotesize\ttfamily int16\+\_\+t TMP117\+\_\+\+Read\+Temperature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+return last TMP117 measurement 
+
+Read last measurement from TMP117 sensor. This function assume you have previously called TMP117\+\_\+\+Init. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+temperature 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Units of temperature are 0.\+0078125 C, range is -\/256 to +255 C 
+\end{DoxyNote}

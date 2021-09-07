@@ -1,0 +1,1231 @@
+\hypertarget{group___b_m_m150}{}\section{S\+E\+N\+S\+OR A\+PI}
+\label{group___b_m_m150}\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbmm150__trim__registers}{bmm150\+\_\+trim\+\_\+registers}
+\begin{DoxyCompactList}\small\item\em bmm150 trim data structure \end{DoxyCompactList}\item 
+struct \hyperlink{structbmm150__int__ctrl__settings}{bmm150\+\_\+int\+\_\+ctrl\+\_\+settings}
+\begin{DoxyCompactList}\small\item\em bmm150 interrupt pin settings \end{DoxyCompactList}\item 
+struct \hyperlink{structbmm150__settings}{bmm150\+\_\+settings}
+\begin{DoxyCompactList}\small\item\em bmm150 sensor settings \end{DoxyCompactList}\item 
+struct \hyperlink{structbmm150__raw__mag__data}{bmm150\+\_\+raw\+\_\+mag\+\_\+data}
+\begin{DoxyCompactList}\small\item\em bmm150 un-\/compensated (raw) magnetometer data \end{DoxyCompactList}\item 
+struct \hyperlink{structbmm150__mag__data}{bmm150\+\_\+mag\+\_\+data}
+\begin{DoxyCompactList}\small\item\em bmm150 compensated magnetometer data in int16\+\_\+t format \end{DoxyCompactList}\item 
+struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}
+\begin{DoxyCompactList}\small\item\em bmm150 device structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(x)~x
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gacd2aa09844a8a245cf7fdbb808e215e5}\label{group___b_m_m150_gacd2aa09844a8a245cf7fdbb808e215e5}} 
+\#define {\bfseries U\+I\+N\+T8\+\_\+C}(x)~x\#\#U
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga838b261fec725cb0f5d5b6769d3521e7}\label{group___b_m_m150_ga838b261fec725cb0f5d5b6769d3521e7}} 
+\#define {\bfseries I\+N\+T16\+\_\+C}(x)~x
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga1cb39a2cfaf899fd38730c7637807708}\label{group___b_m_m150_ga1cb39a2cfaf899fd38730c7637807708}} 
+\#define {\bfseries U\+I\+N\+T16\+\_\+C}(x)~x\#\#U
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gad78650fb7726f4e99205406569ef403d}\label{group___b_m_m150_gad78650fb7726f4e99205406569ef403d}} 
+\#define {\bfseries I\+N\+T32\+\_\+C}(x)~x
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2451a7ede7ebd810357f1503e9898ea6}\label{group___b_m_m150_ga2451a7ede7ebd810357f1503e9898ea6}} 
+\#define {\bfseries U\+I\+N\+T32\+\_\+C}(x)~x\#\#U
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga93d102802b35d3b8abae9bbe7f0fed75}\label{group___b_m_m150_ga93d102802b35d3b8abae9bbe7f0fed75}} 
+\#define {\bfseries I\+N\+T64\+\_\+C}(x)~x\#\#LL
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga134ae84400d184ed2570e3270d5472c2}\label{group___b_m_m150_ga134ae84400d184ed2570e3270d5472c2}} 
+\#define {\bfseries U\+I\+N\+T64\+\_\+C}(x)~x\#\#U\+LL
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gab4897d93fb8406c61d6bfab44de8c054}{bmm150\+\_\+init} (struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is the entry point, Call this A\+PI before using other A\+P\+Is. This A\+PI reads the chip-\/id of the sensor which is the first step to verify the sensor and also it configures the read mechanism of S\+PI and I2C interface. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_ga88285b4abe005f21a5cc9392dddb9de9}{bmm150\+\_\+set\+\_\+regs} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI writes the given data to the register address of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gac3b65c846fa1d826b2addbbef4292a9c}{bmm150\+\_\+get\+\_\+regs} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads the data from the given register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gad53c0f1cab22067aaff73d0f172a9dbe}{bmm150\+\_\+soft\+\_\+reset} (const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to perform soft-\/reset of the sensor where all the registers are reset to their default values except 0x4B. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_ga6b8ebfb4d731d5880ef87ecffc72a43b}{bmm150\+\_\+set\+\_\+op\+\_\+mode} (struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to set the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_ga6e4a56abf879bb4ad9a263d79974d120}{bmm150\+\_\+get\+\_\+op\+\_\+mode} (uint8\+\_\+t $\ast$op\+\_\+mode, const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to get the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gafbd9773c2f5c5645d60231f0ba7e8626}{bmm150\+\_\+set\+\_\+presetmode} (struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to set the preset mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_ga96ceb625f7af0bf71a8a7ad8aa67fe2b}{bmm150\+\_\+set\+\_\+sensor\+\_\+settings} (uint16\+\_\+t desired\+\_\+settings, const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI sets the sensor settings based on the desired\+\_\+settings and the dev structure configuration. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_ga12db4420b434ac786c10494dd3f80e7f}{bmm150\+\_\+get\+\_\+sensor\+\_\+settings} (struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI gets all the sensor settings and updates the dev structure. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gabdb1f4947a1e2639326420a9fc7a2b12}{bmm150\+\_\+read\+\_\+mag\+\_\+data} (struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads the magnetometer data from registers 0x42 to 0x49 and updates the dev structure with compensated mag data in micro-\/tesla. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gaabaad6846eae116f278af4c87d432b2f}{bmm150\+\_\+perform\+\_\+self\+\_\+test} (uint8\+\_\+t self\+\_\+test\+\_\+mode, struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to perform the complete self test (both normal and advanced) for the B\+M\+M150 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gadee930eb8e5ef947b87ee8c217780143}{bmm150\+\_\+get\+\_\+interrupt\+\_\+status} (struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI obtains the status flags of all interrupt which is used to check for the assertion of interrupts. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group___b_m_m150_gabc0895a5c1c847e18e33daf5cd69c1b6}{bmm150\+\_\+aux\+\_\+mag\+\_\+data} (uint8\+\_\+t $\ast$aux\+\_\+data, struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to compensate the raw mag data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{C standard macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga070d2ce7b6bb7e5c05602aa8c308d0c4}\label{group___b_m_m150_ga070d2ce7b6bb7e5c05602aa8c308d0c4}} 
+\#define {\bfseries N\+U\+LL}~((void $\ast$) 0)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaa8cecfc5c5c054d2875c03e77b7be15d}\label{group___b_m_m150_gaa8cecfc5c5c054d2875c03e77b7be15d}} 
+\#define {\bfseries T\+R\+UE}~U\+I\+N\+T8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaa93f0eb578d23995850d61f7d61c55c1}\label{group___b_m_m150_gaa93f0eb578d23995850d61f7d61c55c1}} 
+\#define {\bfseries F\+A\+L\+SE}~U\+I\+N\+T8\+\_\+C(0)
+\end{DoxyCompactItemize}
+\subsection*{A\+PI success code}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaaeab15ff61e3bf4171b5f519bf7dc560}\label{group___b_m_m150_gaaeab15ff61e3bf4171b5f519bf7dc560}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+OK}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(0)
+\end{DoxyCompactItemize}
+\subsection*{A\+PI error codes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga888858436e873087738b04b5cf6cad6f}\label{group___b_m_m150_ga888858436e873087738b04b5cf6cad6f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+E\+\_\+\+N\+U\+L\+L\+\_\+\+P\+TR}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(-\/1)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga15beb9eb9d22b3580f6e556c032c28b7}\label{group___b_m_m150_ga15beb9eb9d22b3580f6e556c032c28b7}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+E\+\_\+\+D\+E\+V\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(-\/2)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga8ea6d4a62d190271e5d81d9ba841fc52}\label{group___b_m_m150_ga8ea6d4a62d190271e5d81d9ba841fc52}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+E\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+O\+N\+F\+IG}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(-\/3)
+\end{DoxyCompactItemize}
+\subsection*{A\+PI warning codes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga94a6319fda586fe44e57b3c636c73bad}\label{group___b_m_m150_ga94a6319fda586fe44e57b3c636c73bad}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+Y\+Z\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(1)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga04a430294261593fc994ecb3dd89b8dd}\label{group___b_m_m150_ga04a430294261593fc994ecb3dd89b8dd}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+Z\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(2)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga80f345c728c74ab2bfcbb524d20cdc52}\label{group___b_m_m150_ga80f345c728c74ab2bfcbb524d20cdc52}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+Z\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(3)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae80db964b313a18fd830f0ba981f1b84}\label{group___b_m_m150_gae80db964b313a18fd830f0ba981f1b84}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+Y\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(4)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2c30d87bf583772b372b6022102c42c8}\label{group___b_m_m150_ga2c30d87bf583772b372b6022102c42c8}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+Y\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(5)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga03302a1dd8a9a0860853db609facb02a}\label{group___b_m_m150_ga03302a1dd8a9a0860853db609facb02a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(6)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2f7e1d70f3762cc2f0c15c88f3c54b0f}\label{group___b_m_m150_ga2f7e1d70f3762cc2f0c15c88f3c54b0f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+Y\+Z\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(7)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gadfdfb6f13d803880acf88a0c4d5a933a}\label{group___b_m_m150_gadfdfb6f13d803880acf88a0c4d5a933a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+W\+\_\+\+A\+D\+V\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+F\+A\+IL}~\hyperlink{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}{I\+N\+T8\+\_\+C}(8)
+\end{DoxyCompactItemize}
+\subsection*{C\+H\+IP ID \& S\+O\+FT R\+E\+S\+ET V\+A\+L\+U\+ES}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga4f3e92e863e3bc56eb68e7fd7edad30f}\label{group___b_m_m150_ga4f3e92e863e3bc56eb68e7fd7edad30f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+C\+H\+I\+P\+\_\+\+ID}~U\+I\+N\+T8\+\_\+C(0x32)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gad4e1a7316da5f4ef680fc284dbb97f1d}\label{group___b_m_m150_gad4e1a7316da5f4ef680fc284dbb97f1d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET}~U\+I\+N\+T8\+\_\+C(0x82)
+\end{DoxyCompactItemize}
+\subsection*{P\+O\+W\+ER M\+O\+DE D\+E\+F\+I\+N\+T\+I\+O\+NS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga59038d30adf852a9189271be212916d0}\label{group___b_m_m150_ga59038d30adf852a9189271be212916d0}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+DE}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf473dd93df57b0a43966fbb08c58f3fd}\label{group___b_m_m150_gaf473dd93df57b0a43966fbb08c58f3fd}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+M\+O\+DE}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaaa3f3198d96e944305377175fd55da1a}\label{group___b_m_m150_gaaa3f3198d96e944305377175fd55da1a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+L\+E\+E\+P\+\_\+\+M\+O\+DE}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga367ff57502c166a70c7c2dc72a5dcc43}\label{group___b_m_m150_ga367ff57502c166a70c7c2dc72a5dcc43}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+M\+O\+DE}~U\+I\+N\+T8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\subsection*{I2C A\+D\+D\+R\+E\+SS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gacec262689d340c2160a64008a669aa17}\label{group___b_m_m150_gacec262689d340c2160a64008a669aa17}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}~U\+I\+N\+T8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac04e274fd3110a712d57a83a66f56574}\label{group___b_m_m150_gac04e274fd3110a712d57a83a66f56574}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+S\+B\+\_\+\+L\+O\+W\+\_\+\+S\+D\+O\+\_\+\+H\+I\+GH}~U\+I\+N\+T8\+\_\+C(0x11)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga36e8f78f8495e6f498604c2c725c21fd}\label{group___b_m_m150_ga36e8f78f8495e6f498604c2c725c21fd}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+S\+B\+\_\+\+H\+I\+G\+H\+\_\+\+S\+D\+O\+\_\+\+L\+OW}~U\+I\+N\+T8\+\_\+C(0x12)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga3294feea0bdf7c0f8590e1feddf23906}\label{group___b_m_m150_ga3294feea0bdf7c0f8590e1feddf23906}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+S\+B\+\_\+\+H\+I\+G\+H\+\_\+\+S\+D\+O\+\_\+\+H\+I\+GH}~U\+I\+N\+T8\+\_\+C(0x13)
+\end{DoxyCompactItemize}
+\subsection*{Power mode settings}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga7a5d9c2dd81e018449133ec0271a8469}\label{group___b_m_m150_ga7a5d9c2dd81e018449133ec0271a8469}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+N\+T\+R\+L\+\_\+\+D\+I\+S\+A\+B\+LE}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga8b4324eb9f0ee083a20ef9e328ea227f}\label{group___b_m_m150_ga8b4324eb9f0ee083a20ef9e328ea227f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+N\+A\+B\+LE}~U\+I\+N\+T8\+\_\+C(0x01)
+\end{DoxyCompactItemize}
+\subsection*{Sensor delay time settings}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae444e3a85c42d159494a3aaa009acf96}\label{group___b_m_m150_gae444e3a85c42d159494a3aaa009acf96}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+D\+E\+L\+AY}~U\+I\+N\+T8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaec6af2af456b44f31f53c69235028ed6}\label{group___b_m_m150_gaec6af2af456b44f31f53c69235028ed6}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+D\+E\+L\+AY}~U\+I\+N\+T8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf14f592affbc3c378989438565e1021e}\label{group___b_m_m150_gaf14f592affbc3c378989438565e1021e}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+T\+A\+R\+T\+\_\+\+U\+P\+\_\+\+T\+I\+ME}~U\+I\+N\+T8\+\_\+C(3)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga8971ae38df387b4423cd88b82aa2342d}\label{group___b_m_m150_ga8971ae38df387b4423cd88b82aa2342d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+A\+D\+V\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+D\+E\+L\+AY}~U\+I\+N\+T8\+\_\+C(4)
+\end{DoxyCompactItemize}
+\subsection*{E\+N\+A\+B\+L\+E/\+D\+I\+S\+A\+B\+LE D\+E\+F\+I\+N\+I\+T\+I\+O\+NS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaaf00be9e69422a82831aa42631ba8899}\label{group___b_m_m150_gaaf00be9e69422a82831aa42631ba8899}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+X\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+E\+N\+A\+B\+LE}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2f287eb0d76864537f15213886090aff}\label{group___b_m_m150_ga2f287eb0d76864537f15213886090aff}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+X\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+D\+I\+S\+A\+B\+LE}~U\+I\+N\+T8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\subsection*{Register Address}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga0c3d28ca135139ff161d04d4a62e97b1}\label{group___b_m_m150_ga0c3d28ca135139ff161d04d4a62e97b1}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+C\+H\+I\+P\+\_\+\+I\+D\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga97183a59b8ef57948cd3c8553e84e2d6}\label{group___b_m_m150_ga97183a59b8ef57948cd3c8553e84e2d6}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+X\+\_\+\+L\+SB}~U\+I\+N\+T8\+\_\+C(0x42)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac980d0255f3e86bebed102696b46dc41}\label{group___b_m_m150_gac980d0255f3e86bebed102696b46dc41}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+A\+D\+Y\+\_\+\+S\+T\+A\+T\+US}~U\+I\+N\+T8\+\_\+C(0x48)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga4c316e2cf4b161c229b432e93ba69387}\label{group___b_m_m150_ga4c316e2cf4b161c229b432e93ba69387}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+T\+US}~U\+I\+N\+T8\+\_\+C(0x4\+A)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf5a0a241dbf7482c2d4981d464c04674}\label{group___b_m_m150_gaf5a0a241dbf7482c2d4981d464c04674}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x4\+B)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga4aa63fdab9b4aebde8973bc159e3119e}\label{group___b_m_m150_ga4aa63fdab9b4aebde8973bc159e3119e}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+P\+\_\+\+M\+O\+D\+E\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x4\+C)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga9a3c738a8f096327529103205394eb3a}\label{group___b_m_m150_ga9a3c738a8f096327529103205394eb3a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x4\+D)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga89a8feee9832b4c066996a14538fa2de}\label{group___b_m_m150_ga89a8feee9832b4c066996a14538fa2de}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+A\+X\+E\+S\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x4\+E)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac62a25e704f97becd8244199611ff717}\label{group___b_m_m150_gac62a25e704f97becd8244199611ff717}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x4\+F)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gabd2e2ad720f86ad0d9e6ece900b6628d}\label{group___b_m_m150_gabd2e2ad720f86ad0d9e6ece900b6628d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x50)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga9c6f8a06b24b62550a7f2015607b6f52}\label{group___b_m_m150_ga9c6f8a06b24b62550a7f2015607b6f52}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+R\+E\+P\+\_\+\+X\+Y\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x51)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga6ce4d850289faf75a778b68bd1a3c33e}\label{group___b_m_m150_ga6ce4d850289faf75a778b68bd1a3c33e}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+R\+E\+P\+\_\+\+Z\+\_\+\+A\+D\+DR}~U\+I\+N\+T8\+\_\+C(0x52)
+\end{DoxyCompactItemize}
+\subsection*{Macros to select the sensor settings to be set by the user}
+\label{_amgrpc91c1720e4fa9c470a7fd37fa7d67f97}%
+These values are internal for A\+PI implementation. Don\textquotesingle{}t relate this to data sheet. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga8a148647b00f427aa281d599f82808cd}\label{group___b_m_m150_ga8a148647b00f427aa281d599f82808cd}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga51721809d21583d12cdd9c3ff5ecd915}\label{group___b_m_m150_ga51721809d21583d12cdd9c3ff5ecd915}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 1)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac00bc4d1e75cfbc1c662a24203c025f3}\label{group___b_m_m150_gac00bc4d1e75cfbc1c662a24203c025f3}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+X\+Y\+\_\+\+R\+E\+P\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 2)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga0c23f45dd9c1715af8fc1196a453a967}\label{group___b_m_m150_ga0c23f45dd9c1715af8fc1196a453a967}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+Z\+\_\+\+R\+E\+P\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 3)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae41907b55a2922bb2ec57b3ff4c937be}\label{group___b_m_m150_gae41907b55a2922bb2ec57b3ff4c937be}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+P\+I\+N\+\_\+\+E\+N\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 4)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2545bda4d960ac6b3ff3ff2e1eab1fb1}\label{group___b_m_m150_ga2545bda4d960ac6b3ff3ff2e1eab1fb1}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+P\+I\+N\+\_\+\+E\+N\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 5)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga1db8e08e38c5608d98da56929e31edb8}\label{group___b_m_m150_ga1db8e08e38c5608d98da56929e31edb8}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 6)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga864cced2dc2198714a983caabcc15104}\label{group___b_m_m150_ga864cced2dc2198714a983caabcc15104}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+L\+A\+T\+C\+H\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 7)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga42d80018b6fbba8660ec651f4bff3a68}\label{group___b_m_m150_ga42d80018b6fbba8660ec651f4bff3a68}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 8)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga027182e11bafb47085f223dc3092088a}\label{group___b_m_m150_ga027182e11bafb47085f223dc3092088a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+I\+N\+T\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 9)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gafc6359bc656da3823dbbb0d67bf37c4b}\label{group___b_m_m150_gafc6359bc656da3823dbbb0d67bf37c4b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+I\+N\+T\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 10)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga1ddcd00f6d852367029a73faed433075}\label{group___b_m_m150_ga1ddcd00f6d852367029a73faed433075}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 11)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaadddd8d5c6a55cd7f76497ca2c8a8d4a}\label{group___b_m_m150_gaadddd8d5c6a55cd7f76497ca2c8a8d4a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 12)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga92295b9050f0ab7c77f997374a224a6d}\label{group___b_m_m150_ga92295b9050f0ab7c77f997374a224a6d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 13)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gafe347f30221ea77ea52121b65f30f63a}\label{group___b_m_m150_gafe347f30221ea77ea52121b65f30f63a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+S\+EL}~U\+I\+N\+T16\+\_\+C(1 $<$$<$ 14)
+\end{DoxyCompactItemize}
+\subsection*{D\+A\+TA R\+A\+TE D\+E\+F\+I\+N\+I\+T\+I\+O\+NS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga49bd59d71923ec7365532fe85932eba8}\label{group___b_m_m150_ga49bd59d71923ec7365532fe85932eba8}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+10\+HZ}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2d1c67e005d23558b15d69d13cb24a2e}\label{group___b_m_m150_ga2d1c67e005d23558b15d69d13cb24a2e}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+02\+HZ}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaae81f66171c9443f458ba233953a34d6}\label{group___b_m_m150_gaae81f66171c9443f458ba233953a34d6}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+06\+HZ}~U\+I\+N\+T8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf52fa42e52cc3a250f028f86035974ee}\label{group___b_m_m150_gaf52fa42e52cc3a250f028f86035974ee}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+08\+HZ}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2720c433abcb58b10a05e2df4e19eb51}\label{group___b_m_m150_ga2720c433abcb58b10a05e2df4e19eb51}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+15\+HZ}~U\+I\+N\+T8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaec2da85c333c50753ea44752763b0c4a}\label{group___b_m_m150_gaec2da85c333c50753ea44752763b0c4a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+20\+HZ}~U\+I\+N\+T8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gab0a3a07222ec43ae4ccabd44bf35f47d}\label{group___b_m_m150_gab0a3a07222ec43ae4ccabd44bf35f47d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+25\+HZ}~U\+I\+N\+T8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga110129672608d8f357074ea7e3a911fa}\label{group___b_m_m150_ga110129672608d8f357074ea7e3a911fa}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+30\+HZ}~U\+I\+N\+T8\+\_\+C(0x07)
+\end{DoxyCompactItemize}
+\subsection*{T\+R\+IM R\+E\+G\+I\+S\+T\+E\+RS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga6f4842863a3a45a1dda8aeab5380a704}\label{group___b_m_m150_ga6f4842863a3a45a1dda8aeab5380a704}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+X1}~U\+I\+N\+T8\+\_\+C(0x5\+D)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga76d7f35a931f9f71e39ed60e13a9d5e4}\label{group___b_m_m150_ga76d7f35a931f9f71e39ed60e13a9d5e4}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Y1}~U\+I\+N\+T8\+\_\+C(0x5\+E)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga90c5e736eab103bb8298afe5ceff3142}\label{group___b_m_m150_ga90c5e736eab103bb8298afe5ceff3142}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z4\+\_\+\+L\+SB}~U\+I\+N\+T8\+\_\+C(0x62)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gab2d62243fc52243237e257c184e0ff3f}\label{group___b_m_m150_gab2d62243fc52243237e257c184e0ff3f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z4\+\_\+\+M\+SB}~U\+I\+N\+T8\+\_\+C(0x63)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga321605f1e28728eb836756584f18a5c3}\label{group___b_m_m150_ga321605f1e28728eb836756584f18a5c3}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+X2}~U\+I\+N\+T8\+\_\+C(0x64)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gad48401100ea30b4fe0751f83d3596e57}\label{group___b_m_m150_gad48401100ea30b4fe0751f83d3596e57}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Y2}~U\+I\+N\+T8\+\_\+C(0x65)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf5e2f18c796516955708266a654224f0}\label{group___b_m_m150_gaf5e2f18c796516955708266a654224f0}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z2\+\_\+\+L\+SB}~U\+I\+N\+T8\+\_\+C(0x68)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gabfd26fc351558a45693119519e14ca7a}\label{group___b_m_m150_gabfd26fc351558a45693119519e14ca7a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z2\+\_\+\+M\+SB}~U\+I\+N\+T8\+\_\+C(0x69)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga4b86d52b09ddfdba715a35c3f8e77f2f}\label{group___b_m_m150_ga4b86d52b09ddfdba715a35c3f8e77f2f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z1\+\_\+\+L\+SB}~U\+I\+N\+T8\+\_\+C(0x6\+A)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaa7fc2c149bac3c4c037a900a9ca6151f}\label{group___b_m_m150_gaa7fc2c149bac3c4c037a900a9ca6151f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z1\+\_\+\+M\+SB}~U\+I\+N\+T8\+\_\+C(0x6\+B)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga4dd67e60e4ca6ceba96c7822abc31a2b}\label{group___b_m_m150_ga4dd67e60e4ca6ceba96c7822abc31a2b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+X\+Y\+Z1\+\_\+\+L\+SB}~U\+I\+N\+T8\+\_\+C(0x6\+C)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae379d42737c29ce3bdf8a21fa4569364}\label{group___b_m_m150_gae379d42737c29ce3bdf8a21fa4569364}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+X\+Y\+Z1\+\_\+\+M\+SB}~U\+I\+N\+T8\+\_\+C(0x6\+D)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gab9ac3938b949b6200668a9f0b8701920}\label{group___b_m_m150_gab9ac3938b949b6200668a9f0b8701920}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z3\+\_\+\+L\+SB}~U\+I\+N\+T8\+\_\+C(0x6\+E)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga6b42131d3183394d176bc988f6ef6b36}\label{group___b_m_m150_ga6b42131d3183394d176bc988f6ef6b36}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+Z3\+\_\+\+M\+SB}~U\+I\+N\+T8\+\_\+C(0x6\+F)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae4930ced79355b8039ded668e72cf241}\label{group___b_m_m150_gae4930ced79355b8039ded668e72cf241}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+X\+Y2}~U\+I\+N\+T8\+\_\+C(0x70)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gafda35398d4e1b971ea8801da17341120}\label{group___b_m_m150_gafda35398d4e1b971ea8801da17341120}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+G\+\_\+\+X\+Y1}~U\+I\+N\+T8\+\_\+C(0x71)
+\end{DoxyCompactItemize}
+\subsection*{Threshold interrupt setting macros for x,y,z axes selection}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gacc67ab3ab69ac01c5103473f2fc5fbfd}\label{group___b_m_m150_gacc67ab3ab69ac01c5103473f2fc5fbfd}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+X}~U\+I\+N\+T8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga40e3722bf5968c28a08a68cfbf8a45ef}\label{group___b_m_m150_ga40e3722bf5968c28a08a68cfbf8a45ef}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+Y}~U\+I\+N\+T8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga8eee4adc9c27238b3559a3d120d28ca4}\label{group___b_m_m150_ga8eee4adc9c27238b3559a3d120d28ca4}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+Z}~U\+I\+N\+T8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\subsection*{User configurable interrupt setting macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae70c03de48f609fd7c0ce910ccc367c4}\label{group___b_m_m150_gae70c03de48f609fd7c0ce910ccc367c4}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+E\+N\+A\+B\+LE}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gafb571f959248cb5c9c64a7dcf843fe27}\label{group___b_m_m150_gafb571f959248cb5c9c64a7dcf843fe27}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+D\+I\+S\+A\+B\+LE}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga486c396fdf712cc623b9e9d35dd3f127}\label{group___b_m_m150_ga486c396fdf712cc623b9e9d35dd3f127}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+H\+I\+G\+H\+\_\+\+P\+O\+L\+A\+R\+I\+TY}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2987930ff7b045e01a53bdf6eecbe253}\label{group___b_m_m150_ga2987930ff7b045e01a53bdf6eecbe253}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+L\+O\+W\+\_\+\+P\+O\+L\+A\+R\+I\+TY}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga74a1dcf326f7e6a2117e6901b2a0025f}\label{group___b_m_m150_ga74a1dcf326f7e6a2117e6901b2a0025f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+A\+T\+C\+H\+ED}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gadd32543d7b560e6e0c457ce5de5a5c86}\label{group___b_m_m150_gadd32543d7b560e6e0c457ce5de5a5c86}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+N\+O\+N\+\_\+\+L\+A\+T\+C\+H\+ED}~U\+I\+N\+T8\+\_\+C(0x00)
+\end{DoxyCompactItemize}
+\subsection*{Interrupt status}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga6b4a34979bafaf4f5919e7ce680c6594}\label{group___b_m_m150_ga6b4a34979bafaf4f5919e7ce680c6594}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+X}~U\+I\+N\+T16\+\_\+C(0x0001)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga6d41304b2bc0d6a614b20ef4a8df28ee}\label{group___b_m_m150_ga6d41304b2bc0d6a614b20ef4a8df28ee}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+Y}~U\+I\+N\+T16\+\_\+C(0x0002)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gabb7931fd88fddf1812cdac483a16cf88}\label{group___b_m_m150_gabb7931fd88fddf1812cdac483a16cf88}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+Z}~U\+I\+N\+T16\+\_\+C(0x0004)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaab2697fd37ee109424df56b4a83592e2}\label{group___b_m_m150_gaab2697fd37ee109424df56b4a83592e2}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+X}~U\+I\+N\+T16\+\_\+C(0x0008)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaa2d11bef91a5ee5c846867a37aacc12e}\label{group___b_m_m150_gaa2d11bef91a5ee5c846867a37aacc12e}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+Y}~U\+I\+N\+T16\+\_\+C(0x0010)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga34046beb28da9e25f319d78eab0cd856}\label{group___b_m_m150_ga34046beb28da9e25f319d78eab0cd856}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+Z}~U\+I\+N\+T16\+\_\+C(0x0020)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga472bff91fb59430c5185dc0a8e2bc6f4}\label{group___b_m_m150_ga472bff91fb59430c5185dc0a8e2bc6f4}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+I\+NT}~U\+I\+N\+T16\+\_\+C(0x0040)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga83a08bda67047a910e93c2608ffe1e54}\label{group___b_m_m150_ga83a08bda67047a910e93c2608ffe1e54}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+I\+NT}~U\+I\+N\+T16\+\_\+C(0x0080)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae80f53d4692065b51a8df454404fdf05}\label{group___b_m_m150_gae80f53d4692065b51a8df454404fdf05}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+A\+D\+Y\+\_\+\+I\+NT}~U\+I\+N\+T16\+\_\+C(0x0100)
+\end{DoxyCompactItemize}
+\subsection*{Macros for bit masking}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga6656c33f4ff3c1c007e9b82335cf38ab}\label{group___b_m_m150_ga6656c33f4ff3c1c007e9b82335cf38ab}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+W\+R\+\_\+\+C\+N\+T\+R\+L\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga545c4a7ba4722500d6a2821aabe0e699}\label{group___b_m_m150_ga545c4a7ba4722500d6a2821aabe0e699}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x38)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaab1625dbd6972438a129d2e32f08a16d}\label{group___b_m_m150_gaab1625dbd6972438a129d2e32f08a16d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae25146f0841521534b67f6fa5fa5218d}\label{group___b_m_m150_gae25146f0841521534b67f6fa5fa5218d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+I\+T\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga0c2108207a9b05c12663216db43cd953}\label{group___b_m_m150_ga0c2108207a9b05c12663216db43cd953}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+I\+T\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2ed8b124283f5a8b052fd31ae7dda569}\label{group___b_m_m150_ga2ed8b124283f5a8b052fd31ae7dda569}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+P\+\_\+\+M\+O\+D\+E\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gafda9fb86796f4c4b4e703f492ce216ed}\label{group___b_m_m150_gafda9fb86796f4c4b4e703f492ce216ed}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+P\+\_\+\+M\+O\+D\+E\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac356fd2c804c2da853436e16201bb39e}\label{group___b_m_m150_gac356fd2c804c2da853436e16201bb39e}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+D\+R\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x38)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaeac8b4bc79e2f9daac20ffd475a73e05}\label{group___b_m_m150_gaeac8b4bc79e2f9daac20ffd475a73e05}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+D\+R\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga952f91e7cac473b70e866b23aece8fbf}\label{group___b_m_m150_ga952f91e7cac473b70e866b23aece8fbf}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+X\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x\+F8)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga5adc2f4ea07bcedf8e77630b5edfa3cf}\label{group___b_m_m150_ga5adc2f4ea07bcedf8e77630b5edfa3cf}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+X\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gab32d9400291b2a4663f4b58a66e69987}\label{group___b_m_m150_gab32d9400291b2a4663f4b58a66e69987}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+Y\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x\+F8)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaa592871f97a623ce6e2afe45303a2953}\label{group___b_m_m150_gaa592871f97a623ce6e2afe45303a2953}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+Y\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga986d5cc7d9446cfe96bdb780abce74c7}\label{group___b_m_m150_ga986d5cc7d9446cfe96bdb780abce74c7}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+Z\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x\+F\+E)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gabe646b483626271a96bcbd9d708e1dbb}\label{group___b_m_m150_gabe646b483626271a96bcbd9d708e1dbb}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+Z\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gade03ff196c69db24827960ee95a1aecb}\label{group___b_m_m150_gade03ff196c69db24827960ee95a1aecb}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+H\+A\+L\+L\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x\+F\+C)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga8e3d956394d8e5726469aec9389fd205}\label{group___b_m_m150_ga8e3d956394d8e5726469aec9389fd205}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+H\+A\+L\+L\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac8eb6d7fd78c6fbb64b1cd9ab6972797}\label{group___b_m_m150_gac8eb6d7fd78c6fbb64b1cd9ab6972797}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga5f989ad279daee6ed020efff2ead4303}\label{group___b_m_m150_ga5f989ad279daee6ed020efff2ead4303}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+A\+D\+V\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x\+C0)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf48a3b129a2fc9a8dea057dd317a52bd}\label{group___b_m_m150_gaf48a3b129a2fc9a8dea057dd317a52bd}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+A\+D\+V\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac7886d152790cca4273e3647d08e6cef}\label{group___b_m_m150_gac7886d152790cca4273e3647d08e6cef}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+E\+N\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga3fb2e35230df5f0cdc466596f7eaa27c}\label{group___b_m_m150_ga3fb2e35230df5f0cdc466596f7eaa27c}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+E\+N\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga0ff5eed97208678cd89b05882e150f6b}\label{group___b_m_m150_ga0ff5eed97208678cd89b05882e150f6b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+P\+I\+N\+\_\+\+E\+N\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga98d2ca4d86fac35900d4d5f755ab7940}\label{group___b_m_m150_ga98d2ca4d86fac35900d4d5f755ab7940}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+P\+I\+N\+\_\+\+E\+N\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga88024ceb300ad8a9b1ee5a4255c8a84f}\label{group___b_m_m150_ga88024ceb300ad8a9b1ee5a4255c8a84f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2f5563c023d45dc5bcf09a1689ce429b}\label{group___b_m_m150_ga2f5563c023d45dc5bcf09a1689ce429b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga7aab5f095a25947b16fc5a9b122f344b}\label{group___b_m_m150_ga7aab5f095a25947b16fc5a9b122f344b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+L\+A\+T\+C\+H\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gacfc902bb655b1d2e2e4256a5085e6064}\label{group___b_m_m150_gacfc902bb655b1d2e2e4256a5085e6064}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+L\+A\+T\+C\+H\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2643a7722210bda41ea1b611b3ab107c}\label{group___b_m_m150_ga2643a7722210bda41ea1b611b3ab107c}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga8ac2909be129e0632c0244eb7b9deaa2}\label{group___b_m_m150_ga8ac2909be129e0632c0244eb7b9deaa2}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+I\+N\+T\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga9823c43fea416cf8009de77da5572295}\label{group___b_m_m150_ga9823c43fea416cf8009de77da5572295}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+I\+N\+T\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gac79f5b0b52b9eee50e374245c4524161}\label{group___b_m_m150_gac79f5b0b52b9eee50e374245c4524161}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+I\+N\+T\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaa4edc012c386f7c193bf3e40a325a14b}\label{group___b_m_m150_gaa4edc012c386f7c193bf3e40a325a14b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+I\+N\+T\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga575e4da1c0354a8230f9af750bfb262f}\label{group___b_m_m150_ga575e4da1c0354a8230f9af750bfb262f}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x38)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga1cca3f6e5ae12231a6fe398dd1ac64e8}\label{group___b_m_m150_ga1cca3f6e5ae12231a6fe398dd1ac64e8}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+\+P\+OS}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga1b8658f2d5484f74cb604ef530e0967a}\label{group___b_m_m150_ga1b8658f2d5484f74cb604ef530e0967a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga43243b4162867b9812cbc9e8ac59f881}\label{group___b_m_m150_ga43243b4162867b9812cbc9e8ac59f881}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+SK}~U\+I\+N\+T8\+\_\+C(0x01)
+\end{DoxyCompactItemize}
+\subsection*{O\+V\+E\+R\+F\+L\+OW D\+E\+F\+I\+N\+I\+T\+I\+O\+NS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga5b1ad35c05f2ab9b39dc5539ee6e57fd}\label{group___b_m_m150_ga5b1ad35c05f2ab9b39dc5539ee6e57fd}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+X\+Y\+A\+X\+E\+S\+\_\+\+F\+L\+I\+P\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+A\+D\+C\+V\+AL}~I\+N\+T16\+\_\+C(-\/4096)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga75ac50a30d683f82dca4bda240f0211b}\label{group___b_m_m150_ga75ac50a30d683f82dca4bda240f0211b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+Z\+A\+X\+I\+S\+\_\+\+H\+A\+L\+L\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+A\+D\+C\+V\+AL}~I\+N\+T16\+\_\+C(-\/16384)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga85e4e11bb8df5c7f08393c5c053f7313}\label{group___b_m_m150_ga85e4e11bb8df5c7f08393c5c053f7313}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+O\+U\+T\+P\+UT}~I\+N\+T16\+\_\+C(-\/32768)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gabc605b18893625684b0437db47363897}\label{group___b_m_m150_gabc605b18893625684b0437db47363897}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+N\+E\+G\+A\+T\+I\+V\+E\+\_\+\+S\+A\+T\+U\+R\+A\+T\+I\+O\+N\+\_\+Z}~I\+N\+T16\+\_\+C(-\/32767)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga370302c1b320bb1de22d96aa6a48fbd9}\label{group___b_m_m150_ga370302c1b320bb1de22d96aa6a48fbd9}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+\+S\+A\+T\+U\+R\+A\+T\+I\+O\+N\+\_\+Z}~U\+I\+N\+T16\+\_\+C(32767)
+\end{DoxyCompactItemize}
+\subsection*{P\+R\+E\+S\+ET M\+O\+DE D\+E\+F\+I\+N\+I\+T\+I\+O\+NS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga53d45f7abf598fb71d42b9b802527b38}\label{group___b_m_m150_ga53d45f7abf598fb71d42b9b802527b38}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+L\+O\+W\+P\+O\+W\+ER}~U\+I\+N\+T8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga0a5b6e8ffa9b48919a9249391e8adf6c}\label{group___b_m_m150_ga0a5b6e8ffa9b48919a9249391e8adf6c}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+R\+E\+G\+U\+L\+AR}~U\+I\+N\+T8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae42ffc1cb14641aace57f88405accfee}\label{group___b_m_m150_gae42ffc1cb14641aace57f88405accfee}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+A\+C\+C\+U\+R\+A\+CY}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gabe068b7f463f2d0792dfec9cf789356b}\label{group___b_m_m150_gabe068b7f463f2d0792dfec9cf789356b}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+E\+N\+H\+A\+N\+C\+ED}~U\+I\+N\+T8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\subsection*{P\+R\+E\+S\+ET M\+O\+D\+ES -\/ R\+E\+P\+E\+T\+I\+T\+I\+O\+N\+S-\/\+XY R\+A\+T\+ES}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga07a88e2e2f239df21553d8d2d3fd95ad}\label{group___b_m_m150_ga07a88e2e2f239df21553d8d2d3fd95ad}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+P\+O\+W\+E\+R\+\_\+\+R\+E\+P\+XY}~U\+I\+N\+T8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga189401c65c20987dae0f7e321e72e67d}\label{group___b_m_m150_ga189401c65c20987dae0f7e321e72e67d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+E\+P\+XY}~U\+I\+N\+T8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga64544c94f65746a876d6479eb3ae42c9}\label{group___b_m_m150_ga64544c94f65746a876d6479eb3ae42c9}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+E\+N\+H\+A\+N\+C\+E\+D\+\_\+\+R\+E\+P\+XY}~U\+I\+N\+T8\+\_\+C(7)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf6800e431a1e315906bc9a8c9e172756}\label{group___b_m_m150_gaf6800e431a1e315906bc9a8c9e172756}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+A\+C\+C\+U\+R\+A\+C\+Y\+\_\+\+R\+E\+P\+XY}~U\+I\+N\+T8\+\_\+C(23)
+\end{DoxyCompactItemize}
+\subsection*{P\+R\+E\+S\+ET M\+O\+D\+ES -\/ R\+E\+P\+E\+T\+I\+T\+I\+O\+N\+S-\/Z R\+A\+T\+ES}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga682d10df47d33d319c82923a6bf7bfda}\label{group___b_m_m150_ga682d10df47d33d319c82923a6bf7bfda}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+L\+O\+W\+P\+O\+W\+E\+R\+\_\+\+R\+E\+PZ}~U\+I\+N\+T8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga5f230032f15c2a0e47e15fbeb3b3926d}\label{group___b_m_m150_ga5f230032f15c2a0e47e15fbeb3b3926d}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+E\+PZ}~U\+I\+N\+T8\+\_\+C(14)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gadb0f53226732ebf188d21abc690f7153}\label{group___b_m_m150_gadb0f53226732ebf188d21abc690f7153}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+E\+N\+H\+A\+N\+C\+E\+D\+\_\+\+R\+E\+PZ}~U\+I\+N\+T8\+\_\+C(26)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga587d2ac2387b13f243a0f5c71bb5c7aa}\label{group___b_m_m150_ga587d2ac2387b13f243a0f5c71bb5c7aa}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+H\+I\+G\+H\+A\+C\+C\+U\+R\+A\+C\+Y\+\_\+\+R\+E\+PZ}~U\+I\+N\+T8\+\_\+C(82)
+\end{DoxyCompactItemize}
+\subsection*{Register read lengths}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga15617244bfffcdf36950aeaca026e93a}\label{group___b_m_m150_ga15617244bfffcdf36950aeaca026e93a}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+L\+EN}~U\+I\+N\+T8\+\_\+C(5)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaea226b4dde4c023c6ef6a99368a512a0}\label{group___b_m_m150_gaea226b4dde4c023c6ef6a99368a512a0}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+L\+EN}~U\+I\+N\+T8\+\_\+C(8)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gabab200d34d4e3982f583931419a95084}\label{group___b_m_m150_gabab200d34d4e3982f583931419a95084}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+X\+Y\+Z\+R\+\_\+\+D\+A\+T\+A\+\_\+\+L\+EN}~U\+I\+N\+T8\+\_\+C(8)
+\end{DoxyCompactItemize}
+\subsection*{Self test selection macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga21a50f901e3c91533b1039783ff3c3e8}\label{group___b_m_m150_ga21a50f901e3c91533b1039783ff3c3e8}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+ST}~U\+I\+N\+T8\+\_\+C(0)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga984a8b62f060a27edc983be819891ed8}\label{group___b_m_m150_ga984a8b62f060a27edc983be819891ed8}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+A\+D\+V\+A\+N\+C\+E\+D\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+ST}~U\+I\+N\+T8\+\_\+C(1)
+\end{DoxyCompactItemize}
+\subsection*{Self test settings}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga135d16dc4d0b11f1ef9cdd3473eb20f6}\label{group___b_m_m150_ga135d16dc4d0b11f1ef9cdd3473eb20f6}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+X\+Y\+\_\+\+A\+X\+IS}~U\+I\+N\+T8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gad0fc8ca82bf767772bf6de22435586f3}\label{group___b_m_m150_gad0fc8ca82bf767772bf6de22435586f3}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+P\+\_\+Z}~U\+I\+N\+T8\+\_\+C(0x04)
+\end{DoxyCompactItemize}
+\subsection*{Advanced self-\/test current settings}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gaf43ab256292412c2da888afc50fe8614}\label{group___b_m_m150_gaf43ab256292412c2da888afc50fe8614}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+C\+U\+R\+R\+E\+NT}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gab61c664178d7c5b228c042e3f9d76cf6}\label{group___b_m_m150_gab61c664178d7c5b228c042e3f9d76cf6}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+E\+G\+A\+T\+I\+V\+E\+\_\+\+C\+U\+R\+R\+E\+NT}~U\+I\+N\+T8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga2a1b4df27073e27003c9e401b4f6b941}\label{group___b_m_m150_ga2a1b4df27073e27003c9e401b4f6b941}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+\+C\+U\+R\+R\+E\+NT}~U\+I\+N\+T8\+\_\+C(0x03)
+\end{DoxyCompactItemize}
+\subsection*{Normal self-\/test status}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gae36796ee91096d08d9606752d23edb49}\label{group___b_m_m150_gae36796ee91096d08d9606752d23edb49}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+X\+Y\+Z\+\_\+\+F\+A\+IL}~U\+I\+N\+T8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga183c425a68051efb83f90bb211d62093}\label{group___b_m_m150_ga183c425a68051efb83f90bb211d62093}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS}~U\+I\+N\+T8\+\_\+C(0x07)
+\end{DoxyCompactItemize}
+\subsection*{Macro to S\+ET and G\+ET B\+I\+TS of a register}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___b_m_m150_ga479329e9f54743abfe872741fcce4ae9}{bmm150\+\_\+intf} \{ \hyperlink{group___b_m_m150_gga479329e9f54743abfe872741fcce4ae9ad7bdf3f9fb3ede40544dff5ad13b06ee}{B\+M\+M150\+\_\+\+S\+P\+I\+\_\+\+I\+N\+TF}, 
+\hyperlink{group___b_m_m150_gga479329e9f54743abfe872741fcce4ae9a519204c91f338db8c681885c191d0caa}{B\+M\+M150\+\_\+\+I2\+C\+\_\+\+I\+N\+TF}
+ \}\begin{DoxyCompactList}\small\item\em Interface selection Enums. \end{DoxyCompactList}
+\item 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+TS}(reg\+\_\+data,  bitname,  data)
+\item 
+\#define {\bfseries B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+TS}(reg\+\_\+data,  bitname)
+\item 
+\#define {\bfseries B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0}(reg\+\_\+data,  bitname,  data)
+\item 
+\mbox{\Hypertarget{group___b_m_m150_gab901d7ff4cfb84e13576f813e84019ec}\label{group___b_m_m150_gab901d7ff4cfb84e13576f813e84019ec}} 
+\#define {\bfseries B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0}(reg\+\_\+data,  bitname)~(reg\+\_\+data \& (bitname\#\#\+\_\+\+M\+SK))
+\end{DoxyCompactItemize}
+\subsection*{T\+Y\+PE D\+E\+F\+I\+N\+I\+T\+I\+O\+NS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___b_m_m150_ga87d06d3b9c2af4c76c4dea09b06ebe11}\label{group___b_m_m150_ga87d06d3b9c2af4c76c4dea09b06ebe11}} 
+typedef int8\+\_\+t($\ast$ \hyperlink{group___b_m_m150_ga87d06d3b9c2af4c76c4dea09b06ebe11}{bmm150\+\_\+com\+\_\+fptr\+\_\+t}) (uint8\+\_\+t dev\+\_\+id, uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$read\+\_\+data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Bus communication function pointer which should be mapped to the platform specific read and write functions of the user. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{group___b_m_m150_ga529b0dd2bf61b40fd771adfee5c78beb}{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}) (uint32\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___b_m_m150_ga1a1f0cdb09dd61a91f387f93157311c4}\label{group___b_m_m150_ga1a1f0cdb09dd61a91f387f93157311c4}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+TS@{B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+TS}}
+\index{B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+TS@{B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+TS}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+TS}{BMM150\_GET\_BITS}}
+{\footnotesize\ttfamily \#define B\+M\+M150\+\_\+\+G\+E\+T\+\_\+\+B\+I\+TS(\begin{DoxyParamCaption}\item[{}]{reg\+\_\+data,  }\item[{}]{bitname }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((reg\_data & (bitname##\_MSK)) >> \(\backslash\)
+                                                  (bitname##\_POS))
+\end{DoxyCode}
+\mbox{\Hypertarget{group___b_m_m150_gafbc97840719e10a8a79d1a4d5c75ad11}\label{group___b_m_m150_gafbc97840719e10a8a79d1a4d5c75ad11}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+TS@{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+TS}}
+\index{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+TS@{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+TS}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+TS}{BMM150\_SET\_BITS}}
+{\footnotesize\ttfamily \#define B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+TS(\begin{DoxyParamCaption}\item[{}]{reg\+\_\+data,  }\item[{}]{bitname,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((reg\_data & ~(bitname##\_MSK)) | \(\backslash\)
+     ((data << bitname##\_POS) & bitname##\_MSK))
+\end{DoxyCode}
+\mbox{\Hypertarget{group___b_m_m150_ga35fc7e7348501e95041bf3b9578d4be3}\label{group___b_m_m150_ga35fc7e7348501e95041bf3b9578d4be3}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0@{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0}}
+\index{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0@{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0}{BMM150\_SET\_BITS\_POS\_0}}
+{\footnotesize\ttfamily \#define B\+M\+M150\+\_\+\+S\+E\+T\+\_\+\+B\+I\+T\+S\+\_\+\+P\+O\+S\+\_\+0(\begin{DoxyParamCaption}\item[{}]{reg\+\_\+data,  }\item[{}]{bitname,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((reg\_data & ~(bitname##\_MSK)) | \(\backslash\)
+     (data & bitname##\_MSK))
+\end{DoxyCode}
+\mbox{\Hypertarget{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}\label{group___b_m_m150_ga1eaa7db37089dcdfb60227725c9c1585}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!I\+N\+T8\+\_\+C@{I\+N\+T8\+\_\+C}}
+\index{I\+N\+T8\+\_\+C@{I\+N\+T8\+\_\+C}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{I\+N\+T8\+\_\+C}{INT8\_C}}
+{\footnotesize\ttfamily \#define I\+N\+T8\+\_\+C(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+\textbackslash{} header files 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group___b_m_m150_ga529b0dd2bf61b40fd771adfee5c78beb}\label{group___b_m_m150_ga529b0dd2bf61b40fd771adfee5c78beb}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+delay\+\_\+fptr\+\_\+t@{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}}
+\index{bmm150\+\_\+delay\+\_\+fptr\+\_\+t@{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}{bmm150\_delay\_fptr\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ bmm150\+\_\+delay\+\_\+fptr\+\_\+t) (uint32\+\_\+t)}
+
+delay function pointer 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___b_m_m150_ga479329e9f54743abfe872741fcce4ae9}\label{group___b_m_m150_ga479329e9f54743abfe872741fcce4ae9}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+intf@{bmm150\+\_\+intf}}
+\index{bmm150\+\_\+intf@{bmm150\+\_\+intf}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+intf}{bmm150\_intf}}
+{\footnotesize\ttfamily enum \hyperlink{group___b_m_m150_ga479329e9f54743abfe872741fcce4ae9}{bmm150\+\_\+intf}}
+
+
+
+Interface selection Enums. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+M\+M150\+\_\+\+S\+P\+I\+\_\+\+I\+N\+TF@{B\+M\+M150\+\_\+\+S\+P\+I\+\_\+\+I\+N\+TF}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!B\+M\+M150\+\_\+\+S\+P\+I\+\_\+\+I\+N\+TF@{B\+M\+M150\+\_\+\+S\+P\+I\+\_\+\+I\+N\+TF}}}\mbox{\Hypertarget{group___b_m_m150_gga479329e9f54743abfe872741fcce4ae9ad7bdf3f9fb3ede40544dff5ad13b06ee}\label{group___b_m_m150_gga479329e9f54743abfe872741fcce4ae9ad7bdf3f9fb3ede40544dff5ad13b06ee}} 
+B\+M\+M150\+\_\+\+S\+P\+I\+\_\+\+I\+N\+TF&S\+PI interface \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+M\+M150\+\_\+\+I2\+C\+\_\+\+I\+N\+TF@{B\+M\+M150\+\_\+\+I2\+C\+\_\+\+I\+N\+TF}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!B\+M\+M150\+\_\+\+I2\+C\+\_\+\+I\+N\+TF@{B\+M\+M150\+\_\+\+I2\+C\+\_\+\+I\+N\+TF}}}\mbox{\Hypertarget{group___b_m_m150_gga479329e9f54743abfe872741fcce4ae9a519204c91f338db8c681885c191d0caa}\label{group___b_m_m150_gga479329e9f54743abfe872741fcce4ae9a519204c91f338db8c681885c191d0caa}} 
+B\+M\+M150\+\_\+\+I2\+C\+\_\+\+I\+N\+TF&I2C interface \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___b_m_m150_gabc0895a5c1c847e18e33daf5cd69c1b6}\label{group___b_m_m150_gabc0895a5c1c847e18e33daf5cd69c1b6}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+aux\+\_\+mag\+\_\+data@{bmm150\+\_\+aux\+\_\+mag\+\_\+data}}
+\index{bmm150\+\_\+aux\+\_\+mag\+\_\+data@{bmm150\+\_\+aux\+\_\+mag\+\_\+data}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+aux\+\_\+mag\+\_\+data()}{bmm150\_aux\_mag\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+aux\+\_\+mag\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to compensate the raw mag data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em aux\+\_\+data} & \+: Raw mag data obtained from B\+M\+I160 registers \\
+\hline
+\mbox{\tt in,out}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status and self test result. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_gadee930eb8e5ef947b87ee8c217780143}\label{group___b_m_m150_gadee930eb8e5ef947b87ee8c217780143}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+get\+\_\+interrupt\+\_\+status@{bmm150\+\_\+get\+\_\+interrupt\+\_\+status}}
+\index{bmm150\+\_\+get\+\_\+interrupt\+\_\+status@{bmm150\+\_\+get\+\_\+interrupt\+\_\+status}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+get\+\_\+interrupt\+\_\+status()}{bmm150\_get\_interrupt\_status()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+interrupt\+\_\+status (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI obtains the status flags of all interrupt which is used to check for the assertion of interrupts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The status flags of all the interrupts are stored in the dev-\/$>$int\+\_\+status.
+
+The value of dev-\/$>$int\+\_\+status is performed a bitwise A\+ND operation with predefined interrupt status macros to find the interrupt status which is either set or reset.
+\end{DoxyNote}
+Ex. if (dev-\/$>$int\+\_\+status \& B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+A\+D\+Y\+\_\+\+I\+NT) \{ Occurrence of data ready interrupt \} else \{ No interrupt occurred \}
+
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status and self test result. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_ga6e4a56abf879bb4ad9a263d79974d120}\label{group___b_m_m150_ga6e4a56abf879bb4ad9a263d79974d120}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+get\+\_\+op\+\_\+mode@{bmm150\+\_\+get\+\_\+op\+\_\+mode}}
+\index{bmm150\+\_\+get\+\_\+op\+\_\+mode@{bmm150\+\_\+get\+\_\+op\+\_\+mode}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+get\+\_\+op\+\_\+mode()}{bmm150\_get\_op\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+op\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{op\+\_\+mode,  }\item[{const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to get the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em op\+\_\+mode} & \+: power mode of the sensor. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ op\+\_\+mode }&\textbf{ Power mode  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ op\+\_\+mode }&\textbf{ Power mode  }\\\cline{1-2}
+\endhead
+0x00 &B\+M\+M150\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+DE \\\cline{1-2}
+0x01 &B\+M\+M150\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+M\+O\+DE \\\cline{1-2}
+0x03 &B\+M\+M150\+\_\+\+S\+L\+E\+E\+P\+\_\+\+M\+O\+DE \\\cline{1-2}
+0x04 &B\+M\+M150\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+M\+O\+DE \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_gac3b65c846fa1d826b2addbbef4292a9c}\label{group___b_m_m150_gac3b65c846fa1d826b2addbbef4292a9c}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+get\+\_\+regs@{bmm150\+\_\+get\+\_\+regs}}
+\index{bmm150\+\_\+get\+\_\+regs@{bmm150\+\_\+get\+\_\+regs}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+get\+\_\+regs()}{bmm150\_get\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{reg\+\_\+data,  }\item[{uint8\+\_\+t}]{len,  }\item[{const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads the data from the given register address of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be read \\
+\hline
+\mbox{\tt out}  & {\em reg\+\_\+data} & \+: Pointer to data buffer to store the read data. \\
+\hline
+\mbox{\tt in}  & {\em len} & \+: No of bytes of data to be read. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_ga12db4420b434ac786c10494dd3f80e7f}\label{group___b_m_m150_ga12db4420b434ac786c10494dd3f80e7f}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+get\+\_\+sensor\+\_\+settings@{bmm150\+\_\+get\+\_\+sensor\+\_\+settings}}
+\index{bmm150\+\_\+get\+\_\+sensor\+\_\+settings@{bmm150\+\_\+get\+\_\+sensor\+\_\+settings}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+get\+\_\+sensor\+\_\+settings()}{bmm150\_get\_sensor\_settings()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+get\+\_\+sensor\+\_\+settings (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI gets all the sensor settings and updates the dev structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_gab4897d93fb8406c61d6bfab44de8c054}\label{group___b_m_m150_gab4897d93fb8406c61d6bfab44de8c054}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+init@{bmm150\+\_\+init}}
+\index{bmm150\+\_\+init@{bmm150\+\_\+init}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+init()}{bmm150\_init()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+init (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is the entry point, Call this A\+PI before using other A\+P\+Is. This A\+PI reads the chip-\/id of the sensor which is the first step to verify the sensor and also it configures the read mechanism of S\+PI and I2C interface. 
+
+C\+PP guard
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_gaabaad6846eae116f278af4c87d432b2f}\label{group___b_m_m150_gaabaad6846eae116f278af4c87d432b2f}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+perform\+\_\+self\+\_\+test@{bmm150\+\_\+perform\+\_\+self\+\_\+test}}
+\index{bmm150\+\_\+perform\+\_\+self\+\_\+test@{bmm150\+\_\+perform\+\_\+self\+\_\+test}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+perform\+\_\+self\+\_\+test()}{bmm150\_perform\_self\_test()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+perform\+\_\+self\+\_\+test (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{self\+\_\+test\+\_\+mode,  }\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to perform the complete self test (both normal and advanced) for the B\+M\+M150 sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em self\+\_\+test\+\_\+mode} & \+: The type of self test to be performed \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ self\+\_\+test\+\_\+mode }&\textbf{ Self test enabled  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ self\+\_\+test\+\_\+mode }&\textbf{ Self test enabled  }\\\cline{1-2}
+\endhead
+0 &B\+M\+M150\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+ST \\\cline{1-2}
+1 &B\+M\+M150\+\_\+\+A\+D\+V\+A\+N\+C\+E\+D\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+ST \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The return value of this A\+PI gives us the result of self test.
+
+Performing advanced self test does soft reset of the sensor, User can set the desired settings after performing the advanced self test.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status and self test result. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error\\
+\hline
+\end{DoxyRetVals}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return value }&\textbf{ Result of self test  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return value }&\textbf{ Result of self test  }\\\cline{1-2}
+\endhead
+0 &B\+M\+M150\+\_\+\+OK \\\cline{1-2}
+1 &B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+Y\+Z\+\_\+\+F\+A\+IL \\\cline{1-2}
+2 &B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+Z\+\_\+\+F\+A\+IL \\\cline{1-2}
+3 &B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+Z\+\_\+\+F\+A\+IL \\\cline{1-2}
+4 &B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+Y\+\_\+\+F\+A\+IL \\\cline{1-2}
+5 &B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+Y\+\_\+\+F\+A\+IL \\\cline{1-2}
+6 &B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+\_\+\+F\+A\+IL \\\cline{1-2}
+7 &B\+M\+M150\+\_\+\+W\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+X\+Y\+Z\+\_\+\+F\+A\+IL \\\cline{1-2}
+8 &B\+M\+M150\+\_\+\+W\+\_\+\+A\+D\+V\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+F\+A\+IL \\\cline{1-2}
+\end{longtabu}
+\mbox{\Hypertarget{group___b_m_m150_gabdb1f4947a1e2639326420a9fc7a2b12}\label{group___b_m_m150_gabdb1f4947a1e2639326420a9fc7a2b12}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+read\+\_\+mag\+\_\+data@{bmm150\+\_\+read\+\_\+mag\+\_\+data}}
+\index{bmm150\+\_\+read\+\_\+mag\+\_\+data@{bmm150\+\_\+read\+\_\+mag\+\_\+data}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+read\+\_\+mag\+\_\+data()}{bmm150\_read\_mag\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+read\+\_\+mag\+\_\+data (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads the magnetometer data from registers 0x42 to 0x49 and updates the dev structure with compensated mag data in micro-\/tesla. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The output mag data can be obtained either in int16\+\_\+t or float format using this A\+PI. 
+
+Enable the macro \char`\"{}\+B\+M\+M150\+\_\+\+U\+S\+E\+\_\+\+F\+L\+O\+A\+T\+I\+N\+G\+\_\+\+P\+O\+I\+N\+T\char`\"{} in the \hyperlink{bmm150__defs_8h}{bmm150\+\_\+defs.\+h} file and call this A\+PI to get the mag data in float, disable this macro to get the mag data in int16\+\_\+t format
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Mag data output(micro-\/tesla) }&\textbf{ Mag data in dev structure(int16\+\_\+t/float)  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Mag data output(micro-\/tesla) }&\textbf{ Mag data in dev structure(int16\+\_\+t/float)  }\\\cline{1-2}
+\endhead
+X-\/axis data &dev-\/$>$data.\+x \\\cline{1-2}
+Y-\/axis data &dev-\/$>$data.\+y \\\cline{1-2}
+Z-\/axis data &dev-\/$>$data.\+z \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_ga6b8ebfb4d731d5880ef87ecffc72a43b}\label{group___b_m_m150_ga6b8ebfb4d731d5880ef87ecffc72a43b}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+set\+\_\+op\+\_\+mode@{bmm150\+\_\+set\+\_\+op\+\_\+mode}}
+\index{bmm150\+\_\+set\+\_\+op\+\_\+mode@{bmm150\+\_\+set\+\_\+op\+\_\+mode}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+set\+\_\+op\+\_\+mode()}{bmm150\_set\_op\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+op\+\_\+mode (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to set the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+pwr\+\_\+mode }&\textbf{ Power mode  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+pwr\+\_\+mode }&\textbf{ Power mode  }\\\cline{1-2}
+\endhead
+0x00 &B\+M\+M150\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+DE \\\cline{1-2}
+0x01 &B\+M\+M150\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+M\+O\+DE \\\cline{1-2}
+0x03 &B\+M\+M150\+\_\+\+S\+L\+E\+E\+P\+\_\+\+M\+O\+DE \\\cline{1-2}
+0x04 &B\+M\+M150\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+M\+O\+DE \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_gafbd9773c2f5c5645d60231f0ba7e8626}\label{group___b_m_m150_gafbd9773c2f5c5645d60231f0ba7e8626}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+set\+\_\+presetmode@{bmm150\+\_\+set\+\_\+presetmode}}
+\index{bmm150\+\_\+set\+\_\+presetmode@{bmm150\+\_\+set\+\_\+presetmode}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+set\+\_\+presetmode()}{bmm150\_set\_presetmode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+presetmode (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to set the preset mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+preset\+\_\+mode }&\textbf{ Preset mode  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ dev-\/$>$settings.\+preset\+\_\+mode }&\textbf{ Preset mode  }\\\cline{1-2}
+\endhead
+0x01 &B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+L\+O\+W\+P\+O\+W\+ER \\\cline{1-2}
+0x02 &B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+R\+E\+G\+U\+L\+AR \\\cline{1-2}
+0x03 &B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+A\+C\+C\+U\+R\+A\+CY \\\cline{1-2}
+0x04 &B\+M\+M150\+\_\+\+P\+R\+E\+S\+E\+T\+M\+O\+D\+E\+\_\+\+E\+N\+H\+A\+N\+C\+ED \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_ga88285b4abe005f21a5cc9392dddb9de9}\label{group___b_m_m150_ga88285b4abe005f21a5cc9392dddb9de9}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+set\+\_\+regs@{bmm150\+\_\+set\+\_\+regs}}
+\index{bmm150\+\_\+set\+\_\+regs@{bmm150\+\_\+set\+\_\+regs}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+set\+\_\+regs()}{bmm150\_set\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{reg\+\_\+data,  }\item[{uint8\+\_\+t}]{len,  }\item[{const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI writes the given data to the register address of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be written. \\
+\hline
+\mbox{\tt in}  & {\em reg\+\_\+data} & \+: Pointer to data buffer which is to be written in the reg\+\_\+addr of sensor. \\
+\hline
+\mbox{\tt in}  & {\em len} & \+: No of bytes of data to write.. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_ga96ceb625f7af0bf71a8a7ad8aa67fe2b}\label{group___b_m_m150_ga96ceb625f7af0bf71a8a7ad8aa67fe2b}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+set\+\_\+sensor\+\_\+settings@{bmm150\+\_\+set\+\_\+sensor\+\_\+settings}}
+\index{bmm150\+\_\+set\+\_\+sensor\+\_\+settings@{bmm150\+\_\+set\+\_\+sensor\+\_\+settings}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+set\+\_\+sensor\+\_\+settings()}{bmm150\_set\_sensor\_settings()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+set\+\_\+sensor\+\_\+settings (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{desired\+\_\+settings,  }\item[{const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI sets the sensor settings based on the desired\+\_\+settings and the dev structure configuration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em desired\+\_\+settings} & \+: Selection macro for selecting the setting. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Assign the sensor setting macros (multiple macros can be set by doing a bitwise-\/\+OR operation) to the desired\+\_\+settings parameter of this A\+PI to perform the corresponding setting.
+
+threshold interrupt for each axes are set by using bitwise A\+ND operation of the following macros
+\begin{DoxyItemize}
+\item B\+M\+M150\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+X
+\item B\+M\+M150\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+Y
+\item B\+M\+M150\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+Z
+\end{DoxyItemize}
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ desired\+\_\+settings }&\textbf{ Selected sensor setting macros  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ desired\+\_\+settings }&\textbf{ Selected sensor setting macros  }\\\cline{1-2}
+\endhead
+0x0001 &B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+T\+E\+\_\+\+S\+EL \\\cline{1-2}
+0x0002 &B\+M\+M150\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+S\+EL \\\cline{1-2}
+0x0004 &B\+M\+M150\+\_\+\+X\+Y\+\_\+\+R\+E\+P\+\_\+\+S\+EL \\\cline{1-2}
+0x0008 &B\+M\+M150\+\_\+\+Z\+\_\+\+R\+E\+P\+\_\+\+S\+EL \\\cline{1-2}
+0x0010 &B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+P\+I\+N\+\_\+\+E\+N\+\_\+\+S\+EL \\\cline{1-2}
+0x0020 &B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+P\+I\+N\+\_\+\+E\+N\+\_\+\+S\+EL \\\cline{1-2}
+0x0040 &B\+M\+M150\+\_\+\+D\+R\+D\+Y\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+S\+EL \\\cline{1-2}
+0x0080 &B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+L\+A\+T\+C\+H\+\_\+\+S\+EL \\\cline{1-2}
+0x0100 &B\+M\+M150\+\_\+\+I\+N\+T\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+S\+EL \\\cline{1-2}
+0x0200 &B\+M\+M150\+\_\+\+D\+A\+T\+A\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+I\+N\+T\+\_\+\+S\+EL \\\cline{1-2}
+0x0400 &B\+M\+M150\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+I\+N\+T\+\_\+\+S\+EL \\\cline{1-2}
+0x0800 &B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+\+S\+EL \\\cline{1-2}
+0x1000 &B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+\_\+\+S\+EL \\\cline{1-2}
+0x2000 &B\+M\+M150\+\_\+\+L\+O\+W\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+S\+EL \\\cline{1-2}
+0x4000 &B\+M\+M150\+\_\+\+H\+I\+G\+H\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+S\+EL \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___b_m_m150_gad53c0f1cab22067aaff73d0f172a9dbe}\label{group___b_m_m150_gad53c0f1cab22067aaff73d0f172a9dbe}} 
+\index{S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}!bmm150\+\_\+soft\+\_\+reset@{bmm150\+\_\+soft\+\_\+reset}}
+\index{bmm150\+\_\+soft\+\_\+reset@{bmm150\+\_\+soft\+\_\+reset}!S\+E\+N\+S\+O\+R A\+PI@{S\+E\+N\+S\+O\+R A\+PI}}
+\subsubsection{\texorpdfstring{bmm150\+\_\+soft\+\_\+reset()}{bmm150\_soft\_reset()}}
+{\footnotesize\ttfamily int8\+\_\+t bmm150\+\_\+soft\+\_\+reset (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structbmm150__dev}{bmm150\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to perform soft-\/reset of the sensor where all the registers are reset to their default values except 0x4B. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmm150__dev}{bmm150\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}

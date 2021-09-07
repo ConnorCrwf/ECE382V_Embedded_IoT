@@ -1,0 +1,105 @@
+\hypertarget{structbmm150__dev}{}\doxysection{bmm150\+\_\+dev Struct Reference}
+\label{structbmm150__dev}\index{bmm150\_dev@{bmm150\_dev}}
+
+
+bmm150 device structure  
+
+
+
+
+{\ttfamily \#include $<$bmm150\+\_\+defs.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmm150__dev_a88e300db221e7a0382f2a4c289b9557d}{chip\+\_\+id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmm150__dev_a360603720ae8b2c0e4931dd0f648c504}{dev\+\_\+id}}
+\item 
+enum \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga479329e9f54743abfe872741fcce4ae9}{bmm150\+\_\+intf}} \mbox{\hyperlink{structbmm150__dev_a6e5103eaa65687a7c52ee5744aee4cd0}{intf}}
+\item 
+\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}{bmm150\+\_\+com\+\_\+fptr\+\_\+t}} \mbox{\hyperlink{structbmm150__dev_a572348ea2885de8d3c67b9cab2860cc0}{read}}
+\item 
+\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}{bmm150\+\_\+com\+\_\+fptr\+\_\+t}} \mbox{\hyperlink{structbmm150__dev_a7d4812a5e8741e8af2ff9228b2f61e63}{write}}
+\item 
+\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga529b0dd2bf61b40fd771adfee5c78beb}{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}} \mbox{\hyperlink{structbmm150__dev_a59693ca884f9099f41ddc27e1a03218a}{delay\+\_\+ms}}
+\item 
+struct \mbox{\hyperlink{structbmm150__trim__registers}{bmm150\+\_\+trim\+\_\+registers}} \mbox{\hyperlink{structbmm150__dev_a60326457a3f277257a33753b48569fd1}{trim\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structbmm150__settings}{bmm150\+\_\+settings}} \mbox{\hyperlink{structbmm150__dev_a741d7b22a7542100bf375350348d7d62}{settings}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmm150__dev_a3f59df512462da85d565066759723a46}{int\+\_\+status}}
+\item 
+struct \mbox{\hyperlink{structbmm150__mag__data}{bmm150\+\_\+mag\+\_\+data}} \mbox{\hyperlink{structbmm150__dev_af94b0c6831f2721bdb600ba8802b9f79}{data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+bmm150 device structure 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structbmm150__dev_a88e300db221e7a0382f2a4c289b9557d}\label{structbmm150__dev_a88e300db221e7a0382f2a4c289b9557d}} 
+\index{bmm150\_dev@{bmm150\_dev}!chip\_id@{chip\_id}}
+\index{chip\_id@{chip\_id}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{chip\_id}{chip\_id}}
+{\footnotesize\ttfamily uint8\+\_\+t chip\+\_\+id}
+
+Chip Id \mbox{\Hypertarget{structbmm150__dev_af94b0c6831f2721bdb600ba8802b9f79}\label{structbmm150__dev_af94b0c6831f2721bdb600ba8802b9f79}} 
+\index{bmm150\_dev@{bmm150\_dev}!data@{data}}
+\index{data@{data}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmm150__mag__data}{bmm150\+\_\+mag\+\_\+data}} data}
+
+Structure containing mag data \mbox{\Hypertarget{structbmm150__dev_a59693ca884f9099f41ddc27e1a03218a}\label{structbmm150__dev_a59693ca884f9099f41ddc27e1a03218a}} 
+\index{bmm150\_dev@{bmm150\_dev}!delay\_ms@{delay\_ms}}
+\index{delay\_ms@{delay\_ms}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{delay\_ms}{delay\_ms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga529b0dd2bf61b40fd771adfee5c78beb}{bmm150\+\_\+delay\+\_\+fptr\+\_\+t}} delay\+\_\+ms}
+
+delay(in ms) function pointer \mbox{\Hypertarget{structbmm150__dev_a360603720ae8b2c0e4931dd0f648c504}\label{structbmm150__dev_a360603720ae8b2c0e4931dd0f648c504}} 
+\index{bmm150\_dev@{bmm150\_dev}!dev\_id@{dev\_id}}
+\index{dev\_id@{dev\_id}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{dev\_id}{dev\_id}}
+{\footnotesize\ttfamily uint8\+\_\+t dev\+\_\+id}
+
+Device Id \mbox{\Hypertarget{structbmm150__dev_a3f59df512462da85d565066759723a46}\label{structbmm150__dev_a3f59df512462da85d565066759723a46}} 
+\index{bmm150\_dev@{bmm150\_dev}!int\_status@{int\_status}}
+\index{int\_status@{int\_status}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{int\_status}{int\_status}}
+{\footnotesize\ttfamily uint16\+\_\+t int\+\_\+status}
+
+Interrupt status \mbox{\Hypertarget{structbmm150__dev_a6e5103eaa65687a7c52ee5744aee4cd0}\label{structbmm150__dev_a6e5103eaa65687a7c52ee5744aee4cd0}} 
+\index{bmm150\_dev@{bmm150\_dev}!intf@{intf}}
+\index{intf@{intf}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{intf}{intf}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga479329e9f54743abfe872741fcce4ae9}{bmm150\+\_\+intf}} intf}
+
+SPI/\+I2C Interface \mbox{\Hypertarget{structbmm150__dev_a572348ea2885de8d3c67b9cab2860cc0}\label{structbmm150__dev_a572348ea2885de8d3c67b9cab2860cc0}} 
+\index{bmm150\_dev@{bmm150\_dev}!read@{read}}
+\index{read@{read}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}{bmm150\+\_\+com\+\_\+fptr\+\_\+t}} read}
+
+Bus read function pointer \mbox{\Hypertarget{structbmm150__dev_a741d7b22a7542100bf375350348d7d62}\label{structbmm150__dev_a741d7b22a7542100bf375350348d7d62}} 
+\index{bmm150\_dev@{bmm150\_dev}!settings@{settings}}
+\index{settings@{settings}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{settings}{settings}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmm150__settings}{bmm150\+\_\+settings}} settings}
+
+Sensor settings \mbox{\Hypertarget{structbmm150__dev_a60326457a3f277257a33753b48569fd1}\label{structbmm150__dev_a60326457a3f277257a33753b48569fd1}} 
+\index{bmm150\_dev@{bmm150\_dev}!trim\_data@{trim\_data}}
+\index{trim\_data@{trim\_data}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{trim\_data}{trim\_data}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbmm150__trim__registers}{bmm150\+\_\+trim\+\_\+registers}} trim\+\_\+data}
+
+Trim registers \mbox{\Hypertarget{structbmm150__dev_a7d4812a5e8741e8af2ff9228b2f61e63}\label{structbmm150__dev_a7d4812a5e8741e8af2ff9228b2f61e63}} 
+\index{bmm150\_dev@{bmm150\_dev}!write@{write}}
+\index{write@{write}!bmm150\_dev@{bmm150\_dev}}
+\doxysubsubsection{\texorpdfstring{write}{write}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga87d06d3b9c2af4c76c4dea09b06ebe11}{bmm150\+\_\+com\+\_\+fptr\+\_\+t}} write}
+
+Bus write function pointer 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{bmm150__defs_8h}{bmm150\+\_\+defs.\+h}}\end{DoxyCompactItemize}

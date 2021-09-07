@@ -1,0 +1,554 @@
+\hypertarget{_a_p_8h}{}\doxysection{inc/\+AP.h File Reference}
+\label{_a_p_8h}\index{inc/AP.h@{inc/AP.h}}
+
+
+Bluetooth Low Energy Application Processor.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga1a8a99dbd3696baa83bd6635d37b129a}{SOF}}~254
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga6ab44cedd50c2fff3b244853607d0beb}{APFAIL}}~0
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_gac9960d4873f7935619613fa1a5b73304}{APOK}}~1
+\item 
+\#define \mbox{\hyperlink{group___b_l_e_gacb9f124cc059fc8ee71835a02138b490}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+RFU}}~0x00
+\begin{DoxyCompactList}\small\item\em BLE format reserved for future use. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga6ff3ee1da47aed450fc4578e1554781d}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+BOOLEAN}}~0x01
+\begin{DoxyCompactList}\small\item\em BLE format boolean (1=true,0=false) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga52685313bb3952ebc70769328225a02d}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+2\+BIT}}~0x02
+\begin{DoxyCompactList}\small\item\em BLE format 2 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gace207b94dccae2ca5eff3f37f788fb11}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+NIBBLE}}~0x03
+\begin{DoxyCompactList}\small\item\em BLE format 4 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga74967a47a9dd043e3b2bf17a97bc55bb}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT8}}~0x04
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 8 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gace2cac76cd3ef127716cb57748380a11}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT12}}~0x05
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 12 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gacec27c7cd658d75eded544aafe9c6e15}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT16}}~0x06
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 16 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga1622747d761e51dadde198e33d1d77b6}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT24}}~0x07
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 24 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gaa8247c1476d287af369579bbc99872be}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT32}}~0x08
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 32 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga0a2d411bcd760541e7e6757e801ed169}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT48}}~0x09
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 48 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga01ca488fb6924a1c97883ae69e1ce25e}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT64}}~0x0A
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 64 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga061f563686819cff44ae81cd64ea0ecb}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UINT128}}~0x0B
+\begin{DoxyCompactList}\small\item\em BLE format unsigned 128 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gafaeea14940939c32ce4f4059b68b7873}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT8}}~0x0C
+\begin{DoxyCompactList}\small\item\em BLE format signed 8 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gaf61f7b56995f219c14b7ba332aa09b1d}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT12}}~0x0D
+\begin{DoxyCompactList}\small\item\em BLE format signed 12 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga3ed5390316d186d8bf8a4f8e9a0f1837}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT16}}~0x0E
+\begin{DoxyCompactList}\small\item\em BLE format signed 16 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga0f48e016d5fa3ee888844184be0c2d6d}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT24}}~0x0F
+\begin{DoxyCompactList}\small\item\em BLE format signed 24 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga3d95ebebc388766712c85d7800412569}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT32}}~0x10
+\begin{DoxyCompactList}\small\item\em BLE format signed 32 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga8c087b44666108d0e09a34472be7f4d3}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT48}}~0x11
+\begin{DoxyCompactList}\small\item\em BLE format signed 48 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga560e9ed6819d03d50d03ad6c4cf53d57}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT64}}~0x12
+\begin{DoxyCompactList}\small\item\em BLE format signed 64 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga2f718099089b272595ab7d9235c5d922}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SINT128}}~0x13
+\begin{DoxyCompactList}\small\item\em BLE format signed 128 bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga7a300f4bdb1df2fb033dd3833b4577d4}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+FLOAT32}}~0x14
+\begin{DoxyCompactList}\small\item\em BLE format IEEE-\/754 32-\/bit floating point. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gadeee6028c2ba575eb6757de1b4c766e0}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+FLOAT64}}~0x15
+\begin{DoxyCompactList}\small\item\em BLE format IEEE-\/754 64-\/bit floating point. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga512f7de075cbb311f05fe2f2afa7a59c}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+SFLOAT}}~0x16
+\begin{DoxyCompactList}\small\item\em BLE format IEEE-\/11073 16-\/bit SFLOAT. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gad4fe3c596b0f64413b410dc0c9e8b684}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+FLOAT}}~0x17
+\begin{DoxyCompactList}\small\item\em BLE format IEEE-\/11073 32-\/bit FLOAT. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga42d6858202e8d7ed9ba25a2e06a78065}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+DUINT16}}~0x18
+\begin{DoxyCompactList}\small\item\em BLE format IEEE-\/20601 format. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gacf4564e8d2a592f4016ac2be0a82bfdf}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UTF8S}}~0x19
+\begin{DoxyCompactList}\small\item\em BLE format UTF-\/8 string. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_gaf597838130de7828d96b69d1fd3030b7}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+UTF16S}}~0x1A
+\begin{DoxyCompactList}\small\item\em BLE format UTF-\/16 string. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e_ga997ab4dd2ed31e35bee23df7e8535c5f}{BLE\+\_\+\+GATT\+\_\+\+CPF\+\_\+\+FORMAT\+\_\+\+STRUCT}}~0x1B
+\begin{DoxyCompactList}\small\item\em BLE format Opaque structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___b_l_e_ga784e8b1b6c4a20f712c320933c3bc209}{Gatt\+Description}} \{ \newline
+{\bfseries UUID\+\_\+\+BATTERY\+\_\+\+LEVEL\+\_\+\+STATE\+\_\+\+CHAR} = 0x2\+A1B
+, {\bfseries UUID\+\_\+\+BATTERY\+\_\+\+POWER\+\_\+\+STATE\+\_\+\+CHAR} = 0x2\+A1A
+, {\bfseries UUID\+\_\+\+REMOVABLE\+\_\+\+CHAR} = 0x2\+A3A
+, {\bfseries UUID\+\_\+\+SERVICE\+\_\+\+REQUIRED\+\_\+\+CHAR} = 0x2\+A3B
+, \newline
+{\bfseries UUID\+\_\+\+ALERT\+\_\+\+CATEGORY\+\_\+\+ID\+\_\+\+CHAR} = 0x2\+A43
+, {\bfseries UUID\+\_\+\+ALERT\+\_\+\+CATEGORY\+\_\+\+ID\+\_\+\+BIT\+\_\+\+MASK\+\_\+\+CHAR} = 0x2\+A42
+, {\bfseries UUID\+\_\+\+ALERT\+\_\+\+LEVEL\+\_\+\+CHAR} = 0x2\+A06
+, {\bfseries UUID\+\_\+\+ALERT\+\_\+\+NOTIFICATION\+\_\+\+CONTROL\+\_\+\+POINT\+\_\+\+CHAR} = 0x2\+A44
+, \newline
+{\bfseries UUID\+\_\+\+ALERT\+\_\+\+STATUS\+\_\+\+CHAR} = 0x2\+A3F
+, {\bfseries UUID\+\_\+\+BATTERY\+\_\+\+LEVEL\+\_\+\+CHAR} = 0x2\+A19
+, {\bfseries UUID\+\_\+\+BLOOD\+\_\+\+PRESSURE\+\_\+\+FEATURE\+\_\+\+CHAR} = 0x2\+A49
+, {\bfseries UUID\+\_\+\+BLOOD\+\_\+\+PRESSURE\+\_\+\+MEASUREMENT\+\_\+\+CHAR} = 0x2\+A35
+, \newline
+{\bfseries UUID\+\_\+\+BODY\+\_\+\+SENSOR\+\_\+\+LOCATION\+\_\+\+CHAR} = 0x2\+A38
+, {\bfseries UUID\+\_\+\+BOOT\+\_\+\+KEYBOARD\+\_\+\+INPUT\+\_\+\+REPORT\+\_\+\+CHAR} = 0x2\+A22
+, {\bfseries UUID\+\_\+\+BOOT\+\_\+\+KEYBOARD\+\_\+\+OUTPUT\+\_\+\+REPORT\+\_\+\+CHAR} = 0x2\+A32
+, {\bfseries UUID\+\_\+\+BOOT\+\_\+\+MOUSE\+\_\+\+INPUT\+\_\+\+REPORT\+\_\+\+CHAR} = 0x2\+A33
+, \newline
+{\bfseries UUID\+\_\+\+CURRENT\+\_\+\+TIME\+\_\+\+CHAR} = 0x2\+A2B
+, {\bfseries UUID\+\_\+\+DATE\+\_\+\+TIME\+\_\+\+CHAR} = 0x2\+A08
+, {\bfseries UUID\+\_\+\+DAY\+\_\+\+DATE\+\_\+\+TIME\+\_\+\+CHAR} = 0x2\+A0A
+, {\bfseries UUID\+\_\+\+DAY\+\_\+\+OF\+\_\+\+WEEK\+\_\+\+CHAR} = 0x2\+A09
+, \newline
+{\bfseries UUID\+\_\+\+DST\+\_\+\+OFFSET\+\_\+\+CHAR} = 0x2\+A0D
+, {\bfseries UUID\+\_\+\+EXACT\+\_\+\+TIME\+\_\+256\+\_\+\+CHAR} = 0x2\+A0C
+, {\bfseries UUID\+\_\+\+FIRMWARE\+\_\+\+REVISION\+\_\+\+STRING\+\_\+\+CHAR} = 0x2\+A26
+, {\bfseries UUID\+\_\+\+GLUCOSE\+\_\+\+FEATURE\+\_\+\+CHAR} = 0x2\+A51
+, \newline
+{\bfseries UUID\+\_\+\+GLUCOSE\+\_\+\+MEASUREMENT\+\_\+\+CHAR} = 0x2\+A18
+, {\bfseries UUID\+\_\+\+GLUCOSE\+\_\+\+MEASUREMENT\+\_\+\+CONTEXT\+\_\+\+CHAR} = 0x2\+A34
+, {\bfseries UUID\+\_\+\+HARDWARE\+\_\+\+REVISION\+\_\+\+STRING\+\_\+\+CHAR} = 0x2\+A27
+, {\bfseries UUID\+\_\+\+HEART\+\_\+\+RATE\+\_\+\+CONTROL\+\_\+\+POINT\+\_\+\+CHAR} = 0x2\+A39
+, \newline
+{\bfseries UUID\+\_\+\+HEART\+\_\+\+RATE\+\_\+\+MEASUREMENT\+\_\+\+CHAR} = 0x2\+A37
+, {\bfseries UUID\+\_\+\+HID\+\_\+\+CONTROL\+\_\+\+POINT\+\_\+\+CHAR} = 0x2\+A4C
+, {\bfseries UUID\+\_\+\+HID\+\_\+\+INFORMATION\+\_\+\+CHAR} = 0x2\+A4A
+, {\bfseries UUID\+\_\+\+HUMIDITY\+\_\+\+CHAR} = 0x2\+A6F
+, \newline
+{\bfseries UUID\+\_\+\+IEEE\+\_\+\+REGULATORY\+\_\+\+CERTIFICATION\+\_\+\+DATA\+\_\+\+LIST\+\_\+\+CHAR} = 0x2\+A2A
+, {\bfseries UUID\+\_\+\+INTERMEDIATE\+\_\+\+CUFF\+\_\+\+PRESSURE\+\_\+\+CHAR} = 0x2\+A36
+, {\bfseries UUID\+\_\+\+INTERMEDIATE\+\_\+\+TEMPERATURE\+\_\+\+CHAR} = 0x2\+A1E
+, {\bfseries UUID\+\_\+\+LOCAL\+\_\+\+TIME\+\_\+\+INFORMATION\+\_\+\+CHAR} = 0x2\+A0F
+, \newline
+{\bfseries UUID\+\_\+\+MANUFACTURER\+\_\+\+NAME\+\_\+\+STRING\+\_\+\+CHAR} = 0x2\+A29
+, {\bfseries UUID\+\_\+\+MEASUREMENT\+\_\+\+INTERVAL\+\_\+\+CHAR} = 0x2\+A21
+, {\bfseries UUID\+\_\+\+MODEL\+\_\+\+NUMBER\+\_\+\+STRING\+\_\+\+CHAR} = 0x2\+A24
+, {\bfseries UUID\+\_\+\+UNREAD\+\_\+\+ALERT\+\_\+\+CHAR} = 0x2\+A45
+, \newline
+{\bfseries UUID\+\_\+\+NEW\+\_\+\+ALERT\+\_\+\+CHAR} = 0x2\+A46
+, {\bfseries UUID\+\_\+\+PNP\+\_\+\+ID\+\_\+\+CHAR} = 0x2\+A50
+, {\bfseries UUID\+\_\+\+PRESSURE\+\_\+\+CHAR} = 0x2\+A6D
+, {\bfseries UUID\+\_\+\+PROTOCOL\+\_\+\+MODE\+\_\+\+CHAR} = 0x2\+A4E
+, \newline
+{\bfseries UUID\+\_\+\+RECORD\+\_\+\+ACCESS\+\_\+\+CONTROL\+\_\+\+POINT\+\_\+\+CHAR} = 0x2\+A52
+, {\bfseries UUID\+\_\+\+REFERENCE\+\_\+\+TIME\+\_\+\+INFORMATION\+\_\+\+CHAR} = 0x2\+A14
+, {\bfseries UUID\+\_\+\+REPORT\+\_\+\+CHAR} = 0x2\+A4D
+, {\bfseries UUID\+\_\+\+REPORT\+\_\+\+MAP\+\_\+\+CHAR} = 0x2\+A4B
+, \newline
+{\bfseries UUID\+\_\+\+RINGER\+\_\+\+CONTROL\+\_\+\+POINT\+\_\+\+CHAR} = 0x2\+A40
+, {\bfseries UUID\+\_\+\+RINGER\+\_\+\+SETTING\+\_\+\+CHAR} = 0x2\+A41
+, {\bfseries UUID\+\_\+\+SCAN\+\_\+\+INTERVAL\+\_\+\+WINDOW\+\_\+\+CHAR} = 0x2\+A4F
+, {\bfseries UUID\+\_\+\+SCAN\+\_\+\+REFRESH\+\_\+\+CHAR} = 0x2\+A31
+, \newline
+{\bfseries UUID\+\_\+\+SERIAL\+\_\+\+NUMBER\+\_\+\+STRING\+\_\+\+CHAR} = 0x2\+A25
+, {\bfseries UUID\+\_\+\+SOFTWARE\+\_\+\+REVISION\+\_\+\+STRING\+\_\+\+CHAR} = 0x2\+A28
+, {\bfseries UUID\+\_\+\+SUPPORTED\+\_\+\+NEW\+\_\+\+ALERT\+\_\+\+CATEGORY\+\_\+\+CHAR} = 0x2\+A47
+, {\bfseries UUID\+\_\+\+SUPPORTED\+\_\+\+UNREAD\+\_\+\+ALERT\+\_\+\+CATEGORY\+\_\+\+CHAR} = 0x2\+A48
+, \newline
+{\bfseries UUID\+\_\+\+SYSTEM\+\_\+\+ID\+\_\+\+CHAR} = 0x2\+A23
+, {\bfseries UUID\+\_\+\+TEMPERATURE\+\_\+\+CHAR} = 0x2\+A6E
+, {\bfseries UUID\+\_\+\+TEMPERATURE\+\_\+\+MEASUREMENT\+\_\+\+CHAR} = 0x2\+A1C
+, {\bfseries UUID\+\_\+\+TEMPERATURE\+\_\+\+TYPE\+\_\+\+CHAR} = 0x2\+A1D
+, \newline
+{\bfseries UUID\+\_\+\+TIME\+\_\+\+ACCURACY\+\_\+\+CHAR} = 0x2\+A12
+, {\bfseries UUID\+\_\+\+TIME\+\_\+\+SOURCE\+\_\+\+CHAR} = 0x2\+A13
+, {\bfseries UUID\+\_\+\+TIME\+\_\+\+UPDATE\+\_\+\+CONTROL\+\_\+\+POINT\+\_\+\+CHAR} = 0x2\+A16
+, {\bfseries UUID\+\_\+\+TIME\+\_\+\+UPDATE\+\_\+\+STATE\+\_\+\+CHAR} = 0x2\+A17
+, \newline
+{\bfseries UUID\+\_\+\+TIME\+\_\+\+WITH\+\_\+\+DST\+\_\+\+CHAR} = 0x2\+A11
+, {\bfseries UUID\+\_\+\+TIME\+\_\+\+ZONE\+\_\+\+CHAR} = 0x2\+A0E
+, {\bfseries UUID\+\_\+\+TX\+\_\+\+POWER\+\_\+\+LEVEL\+\_\+\+CHAR} = 0x2\+A07
+, {\bfseries UUID\+\_\+\+CSC\+\_\+\+FEATURE\+\_\+\+CHAR} = 0x2\+A5C
+, \newline
+{\bfseries UUID\+\_\+\+CSC\+\_\+\+MEASUREMENT\+\_\+\+CHAR} = 0x2\+A5B
+, {\bfseries UUID\+\_\+\+RSC\+\_\+\+FEATURE\+\_\+\+CHAR} = 0x2\+A54
+, {\bfseries UUID\+\_\+\+RSC\+\_\+\+MEASUREMENT\+\_\+\+CHAR} = 0x2\+A53
+ \}
+\begin{DoxyCompactList}\small\item\em enumerated Gatt descriptions \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___b_l_e_gab7de476221e94e396f39468618a620f6}{Gatt\+Format}} \{ \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+RFU} = 0x00
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+BOOLEAN} = 0x01
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+2\+BIT} = 0x02
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+NIBBLE} = 0x03
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT8} = 0x04
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT12} = 0x05
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT16} = 0x06
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT24} = 0x07
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT32} = 0x08
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT48} = 0x09
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT64} = 0x0A
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UINT128} = 0x0B
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT8} = 0x0C
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT12} = 0x0D
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT16} = 0x0E
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT24} = 0x0F
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT32} = 0x10
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT48} = 0x11
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT64} = 0x12
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SINT128} = 0x13
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+FLOAT32} = 0x14
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+FLOAT64} = 0x15
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+SFLOAT} = 0x16
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+FLOAT} = 0x17
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+DUINT16} = 0x18
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UTF8S} = 0x19
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+UTF16S} = 0x1A
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+FORMAT\+\_\+\+STRUCT} = 0x1B
+ \}
+\begin{DoxyCompactList}\small\item\em enumerated Gatt formats \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___b_l_e_ga181b470ccb65151d35e31865db28a760}{Gatt\+Units}} \{ \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+NONE} = 0x2700
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+METRE} = 0x2701
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MASS\+\_\+\+KILOGRAM} = 0x2702
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+TIME\+\_\+\+SECOND} = 0x2703
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+CURRENT\+\_\+\+AMPERE} = 0x2704
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+THERMODYNAMIC\+\_\+\+TEMPERATURE\+\_\+\+KELVIN} = 0x2705
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+AMOUNT\+\_\+\+OF\+\_\+\+SUBSTANCE\+\_\+\+MOLE} = 0x2706
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LUMINOUS\+\_\+\+INTENSITY\+\_\+\+CANDELA} = 0x2707
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+AREA\+\_\+\+SQUARE\+\_\+\+METRES} = 0x2710
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+VOLUME\+\_\+\+CUBIC\+\_\+\+METRES} = 0x2711
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+VELOCITY\+\_\+\+METRES\+\_\+\+PER\+\_\+\+SECOND} = 0x2712
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ACCELERATION\+\_\+\+METRES\+\_\+\+PER\+\_\+\+SECOND\+\_\+\+SQUARED} = 0x2713
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+WAVENUMBER\+\_\+\+RECIPROCAL\+\_\+\+METRE} = 0x2714
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+DENSITY\+\_\+\+KILOGRAM\+\_\+\+PER\+\_\+\+CUBIC\+\_\+\+METRE} = 0x2715
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+SURFACE\+\_\+\+DENSITY\+\_\+\+KILOGRAM\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE} = 0x2716
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+SPECIFIC\+\_\+\+VOLUME\+\_\+\+CUBIC\+\_\+\+METRE\+\_\+\+PER\+\_\+\+KILOGRAM} = 0x2717
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+CURRENT\+\_\+\+DENSITY\+\_\+\+AMPERE\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE} = 0x2718
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MAGNETIC\+\_\+\+FIELD\+\_\+\+STRENGTH\+\_\+\+AMPERE\+\_\+\+PER\+\_\+\+METRE} = 0x2719
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+AMOUNT\+\_\+\+CONCENTRATION\+\_\+\+MOLE\+\_\+\+PER\+\_\+\+CUBIC\+\_\+\+METRE} = 0x271A
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MASS\+\_\+\+CONCENTRATION\+\_\+\+KILOGRAM\+\_\+\+PER\+\_\+\+CUBIC\+\_\+\+METRE} = 0x271B
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LUMINANCE\+\_\+\+CANDELA\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE} = 0x271C
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+REFRACTIVE\+\_\+\+INDEX} = 0x271D
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+RELATIVE\+\_\+\+PERMEABILITY} = 0x271E
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PLANE\+\_\+\+ANGLE\+\_\+\+RADIAN} = 0x2720
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+SOLID\+\_\+\+ANGLE\+\_\+\+STERADIAN} = 0x2721
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+FREQUENCY\+\_\+\+HERTZ} = 0x2722
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+FORCE\+\_\+\+NEWTON} = 0x2723
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PRESSURE\+\_\+\+PASCAL} = 0x2724
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ENERGY\+\_\+\+JOULE} = 0x2725
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+POWER\+\_\+\+WATT} = 0x2726
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+CHARGE\+\_\+\+COULOMB} = 0x2727
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+POTENTIAL\+\_\+\+DIFFERENCE\+\_\+\+VOLT} = 0x2728
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+CAPACITANCE\+\_\+\+FARAD} = 0x2729
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+RESISTANCE\+\_\+\+OHM} = 0x272A
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+CONDUCTANCE\+\_\+\+SIEMENS} = 0x272B
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MAGNETIC\+\_\+\+FLEX\+\_\+\+WEBER} = 0x272C
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MAGNETIC\+\_\+\+FLEX\+\_\+\+DENSITY\+\_\+\+TESLA} = 0x272D
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+INDUCTANCE\+\_\+\+HENRY} = 0x272E
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+THERMODYNAMIC\+\_\+\+TEMPERATURE\+\_\+\+DEGREE\+\_\+\+CELSIUS} = 0x272F
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LUMINOUS\+\_\+\+FLUX\+\_\+\+LUMEN} = 0x2730
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ILLUMINANCE\+\_\+\+LUX} = 0x2731
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ACTIVITY\+\_\+\+REFERRED\+\_\+\+TO\+\_\+\+A\+\_\+\+RADIONUCLIDE\+\_\+\+BECQUEREL} = 0x2732
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ABSORBED\+\_\+\+DOSE\+\_\+\+GRAY} = 0x2733
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+DOSE\+\_\+\+EQUIVALENT\+\_\+\+SIEVERT} = 0x2734
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+CATALYTIC\+\_\+\+ACTIVITY\+\_\+\+KATAL} = 0x2735
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+DYNAMIC\+\_\+\+VISCOSITY\+\_\+\+PASCAL\+\_\+\+SECOND} = 0x2740
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MOMENT\+\_\+\+OF\+\_\+\+FORCE\+\_\+\+NEWTON\+\_\+\+METRE} = 0x2741
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+SURFACE\+\_\+\+TENSION\+\_\+\+NEWTON\+\_\+\+PER\+\_\+\+METRE} = 0x2742
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ANGULAR\+\_\+\+VELOCITY\+\_\+\+RADIAN\+\_\+\+PER\+\_\+\+SECOND} = 0x2743
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ANGULAR\+\_\+\+ACCELERATION\+\_\+\+RADIAN\+\_\+\+PER\+\_\+\+SECOND\+\_\+\+SQUARED} = 0x2744
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+HEAT\+\_\+\+FLUX\+\_\+\+DENSITY\+\_\+\+WATT\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE} = 0x2745
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+HEAT\+\_\+\+CAPACITY\+\_\+\+JOULE\+\_\+\+PER\+\_\+\+KELVIN} = 0x2746
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+SPECIFIC\+\_\+\+HEAT\+\_\+\+CAPACITY\+\_\+\+JOULE\+\_\+\+PER\+\_\+\+KILOGRAM\+\_\+\+KELVIN} = 0x2747
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+SPECIFIC\+\_\+\+ENERGY\+\_\+\+JOULE\+\_\+\+PER\+\_\+\+KILOGRAM} = 0x2748
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+THERMAL\+\_\+\+CONDUCTIVITY\+\_\+\+WATT\+\_\+\+PER\+\_\+\+METRE\+\_\+\+KELVIN} = 0x2749
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ENERGY\+\_\+\+DENSITY\+\_\+\+JOULE\+\_\+\+PER\+\_\+\+CUBIC\+\_\+\+METRE} = 0x274A
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+FIELD\+\_\+\+STRENGTH\+\_\+\+VOLT\+\_\+\+PER\+\_\+\+METRE} = 0x274B
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+CHARGE\+\_\+\+DENSITY\+\_\+\+COULOMB\+\_\+\+PER\+\_\+\+CUBIC\+\_\+\+METRE} = 0x274C
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+SURFACE\+\_\+\+CHARGE\+\_\+\+DENSITY\+\_\+\+COULOMB\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE} = 0x274D
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+FLUX\+\_\+\+DENSITY\+\_\+\+COULOMB\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE} = 0x274E
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PERMITTIVITY\+\_\+\+FARAD\+\_\+\+PER\+\_\+\+METRE} = 0x274F
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PERMEABILITY\+\_\+\+HENRY\+\_\+\+PER\+\_\+\+METRE} = 0x2750
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MOLAR\+\_\+\+ENERGY\+\_\+\+JOULE\+\_\+\+PER\+\_\+\+MOLE} = 0x2751
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MOLAR\+\_\+\+ENTROPY\+\_\+\+JOULE\+\_\+\+PER\+\_\+\+MOLE\+\_\+\+KELVIN} = 0x2752
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+EXPOSURE\+\_\+\+COULOMB\+\_\+\+PER\+\_\+\+KILOGRAM} = 0x2753
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ABSORBED\+\_\+\+DOSE\+\_\+\+RATE\+\_\+\+GRAY\+\_\+\+PER\+\_\+\+SECOND} = 0x2754
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+RADIANT\+\_\+\+INTENSITY\+\_\+\+WATT\+\_\+\+PER\+\_\+\+STERADIAN} = 0x2755
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+RADIANCE\+\_\+\+WATT\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE\+\_\+\+STERADIAN} = 0x2756
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+CATALYTIC\+\_\+\+ACTIVITY\+\_\+\+CONCENTRATION\+\_\+\+KATAL\+\_\+\+PER\+\_\+\+CUBIC\+\_\+\+METRE} = 0x2757
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+TIME\+\_\+\+MINUTE} = 0x2760
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+TIME\+\_\+\+HOUR} = 0x2761
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+TIME\+\_\+\+DAY} = 0x2762
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PLANE\+\_\+\+ANGLE\+\_\+\+DEGREE} = 0x2763
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PLANE\+\_\+\+ANGLE\+\_\+\+MINUTE} = 0x2764
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PLANE\+\_\+\+ANGLE\+\_\+\+SECOND} = 0x2765
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+AREA\+\_\+\+HECTARE} = 0x2766
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+VOLUME\+\_\+\+LITRE} = 0x2767
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MASS\+\_\+\+TONNE} = 0x2768
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PRESSURE\+\_\+\+BAR} = 0x2780
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PRESSURE\+\_\+\+MILLIMETRE\+\_\+\+OF\+\_\+\+MERCURY} = 0x2781
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+ANGSTROM} = 0x2782
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+NAUTICAL\+\_\+\+MILE} = 0x2783
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+AREA\+\_\+\+BARN} = 0x2784
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+VELOCITY\+\_\+\+KNOT} = 0x2785
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LOGARITHMIC\+\_\+\+RADIO\+\_\+\+QUANTITY\+\_\+\+NEPER} = 0x2786
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LOGARITHMIC\+\_\+\+RADIO\+\_\+\+QUANTITY\+\_\+\+BEL} = 0x2787
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+YARD} = 0x27\+A0
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+PARSEC} = 0x27\+A1
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+INCH} = 0x27\+A2
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+FOOT} = 0x27\+A3
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+LENGTH\+\_\+\+MILE} = 0x27\+A4
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PRESSURE\+\_\+\+POUND\+\_\+\+FORCE\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+INCH} = 0x27\+A5
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+VELOCITY\+\_\+\+KILOMETRE\+\_\+\+PER\+\_\+\+HOUR} = 0x27\+A6
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+VELOCITY\+\_\+\+MILE\+\_\+\+PER\+\_\+\+HOUR} = 0x27\+A7
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ANGULAR\+\_\+\+VELOCITY\+\_\+\+REVOLUTION\+\_\+\+PER\+\_\+\+MINUTE} = 0x27\+A8
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ENERGY\+\_\+\+GRAM\+\_\+\+CALORIE} = 0x27\+A9
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ENERGY\+\_\+\+KILOGRAM\+\_\+\+CALORIE} = 0x27\+AA
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ENERGY\+\_\+\+KILOWATT\+\_\+\+HOUR} = 0x27\+AB
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+THERMODYNAMIC\+\_\+\+TEMPERATURE\+\_\+\+DEGREE\+\_\+\+FAHRENHEIT} = 0x27\+AC
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PERCENTAGE} = 0x27\+AD
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PER\+\_\+\+MILLE} = 0x27\+AE
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+PERIOD\+\_\+\+BEATS\+\_\+\+PER\+\_\+\+MINUTE} = 0x27\+AF
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+ELECTRIC\+\_\+\+CHARGE\+\_\+\+AMPERE\+\_\+\+HOURS} = 0x27\+B0
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MASS\+\_\+\+DENSITY\+\_\+\+MILLIGRAM\+\_\+\+PER\+\_\+\+DECILITRE} = 0x27\+B1
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+MASS\+\_\+\+DENSITY\+\_\+\+MILLIMOLE\+\_\+\+PER\+\_\+\+LITRE} = 0x27\+B2
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+TIME\+\_\+\+YEAR} = 0x27\+B3
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+TIME\+\_\+\+MONTH} = 0x27\+B4
+, {\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+CONCENTRATION\+\_\+\+COUNT\+\_\+\+PER\+\_\+\+CUBIC\+\_\+\+METRE} = 0x27\+B5
+, \newline
+{\bfseries BLE\+\_\+\+GATT\+\_\+\+UNIT\+\_\+\+IRRADIANCE\+\_\+\+WATT\+\_\+\+PER\+\_\+\+SQUARE\+\_\+\+METRE} = 0x27\+B6
+ \}
+\begin{DoxyCompactList}\small\item\em enumerated Gatt units \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group___b_l_e_gaf7b6de2c584cd6d1f9748fed1a14bc94}{AP\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize serial link and GPIO to Bluetooth module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_l_e_gace5d0f9aca16f8203fcce4a686e31ffa}{AP\+\_\+\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em Hardware reset of the Bluetooth module. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_ga53cf5254bed3ad86b1a13bf9405347b4}{AP\+\_\+\+Send\+Message}} (uint8\+\_\+t $\ast$pt)
+\begin{DoxyCompactList}\small\item\em sends a message to the Bluetooth module \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_l_e_ga33a18611fcde828c51710237cee71131}{AP\+\_\+\+Echo\+Received}} (int response)
+\begin{DoxyCompactList}\small\item\em Recv\+Buf from SNP to UART0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_l_e_gacd175941be28bfeac5724d5669a001c0}{AP\+\_\+\+Echo\+Send\+Message}} (uint8\+\_\+t $\ast$send\+Msg)
+\begin{DoxyCompactList}\small\item\em Sends message to UART0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_ga31e98d9e4a525f6ad62de86886f7d0f5}{AP\+\_\+\+Recv\+Message}} (uint8\+\_\+t $\ast$pt, uint32\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Receive a message from the Bluetooth module. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___b_l_e_ga702b769327159205aeed06b9504669e4}{AP\+\_\+\+Recv\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Check Bluetooth status. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_gaedb7645deaa654985d87c14780509ae7}{AP\+\_\+\+Send\+Message\+Response}} (uint8\+\_\+t $\ast$msg\+Pt, uint8\+\_\+t $\ast$response\+Pt, uint32\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Send and receive Bluetooth message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_l_e_ga4a9e43cf025a2441b6d483f88be86d41}{AP\+\_\+\+Delay1ms}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Delay n milliseconds. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___b_l_e_ga404905787d4c0cb70195cc6b65a28184}{AP\+\_\+\+Get\+Notify\+CCCD}} (uint32\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Get notification CCCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_l_e_ga076a3fe7dd1274b18a3c99a368fff010}{AP\+\_\+\+Out\+Message}} (int response)
+\begin{DoxyCompactList}\small\item\em Debugging dump. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_l_e_ga8a398d2cf3667a1c4629c84dd37c5db5}{AP\+\_\+\+Out\+Value}} (char $\ast$label, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Debugging dump. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_ga8401511129e58e6c0af3c6b5f0169423}{AP\+\_\+\+Add\+Service}} (uint16\+\_\+t uuid)
+\begin{DoxyCompactList}\small\item\em Add Service. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_ga07dd94372fe26d9020db01a58eb91aeb}{AP\+\_\+\+Register\+Service}} (void)
+\begin{DoxyCompactList}\small\item\em Register Service. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_gac14064b3ed562fc2c3c2baa308ea357c}{AP\+\_\+\+Add\+Characteristic}} (uint16\+\_\+t uuid, uint16\+\_\+t thesize, void $\ast$pt, uint8\+\_\+t permission, uint8\+\_\+t properties, char name\mbox{[}$\,$\mbox{]}, void($\ast$Read\+Func)(void), void($\ast$Write\+Func)(void))
+\begin{DoxyCompactList}\small\item\em Add Characteristic. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_gaeac04d2ecbed5b4e0d0f5b7fbad65c5f}{AP\+\_\+\+Add\+Notify\+Characteristic}} (uint16\+\_\+t uuid, uint16\+\_\+t thesize, void $\ast$pt, char name\mbox{[}$\,$\mbox{]}, void($\ast$CCCDfunc)(void))
+\begin{DoxyCompactList}\small\item\em Add Notify Characteristic. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_ga0d3ade6c6e75fbc2d2b55b2e0c7f48c0}{AP\+\_\+\+Send\+Notification}} (uint32\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Send Notification. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_ga87b8054be738a245a08dd7798317e5c6}{AP\+\_\+\+Start\+Advertisement}} (void)
+\begin{DoxyCompactList}\small\item\em start advertising \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___b_l_e_ga7752578dd7efbe90dcdc9467183894e4}{AP\+\_\+\+Start\+Advertisement\+Jacki}} (void)
+\begin{DoxyCompactList}\small\item\em start advertising \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___b_l_e_ga4ef1de0b64a9d88488355cc9dd98dc23}{AP\+\_\+\+Get\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Get status of BLE. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___b_l_e_ga269076c9c2d2d51575d5faa3a4caa209}{AP\+\_\+\+Get\+Version}} (void)
+\begin{DoxyCompactList}\small\item\em Get version number of SNP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_l_e_ga50c39cbd28af4213af68f23af758cd3a}{AP\+\_\+\+Background\+Process}} (void)
+\begin{DoxyCompactList}\small\item\em handles receive communication \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___b_l_e_gaca76f6b5c8b048b6e28d4d7d9fde8786}{AP\+\_\+\+Get\+Size}} (uint8\+\_\+t $\ast$pt)
+\begin{DoxyCompactList}\small\item\em Get size of message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bluetooth Low Energy Application Processor. 
+
+Abstraction layer for implementing BLE \begin{DoxyRemark}{Remarks}
+see GPIO.\+c file for hardware connections 
+
+The CC2650 is running with Simple\+NP 2.\+2 (Powersave, MRDY, SRDY signals) 
+
+Tested with CC2650 Booster\+Pack with these two object codes\+: cc2650bp\+\_\+simple\+\_\+np\+\_\+uart\+\_\+pm\+\_\+xsbl\+\_\+mooc\+\_\+custom.\+hex, and simple\+\_\+np\+\_\+cc2650bp\+\_\+uart\+\_\+pm\+\_\+sbl.\+hex 
+
+Tested with CC2650 Launch\+Pad with these two object codes\+: cc2650lp\+\_\+simple\+\_\+np\+\_\+uart\+\_\+pm\+\_\+xsbl\+\_\+mooc\+\_\+custom.\+hex, and simple\+\_\+np\+\_\+cc2650lp\+\_\+uart\+\_\+pm\+\_\+sbl.\+hex 
+
+It doesn\textquotesingle{}t matter if bootloadmode is enabled (sbl) or not enabled (xsbl) 
+
+Transmit and receive interrupts are implemented in UART1.\+c on UCA2. 
+\end{DoxyRemark}
+\begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 \hypertarget{_a_p_8h_ap_terms}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Terminology}\label{_a_p_8h_ap_terms}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Legend }&\cellcolor{\tableheadbgcolor}\textbf{ TI part number }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Legend }&\cellcolor{\tableheadbgcolor}\textbf{ TI part number }\\\cline{1-2}
+\endhead
+CC2650\+BP &BOOSTXL-\/\+CC2650\+MA \\\cline{1-2}
+CC2650\+LP &LAUNCHXL-\/\+CC2650 \\\cline{1-2}
+MSP432 &MSP-\/\+EXP432\+P401R \\\cline{1-2}
+TM4\+C123 &EK-\/\+TM4\+C123\+GXL \\\cline{1-2}
+MKII &BOOSTXL-\/\+EDUMKII \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+Options 1,2,3 allow the use of the MKII I/O boosterpack together with the CC2650. Option 4 can be used with TI-\/\+RSLK MAX robot
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+{\bfseries{Option 1}}\+: the CC2650\+BP is tethered to the MSP432 using 7 wires. No reprogramming CC2650\+BP is needed.~\newline
+ This configuration has MSP432 plugged into the MKII, and a 7-\/wire cable to the CC2650\+BP.~\newline
+ For option 1, do NOT include the \#define DEFAULT 1. \hypertarget{_a_p_8h_ap_option1}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 1}\label{_a_p_8h_ap_option1}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+BP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+BP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO0\+\_\+\+TXD &UART from CC2650\+BP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO1\+\_\+\+RXD &UART from MSP432 to CC2650\+BP \\\cline{1-4}
+MRDY &J2.\+14 TM4\+C123 PB6, MSP432 P1.\+7 &J1.\+2 IOID\+\_\+7 &Master ready from MSP432 to CC2650\+BP \\\cline{1-4}
+SRDY &J2.\+12 TM4\+C123 PA3, MSP432 P5.\+2 &J2.\+19 IOID\+\_\+8 &Slave ready from CC2650\+BP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+
+{\bfseries{Option 2}}\+: The CC2650\+BP is reprogrammed with a custom version of the SNP. You reprogram the CC2650\+BP with simple\+\_\+np\+\_\+cc2650bp\+\_\+uart\+\_\+pm\+\_\+xsbl\+\_\+mooc\+\_\+custom.\+hex.~\newline
+ This configuration has a three board stack\+: CC2650\+BP+\+MSP432+\+MKII~\newline
+ In other words these three boards are connected together\+: BOOSTXL-\/\+CC2650\+MA, MSP-\/\+EXP432\+P401R, and BOOSTXL-\/\+EDUMKII.~\newline
+ For option 2, do NOT include the \#define DEFAULT 1. \hypertarget{_a_p_8h_ap_option2}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 2}\label{_a_p_8h_ap_option2}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+BP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+BP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO0\+\_\+\+TXD &UART from CC2650\+BP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO1\+\_\+\+RXD &UART from MSP432 to CC2650\+BP \\\cline{1-4}
+MRDY &J2.\+14 TM4\+C123 PB6, MSP432 P1.\+7 &J1.\+14 DIO8 &Master ready from MSP432 to CC2650\+BP \\\cline{1-4}
+SRDY &J2.\+12 TM4\+C123 PA3, MSP432 P5.\+2 &J2.\+12 DIO14 &Slave ready from CC2650\+BP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+
+{\bfseries{Option 3}}\+: The CC2650\+LP is reprogrammed with a custom version of the SNP. You reprogram the CC2650\+LP with simple\+\_\+np\+\_\+cc2650lp\+\_\+uart\+\_\+pm\+\_\+xsbl\+\_\+mooc\+\_\+custom.\+hex.~\newline
+ This configuration has a three board stack\+: CC2650\+LP+\+MSP432+\+MKII~\newline
+ In other words these three boards are connected together\+: LAUNCHXL-\/\+CC2650, MSP-\/\+EXP432\+P401R, and BOOSTXL-\/\+EDUMKII.~\newline
+ Remove the Rx and Tx jumpers on CC2650\+LP.~\newline
+ It is optional, but we suggest you also remove the two LED jumpers on Red, Green LEDs on the CC2650 Launch\+Pad. We also recommend you place insulting tape over the set of 11 jumpers in middle, before stacking.~\newline
+ For option 3, do NOT include the \#define DEFAULT 1. \hypertarget{_a_p_8h_ap_option3}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 3}\label{_a_p_8h_ap_option3}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+LP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+LP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+LP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+LP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO3\+\_\+\+TXD &UART from CC2650\+LP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO2\+\_\+\+RXD &UART from MSP432 to CC2650\+LP \\\cline{1-4}
+MRDY &J2.\+14 TM4\+C123 PB6, MSP432 P1.\+7 &J1.\+14 DIO12 &Master ready from MSP432 to CC2650\+LP \\\cline{1-4}
+SRDY &J2.\+12 TM4\+C123 PA3, MSP432 P5.\+2 &J2.\+12 DIO14 &Slave ready from CC2650\+LP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+
+{\bfseries{Option 4}}\+: Use this setup with CC2650\+BP without a MKII. This runs with the default version of SNP that ships on the BOOSTXL-\/\+CC2650\+MA.~\newline
+ This configuration has a two board stack\+: CC2650\+BP+\+MSP432~\newline
+ In other words these two boards are connected together\+: BOOSTXL-\/\+CC2650\+MA and MSP-\/\+EXP432\+P401R.~\newline
+ This version will work with the TI-\/\+RSLK MAX robot For option 4, DO include the \#define DEFAULT 1. \hypertarget{_a_p_8h_ap_option4}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Option 4}\label{_a_p_8h_ap_option4}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ signal }&\cellcolor{\tableheadbgcolor}\textbf{ TM4\+C123/\+MSP432 }&\cellcolor{\tableheadbgcolor}\textbf{ CC2650\+BP }&\cellcolor{\tableheadbgcolor}\textbf{ comment }\\\cline{1-4}
+\endhead
+3V3 &J1.\+1 3.\+3V &J1.\+1 3.\+3V &Power from MSP432 to CC2650\+BP \\\cline{1-4}
+GND &J2.\+20 ground &J2.\+20 ground &Connect ground together \\\cline{1-4}
+NRESET &J4.\+35 TM4\+C123 PC6, MSP432 P6.\+7 &J4.\+35 &Reset from MSP432 to CC2650\+BP \\\cline{1-4}
+TX &J1.\+3 TM4\+C123 PB0, MSP432 P3.\+2 &J1.\+3 DIO0\+\_\+\+TXD &UART from CC2650\+BP to MSP432 \\\cline{1-4}
+RX &J1.\+4 TM4\+C123 PB1, MSP432 P3.\+3 &J1.\+4 DIO1\+\_\+\+RXD &UART from MSP432 to CC2650\+BP \\\cline{1-4}
+MRDY &J1.\+2 TM4\+C123 PB5, MSP432 P6.\+0 &J1.\+2 IOID\+\_\+7 &Master ready from MSP432 to CC2650\+BP \\\cline{1-4}
+SRDY &J2.\+19 TM4\+C123 PB2, MSP432 P2.\+5 &J2.\+19 IOID\+\_\+8 &Slave ready from CC2650\+BP to MSP432 \\\cline{1-4}
+\end{longtabu}
+~\newline
+ 
+\end{DoxyRemark}

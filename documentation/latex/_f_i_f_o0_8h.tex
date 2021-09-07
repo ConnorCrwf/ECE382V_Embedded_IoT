@@ -1,0 +1,63 @@
+\hypertarget{_f_i_f_o0_8h}{}\doxysection{inc/\+FIFO0.h File Reference}
+\label{_f_i_f_o0_8h}\index{inc/FIFO0.h@{inc/FIFO0.h}}
+
+
+Provide two FIFO queues.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___math_gabdf785e04495ffe30f316ac526bcae12}{TX0\+FIFOSIZE}}~64
+\begin{DoxyCompactList}\small\item\em Size of the Tx\+Fifo0, can hold 0 to TX0\+FIFOSIZE-\/1 elements, must be a power of 2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_gae68463d3e90d2f00b15c73bdb92bb0f7}{FIFOSUCCESS}}~1
+\begin{DoxyCompactList}\small\item\em return value on success \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga5e32948644a47e4f3ce03dbfd93fbcaa}{FIFOFAIL}}~0
+\begin{DoxyCompactList}\small\item\em return value on failure \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___math_ga3223b8e91da6fbcfe60f76b70402ef2a}{RX0\+FIFOSIZE}}~16
+\begin{DoxyCompactList}\small\item\em Size of the Rx\+Fifo0, can hold 0 to RX0\+FIFOSIZE-\/1 elements, must be a power of 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___math_ga1065279652513ffaf4285d64c23f8c3c}{Tx\+Fifo0\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize Tx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_ga3794146989f0f2ae5bf7497e574aaaec}{Tx\+Fifo0\+\_\+\+Put}} (char data)
+\begin{DoxyCompactList}\small\item\em Put into Tx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_ga046913ef7f02e9348b18a5572919bf5d}{Tx\+Fifo0\+\_\+\+Get}} (char $\ast$datapt)
+\begin{DoxyCompactList}\small\item\em Get into Tx\+Fifo0. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___math_ga5f33f9642a00824e986634be918d6754}{Tx\+Fifo0\+\_\+\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Current size of Tx\+Fifo0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga06eb53f9cade465c55296709e95d4114}{Rx\+Fifo0\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize Rx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_ga92f3417eb801d56616b076240d69a1b3}{Rx\+Fifo0\+\_\+\+Put}} (char data)
+\begin{DoxyCompactList}\small\item\em Put into Rx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_gac7c45c957c34358649129833a8e4944a}{Rx\+Fifo0\+\_\+\+Get}} (char $\ast$datapt)
+\begin{DoxyCompactList}\small\item\em Get into Rx\+Fifo0. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___math_ga5df480c504a961365182a947dff8b868}{Rx\+Fifo0\+\_\+\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Current size of Rx\+Fifo0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide two FIFO queues. 
+
+Provide functions that initialize a FIFO, put data in, get data out, and return the current size. \begin{DoxyRemark}{Remarks}
+The sizes of the FIFO must be a power of two 
+\end{DoxyRemark}
+\begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

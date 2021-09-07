@@ -1,0 +1,106 @@
+\hypertarget{_u_a_r_t0_8h}{}\doxysection{inc/\+UART0.h File Reference}
+\label{_u_a_r_t0_8h}\index{inc/UART0.h@{inc/UART0.h}}
+
+
+Provide receive/transmit functions for EUSCI A0.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga876ce77f3c672c7162658151e648389e}{CR}}~0x0D
+\begin{DoxyCompactList}\small\item\em Carriage return character. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga350c9d6cb81908d59427ee96844d1a9c}{LF}}~0x0A
+\begin{DoxyCompactList}\small\item\em Line feed character. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga580a88f98668df1ac5e1683cae31c0b3}{BS}}~0x08
+\begin{DoxyCompactList}\small\item\em Back space character. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga4af1b6159e447ba72652bb7fcdfa726e}{ESC}}~0x1B
+\begin{DoxyCompactList}\small\item\em escape character \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_gaecd69d9a67487cc45c38eb184c50538a}{SP}}~0x20
+\begin{DoxyCompactList}\small\item\em space character \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_gad1e508e805e4ddbc05119be4bb260985}{DEL}}~0x7F
+\begin{DoxyCompactList}\small\item\em delete character \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_ga69350c8eda537c8519bf9a556b579c47}{UART0\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize EUSCI A0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gab6d33a6e3d01b394e07ee4c0e2b75c7e}{UART0\+\_\+\+Initprintf}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize EUSCI A0 and printf. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{group___m_s_p432_ga8444ce01ea49780823b7969204276bc1}{UART0\+\_\+\+In\+Char}} (void)
+\begin{DoxyCompactList}\small\item\em Receive byte into MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gaf2eb38e660b4e73ada422da5dd12a7c3}{UART0\+\_\+\+Out\+Char}} (char letter)
+\begin{DoxyCompactList}\small\item\em Transmit byte out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga1183c09726667148d2ce5ae0137c94e8}{UART0\+\_\+\+Out\+String}} (char $\ast$pt)
+\begin{DoxyCompactList}\small\item\em Transmit string out of MSP432. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga1407d829dd39c43d2d7a494424a7e7a1}{UART0\+\_\+\+In\+UDec}} (void)
+\begin{DoxyCompactList}\small\item\em Receive a number into MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga1741bc8ffb0fde74779bc041aa5afce2}{UART0\+\_\+\+Out\+UDec}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned number out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gadfa76327d12d0fced20e530c0e213815}{UART0\+\_\+\+Out\+SDec}} (int32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned number out of MSP432. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga15e941f6b6f7aef88379912f941eb126}{UART0\+\_\+\+In\+UHex}} (void)
+\begin{DoxyCompactList}\small\item\em Receive a number into MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga89eef3c8b35cc583c3ff2009ad01fc58}{UART0\+\_\+\+Out\+UHex}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned number out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga68fefd236623ea57de285a98a06ffe81}{UART0\+\_\+\+Out\+UHex2}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned number out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gaae8b1adf6c4e26d7e512a289ebb6e3e9}{UART0\+\_\+\+In\+String}} (char $\ast$buf\+Pt, uint16\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Receive a string into MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gafc83b4edcfad22a66fb81bb8fb9a8515}{UART0\+\_\+\+Out\+UDec4}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned number out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga9a9b1c0baa88f1eb4bdb65005a4e0ba3}{UART0\+\_\+\+Out\+UDec5}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned number out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga5ab634258acbaaf335188886a635df9b}{UART0\+\_\+\+Out\+UFix1}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned decimal fixed-\/point number out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga1f23759362c32458373a92debf6ac2f2}{UART0\+\_\+\+Out\+UFix2}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Transmit an unsigned decimal fixed-\/point number out of MSP432. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide receive/transmit functions for EUSCI A0. 
+
+EUSCI\+\_\+\+A0 UART is connected to the PC via the USB cable To be able to use printf~\newline
+ 1) add UART0.\+c to project~\newline
+ 2) \char`\"{}..\textbackslash{}inc\textbackslash{}\+UART0.\+h\char`\"{}~\newline
+ 3) Must be running at 48 MHz, \mbox{\hyperlink{group___m_s_p432_ga6af2755c894e5587fbc63a8a6ad084db}{Clock\+\_\+\+Init48\+MHz()}};~\newline
+ 4) Call \mbox{\hyperlink{group___m_s_p432_gab6d33a6e3d01b394e07ee4c0e2b75c7e}{UART0\+\_\+\+Initprintf()}} \begin{DoxyRemark}{Remarks}
+UCA0\+RXD (VCP receive) connected to P1.\+2 
+
+UCA0\+TXD (VCP transmit) connected to P1.\+3 
+
+Busy-\/wait device driver for the EUSCI A0 UART 
+\end{DoxyRemark}
+\begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 \hypertarget{_u_a_r_t0_8h_UART0ports}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{UART connected via USB cable}\label{_u_a_r_t0_8h_UART0ports}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endhead
+P1.\+2 &UCA0\+RXD (VCP receive) \\\cline{1-2}
+P1.\+3 &UCA0\+TXD (VCP transmit) \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyDate}

@@ -1,0 +1,85 @@
+\hypertarget{opt3101_8h}{}\doxysection{inc/opt3101.h File Reference}
+\label{opt3101_8h}\index{inc/opt3101.h@{inc/opt3101.h}}
+
+
+Mid-\/level software driver for the OPT3101 time of flight sensor.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_gac2568de1c712c1ebde98f688a5c65e4a}{OPT3101\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize OPT3101. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gadd8bc0cef644999f206fa6e8d97d4ed0}{OPT3101\+\_\+\+Setup}} (void)
+\begin{DoxyCompactList}\small\item\em Sets up the OPT3101. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga29997146e950c8e4dd0b6186769ba123}{OPT3101\+\_\+\+Calibrate\+Internal\+Crosstalk}} (void)
+\begin{DoxyCompactList}\small\item\em Calibrates for internal crosstalk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga17cbe3e8184955b9fc7acbd6bacef402}{OPT3101\+\_\+\+Start\+Measurement}} (void)
+\begin{DoxyCompactList}\small\item\em Start measurement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga2b34def7fd6361d81df8716de07757c1}{OPT3101\+\_\+\+Start\+Measurement\+Channel}} (uint32\+\_\+t ch)
+\begin{DoxyCompactList}\small\item\em Start measurement on a specific channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}{OPT3101\+\_\+\+Read\+Measurement}} (void)
+\begin{DoxyCompactList}\small\item\em Reads measurement. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_s_l_k_gae5214df07c11eb5ecd7522ff509839a7}{OPT3101\+\_\+\+Measurement\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em check for error \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga2f7570809f62a8f9af09ae49e6a3533e}{OPT3101\+\_\+\+Get\+Distance\+Millimeters}} (void)
+\begin{DoxyCompactList}\small\item\em last distance measurement in mm \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gad843946a9ddbe96f7f230827a952a2e0}{OPT3101\+\_\+\+Get\+Phase}} (void)
+\begin{DoxyCompactList}\small\item\em last phase measurement \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gafedc7596a6d6a99e31a74f4b1add6e61}{OPT3101\+\_\+\+Get\+Amplitude}} (void)
+\begin{DoxyCompactList}\small\item\em last amplitude measurement \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga6fe0afe1ee890559b1a5179bcc54f210}{OPT3101\+\_\+\+Get\+Tx\+Channel}} (void)
+\begin{DoxyCompactList}\small\item\em channel of last measurement \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_s_l_k_ga2a6130df8253adbd09997737bd4b2839}{OPT3101\+\_\+\+Check\+Distance\+Sensor}} (void)
+\begin{DoxyCompactList}\small\item\em new measurement ready \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gaafa31e75d37cf76e56966301fa4c54a0}{OPT3101\+\_\+\+Get\+Measurement}} (uint32\+\_\+t distances\mbox{[}3\mbox{]}, uint32\+\_\+t amplitudes\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em get measurements from last measurement \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gafbfb3187abf3fa8b2e756958ad08509f}{OPT3101\+\_\+\+Arm\+Interrupts}} (uint32\+\_\+t $\ast$p\+Tx\+Chan, uint32\+\_\+t distances\mbox{[}3\mbox{]}, uint32\+\_\+t amplitudes\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em get measurements from last measurement \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mid-\/level software driver for the OPT3101 time of flight sensor. 
+
+MSP432 is master. EUSCI\+\_\+\+B1 I2C is connected to OPT3101~\newline
+ This file originally comes from the TIDA-\/010021 Firmware (tidcf48.\+zip) and~\newline
+ was modified by Pololu to support the MSP432\+P401R. \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+December 22, 2019 \hypertarget{opt3101_8h_OPT3101ports}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{I2C connected an external device}\label{opt3101_8h_OPT3101ports}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endhead
+GND &ground \\\cline{1-2}
+VIN &3.\+3V \\\cline{1-2}
+P6.\+4 &I2C SDA data (bidirectional) \\\cline{1-2}
+P6.\+5 &I2C SCL clock (MSP432 output) \\\cline{1-2}
+GP1 &OPT3101 pin 11 -\/$>$ P6.\+2/\+AUXR/\+GP1 input from the DATA\+\_\+\+RDY \\\cline{1-2}
+GP2 &OPT3101 pin 12 -\/$>$ P10.\+1 Not used \\\cline{1-2}
+RST\+\_\+\+MS&OPT3101 pin 17 $<$-\/ P6.\+3/\+AUXL/n\+RST\+\_\+\+MS output low to reset the OPT3101 \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyDate}

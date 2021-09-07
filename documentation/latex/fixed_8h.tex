@@ -1,0 +1,42 @@
+\hypertarget{fixed_8h}{}\doxysection{inc/fixed.h File Reference}
+\label{fixed_8h}\index{inc/fixed.h@{inc/fixed.h}}
+
+
+trig functions using fixed point  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{group___math_ga585d66cf23f64b1e470007ddd099e35e}{fixed\+\_\+sin}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em decimal fixed-\/point sin \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group___math_ga93731bdd1474e8414ecfbbb6c3bf4ae1}{fixed\+\_\+cos}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em decimal fixed-\/point cos \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga4e056d1c21233a9777eb87c2552b1440}{fixed\+\_\+sin2}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em binary fixed-\/point sin \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga5b1395587dae647ecf1be2beb57aa6ed}{fixed\+\_\+cos2}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em binary fixed-\/point cos \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+trig functions using fixed point 
+
+sin and cos functions. Input in decimal fixed point (units radians/1000) or binary fixed point (units 2$\ast$pi/16384). Output in either decimal fixed-\/point (units 1/10000) or binary fixed-\/point (units 1/65536) \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

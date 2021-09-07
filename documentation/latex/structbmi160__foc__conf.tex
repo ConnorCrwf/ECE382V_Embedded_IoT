@@ -1,0 +1,81 @@
+\hypertarget{structbmi160__foc__conf}{}\doxysection{bmi160\+\_\+foc\+\_\+conf Struct Reference}
+\label{structbmi160__foc__conf}\index{bmi160\_foc\_conf@{bmi160\_foc\_conf}}
+
+
+bmi160 FOC configuration structure  
+
+
+
+
+{\ttfamily \#include $<$bmi160\+\_\+defs.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__foc__conf_aa3f6ebbb49ff270a4baeb35761e7d127}{foc\+\_\+gyr\+\_\+en}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__foc__conf_a72f3aa299c184693830c3ff3b403cb8c}{foc\+\_\+acc\+\_\+x}}
+\item 
+\mbox{\Hypertarget{structbmi160__foc__conf_a116e3ff0d1e92d6211c901054c6f86b4}\label{structbmi160__foc__conf_a116e3ff0d1e92d6211c901054c6f86b4}} 
+uint8\+\_\+t {\bfseries foc\+\_\+acc\+\_\+y}
+\item 
+\mbox{\Hypertarget{structbmi160__foc__conf_af2a7311ee99d96a246bf40709c52495c}\label{structbmi160__foc__conf_af2a7311ee99d96a246bf40709c52495c}} 
+uint8\+\_\+t {\bfseries foc\+\_\+acc\+\_\+z}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__foc__conf_a7fb4f529be2b6ed1961ad8db3cf6913a}{acc\+\_\+off\+\_\+en}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__foc__conf_a7d26b28d2bf18dfc5e5666a6a8945cc8}{gyro\+\_\+off\+\_\+en}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+bmi160 FOC configuration structure 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structbmi160__foc__conf_a7fb4f529be2b6ed1961ad8db3cf6913a}\label{structbmi160__foc__conf_a7fb4f529be2b6ed1961ad8db3cf6913a}} 
+\index{bmi160\_foc\_conf@{bmi160\_foc\_conf}!acc\_off\_en@{acc\_off\_en}}
+\index{acc\_off\_en@{acc\_off\_en}!bmi160\_foc\_conf@{bmi160\_foc\_conf}}
+\doxysubsubsection{\texorpdfstring{acc\_off\_en}{acc\_off\_en}}
+{\footnotesize\ttfamily uint8\+\_\+t acc\+\_\+off\+\_\+en}
+
+Enabling offset compensation for accel in data registers Assignable macros \+:
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+ENABLE
+\item BMI160\+\_\+\+DISABLE 
+\end{DoxyItemize}\mbox{\Hypertarget{structbmi160__foc__conf_a72f3aa299c184693830c3ff3b403cb8c}\label{structbmi160__foc__conf_a72f3aa299c184693830c3ff3b403cb8c}} 
+\index{bmi160\_foc\_conf@{bmi160\_foc\_conf}!foc\_acc\_x@{foc\_acc\_x}}
+\index{foc\_acc\_x@{foc\_acc\_x}!bmi160\_foc\_conf@{bmi160\_foc\_conf}}
+\doxysubsubsection{\texorpdfstring{foc\_acc\_x}{foc\_acc\_x}}
+{\footnotesize\ttfamily uint8\+\_\+t foc\+\_\+acc\+\_\+x}
+
+Accel FOC configurations Assignable macros \+:
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+DISABLED
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+POSITIVE\+\_\+G
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+NEGATIVE\+\_\+G
+\item BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+0G 
+\end{DoxyItemize}\mbox{\Hypertarget{structbmi160__foc__conf_aa3f6ebbb49ff270a4baeb35761e7d127}\label{structbmi160__foc__conf_aa3f6ebbb49ff270a4baeb35761e7d127}} 
+\index{bmi160\_foc\_conf@{bmi160\_foc\_conf}!foc\_gyr\_en@{foc\_gyr\_en}}
+\index{foc\_gyr\_en@{foc\_gyr\_en}!bmi160\_foc\_conf@{bmi160\_foc\_conf}}
+\doxysubsubsection{\texorpdfstring{foc\_gyr\_en}{foc\_gyr\_en}}
+{\footnotesize\ttfamily uint8\+\_\+t foc\+\_\+gyr\+\_\+en}
+
+Enabling FOC in gyro Assignable macros \+:
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+ENABLE
+\item BMI160\+\_\+\+DISABLE 
+\end{DoxyItemize}\mbox{\Hypertarget{structbmi160__foc__conf_a7d26b28d2bf18dfc5e5666a6a8945cc8}\label{structbmi160__foc__conf_a7d26b28d2bf18dfc5e5666a6a8945cc8}} 
+\index{bmi160\_foc\_conf@{bmi160\_foc\_conf}!gyro\_off\_en@{gyro\_off\_en}}
+\index{gyro\_off\_en@{gyro\_off\_en}!bmi160\_foc\_conf@{bmi160\_foc\_conf}}
+\doxysubsubsection{\texorpdfstring{gyro\_off\_en}{gyro\_off\_en}}
+{\footnotesize\ttfamily uint8\+\_\+t gyro\+\_\+off\+\_\+en}
+
+Enabling offset compensation for gyro in data registers Assignable macros \+:
+\begin{DoxyItemize}
+\item BMI160\+\_\+\+ENABLE
+\item BMI160\+\_\+\+DISABLE 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{bmi160__defs_8h}{bmi160\+\_\+defs.\+h}}\end{DoxyCompactItemize}

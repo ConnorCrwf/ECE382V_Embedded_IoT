@@ -1,0 +1,88 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../msp432p401r.cmd 
+
+OBJ_SRCS += \
+../Bump.obj \
+../I2CB1.obj \
+../Motor.obj \
+../Nokia5110.obj \
+../PWM.obj \
+../SSD1306.obj \
+../TimerA1.obj \
+../UART0.obj \
+../opt3101.obj 
+
+C_SRCS += \
+../BuddyFollower_main.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/Clock.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/CortexM.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/Fuzzy.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/LPF.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/LaunchPad.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/blinker.c \
+../startup_msp432p401r_ccs.c \
+../system_msp432p401r.c 
+
+C_DEPS += \
+./BuddyFollower_main.d \
+./Clock.d \
+./CortexM.d \
+./Fuzzy.d \
+./LPF.d \
+./LaunchPad.d \
+./blinker.d \
+./startup_msp432p401r_ccs.d \
+./system_msp432p401r.d 
+
+OBJS += \
+./BuddyFollower_main.obj \
+./Clock.obj \
+./CortexM.obj \
+./Fuzzy.obj \
+./LPF.obj \
+./LaunchPad.obj \
+./blinker.obj \
+./startup_msp432p401r_ccs.obj \
+./system_msp432p401r.obj 
+
+OBJS__QUOTED += \
+"BuddyFollower_main.obj" \
+"Clock.obj" \
+"CortexM.obj" \
+"Fuzzy.obj" \
+"LPF.obj" \
+"LaunchPad.obj" \
+"blinker.obj" \
+"startup_msp432p401r_ccs.obj" \
+"system_msp432p401r.obj" 
+
+C_DEPS__QUOTED += \
+"BuddyFollower_main.d" \
+"Clock.d" \
+"CortexM.d" \
+"Fuzzy.d" \
+"LPF.d" \
+"LaunchPad.d" \
+"blinker.d" \
+"startup_msp432p401r_ccs.d" \
+"system_msp432p401r.d" 
+
+C_SRCS__QUOTED += \
+"../BuddyFollower_main.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/Clock.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/CortexM.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/Fuzzy.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/LPF.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/LaunchPad.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/blinker.c" \
+"../startup_msp432p401r_ccs.c" \
+"../system_msp432p401r.c" 
+
+

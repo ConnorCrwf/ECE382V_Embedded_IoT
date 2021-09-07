@@ -1,0 +1,138 @@
+\hypertarget{_h_d_c2080_8h}{}\doxysection{inc/\+HDC2080.h File Reference}
+\label{_h_d_c2080_8h}\index{inc/HDC2080.h@{inc/HDC2080.h}}
+
+
+Provide low-\/level functions that interface HDC2080 humidity/temperature sensor to the robot. This is derived from HDC2080.\+cpp \mbox{\hyperlink{_h_d_c2080_8h}{HDC2080.\+h}} by Brandon Fisher on tinkeringtech.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries FOURTEEN\+\_\+\+BIT}~0
+\item 
+\#define {\bfseries ELEVEN\+\_\+\+BIT}~1
+\item 
+\#define {\bfseries NINE\+\_\+\+BIT}~2
+\item 
+\#define {\bfseries TEMP\+\_\+\+AND\+\_\+\+HUMID}~0
+\item 
+\#define {\bfseries TEMP\+\_\+\+ONLY}~1
+\item 
+\#define {\bfseries HUMID\+\_\+\+ONLY}~2
+\item 
+\#define {\bfseries ACTIVE\+\_\+\+LOW}~0
+\item 
+\#define {\bfseries ACTIVE\+\_\+\+HIGH}~1
+\item 
+\#define {\bfseries LEVEL\+\_\+\+MODE}~0
+\item 
+\#define {\bfseries COMPARATOR\+\_\+\+MODE}~1
+\item 
+\#define {\bfseries MANUAL}~0
+\item 
+\#define {\bfseries TWO\+\_\+\+MINS}~1
+\item 
+\#define {\bfseries ONE\+\_\+\+MINS}~2
+\item 
+\#define {\bfseries TEN\+\_\+\+SECONDS}~3
+\item 
+\#define {\bfseries FIVE\+\_\+\+SECONDS}~4
+\item 
+\#define {\bfseries ONE\+\_\+\+HZ}~5
+\item 
+\#define {\bfseries TWO\+\_\+\+HZ}~6
+\item 
+\#define {\bfseries FIVE\+\_\+\+HZ}~7
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae614cb044b4924a3e82543dfa1588c0a}{HDC2080\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize HDC2080. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gae849493d17f837c628f1c810bb67e2af}{HDC2080\+\_\+\+Set\+Temp\+Res}} (int resolution)
+\begin{DoxyCompactList}\small\item\em Set resolution. \end{DoxyCompactList}\item 
+void {\bfseries HDC2080\+\_\+\+Set\+Humid\+Res} (int resolution)
+\item 
+void {\bfseries HDC2080\+\_\+\+Set\+Measurement\+Mode} (int mode)
+\item 
+void {\bfseries HDC2080\+\_\+\+Trigger\+Measurement} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Reset} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Enable\+Interrupt} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Disable\+Interrupt} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Set\+Rate} (int rate)
+\item 
+void {\bfseries HDC2080\+\_\+\+Set\+Interrupt\+Polarity} (int polarity)
+\item 
+void {\bfseries HDC2080\+\_\+\+Set\+Interrupt\+Mode} (int mode)
+\item 
+uint8\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Interrupt\+Status} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Clear\+Max\+Temp} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Clear\+Max\+Humidity} (void)
+\item 
+int32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Max\+Temp} (void)
+\item 
+uint32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Max\+Humidity} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Enable\+Threshold\+Interrupt} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Disable\+Threshold\+Interrupt} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Enable\+DRDYInterrupt} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Disable\+DRDYInterrupt} (void)
+\item 
+int32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Temperature} (void)
+\item 
+uint32\+\_\+t {\bfseries HDC2080\+\_\+\+Read\+Humidity} (void)
+\item 
+void {\bfseries HDC2080\+\_\+\+Enable\+Heater} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide low-\/level functions that interface HDC2080 humidity/temperature sensor to the robot. This is derived from HDC2080.\+cpp \mbox{\hyperlink{_h_d_c2080_8h}{HDC2080.\+h}} by Brandon Fisher on tinkeringtech. 
+
+HDC2080 is connected to Ports 4 and 6~\newline
+ \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2020 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+3/2/2020
+\end{DoxyDate}
+\hypertarget{_h_d_c2080_8h_HDC2080}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{HDC2080 on BP-\/\+BASSENSORSMKII connected to MSP432}\label{_h_d_c2080_8h_HDC2080}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ HDC2080 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ HDC2080 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endhead
+GND &ground pin 2 &ground \\\cline{1-3}
+HDC\+\_\+\+V+ &Q2 powers VDD pin 5 &P4.\+3, output 0 to power the sensor \\\cline{1-3}
+SDA &HDC2080 SDA pin 1 &P6.\+4 I2C data SDA \\\cline{1-3}
+SCL &HDC2080 SCL pin 6 &P6.\+5 I2C clock SCL \\\cline{1-3}
+HDC\+\_\+\+INT &HDC2080 DRDY/\+INT pin 4 &P6.\+1 alert \\\cline{1-3}
+\end{longtabu}

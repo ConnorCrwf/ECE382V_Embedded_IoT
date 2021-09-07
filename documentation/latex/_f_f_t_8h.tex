@@ -1,0 +1,54 @@
+\hypertarget{_f_f_t_8h}{}\doxysection{inc/\+FFT.h File Reference}
+\label{_f_f_t_8h}\index{inc/FFT.h@{inc/FFT.h}}
+
+
+Fast Fourier Transform.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcomplex}{complex}}
+\begin{DoxyCompactList}\small\item\em a complex number has a real and imaginary part \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___math_ga598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+14159265358979323846264338327950288
+\begin{DoxyCompactList}\small\item\em PI is ratio of circumference to diameter of a circle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structcomplex}{complex}} {\bfseries complex\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___math_ga7e6991842a107b203a304c191d574591}{fft}} (\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$v, int n, \mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$tmp)
+\begin{DoxyCompactList}\small\item\em fft \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga4ad1f9b6c8ed4f2fdb439e795c3c0e3a}{ifft}} (\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$v, int n, \mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$tmp)
+\begin{DoxyCompactList}\small\item\em Inverse fft. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fast Fourier Transform. 
+
+\mbox{\hyperlink{group___math_ga7e6991842a107b203a304c191d574591}{fft()}} transforms time domain to frequency domain and \mbox{\hyperlink{group___math_ga4ad1f9b6c8ed4f2fdb439e795c3c0e3a}{ifft()}} transforms frequency to time domain domain \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2020 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+July 13, 2020 
+\end{DoxyDate}

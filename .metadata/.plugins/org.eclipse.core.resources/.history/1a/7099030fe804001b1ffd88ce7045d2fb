@@ -1,0 +1,68 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../msp432p401r.cmd 
+
+OBJ_SRCS += \
+../UART0.obj 
+
+C_SRCS += \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/ADCTA0Trigger.c \
+../ADCTA0Triggermain.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/Clock.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/CortexM.c \
+C:/Dropbox/EmbeddedIOT/MSP432/inc/LaunchPad.c \
+../startup_msp432p401r_ccs.c \
+../system_msp432p401r.c 
+
+C_DEPS += \
+./ADCTA0Trigger.d \
+./ADCTA0Triggermain.d \
+./Clock.d \
+./CortexM.d \
+./LaunchPad.d \
+./startup_msp432p401r_ccs.d \
+./system_msp432p401r.d 
+
+OBJS += \
+./ADCTA0Trigger.obj \
+./ADCTA0Triggermain.obj \
+./Clock.obj \
+./CortexM.obj \
+./LaunchPad.obj \
+./startup_msp432p401r_ccs.obj \
+./system_msp432p401r.obj 
+
+OBJS__QUOTED += \
+"ADCTA0Trigger.obj" \
+"ADCTA0Triggermain.obj" \
+"Clock.obj" \
+"CortexM.obj" \
+"LaunchPad.obj" \
+"startup_msp432p401r_ccs.obj" \
+"system_msp432p401r.obj" 
+
+C_DEPS__QUOTED += \
+"ADCTA0Trigger.d" \
+"ADCTA0Triggermain.d" \
+"Clock.d" \
+"CortexM.d" \
+"LaunchPad.d" \
+"startup_msp432p401r_ccs.d" \
+"system_msp432p401r.d" 
+
+C_SRCS__QUOTED += \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/ADCTA0Trigger.c" \
+"../ADCTA0Triggermain.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/Clock.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/CortexM.c" \
+"C:/Dropbox/EmbeddedIOT/MSP432/inc/LaunchPad.c" \
+"../startup_msp432p401r_ccs.c" \
+"../system_msp432p401r.c" 
+
+

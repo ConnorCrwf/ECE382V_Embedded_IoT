@@ -1,0 +1,67 @@
+\hypertarget{_sys_tick_ints_8h}{}\doxysection{inc/\+Sys\+Tick\+Ints.h File Reference}
+\label{_sys_tick_ints_8h}\index{inc/SysTickInts.h@{inc/SysTickInts.h}}
+
+
+Provide functions that initialize the Sys\+Tick interrupts.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_sys_tick_ints_8h_a0c5a7997f5cd3ca0f29ae398b971f4c3}{Sys\+Tick\+\_\+\+Init}} (uint32\+\_\+t period, uint32\+\_\+t priority)
+\begin{DoxyCompactList}\small\item\em Initialize Sys\+Tick periodic interrupts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide functions that initialize the Sys\+Tick interrupts. 
+
+Interrupt-\/driven periodic interrupt \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_sys_tick_ints_8h_a0c5a7997f5cd3ca0f29ae398b971f4c3}\label{_sys_tick_ints_8h_a0c5a7997f5cd3ca0f29ae398b971f4c3}} 
+\index{SysTickInts.h@{SysTickInts.h}!SysTick\_Init@{SysTick\_Init}}
+\index{SysTick\_Init@{SysTick\_Init}!SysTickInts.h@{SysTickInts.h}}
+\doxysubsubsection{\texorpdfstring{SysTick\_Init()}{SysTick\_Init()}}
+{\footnotesize\ttfamily void Sys\+Tick\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{period,  }\item[{uint32\+\_\+t}]{priority }\end{DoxyParamCaption})}
+
+
+
+Initialize Sys\+Tick periodic interrupts. 
+
+Initialize Sys\+Tick periodic interrupts
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & interrupt period \\
+\hline
+{\em priority} & 0 (high) to 7 (low) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Units of period are in bus clock period 
+
+Maximum period is 2$^\wedge$24-\/1 
+
+Minimum period is determined by execution time of the ISR 
+\end{DoxyNote}

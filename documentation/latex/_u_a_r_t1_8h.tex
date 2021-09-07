@@ -1,0 +1,96 @@
+\hypertarget{_u_a_r_t1_8h}{}\doxysection{inc/\+UART1.h File Reference}
+\label{_u_a_r_t1_8h}\index{inc/UART1.h@{inc/UART1.h}}
+
+
+Provide receive/transmit functions for EUSCI A2.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga876ce77f3c672c7162658151e648389e}{CR}}~0x0D
+\begin{DoxyCompactList}\small\item\em Carriage return character. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga350c9d6cb81908d59427ee96844d1a9c}{LF}}~0x0A
+\begin{DoxyCompactList}\small\item\em Line feed character. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga580a88f98668df1ac5e1683cae31c0b3}{BS}}~0x08
+\begin{DoxyCompactList}\small\item\em Back space character. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga4af1b6159e447ba72652bb7fcdfa726e}{ESC}}~0x1B
+\begin{DoxyCompactList}\small\item\em escape character \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_gaecd69d9a67487cc45c38eb184c50538a}{SP}}~0x20
+\begin{DoxyCompactList}\small\item\em space character \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_gad1e508e805e4ddbc05119be4bb260985}{DEL}}~0x7F
+\begin{DoxyCompactList}\small\item\em delete character \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga545463e3da3ef7bdc4da8f9364b2b7e9}{UART1\+\_\+\+BAUD\+\_\+9600}}~1250
+\begin{DoxyCompactList}\small\item\em baud rate, clock/baud rate = 12,000,000/9600 = 1250 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_gad7748824305440fec4539584895fe78c}{UART1\+\_\+\+BAUD\+\_\+115200}}~104
+\begin{DoxyCompactList}\small\item\em baud rate, clock/baud rate = 12,000,000/115200 = 104.\+1667 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_ga5c01e95ec3c881cdd00e311327126693}{UART1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize EUSCI A2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gad1d220a5c1462470a36e79b2cfa38ee3}{UART1\+\_\+\+InitB}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Initialize EUSCI A2. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___m_s_p432_gadb385463b1a310dcbd9e98541d7850d8}{UART1\+\_\+\+In\+Char}} (void)
+\begin{DoxyCompactList}\small\item\em Receive byte into MSP432. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga2fb55798a5c016ac4d0362b799d8d1a4}{UART1\+\_\+\+In\+Char\+Non\+Block}} (void)
+\begin{DoxyCompactList}\small\item\em Receive byte into MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga0dd867868d24e13eb30955590c8dc79c}{UART1\+\_\+\+Out\+Char}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Transmit byte out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gad5237d550d45f39a54784ad28e095adf}{UART1\+\_\+\+Out\+String}} (uint8\+\_\+t $\ast$pt)
+\begin{DoxyCompactList}\small\item\em Transmit string out of MSP432. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga29b14b02fe58d292020b8347800e298d}{UART1\+\_\+\+Finish\+Output}} (void)
+\begin{DoxyCompactList}\small\item\em wait for UART output to complete \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_gab7903add7c8959f436e3f21dc78a151c}{UART1\+\_\+\+In\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Check status of receive FIFO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide receive/transmit functions for EUSCI A2. 
+
+EUSCI\+\_\+\+A2 UART is connected to exernal device like CC2650 or HC12 \begin{DoxyRemark}{Remarks}
+UCA2\+RXD (VCP receive) connected to P3.\+2 
+
+UCA2\+TXD (VCP transmit) connected to P3.\+3 
+
+J1.\+3 from Bluetooth (DIO3\+\_\+\+TXD) to Launch\+Pad (UART RxD)\{MSP432 P3.\+2\} 
+
+J1.\+4 from Launch\+Pad to Bluetooth (DIO2\+\_\+\+RXD) (UART TxD)\{MSP432 P3.\+3\} 
+
+Busy-\/wait device driver for the EUSCI A2 UART output 
+
+Interrupting device driver for the EUSCI A2 UART input 
+\end{DoxyRemark}
+\begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2021 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+July 22, 2021 \hypertarget{_u_a_r_t1_8h_UART1ports}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{UART connected via pins}\label{_u_a_r_t1_8h_UART1ports}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endhead
+\cellcolor{\tableheadbgcolor}\textbf{ P3.\+2 }&UCA2\+RXD (VCP receive) \\\cline{1-2}
+\cellcolor{\tableheadbgcolor}\textbf{ P3.\+3 }&UCA2\+TXD (VCP transmit) \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyDate}

@@ -1,0 +1,239 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Each subdirectory must supply rules for building sources it contributes
+Bump.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/Bump.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+Clock.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/Clock.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+CortexM.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/CortexM.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+LaunchPad.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/LaunchPad.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+Motor.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/Motor.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+PWM.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/PWM.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+SSD1306.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/SSD1306.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+TA3InputCapture.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/TA3InputCapture.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+Tachometer.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/Tachometer.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+Timer32.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/Timer32.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+TimerA1.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/TimerA1.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+blinker.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/blinker.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+board.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p/board.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+cpu.obj: E:/Dropbox/EmbeddedIOT/MSP432/driverlib/cpu.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+device.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/device.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+driver.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/driver.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+fixed.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/fixed.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+flowcont.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/flowcont.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+fpu.obj: E:/Dropbox/EmbeddedIOT/MSP432/driverlib/fpu.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+fs.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/fs.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+interrupt.obj: E:/Dropbox/EmbeddedIOT/MSP432/driverlib/interrupt.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+%.obj: ../%.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+netapp.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/netapp.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+netcfg.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/netcfg.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+nonos.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/nonos.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+odometry.obj: E:/Dropbox/EmbeddedIOT/MSP432/inc/odometry.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+socket.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/socket.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+spawn.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/spawn.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+spi.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p/spi.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+sysctl.obj: E:/Dropbox/EmbeddedIOT/MSP432/driverlib/sysctl.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+timer_tick.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p/timer_tick.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+ustdlib.obj: E:/Dropbox/EmbeddedIOT/MSP432/utils/ustdlib.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+wlan.obj: E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source/wlan.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="E:/Dropbox/EmbeddedIOT/MSP432/Lab20_CC3100" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/platform/msp432p" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/source" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/driverlib" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/simplelink/include" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/cc3100-sdk/examples/common" --include_path="E:/Dropbox/EmbeddedIOT/MSP432/inc" --include_path="C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include" --include_path="C:/ti/ccs1010/ccs/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+

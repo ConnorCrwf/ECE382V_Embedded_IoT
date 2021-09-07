@@ -1,0 +1,96 @@
+\hypertarget{_a_d_c14_8h}{}\doxysection{inc/\+ADC14.h File Reference}
+\label{_a_d_c14_8h}\index{inc/ADC14.h@{inc/ADC14.h}}
+
+
+Initialize 14-\/bit ADC0.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_gabde45aa52cf6d5e135bb091ae7ca4e3e}{ADC0\+\_\+\+Init\+SWTrigger\+Ch6}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gadacba2f8ac61d08b75dba5f7500f0300}{ADC0\+\_\+\+Init\+SWTrigger\+Ch12}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gada1c855ed90fde01d03bb745f0508e64}{ADC0\+\_\+\+Init\+SWTrigger\+Ch14}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga0140d4114500e907278d0cd9ff80de88}{ADC0\+\_\+\+Init\+SWTrigger\+Ch67}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga152493e65e6b43c7263baf34b99ee601}{ADC0\+\_\+\+Init\+SWTrigger\+Ch17\+\_\+14\+\_\+16}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga3c207583d0ec3b475b80a3ca92f745e7}{ADC0\+\_\+\+Init\+SWTrigger\+Ch23}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gacedbafa88f3def7f584864b44bcf4efc}{ADC0\+\_\+\+Init\+SWTrigger\+Ch19}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga468495bf338c82a3a7b0fe7c38152134}{ADC0\+\_\+\+Init\+SWTrigger\+Ch21\+\_\+22\+\_\+23}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize 14-\/bit ADC0. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga93cfd124c8b79e92c449e763fd3a9cae}{ADC\+\_\+\+In6}} (void)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement and wait for result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga2b6154d1df9db9bea8f1310bd070d5b6}{ADC\+\_\+\+In67}} (uint32\+\_\+t $\ast$ch6, uint32\+\_\+t $\ast$ch7)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement on channels 6+7 and wait for result. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_gabdddf7925092579a42d2c1b57d6c3d60}{ADC\+\_\+\+In14}} (void)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement and wait for result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga7985bfedc891aa5ee4e25e511dcf8fcb}{ADC\+\_\+\+In17\+\_\+14\+\_\+16}} (uint32\+\_\+t $\ast$ch17, uint32\+\_\+t $\ast$ch14, uint32\+\_\+t $\ast$ch16)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement on channels 17+14+16 and wait for result. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_gad6e03cefa87783dac9d18c009300369b}{ADC\+\_\+\+In23}} (void)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement and wait for result. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga6955eb0ddc23958e632f0020361cf993}{ADC\+\_\+\+In19}} (void)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement and wait for result. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___m_s_p432_ga57585fb45e904ee97a8f4660ead07fd7}{ADC\+\_\+\+In12}} (void)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement and wait for result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga2583a5608c2f7f6ba60723ff4cba9e34}{ADC\+\_\+\+In21\+\_\+22\+\_\+23}} (uint32\+\_\+t $\ast$ch21, uint32\+\_\+t $\ast$ch22, uint32\+\_\+t $\ast$ch23)
+\begin{DoxyCompactList}\small\item\em Trigger ADC measurement on channels 17+14+16 and wait for result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initialize 14-\/bit ADC0. 
+
+ADC input, software trigger, 14-\/bit conversion~\newline
+ The ADC14 allows two possible references\+: 2.\+5V or 3.\+3V. The internal 2.\+5V reference is lower noise, but limits the range to 0 to 2.\+5V.$>$ The other possibility is to use the analog voltage supply at 3.\+3V, making the ADC range 0 to 3.\+3V. In this driver, the 3.\+3V range is selected. There are several configurations (each with initialization and a read ADC with software trigger, busy-\/wait function)\+:~\newline
+
+\begin{DoxyItemize}
+\item sample just P4.\+7/\+A6 ~\newline
+
+\item sample P4.\+6/\+A7 and P4.\+7/\+A6 ~\newline
+
+\item sample just P6.\+1/\+A14 ~\newline
+
+\item sample P9.\+0/\+A17, P6.\+1/\+A14, and P9.\+1/\+A16~\newline
+
+\item sample just P8.\+2/\+A23 ~\newline
+ \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 \hypertarget{_a_d_c14_8h_ADCpins}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{ADC pins used on the TI-\/\+RSLK MAX}\label{_a_d_c14_8h_ADCpins}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ ADC channel}&\cellcolor{\tableheadbgcolor}\textbf{ Sensor }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ ADC channel}&\cellcolor{\tableheadbgcolor}\textbf{ Sensor }\\\cline{1-3}
+\endhead
+P9.\+0 &A17&\cellcolor{\tableheadbgcolor}\textbf{ right GP2\+Y0\+A21\+YK0F }\\\cline{1-3}
+P6.\+1 &A14&\cellcolor{\tableheadbgcolor}\textbf{ center GP2\+Y0\+A21\+YK0F }\\\cline{1-3}
+P9.\+1 &A16&\cellcolor{\tableheadbgcolor}\textbf{ left GP2\+Y0\+A21\+YK0F }\\\cline{1-3}
+\end{longtabu}
+
+\end{DoxyDate}
+
+\end{DoxyItemize}

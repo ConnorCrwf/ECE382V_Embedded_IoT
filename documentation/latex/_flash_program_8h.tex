@@ -1,0 +1,50 @@
+\hypertarget{_flash_program_8h}{}\doxysection{inc/\+Flash\+Program.h File Reference}
+\label{_flash_program_8h}\index{inc/FlashProgram.h@{inc/FlashProgram.h}}
+
+
+Provide functions that initialize the flash memory.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}}~1
+\begin{DoxyCompactList}\small\item\em Value returned if failure. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___m_s_p432_ga7c8e007a5b28cfb6d606095153d7e764}{NOERROR}}~0
+\begin{DoxyCompactList}\small\item\em Value returned if success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_gac6b9da93755ed8d8de194ee5d4df9484}{Flash\+\_\+\+Init}} (uint8\+\_\+t system\+Clock\+Freq\+MHz)
+\begin{DoxyCompactList}\small\item\em Initialize Flash. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___m_s_p432_ga601a3ee3bb7d2f0c16dc61a9e1a5022d}{Flash\+\_\+\+Write}} (uint32\+\_\+t addr, uint32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write 32-\/bit data to flash. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___m_s_p432_ga115a34c4ff213bb0739ec58e0ec35649}{Flash\+\_\+\+Write\+Array}} (uint32\+\_\+t $\ast$source, uint32\+\_\+t addr, uint16\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Write an array to flash. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___m_s_p432_ga5db173c9de68fe609e5ed97c82104c78}{Flash\+\_\+\+Fast\+Write}} (uint32\+\_\+t $\ast$source, uint32\+\_\+t addr, uint16\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Write an array to flash. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___m_s_p432_gaddb8b5b55db9f7baf8f80a1a75bd61ca}{Flash\+\_\+\+Erase}} (uint32\+\_\+t addr)
+\begin{DoxyCompactList}\small\item\em Erase 4 KB block of flash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide functions that initialize the flash memory. 
+
+Runs on MSP432, write 32-\/bit data to flash, write an array of 32-\/bit data to flash, and erase a 4 KB block. \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

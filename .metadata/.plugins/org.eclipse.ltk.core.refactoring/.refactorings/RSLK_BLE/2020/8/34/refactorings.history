@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;RSLK_BLE/Lab19_TestMain.c&apos; to &apos;RSLK_BLEmain.c&apos;" description="Rename resource &apos;Lab19_TestMain.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Lab19_TestMain.c" name="RSLK_BLEmain.c" stamp="1597973862133" updateReferences="true"/>
+</session>

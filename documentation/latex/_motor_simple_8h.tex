@@ -1,0 +1,65 @@
+\hypertarget{_motor_simple_8h}{}\doxysection{inc/\+Motor\+Simple.h File Reference}
+\label{_motor_simple_8h}\index{inc/MotorSimple.h@{inc/MotorSimple.h}}
+
+
+Set motor speed and direction.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_gab2d93801c3bfddcd52b5993ff339f2d1}{Motor\+\_\+\+Init\+Simple}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize motor interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga556dfe2356726bbf5f8168362c79b838}{Motor\+\_\+\+Stop\+Simple}} (void)
+\begin{DoxyCompactList}\small\item\em Stops the motors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga940872458c49d22b0f774a1a5c8c53ff}{Motor\+\_\+\+Forward\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run both motors forward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gab93cbef78c3f040f8f8d32e29db1c156}{Motor\+\_\+\+Backward\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run both motors backward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga7d00bb98d92fd93784da534ef6851cfb}{Motor\+\_\+\+Left\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run left motor forward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga131a992d2cb93e34227701ea7ca8fa8a}{Motor\+\_\+\+Right\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run right motor forward. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set motor speed and direction. 
+
+Provide mid-\/level functions that initialize ports and set motor speeds to move the robot. Simple solution that does NOT use PWM hardware. Rather the PWM outputs are created by software delays using the Sys\+Tick timer.~\newline
+ \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019
+\end{DoxyDate}
+\hypertarget{_motor_simple_8h_motorconnections2}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{TI-\/\+RSLK MAX v1.\+1 motor connections}\label{_motor_simple_8h_motorconnections2}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin}&\cellcolor{\tableheadbgcolor}\textbf{ J}&\cellcolor{\tableheadbgcolor}\textbf{ MSP432}&\cellcolor{\tableheadbgcolor}\textbf{ Motor function }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin}&\cellcolor{\tableheadbgcolor}\textbf{ J}&\cellcolor{\tableheadbgcolor}\textbf{ MSP432}&\cellcolor{\tableheadbgcolor}\textbf{ Motor function }\\\cline{1-4}
+\endhead
+P5.\+4&J3.\+29&GPIO&Left motor direction \\\cline{1-4}
+P2.\+7&J4.\+40&TA0\+CCP4&Left motor PWM \\\cline{1-4}
+P3.\+7&J4.\+31&GPIO&Left motor enable \\\cline{1-4}
+P5.\+5&J3.\+30&GPIO&Right motor direction \\\cline{1-4}
+P2.\+6&J4.\+39&TA0\+CCP3&Right motor PWM \\\cline{1-4}
+P3.\+6&J2.\+11&GPIO&Right motor enable \\\cline{1-4}
+\end{longtabu}

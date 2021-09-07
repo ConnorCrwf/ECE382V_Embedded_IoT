@@ -1,0 +1,60 @@
+\hypertarget{_ultrasound_8h}{}\doxysection{inc/\+Ultrasound.h File Reference}
+\label{_ultrasound_8h}\index{inc/Ultrasound.h@{inc/Ultrasound.h}}
+
+
+Take ultrasonic distance measurements.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga1a3d971fdf34fc73bed0cfaf249c78f3}{Ultrasound\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize ultrasonic sensor interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga96ead73f4c02cee5282e9b644b6319e3}{Ultrasound\+\_\+\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Start an ultrasonic distance measurement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___r_s_l_k_gac42a3f4b198b08884c3bca7d08a12712}{Ultrasound\+\_\+\+End}} (uint16\+\_\+t $\ast$dist\+Mm, uint16\+\_\+t $\ast$dist\+In)
+\begin{DoxyCompactList}\small\item\em End or resume an ultrasonic distance measurement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Take ultrasonic distance measurements. 
+
+Provide mid-\/level functions that initialize ports, start an ultrasonic sensor measurement, and finish an ultrasonic sensor measurement using the HC-\/\+SR04 ultrasonic distance sensor.~\newline
+ 5V regulator output connected to HC-\/\+SR04 Vcc (+5V) ~\newline
+ 22k top connected to HC-\/\+SR04 Echo (digital output from sensor)~\newline
+ 22k bottom connected to 33k top and MSP432 P6.\+6 (J4.\+36) (digital input to MSP432)~\newline
+ 33k bottom connected to ground~\newline
+ Ground connected to HC-\/\+SR04 ground and MSP432 ground (J3.\+22)~\newline
+ MSP432 P5.\+6 (J4.\+37) (digital output from MSP432) connected to HC-\/\+SR04 trigger \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 \hypertarget{_ultrasound_8h_Ultrasoundpins}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Ultrasonic distance measurement}\label{_ultrasound_8h_Ultrasoundpins}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ Connection }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ Connection }\\\cline{1-2}
+\endhead
+P5.\+6 &digital output from MSP432, connected to HC-\/\+SR04 trigger \\\cline{1-2}
+P6.\+6 &digital input to MSP432 (use 22k/33kresistor divider to lower voltage) \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyDate}

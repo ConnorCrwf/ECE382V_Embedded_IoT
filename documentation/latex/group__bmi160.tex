@@ -1,0 +1,1136 @@
+\hypertarget{group__bmi160}{}\section{Bmi160}
+\label{group__bmi160}\index{Bmi160@{Bmi160}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga7a2e8b832a4cb12b441cba7371d73f6a}{bmi160\+\_\+init} (struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is the entry point for sensor.\+It performs the selection of I2\+C/\+S\+PI read mechanism according to the selected interface and reads the chip-\/id of bmi160 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga9bebc4a575526f49e625a87de9478e04}{bmi160\+\_\+get\+\_\+regs} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$data, uint16\+\_\+t len, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads the data from the given register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga5bea435582a9fdb2c331f64b61e0d6c5}{bmi160\+\_\+set\+\_\+regs} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$data, uint16\+\_\+t len, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI writes the given data to the register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gaa047f8bacbc2a9c14ff70841304c04d0}{bmi160\+\_\+soft\+\_\+reset} (struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI resets and restarts the device. All register values are overwritten with default parameters. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gab098d2c7fda2965b1699ae13d2a8ffc8}{bmi160\+\_\+set\+\_\+sens\+\_\+conf} (struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI configures the power mode, range and bandwidth of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga897ca5f1bfbcd1385ace2c05f9f4aef6}{bmi160\+\_\+set\+\_\+power\+\_\+mode} (struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI sets the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gacf4792d76eafc7607a097c79fcadb92a}{bmi160\+\_\+get\+\_\+power\+\_\+mode} (struct \hyperlink{structbmi160__pmu__status}{bmi160\+\_\+pmu\+\_\+status} $\ast$pmu\+\_\+status, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI gets the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga86fb957a2384daa2ac17345d76b7e976}{bmi160\+\_\+get\+\_\+sensor\+\_\+data} (uint8\+\_\+t select\+\_\+sensor, struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$accel, struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$gyro, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads sensor data, stores it in the \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} structure pointer passed by the user. The user can ask for accel data ,gyro data or both sensor data using bmi160\+\_\+select\+\_\+sensor enum. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga62ebd142768bea09f93ab63786dc3cca}{bmi160\+\_\+set\+\_\+int\+\_\+config} (struct \hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg} $\ast$int\+\_\+config, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI configures the necessary interrupt based on the user settings in the \hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga5a9e71230b2c94b2e609c63def130abf}{bmi160\+\_\+set\+\_\+step\+\_\+counter} (uint8\+\_\+t step\+\_\+cnt\+\_\+enable, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI enables the step counter feature. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga69193a88550ccf1d99e413dcb5f81730}{bmi160\+\_\+read\+\_\+step\+\_\+counter} (uint16\+\_\+t $\ast$step\+\_\+val, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads the step counter value. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gab7dba610f920f63a03e84d80be2aa4db}{bmi160\+\_\+aux\+\_\+read} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$aux\+\_\+data, uint16\+\_\+t len, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads the mention no of byte of data from the given register address of auxiliary sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga2c95d58ed7b50773fae5d97173fc6cb6}{bmi160\+\_\+aux\+\_\+write} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$aux\+\_\+data, uint16\+\_\+t len, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI writes the mention no of byte of data to the given register address of auxiliary sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gaf9a909f6c1b3be1b33658b2f17632d35}{bmi160\+\_\+aux\+\_\+init} (const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI initialize the auxiliary sensor in order to access it. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gae2a0b717765bc2ee40c0fb92d2f819d2}{bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode} (uint8\+\_\+t $\ast$data\+\_\+addr, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to setup the auxiliary sensor of bmi160 in auto mode Thus enabling the auto update of 8 bytes of data from auxiliary sensor to B\+M\+I160 register address 0x04 to 0x0B. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga1a57c45da550b97a5361e84b12f2d2a4}{bmi160\+\_\+config\+\_\+aux\+\_\+mode} (const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI configures the 0x4C register and settings like Auxiliary sensor manual enable/ disable and aux burst read length. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gae1f173b8b1e4ba2601016cc5fe8edc29}{bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode} (uint8\+\_\+t $\ast$aux\+\_\+data, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to read the raw uncompensated auxiliary sensor data of 8 bytes from B\+M\+I160 register address 0x04 to 0x0B. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga6f83dc85a8173886ffe58e381fd9e0b8}{bmi160\+\_\+perform\+\_\+self\+\_\+test} (uint8\+\_\+t select\+\_\+sensor, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This is used to perform self test of accel/gyro of the B\+M\+I160 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data} (struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads data from the fifo buffer. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga0b471abfa1d28d5797b5de9c9b457a53}{bmi160\+\_\+set\+\_\+fifo\+\_\+flush} (const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI writes fifo\+\_\+flush command to command register.\+This action clears all data in the Fifo without changing fifo configuration settings. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gac5cead9788329ba97addba76997de01e}{bmi160\+\_\+set\+\_\+fifo\+\_\+config} (uint8\+\_\+t config, uint8\+\_\+t enable, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI sets the F\+I\+FO configuration in the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga50cbe9d86cba2bb6ef91fdaf3f2ce529}{bmi160\+\_\+set\+\_\+fifo\+\_\+down} (uint8\+\_\+t fifo\+\_\+down, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used to configure the down sampling ratios of the accel and gyro data for F\+I\+F\+O.\+Also, it configures filtered or pre-\/filtered data for the fifo for accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gaa348ae8d5aa3b20363b49876abff5c69}{bmi160\+\_\+set\+\_\+fifo\+\_\+wm} (uint8\+\_\+t fifo\+\_\+wm, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI sets the F\+I\+FO watermark level in the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gae548739f4185fa7fef8cb718ec6bd91d}{bmi160\+\_\+extract\+\_\+accel} (struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$accel\+\_\+data, uint8\+\_\+t $\ast$accel\+\_\+length, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI parses and extracts the accelerometer frames from F\+I\+FO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} A\+PI and stores it in the \char`\"{}accel\+\_\+data\char`\"{} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga9b2caa7d4a697e555856dfc6d1c17990}{bmi160\+\_\+extract\+\_\+gyro} (struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$gyro\+\_\+data, uint8\+\_\+t $\ast$gyro\+\_\+length, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI parses and extracts the gyro frames from F\+I\+FO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} A\+PI and stores it in the \char`\"{}gyro\+\_\+data\char`\"{} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gab21ca26b7df608549e5d1bd583e4d52a}{bmi160\+\_\+extract\+\_\+aux} (struct \hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data} $\ast$aux\+\_\+data, uint8\+\_\+t $\ast$aux\+\_\+len, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI parses and extracts the aux frames from F\+I\+FO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} A\+PI and stores it in the \hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data} structure instance. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga9a12ab7ac43b795f4b6faddde505eb88}{bmi160\+\_\+start\+\_\+foc} (const struct \hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf} $\ast$foc\+\_\+conf, struct \hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets} $\ast$offset, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI starts the F\+OC of accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gac6d11bee70aafd12449413c0fce3f014}{bmi160\+\_\+get\+\_\+offsets} (struct \hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets} $\ast$offset, const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI reads and stores the offset values of accel and gyro. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_gae8fd008b08b8a1fc1aadce8e9ebfc1e6}{bmi160\+\_\+set\+\_\+offsets} (const struct \hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf} $\ast$foc\+\_\+conf, const struct \hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets} $\ast$offset, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI writes the offset values of accel and gyro to the sensor but these values will be reset on P\+OR or soft reset. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga273ec1cf6a992e0050ce12f33ee4c070}{bmi160\+\_\+update\+\_\+nvm} (struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI writes the image registers values to N\+VM which is stored even after P\+OR or soft reset. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{group__bmi160_ga53cb6c4b0f60f54bd49b7ff980e3e1d4}{bmi160\+\_\+get\+\_\+int\+\_\+status} (enum \hyperlink{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}{bmi160\+\_\+int\+\_\+status\+\_\+sel} int\+\_\+status\+\_\+sel, union \hyperlink{unionbmi160__int__status}{bmi160\+\_\+int\+\_\+status} $\ast$int\+\_\+status, struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This A\+PI gets the interrupt status from the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__bmi160_gaf9a909f6c1b3be1b33658b2f17632d35}\label{group__bmi160_gaf9a909f6c1b3be1b33658b2f17632d35}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+aux\+\_\+init@{bmi160\+\_\+aux\+\_\+init}}
+\index{bmi160\+\_\+aux\+\_\+init@{bmi160\+\_\+aux\+\_\+init}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+aux\+\_\+init()}{bmi160\_aux\_init()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+aux\+\_\+init (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI initialize the auxiliary sensor in order to access it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gab7dba610f920f63a03e84d80be2aa4db}\label{group__bmi160_gab7dba610f920f63a03e84d80be2aa4db}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+aux\+\_\+read@{bmi160\+\_\+aux\+\_\+read}}
+\index{bmi160\+\_\+aux\+\_\+read@{bmi160\+\_\+aux\+\_\+read}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+aux\+\_\+read()}{bmi160\_aux\_read()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+aux\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads the mention no of byte of data from the given register address of auxiliary sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\+\_\+addr} & \+: Address of register to read. \\
+\hline
+\mbox{\tt in}  & {\em aux\+\_\+data} & \+: Pointer to store the read data. \\
+\hline
+\mbox{\tt in}  & {\em len} & \+: No of bytes to read. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga2c95d58ed7b50773fae5d97173fc6cb6}\label{group__bmi160_ga2c95d58ed7b50773fae5d97173fc6cb6}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+aux\+\_\+write@{bmi160\+\_\+aux\+\_\+write}}
+\index{bmi160\+\_\+aux\+\_\+write@{bmi160\+\_\+aux\+\_\+write}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+aux\+\_\+write()}{bmi160\_aux\_write()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+aux\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI writes the mention no of byte of data to the given register address of auxiliary sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\+\_\+addr} & \+: Address of register to write. \\
+\hline
+\mbox{\tt in}  & {\em aux\+\_\+data} & \+: Pointer to write data. \\
+\hline
+\mbox{\tt in}  & {\em len} & \+: No of bytes to write. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga1a57c45da550b97a5361e84b12f2d2a4}\label{group__bmi160_ga1a57c45da550b97a5361e84b12f2d2a4}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+config\+\_\+aux\+\_\+mode@{bmi160\+\_\+config\+\_\+aux\+\_\+mode}}
+\index{bmi160\+\_\+config\+\_\+aux\+\_\+mode@{bmi160\+\_\+config\+\_\+aux\+\_\+mode}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+config\+\_\+aux\+\_\+mode()}{bmi160\_config\_aux\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+config\+\_\+aux\+\_\+mode (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI configures the 0x4C register and settings like Auxiliary sensor manual enable/ disable and aux burst read length. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gae548739f4185fa7fef8cb718ec6bd91d}\label{group__bmi160_gae548739f4185fa7fef8cb718ec6bd91d}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+extract\+\_\+accel@{bmi160\+\_\+extract\+\_\+accel}}
+\index{bmi160\+\_\+extract\+\_\+accel@{bmi160\+\_\+extract\+\_\+accel}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+extract\+\_\+accel()}{bmi160\_extract\_accel()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+extract\+\_\+accel (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$}]{accel\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{accel\+\_\+length,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI parses and extracts the accelerometer frames from F\+I\+FO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} A\+PI and stores it in the \char`\"{}accel\+\_\+data\char`\"{} structure instance. 
+
+\begin{DoxyNote}{Note}
+The bmi160\+\_\+extract\+\_\+accel A\+PI should be called only after reading the F\+I\+FO data by calling the \hyperlink{group__bmi160_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data()} A\+PI.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em accel\+\_\+data} & \+: Structure instance of \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} where the accelerometer data in F\+I\+FO is stored. \\
+\hline
+\mbox{\tt in,out}  & {\em accel\+\_\+length} & \+: Number of valid accelerometer frames (x,y,z axes data) read out from fifo. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+accel\+\_\+length is updated with the number of valid accelerometer frames extracted from fifo (1 accel frame = 6 bytes) at the end of execution of this A\+PI.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gab21ca26b7df608549e5d1bd583e4d52a}\label{group__bmi160_gab21ca26b7df608549e5d1bd583e4d52a}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+extract\+\_\+aux@{bmi160\+\_\+extract\+\_\+aux}}
+\index{bmi160\+\_\+extract\+\_\+aux@{bmi160\+\_\+extract\+\_\+aux}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+extract\+\_\+aux()}{bmi160\_extract\_aux()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+extract\+\_\+aux (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data} $\ast$}]{aux\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+len,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI parses and extracts the aux frames from F\+I\+FO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} A\+PI and stores it in the \hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data} structure instance. 
+
+\begin{DoxyNote}{Note}
+The bmi160\+\_\+extract\+\_\+aux A\+PI should be called only after reading the F\+I\+FO data by calling the \hyperlink{group__bmi160_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data()} A\+PI.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em aux\+\_\+data} & \+: Structure instance of \hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data} where the aux data in F\+I\+FO is stored. \\
+\hline
+\mbox{\tt in,out}  & {\em aux\+\_\+len} & \+: Number of valid aux frames (8bytes) read out from F\+I\+FO. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+aux\+\_\+len is updated with the number of valid aux frames extracted from fifo (1 aux frame = 8 bytes) at the end of execution of this A\+PI.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga9b2caa7d4a697e555856dfc6d1c17990}\label{group__bmi160_ga9b2caa7d4a697e555856dfc6d1c17990}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+extract\+\_\+gyro@{bmi160\+\_\+extract\+\_\+gyro}}
+\index{bmi160\+\_\+extract\+\_\+gyro@{bmi160\+\_\+extract\+\_\+gyro}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+extract\+\_\+gyro()}{bmi160\_extract\_gyro()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+extract\+\_\+gyro (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$}]{gyro\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{gyro\+\_\+length,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI parses and extracts the gyro frames from F\+I\+FO data read by the \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} A\+PI and stores it in the \char`\"{}gyro\+\_\+data\char`\"{} structure instance. 
+
+\begin{DoxyNote}{Note}
+The bmi160\+\_\+extract\+\_\+gyro A\+PI should be called only after reading the F\+I\+FO data by calling the \hyperlink{group__bmi160_gac37108690acb5072d5c19a0f4e677634}{bmi160\+\_\+get\+\_\+fifo\+\_\+data()} A\+PI.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em gyro\+\_\+data} & \+: Structure instance of \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} where the gyro data in F\+I\+FO is stored. \\
+\hline
+\mbox{\tt in,out}  & {\em gyro\+\_\+length} & \+: Number of valid gyro frames (x,y,z axes data) read out from fifo. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+gyro\+\_\+length is updated with the number of valid gyro frames extracted from fifo (1 gyro frame = 6 bytes) at the end of execution of this A\+PI.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gac37108690acb5072d5c19a0f4e677634}\label{group__bmi160_gac37108690acb5072d5c19a0f4e677634}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+get\+\_\+fifo\+\_\+data@{bmi160\+\_\+get\+\_\+fifo\+\_\+data}}
+\index{bmi160\+\_\+get\+\_\+fifo\+\_\+data@{bmi160\+\_\+get\+\_\+fifo\+\_\+data}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+get\+\_\+fifo\+\_\+data()}{bmi160\_get\_fifo\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+fifo\+\_\+data (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads data from the fifo buffer. 
+
+\begin{DoxyNote}{Note}
+User has to allocate the F\+I\+FO buffer along with corresponding fifo length from his side before calling this A\+PI as mentioned in the readme.\+md
+
+User must specify the number of bytes to read from the F\+I\+FO in dev-\/$>$fifo-\/$>$length , It will be updated by the number of bytes actually read from F\+I\+FO after calling this A\+PI
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga53cb6c4b0f60f54bd49b7ff980e3e1d4}\label{group__bmi160_ga53cb6c4b0f60f54bd49b7ff980e3e1d4}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+get\+\_\+int\+\_\+status@{bmi160\+\_\+get\+\_\+int\+\_\+status}}
+\index{bmi160\+\_\+get\+\_\+int\+\_\+status@{bmi160\+\_\+get\+\_\+int\+\_\+status}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+get\+\_\+int\+\_\+status()}{bmi160\_get\_int\_status()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+int\+\_\+status (\begin{DoxyParamCaption}\item[{enum \hyperlink{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}{bmi160\+\_\+int\+\_\+status\+\_\+sel}}]{int\+\_\+status\+\_\+sel,  }\item[{union \hyperlink{unionbmi160__int__status}{bmi160\+\_\+int\+\_\+status} $\ast$}]{int\+\_\+status,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI gets the interrupt status from the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em int\+\_\+status\+\_\+sel} & \+: Enum variable to select either individual or all the interrupt status bits. \\
+\hline
+\mbox{\tt in}  & {\em int\+\_\+status} & \+: pointer variable to get the interrupt status from the sensor. param\mbox{[}in\mbox{]} dev \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gac6d11bee70aafd12449413c0fce3f014}\label{group__bmi160_gac6d11bee70aafd12449413c0fce3f014}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+get\+\_\+offsets@{bmi160\+\_\+get\+\_\+offsets}}
+\index{bmi160\+\_\+get\+\_\+offsets@{bmi160\+\_\+get\+\_\+offsets}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+get\+\_\+offsets()}{bmi160\_get\_offsets()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+offsets (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets} $\ast$}]{offset,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads and stores the offset values of accel and gyro. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em offset} & \+: Structure instance of \hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets} in which the offset values are read and stored \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gacf4792d76eafc7607a097c79fcadb92a}\label{group__bmi160_gacf4792d76eafc7607a097c79fcadb92a}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+get\+\_\+power\+\_\+mode@{bmi160\+\_\+get\+\_\+power\+\_\+mode}}
+\index{bmi160\+\_\+get\+\_\+power\+\_\+mode@{bmi160\+\_\+get\+\_\+power\+\_\+mode}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+get\+\_\+power\+\_\+mode()}{bmi160\_get\_power\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+power\+\_\+mode (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__pmu__status}{bmi160\+\_\+pmu\+\_\+status} $\ast$}]{pmu\+\_\+status,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI gets the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em power\+\_\+mode} & \+: Power mode of the sensor \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}\\
+\hline
+\end{DoxyParams}
+power\+\_\+mode Macros possible values for pmu\+\_\+status-\/$>$aux\+\_\+pmu\+\_\+status \+:
+\begin{DoxyItemize}
+\item B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+P\+M\+U\+\_\+\+S\+U\+S\+P\+E\+ND
+\item B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+P\+M\+U\+\_\+\+N\+O\+R\+M\+AL
+\item B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+P\+M\+U\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+ER
+\end{DoxyItemize}
+
+power\+\_\+mode Macros possible values for pmu\+\_\+status-\/$>$gyro\+\_\+pmu\+\_\+status \+:
+\begin{DoxyItemize}
+\item B\+M\+I160\+\_\+\+G\+Y\+R\+O\+\_\+\+P\+M\+U\+\_\+\+S\+U\+S\+P\+E\+ND
+\item B\+M\+I160\+\_\+\+G\+Y\+R\+O\+\_\+\+P\+M\+U\+\_\+\+N\+O\+R\+M\+AL
+\item B\+M\+I160\+\_\+\+G\+Y\+R\+O\+\_\+\+P\+M\+U\+\_\+\+F\+SU
+\end{DoxyItemize}
+
+power\+\_\+mode Macros possible values for pmu\+\_\+status-\/$>$accel\+\_\+pmu\+\_\+status \+:
+\begin{DoxyItemize}
+\item B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+P\+M\+U\+\_\+\+S\+U\+S\+P\+E\+ND
+\item B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+P\+M\+U\+\_\+\+N\+O\+R\+M\+AL
+\item B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+P\+M\+U\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+ER
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga9bebc4a575526f49e625a87de9478e04}\label{group__bmi160_ga9bebc4a575526f49e625a87de9478e04}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+get\+\_\+regs@{bmi160\+\_\+get\+\_\+regs}}
+\index{bmi160\+\_\+get\+\_\+regs@{bmi160\+\_\+get\+\_\+regs}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+get\+\_\+regs()}{bmi160\_get\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads the data from the given register address of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be read \\
+\hline
+\mbox{\tt out}  & {\em data} & \+: Pointer to data buffer to store the read data. \\
+\hline
+\mbox{\tt in}  & {\em len} & \+: No of bytes of data to be read. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For most of the registers auto address increment applies, with the exception of a few special registers, which trap the address. For e.\+g., Register address -\/ 0x24(B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+D\+A\+T\+A\+\_\+\+A\+D\+DR)
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga86fb957a2384daa2ac17345d76b7e976}\label{group__bmi160_ga86fb957a2384daa2ac17345d76b7e976}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+get\+\_\+sensor\+\_\+data@{bmi160\+\_\+get\+\_\+sensor\+\_\+data}}
+\index{bmi160\+\_\+get\+\_\+sensor\+\_\+data@{bmi160\+\_\+get\+\_\+sensor\+\_\+data}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+get\+\_\+sensor\+\_\+data()}{bmi160\_get\_sensor\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+get\+\_\+sensor\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{select\+\_\+sensor,  }\item[{struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$}]{accel,  }\item[{struct \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} $\ast$}]{gyro,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads sensor data, stores it in the \hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data} structure pointer passed by the user. The user can ask for accel data ,gyro data or both sensor data using bmi160\+\_\+select\+\_\+sensor enum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em select\+\_\+sensor} & \+: enum to choose accel,gyro or both sensor data \\
+\hline
+\mbox{\tt out}  & {\em accel} & \+: Structure pointer to store accel data \\
+\hline
+\mbox{\tt out}  & {\em gyro} & \+: Structure pointer to store gyro data \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga7a2e8b832a4cb12b441cba7371d73f6a}\label{group__bmi160_ga7a2e8b832a4cb12b441cba7371d73f6a}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+init@{bmi160\+\_\+init}}
+\index{bmi160\+\_\+init@{bmi160\+\_\+init}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+init()}{bmi160\_init()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+init (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is the entry point for sensor.\+It performs the selection of I2\+C/\+S\+PI read mechanism according to the selected interface and reads the chip-\/id of bmi160 sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga6f83dc85a8173886ffe58e381fd9e0b8}\label{group__bmi160_ga6f83dc85a8173886ffe58e381fd9e0b8}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+perform\+\_\+self\+\_\+test@{bmi160\+\_\+perform\+\_\+self\+\_\+test}}
+\index{bmi160\+\_\+perform\+\_\+self\+\_\+test@{bmi160\+\_\+perform\+\_\+self\+\_\+test}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+perform\+\_\+self\+\_\+test()}{bmi160\_perform\_self\_test()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+perform\+\_\+self\+\_\+test (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{select\+\_\+sensor,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This is used to perform self test of accel/gyro of the B\+M\+I160 sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em select\+\_\+sensor} & \+: enum to choose accel or gyro for self test \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+self test can be performed either for accel/gyro at any instant. \begin{DoxyVerb}value of select_sensor       |  Inference
+\end{DoxyVerb}
+ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+N\+LY $\vert$ Accel self test enabled B\+M\+I160\+\_\+\+G\+Y\+R\+O\+\_\+\+O\+N\+LY $\vert$ Gyro self test enabled B\+M\+I160\+\_\+\+B\+O\+T\+H\+\_\+\+A\+C\+C\+E\+L\+\_\+\+A\+N\+D\+\_\+\+G\+Y\+RO $\vert$ N\+OT TO BE U\+S\+ED
+
+The return value of this A\+PI gives us the result of self test.
+
+Performing self test does soft reset of the sensor, User can set the desired settings after performing the self test.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error / +ve value -\/$>$ Self-\/test fail\\
+\hline
+\end{DoxyRetVals}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return value }&\textbf{ Result of self test  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return value }&\textbf{ Result of self test  }\\\cline{1-2}
+\endhead
+B\+M\+I160\+\_\+\+OK &Self test success \\\cline{1-2}
+B\+M\+I160\+\_\+\+W\+\_\+\+G\+Y\+R\+O\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+F\+A\+IL &Gyro self test fail \\\cline{1-2}
+B\+M\+I160\+\_\+\+W\+\_\+\+A\+C\+C\+El\+\_\+\+S\+E\+L\+F\+\_\+\+T\+E\+S\+T\+\_\+\+F\+A\+IL &Accel self test fail \\\cline{1-2}
+\end{longtabu}
+\mbox{\Hypertarget{group__bmi160_gae1f173b8b1e4ba2601016cc5fe8edc29}\label{group__bmi160_gae1f173b8b1e4ba2601016cc5fe8edc29}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode@{bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode}}
+\index{bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode@{bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode()}{bmi160\_read\_aux\_data\_auto\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+read\+\_\+aux\+\_\+data\+\_\+auto\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{aux\+\_\+data,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to read the raw uncompensated auxiliary sensor data of 8 bytes from B\+M\+I160 register address 0x04 to 0x0B. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em aux\+\_\+data} & \+: Pointer to user array of length 8 bytes Ensure that the aux\+\_\+data array is of length 8 bytes \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga69193a88550ccf1d99e413dcb5f81730}\label{group__bmi160_ga69193a88550ccf1d99e413dcb5f81730}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+read\+\_\+step\+\_\+counter@{bmi160\+\_\+read\+\_\+step\+\_\+counter}}
+\index{bmi160\+\_\+read\+\_\+step\+\_\+counter@{bmi160\+\_\+read\+\_\+step\+\_\+counter}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+read\+\_\+step\+\_\+counter()}{bmi160\_read\_step\_counter()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+read\+\_\+step\+\_\+counter (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{step\+\_\+val,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI reads the step counter value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em step\+\_\+val} & \+: Pointer to store the step counter value. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gae2a0b717765bc2ee40c0fb92d2f819d2}\label{group__bmi160_gae2a0b717765bc2ee40c0fb92d2f819d2}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode@{bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode}}
+\index{bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode@{bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode()}{bmi160\_set\_aux\_auto\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+aux\+\_\+auto\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data\+\_\+addr,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to setup the auxiliary sensor of bmi160 in auto mode Thus enabling the auto update of 8 bytes of data from auxiliary sensor to B\+M\+I160 register address 0x04 to 0x0B. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data\+\_\+addr} & \+: Starting address of aux. sensor\textquotesingle{}s data register (B\+M\+I160 registers 0x04 to 0x0B will be updated with 8 bytes of data from auxiliary sensor starting from this register address.) \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Set the value of auxiliary polling rate by setting dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr to the required value from the table before calling this A\+PI
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr }&\textbf{ Auxiliary O\+DR (Hz)  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr }&\textbf{ Auxiliary O\+DR (Hz)  }\\\cline{1-2}
+\endhead
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+0\+\_\+78\+HZ &25/32 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+1\+\_\+56\+HZ &25/16 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+3\+\_\+12\+HZ &25/8 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+6\+\_\+25\+HZ &25/4 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+12\+\_\+5\+HZ &25/2 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+25\+HZ &25 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+50\+HZ &50 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+100\+HZ &100 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+200\+HZ &200 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+400\+HZ &400 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+U\+X\+\_\+\+O\+D\+R\+\_\+800\+HZ &800 \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+\+: Other values of dev-\/$>$aux\+\_\+cfg.\+aux\+\_\+odr are reserved and not for use
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gac5cead9788329ba97addba76997de01e}\label{group__bmi160_gac5cead9788329ba97addba76997de01e}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+fifo\+\_\+config@{bmi160\+\_\+set\+\_\+fifo\+\_\+config}}
+\index{bmi160\+\_\+set\+\_\+fifo\+\_\+config@{bmi160\+\_\+set\+\_\+fifo\+\_\+config}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+fifo\+\_\+config()}{bmi160\_set\_fifo\_config()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{config,  }\item[{uint8\+\_\+t}]{enable,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI sets the F\+I\+FO configuration in the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & \+: variable used to specify the F\+I\+FO configurations which are to be enabled or disabled in the sensor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: User can set either set one or more or all F\+I\+FO configurations by O\+Ring the below mentioned macros. \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endhead
+B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+T\+I\+ME &0x02 \\\cline{1-2}
+B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+T\+A\+G\+\_\+\+I\+N\+T2 &0x04 \\\cline{1-2}
+B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+T\+A\+G\+\_\+\+I\+N\+T1 &0x08 \\\cline{1-2}
+B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+H\+E\+A\+D\+ER &0x10 \\\cline{1-2}
+B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+A\+UX &0x20 \\\cline{1-2}
+B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+A\+C\+C\+EL &0x40 \\\cline{1-2}
+B\+M\+I160\+\_\+\+F\+I\+F\+O\+\_\+\+G\+Y\+RO &0x80 \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em enable} & \+: Parameter used to enable or disable the above F\+I\+FO configuration \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status of bus communication result 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga50cbe9d86cba2bb6ef91fdaf3f2ce529}\label{group__bmi160_ga50cbe9d86cba2bb6ef91fdaf3f2ce529}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+fifo\+\_\+down@{bmi160\+\_\+set\+\_\+fifo\+\_\+down}}
+\index{bmi160\+\_\+set\+\_\+fifo\+\_\+down@{bmi160\+\_\+set\+\_\+fifo\+\_\+down}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+fifo\+\_\+down()}{bmi160\_set\_fifo\_down()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+down (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{fifo\+\_\+down,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used to configure the down sampling ratios of the accel and gyro data for F\+I\+F\+O.\+Also, it configures filtered or pre-\/filtered data for the fifo for accel and gyro. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fifo\+\_\+down} & \+: variable used to specify the F\+I\+FO down configurations which are to be enabled or disabled in the sensor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The user must select one among the following macros to select down-\/sampling ratio for accel \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endhead
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+Z\+E\+RO &0x00 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+O\+NE &0x10 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+T\+WO &0x20 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+T\+H\+R\+EE &0x30 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+F\+O\+UR &0x40 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+F\+I\+VE &0x50 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+S\+IX &0x60 \\\cline{1-2}
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+D\+O\+W\+N\+\_\+\+S\+E\+V\+EN &0x70 \\\cline{1-2}
+\end{longtabu}
+
+
+The user must select one among the following macros to select down-\/sampling ratio for gyro \begin{DoxyVerb}config                               |   Value
+-------------------------------------|---------------------------
+BMI160_GYRO_FIFO_DOWN_ZERO           |   0x00
+BMI160_GYRO_FIFO_DOWN_ONE            |   0x01
+BMI160_GYRO_FIFO_DOWN_TWO            |   0x02
+BMI160_GYRO_FIFO_DOWN_THREE          |   0x03
+BMI160_GYRO_FIFO_DOWN_FOUR           |   0x04
+BMI160_GYRO_FIFO_DOWN_FIVE           |   0x05
+BMI160_GYRO_FIFO_DOWN_SIX            |   0x06
+BMI160_GYRO_FIFO_DOWN_SEVEN          |   0x07
+\end{DoxyVerb}
+
+
+The user can enable filtered accel data by the following macro \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endhead
+B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+F\+I\+F\+O\+\_\+\+F\+I\+L\+T\+\_\+\+EN &0x80 \\\cline{1-2}
+\end{longtabu}
+
+
+The user can enable filtered gyro data by the following macro \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ config }&\textbf{ Value  }\\\cline{1-2}
+\endhead
+B\+M\+I160\+\_\+\+G\+Y\+R\+O\+\_\+\+F\+I\+F\+O\+\_\+\+F\+I\+L\+T\+\_\+\+EN &0x08 \\\cline{1-2}
+\end{longtabu}
+
+
+\+: By O\+Ring the above mentioned macros, the user can select the required F\+I\+FO down config settings
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status of bus communication result 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga0b471abfa1d28d5797b5de9c9b457a53}\label{group__bmi160_ga0b471abfa1d28d5797b5de9c9b457a53}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+fifo\+\_\+flush@{bmi160\+\_\+set\+\_\+fifo\+\_\+flush}}
+\index{bmi160\+\_\+set\+\_\+fifo\+\_\+flush@{bmi160\+\_\+set\+\_\+fifo\+\_\+flush}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+fifo\+\_\+flush()}{bmi160\_set\_fifo\_flush()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+flush (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI writes fifo\+\_\+flush command to command register.\+This action clears all data in the Fifo without changing fifo configuration settings. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gaa348ae8d5aa3b20363b49876abff5c69}\label{group__bmi160_gaa348ae8d5aa3b20363b49876abff5c69}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+fifo\+\_\+wm@{bmi160\+\_\+set\+\_\+fifo\+\_\+wm}}
+\index{bmi160\+\_\+set\+\_\+fifo\+\_\+wm@{bmi160\+\_\+set\+\_\+fifo\+\_\+wm}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+fifo\+\_\+wm()}{bmi160\_set\_fifo\_wm()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+fifo\+\_\+wm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{fifo\+\_\+wm,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI sets the F\+I\+FO watermark level in the sensor. 
+
+\begin{DoxyNote}{Note}
+The F\+I\+FO watermark is issued when the F\+I\+FO fill level is equal or above the watermark level and units of watermark is 4 bytes.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fifo\+\_\+wm} & \+: Variable used to set the F\+I\+FO water mark level \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga62ebd142768bea09f93ab63786dc3cca}\label{group__bmi160_ga62ebd142768bea09f93ab63786dc3cca}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+int\+\_\+config@{bmi160\+\_\+set\+\_\+int\+\_\+config}}
+\index{bmi160\+\_\+set\+\_\+int\+\_\+config@{bmi160\+\_\+set\+\_\+int\+\_\+config}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+int\+\_\+config()}{bmi160\_set\_int\_config()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+int\+\_\+config (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg} $\ast$}]{int\+\_\+config,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI configures the necessary interrupt based on the user settings in the \hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg} structure instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em int\+\_\+config} & \+: Structure instance of \hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gae8fd008b08b8a1fc1aadce8e9ebfc1e6}\label{group__bmi160_gae8fd008b08b8a1fc1aadce8e9ebfc1e6}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+offsets@{bmi160\+\_\+set\+\_\+offsets}}
+\index{bmi160\+\_\+set\+\_\+offsets@{bmi160\+\_\+set\+\_\+offsets}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+offsets()}{bmi160\_set\_offsets()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+offsets (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf} $\ast$}]{foc\+\_\+conf,  }\item[{const struct \hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets} $\ast$}]{offset,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI writes the offset values of accel and gyro to the sensor but these values will be reset on P\+OR or soft reset. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em foc\+\_\+conf} & \+: Structure instance of \hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf} which has the F\+OC configuration \\
+\hline
+\mbox{\tt in}  & {\em offset} & \+: Structure instance in which user updates offset values which are to be written in the sensor \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Offsets can be set by user like offset-\/$>$off\+\_\+acc\+\_\+x = 10; where 1\+L\+SB = 3.\+9mg and for gyro 1\+L\+SB = 0.\+061degrees/second
+
+B\+M\+I160 offset values for xyz axes of accel should be within range of B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+M\+I\+N\+\_\+\+O\+F\+F\+S\+ET (-\/128) to B\+M\+I160\+\_\+\+A\+C\+C\+E\+L\+\_\+\+M\+A\+X\+\_\+\+O\+F\+F\+S\+ET (127)
+
+B\+M\+I160 offset values for xyz axes of gyro should be within range of B\+M\+I160\+\_\+\+G\+Y\+R\+O\+\_\+\+M\+I\+N\+\_\+\+O\+F\+F\+S\+ET (-\/512) to B\+M\+I160\+\_\+\+G\+Y\+R\+O\+\_\+\+M\+A\+X\+\_\+\+O\+F\+F\+S\+ET (511)
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga897ca5f1bfbcd1385ace2c05f9f4aef6}\label{group__bmi160_ga897ca5f1bfbcd1385ace2c05f9f4aef6}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+power\+\_\+mode@{bmi160\+\_\+set\+\_\+power\+\_\+mode}}
+\index{bmi160\+\_\+set\+\_\+power\+\_\+mode@{bmi160\+\_\+set\+\_\+power\+\_\+mode}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+power\+\_\+mode()}{bmi160\_set\_power\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+power\+\_\+mode (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI sets the power mode of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga5bea435582a9fdb2c331f64b61e0d6c5}\label{group__bmi160_ga5bea435582a9fdb2c331f64b61e0d6c5}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+regs@{bmi160\+\_\+set\+\_\+regs}}
+\index{bmi160\+\_\+set\+\_\+regs@{bmi160\+\_\+set\+\_\+regs}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+regs()}{bmi160\_set\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{len,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI writes the given data to the register address of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be written. \\
+\hline
+\mbox{\tt in}  & {\em data} & \+: Pointer to data buffer which is to be written in the sensor. \\
+\hline
+\mbox{\tt in}  & {\em len} & \+: No of bytes of data to write.. \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gab098d2c7fda2965b1699ae13d2a8ffc8}\label{group__bmi160_gab098d2c7fda2965b1699ae13d2a8ffc8}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+sens\+\_\+conf@{bmi160\+\_\+set\+\_\+sens\+\_\+conf}}
+\index{bmi160\+\_\+set\+\_\+sens\+\_\+conf@{bmi160\+\_\+set\+\_\+sens\+\_\+conf}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+sens\+\_\+conf()}{bmi160\_set\_sens\_conf()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+sens\+\_\+conf (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI configures the power mode, range and bandwidth of sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga5a9e71230b2c94b2e609c63def130abf}\label{group__bmi160_ga5a9e71230b2c94b2e609c63def130abf}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+set\+\_\+step\+\_\+counter@{bmi160\+\_\+set\+\_\+step\+\_\+counter}}
+\index{bmi160\+\_\+set\+\_\+step\+\_\+counter@{bmi160\+\_\+set\+\_\+step\+\_\+counter}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+set\+\_\+step\+\_\+counter()}{bmi160\_set\_step\_counter()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+set\+\_\+step\+\_\+counter (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{step\+\_\+cnt\+\_\+enable,  }\item[{const struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI enables the step counter feature. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em step\+\_\+cnt\+\_\+enable} & \+: value to enable or disable \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Refer user guide for detailed info.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_gaa047f8bacbc2a9c14ff70841304c04d0}\label{group__bmi160_gaa047f8bacbc2a9c14ff70841304c04d0}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+soft\+\_\+reset@{bmi160\+\_\+soft\+\_\+reset}}
+\index{bmi160\+\_\+soft\+\_\+reset@{bmi160\+\_\+soft\+\_\+reset}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+soft\+\_\+reset()}{bmi160\_soft\_reset()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+soft\+\_\+reset (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI resets and restarts the device. All register values are overwritten with default parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / -\/ve value -\/$>$ Error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga9a12ab7ac43b795f4b6faddde505eb88}\label{group__bmi160_ga9a12ab7ac43b795f4b6faddde505eb88}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+start\+\_\+foc@{bmi160\+\_\+start\+\_\+foc}}
+\index{bmi160\+\_\+start\+\_\+foc@{bmi160\+\_\+start\+\_\+foc}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+start\+\_\+foc()}{bmi160\_start\_foc()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+start\+\_\+foc (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf} $\ast$}]{foc\+\_\+conf,  }\item[{struct \hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets} $\ast$}]{offset,  }\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI starts the F\+OC of accel and gyro. 
+
+\begin{DoxyNote}{Note}
+F\+OC should not be used in low-\/power mode of sensor
+
+Accel F\+OC targets values of +1g , 0g , -\/1g Gyro F\+OC always targets value of 0 dps
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em foc\+\_\+conf} & \+: Structure instance of \hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf} which has the F\+OC configuration \\
+\hline
+\mbox{\tt in,out}  & {\em offset} & \+: Structure instance to store Offset values read from sensor \\
+\hline
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Pre-\/requisites for triggering F\+OC in accel , Set the following, Enable the acc\+\_\+off\+\_\+en Ex \+: foc\+\_\+conf.\+acc\+\_\+off\+\_\+en = B\+M\+I160\+\_\+\+E\+N\+A\+B\+LE;
+\end{DoxyNote}
+Set the desired target values of F\+OC to each axes (x,y,z) by using the following macros
+\begin{DoxyItemize}
+\item B\+M\+I160\+\_\+\+F\+O\+C\+\_\+\+A\+C\+C\+E\+L\+\_\+\+D\+I\+S\+A\+B\+L\+ED
+\item B\+M\+I160\+\_\+\+F\+O\+C\+\_\+\+A\+C\+C\+E\+L\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+G
+\item B\+M\+I160\+\_\+\+F\+O\+C\+\_\+\+A\+C\+C\+E\+L\+\_\+\+N\+E\+G\+A\+T\+I\+V\+E\+\_\+G
+\item B\+M\+I160\+\_\+\+F\+O\+C\+\_\+\+A\+C\+C\+E\+L\+\_\+0G
+\end{DoxyItemize}
+
+Ex \+: foc\+\_\+conf.\+foc\+\_\+acc\+\_\+x = B\+M\+I160\+\_\+\+F\+O\+C\+\_\+\+A\+C\+C\+E\+L\+\_\+0G; foc\+\_\+conf.\+foc\+\_\+acc\+\_\+y = B\+M\+I160\+\_\+\+F\+O\+C\+\_\+\+A\+C\+C\+E\+L\+\_\+0G; foc\+\_\+conf.\+foc\+\_\+acc\+\_\+z = B\+M\+I160\+\_\+\+F\+O\+C\+\_\+\+A\+C\+C\+E\+L\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+G;
+
+\begin{DoxyNote}{Note}
+Pre-\/requisites for triggering F\+OC in gyro , Set the following parameters,
+\end{DoxyNote}
+Ex \+: foc\+\_\+conf.\+foc\+\_\+gyr\+\_\+en = B\+M\+I160\+\_\+\+E\+N\+A\+B\+LE; foc\+\_\+conf.\+gyro\+\_\+off\+\_\+en = B\+M\+I160\+\_\+\+E\+N\+A\+B\+LE;
+
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__bmi160_ga273ec1cf6a992e0050ce12f33ee4c070}\label{group__bmi160_ga273ec1cf6a992e0050ce12f33ee4c070}} 
+\index{Bmi160@{Bmi160}!bmi160\+\_\+update\+\_\+nvm@{bmi160\+\_\+update\+\_\+nvm}}
+\index{bmi160\+\_\+update\+\_\+nvm@{bmi160\+\_\+update\+\_\+nvm}!Bmi160@{Bmi160}}
+\subsubsection{\texorpdfstring{bmi160\+\_\+update\+\_\+nvm()}{bmi160\_update\_nvm()}}
+{\footnotesize\ttfamily int8\+\_\+t bmi160\+\_\+update\+\_\+nvm (\begin{DoxyParamCaption}\item[{struct \hyperlink{structbmi160__dev}{bmi160\+\_\+dev} const $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This A\+PI writes the image registers values to N\+VM which is stored even after P\+OR or soft reset. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & \+: Structure instance of \hyperlink{structbmi160__dev}{bmi160\+\_\+dev}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of A\+PI execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/$>$ Success \\
+\hline
+{\em Any} & non zero value -\/$>$ Fail \\
+\hline
+\end{DoxyRetVals}

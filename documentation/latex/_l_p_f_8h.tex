@@ -1,0 +1,61 @@
+\hypertarget{_l_p_f_8h}{}\doxysection{inc/\+LPF.h File Reference}
+\label{_l_p_f_8h}\index{inc/LPF.h@{inc/LPF.h}}
+
+
+implements three FIR low-\/pass filters  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___math_gac28327f99b7d0312192606455fdfb49f}{LPF\+\_\+\+Init}} (uint32\+\_\+t initial, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initialize first LPF. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga5f516bb95e5f68543674b7766febed43}{LPF\+\_\+\+Calc}} (uint32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em FIR low pass filter. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gabe2603c167f6e3dd69ba704c399eb42f}{Noise}} (void)
+\begin{DoxyCompactList}\small\item\em calculate amount of random noise \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gabcb3c4786ebdec7965864e68ad07d04b}{LPF\+\_\+\+Init2}} (uint32\+\_\+t initial, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initialize second LPF. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gaf1c031fec10c4752e76c7ba504700131}{LPF\+\_\+\+Calc2}} (uint32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em FIR low pass filter. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga3f39976e26c40a899c2c8cf5188600f8}{Noise2}} (void)
+\begin{DoxyCompactList}\small\item\em calculate amount of random noise \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga6ca6d50b606281a8154861e92048eb35}{LPF\+\_\+\+Init3}} (uint32\+\_\+t initial, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initialize third LPF. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gae74bc77a41e61bfccfc2e771be99aef2}{LPF\+\_\+\+Calc3}} (uint32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em FIR low pass filter. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gada6fd6e7cdc0f6693eba470245f6576a}{Noise3}} (void)
+\begin{DoxyCompactList}\small\item\em calculate amount of random noise \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gab880f5c671175cde000252f8d38f8bda}{Median}} (int32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em Median filter. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga1aa4775b51155a2f1d8baff67b9230be}{isqrt}} (uint32\+\_\+t s)
+\begin{DoxyCompactList}\small\item\em square root \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+implements three FIR low-\/pass filters 
+
+Finite length LPF~\newline
+ 1) Size is the depth 2 to 512~\newline
+ 2) y(n) = (sum(x(n)+x(n-\/1)+...+x(n-\/size-\/1))/size~\newline
+ 3) To use a filter~\newline
+ a) initialize it once~\newline
+ b) call the filter at the sampling rate~\newline
+ \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

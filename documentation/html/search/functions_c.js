@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['odometry_5fget_1141',['Odometry_Get',['../group___math.html#ga1ef75bf637013d317fd67af7d24d9487',1,'odometry.h']]],
+  ['odometry_5fgetangle_1142',['Odometry_GetAngle',['../group___math.html#ga010212b0f335a235e37853f1566eb789',1,'odometry.h']]],
+  ['odometry_5fgetx_1143',['Odometry_GetX',['../group___math.html#ga445ed3ce2b8e40f5f1b289c5f2e10877',1,'odometry.h']]],
+  ['odometry_5fgety_1144',['Odometry_GetY',['../group___math.html#gada122c001d23df57126239baedd3dd41',1,'odometry.h']]],
+  ['odometry_5finit_1145',['Odometry_Init',['../group___math.html#ga02038c8bfaf26fb3cf26f87c700ace21',1,'odometry.h']]],
+  ['odometry_5fsetpower_1146',['Odometry_SetPower',['../group___math.html#ga65bc6118c80d609922568caef39d5534',1,'odometry.h']]],
+  ['odometry_5fupdate_1147',['Odometry_Update',['../group___math.html#ga57e039201476eac111718cd0389008e2',1,'odometry.h']]],
+  ['opt3001_5finit_1148',['OPT3001_Init',['../group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i.html#ga75ff1bf3940f1760945f74a147547333',1,'OPT3001.h']]],
+  ['opt3001_5freadlight_1149',['OPT3001_ReadLight',['../group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i.html#gac896869fc163b39f9e92a972fbbd592b',1,'OPT3001.h']]],
+  ['opt3101_5farminterrupts_1150',['OPT3101_ArmInterrupts',['../group___r_s_l_k.html#gafbfb3187abf3fa8b2e756958ad08509f',1,'opt3101.h']]],
+  ['opt3101_5fcalibrateinternalcrosstalk_1151',['OPT3101_CalibrateInternalCrosstalk',['../group___r_s_l_k.html#ga29997146e950c8e4dd0b6186769ba123',1,'opt3101.h']]],
+  ['opt3101_5fcheckdistancesensor_1152',['OPT3101_CheckDistanceSensor',['../group___r_s_l_k.html#ga2a6130df8253adbd09997737bd4b2839',1,'opt3101.h']]],
+  ['opt3101_5fgetamplitude_1153',['OPT3101_GetAmplitude',['../group___r_s_l_k.html#gafedc7596a6d6a99e31a74f4b1add6e61',1,'opt3101.h']]],
+  ['opt3101_5fgetdistancemillimeters_1154',['OPT3101_GetDistanceMillimeters',['../group___r_s_l_k.html#ga2f7570809f62a8f9af09ae49e6a3533e',1,'opt3101.h']]],
+  ['opt3101_5fgetmeasurement_1155',['OPT3101_GetMeasurement',['../group___r_s_l_k.html#gaafa31e75d37cf76e56966301fa4c54a0',1,'opt3101.h']]],
+  ['opt3101_5fgetphase_1156',['OPT3101_GetPhase',['../group___r_s_l_k.html#gad843946a9ddbe96f7f230827a952a2e0',1,'opt3101.h']]],
+  ['opt3101_5fgettxchannel_1157',['OPT3101_GetTxChannel',['../group___r_s_l_k.html#ga6fe0afe1ee890559b1a5179bcc54f210',1,'opt3101.h']]],
+  ['opt3101_5finit_1158',['OPT3101_Init',['../group___r_s_l_k.html#gac2568de1c712c1ebde98f688a5c65e4a',1,'opt3101.h']]],
+  ['opt3101_5fmeasurementerror_1159',['OPT3101_MeasurementError',['../group___r_s_l_k.html#gae5214df07c11eb5ecd7522ff509839a7',1,'opt3101.h']]],
+  ['opt3101_5freadmeasurement_1160',['OPT3101_ReadMeasurement',['../group___r_s_l_k.html#ga6ab8ea3bed75dacf760192dfd5b56145',1,'opt3101.h']]],
+  ['opt3101_5fsetup_1161',['OPT3101_Setup',['../group___r_s_l_k.html#gadd8bc0cef644999f206fa6e8d97d4ed0',1,'opt3101.h']]],
+  ['opt3101_5fstartmeasurement_1162',['OPT3101_StartMeasurement',['../group___r_s_l_k.html#ga17cbe3e8184955b9fc7acbd6bacef402',1,'opt3101.h']]],
+  ['opt3101_5fstartmeasurementchannel_1163',['OPT3101_StartMeasurementChannel',['../group___r_s_l_k.html#ga2b34def7fd6361d81df8716de07757c1',1,'opt3101.h']]],
+  ['or_1164',['or',['../group___math.html#ga80c32cc652c6e87036e30b75b64d9b0c',1,'Fuzzy.h']]],
+  ['or3_1165',['or3',['../group___math.html#ga062ad2061883d8d7cdb0aa9d07ac1d82',1,'Fuzzy.h']]]
+];

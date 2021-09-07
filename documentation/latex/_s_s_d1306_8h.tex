@@ -1,0 +1,139 @@
+\hypertarget{_s_s_d1306_8h}{}\doxysection{inc/\+SSD1306.h File Reference}
+\label{_s_s_d1306_8h}\index{inc/SSD1306.h@{inc/SSD1306.h}}
+
+
+Provide simple I/O functions for the SSD 1306 OLED.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga7b3b25cba33b07c303f3060fe41887f6}{BLACK}}~0
+\begin{DoxyCompactList}\small\item\em Draw \textquotesingle{}off\textquotesingle{} pixels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga87b537f5fa5c109d3c05c13d6b18f382}{WHITE}}~1
+\begin{DoxyCompactList}\small\item\em Draw \textquotesingle{}on\textquotesingle{} pixels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_gade269cc47cfaba70068f2586e898051d}{INVERSE}}~2
+\begin{DoxyCompactList}\small\item\em Invert pixels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_gacaee84439cd8e333833f5955f0c3839e}{SSD1306\+\_\+\+EXTERNALVCC}}~0x01
+\begin{DoxyCompactList}\small\item\em External display voltage source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_gad9d18b92ad68b542033c7e5ccbdcced0}{SSD1306\+\_\+\+SWITCHCAPVCC}}~0x02
+\begin{DoxyCompactList}\small\item\em Gen. display voltage from 3.\+3V. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~1
+\begin{DoxyCompactList}\small\item\em Function successive. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga65e9886d74aaee76545e83dd09011727}{false}}~0
+\begin{DoxyCompactList}\small\item\em Function failed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group___r_s_l_k_gaab7ea41e931eeab2903cdea7496aa6a8}{SSD1306\+\_\+\+Init}} (int vccst)
+\begin{DoxyCompactList}\small\item\em driver for SSD1306 OLED display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer}} (void)
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_gab0ca956a8d8f4b41a50ff010dcd526e7}{SSD1306\+\_\+\+Invert\+Display}} (int i)
+\begin{DoxyCompactList}\small\item\em Enable or disable display invert mode (white-\/on-\/black vs black-\/on-\/white). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3738c1b2fe173a407021f97435614e48}{SSD1306\+\_\+\+Dim}} (int dim)
+\begin{DoxyCompactList}\small\item\em Dim the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga91211e9aa7f5fdad9d09416ff2311322}{SSD1306\+\_\+\+Draw\+Pixel}} (int16\+\_\+t x, int16\+\_\+t y, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Set/clear/invert a single pixel. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gae19550fb75c29d3315292400c1238204}{SSD1306\+\_\+\+Draw\+Fast\+HLine}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t w, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a horizontal line. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga1cb5d0251f4b23eb2b4fe8ee723c5bc3}{SSD1306\+\_\+\+Draw\+Fast\+VLine}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t h, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a vertical line. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga67ad6ee2114e1400e3b818e7e1a27b9e}{SSD1306\+\_\+startscrollright}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate a right-\/handed scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga24a16124440a98a13ff471209d9c8534}{SSD1306\+\_\+startscrollleft}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate a left-\/handed scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga38eb562710b30f7999a3a1fa34e3238f}{SSD1306\+\_\+startscrolldiagright}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate a diagonal scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga5fbe0b379155b3ff6944af2b742c18a3}{SSD1306\+\_\+startscrolldiagleft}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate alternate diagonal scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga591667f0f26d0e6babf07496fa9328b6}{SSD1306\+\_\+stopscroll}} (void)
+\begin{DoxyCompactList}\small\item\em Cease a previously-\/begun scrolling action. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___r_s_l_k_ga7c45e775cadcd7edb931bbffe9f8dffc}{SSD1306\+\_\+\+Get\+Pixel}} (int16\+\_\+t x, int16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Return color of a single pixel in display buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{group___r_s_l_k_gac506713d6b823aad406d3be277fa08bc}{SSD1306\+\_\+get\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Get base address of display buffer for direct reading or writing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3f3ff2f3d1a9c1cbe85ee15a05997814}{SSD1306\+\_\+\+Draw\+Char}} (int16\+\_\+t x, int16\+\_\+t y, char letter, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga78b108008d5b65cac47aa4813e22b40b}{SSD1306\+\_\+\+Draw\+String}} (int16\+\_\+t x, int16\+\_\+t y, char $\ast$pt, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga821fb135de1f5996c7ba544f66cfb557}{SSD1306\+\_\+\+Clear\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Clear contents of display buffer (set all pixels to off). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga618c2638077b6eeed2f754994c490d36}{SSD1306\+\_\+\+Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the LCD by writing zeros to the entire screen and reset the cursor to (0,0) (top left corner of screen). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaa8a71d61d7b6ce871bfeea8a7c641f2a}{SSD1306\+\_\+\+Draw\+Full\+Image}} (const uint8\+\_\+t $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Fill the whole screen by drawing a 128x64 bitmap image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gac52af74d665ba242569c42e148f6a4ae}{SSD1306\+\_\+\+Print\+BMP}} (uint8\+\_\+t xpos, uint8\+\_\+t ypos, const uint8\+\_\+t $\ast$ptr, uint8\+\_\+t threshold)
+\begin{DoxyCompactList}\small\item\em Draw a raw bitmap to the RAM buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga17d614ae3998954150531d07811d3e41}{SSD1306\+\_\+\+Set\+Cursor}} (uint16\+\_\+t newX, uint16\+\_\+t newY)
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaee6d606255408f0770f394da8d382816}{SSD1306\+\_\+\+Out\+Char}} (char data)
+\begin{DoxyCompactList}\small\item\em Print a character to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3cb10630582177982ffcf6cb0ee25eaa}{SSD1306\+\_\+\+Out\+String}} (char $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Print a string of characters to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gae7367f3c4d4f7652f09a94921917fa34}{SSD1306\+\_\+\+Out\+UDec}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit unsigned number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaac775a5f0bf3a671aa401e3a91396310}{SSD1306\+\_\+\+Out\+SDec}} (int16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit signed number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga79f05e2d03b8a825eeb9f38a877f1bfd}{SSD1306\+\_\+\+Out\+UFix1}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit unsigned fixed-\/point number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaf14172094ff5e9fa53a18e440f7c8f2b}{SSD1306\+\_\+\+Out\+SFix1}} (int32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 32-\/bit signed fixed-\/point number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3571ab75750cb59aead92332ffb0fc62}{SSD1306\+\_\+\+Out\+Hex7}} (uint8\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print one hex digit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga6a92665473351cc8fc8731072ab85ebe}{SSD1306\+\_\+\+Out\+UHex7}} (uint8\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print two hex digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga58588d89cff825a2923ad5efd6c3bad6}{SSD1306\+\_\+\+Out\+UDec16}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print three decimal digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gac4e6c633d40b9e89e4723617c6de9b80}{SSD1306\+\_\+\+Out\+UDec2}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print two decimal digits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide simple I/O functions for the SSD 1306 OLED. 
+
+Use e\+USCI\+\_\+\+A3 to send an 8-\/bit code to the 1306 64x128 pixel OLED to display text, images, or other information. \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}
+\begin{DoxyRemark}{Remarks}
+Font table based off of Nokia\+\_\+5110\+\_\+\+Example from Spark Fun\+: 7-\/17-\/2011~\newline
+ Spark Fun Electronics 2011, Nathan Seidle~\newline
+ \href{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/LCD/Monochrome/Nokia_5110_Example.pde}{\texttt{ http\+://dlnmh9ip6v2uc.\+cloudfront.\+net/datasheets/\+LCD/\+Monochrome/\+Nokia\+\_\+5110\+\_\+\+Example.\+pde}}
+\end{DoxyRemark}
+\hypertarget{_s_s_d1306_8h_Blue Adafruit 938 SSD1306}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Blue Adafruit 938 SSD1306 o\+LED (powered with 5V)}\label{_s_s_d1306_8h_Blue Adafruit 938 SSD1306}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ (SSD1306) Launch\+Pad pin }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ (SSD1306) Launch\+Pad pin }\\\cline{1-2}
+\endhead
+Ground &(Gnd, pin 1) ground \\\cline{1-2}
+3.\+3V &(Vcc, pin 2) power \\\cline{1-2}
+UCA3\+CLK &(Clk, pin 3) connected to P9.\+5 \\\cline{1-2}
+UCA3\+SIMO &(Din, pin 4) connected to P9.\+7 \\\cline{1-2}
+Data/\+Command &(D/C, pin 5) connected to P9.\+6 \\\cline{1-2}
+UCA3\+STE &(CS, pin 6) connected to P9.\+4 \\\cline{1-2}
+Reset &(RST, pin 7) connected to P9.\+3 \\\cline{1-2}
+back light &(LED, pin 8) not connected, consists of 4 white LEDs which draw $\sim$80mA total \\\cline{1-2}
+\end{longtabu}

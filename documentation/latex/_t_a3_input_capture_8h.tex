@@ -1,0 +1,38 @@
+\hypertarget{_t_a3_input_capture_8h}{}\doxysection{inc/\+TA3\+Input\+Capture.h File Reference}
+\label{_t_a3_input_capture_8h}\index{inc/TA3InputCapture.h@{inc/TA3InputCapture.h}}
+
+
+Initialize Timer A3.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_ga76fc9eaaec83d83a4be37a37f78cd504}{Timer\+A3\+Capture\+\_\+\+Init02}} (void($\ast$task0)(uint16\+\_\+t time), void($\ast$task2)(uint16\+\_\+t time))
+\begin{DoxyCompactList}\small\item\em Initialize Timer A3 interrupts on P10.\+4 and P8.\+2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gac9accc16bc2655e30ab6d71884b1857a}{Timer\+A3\+Capture\+\_\+\+Init01}} (void($\ast$task0)(uint16\+\_\+t time), void($\ast$task1)(uint16\+\_\+t time))
+\begin{DoxyCompactList}\small\item\em Initialize Timer A3 interrupts on P10.\+4 and P10.\+5. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initialize Timer A3. 
+
+Use Timer A3 in capture mode to request interrupts on rising edges of P10.\+4 (TA3\+CCP0) and P8.\+2 (TA3\+CCP2) and call user functions.~\newline
+ Use Timer A3 in capture mode to request interrupts on rising edges of P10.\+4 (TA3\+CCP0) and P10.\+5 (TA3\+CCP1) and call user functions. \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

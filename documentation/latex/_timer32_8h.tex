@@ -1,0 +1,43 @@
+\hypertarget{_timer32_8h}{}\doxysection{inc/\+Timer32.h File Reference}
+\label{_timer32_8h}\index{inc/Timer32.h@{inc/Timer32.h}}
+
+
+Initialize Timer32.  
+
+
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___m_s_p432_gafdb0398556993e7d1372ed0530d2b6e4}{timer32divider}} \{ \mbox{\hyperlink{group___m_s_p432_ggafdb0398556993e7d1372ed0530d2b6e4ab7dfe7ec0e960f24bc0157eab07370fb}{T32\+DIV1}} = 0x00000000
+, \mbox{\hyperlink{group___m_s_p432_ggafdb0398556993e7d1372ed0530d2b6e4adfcc5bfe038a0d949f3d1e0f8cc41530}{T32\+DIV16}} = 0x00000004
+, \mbox{\hyperlink{group___m_s_p432_ggafdb0398556993e7d1372ed0530d2b6e4a2390009f4e8870f0e9f465fc4dbdefc5}{T32\+DIV256}} = 0x00000008
+ \}
+\begin{DoxyCompactList}\small\item\em specifies the prescale used for the 32-\/bit timer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_gabe5295a93d00844f47a5c98dd548ffd8}{Timer32\+\_\+\+Init}} (void($\ast$task)(void), uint32\+\_\+t period, enum \mbox{\hyperlink{group___m_s_p432_gafdb0398556993e7d1372ed0530d2b6e4}{timer32divider}} div)
+\begin{DoxyCompactList}\small\item\em Initialize Timer 32. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initialize Timer32. 
+
+Use Timer32 for periodic interrupts. \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019 
+\end{DoxyDate}

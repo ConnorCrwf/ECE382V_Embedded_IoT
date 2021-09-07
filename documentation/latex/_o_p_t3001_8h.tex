@@ -1,0 +1,62 @@
+\hypertarget{_o_p_t3001_8h}{}\doxysection{inc/\+OPT3001.h File Reference}
+\label{_o_p_t3001_8h}\index{inc/OPT3001.h@{inc/OPT3001.h}}
+
+
+Provide low-\/level functions that interface OPT3001 to the TI-\/\+RSLK MAX robot.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_o_p_t3001___result}{OPT3001\+\_\+\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga75ff1bf3940f1760945f74a147547333}{OPT3001\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize OPT3001. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{union_o_p_t3001___result}{OPT3001\+\_\+\+Result}} \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac896869fc163b39f9e92a972fbbd592b}{OPT3001\+\_\+\+Read\+Light}} (void)
+\begin{DoxyCompactList}\small\item\em return last OPT3001 measurement \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide low-\/level functions that interface OPT3001 to the TI-\/\+RSLK MAX robot. 
+
+OPT3001 is connected to Ports 4 and 6~\newline
+ \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2020 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+3/1/2020
+\end{DoxyDate}
+\hypertarget{_o_p_t3001_8h_OPT3001}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{OPT3001 on BP-\/\+BASSENSORSMKII connected to MSP432}\label{_o_p_t3001_8h_OPT3001}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ OPT3001 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ OPT3001 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endhead
+GND &ground &ground \\\cline{1-3}
+TMP\+\_\+\+V+ &OPT3001 V+ pin 5 &P4.\+7 power to sensor \\\cline{1-3}
+SDA &OPT3001 SDA pin 6 &P6.\+4 I2C data SDA \\\cline{1-3}
+SCL &OPT3001 SCL pin 1 &P6.\+5 I2C clock SCL \\\cline{1-3}
+TMP\+\_\+\+ALERT &OPT3001 ALERT pin 3 &P4.\+4 open drain alert \\\cline{1-3}
+\end{longtabu}

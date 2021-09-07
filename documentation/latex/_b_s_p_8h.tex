@@ -1,0 +1,173 @@
+\hypertarget{_b_s_p_8h}{}\doxysection{inc/\+BSP.h File Reference}
+\label{_b_s_p_8h}\index{inc/BSP.h@{inc/BSP.h}}
+
+
+Provide low-\/level functions that interface Educational Booster\+Pack MKII.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries LCD\+\_\+\+BLACK}~0x0000
+\item 
+\#define {\bfseries LCD\+\_\+\+BLUE}~0x001F
+\item 
+\#define {\bfseries LCD\+\_\+\+DARKBLUE}~0x34\+BF
+\item 
+\#define {\bfseries LCD\+\_\+\+RED}~0x\+F800
+\item 
+\#define {\bfseries LCD\+\_\+\+GREEN}~0x07\+E0
+\item 
+\#define {\bfseries LCD\+\_\+\+LIGHTGREEN}~0x07\+EF
+\item 
+\#define {\bfseries LCD\+\_\+\+ORANGE}~0x\+FD60
+\item 
+\#define {\bfseries LCD\+\_\+\+CYAN}~0x07\+FF
+\item 
+\#define {\bfseries LCD\+\_\+\+MAGENTA}~0x\+F81F
+\item 
+\#define {\bfseries LCD\+\_\+\+YELLOW}~0x\+FFE0
+\item 
+\#define {\bfseries LCD\+\_\+\+WHITE}~0x\+FFFF
+\item 
+\#define {\bfseries LCD\+\_\+\+GREY}~0x8410
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries BSP\+\_\+\+Button1\+\_\+\+Init} (void)
+\item 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+Button1\+\_\+\+Input} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Button2\+\_\+\+Init} (void)
+\item 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+Button2\+\_\+\+Input} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Joystick\+\_\+\+Init} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Joystick\+\_\+\+Input} (uint16\+\_\+t $\ast$x, uint16\+\_\+t $\ast$y, uint8\+\_\+t $\ast$select)
+\item 
+void {\bfseries BSP\+\_\+\+RGB\+\_\+\+Init} (uint16\+\_\+t red, uint16\+\_\+t green, uint16\+\_\+t blue)
+\item 
+void {\bfseries BSP\+\_\+\+RGB\+\_\+\+Set} (uint16\+\_\+t red, uint16\+\_\+t green, uint16\+\_\+t blue)
+\item 
+void {\bfseries BSP\+\_\+\+RGB\+\_\+\+D\+\_\+\+Init} (int red, int green, int blue)
+\item 
+void {\bfseries BSP\+\_\+\+RGB\+\_\+\+D\+\_\+\+Set} (int red, int green, int blue)
+\item 
+void {\bfseries BSP\+\_\+\+RGB\+\_\+\+D\+\_\+\+Toggle} (int red, int green, int blue)
+\item 
+void {\bfseries BSP\+\_\+\+Buzzer\+\_\+\+Init} (uint16\+\_\+t duty)
+\item 
+void {\bfseries BSP\+\_\+\+Buzzer\+\_\+\+Set} (uint16\+\_\+t duty)
+\item 
+void {\bfseries BSP\+\_\+\+Accelerometer\+\_\+\+Init} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Accelerometer\+\_\+\+Input} (uint16\+\_\+t $\ast$x, uint16\+\_\+t $\ast$y, uint16\+\_\+t $\ast$z)
+\item 
+void {\bfseries BSP\+\_\+\+Microphone\+\_\+\+Init} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Microphone\+\_\+\+Input} (uint16\+\_\+t $\ast$mic)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Init} (void)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Draw\+Pixel} (int16\+\_\+t x, int16\+\_\+t y, uint16\+\_\+t color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Draw\+Fast\+VLine} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t h, uint16\+\_\+t color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Draw\+Fast\+HLine} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t w, uint16\+\_\+t color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Fill\+Screen} (uint16\+\_\+t color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Fill\+Rect} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t w, int16\+\_\+t h, uint16\+\_\+t color)
+\item 
+uint16\+\_\+t {\bfseries BSP\+\_\+\+LCD\+\_\+\+Color565} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\item 
+uint16\+\_\+t {\bfseries BSP\+\_\+\+LCD\+\_\+\+Swap\+Color} (uint16\+\_\+t x)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Draw\+Bitmap} (int16\+\_\+t x, int16\+\_\+t y, const uint16\+\_\+t $\ast$image, int16\+\_\+t w, int16\+\_\+t h)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Draw\+CharS} (int16\+\_\+t x, int16\+\_\+t y, char c, int16\+\_\+t text\+Color, int16\+\_\+t bg\+Color, uint8\+\_\+t size)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Draw\+Char} (int16\+\_\+t x, int16\+\_\+t y, char c, int16\+\_\+t text\+Color, int16\+\_\+t bg\+Color, uint8\+\_\+t size)
+\item 
+uint32\+\_\+t {\bfseries BSP\+\_\+\+LCD\+\_\+\+Draw\+String} (uint16\+\_\+t x, uint16\+\_\+t y, char $\ast$pt, int16\+\_\+t text\+Color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Set\+Cursor} (uint32\+\_\+t newX, uint32\+\_\+t newY)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Out\+UDec} (uint32\+\_\+t n, int16\+\_\+t text\+Color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Out\+UDec4} (uint32\+\_\+t n, int16\+\_\+t text\+Color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Out\+UDec5} (uint32\+\_\+t n, int16\+\_\+t text\+Color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Out\+UFix2\+\_\+1} (uint32\+\_\+t n, int16\+\_\+t text\+Color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Out\+UHex2} (uint32\+\_\+t n, int16\+\_\+t text\+Color)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Drawaxes} (uint16\+\_\+t axis\+Color, uint16\+\_\+t bg\+Color, char $\ast$x\+Label, char $\ast$y\+Label1, uint16\+\_\+t label1\+Color, char $\ast$y\+Label2, uint16\+\_\+t label2\+Color, int32\+\_\+t ymax, int32\+\_\+t ymin)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Plot\+Point} (int32\+\_\+t data1, uint16\+\_\+t color1)
+\item 
+void {\bfseries BSP\+\_\+\+LCD\+\_\+\+Plot\+Increment} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Clock\+\_\+\+Init\+Fastest} (void)
+\item 
+uint32\+\_\+t {\bfseries BSP\+\_\+\+Clock\+\_\+\+Get\+Freq} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Periodic\+Task\+\_\+\+Init} (void($\ast$task)(void), uint32\+\_\+t freq, uint8\+\_\+t priority)
+\item 
+void {\bfseries BSP\+\_\+\+Periodic\+Task\+\_\+\+Stop} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Periodic\+Task\+\_\+\+InitB} (void($\ast$task)(void), uint32\+\_\+t freq, uint8\+\_\+t priority)
+\item 
+void {\bfseries BSP\+\_\+\+Periodic\+Task\+\_\+\+StopB} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Periodic\+Task\+\_\+\+InitC} (void($\ast$task)(void), uint32\+\_\+t freq, uint8\+\_\+t priority)
+\item 
+void {\bfseries BSP\+\_\+\+Periodic\+Task\+\_\+\+StopC} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Time\+\_\+\+Init} (void)
+\item 
+uint32\+\_\+t {\bfseries BSP\+\_\+\+Time\+\_\+\+Get} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Delay1ms} (uint32\+\_\+t n)
+\item 
+void {\bfseries BSP\+\_\+\+Light\+Sensor\+\_\+\+Init} (void)
+\item 
+uint32\+\_\+t {\bfseries BSP\+\_\+\+Light\+Sensor\+\_\+\+Input} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Light\+Sensor\+\_\+\+Start} (void)
+\item 
+int {\bfseries BSP\+\_\+\+Light\+Sensor\+\_\+\+End} (uint32\+\_\+t $\ast$light)
+\item 
+void {\bfseries BSP\+\_\+\+Temp\+Sensor\+\_\+\+Init} (void)
+\item 
+void {\bfseries BSP\+\_\+\+Temp\+Sensor\+\_\+\+Input} (int32\+\_\+t $\ast$sensorV, int32\+\_\+t $\ast$localT)
+\item 
+void {\bfseries BSP\+\_\+\+Temp\+Sensor\+\_\+\+Start} (void)
+\item 
+int {\bfseries BSP\+\_\+\+Temp\+Sensor\+\_\+\+End} (int32\+\_\+t $\ast$sensorV, int32\+\_\+t $\ast$localT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide low-\/level functions that interface Educational Booster\+Pack MKII. 
+
+Runs on either the TM4\+C123 or MSP432 with an Educational Booster\+Pack MKII (BOOSTXL-\/\+EDUMKII) This file contains the function prototypes for the software interface to the MKII Booster\+Pack. This board support package (BSP) is an abstraction layer, forming a bridge between the low-\/level hardware and the high-\/level software.
+
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2020 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+3/1/2020 
+\end{DoxyDate}

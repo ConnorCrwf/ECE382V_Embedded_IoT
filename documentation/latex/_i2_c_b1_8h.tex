@@ -1,0 +1,72 @@
+\hypertarget{_i2_c_b1_8h}{}\doxysection{inc/\+I2\+CB1.h File Reference}
+\label{_i2_c_b1_8h}\index{inc/I2CB1.h@{inc/I2CB1.h}}
+
+
+Provide busy-\/wait device driver for the I2C UCB1.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_ga527f9776026cf305a95902f78c3724b5}{I2\+CB1\+\_\+\+Init}} (uint32\+\_\+t prescale)
+\begin{DoxyCompactList}\small\item\em Initialize EUSCI\+\_\+\+B1, I2C master. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gafc6e81e2216dc06fa76995cd9d1e88bb}{I2\+CB1\+\_\+\+Send}} (uint8\+\_\+t slave\+Addr, uint8\+\_\+t $\ast$p\+Data, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Transmit data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga6b133b8245309d1456473c822ea3d9da}{I2\+CB1\+\_\+\+Recv}} (uint8\+\_\+t slave\+Addr, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Receive data. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___m_s_p432_gab8a7b2bd3b5b1c006f0bbfcc0f44bcad}{I2\+CB1\+\_\+\+Recv1}} (int8\+\_\+t slave\+Addr)
+\begin{DoxyCompactList}\small\item\em Receive one byte of data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga9cb75bf938c9c0dcc1e70eeb606a5ed1}{I2\+CB1\+\_\+\+Send1}} (uint8\+\_\+t slave\+Addr, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Transmit one byte of data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga82c8ea14de46927dbec58435ae72b764}{I2\+CB1\+\_\+\+Send2}} (uint8\+\_\+t slave\+Addr, uint8\+\_\+t reg\+Num, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Transmit data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_gaceb1e3e254179a0ccff8cc4ae5cef3f2}{I2\+CB1\+\_\+\+Send3}} (uint8\+\_\+t slave\+Addr, uint8\+\_\+t reg\+Num, uint8\+\_\+t data\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Transmit data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_s_p432_ga4d1598be15be33b8ef66fdb2a569d73d}{I2\+CB1\+\_\+\+Send4}} (uint8\+\_\+t slave\+Addr, uint8\+\_\+t reg\+Num, uint8\+\_\+t data\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Transmit data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide busy-\/wait device driver for the I2C UCB1. 
+
+MSP432 is master. EUSCI\+\_\+\+B1 I2C is connected to an external device~\newline
+ This file originally comes from the TIDA-\/010021 Firmware (tidcf48.\+zip) and~\newline
+ was modified by Pololu to support the MSP432\+P401R. \begin{DoxyRemark}{Remarks}
+P6.\+4 I2C data 
+
+P6.\+5 I2C clock 
+\end{DoxyRemark}
+\begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2020 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 2, 2020 \hypertarget{_i2_c_b1_8h_I2Cports}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{I2C connected an external device}\label{_i2_c_b1_8h_I2Cports}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ signal }\\\cline{1-2}
+\endhead
+P6.\+4 &I2C data (bidirectional) \\\cline{1-2}
+P6.\+5 &I2C clock (MSP432 output) \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyDate}

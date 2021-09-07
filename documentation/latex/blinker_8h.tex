@@ -1,0 +1,70 @@
+\hypertarget{blinker_8h}{}\doxysection{inc/blinker.h File Reference}
+\label{blinker_8h}\index{inc/blinker.h@{inc/blinker.h}}
+
+
+Provide low-\/level functions that control LEDs on TI-\/\+RSLK MAX robot.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga6d8982eb6e95ce9d49e792c1bbf108d7}{FR\+\_\+\+RGHT}}~0x20
+\begin{DoxyCompactList}\small\item\em Front right blinker LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga54dd0f20daedb99f1d20910bf4439ee1}{FR\+\_\+\+LEFT}}~0x01
+\begin{DoxyCompactList}\small\item\em Front left blinker LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga01ddbc7dbd3aa9ba4b032c8d8541e248}{BK\+\_\+\+RGHT}}~0x80
+\begin{DoxyCompactList}\small\item\em Back right blinker LED. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga7792b3b87d29ab72b221bd91fc7ff9b8}{BK\+\_\+\+LEFT}}~0x40
+\begin{DoxyCompactList}\small\item\em Back left blinker LED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga7836beef870cfd7dce788af18af9aa4e}{Blinker\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize blinker LEDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga249099a62013121cd368c762664e0441}{Blinker\+\_\+\+Output}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Initialize blinker LEDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide low-\/level functions that control LEDs on TI-\/\+RSLK MAX robot. 
+
+Four LED are connected to Port 8~\newline
+ 1) Hardware uses positive logic low current LEDs~\newline
+ 2) Positioned on the four corners of the robot just for fun~\newline
+ 3) Software outputs to these four LEDs~\newline
+ \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+June 28, 2019
+\end{DoxyDate}
+\hypertarget{blinker_8h_Blinker}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Four LEDs on the RSLK interface board}\label{blinker_8h_Blinker}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ Sensor }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ Sensor }\\\cline{1-2}
+\endhead
+P8.\+7 &Back right red LED \\\cline{1-2}
+P8.\+6 &Back left red LED \\\cline{1-2}
+P8.\+5 &Front right yellow LED \\\cline{1-2}
+P8.\+0 &Front left yellow LED \\\cline{1-2}
+\end{longtabu}

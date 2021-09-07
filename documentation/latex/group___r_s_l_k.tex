@@ -1,0 +1,2451 @@
+\hypertarget{group___r_s_l_k}{}\doxysection{RSLK}
+\label{group___r_s_l_k}\index{RSLK@{RSLK}}
+
+
+TI-\/\+RSLK MAX robot.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga6d8982eb6e95ce9d49e792c1bbf108d7}\label{group___r_s_l_k_ga6d8982eb6e95ce9d49e792c1bbf108d7}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga6d8982eb6e95ce9d49e792c1bbf108d7}{FR\+\_\+\+RGHT}}~0x20
+\begin{DoxyCompactList}\small\item\em Front right blinker LED. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga54dd0f20daedb99f1d20910bf4439ee1}\label{group___r_s_l_k_ga54dd0f20daedb99f1d20910bf4439ee1}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga54dd0f20daedb99f1d20910bf4439ee1}{FR\+\_\+\+LEFT}}~0x01
+\begin{DoxyCompactList}\small\item\em Front left blinker LED. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga01ddbc7dbd3aa9ba4b032c8d8541e248}\label{group___r_s_l_k_ga01ddbc7dbd3aa9ba4b032c8d8541e248}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga01ddbc7dbd3aa9ba4b032c8d8541e248}{BK\+\_\+\+RGHT}}~0x80
+\begin{DoxyCompactList}\small\item\em Back right blinker LED. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga7792b3b87d29ab72b221bd91fc7ff9b8}\label{group___r_s_l_k_ga7792b3b87d29ab72b221bd91fc7ff9b8}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga7792b3b87d29ab72b221bd91fc7ff9b8}{BK\+\_\+\+LEFT}}~0x40
+\begin{DoxyCompactList}\small\item\em Back left blinker LED. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga898606140dee9ce0adf096de00824d94}\label{group___r_s_l_k_ga898606140dee9ce0adf096de00824d94}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga898606140dee9ce0adf096de00824d94}{MAX\+\_\+X}}~84
+\begin{DoxyCompactList}\small\item\em Maximum columns of the LCD, although the pixels are numbered from zero to (MAX-\/1). Address may automatically be incremented after each transmission. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga985cc18be96dda7f59fd0400725e4aef}\label{group___r_s_l_k_ga985cc18be96dda7f59fd0400725e4aef}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga985cc18be96dda7f59fd0400725e4aef}{MAX\+\_\+Y}}~48
+\begin{DoxyCompactList}\small\item\em Maximum rows of the LCD, although the pixels are numbered from zero to (MAX-\/1). In the default horizontal addressing mode (V = 0), rows are clustered into groups of eight, which are all sent together with one 8-\/bit SSI data transmission. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_gaeabfeed30bb698227790861c934a2151}\label{group___r_s_l_k_gaeabfeed30bb698227790861c934a2151}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_gaeabfeed30bb698227790861c934a2151}{CONTRAST}}~0x\+CF
+\begin{DoxyCompactList}\small\item\em Contrast value 0x\+B1 looks good on red Spark\+Fun and 0x\+B8 looks good on blue Nokia 5110. Adjust this from 0x\+A0 (lighter) to 0x\+CF (darker) for your display. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga7b3b25cba33b07c303f3060fe41887f6}\label{group___r_s_l_k_ga7b3b25cba33b07c303f3060fe41887f6}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga7b3b25cba33b07c303f3060fe41887f6}{BLACK}}~0
+\begin{DoxyCompactList}\small\item\em Draw \textquotesingle{}off\textquotesingle{} pixels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga87b537f5fa5c109d3c05c13d6b18f382}\label{group___r_s_l_k_ga87b537f5fa5c109d3c05c13d6b18f382}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga87b537f5fa5c109d3c05c13d6b18f382}{WHITE}}~1
+\begin{DoxyCompactList}\small\item\em Draw \textquotesingle{}on\textquotesingle{} pixels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_gade269cc47cfaba70068f2586e898051d}\label{group___r_s_l_k_gade269cc47cfaba70068f2586e898051d}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_gade269cc47cfaba70068f2586e898051d}{INVERSE}}~2
+\begin{DoxyCompactList}\small\item\em Invert pixels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_gacaee84439cd8e333833f5955f0c3839e}\label{group___r_s_l_k_gacaee84439cd8e333833f5955f0c3839e}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_gacaee84439cd8e333833f5955f0c3839e}{SSD1306\+\_\+\+EXTERNALVCC}}~0x01
+\begin{DoxyCompactList}\small\item\em External display voltage source. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_gad9d18b92ad68b542033c7e5ccbdcced0}\label{group___r_s_l_k_gad9d18b92ad68b542033c7e5ccbdcced0}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_gad9d18b92ad68b542033c7e5ccbdcced0}{SSD1306\+\_\+\+SWITCHCAPVCC}}~0x02
+\begin{DoxyCompactList}\small\item\em Gen. display voltage from 3.\+3V. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{group___r_s_l_k_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~1
+\begin{DoxyCompactList}\small\item\em Function successive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_s_l_k_ga65e9886d74aaee76545e83dd09011727}\label{group___r_s_l_k_ga65e9886d74aaee76545e83dd09011727}} 
+\#define \mbox{\hyperlink{group___r_s_l_k_ga65e9886d74aaee76545e83dd09011727}{false}}~0
+\begin{DoxyCompactList}\small\item\em Function failed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}{Tach\+Direction}} \{ \mbox{\hyperlink{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024aa26736999186daf8146f809e863712a1}{FORWARD}}
+, \mbox{\hyperlink{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024a948b2aee15f52b421fa4770c47bcfe8c}{STOPPED}}
+, \mbox{\hyperlink{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024a906b7cc20b42994dda4da492767c1de9}{REVERSE}}
+ \}
+\begin{DoxyCompactList}\small\item\em specifies the direction of the motor rotation, relative to the front of the robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga7836beef870cfd7dce788af18af9aa4e}{Blinker\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize blinker LEDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga249099a62013121cd368c762664e0441}{Blinker\+\_\+\+Output}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Initialize blinker LEDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3e0baa71e3035e91e152c263d26427c2}{Bump\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize Bump sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga087393d4719da3fdb35b37773e88b142}{Bump\+\_\+\+Read}} (void)
+\begin{DoxyCompactList}\small\item\em Read current state of 6 switches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga380ac23cf64b7c2ab0a66435f224476b}{Bump\+Int\+\_\+\+Init}} (void($\ast$task)(uint8\+\_\+t))
+\begin{DoxyCompactList}\small\item\em Initialize Bump sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga10f998ee78de212d6d60cce6c4100ccc}{Bump\+Int\+\_\+\+Read}} (void)
+\begin{DoxyCompactList}\small\item\em Read current state of 6 switches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gadb06fc7f4c3ca40cb6bab543e1a2eac5}{Motor\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize motor interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga2ffa8c6e6caf1a044fffeb95e40f89f8}{Motor\+\_\+\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em Stop the robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaed89a18f6d37f80fbd7ac95f380b7647}{Motor\+\_\+\+Forward}} (uint16\+\_\+t left\+Duty, uint16\+\_\+t right\+Duty)
+\begin{DoxyCompactList}\small\item\em Drive the robot forward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga9add0fad0fd60b866070f0d8e125a758}{Motor\+\_\+\+Right}} (uint16\+\_\+t left\+Duty, uint16\+\_\+t right\+Duty)
+\begin{DoxyCompactList}\small\item\em Turn the robot to the right. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga94784bfd203038c988db16fac2eab928}{Motor\+\_\+\+Left}} (uint16\+\_\+t left\+Duty, uint16\+\_\+t right\+Duty)
+\begin{DoxyCompactList}\small\item\em Turn the robot to the left. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga9cc1e2636bf2bbc47312af268a9d5909}{Motor\+\_\+\+Backward}} (uint16\+\_\+t left\+Duty, uint16\+\_\+t right\+Duty)
+\begin{DoxyCompactList}\small\item\em Drive the robot backward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gab2d93801c3bfddcd52b5993ff339f2d1}{Motor\+\_\+\+Init\+Simple}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize motor interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga556dfe2356726bbf5f8168362c79b838}{Motor\+\_\+\+Stop\+Simple}} (void)
+\begin{DoxyCompactList}\small\item\em Stops the motors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga940872458c49d22b0f774a1a5c8c53ff}{Motor\+\_\+\+Forward\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run both motors forward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gab93cbef78c3f040f8f8d32e29db1c156}{Motor\+\_\+\+Backward\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run both motors backward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga7d00bb98d92fd93784da534ef6851cfb}{Motor\+\_\+\+Left\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run left motor forward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga131a992d2cb93e34227701ea7ca8fa8a}{Motor\+\_\+\+Right\+Simple}} (uint16\+\_\+t duty, uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Run right motor forward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize LCD driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga0109440544cdf22820c2a513a6421bb8}{Nokia5110\+\_\+\+Out\+Char}} (char data)
+\begin{DoxyCompactList}\small\item\em Print a character to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gafcb31bb541b17698cbc1bbfda842fbff}{Nokia5110\+\_\+\+Out\+String}} (char $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Print a string of characters to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga6c5565f530e509b16aa185063a72c96b}{Nokia5110\+\_\+\+Out\+UDec}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit unsigned number to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gab5a1c425030b9dd48d980e2add744475}{Nokia5110\+\_\+\+Out\+SDec}} (int16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit signed number to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga6d385d887d7c557f3fc03c175a6a0bce}{Nokia5110\+\_\+\+Out\+UFix1}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit unsigned fixed-\/point number to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga187182979b4467650eb2a8e9e3a1fe96}{Nokia5110\+\_\+\+Out\+SFix1}} (int32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 32-\/bit signed fixed-\/point number to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga20fe3d84d0a3d2d2209eefbc5201704e}{Nokia5110\+\_\+\+Out\+Hex7}} (uint8\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print one hex digit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga29884f44db65e76c5cec568d0ff633a7}{Nokia5110\+\_\+\+Out\+UHex7}} (uint8\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print two hex digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga4e5c5d03e4f5192fefc6b1449d28a230}{Nokia5110\+\_\+\+Out\+UDec16}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print three decimal digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga132bd51ee9dfbc7ce8f9f525fad1612d}{Nokia5110\+\_\+\+Out\+UDec2}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print two decimal digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor}} (uint8\+\_\+t newX, uint8\+\_\+t newY)
+\begin{DoxyCompactList}\small\item\em Set coordinates of next print. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the screen and reset cursor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gacac3d1eb30d7b1a114488d59e24b8ba2}{Nokia5110\+\_\+\+Draw\+Full\+Image}} (const uint8\+\_\+t $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Draw 48x84 formatted bitmap image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga749dcb517b25abb19dba6aa5290b1db9}{Nokia5110\+\_\+\+Print\+BMP}} (uint8\+\_\+t xpos, uint8\+\_\+t ypos, const uint8\+\_\+t $\ast$ptr, uint8\+\_\+t threshold)
+\begin{DoxyCompactList}\small\item\em Put 48x84 unformatted 4-\/bit color bitmap image in internal screen buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga10d28828cdd61b3e92f6ee827ee8795a}{Nokia5110\+\_\+\+Clear\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Clear internal screen buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Draw internal screen buffer to the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga546329cadd846c5841a42bbeaff7e68d}{Nokia5110\+\_\+\+Clr\+Pxl}} (uint32\+\_\+t i, uint32\+\_\+t j)
+\begin{DoxyCompactList}\small\item\em Turn a pixel off in internal screen buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga92d8d931e34accb15c24e41138209d1c}{Nokia5110\+\_\+\+Set\+Pxl}} (uint32\+\_\+t i, uint32\+\_\+t j)
+\begin{DoxyCompactList}\small\item\em Turn a pixel on in internal screen buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gac2568de1c712c1ebde98f688a5c65e4a}{OPT3101\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize OPT3101. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gadd8bc0cef644999f206fa6e8d97d4ed0}{OPT3101\+\_\+\+Setup}} (void)
+\begin{DoxyCompactList}\small\item\em Sets up the OPT3101. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga29997146e950c8e4dd0b6186769ba123}{OPT3101\+\_\+\+Calibrate\+Internal\+Crosstalk}} (void)
+\begin{DoxyCompactList}\small\item\em Calibrates for internal crosstalk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga17cbe3e8184955b9fc7acbd6bacef402}{OPT3101\+\_\+\+Start\+Measurement}} (void)
+\begin{DoxyCompactList}\small\item\em Start measurement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga2b34def7fd6361d81df8716de07757c1}{OPT3101\+\_\+\+Start\+Measurement\+Channel}} (uint32\+\_\+t ch)
+\begin{DoxyCompactList}\small\item\em Start measurement on a specific channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}{OPT3101\+\_\+\+Read\+Measurement}} (void)
+\begin{DoxyCompactList}\small\item\em Reads measurement. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_s_l_k_gae5214df07c11eb5ecd7522ff509839a7}{OPT3101\+\_\+\+Measurement\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em check for error \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga2f7570809f62a8f9af09ae49e6a3533e}{OPT3101\+\_\+\+Get\+Distance\+Millimeters}} (void)
+\begin{DoxyCompactList}\small\item\em last distance measurement in mm \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gad843946a9ddbe96f7f230827a952a2e0}{OPT3101\+\_\+\+Get\+Phase}} (void)
+\begin{DoxyCompactList}\small\item\em last phase measurement \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gafedc7596a6d6a99e31a74f4b1add6e61}{OPT3101\+\_\+\+Get\+Amplitude}} (void)
+\begin{DoxyCompactList}\small\item\em last amplitude measurement \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga6fe0afe1ee890559b1a5179bcc54f210}{OPT3101\+\_\+\+Get\+Tx\+Channel}} (void)
+\begin{DoxyCompactList}\small\item\em channel of last measurement \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_s_l_k_ga2a6130df8253adbd09997737bd4b2839}{OPT3101\+\_\+\+Check\+Distance\+Sensor}} (void)
+\begin{DoxyCompactList}\small\item\em new measurement ready \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gaafa31e75d37cf76e56966301fa4c54a0}{OPT3101\+\_\+\+Get\+Measurement}} (uint32\+\_\+t distances\mbox{[}3\mbox{]}, uint32\+\_\+t amplitudes\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em get measurements from last measurement \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gafbfb3187abf3fa8b2e756958ad08509f}{OPT3101\+\_\+\+Arm\+Interrupts}} (uint32\+\_\+t $\ast$p\+Tx\+Chan, uint32\+\_\+t distances\mbox{[}3\mbox{]}, uint32\+\_\+t amplitudes\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em get measurements from last measurement \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}{Reflectance\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the GPIO pins for the QTR-\/8\+RC reflectance sensor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga139f16024daa08baa1cdfa00bb0c3fa8}{Reflectance\+\_\+\+Read}} (uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Read the eight sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gaa22dec68ae7198f36322850ac7a422ff}{Reflectance\+\_\+\+Center}} (uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Read the two center sensors. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga77217ca37755bfbc38ec0eaaf4e7c49a}{Reflectance\+\_\+\+Position}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Perform sensor integration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga5c1cd82fe48fdf60b8ac1bcfd34cb0d0}{Reflectance\+\_\+\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Beging reading the eight sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_gaf0b599174bf91c1b0199f95037ca78be}{Reflectance\+\_\+\+End}} (void)
+\begin{DoxyCompactList}\small\item\em Read the eight sensors. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_s_l_k_ga665be9652ede693c19726a8da1d324cd}{Reflectance\+\_\+\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get last reading of the eight sensors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___r_s_l_k_gaab7ea41e931eeab2903cdea7496aa6a8}{SSD1306\+\_\+\+Init}} (int vccst)
+\begin{DoxyCompactList}\small\item\em driver for SSD1306 OLED display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer}} (void)
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_gab0ca956a8d8f4b41a50ff010dcd526e7}{SSD1306\+\_\+\+Invert\+Display}} (int i)
+\begin{DoxyCompactList}\small\item\em Enable or disable display invert mode (white-\/on-\/black vs black-\/on-\/white). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3738c1b2fe173a407021f97435614e48}{SSD1306\+\_\+\+Dim}} (int dim)
+\begin{DoxyCompactList}\small\item\em Dim the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga91211e9aa7f5fdad9d09416ff2311322}{SSD1306\+\_\+\+Draw\+Pixel}} (int16\+\_\+t x, int16\+\_\+t y, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Set/clear/invert a single pixel. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gae19550fb75c29d3315292400c1238204}{SSD1306\+\_\+\+Draw\+Fast\+HLine}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t w, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a horizontal line. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga1cb5d0251f4b23eb2b4fe8ee723c5bc3}{SSD1306\+\_\+\+Draw\+Fast\+VLine}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t h, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a vertical line. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga67ad6ee2114e1400e3b818e7e1a27b9e}{SSD1306\+\_\+startscrollright}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate a right-\/handed scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga24a16124440a98a13ff471209d9c8534}{SSD1306\+\_\+startscrollleft}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate a left-\/handed scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga38eb562710b30f7999a3a1fa34e3238f}{SSD1306\+\_\+startscrolldiagright}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate a diagonal scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga5fbe0b379155b3ff6944af2b742c18a3}{SSD1306\+\_\+startscrolldiagleft}} (uint8\+\_\+t start, uint8\+\_\+t stop)
+\begin{DoxyCompactList}\small\item\em Activate alternate diagonal scroll for all or part of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga591667f0f26d0e6babf07496fa9328b6}{SSD1306\+\_\+stopscroll}} (void)
+\begin{DoxyCompactList}\small\item\em Cease a previously-\/begun scrolling action. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___r_s_l_k_ga7c45e775cadcd7edb931bbffe9f8dffc}{SSD1306\+\_\+\+Get\+Pixel}} (int16\+\_\+t x, int16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Return color of a single pixel in display buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{group___r_s_l_k_gac506713d6b823aad406d3be277fa08bc}{SSD1306\+\_\+get\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Get base address of display buffer for direct reading or writing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3f3ff2f3d1a9c1cbe85ee15a05997814}{SSD1306\+\_\+\+Draw\+Char}} (int16\+\_\+t x, int16\+\_\+t y, char letter, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga78b108008d5b65cac47aa4813e22b40b}{SSD1306\+\_\+\+Draw\+String}} (int16\+\_\+t x, int16\+\_\+t y, char $\ast$pt, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draw a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga821fb135de1f5996c7ba544f66cfb557}{SSD1306\+\_\+\+Clear\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Clear contents of display buffer (set all pixels to off). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga618c2638077b6eeed2f754994c490d36}{SSD1306\+\_\+\+Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the LCD by writing zeros to the entire screen and reset the cursor to (0,0) (top left corner of screen). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaa8a71d61d7b6ce871bfeea8a7c641f2a}{SSD1306\+\_\+\+Draw\+Full\+Image}} (const uint8\+\_\+t $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Fill the whole screen by drawing a 128x64 bitmap image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gac52af74d665ba242569c42e148f6a4ae}{SSD1306\+\_\+\+Print\+BMP}} (uint8\+\_\+t xpos, uint8\+\_\+t ypos, const uint8\+\_\+t $\ast$ptr, uint8\+\_\+t threshold)
+\begin{DoxyCompactList}\small\item\em Draw a raw bitmap to the RAM buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga17d614ae3998954150531d07811d3e41}{SSD1306\+\_\+\+Set\+Cursor}} (uint16\+\_\+t newX, uint16\+\_\+t newY)
+\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaee6d606255408f0770f394da8d382816}{SSD1306\+\_\+\+Out\+Char}} (char data)
+\begin{DoxyCompactList}\small\item\em Print a character to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3cb10630582177982ffcf6cb0ee25eaa}{SSD1306\+\_\+\+Out\+String}} (char $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Print a string of characters to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gae7367f3c4d4f7652f09a94921917fa34}{SSD1306\+\_\+\+Out\+UDec}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit unsigned number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaac775a5f0bf3a671aa401e3a91396310}{SSD1306\+\_\+\+Out\+SDec}} (int16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit signed number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga79f05e2d03b8a825eeb9f38a877f1bfd}{SSD1306\+\_\+\+Out\+UFix1}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 16-\/bit unsigned fixed-\/point number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gaf14172094ff5e9fa53a18e440f7c8f2b}{SSD1306\+\_\+\+Out\+SFix1}} (int32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print a 32-\/bit signed fixed-\/point number to the OLED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga3571ab75750cb59aead92332ffb0fc62}{SSD1306\+\_\+\+Out\+Hex7}} (uint8\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print one hex digit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga6a92665473351cc8fc8731072ab85ebe}{SSD1306\+\_\+\+Out\+UHex7}} (uint8\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print two hex digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga58588d89cff825a2923ad5efd6c3bad6}{SSD1306\+\_\+\+Out\+UDec16}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print three decimal digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_gac4e6c633d40b9e89e4723617c6de9b80}{SSD1306\+\_\+\+Out\+UDec2}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Print two decimal digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga9c69114eaf0c3e9050b940d51c20018d}{Tachometer\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize tachometer interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga5e7c48c6bb3ce296cd7c264f626520fc}{Tachometer\+\_\+\+Get}} (uint16\+\_\+t $\ast$left\+Tach, enum \mbox{\hyperlink{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}{Tach\+Direction}} $\ast$left\+Dir, int32\+\_\+t $\ast$left\+Steps, uint16\+\_\+t $\ast$right\+Tach, enum \mbox{\hyperlink{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}{Tach\+Direction}} $\ast$right\+Dir, int32\+\_\+t $\ast$right\+Steps)
+\begin{DoxyCompactList}\small\item\em Get the most recent tachometer measurement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga1a3d971fdf34fc73bed0cfaf249c78f3}{Ultrasound\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize ultrasonic sensor interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_s_l_k_ga96ead73f4c02cee5282e9b644b6319e3}{Ultrasound\+\_\+\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Start an ultrasonic distance measurement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___r_s_l_k_gac42a3f4b198b08884c3bca7d08a12712}{Ultrasound\+\_\+\+End}} (uint16\+\_\+t $\ast$dist\+Mm, uint16\+\_\+t $\ast$dist\+In)
+\begin{DoxyCompactList}\small\item\em End or resume an ultrasonic distance measurement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TI-\/\+RSLK MAX robot. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}\label{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}} 
+\index{RSLK@{RSLK}!TachDirection@{TachDirection}}
+\index{TachDirection@{TachDirection}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{TachDirection}{TachDirection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}{Tach\+Direction}}}
+
+
+
+specifies the direction of the motor rotation, relative to the front of the robot 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARD@{FORWARD}!RSLK@{RSLK}}\index{RSLK@{RSLK}!FORWARD@{FORWARD}}}\mbox{\Hypertarget{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024aa26736999186daf8146f809e863712a1}\label{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024aa26736999186daf8146f809e863712a1}} 
+FORWARD&Wheel is making robot move forward \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPED@{STOPPED}!RSLK@{RSLK}}\index{RSLK@{RSLK}!STOPPED@{STOPPED}}}\mbox{\Hypertarget{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024a948b2aee15f52b421fa4770c47bcfe8c}\label{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024a948b2aee15f52b421fa4770c47bcfe8c}} 
+STOPPED&Wheel is stopped \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REVERSE@{REVERSE}!RSLK@{RSLK}}\index{RSLK@{RSLK}!REVERSE@{REVERSE}}}\mbox{\Hypertarget{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024a906b7cc20b42994dda4da492767c1de9}\label{group___r_s_l_k_gga4f93107cfa0186f2b7b7848995be7024a906b7cc20b42994dda4da492767c1de9}} 
+REVERSE&Wheel is making robot move backward \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___r_s_l_k_ga7836beef870cfd7dce788af18af9aa4e}\label{group___r_s_l_k_ga7836beef870cfd7dce788af18af9aa4e}} 
+\index{RSLK@{RSLK}!Blinker\_Init@{Blinker\_Init}}
+\index{Blinker\_Init@{Blinker\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Blinker\_Init()}{Blinker\_Init()}}
+{\footnotesize\ttfamily void Blinker\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize blinker LEDs. 
+
+Initialize blinker LEDs sensors on TI-\/\+RSLK MAX~\newline
+ Make P8.\+7, P8.\+6, P8.\+5 and P8.\+0 outputs~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga249099a62013121cd368c762664e0441}\label{group___r_s_l_k_ga249099a62013121cd368c762664e0441}} 
+\index{RSLK@{RSLK}!Blinker\_Output@{Blinker\_Output}}
+\index{Blinker\_Output@{Blinker\_Output}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Blinker\_Output()}{Blinker\_Output()}}
+{\footnotesize\ttfamily void Blinker\+\_\+\+Output (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Initialize blinker LEDs. 
+
+Output to four LED blinkers on TI-\/\+RSLK MAX 
+\begin{DoxyParams}{Parameters}
+{\em data} & to write to LEDs (uses bits 7,6,5,0)~\newline
+ bit 7 Red back right LED~\newline
+ bit 6 Red back left LED~\newline
+ bit 5 Yellow front right LED~\newline
+ bit 0 Yellow front left LED \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+use these four defines\+: FR\+\_\+\+RGHT, FR\+\_\+\+LEFT, BK\+\_\+\+RGHT, or BK\+\_\+\+LEFT. Output 0 to turn all off 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga3e0baa71e3035e91e152c263d26427c2}\label{group___r_s_l_k_ga3e0baa71e3035e91e152c263d26427c2}} 
+\index{RSLK@{RSLK}!Bump\_Init@{Bump\_Init}}
+\index{Bump\_Init@{Bump\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Bump\_Init()}{Bump\_Init()}}
+{\footnotesize\ttfamily void Bump\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize Bump sensors. 
+
+Initialize Bump sensors~\newline
+ Make Port 4 pins 7,6,5,3,2,0 as inputs~\newline
+ Activate interface pullup 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga087393d4719da3fdb35b37773e88b142}\label{group___r_s_l_k_ga087393d4719da3fdb35b37773e88b142}} 
+\index{RSLK@{RSLK}!Bump\_Read@{Bump\_Read}}
+\index{Bump\_Read@{Bump\_Read}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Bump\_Read()}{Bump\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t Bump\+\_\+\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read current state of 6 switches. 
+
+Read current state of 6 bump switches~\newline
+ Read Port 4 pins 7,6,5,3,2,0 inputs~\newline
+ Returns a 6-\/bit positive logic result (0 to 63)~\newline
+ bit 5 Bump5~\newline
+ bit 4 Bump4~\newline
+ bit 3 Bump3~\newline
+ bit 2 Bump2~\newline
+ bit 1 Bump1~\newline
+ bit 0 Bump0 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result is 6-\/bit positive logic 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+result is a packed, right-\/justified, positive logic 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga380ac23cf64b7c2ab0a66435f224476b}\label{group___r_s_l_k_ga380ac23cf64b7c2ab0a66435f224476b}} 
+\index{RSLK@{RSLK}!BumpInt\_Init@{BumpInt\_Init}}
+\index{BumpInt\_Init@{BumpInt\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{BumpInt\_Init()}{BumpInt\_Init()}}
+{\footnotesize\ttfamily void Bump\+Int\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void($\ast$)(uint8\+\_\+t)}]{task }\end{DoxyParamCaption})}
+
+
+
+Initialize Bump sensors. 
+
+Initialize Bump sensors~\newline
+ Make P4.\+7-\/\+P4.\+0 as interrupt-\/driven inputs~\newline
+ Activate interface pull-\/up~\newline
+ Interrupt on falling edge 
+\begin{DoxyParams}{Parameters}
+{\em task} & user function to run on collision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga10f998ee78de212d6d60cce6c4100ccc}\label{group___r_s_l_k_ga10f998ee78de212d6d60cce6c4100ccc}} 
+\index{RSLK@{RSLK}!BumpInt\_Read@{BumpInt\_Read}}
+\index{BumpInt\_Read@{BumpInt\_Read}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{BumpInt\_Read()}{BumpInt\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t Bump\+Int\+\_\+\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read current state of 6 switches. 
+
+Read current state of 6 switches~\newline
+ Read P4.\+7-\/\+P4.\+0 as inputs~\newline
+ Returns a 6-\/bit positive logic result (0 to 63)~\newline
+ bit 5 Bump5~\newline
+ bit 4 Bump4~\newline
+ bit 3 Bump3~\newline
+ bit 2 Bump2~\newline
+ bit 1 Bump1~\newline
+ bit 0 Bump0 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result is 6-\/bit positive logic 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+result is a packed, right-\/justified, positive logic 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga9cc1e2636bf2bbc47312af268a9d5909}\label{group___r_s_l_k_ga9cc1e2636bf2bbc47312af268a9d5909}} 
+\index{RSLK@{RSLK}!Motor\_Backward@{Motor\_Backward}}
+\index{Motor\_Backward@{Motor\_Backward}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_Backward()}{Motor\_Backward()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Backward (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{left\+Duty,  }\item[{uint16\+\_\+t}]{right\+Duty }\end{DoxyParamCaption})}
+
+
+
+Drive the robot backward. 
+
+Drive the robot backward by running left and right wheels backward with the given duty cycles. 
+\begin{DoxyParams}{Parameters}
+{\em left\+Duty} & duty cycle of left wheel (0 to 14,998) \\
+\hline
+{\em right\+Duty} & duty cycle of right wheel (0 to 14,998) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_gadb06fc7f4c3ca40cb6bab543e1a2eac5}{Motor\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gab93cbef78c3f040f8f8d32e29db1c156}\label{group___r_s_l_k_gab93cbef78c3f040f8f8d32e29db1c156}} 
+\index{RSLK@{RSLK}!Motor\_BackwardSimple@{Motor\_BackwardSimple}}
+\index{Motor\_BackwardSimple@{Motor\_BackwardSimple}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_BackwardSimple()}{Motor\_BackwardSimple()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Backward\+Simple (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{duty,  }\item[{uint32\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+
+
+Run both motors backward. 
+
+Drives both motors backward at duty (100 to 9900). Runs for time duration (units=10ms), and then stops. Runs even if any bumper switch is active. Returns after time$\ast$10ms. This function assumes pin configuration of RSLK 1.\+1 
+\begin{DoxyParams}{Parameters}
+{\em duty} & duty cycle of both wheels (100 to 9900) \\
+\hline
+{\em time} & duration (10ms) to run \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Does not return until time has elapsed. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaed89a18f6d37f80fbd7ac95f380b7647}\label{group___r_s_l_k_gaed89a18f6d37f80fbd7ac95f380b7647}} 
+\index{RSLK@{RSLK}!Motor\_Forward@{Motor\_Forward}}
+\index{Motor\_Forward@{Motor\_Forward}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_Forward()}{Motor\_Forward()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Forward (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{left\+Duty,  }\item[{uint16\+\_\+t}]{right\+Duty }\end{DoxyParamCaption})}
+
+
+
+Drive the robot forward. 
+
+Drive the robot forward by running left and right wheels forward with the given duty cycles. 
+\begin{DoxyParams}{Parameters}
+{\em left\+Duty} & duty cycle of left wheel (0 to 14,998) \\
+\hline
+{\em right\+Duty} & duty cycle of right wheel (0 to 14,998) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_gadb06fc7f4c3ca40cb6bab543e1a2eac5}{Motor\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga940872458c49d22b0f774a1a5c8c53ff}\label{group___r_s_l_k_ga940872458c49d22b0f774a1a5c8c53ff}} 
+\index{RSLK@{RSLK}!Motor\_ForwardSimple@{Motor\_ForwardSimple}}
+\index{Motor\_ForwardSimple@{Motor\_ForwardSimple}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_ForwardSimple()}{Motor\_ForwardSimple()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Forward\+Simple (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{duty,  }\item[{uint32\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+
+
+Run both motors forward. 
+
+Drives both motors forward at duty (100 to 9900). Runs for time duration (units=10ms), and then stops. Stop the motors and return if any bumper switch is active. Returns after time$\ast$10ms or if a bumper switch is hit. This function assumes pin configuration of RSLK 1.\+1 
+\begin{DoxyParams}{Parameters}
+{\em duty} & duty cycle of both wheels (100 to 9900) \\
+\hline
+{\em time} & duration (10ms) to run \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Does not return until time has elapsed or any bumper switch is active. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gadb06fc7f4c3ca40cb6bab543e1a2eac5}\label{group___r_s_l_k_gadb06fc7f4c3ca40cb6bab543e1a2eac5}} 
+\index{RSLK@{RSLK}!Motor\_Init@{Motor\_Init}}
+\index{Motor\_Init@{Motor\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_Init()}{Motor\_Init()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize motor interface. 
+
+Initialize GPIO pins for output, which will be used to control the direction of the motors and to enable or disable the drivers. The motors are initially stopped, the drivers are initially powered down, and the PWM speed control is uninitialized. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_gab2d93801c3bfddcd52b5993ff339f2d1}\label{group___r_s_l_k_gab2d93801c3bfddcd52b5993ff339f2d1}} 
+\index{RSLK@{RSLK}!Motor\_InitSimple@{Motor\_InitSimple}}
+\index{Motor\_InitSimple@{Motor\_InitSimple}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_InitSimple()}{Motor\_InitSimple()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Init\+Simple (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize motor interface. 
+
+Initializes the 6 GPIO lines and puts driver to sleep.~\newline
+ This simple set of drivers does not use hardware timer PWM. Rather, it uses software delays with Sys\+Tick and consumes all the processor time. This function assumes pin configuration of RSLK 1.\+1 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Returns right away. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga94784bfd203038c988db16fac2eab928}\label{group___r_s_l_k_ga94784bfd203038c988db16fac2eab928}} 
+\index{RSLK@{RSLK}!Motor\_Left@{Motor\_Left}}
+\index{Motor\_Left@{Motor\_Left}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_Left()}{Motor\_Left()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Left (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{left\+Duty,  }\item[{uint16\+\_\+t}]{right\+Duty }\end{DoxyParamCaption})}
+
+
+
+Turn the robot to the left. 
+
+Turn the robot to the left by running the left wheel backward and the right wheel forward with the given duty cycles. 
+\begin{DoxyParams}{Parameters}
+{\em left\+Duty} & duty cycle of left wheel (0 to 14,998) \\
+\hline
+{\em right\+Duty} & duty cycle of right wheel (0 to 14,998) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_gadb06fc7f4c3ca40cb6bab543e1a2eac5}{Motor\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga7d00bb98d92fd93784da534ef6851cfb}\label{group___r_s_l_k_ga7d00bb98d92fd93784da534ef6851cfb}} 
+\index{RSLK@{RSLK}!Motor\_LeftSimple@{Motor\_LeftSimple}}
+\index{Motor\_LeftSimple@{Motor\_LeftSimple}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_LeftSimple()}{Motor\_LeftSimple()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Left\+Simple (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{duty,  }\item[{uint32\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+
+
+Run left motor forward. 
+
+Drives just the left motor forward at duty (100 to 9900). Right motor is stopped (sleeping). Runs for time duration (units=10ms), and then stops. Stop the motors and return if any bumper switch is active. Returns after time$\ast$10ms or if a bumper switch is hit. This function assumes pin configuration of RSLK 1.\+1 
+\begin{DoxyParams}{Parameters}
+{\em duty} & duty cycle of left wheel (100 to 9900) \\
+\hline
+{\em time} & duration (10ms) to run \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Does not return until time has elapsed or any bumper switch is active. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga9add0fad0fd60b866070f0d8e125a758}\label{group___r_s_l_k_ga9add0fad0fd60b866070f0d8e125a758}} 
+\index{RSLK@{RSLK}!Motor\_Right@{Motor\_Right}}
+\index{Motor\_Right@{Motor\_Right}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_Right()}{Motor\_Right()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Right (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{left\+Duty,  }\item[{uint16\+\_\+t}]{right\+Duty }\end{DoxyParamCaption})}
+
+
+
+Turn the robot to the right. 
+
+Turn the robot to the right by running the left wheel forward and the right wheel backward with the given duty cycles. 
+\begin{DoxyParams}{Parameters}
+{\em left\+Duty} & duty cycle of left wheel (0 to 14,998) \\
+\hline
+{\em right\+Duty} & duty cycle of right wheel (0 to 14,998) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_gadb06fc7f4c3ca40cb6bab543e1a2eac5}{Motor\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga131a992d2cb93e34227701ea7ca8fa8a}\label{group___r_s_l_k_ga131a992d2cb93e34227701ea7ca8fa8a}} 
+\index{RSLK@{RSLK}!Motor\_RightSimple@{Motor\_RightSimple}}
+\index{Motor\_RightSimple@{Motor\_RightSimple}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_RightSimple()}{Motor\_RightSimple()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Right\+Simple (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{duty,  }\item[{uint32\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+
+
+Run right motor forward. 
+
+Drives just the right motor forward at duty (100 to 9900). Left motor is stopped (sleeping). Runs for time duration (units=10ms), and then stops. Stop the motors and return if any bumper switch is active. Returns after time$\ast$10ms or if a bumper switch is hit. This function assumes pin configuration of RSLK 1.\+1 
+\begin{DoxyParams}{Parameters}
+{\em duty} & duty cycle of right wheel (100 to 9900) \\
+\hline
+{\em time} & duration (10ms) to run \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Does not return until time has elapsed or any bumper switch is active. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga2ffa8c6e6caf1a044fffeb95e40f89f8}\label{group___r_s_l_k_ga2ffa8c6e6caf1a044fffeb95e40f89f8}} 
+\index{RSLK@{RSLK}!Motor\_Stop@{Motor\_Stop}}
+\index{Motor\_Stop@{Motor\_Stop}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_Stop()}{Motor\_Stop()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the robot. 
+
+Stop the motors, power down the drivers, and set the PWM speed control to 0\% duty cycle. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga556dfe2356726bbf5f8168362c79b838}\label{group___r_s_l_k_ga556dfe2356726bbf5f8168362c79b838}} 
+\index{RSLK@{RSLK}!Motor\_StopSimple@{Motor\_StopSimple}}
+\index{Motor\_StopSimple@{Motor\_StopSimple}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Motor\_StopSimple()}{Motor\_StopSimple()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Stop\+Simple (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stops the motors. 
+
+Stops both motors, puts driver to sleep. This function assumes pin configuration of RSLK 1.\+1 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Returns right away. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}\label{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}} 
+\index{RSLK@{RSLK}!Nokia5110\_Clear@{Nokia5110\_Clear}}
+\index{Nokia5110\_Clear@{Nokia5110\_Clear}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_Clear()}{Nokia5110\_Clear()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear the screen and reset cursor. 
+
+Clear the LCD by writing zeros to the entire screen and reset the cursor to (0,0) (top left corner of screen). 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga0109440544cdf22820c2a513a6421bb8}{Nokia5110\+\_\+\+Out\+Char()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga10d28828cdd61b3e92f6ee827ee8795a}\label{group___r_s_l_k_ga10d28828cdd61b3e92f6ee827ee8795a}} 
+\index{RSLK@{RSLK}!Nokia5110\_ClearBuffer@{Nokia5110\_ClearBuffer}}
+\index{Nokia5110\_ClearBuffer@{Nokia5110\_ClearBuffer}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_ClearBuffer()}{Nokia5110\_ClearBuffer()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Clear\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear internal screen buffer. 
+
+There is a buffer in RAM that holds one screen. This routine clears that buffer. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga749dcb517b25abb19dba6aa5290b1db9}{Nokia5110\+\_\+\+Print\+BMP()}}, \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga92d8d931e34accb15c24e41138209d1c}{Nokia5110\+\_\+\+Set\+Pxl()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group___r_s_l_k_ga546329cadd846c5841a42bbeaff7e68d}\label{group___r_s_l_k_ga546329cadd846c5841a42bbeaff7e68d}} 
+\index{RSLK@{RSLK}!Nokia5110\_ClrPxl@{Nokia5110\_ClrPxl}}
+\index{Nokia5110\_ClrPxl@{Nokia5110\_ClrPxl}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_ClrPxl()}{Nokia5110\_ClrPxl()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Clr\+Pxl (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i,  }\item[{uint32\+\_\+t}]{j }\end{DoxyParamCaption})}
+
+
+
+Turn a pixel off in internal screen buffer. 
+
+Clear the internal screen buffer pixel at (i, j), turning it off. 
+\begin{DoxyParams}{Parameters}
+{\em i} & the row index (0 to 47 in this case), y-\/coordinate \\
+\hline
+{\em j} & the column index (0 to 83 in this case), x-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Call \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}} to see this change. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga10d28828cdd61b3e92f6ee827ee8795a}{Nokia5110\+\_\+\+Clear\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga92d8d931e34accb15c24e41138209d1c}{Nokia5110\+\_\+\+Set\+Pxl()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}\label{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}} 
+\index{RSLK@{RSLK}!Nokia5110\_DisplayBuffer@{Nokia5110\_DisplayBuffer}}
+\index{Nokia5110\_DisplayBuffer@{Nokia5110\_DisplayBuffer}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_DisplayBuffer()}{Nokia5110\_DisplayBuffer()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Display\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Draw internal screen buffer to the display. 
+
+Fill the whole screen by drawing a 48x84 screen image from the RAM buffer. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga749dcb517b25abb19dba6aa5290b1db9}{Nokia5110\+\_\+\+Print\+BMP()}}, \mbox{\hyperlink{group___r_s_l_k_ga10d28828cdd61b3e92f6ee827ee8795a}{Nokia5110\+\_\+\+Clear\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga92d8d931e34accb15c24e41138209d1c}{Nokia5110\+\_\+\+Set\+Pxl()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group___r_s_l_k_gacac3d1eb30d7b1a114488d59e24b8ba2}\label{group___r_s_l_k_gacac3d1eb30d7b1a114488d59e24b8ba2}} 
+\index{RSLK@{RSLK}!Nokia5110\_DrawFullImage@{Nokia5110\_DrawFullImage}}
+\index{Nokia5110\_DrawFullImage@{Nokia5110\_DrawFullImage}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_DrawFullImage()}{Nokia5110\_DrawFullImage()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Draw\+Full\+Image (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Draw 48x84 formatted bitmap image. 
+
+Fill the whole screen by drawing a 48x84 bitmap image. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to 504 byte bitmap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga0109440544cdf22820c2a513a6421bb8}{Nokia5110\+\_\+\+Out\+Char()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}\label{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}} 
+\index{RSLK@{RSLK}!Nokia5110\_Init@{Nokia5110\_Init}}
+\index{Nokia5110\_Init@{Nokia5110\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_Init()}{Nokia5110\_Init()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize LCD driver. 
+
+Initialize Nokia 5110 48x84 LCD by sending the proper commands to the PCD8544 driver. One feature of the MSP432 is that its SSIs can get their baud clock from either the auxiliary clock (ACLK = REFOCLK/1 = 32,768 Hz see {\bfseries{Clock.\+c}}) or from the low-\/speed subsystem master clock (SMCLK $<$= 12 MHz see {\bfseries{Clock.\+c}}). The SSI can further divide this clock signal by using the 16-\/bit Bit Rate Control prescaler Register, UCAx\+BRW. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes low-\/speed subsystem master clock is 12 MHz 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga0109440544cdf22820c2a513a6421bb8}{Nokia5110\+\_\+\+Out\+Char()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga749dcb517b25abb19dba6aa5290b1db9}{Nokia5110\+\_\+\+Print\+BMP()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group___r_s_l_k_ga0109440544cdf22820c2a513a6421bb8}\label{group___r_s_l_k_ga0109440544cdf22820c2a513a6421bb8}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutChar@{Nokia5110\_OutChar}}
+\index{Nokia5110\_OutChar@{Nokia5110\_OutChar}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutChar()}{Nokia5110\_OutChar()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+Char (\begin{DoxyParamCaption}\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+Print a character to the LCD. 
+
+Print a character to the Nokia 5110 48x84 LCD. The character will be printed at the current cursor position, the cursor will automatically be updated, and it will wrap to the next row or back to the top if necessary. One blank column of pixels will be printed on either side of the character for readability. Since characters are 8 pixels tall and 5 pixels wide, 12 characters fit per row, and there are six rows. 
+\begin{DoxyParams}{Parameters}
+{\em data} & character to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga20fe3d84d0a3d2d2209eefbc5201704e}\label{group___r_s_l_k_ga20fe3d84d0a3d2d2209eefbc5201704e}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutHex7@{Nokia5110\_OutHex7}}
+\index{Nokia5110\_OutHex7@{Nokia5110\_OutHex7}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutHex7()}{Nokia5110\_OutHex7()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+Hex7 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print one hex digit. 
+
+Output one hex digit to the Nokia 5110 LCD. Just one character with no leading 0x 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/15 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gab5a1c425030b9dd48d980e2add744475}\label{group___r_s_l_k_gab5a1c425030b9dd48d980e2add744475}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutSDec@{Nokia5110\_OutSDec}}
+\index{Nokia5110\_OutSDec@{Nokia5110\_OutSDec}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutSDec()}{Nokia5110\_OutSDec()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+SDec (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 16-\/bit signed number to the LCD. 
+
+Output a 16-\/bit number in signed decimal format with a fixed size of six right-\/justified digits of output. 
+\begin{DoxyParams}{Parameters}
+{\em n} & 16-\/bit signed number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga187182979b4467650eb2a8e9e3a1fe96}\label{group___r_s_l_k_ga187182979b4467650eb2a8e9e3a1fe96}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutSFix1@{Nokia5110\_OutSFix1}}
+\index{Nokia5110\_OutSFix1@{Nokia5110\_OutSFix1}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutSFix1()}{Nokia5110\_OutSFix1()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+SFix1 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 32-\/bit signed fixed-\/point number to the LCD. 
+
+Output a 32-\/bit number in signed 4-\/digit fixed point, 0.\+1 resolution fixed size of six right-\/justified characters.~\newline
+ numbers -\/9999 to 9999 printed as \char`\"{}-\/999.\+9\char`\"{} to \char`\"{}999.\+9\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em n} & 32-\/bit signed number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gafcb31bb541b17698cbc1bbfda842fbff}\label{group___r_s_l_k_gafcb31bb541b17698cbc1bbfda842fbff}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutString@{Nokia5110\_OutString}}
+\index{Nokia5110\_OutString@{Nokia5110\_OutString}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutString()}{Nokia5110\_OutString()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Print a string of characters to the LCD. 
+
+Print a string of characters to the Nokia 5110 48x84 LCD. The string will automatically wrap, so padding spaces may be needed to make the output look optimal. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to NULL-\/terminated ASCII string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga6c5565f530e509b16aa185063a72c96b}\label{group___r_s_l_k_ga6c5565f530e509b16aa185063a72c96b}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutUDec@{Nokia5110\_OutUDec}}
+\index{Nokia5110\_OutUDec@{Nokia5110\_OutUDec}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutUDec()}{Nokia5110\_OutUDec()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+UDec (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 16-\/bit unsigned number to the LCD. 
+
+Output a 16-\/bit number in unsigned decimal format with a fixed size of five right-\/justified digits of output. 
+\begin{DoxyParams}{Parameters}
+{\em n} & 16-\/bit unsigned number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga4e5c5d03e4f5192fefc6b1449d28a230}\label{group___r_s_l_k_ga4e5c5d03e4f5192fefc6b1449d28a230}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutUDec16@{Nokia5110\_OutUDec16}}
+\index{Nokia5110\_OutUDec16@{Nokia5110\_OutUDec16}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutUDec16()}{Nokia5110\_OutUDec16()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+UDec16 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print three decimal digits. 
+
+Output three decimal digits to the Nokia 5110 LCD. Prints 4 characters with leading space 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/999 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga132bd51ee9dfbc7ce8f9f525fad1612d}\label{group___r_s_l_k_ga132bd51ee9dfbc7ce8f9f525fad1612d}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutUDec2@{Nokia5110\_OutUDec2}}
+\index{Nokia5110\_OutUDec2@{Nokia5110\_OutUDec2}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutUDec2()}{Nokia5110\_OutUDec2()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+UDec2 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print two decimal digits. 
+
+Output two decimal digits to the Nokia 5110 LCD. Prints 2 characters without leading space 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/99 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga6d385d887d7c557f3fc03c175a6a0bce}\label{group___r_s_l_k_ga6d385d887d7c557f3fc03c175a6a0bce}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutUFix1@{Nokia5110\_OutUFix1}}
+\index{Nokia5110\_OutUFix1@{Nokia5110\_OutUFix1}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutUFix1()}{Nokia5110\_OutUFix1()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+UFix1 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 16-\/bit unsigned fixed-\/point number to the LCD. 
+
+Output a 16-\/bit number in unsigned 3-\/digit fixed point, 0.\+1 resolution fixed size of four right-\/justified characters.~\newline
+ numbers 0 to 999 printed as \char`\"{} 0.\+0\char`\"{} to \char`\"{}99.\+9\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em n} & 16-\/bit unsigned number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+LCD is in default horizontal addressing mode (V = 0) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga29884f44db65e76c5cec568d0ff633a7}\label{group___r_s_l_k_ga29884f44db65e76c5cec568d0ff633a7}} 
+\index{RSLK@{RSLK}!Nokia5110\_OutUHex7@{Nokia5110\_OutUHex7}}
+\index{Nokia5110\_OutUHex7@{Nokia5110\_OutUHex7}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_OutUHex7()}{Nokia5110\_OutUHex7()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Out\+UHex7 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print two hex digits. 
+
+Output two hex digits to the Nokia 5110 LCD. Prints 4 characters with leading 0x 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/255 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga749dcb517b25abb19dba6aa5290b1db9}\label{group___r_s_l_k_ga749dcb517b25abb19dba6aa5290b1db9}} 
+\index{RSLK@{RSLK}!Nokia5110\_PrintBMP@{Nokia5110\_PrintBMP}}
+\index{Nokia5110\_PrintBMP@{Nokia5110\_PrintBMP}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_PrintBMP()}{Nokia5110\_PrintBMP()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Print\+BMP (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{xpos,  }\item[{uint8\+\_\+t}]{ypos,  }\item[{const uint8\+\_\+t $\ast$}]{ptr,  }\item[{uint8\+\_\+t}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Put 48x84 unformatted 4-\/bit color bitmap image in internal screen buffer. 
+
+Bitmaps defined above were created for the LM3\+S1968 or LM3\+S8962\textquotesingle{}s 4-\/bit grayscale OLED display. They also still contain their header data and may contain padding to preserve 4-\/byte alignment. This function takes a bitmap in the previously described format and puts its image data in the proper location in the buffer so the image will appear on the screen after the next call to \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}}; The interface and operation of this process is modeled after RIT128x96x4\+\_\+\+BMP(x, y, image); 
+\begin{DoxyParams}{Parameters}
+{\em xpos} & horizontal position of bottom left corner of image, columns from the left edge~\newline
+ must be less than 84~\newline
+ 0 is on the left; 82 is near the right \\
+\hline
+{\em ypos} & vertical position of bottom left corner of image, rows from the top edge~\newline
+ must be less than 48~\newline
+ 2 is near the top; 47 is at the bottom \\
+\hline
+{\em ptr} & pointer to a 16 color BMP image \\
+\hline
+{\em threshold} & grayscale colors above this number make corresponding pixel \textquotesingle{}on\textquotesingle{}~\newline
+ 0 to 14~\newline
+ 0 is fine for ships, explosions, projectiles, and bunkers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Call \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}} to see this bitmap. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga10d28828cdd61b3e92f6ee827ee8795a}{Nokia5110\+\_\+\+Clear\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga92d8d931e34accb15c24e41138209d1c}{Nokia5110\+\_\+\+Set\+Pxl()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}\label{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}} 
+\index{RSLK@{RSLK}!Nokia5110\_SetCursor@{Nokia5110\_SetCursor}}
+\index{Nokia5110\_SetCursor@{Nokia5110\_SetCursor}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_SetCursor()}{Nokia5110\_SetCursor()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Set\+Cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{newX,  }\item[{uint8\+\_\+t}]{newY }\end{DoxyParamCaption})}
+
+
+
+Set coordinates of next print. 
+
+Move the cursor to the desired X-\/ and Y-\/position. The next character will be printed here. X=0 is the leftmost column. Y=0 is the top row. 
+\begin{DoxyParams}{Parameters}
+{\em newX} & new X-\/position of the cursor (0$<$=newX$<$=11) \\
+\hline
+{\em newY} & new Y-\/position of the cursor (0$<$=newY$<$=5) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga6ff4ec20c3f2bb863d23affd3a3c676f}{Nokia5110\+\_\+\+Init()}}, \mbox{\hyperlink{group___r_s_l_k_ga5fc6cc208fd34601d5a485332325d106}{Nokia5110\+\_\+\+Clear()}}, \mbox{\hyperlink{group___r_s_l_k_ga5cd8c2d1f5e196e4524082fc8d5a297c}{Nokia5110\+\_\+\+Set\+Cursor()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use Nokia5110\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga92d8d931e34accb15c24e41138209d1c}\label{group___r_s_l_k_ga92d8d931e34accb15c24e41138209d1c}} 
+\index{RSLK@{RSLK}!Nokia5110\_SetPxl@{Nokia5110\_SetPxl}}
+\index{Nokia5110\_SetPxl@{Nokia5110\_SetPxl}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Nokia5110\_SetPxl()}{Nokia5110\_SetPxl()}}
+{\footnotesize\ttfamily void Nokia5110\+\_\+\+Set\+Pxl (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i,  }\item[{uint32\+\_\+t}]{j }\end{DoxyParamCaption})}
+
+
+
+Turn a pixel on in internal screen buffer. 
+
+Set the internal screen buffer pixel at (i, j), turning it on. 
+\begin{DoxyParams}{Parameters}
+{\em i} & the row index (0 to 47 in this case), y-\/coordinate \\
+\hline
+{\em j} & the column index (0 to 83 in this case), x-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Call \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}} to see this change. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___r_s_l_k_ga10d28828cdd61b3e92f6ee827ee8795a}{Nokia5110\+\_\+\+Clear\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga1009657312ef202e9e77f0926d040694}{Nokia5110\+\_\+\+Display\+Buffer()}}, \mbox{\hyperlink{group___r_s_l_k_ga546329cadd846c5841a42bbeaff7e68d}{Nokia5110\+\_\+\+Clr\+Pxl()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group___r_s_l_k_gafbfb3187abf3fa8b2e756958ad08509f}\label{group___r_s_l_k_gafbfb3187abf3fa8b2e756958ad08509f}} 
+\index{RSLK@{RSLK}!OPT3101\_ArmInterrupts@{OPT3101\_ArmInterrupts}}
+\index{OPT3101\_ArmInterrupts@{OPT3101\_ArmInterrupts}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_ArmInterrupts()}{OPT3101\_ArmInterrupts()}}
+{\footnotesize\ttfamily void OPT3101\+\_\+\+Arm\+Interrupts (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{p\+Tx\+Chan,  }\item[{uint32\+\_\+t}]{distances\mbox{[}3\mbox{]},  }\item[{uint32\+\_\+t}]{amplitudes\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+get measurements from last measurement 
+
+Configure the OPT3101 for continuous, interrupt driven measurements. It takes about 33ms to complete one measurement. An interrupt occurs when a new measurement is complete. The ISR will set one of the three entries in the array, depending on which channel was measured. distances will have values in mm, and amplitudes will have amplitude values. It will also update the channel parameter Interrupt utilization~\newline
+ 1) Start using OPT3101\+\_\+\+Start\+Measurement\+Channel(channel);~\newline
+ 2) ISR updates values in the arrays~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to a variable for the channel value \\
+\hline
+{\em distances} & array for each of the three channels \\
+\hline
+{\em amplitudes} & array for each of the three channels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga29997146e950c8e4dd0b6186769ba123}\label{group___r_s_l_k_ga29997146e950c8e4dd0b6186769ba123}} 
+\index{RSLK@{RSLK}!OPT3101\_CalibrateInternalCrosstalk@{OPT3101\_CalibrateInternalCrosstalk}}
+\index{OPT3101\_CalibrateInternalCrosstalk@{OPT3101\_CalibrateInternalCrosstalk}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_CalibrateInternalCrosstalk()}{OPT3101\_CalibrateInternalCrosstalk()}}
+{\footnotesize\ttfamily void OPT3101\+\_\+\+Calibrate\+Internal\+Crosstalk (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Calibrates for internal crosstalk. 
+
+Tells the OPT3101 to do its internal crosstalk calibration. This takes about 1.\+3 seconds and is necessary every time you start using the device. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga2a6130df8253adbd09997737bd4b2839}\label{group___r_s_l_k_ga2a6130df8253adbd09997737bd4b2839}} 
+\index{RSLK@{RSLK}!OPT3101\_CheckDistanceSensor@{OPT3101\_CheckDistanceSensor}}
+\index{OPT3101\_CheckDistanceSensor@{OPT3101\_CheckDistanceSensor}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_CheckDistanceSensor()}{OPT3101\_CheckDistanceSensor()}}
+{\footnotesize\ttfamily bool OPT3101\+\_\+\+Check\+Distance\+Sensor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+new measurement ready 
+
+Checks to see if measurement is complete. Busy wait utilization~\newline
+ 1) Start using OPT3101\+\_\+\+Start\+Measurement\+Channel(channel);~\newline
+ 2) Wait for complete using \mbox{\hyperlink{group___r_s_l_k_ga2a6130df8253adbd09997737bd4b2839}{OPT3101\+\_\+\+Check\+Distance\+Sensor()}};~\newline
+ 3) Get results using \mbox{\hyperlink{group___r_s_l_k_gaafa31e75d37cf76e56966301fa4c54a0}{OPT3101\+\_\+\+Get\+Measurement()}};~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if we have a new distance measurement ready to be read, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_gafedc7596a6d6a99e31a74f4b1add6e61}\label{group___r_s_l_k_gafedc7596a6d6a99e31a74f4b1add6e61}} 
+\index{RSLK@{RSLK}!OPT3101\_GetAmplitude@{OPT3101\_GetAmplitude}}
+\index{OPT3101\_GetAmplitude@{OPT3101\_GetAmplitude}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_GetAmplitude()}{OPT3101\_GetAmplitude()}}
+{\footnotesize\ttfamily uint32\+\_\+t OPT3101\+\_\+\+Get\+Amplitude (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+last amplitude measurement 
+
+Returns the value of the AMP\+\_\+\+OUT output, which generally represents how much light was reflected from a target object to the photo diode. This function does not perform any I/O; it just retrieves information about the measurement data previously read by \mbox{\hyperlink{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}{OPT3101\+\_\+\+Read\+Measurement()}}. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amplitude 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga2f7570809f62a8f9af09ae49e6a3533e}\label{group___r_s_l_k_ga2f7570809f62a8f9af09ae49e6a3533e}} 
+\index{RSLK@{RSLK}!OPT3101\_GetDistanceMillimeters@{OPT3101\_GetDistanceMillimeters}}
+\index{OPT3101\_GetDistanceMillimeters@{OPT3101\_GetDistanceMillimeters}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_GetDistanceMillimeters()}{OPT3101\_GetDistanceMillimeters()}}
+{\footnotesize\ttfamily uint32\+\_\+t OPT3101\+\_\+\+Get\+Distance\+Millimeters (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+last distance measurement in mm 
+
+Calculates the distance to the target object in millimeters and returns it. This is simply the value of the PHASE\+\_\+\+OUT output multiplied by a scaling factor. This function does not perform any I/O; it just retrieves information about the measurement data previously read by \mbox{\hyperlink{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}{OPT3101\+\_\+\+Read\+Measurement()}}. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+distance in mm 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+values over 1000 are not valid 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaafa31e75d37cf76e56966301fa4c54a0}\label{group___r_s_l_k_gaafa31e75d37cf76e56966301fa4c54a0}} 
+\index{RSLK@{RSLK}!OPT3101\_GetMeasurement@{OPT3101\_GetMeasurement}}
+\index{OPT3101\_GetMeasurement@{OPT3101\_GetMeasurement}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_GetMeasurement()}{OPT3101\_GetMeasurement()}}
+{\footnotesize\ttfamily uint32\+\_\+t OPT3101\+\_\+\+Get\+Measurement (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{distances\mbox{[}3\mbox{]},  }\item[{uint32\+\_\+t}]{amplitudes\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+get measurements from last measurement 
+
+Reads results and returns values, assumes a new measurement is complete. This function will set one of the three entries in the array, depending on which channel was measured. distances will have values in mm, and amplitudes will have amplitude values. Busy wait utilization~\newline
+ 1) Start using OPT3101\+\_\+\+Start\+Measurement\+Channel(channel);~\newline
+ 2) Wait for complete using \mbox{\hyperlink{group___r_s_l_k_ga2a6130df8253adbd09997737bd4b2839}{OPT3101\+\_\+\+Check\+Distance\+Sensor()}};~\newline
+ 3) Get results using \mbox{\hyperlink{group___r_s_l_k_gaafa31e75d37cf76e56966301fa4c54a0}{OPT3101\+\_\+\+Get\+Measurement()}};~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em distances} & array for each of the three channels \\
+\hline
+{\em amplitudes} & array for each of the three channels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+channel number for the last measurement 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_gad843946a9ddbe96f7f230827a952a2e0}\label{group___r_s_l_k_gad843946a9ddbe96f7f230827a952a2e0}} 
+\index{RSLK@{RSLK}!OPT3101\_GetPhase@{OPT3101\_GetPhase}}
+\index{OPT3101\_GetPhase@{OPT3101\_GetPhase}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_GetPhase()}{OPT3101\_GetPhase()}}
+{\footnotesize\ttfamily uint32\+\_\+t OPT3101\+\_\+\+Get\+Phase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+last phase measurement 
+
+Returns the value of the PHASE\+\_\+\+OUT output, which generally represents a distance to a target object. This function does not perform any I/O; it just retrieves information about the measurement data previously read by \mbox{\hyperlink{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}{OPT3101\+\_\+\+Read\+Measurement()}}. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+phase 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga6fe0afe1ee890559b1a5179bcc54f210}\label{group___r_s_l_k_ga6fe0afe1ee890559b1a5179bcc54f210}} 
+\index{RSLK@{RSLK}!OPT3101\_GetTxChannel@{OPT3101\_GetTxChannel}}
+\index{OPT3101\_GetTxChannel@{OPT3101\_GetTxChannel}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_GetTxChannel()}{OPT3101\_GetTxChannel()}}
+{\footnotesize\ttfamily uint32\+\_\+t OPT3101\+\_\+\+Get\+Tx\+Channel (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+channel of last measurement 
+
+Returns the transmitter channel number that the last reading came from. This function should return 0, 1, or 2, if everything is working, but if there are communication errors then it could return 3. This function does not perform any I/O; it just retrieves information about the measurement data previously read by \mbox{\hyperlink{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}{OPT3101\+\_\+\+Read\+Measurement()}}. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+channel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_gac2568de1c712c1ebde98f688a5c65e4a}\label{group___r_s_l_k_gac2568de1c712c1ebde98f688a5c65e4a}} 
+\index{RSLK@{RSLK}!OPT3101\_Init@{OPT3101\_Init}}
+\index{OPT3101\_Init@{OPT3101\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_Init()}{OPT3101\_Init()}}
+{\footnotesize\ttfamily void OPT3101\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize OPT3101. 
+
+Resets the OPT3101 distance sensor using its reset line and then waits for it to be done loading its initial settings from the on-\/board EEPROM memory. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_gae5214df07c11eb5ecd7522ff509839a7}\label{group___r_s_l_k_gae5214df07c11eb5ecd7522ff509839a7}} 
+\index{RSLK@{RSLK}!OPT3101\_MeasurementError@{OPT3101\_MeasurementError}}
+\index{OPT3101\_MeasurementError@{OPT3101\_MeasurementError}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_MeasurementError()}{OPT3101\_MeasurementError()}}
+{\footnotesize\ttfamily bool OPT3101\+\_\+\+Measurement\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+check for error 
+
+Returns true if the OPT3101 has reported an error associated with the measurement. This function does not perform any I/O; it just retrieves information about the measurement data previously read by \mbox{\hyperlink{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}{OPT3101\+\_\+\+Read\+Measurement()}}. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if error, false if no error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}\label{group___r_s_l_k_ga6ab8ea3bed75dacf760192dfd5b56145}} 
+\index{RSLK@{RSLK}!OPT3101\_ReadMeasurement@{OPT3101\_ReadMeasurement}}
+\index{OPT3101\_ReadMeasurement@{OPT3101\_ReadMeasurement}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_ReadMeasurement()}{OPT3101\_ReadMeasurement()}}
+{\footnotesize\ttfamily void OPT3101\+\_\+\+Read\+Measurement (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reads measurement. 
+
+Reads measurement data from the OPT3101. This data is stored by the library, and you can use the following functions to access it\+:~\newline
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group___r_s_l_k_gae5214df07c11eb5ecd7522ff509839a7}{OPT3101\+\_\+\+Measurement\+Error()}} ~\newline
+
+\item \mbox{\hyperlink{group___r_s_l_k_ga2f7570809f62a8f9af09ae49e6a3533e}{OPT3101\+\_\+\+Get\+Distance\+Millimeters()}} ~\newline
+
+\item \mbox{\hyperlink{group___r_s_l_k_gafedc7596a6d6a99e31a74f4b1add6e61}{OPT3101\+\_\+\+Get\+Amplitude()}} ~\newline
+
+\item \mbox{\hyperlink{group___r_s_l_k_ga6fe0afe1ee890559b1a5179bcc54f210}{OPT3101\+\_\+\+Get\+Tx\+Channel()}} 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{group___r_s_l_k_gadd8bc0cef644999f206fa6e8d97d4ed0}\label{group___r_s_l_k_gadd8bc0cef644999f206fa6e8d97d4ed0}} 
+\index{RSLK@{RSLK}!OPT3101\_Setup@{OPT3101\_Setup}}
+\index{OPT3101\_Setup@{OPT3101\_Setup}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_Setup()}{OPT3101\_Setup()}}
+{\footnotesize\ttfamily void OPT3101\+\_\+\+Setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the OPT3101. 
+
+Writes some settings to the OPT3101 which are generally necessary to use the other parts of this library. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga17cbe3e8184955b9fc7acbd6bacef402}\label{group___r_s_l_k_ga17cbe3e8184955b9fc7acbd6bacef402}} 
+\index{RSLK@{RSLK}!OPT3101\_StartMeasurement@{OPT3101\_StartMeasurement}}
+\index{OPT3101\_StartMeasurement@{OPT3101\_StartMeasurement}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_StartMeasurement()}{OPT3101\_StartMeasurement()}}
+{\footnotesize\ttfamily void OPT3101\+\_\+\+Start\+Measurement (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start measurement. 
+
+Starts a new measurement using whatever the last channel was. It takes about 33ms to complete the measurement. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga2b34def7fd6361d81df8716de07757c1}\label{group___r_s_l_k_ga2b34def7fd6361d81df8716de07757c1}} 
+\index{RSLK@{RSLK}!OPT3101\_StartMeasurementChannel@{OPT3101\_StartMeasurementChannel}}
+\index{OPT3101\_StartMeasurementChannel@{OPT3101\_StartMeasurementChannel}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{OPT3101\_StartMeasurementChannel()}{OPT3101\_StartMeasurementChannel()}}
+{\footnotesize\ttfamily void OPT3101\+\_\+\+Start\+Measurement\+Channel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ch }\end{DoxyParamCaption})}
+
+
+
+Start measurement on a specific channel. 
+
+Starts a new measurement using specified channel. It takes about 33ms to complete the measurement. 
+\begin{DoxyParams}{Parameters}
+{\em ch} & is 0,1,2 for channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_gaa22dec68ae7198f36322850ac7a422ff}\label{group___r_s_l_k_gaa22dec68ae7198f36322850ac7a422ff}} 
+\index{RSLK@{RSLK}!Reflectance\_Center@{Reflectance\_Center}}
+\index{Reflectance\_Center@{Reflectance\_Center}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Reflectance\_Center()}{Reflectance\_Center()}}
+{\footnotesize\ttfamily uint8\+\_\+t Reflectance\+\_\+\+Center (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+
+
+Read the two center sensors. 
+
+{\bfseries{Read the two center sensors}}\+:~\newline
+ 1) Turn on the 8 IR LEDs~\newline
+ 2) Pulse the 8 sensors high for 10 us~\newline
+ 3) Make the sensor pins input~\newline
+ 4) Wait {\bfseries{time}} us~\newline
+ 5) Read sensors (white is 0, black is 1)~\newline
+ 6) Turn off the 8 IR LEDs~\newline
+ \hypertarget{group___r_s_l_k_QTR_center}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{Two bit output from QTR-\/8\+RC reflectance sensor array}\label{group___r_s_l_k_QTR_center}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ (Left,Right) }&\cellcolor{\tableheadbgcolor}\textbf{ Sensors }&\cellcolor{\tableheadbgcolor}\textbf{ Meaning }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ (Left,Right) }&\cellcolor{\tableheadbgcolor}\textbf{ Sensors }&\cellcolor{\tableheadbgcolor}\textbf{ Meaning }\\\cline{1-3}
+\endhead
+1,1 &both sensors &on line \\\cline{1-3}
+1,0 &left left &off to right \\\cline{1-3}
+0,1 &just right &off to left \\\cline{1-3}
+0,0 &neither &lost \\\cline{1-3}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em time} & delay value in us \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2-\/bit result, 0 (off road), 1 off to left, 2 off to right, 3 on road 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}{Reflectance\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaf0b599174bf91c1b0199f95037ca78be}\label{group___r_s_l_k_gaf0b599174bf91c1b0199f95037ca78be}} 
+\index{RSLK@{RSLK}!Reflectance\_End@{Reflectance\_End}}
+\index{Reflectance\_End@{Reflectance\_End}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Reflectance\_End()}{Reflectance\_End()}}
+{\footnotesize\ttfamily uint8\+\_\+t Reflectance\+\_\+\+End (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read the eight sensors. 
+
+{\bfseries{Finish reading the eight sensors}}\+:~\newline
+ 5) Read sensors (white is 0, black is 1)~\newline
+ 6) Turn off the 8 IR LEDs~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+8-\/bit result 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}{Reflectance\+\_\+\+Init()}} has been called 
+
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga5c1cd82fe48fdf60b8ac1bcfd34cb0d0}{Reflectance\+\_\+\+Start()}} was called 1 ms ago 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga665be9652ede693c19726a8da1d324cd}\label{group___r_s_l_k_ga665be9652ede693c19726a8da1d324cd}} 
+\index{RSLK@{RSLK}!Reflectance\_Get@{Reflectance\_Get}}
+\index{Reflectance\_Get@{Reflectance\_Get}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Reflectance\_Get()}{Reflectance\_Get()}}
+{\footnotesize\ttfamily uint8\+\_\+t Reflectance\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get last reading of the eight sensors. 
+
+{\bfseries{Return last reading}} 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+8-\/bit result 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes\+: \mbox{\hyperlink{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}{Reflectance\+\_\+\+Init()}} has been called 
+
+Assumes\+: \mbox{\hyperlink{group___r_s_l_k_ga5c1cd82fe48fdf60b8ac1bcfd34cb0d0}{Reflectance\+\_\+\+Start()}} was called 
+
+Assumes\+: \mbox{\hyperlink{group___r_s_l_k_gaf0b599174bf91c1b0199f95037ca78be}{Reflectance\+\_\+\+End()}} was called 1 ms after Start 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}\label{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}} 
+\index{RSLK@{RSLK}!Reflectance\_Init@{Reflectance\_Init}}
+\index{Reflectance\_Init@{Reflectance\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Reflectance\_Init()}{Reflectance\_Init()}}
+{\footnotesize\ttfamily void Reflectance\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the GPIO pins for the QTR-\/8\+RC reflectance sensor. 
+
+Initialize the GPIO pins associated with the QTR-\/8\+RC. One output to IR LED, 8 inputs from the sensor array. Initially, the IR outputs are off. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga77217ca37755bfbc38ec0eaaf4e7c49a}\label{group___r_s_l_k_ga77217ca37755bfbc38ec0eaaf4e7c49a}} 
+\index{RSLK@{RSLK}!Reflectance\_Position@{Reflectance\_Position}}
+\index{Reflectance\_Position@{Reflectance\_Position}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Reflectance\_Position()}{Reflectance\_Position()}}
+{\footnotesize\ttfamily int32\+\_\+t Reflectance\+\_\+\+Position (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Perform sensor integration. 
+
+{\bfseries{Calculate the weighted average for each bit}}\+:~\newline
+ Position varies from -\/332 (left) to +332 (right), with units of 0.\+1mm.~\newline
+ \hypertarget{group___r_s_l_k_QTR_distance}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{9}{|X[-1]}|}
+\caption{8 element arrays}\label{group___r_s_l_k_QTR_distance}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ bit7}&\cellcolor{\tableheadbgcolor}\textbf{ bit6}&\cellcolor{\tableheadbgcolor}\textbf{ bit5}&\cellcolor{\tableheadbgcolor}\textbf{ bit4}&\cellcolor{\tableheadbgcolor}\textbf{ bit3}&\cellcolor{\tableheadbgcolor}\textbf{ bit2}&\cellcolor{\tableheadbgcolor}\textbf{ bit1}&\cellcolor{\tableheadbgcolor}\textbf{ bit0 }\\\cline{1-9}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ bit7}&\cellcolor{\tableheadbgcolor}\textbf{ bit6}&\cellcolor{\tableheadbgcolor}\textbf{ bit5}&\cellcolor{\tableheadbgcolor}\textbf{ bit4}&\cellcolor{\tableheadbgcolor}\textbf{ bit3}&\cellcolor{\tableheadbgcolor}\textbf{ bit2}&\cellcolor{\tableheadbgcolor}\textbf{ bit1}&\cellcolor{\tableheadbgcolor}\textbf{ bit0 }\\\cline{1-9}
+\endhead
+Weight&-\/332&-\/237&-\/142&-\/47&47&142&237&332 \\\cline{1-9}
+Mask &0x01&0x02&0x04&0x08&0x10&0x20&0x40&0x80 \\\cline{1-9}
+\end{longtabu}
+count = 0~\newline
+ sum = 0~\newline
+ for i from 0 to 7 ~\newline
+ if (data\&Mask\mbox{[}i\mbox{]}) then count++ and sum = sum+\+Weight\mbox{[}i\mbox{]}~\newline
+ calculate {\bfseries{position}} = sum/count 
+\begin{DoxyParams}{Parameters}
+{\em data} & is 8-\/bit result from line sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+position in 0.\+1mm relative to center of line 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+returns 333 if data is zero (off the line) 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga139f16024daa08baa1cdfa00bb0c3fa8}\label{group___r_s_l_k_ga139f16024daa08baa1cdfa00bb0c3fa8}} 
+\index{RSLK@{RSLK}!Reflectance\_Read@{Reflectance\_Read}}
+\index{Reflectance\_Read@{Reflectance\_Read}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Reflectance\_Read()}{Reflectance\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t Reflectance\+\_\+\+Read (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+
+
+Read the eight sensors. 
+
+{\bfseries{Read the eight sensors}}\+:~\newline
+ 1) Turn on the 8 IR LEDs~\newline
+ 2) Pulse the 8 sensors high for 10 us~\newline
+ 3) Make the sensor pins input~\newline
+ 4) Wait {\bfseries{time}} us~\newline
+ 5) Read sensors (white is 0, black is 1)~\newline
+ 6) Turn off the 8 IR LEDs~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em time} & delay value in us \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+8-\/bit result 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}{Reflectance\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga5c1cd82fe48fdf60b8ac1bcfd34cb0d0}\label{group___r_s_l_k_ga5c1cd82fe48fdf60b8ac1bcfd34cb0d0}} 
+\index{RSLK@{RSLK}!Reflectance\_Start@{Reflectance\_Start}}
+\index{Reflectance\_Start@{Reflectance\_Start}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Reflectance\_Start()}{Reflectance\_Start()}}
+{\footnotesize\ttfamily void Reflectance\+\_\+\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Beging reading the eight sensors. 
+
+{\bfseries{Begin the process of reading the eight sensors}}\+:~\newline
+ 1) Turn on the 8 IR LEDs~\newline
+ 2) Pulse the 8 sensors high for 10 us~\newline
+ 3) Make the sensor pins input~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga7e72a241dafb5d6f84cfd44f5a02aaef}{Reflectance\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga618c2638077b6eeed2f754994c490d36}\label{group___r_s_l_k_ga618c2638077b6eeed2f754994c490d36}} 
+\index{RSLK@{RSLK}!SSD1306\_Clear@{SSD1306\_Clear}}
+\index{SSD1306\_Clear@{SSD1306\_Clear}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Clear()}{SSD1306\_Clear()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear the LCD by writing zeros to the entire screen and reset the cursor to (0,0) (top left corner of screen). 
+
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga821fb135de1f5996c7ba544f66cfb557}\label{group___r_s_l_k_ga821fb135de1f5996c7ba544f66cfb557}} 
+\index{RSLK@{RSLK}!SSD1306\_ClearBuffer@{SSD1306\_ClearBuffer}}
+\index{SSD1306\_ClearBuffer@{SSD1306\_ClearBuffer}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_ClearBuffer()}{SSD1306\_ClearBuffer()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Clear\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear contents of display buffer (set all pixels to off). 
+
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Changes buffer contents only, no immediate effect on display. Follow up with a call to display(), or with other graphics commands as needed by one\textquotesingle{}s own application. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga3738c1b2fe173a407021f97435614e48}\label{group___r_s_l_k_ga3738c1b2fe173a407021f97435614e48}} 
+\index{RSLK@{RSLK}!SSD1306\_Dim@{SSD1306\_Dim}}
+\index{SSD1306\_Dim@{SSD1306\_Dim}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Dim()}{SSD1306\_Dim()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Dim (\begin{DoxyParamCaption}\item[{int}]{dim }\end{DoxyParamCaption})}
+
+
+
+Dim the display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & true to enable lower brightness mode, false for full brightness. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This has an immediate effect on the display, no need to call the display() function -- buffer contents are not changed. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}\label{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}} 
+\index{RSLK@{RSLK}!SSD1306\_DisplayBuffer@{SSD1306\_DisplayBuffer}}
+\index{SSD1306\_DisplayBuffer@{SSD1306\_DisplayBuffer}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DisplayBuffer()}{SSD1306\_DisplayBuffer()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Display\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Copy all of RAM image to OLED. Use this command with SSD1306\+\_\+\+Clear\+Buffer, and all Draw functions 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success or failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga3f3ff2f3d1a9c1cbe85ee15a05997814}\label{group___r_s_l_k_ga3f3ff2f3d1a9c1cbe85ee15a05997814}} 
+\index{RSLK@{RSLK}!SSD1306\_DrawChar@{SSD1306\_DrawChar}}
+\index{SSD1306\_DrawChar@{SSD1306\_DrawChar}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawChar()}{SSD1306\_DrawChar()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Char (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{char}]{letter,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Draw a character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Column of display -- 0 at left to (screen width -\/ 1) at right. \\
+\hline
+{\em y} & Row of display -- 0 at top to (screen height -\/ 1) at bottom. \\
+\hline
+{\em letter} & ASCII code of character to draw. \\
+\hline
+{\em color} & Pixel color, one of\+: BLACK, WHITE or INVERT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Changes buffer contents only, no immediate effect on display. Follow up with a call to \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer()}}, or with other graphics commands as needed by one\textquotesingle{}s own application. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gae19550fb75c29d3315292400c1238204}\label{group___r_s_l_k_gae19550fb75c29d3315292400c1238204}} 
+\index{RSLK@{RSLK}!SSD1306\_DrawFastHLine@{SSD1306\_DrawFastHLine}}
+\index{SSD1306\_DrawFastHLine@{SSD1306\_DrawFastHLine}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawFastHLine()}{SSD1306\_DrawFastHLine()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Fast\+HLine (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{w,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Draw a horizontal line. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Leftmost column -- 0 at left to (screen width -\/ 1) at right. \\
+\hline
+{\em y} & Row of display -- 0 at top to (screen height -\/1) at bottom. \\
+\hline
+{\em w} & Width of line, in pixels. \\
+\hline
+{\em color} & Line color, one of\+: BLACK, WHITE or INVERT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Changes buffer contents only, no immediate effect on display. Follow up with a call to \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer()}}, or with other graphics commands as needed by one\textquotesingle{}s own application. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga1cb5d0251f4b23eb2b4fe8ee723c5bc3}\label{group___r_s_l_k_ga1cb5d0251f4b23eb2b4fe8ee723c5bc3}} 
+\index{RSLK@{RSLK}!SSD1306\_DrawFastVLine@{SSD1306\_DrawFastVLine}}
+\index{SSD1306\_DrawFastVLine@{SSD1306\_DrawFastVLine}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawFastVLine()}{SSD1306\_DrawFastVLine()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Fast\+VLine (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{h,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Draw a vertical line. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Column of display -- 0 at left to (screen width -\/1) at right. \\
+\hline
+{\em y} & Topmost row -- 0 at top to (screen height -\/ 1) at bottom. \\
+\hline
+{\em h} & Height of line, in pixels. \\
+\hline
+{\em color} & Line color, one of\+: BLACK, WHITE or INVERT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Changes buffer contents only, no immediate effect on display. Follow up with a call to \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer()}}, or with other graphics commands as needed by one\textquotesingle{}s own application. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaa8a71d61d7b6ce871bfeea8a7c641f2a}\label{group___r_s_l_k_gaa8a71d61d7b6ce871bfeea8a7c641f2a}} 
+\index{RSLK@{RSLK}!SSD1306\_DrawFullImage@{SSD1306\_DrawFullImage}}
+\index{SSD1306\_DrawFullImage@{SSD1306\_DrawFullImage}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawFullImage()}{SSD1306\_DrawFullImage()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Full\+Image (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Fill the whole screen by drawing a 128x64 bitmap image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Pointer to 1024-\/byte image with no header or format data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes\+: OLED is in horizontal addressing mode (command 0x20, 0x00)~\newline
+ Image is sent to screen directly, RAM buffer is unchanged. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga91211e9aa7f5fdad9d09416ff2311322}\label{group___r_s_l_k_ga91211e9aa7f5fdad9d09416ff2311322}} 
+\index{RSLK@{RSLK}!SSD1306\_DrawPixel@{SSD1306\_DrawPixel}}
+\index{SSD1306\_DrawPixel@{SSD1306\_DrawPixel}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawPixel()}{SSD1306\_DrawPixel()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Pixel (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Set/clear/invert a single pixel. This is also invoked by the Adafruit\+\_\+\+GFX library in generating many higher-\/level graphics primitives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Column of display -- 0 at left to (screen width -\/ 1) at right. \\
+\hline
+{\em y} & Row of display -- 0 at top to (screen height -\/ 1) at bottom. \\
+\hline
+{\em color} & Pixel color, one of\+: BLACK, WHITE or INVERT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Changes buffer contents only, no immediate effect on display. Follow up with a call to \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer()}}, or with other graphics commands as needed by one\textquotesingle{}s own application. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga78b108008d5b65cac47aa4813e22b40b}\label{group___r_s_l_k_ga78b108008d5b65cac47aa4813e22b40b}} 
+\index{RSLK@{RSLK}!SSD1306\_DrawString@{SSD1306\_DrawString}}
+\index{SSD1306\_DrawString@{SSD1306\_DrawString}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawString()}{SSD1306\_DrawString()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+String (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{char $\ast$}]{pt,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Draw a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Column of display -- 0 at left to (screen width -\/ 1) at right. \\
+\hline
+{\em y} & Row of display -- 0 at top to (screen height -\/ 1) at bottom. \\
+\hline
+{\em pt} & pointer to null-\/terminated ASCII string of characters to draw. \\
+\hline
+{\em color} & Pixel color, one of\+: BLACK, WHITE or INVERT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Changes buffer contents only, no immediate effect on display. Follow up with a call to \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer()}}, or with other graphics commands as needed by one\textquotesingle{}s own application. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gac506713d6b823aad406d3be277fa08bc}\label{group___r_s_l_k_gac506713d6b823aad406d3be277fa08bc}} 
+\index{RSLK@{RSLK}!SSD1306\_getBuffer@{SSD1306\_getBuffer}}
+\index{SSD1306\_getBuffer@{SSD1306\_getBuffer}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_getBuffer()}{SSD1306\_getBuffer()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ SSD1306\+\_\+get\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get base address of display buffer for direct reading or writing. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to an unsigned 8-\/bit array, column-\/major, columns padded to full byte boundary if needed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga7c45e775cadcd7edb931bbffe9f8dffc}\label{group___r_s_l_k_ga7c45e775cadcd7edb931bbffe9f8dffc}} 
+\index{RSLK@{RSLK}!SSD1306\_GetPixel@{SSD1306\_GetPixel}}
+\index{SSD1306\_GetPixel@{SSD1306\_GetPixel}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_GetPixel()}{SSD1306\_GetPixel()}}
+{\footnotesize\ttfamily int SSD1306\+\_\+\+Get\+Pixel (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Return color of a single pixel in display buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Column of display -- 0 at left to (screen width -\/ 1) at right. \\
+\hline
+{\em y} & Row of display -- 0 at top to (screen height -\/1) at bottom. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if pixel is set (usually WHITE, unless display invert mode is enabled), false if clear (BLACK). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Reads from buffer contents; may not reflect current contents of screen if \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer()}} has not been called. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaab7ea41e931eeab2903cdea7496aa6a8}\label{group___r_s_l_k_gaab7ea41e931eeab2903cdea7496aa6a8}} 
+\index{RSLK@{RSLK}!SSD1306\_Init@{SSD1306\_Init}}
+\index{SSD1306\_Init@{SSD1306\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Init()}{SSD1306\_Init()}}
+{\footnotesize\ttfamily int SSD1306\+\_\+\+Init (\begin{DoxyParamCaption}\item[{int}]{vccst }\end{DoxyParamCaption})}
+
+
+
+driver for SSD1306 OLED display 
+
+Initialize OLED 
+\begin{DoxyParams}{Parameters}
+{\em vccst} & Vcc voltage parameter, u\+SSD1306\+\_\+\+EXTERNALVCC or SSD1306\+\_\+\+SWITCHCAPVCC \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success or failure 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+for RSLK use vccst=SSD1306\+\_\+\+SWITCHCAPVCC 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gab0ca956a8d8f4b41a50ff010dcd526e7}\label{group___r_s_l_k_gab0ca956a8d8f4b41a50ff010dcd526e7}} 
+\index{RSLK@{RSLK}!SSD1306\_InvertDisplay@{SSD1306\_InvertDisplay}}
+\index{SSD1306\_InvertDisplay@{SSD1306\_InvertDisplay}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_InvertDisplay()}{SSD1306\_InvertDisplay()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Invert\+Display (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Enable or disable display invert mode (white-\/on-\/black vs black-\/on-\/white). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & If true, switch to invert mode (black-\/on-\/white), else normal mode (white-\/on-\/black). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This has an immediate effect on the display, no need to call the display() function -- buffer contents are not changed, rather a different pixel mode of the display hardware is used. When enabled, drawing BLACK (value 0) pixels will actually draw white, WHITE (value 1) will draw black. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaee6d606255408f0770f394da8d382816}\label{group___r_s_l_k_gaee6d606255408f0770f394da8d382816}} 
+\index{RSLK@{RSLK}!SSD1306\_OutChar@{SSD1306\_OutChar}}
+\index{SSD1306\_OutChar@{SSD1306\_OutChar}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutChar()}{SSD1306\_OutChar()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+Char (\begin{DoxyParamCaption}\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+Print a character to the OLED. 
+
+Print a character to the SSD1306 OLED. The character will be printed at the current cursor position, the cursor will automatically be updated, and it will wrap to the next row or back to the top if necessary. One blank column of pixels will be printed on one side of the character for readability. Since characters are 8 pixels tall and 6 pixels wide, 12 characters fit per row, and there are six rows. 
+\begin{DoxyParams}{Parameters}
+{\em data} & character to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga3571ab75750cb59aead92332ffb0fc62}\label{group___r_s_l_k_ga3571ab75750cb59aead92332ffb0fc62}} 
+\index{RSLK@{RSLK}!SSD1306\_OutHex7@{SSD1306\_OutHex7}}
+\index{SSD1306\_OutHex7@{SSD1306\_OutHex7}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutHex7()}{SSD1306\_OutHex7()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+Hex7 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print one hex digit. 
+
+Output one hex digit to the SSD1306 OLED Just one character with no leading 0x 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/15 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaac775a5f0bf3a671aa401e3a91396310}\label{group___r_s_l_k_gaac775a5f0bf3a671aa401e3a91396310}} 
+\index{RSLK@{RSLK}!SSD1306\_OutSDec@{SSD1306\_OutSDec}}
+\index{SSD1306\_OutSDec@{SSD1306\_OutSDec}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutSDec()}{SSD1306\_OutSDec()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+SDec (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 16-\/bit signed number to the OLED. 
+
+Output a 16-\/bit number in signed decimal format with a fixed size of six right-\/justified digits of output. 
+\begin{DoxyParams}{Parameters}
+{\em n} & 16-\/bit signed number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gaf14172094ff5e9fa53a18e440f7c8f2b}\label{group___r_s_l_k_gaf14172094ff5e9fa53a18e440f7c8f2b}} 
+\index{RSLK@{RSLK}!SSD1306\_OutSFix1@{SSD1306\_OutSFix1}}
+\index{SSD1306\_OutSFix1@{SSD1306\_OutSFix1}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutSFix1()}{SSD1306\_OutSFix1()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+SFix1 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 32-\/bit signed fixed-\/point number to the OLED. 
+
+Output a 32-\/bit number in signed 4-\/digit fixed point, 0.\+1 resolution fixed size of six right-\/justified characters.~\newline
+ numbers -\/9999 to 9999 printed as \char`\"{}-\/999.\+9\char`\"{} to \char`\"{}999.\+9\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em n} & 32-\/bit signed number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga3cb10630582177982ffcf6cb0ee25eaa}\label{group___r_s_l_k_ga3cb10630582177982ffcf6cb0ee25eaa}} 
+\index{RSLK@{RSLK}!SSD1306\_OutString@{SSD1306\_OutString}}
+\index{SSD1306\_OutString@{SSD1306\_OutString}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutString()}{SSD1306\_OutString()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Print a string of characters to the OLED. 
+
+Print a string of characters to the SSD1306 OLED. The string will automatically wrap, so padding spaces may be needed to make the output look optimal. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to NULL-\/terminated ASCII string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gae7367f3c4d4f7652f09a94921917fa34}\label{group___r_s_l_k_gae7367f3c4d4f7652f09a94921917fa34}} 
+\index{RSLK@{RSLK}!SSD1306\_OutUDec@{SSD1306\_OutUDec}}
+\index{SSD1306\_OutUDec@{SSD1306\_OutUDec}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutUDec()}{SSD1306\_OutUDec()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+UDec (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 16-\/bit unsigned number to the OLED. 
+
+Output a 16-\/bit number in unsigned decimal format with a fixed size of five right-\/justified digits of output. 
+\begin{DoxyParams}{Parameters}
+{\em n} & 16-\/bit unsigned number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga58588d89cff825a2923ad5efd6c3bad6}\label{group___r_s_l_k_ga58588d89cff825a2923ad5efd6c3bad6}} 
+\index{RSLK@{RSLK}!SSD1306\_OutUDec16@{SSD1306\_OutUDec16}}
+\index{SSD1306\_OutUDec16@{SSD1306\_OutUDec16}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutUDec16()}{SSD1306\_OutUDec16()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+UDec16 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print three decimal digits. 
+
+Output three decimal digits to the SSD1306 OLED. Prints 4 characters with leading space 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/999 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gac4e6c633d40b9e89e4723617c6de9b80}\label{group___r_s_l_k_gac4e6c633d40b9e89e4723617c6de9b80}} 
+\index{RSLK@{RSLK}!SSD1306\_OutUDec2@{SSD1306\_OutUDec2}}
+\index{SSD1306\_OutUDec2@{SSD1306\_OutUDec2}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutUDec2()}{SSD1306\_OutUDec2()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+UDec2 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print two decimal digits. 
+
+Output two decimal digits to the SSD1306 OLED. Prints 2 characters without leading space 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/99 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga79f05e2d03b8a825eeb9f38a877f1bfd}\label{group___r_s_l_k_ga79f05e2d03b8a825eeb9f38a877f1bfd}} 
+\index{RSLK@{RSLK}!SSD1306\_OutUFix1@{SSD1306\_OutUFix1}}
+\index{SSD1306\_OutUFix1@{SSD1306\_OutUFix1}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutUFix1()}{SSD1306\_OutUFix1()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+UFix1 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print a 16-\/bit unsigned fixed-\/point number to the OLED. 
+
+Output a 16-\/bit number in unsigned 3-\/digit fixed point, 0.\+1 resolution fixed size of four right-\/justified characters.~\newline
+ numbers 0 to 999 printed as \char`\"{} 0.\+0\char`\"{} to \char`\"{}99.\+9\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em n} & 16-\/bit unsigned number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga6a92665473351cc8fc8731072ab85ebe}\label{group___r_s_l_k_ga6a92665473351cc8fc8731072ab85ebe}} 
+\index{RSLK@{RSLK}!SSD1306\_OutUHex7@{SSD1306\_OutUHex7}}
+\index{SSD1306\_OutUHex7@{SSD1306\_OutUHex7}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_OutUHex7()}{SSD1306\_OutUHex7()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Out\+UHex7 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Print two hex digits. 
+
+Output two hex digits to the SSD1306 OLED. Prints 4 characters with leading 0x 
+\begin{DoxyParams}{Parameters}
+{\em n} & unsigned number 0-\/255 to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+use SSD1306\+\_\+\+Set\+Cursor to specify position 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_gac52af74d665ba242569c42e148f6a4ae}\label{group___r_s_l_k_gac52af74d665ba242569c42e148f6a4ae}} 
+\index{RSLK@{RSLK}!SSD1306\_PrintBMP@{SSD1306\_PrintBMP}}
+\index{SSD1306\_PrintBMP@{SSD1306\_PrintBMP}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_PrintBMP()}{SSD1306\_PrintBMP()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Print\+BMP (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{xpos,  }\item[{uint8\+\_\+t}]{ypos,  }\item[{const uint8\+\_\+t $\ast$}]{ptr,  }\item[{uint8\+\_\+t}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Draw a raw bitmap to the RAM buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpos} & Horizontal position of bottom left corner of image, columns from the left edge.~\newline
+ must be less than 128~\newline
+ 0 is on the left; 126 is near the right \\
+\hline
+{\em ypos} & Vertical position of bottom left corner of image, rows from the top edge.~\newline
+ must be less than 64~\newline
+ 2 is near the top; 63 is at the bottom \\
+\hline
+{\em ptr} & Pointer to a 16-\/color BMP image. \\
+\hline
+{\em threshold} & Grayscale colors above this number make corresponding pixel \textquotesingle{}on\textquotesingle{}.~\newline
+ 0 to 14~\newline
+ 0 is fine for ships, explosions, projectiles, and bunkers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Bitmaps defined above were created for the LM3\+S1968 or LM3\+S8962\textquotesingle{}s 4-\/bit grayscale OLED display. More recently they are created using Microsoft Paint (or your favorite drawing program), saved as a 16-\/color bitmap, and converted from binary to text using Bmp\+Convert.\+exe. Then copy and paste this text into the program, which will create a constant containing the image that will be loaded into ROM at compile time. These images will still contain their header data and may contain padding to preserve 4-\/byte alignment. This function takes a bitmap in the previously described format and puts its image data in the proper location in the buffer so the image will appear on the screen after the next call to~\newline
+ \mbox{\hyperlink{group___r_s_l_k_ga4fbfc894ccf3ea3319cb10a60bc23dd8}{SSD1306\+\_\+\+Display\+Buffer()}};~\newline
+ The interface and operation of this process is modeled after RIT128x96x4\+\_\+\+BMP(x, y, image); 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga17d614ae3998954150531d07811d3e41}\label{group___r_s_l_k_ga17d614ae3998954150531d07811d3e41}} 
+\index{RSLK@{RSLK}!SSD1306\_SetCursor@{SSD1306\_SetCursor}}
+\index{SSD1306\_SetCursor@{SSD1306\_SetCursor}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetCursor()}{SSD1306\_SetCursor()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Cursor (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{newX,  }\item[{uint16\+\_\+t}]{newY }\end{DoxyParamCaption})}
+
+Move the cursor to the desired X-\/ and Y-\/position. The next character will be printed here. X=0 is the leftmost column. Y=0 is the top row. 
+\begin{DoxyParams}{Parameters}
+{\em newX} & new X-\/position of the cursor (0$<$=newX$<$=20) \\
+\hline
+{\em newY} & new Y-\/position of the cursor (0$<$=newY$<$=7) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga5fbe0b379155b3ff6944af2b742c18a3}\label{group___r_s_l_k_ga5fbe0b379155b3ff6944af2b742c18a3}} 
+\index{RSLK@{RSLK}!SSD1306\_startscrolldiagleft@{SSD1306\_startscrolldiagleft}}
+\index{SSD1306\_startscrolldiagleft@{SSD1306\_startscrolldiagleft}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_startscrolldiagleft()}{SSD1306\_startscrolldiagleft()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+startscrolldiagleft (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{start,  }\item[{uint8\+\_\+t}]{stop }\end{DoxyParamCaption})}
+
+
+
+Activate alternate diagonal scroll for all or part of the display. 
+
+\begin{DoxyNote}{Note}
+To scroll the whole display, run\+: SSD1306\+\_\+startscrolldiagleft(0x00, 0x0\+F) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & First row. \\
+\hline
+{\em stop} & Last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga38eb562710b30f7999a3a1fa34e3238f}\label{group___r_s_l_k_ga38eb562710b30f7999a3a1fa34e3238f}} 
+\index{RSLK@{RSLK}!SSD1306\_startscrolldiagright@{SSD1306\_startscrolldiagright}}
+\index{SSD1306\_startscrolldiagright@{SSD1306\_startscrolldiagright}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_startscrolldiagright()}{SSD1306\_startscrolldiagright()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+startscrolldiagright (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{start,  }\item[{uint8\+\_\+t}]{stop }\end{DoxyParamCaption})}
+
+
+
+Activate a diagonal scroll for all or part of the display. 
+
+\begin{DoxyNote}{Note}
+SSD1306\+\_\+startscrolldiagright(0x00, 0x0\+F) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & First row. \\
+\hline
+{\em stop} & Last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga24a16124440a98a13ff471209d9c8534}\label{group___r_s_l_k_ga24a16124440a98a13ff471209d9c8534}} 
+\index{RSLK@{RSLK}!SSD1306\_startscrollleft@{SSD1306\_startscrollleft}}
+\index{SSD1306\_startscrollleft@{SSD1306\_startscrollleft}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_startscrollleft()}{SSD1306\_startscrollleft()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+startscrollleft (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{start,  }\item[{uint8\+\_\+t}]{stop }\end{DoxyParamCaption})}
+
+
+
+Activate a left-\/handed scroll for all or part of the display. 
+
+\begin{DoxyNote}{Note}
+To scroll the whole display, run\+: SSD1306\+\_\+startscrollleft(0x00, 0x0\+F) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & First row. \\
+\hline
+{\em stop} & Last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga67ad6ee2114e1400e3b818e7e1a27b9e}\label{group___r_s_l_k_ga67ad6ee2114e1400e3b818e7e1a27b9e}} 
+\index{RSLK@{RSLK}!SSD1306\_startscrollright@{SSD1306\_startscrollright}}
+\index{SSD1306\_startscrollright@{SSD1306\_startscrollright}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_startscrollright()}{SSD1306\_startscrollright()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+startscrollright (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{start,  }\item[{uint8\+\_\+t}]{stop }\end{DoxyParamCaption})}
+
+
+
+Activate a right-\/handed scroll for all or part of the display. 
+
+\begin{DoxyNote}{Note}
+To scroll the whole display, run\+: SSD1306\+\_\+startscrollright(0x00, 0x0\+F) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & First row. \\
+\hline
+{\em stop} & Last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga591667f0f26d0e6babf07496fa9328b6}\label{group___r_s_l_k_ga591667f0f26d0e6babf07496fa9328b6}} 
+\index{RSLK@{RSLK}!SSD1306\_stopscroll@{SSD1306\_stopscroll}}
+\index{SSD1306\_stopscroll@{SSD1306\_stopscroll}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_stopscroll()}{SSD1306\_stopscroll()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+stopscroll (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Cease a previously-\/begun scrolling action. 
+
+\begin{DoxyReturn}{Returns}
+None (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga5e7c48c6bb3ce296cd7c264f626520fc}\label{group___r_s_l_k_ga5e7c48c6bb3ce296cd7c264f626520fc}} 
+\index{RSLK@{RSLK}!Tachometer\_Get@{Tachometer\_Get}}
+\index{Tachometer\_Get@{Tachometer\_Get}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Tachometer\_Get()}{Tachometer\_Get()}}
+{\footnotesize\ttfamily void Tachometer\+\_\+\+Get (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{left\+Tach,  }\item[{enum \mbox{\hyperlink{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}{Tach\+Direction}} $\ast$}]{left\+Dir,  }\item[{int32\+\_\+t $\ast$}]{left\+Steps,  }\item[{uint16\+\_\+t $\ast$}]{right\+Tach,  }\item[{enum \mbox{\hyperlink{group___r_s_l_k_ga4f93107cfa0186f2b7b7848995be7024}{Tach\+Direction}} $\ast$}]{right\+Dir,  }\item[{int32\+\_\+t $\ast$}]{right\+Steps }\end{DoxyParamCaption})}
+
+
+
+Get the most recent tachometer measurement. 
+
+Get the most recent tachometer measurements. 
+\begin{DoxyParams}{Parameters}
+{\em left\+Tach} & is pointer to store last measured tachometer period of left wheel (units of 0.\+083 usec) \\
+\hline
+{\em left\+Dir} & is pointer to store enumerated direction of last movement of left wheel \\
+\hline
+{\em left\+Steps} & is pointer to store total number of forward steps measured for left wheel (360 steps per $\sim$220 mm circumference) \\
+\hline
+{\em right\+Tach} & is pointer to store last measured tachometer period of right wheel (units of 0.\+083 usec) \\
+\hline
+{\em right\+Dir} & is pointer to store enumerated direction of last movement of right wheel \\
+\hline
+{\em right\+Steps} & is pointer to store total number of forward steps measured for right wheel (360 steps per $\sim$220 mm circumference) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga9c69114eaf0c3e9050b940d51c20018d}{Tachometer\+\_\+\+Init()}} has been called~\newline
+ 
+
+Assumes \mbox{\hyperlink{group___m_s_p432_ga6af2755c894e5587fbc63a8a6ad084db}{Clock\+\_\+\+Init48\+MHz()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga9c69114eaf0c3e9050b940d51c20018d}\label{group___r_s_l_k_ga9c69114eaf0c3e9050b940d51c20018d}} 
+\index{RSLK@{RSLK}!Tachometer\_Init@{Tachometer\_Init}}
+\index{Tachometer\_Init@{Tachometer\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Tachometer\_Init()}{Tachometer\_Init()}}
+{\footnotesize\ttfamily void Tachometer\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize tachometer interface. 
+
+Initialize GPIO pins for input, which will be used to determine the direction of rotation. Initialize the input capture interface, which will be used to measure the speed of rotation. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_gac42a3f4b198b08884c3bca7d08a12712}\label{group___r_s_l_k_gac42a3f4b198b08884c3bca7d08a12712}} 
+\index{RSLK@{RSLK}!Ultrasound\_End@{Ultrasound\_End}}
+\index{Ultrasound\_End@{Ultrasound\_End}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Ultrasound\_End()}{Ultrasound\_End()}}
+{\footnotesize\ttfamily int Ultrasound\+\_\+\+End (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{dist\+Mm,  }\item[{uint16\+\_\+t $\ast$}]{dist\+In }\end{DoxyParamCaption})}
+
+
+
+End or resume an ultrasonic distance measurement. 
+
+Query the HC-\/\+SR04 ultrasonic distance sensor for a measurement. If no measurement is currently in progress, start one and return zero immediately. If the measurement is not yet complete, return zero immediately. If the measurement is complete, store the result in the pointers provided and return one. 
+\begin{DoxyParams}{Parameters}
+{\em dist\+Mm} & is pointer to store measured distance (units mm) \\
+\hline
+{\em dist\+In} & is pointer to store measured distance (units 10$\ast$in) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+one if measurement is ready and pointers are valid~\newline
+ zero if measurement is not ready and pointers unchanged 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga1a3d971fdf34fc73bed0cfaf249c78f3}{Ultrasound\+\_\+\+Init()}} has been called~\newline
+ 
+
+Assumes \mbox{\hyperlink{group___m_s_p432_ga6af2755c894e5587fbc63a8a6ad084db}{Clock\+\_\+\+Init48\+MHz()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_s_l_k_ga1a3d971fdf34fc73bed0cfaf249c78f3}\label{group___r_s_l_k_ga1a3d971fdf34fc73bed0cfaf249c78f3}} 
+\index{RSLK@{RSLK}!Ultrasound\_Init@{Ultrasound\_Init}}
+\index{Ultrasound\_Init@{Ultrasound\_Init}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Ultrasound\_Init()}{Ultrasound\_Init()}}
+{\footnotesize\ttfamily void Ultrasound\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize ultrasonic sensor interface. 
+
+Initialize a GPIO pin for output, which will be used to trigger the ultrasonic sensor. Initialize the input capture interface, which will be used to take the measurement. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___r_s_l_k_ga96ead73f4c02cee5282e9b644b6319e3}\label{group___r_s_l_k_ga96ead73f4c02cee5282e9b644b6319e3}} 
+\index{RSLK@{RSLK}!Ultrasound\_Start@{Ultrasound\_Start}}
+\index{Ultrasound\_Start@{Ultrasound\_Start}!RSLK@{RSLK}}
+\doxysubsubsection{\texorpdfstring{Ultrasound\_Start()}{Ultrasound\_Start()}}
+{\footnotesize\ttfamily void Ultrasound\+\_\+\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start an ultrasonic distance measurement. 
+
+Start a measurement using the ultrasonic sensor. If a measurement is currently in progress, return immediately. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___r_s_l_k_ga1a3d971fdf34fc73bed0cfaf249c78f3}{Ultrasound\+\_\+\+Init()}} has been called~\newline
+ 
+
+Assumes \mbox{\hyperlink{group___m_s_p432_ga6af2755c894e5587fbc63a8a6ad084db}{Clock\+\_\+\+Init48\+MHz()}} has been called 
+\end{DoxyNote}

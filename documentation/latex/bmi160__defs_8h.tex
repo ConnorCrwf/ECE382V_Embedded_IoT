@@ -1,0 +1,1847 @@
+\hypertarget{bmi160__defs_8h}{}\doxysection{inc/bmi160\+\_\+defs.h File Reference}
+\label{bmi160__defs_8h}\index{inc/bmi160\_defs.h@{inc/bmi160\_defs.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbmi160__pmu__status}{bmi160\+\_\+pmu\+\_\+status}}
+\item 
+struct \mbox{\hyperlink{structbmi160__int__status__bits}{bmi160\+\_\+int\+\_\+status\+\_\+bits}}
+\begin{DoxyCompactList}\small\item\em bmi160 interrupt status bits structure \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{unionbmi160__int__status}{bmi160\+\_\+int\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em bmi160 interrupt status structure \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__sensor__data}{bmi160\+\_\+sensor\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em bmi160 sensor data structure which comprises of accel data \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__aux__data}{bmi160\+\_\+aux\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em bmi160 aux data structure which comprises of 8 bytes of accel data \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__foc__conf}{bmi160\+\_\+foc\+\_\+conf}}
+\begin{DoxyCompactList}\small\item\em bmi160 FOC configuration structure \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__offsets}{bmi160\+\_\+offsets}}
+\begin{DoxyCompactList}\small\item\em bmi160 accel gyro offsets \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__aux__fifo__data}{bmi160\+\_\+aux\+\_\+fifo\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em FIFO aux. sensor data structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__cfg}{bmi160\+\_\+cfg}}
+\begin{DoxyCompactList}\small\item\em bmi160 sensor configuration structure \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__aux__cfg}{bmi160\+\_\+aux\+\_\+cfg}}
+\begin{DoxyCompactList}\small\item\em Aux sensor configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__acc__tap__int__cfg}{bmi160\+\_\+acc\+\_\+tap\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__any__mot__int__cfg}{bmi160\+\_\+acc\+\_\+any\+\_\+mot\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__sig__mot__int__cfg}{bmi160\+\_\+acc\+\_\+sig\+\_\+mot\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__step__detect__int__cfg}{bmi160\+\_\+acc\+\_\+step\+\_\+detect\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__no__motion__int__cfg}{bmi160\+\_\+acc\+\_\+no\+\_\+motion\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__orient__int__cfg}{bmi160\+\_\+acc\+\_\+orient\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__flat__detect__int__cfg}{bmi160\+\_\+acc\+\_\+flat\+\_\+detect\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__low__g__int__cfg}{bmi160\+\_\+acc\+\_\+low\+\_\+g\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__acc__high__g__int__cfg}{bmi160\+\_\+acc\+\_\+high\+\_\+g\+\_\+int\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__int__pin__settg}{bmi160\+\_\+int\+\_\+pin\+\_\+settg}}
+\item 
+union \mbox{\hyperlink{unionbmi160__int__type__cfg}{bmi160\+\_\+int\+\_\+type\+\_\+cfg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__int__settg}{bmi160\+\_\+int\+\_\+settg}}
+\item 
+struct \mbox{\hyperlink{structbmi160__fifo__frame}{bmi160\+\_\+fifo\+\_\+frame}}
+\begin{DoxyCompactList}\small\item\em This structure holds the information for usage of FIFO by the user. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmi160__dev}{bmi160\+\_\+dev}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries INT8\+\_\+C}(x)~S8\+\_\+C(x)
+\item 
+\#define {\bfseries UINT8\+\_\+C}(x)~U8\+\_\+C(x)
+\item 
+\#define {\bfseries INT16\+\_\+C}(x)~S16\+\_\+C(x)
+\item 
+\#define {\bfseries UINT16\+\_\+C}(x)~U16\+\_\+C(x)
+\item 
+\#define {\bfseries INT32\+\_\+C}(x)~S32\+\_\+C(x)
+\item 
+\#define {\bfseries UINT32\+\_\+C}(x)~U32\+\_\+C(x)
+\item 
+\#define {\bfseries INT64\+\_\+C}(x)~S64\+\_\+C(x)
+\item 
+\#define {\bfseries UINT64\+\_\+C}(x)~U64\+\_\+C(x)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ C standard macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}\label{bmi160__defs_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}} 
+\#define {\bfseries NULL}~((void $\ast$) 0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2b695357ce4b46971d54e8e9dfe5724f}\label{bmi160__defs_8h_a2b695357ce4b46971d54e8e9dfe5724f}} 
+\#define {\bfseries \+\_\+\+\_\+\+ORDER\+\_\+\+LITTLE\+\_\+\+ENDIAN\+\_\+\+\_\+}~0
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a02481ce2087724d8a2fb2322dbc549da}\label{bmi160__defs_8h_a02481ce2087724d8a2fb2322dbc549da}} 
+\#define {\bfseries \+\_\+\+\_\+\+BYTE\+\_\+\+ORDER\+\_\+\+\_\+}~\+\_\+\+\_\+\+ORDER\+\_\+\+LITTLE\+\_\+\+ENDIAN\+\_\+\+\_\+
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8782a401fbf55261460863fc2f8df1ce}\label{bmi160__defs_8h_a8782a401fbf55261460863fc2f8df1ce}} 
+\#define {\bfseries LITTLE\+\_\+\+ENDIAN}~1
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_aa1d1af9b8669b3d2b959d9a974a19cac}{BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+MASK}}~UINT8\+\_\+C(0x70)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7f9273b54b268d3c4a40b533a27fbf12}\label{bmi160__defs_8h_a7f9273b54b268d3c4a40b533a27fbf12}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+\+MASK}~UINT8\+\_\+C(0x0F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a20c241d1478b198506b11d69bea8b582}\label{bmi160__defs_8h_a20c241d1478b198506b11d69bea8b582}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+UNDERSAMPLING\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a54c7c4eae03b2a72f80e47f5c9120c21}\label{bmi160__defs_8h_a54c7c4eae03b2a72f80e47f5c9120c21}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+\+MASK}~UINT8\+\_\+C(0x0F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a83a3f6499ad07789188b76bebcca88f0}\label{bmi160__defs_8h_a83a3f6499ad07789188b76bebcca88f0}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+BW\+\_\+\+MASK}~UINT8\+\_\+C(0x30)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7efcfa436c092c964482c3a8e95ec359}\label{bmi160__defs_8h_a7efcfa436c092c964482c3a8e95ec359}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+\+MASK}~UINT8\+\_\+C(0x0F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ab177bb55656490a8e7cf7f34187eba05}\label{bmi160__defs_8h_ab177bb55656490a8e7cf7f34187eba05}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+\+MSK}~UINT8\+\_\+C(0x07)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_afac91bc86f7f95c4d5a71f434ae351d4}{BMI160\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+X\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a43628021d58a2f461e5bc4c6250cfa97}\label{bmi160__defs_8h_a43628021d58a2f461e5bc4c6250cfa97}} 
+\#define {\bfseries BMI160\+\_\+\+HIGH\+\_\+\+G\+\_\+\+X\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_acb8976f7fd40c306344eceb609f16317}\label{bmi160__defs_8h_acb8976f7fd40c306344eceb609f16317}} 
+\#define {\bfseries BMI160\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+X\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8ffe36d3105d7779eb8efc56b47c5545}\label{bmi160__defs_8h_a8ffe36d3105d7779eb8efc56b47c5545}} 
+\#define {\bfseries BMI160\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+Y\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa5a85d831edf575f038abf6d12a40a54}\label{bmi160__defs_8h_aa5a85d831edf575f038abf6d12a40a54}} 
+\#define {\bfseries BMI160\+\_\+\+HIGH\+\_\+\+G\+\_\+\+Y\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a896f25129750cd63a658b5038d4c1090}\label{bmi160__defs_8h_a896f25129750cd63a658b5038d4c1090}} 
+\#define {\bfseries BMI160\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+Y\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6989fe7c1d5b654382199ccacd433fd8}\label{bmi160__defs_8h_a6989fe7c1d5b654382199ccacd433fd8}} 
+\#define {\bfseries BMI160\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+Z\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a93a2791e81b506615caff7176ba6f4dd}\label{bmi160__defs_8h_a93a2791e81b506615caff7176ba6f4dd}} 
+\#define {\bfseries BMI160\+\_\+\+HIGH\+\_\+\+G\+\_\+\+Z\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7e0296a92b8bf32e5676a2a948ef422a}\label{bmi160__defs_8h_a7e0296a92b8bf32e5676a2a948ef422a}} 
+\#define {\bfseries BMI160\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+Z\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6aa7669b0053796a6f1461ef16b335f8}\label{bmi160__defs_8h_a6aa7669b0053796a6f1461ef16b335f8}} 
+\#define {\bfseries BMI160\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aff9bdac9ee334de2f10955de85c14478}\label{bmi160__defs_8h_aff9bdac9ee334de2f10955de85c14478}} 
+\#define {\bfseries BMI160\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+ALL\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9df66e6701e206c839675bb947ce9d00}\label{bmi160__defs_8h_a9df66e6701e206c839675bb947ce9d00}} 
+\#define {\bfseries BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a49f92f389cbd35973fc310767f31e2ae}\label{bmi160__defs_8h_a49f92f389cbd35973fc310767f31e2ae}} 
+\#define {\bfseries BMI160\+\_\+\+DOUBLE\+\_\+\+TAP\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5e87ba4cb79adda450a74377384b9873}\label{bmi160__defs_8h_a5e87ba4cb79adda450a74377384b9873}} 
+\#define {\bfseries BMI160\+\_\+\+SINGLE\+\_\+\+TAP\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad72e5650de2251036108b1d4b84eacca}\label{bmi160__defs_8h_ad72e5650de2251036108b1d4b84eacca}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ab5f7265c9093f688bf38976653c3bf78}\label{bmi160__defs_8h_ab5f7265c9093f688bf38976653c3bf78}} 
+\#define {\bfseries BMI160\+\_\+\+ORIENT\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a80646d9df7a27d52070e63c63f01d50f}\label{bmi160__defs_8h_a80646d9df7a27d52070e63c63f01d50f}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+WATERMARK\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7bef41890909cf29527545cb8248613e}\label{bmi160__defs_8h_a7bef41890909cf29527545cb8248613e}} 
+\#define {\bfseries BMI160\+\_\+\+LOW\+\_\+\+G\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ace2fd95b3c4b8d2ab2e32344b3f5831c}\label{bmi160__defs_8h_ace2fd95b3c4b8d2ab2e32344b3f5831c}} 
+\#define {\bfseries BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a940dcce03be727a1a931665f537666a2}\label{bmi160__defs_8h_a940dcce03be727a1a931665f537666a2}} 
+\#define {\bfseries BMI160\+\_\+\+FLAT\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1753e936d1a78b6fa7b37acff4de5413}\label{bmi160__defs_8h_a1753e936d1a78b6fa7b37acff4de5413}} 
+\#define {\bfseries BMI160\+\_\+\+DATA\+\_\+\+RDY\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x10)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a1b51914c4aa2a54b65fdebd397a51e55}{BMI160\+\_\+\+AUX\+\_\+\+PMU\+\_\+\+SUSPEND}}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac9919b8bc841872c0cdfa729f0fba3bc}\label{bmi160__defs_8h_ac9919b8bc841872c0cdfa729f0fba3bc}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+PMU\+\_\+\+NORMAL}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ab8609711a2daf06f2031df7dfb761966}\label{bmi160__defs_8h_ab8609711a2daf06f2031df7dfb761966}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+PMU\+\_\+\+LOW\+\_\+\+POWER}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6ca3c055a6def48530813f51ea555901}\label{bmi160__defs_8h_a6ca3c055a6def48530813f51ea555901}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+PMU\+\_\+\+SUSPEND}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a01d143c58caafad4802a101bf5d56336}\label{bmi160__defs_8h_a01d143c58caafad4802a101bf5d56336}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+PMU\+\_\+\+NORMAL}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_afcc181e4ca1d686daf9968fc8e9641e8}\label{bmi160__defs_8h_afcc181e4ca1d686daf9968fc8e9641e8}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+PMU\+\_\+\+FSU}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af1dadcdcf86bf52be919c491f711bfec}\label{bmi160__defs_8h_af1dadcdcf86bf52be919c491f711bfec}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+PMU\+\_\+\+SUSPEND}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2e5db1cf4609dd27995e45049be17668}\label{bmi160__defs_8h_a2e5db1cf4609dd27995e45049be17668}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+PMU\+\_\+\+NORMAL}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6851a4896615c39a4f5477a195471808}\label{bmi160__defs_8h_a6851a4896615c39a4f5477a195471808}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+PMU\+\_\+\+LOW\+\_\+\+POWER}~UINT8\+\_\+C(0x02)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_ae8861d03a0a3ade0fcae71bb3cd8a8e8}{BMI160\+\_\+\+INT1\+\_\+\+EDGE\+\_\+\+CTRL\+\_\+\+MASK}}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a72b5c25b4943c80fa14a3cf3eba53da1}\label{bmi160__defs_8h_a72b5c25b4943c80fa14a3cf3eba53da1}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+OUTPUT\+\_\+\+MODE\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a64ac99b011f3e48ed4eb0f0ee07cbeb0}\label{bmi160__defs_8h_a64ac99b011f3e48ed4eb0f0ee07cbeb0}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+MASK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa0bf4ce908c9256b8193f5340d592437}\label{bmi160__defs_8h_aa0bf4ce908c9256b8193f5340d592437}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+OUTPUT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a518056e79dc2954b8155919774871408}\label{bmi160__defs_8h_a518056e79dc2954b8155919774871408}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+EDGE\+\_\+\+CTRL\+\_\+\+MASK}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9280a8194eb53dffcf1e7bd84adbcf29}\label{bmi160__defs_8h_a9280a8194eb53dffcf1e7bd84adbcf29}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+OUTPUT\+\_\+\+MODE\+\_\+\+MASK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af6bf7fd3bdaddbb232636bfabbcf19c2}\label{bmi160__defs_8h_af6bf7fd3bdaddbb232636bfabbcf19c2}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+MASK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9884f4b0cfdbf84d5a0c7df45eb3943a}\label{bmi160__defs_8h_a9884f4b0cfdbf84d5a0c7df45eb3943a}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+OUTPUT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a51544fcc449956ca90583712c925476a}{BMI160\+\_\+\+INT1\+\_\+\+INPUT\+\_\+\+EN\+\_\+\+MASK}}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aae3f721e3aad676b694dbdc2f961b239}\label{bmi160__defs_8h_aae3f721e3aad676b694dbdc2f961b239}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+INPUT\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a799a5257c10f6707053665e6eb8a0466}\label{bmi160__defs_8h_a799a5257c10f6707053665e6eb8a0466}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+MASK}~UINT8\+\_\+C(0x0F)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_aa005c70bc3b802914442340743d80f0b}{BMI160\+\_\+\+INT1\+\_\+\+LOW\+\_\+\+G\+\_\+\+MASK}}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9f2f992164ab78d8ce88ccdb06c16a47}\label{bmi160__defs_8h_a9f2f992164ab78d8ce88ccdb06c16a47}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+HIGH\+\_\+\+G\+\_\+\+MASK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3f344dd5d2a5fdcdb5555866f287568a}\label{bmi160__defs_8h_a3f344dd5d2a5fdcdb5555866f287568a}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+SLOPE\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa261ca63acb718911f5dd74082089b1f}\label{bmi160__defs_8h_aa261ca63acb718911f5dd74082089b1f}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+MASK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0bb00bf40b056230d18e6d8e342faac7}\label{bmi160__defs_8h_a0bb00bf40b056230d18e6d8e342faac7}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+DOUBLE\+\_\+\+TAP\+\_\+\+MASK}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abbb4ecb9fe36c61932606055773d5390}\label{bmi160__defs_8h_abbb4ecb9fe36c61932606055773d5390}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+SINGLE\+\_\+\+TAP\+\_\+\+MASK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6e51788eddcf657a16668fcbcaaa9c47}\label{bmi160__defs_8h_a6e51788eddcf657a16668fcbcaaa9c47}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+MASK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8e3f66ad7b64f6c15ab376591f54c3bc}\label{bmi160__defs_8h_a8e3f66ad7b64f6c15ab376591f54c3bc}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+FIFO\+\_\+\+WM\+\_\+\+MASK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3ff211511f26fef1052ff8d502faa2d7}\label{bmi160__defs_8h_a3ff211511f26fef1052ff8d502faa2d7}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+ORIENT\+\_\+\+MASK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3b3973e9c3fe25853f2371ec6c12bd72}\label{bmi160__defs_8h_a3b3973e9c3fe25853f2371ec6c12bd72}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+FLAT\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2ba79eb7f0e74638f2c4191b7aac9d5b}\label{bmi160__defs_8h_a2ba79eb7f0e74638f2c4191b7aac9d5b}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+DATA\+\_\+\+READY\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae0857c4d298988d37b366761c85d9a72}\label{bmi160__defs_8h_ae0857c4d298988d37b366761c85d9a72}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+LOW\+\_\+\+G\+\_\+\+MASK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a58be488a51cc035e0a7e85c2dae3fb86}\label{bmi160__defs_8h_a58be488a51cc035e0a7e85c2dae3fb86}} 
+\#define {\bfseries BMI160\+\_\+\+INT1\+\_\+\+LOW\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+MASK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a671745f657148bfa01f301b7412ed6db}\label{bmi160__defs_8h_a671745f657148bfa01f301b7412ed6db}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+LOW\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+MASK}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3a92934cee1e301df30375e7c13f73c0}\label{bmi160__defs_8h_a3a92934cee1e301df30375e7c13f73c0}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+HIGH\+\_\+\+G\+\_\+\+MASK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3cb1dbd45f981b0b93aff8ea6db73746}\label{bmi160__defs_8h_a3cb1dbd45f981b0b93aff8ea6db73746}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+MASK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a752e6c75fce411571e29086160061fc0}\label{bmi160__defs_8h_a752e6c75fce411571e29086160061fc0}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+FIFO\+\_\+\+WM\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a39c8213efa1228eb21029c5bcb6d66b4}\label{bmi160__defs_8h_a39c8213efa1228eb21029c5bcb6d66b4}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+SLOPE\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1484ef1dfd0dfd7220a6eced4bee7b26}\label{bmi160__defs_8h_a1484ef1dfd0dfd7220a6eced4bee7b26}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+DATA\+\_\+\+READY\+\_\+\+MASK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a871f96e683bb79f4f2b0a25c43410c7a}\label{bmi160__defs_8h_a871f96e683bb79f4f2b0a25c43410c7a}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+MASK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8ece4b31b9e1214b13dd6422d8700fce}\label{bmi160__defs_8h_a8ece4b31b9e1214b13dd6422d8700fce}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+DOUBLE\+\_\+\+TAP\+\_\+\+MASK}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae30b842f0e7deae25d05d0c96beac3fa}\label{bmi160__defs_8h_ae30b842f0e7deae25d05d0c96beac3fa}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+SINGLE\+\_\+\+TAP\+\_\+\+MASK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1e52968633bbb133a1344139fc40293d}\label{bmi160__defs_8h_a1e52968633bbb133a1344139fc40293d}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+ORIENT\+\_\+\+MASK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a23877888df3ce9767cb0f49da406fc75}\label{bmi160__defs_8h_a23877888df3ce9767cb0f49da406fc75}} 
+\#define {\bfseries BMI160\+\_\+\+INT2\+\_\+\+FLAT\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a97db755aaed0487f05eb426ce24c6108}{BMI160\+\_\+\+TAP\+\_\+\+SRC\+\_\+\+INT\+\_\+\+MASK}}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a89dc1cb4b41180e3dc03af79be97fefc}\label{bmi160__defs_8h_a89dc1cb4b41180e3dc03af79be97fefc}} 
+\#define {\bfseries BMI160\+\_\+\+LOW\+\_\+\+HIGH\+\_\+\+SRC\+\_\+\+INT\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa55dd655fad109c3433b3a2e20a6ab1e}\label{bmi160__defs_8h_aa55dd655fad109c3433b3a2e20a6ab1e}} 
+\#define {\bfseries BMI160\+\_\+\+MOTION\+\_\+\+SRC\+\_\+\+INT\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_ad5145d47829b56ffe20b393497f4b4c5}{BMI160\+\_\+\+SLOPE\+\_\+\+INT\+\_\+\+DUR\+\_\+\+MASK}}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a530ed9609d66d372828d0a5f7e9bf7c3}\label{bmi160__defs_8h_a530ed9609d66d372828d0a5f7e9bf7c3}} 
+\#define {\bfseries BMI160\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+INT\+\_\+\+DUR\+\_\+\+MASK}~UINT8\+\_\+C(0x\+FC)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af1bbb675b8dc02ec3500cb4f0917f48d}\label{bmi160__defs_8h_af1bbb675b8dc02ec3500cb4f0917f48d}} 
+\#define {\bfseries BMI160\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+SEL\+\_\+\+BIT\+\_\+\+MASK}~UINT8\+\_\+C(0x01)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a248e62bd9276cbfa500e319f7112a26b}{BMI160\+\_\+\+TAP\+\_\+\+DUR\+\_\+\+MASK}}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6e2bda9715348118b57486bb1de10acf}\label{bmi160__defs_8h_a6e2bda9715348118b57486bb1de10acf}} 
+\#define {\bfseries BMI160\+\_\+\+TAP\+\_\+\+SHOCK\+\_\+\+DUR\+\_\+\+MASK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a50935664d7b2fca11eb08b50d966a3be}\label{bmi160__defs_8h_a50935664d7b2fca11eb08b50d966a3be}} 
+\#define {\bfseries BMI160\+\_\+\+TAP\+\_\+\+QUIET\+\_\+\+DUR\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8ef83fe6988006cfe2b98a0d0229ff61}\label{bmi160__defs_8h_a8ef83fe6988006cfe2b98a0d0229ff61}} 
+\#define {\bfseries BMI160\+\_\+\+TAP\+\_\+\+THRES\+\_\+\+MASK}~UINT8\+\_\+C(0x1F)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a02ab73cdf38aa5db5c13bcd78a77c5c3}{BMI160\+\_\+\+FLAT\+\_\+\+THRES\+\_\+\+MASK}}~UINT8\+\_\+C(0x3F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3da31dd69adcbcdf1a32360f9198621c}\label{bmi160__defs_8h_a3da31dd69adcbcdf1a32360f9198621c}} 
+\#define {\bfseries BMI160\+\_\+\+FLAT\+\_\+\+HOLD\+\_\+\+TIME\+\_\+\+MASK}~UINT8\+\_\+C(0x30)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5d9e941731361204761b4e8ca2423920}\label{bmi160__defs_8h_a5d9e941731361204761b4e8ca2423920}} 
+\#define {\bfseries BMI160\+\_\+\+FLAT\+\_\+\+HYST\+\_\+\+MASK}~UINT8\+\_\+C(0x07)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_acf0a3a10eb2a9a9e01581eb2af7d48c0}{BMI160\+\_\+\+LOW\+\_\+\+G\+\_\+\+HYST\+\_\+\+MASK}}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3092c7e5af181145e951505324739666}\label{bmi160__defs_8h_a3092c7e5af181145e951505324739666}} 
+\#define {\bfseries BMI160\+\_\+\+LOW\+\_\+\+G\+\_\+\+LOW\+\_\+\+MODE\+\_\+\+MASK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a17d7cdad4302e5f9afe70381a340848f}\label{bmi160__defs_8h_a17d7cdad4302e5f9afe70381a340848f}} 
+\#define {\bfseries BMI160\+\_\+\+HIGH\+\_\+\+G\+\_\+\+HYST\+\_\+\+MASK}~UINT8\+\_\+C(0x\+C0)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a7a1a61594926351ee97b44e348b2f2d3}{BMI160\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+SEL\+\_\+\+MASK}}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af1558af81e14098c61f3d0f8187d3f7c}\label{bmi160__defs_8h_af1558af81e14098c61f3d0f8187d3f7c}} 
+\#define {\bfseries BMI160\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+SKIP\+\_\+\+MASK}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a313db236bbb290771682f5e157310479}\label{bmi160__defs_8h_a313db236bbb290771682f5e157310479}} 
+\#define {\bfseries BMI160\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+PROOF\+\_\+\+MASK}~UINT8\+\_\+C(0x30)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a2e598bf2d2baaab3375d488c08907ae2}{BMI160\+\_\+\+ORIENT\+\_\+\+MODE\+\_\+\+MASK}}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa4b136874e08305e155d7e9bc801cde6}\label{bmi160__defs_8h_aa4b136874e08305e155d7e9bc801cde6}} 
+\#define {\bfseries BMI160\+\_\+\+ORIENT\+\_\+\+BLOCK\+\_\+\+MASK}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a41f19f79d01b5cf7506d947c11ada640}\label{bmi160__defs_8h_a41f19f79d01b5cf7506d947c11ada640}} 
+\#define {\bfseries BMI160\+\_\+\+ORIENT\+\_\+\+HYST\+\_\+\+MASK}~UINT8\+\_\+C(0x\+F0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae5d3acd9e97452fbab590fb244dfb50e}\label{bmi160__defs_8h_ae5d3acd9e97452fbab590fb244dfb50e}} 
+\#define {\bfseries BMI160\+\_\+\+ORIENT\+\_\+\+THETA\+\_\+\+MASK}~UINT8\+\_\+C(0x3F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7af777e19c75d2982c3c3d34094a6d04}\label{bmi160__defs_8h_a7af777e19c75d2982c3c3d34094a6d04}} 
+\#define {\bfseries BMI160\+\_\+\+ORIENT\+\_\+\+UD\+\_\+\+ENABLE}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5090af9d13c370ddc95d3ae769d02852}\label{bmi160__defs_8h_a5090af9d13c370ddc95d3ae769d02852}} 
+\#define {\bfseries BMI160\+\_\+\+AXES\+\_\+\+EN\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a7a083688109d0de391990b1ab7e37a9f}{BMI160\+\_\+\+FIFO\+\_\+\+GYRO}}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abf3b0e2ae252891a6d8fa223895d3454}\label{bmi160__defs_8h_abf3b0e2ae252891a6d8fa223895d3454}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+ACCEL}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0eba34d6f1b06996af90ca769d604f0b}\label{bmi160__defs_8h_a0eba34d6f1b06996af90ca769d604f0b}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+AUX}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abef741619dd5356bfd9caaad6a72be97}\label{bmi160__defs_8h_abef741619dd5356bfd9caaad6a72be97}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT1}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a71a8084024db7506a688b7a0c283a157}\label{bmi160__defs_8h_a71a8084024db7506a688b7a0c283a157}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT2}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a80734aa4584378a6952394805603d15c}\label{bmi160__defs_8h_a80734aa4584378a6952394805603d15c}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+TIME}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a77fe6773768e4fcd258d93fae042214c}\label{bmi160__defs_8h_a77fe6773768e4fcd258d93fae042214c}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEADER}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af65ed3539342036cb6a861c2475e2522}\label{bmi160__defs_8h_af65ed3539342036cb6a861c2475e2522}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+CONFIG\+\_\+1\+\_\+\+MASK}~UINT8\+\_\+C(0x\+FE)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_af4b1e34040cb1e325b73254d88345fab}{BMI160\+\_\+\+STEP\+\_\+\+COUNT\+\_\+\+EN\+\_\+\+BIT\+\_\+\+MASK}}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_accd67a6236e28db6f2c04aa6eff002d9}\label{bmi160__defs_8h_accd67a6236e28db6f2c04aa6eff002d9}} 
+\#define {\bfseries BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+MIN\+\_\+\+THRES\+\_\+\+MASK}~UINT8\+\_\+C(0x18)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a158c701600bbccbfdd9823be5dbb7848}\label{bmi160__defs_8h_a158c701600bbccbfdd9823be5dbb7848}} 
+\#define {\bfseries BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+STEPTIME\+\_\+\+MIN\+\_\+\+MASK}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4c7b3a825261d8386924d3455f26fb14}\label{bmi160__defs_8h_a4c7b3a825261d8386924d3455f26fb14}} 
+\#define {\bfseries BMI160\+\_\+\+STEP\+\_\+\+MIN\+\_\+\+BUF\+\_\+\+MASK}~UINT8\+\_\+C(0x07)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a31dbd18b2682ec44c9b7a4816305a4c0}{BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INTR\+\_\+\+MASK}}~UINT8\+\_\+C(0x\+FC)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a6730f066cb2cba414f99e124bc3f3243}{BMI160\+\_\+\+FIFO\+\_\+\+BYTE\+\_\+\+COUNTER\+\_\+\+MASK}}~UINT8\+\_\+C(0x07)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a2117fe81ed0cba84d58c7b0ee2890026}{BMI160\+\_\+\+ENABLE}}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5e5b1efce2d3ec962d2176856635a7be}\label{bmi160__defs_8h_a5e5b1efce2d3ec962d2176856635a7be}} 
+\#define {\bfseries BMI160\+\_\+\+DISABLE}~UINT8\+\_\+C(0x00)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_ab9ebc291f5229b2d4acd7b10962cf086}{BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+\+NONE}}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9c6d74ef82a9d47495ba82942c270619}\label{bmi160__defs_8h_a9c6d74ef82a9d47495ba82942c270619}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+312\+\_\+5\+\_\+\+MICRO\+\_\+\+SEC}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a32b845b728f5970ab324cdd100847f56}\label{bmi160__defs_8h_a32b845b728f5970ab324cdd100847f56}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+625\+\_\+\+MICRO\+\_\+\+SEC}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae69fa28e453bbf5041c93c65b4333603}\label{bmi160__defs_8h_ae69fa28e453bbf5041c93c65b4333603}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+1\+\_\+25\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a34377d77d40bc2fd1852734b9b72c05d}\label{bmi160__defs_8h_a34377d77d40bc2fd1852734b9b72c05d}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+2\+\_\+5\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a52119adeced61e46afa3ecb77c324a59}\label{bmi160__defs_8h_a52119adeced61e46afa3ecb77c324a59}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+5\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5f41f908182634e01dcc2a72e7fa4a79}\label{bmi160__defs_8h_a5f41f908182634e01dcc2a72e7fa4a79}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+10\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4a94363eb43506f8337500a97ed0230b}\label{bmi160__defs_8h_a4a94363eb43506f8337500a97ed0230b}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+20\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a97fb88a7cde992a0d94cab245660787b}\label{bmi160__defs_8h_a97fb88a7cde992a0d94cab245660787b}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+40\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7f92b651e5170e18efd91cf9e0a9a372}\label{bmi160__defs_8h_a7f92b651e5170e18efd91cf9e0a9a372}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+80\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x09)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa108da20e69a75318d1613e9f14ce68c}\label{bmi160__defs_8h_aa108da20e69a75318d1613e9f14ce68c}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+160\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x0A)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae1a23b335ade4cc35e52eb86a249795d}\label{bmi160__defs_8h_ae1a23b335ade4cc35e52eb86a249795d}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+320\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x0B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1a41e142c27f158f0052a50e342f37bf}\label{bmi160__defs_8h_a1a41e142c27f158f0052a50e342f37bf}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+640\+\_\+\+MILLI\+\_\+\+SEC}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8a554277081cf8523284e83803684d3e}\label{bmi160__defs_8h_a8a554277081cf8523284e83803684d3e}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+1\+\_\+28\+\_\+\+SEC}~UINT8\+\_\+C(0x0D)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa897f785a570310e82b468908442aa0b}\label{bmi160__defs_8h_aa897f785a570310e82b468908442aa0b}} 
+\#define {\bfseries BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+2\+\_\+56\+\_\+\+SEC}~UINT8\+\_\+C(0x0E)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae9c5ddd1e4577aeae6e9e1882aae0582}\label{bmi160__defs_8h_ae9c5ddd1e4577aeae6e9e1882aae0582}} 
+\#define {\bfseries BMI160\+\_\+\+LATCHED}~UINT8\+\_\+C(0x0F)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a7816523ed378ea390f06548a0945da8c}{BMI160\+\_\+\+CHIP\+\_\+\+ID\+\_\+\+ADDR}}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a88e10696ad3cf109c6858f13020ff945}\label{bmi160__defs_8h_a88e10696ad3cf109c6858f13020ff945}} 
+\#define {\bfseries BMI160\+\_\+\+ERROR\+\_\+\+REG\+\_\+\+ADDR}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa48ad7f393646b6a7d2a1b1136362151}\label{bmi160__defs_8h_aa48ad7f393646b6a7d2a1b1136362151}} 
+\#define {\bfseries BMI160\+\_\+\+PMU\+\_\+\+STATUS\+\_\+\+ADDR}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af60ce58294659dfe28a113b1ef5fbae8}\label{bmi160__defs_8h_af60ce58294659dfe28a113b1ef5fbae8}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+DATA\+\_\+\+ADDR}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac7fb7486e8872c94eda46bba15690044}\label{bmi160__defs_8h_ac7fb7486e8872c94eda46bba15690044}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+DATA\+\_\+\+ADDR}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8e96cbdc19e245886a7fa438d222f010}\label{bmi160__defs_8h_a8e96cbdc19e245886a7fa438d222f010}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+DATA\+\_\+\+ADDR}~UINT8\+\_\+C(0x12)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0dfd16a9723ad3aa8b95a74c38bf7a8b}\label{bmi160__defs_8h_a0dfd16a9723ad3aa8b95a74c38bf7a8b}} 
+\#define {\bfseries BMI160\+\_\+\+STATUS\+\_\+\+ADDR}~UINT8\+\_\+C(0x1B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ab2d031702e8dc145dcd05ce1526c3edf}\label{bmi160__defs_8h_ab2d031702e8dc145dcd05ce1526c3edf}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+STATUS\+\_\+\+ADDR}~UINT8\+\_\+C(0x1C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4b85731adf78fa58ac67ff3d8c31215d}\label{bmi160__defs_8h_a4b85731adf78fa58ac67ff3d8c31215d}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+LENGTH\+\_\+\+ADDR}~UINT8\+\_\+C(0x22)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac36b99fd769ff54ddd3a124d51111415}\label{bmi160__defs_8h_ac36b99fd769ff54ddd3a124d51111415}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+DATA\+\_\+\+ADDR}~UINT8\+\_\+C(0x24)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad7cf650b4e4d79efc5c8e6c3750c8bb0}\label{bmi160__defs_8h_ad7cf650b4e4d79efc5c8e6c3750c8bb0}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+CONFIG\+\_\+\+ADDR}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9893c401fa603e93654ed9ee49831a99}\label{bmi160__defs_8h_a9893c401fa603e93654ed9ee49831a99}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+\+ADDR}~UINT8\+\_\+C(0x41)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_afafbfaa2365ae90d0273102a58c282e1}\label{bmi160__defs_8h_afafbfaa2365ae90d0273102a58c282e1}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+CONFIG\+\_\+\+ADDR}~UINT8\+\_\+C(0x42)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ab2132d645caafc76e0c06d2c70eefb89}\label{bmi160__defs_8h_ab2132d645caafc76e0c06d2c70eefb89}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+\+ADDR}~UINT8\+\_\+C(0x43)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a086e96610d80e7d6e15582be8e1c7784}\label{bmi160__defs_8h_a086e96610d80e7d6e15582be8e1c7784}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+\+ADDR}~UINT8\+\_\+C(0x44)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac0b9c2cffe383a2f0de79f99d8e863af}\label{bmi160__defs_8h_ac0b9c2cffe383a2f0de79f99d8e863af}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ADDR}~UINT8\+\_\+C(0x45)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7907b299647049fc04ac7d29a1e5774f}\label{bmi160__defs_8h_a7907b299647049fc04ac7d29a1e5774f}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+CONFIG\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x46)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a16efc1f2929287789d3bbe132766714d}\label{bmi160__defs_8h_a16efc1f2929287789d3bbe132766714d}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+CONFIG\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x47)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a642562332b452fda14bae39fe7663d66}\label{bmi160__defs_8h_a642562332b452fda14bae39fe7663d66}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+IF\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x4B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_adf7d11a2584246440c1f550eb9c8910b}\label{bmi160__defs_8h_adf7d11a2584246440c1f550eb9c8910b}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+IF\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x4C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1d88397d2bed9c8071c8b6610c84baa1}\label{bmi160__defs_8h_a1d88397d2bed9c8071c8b6610c84baa1}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+IF\+\_\+2\+\_\+\+ADDR}~UINT8\+\_\+C(0x4D)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8959037b9d093e95c1a7c149e97f05f4}\label{bmi160__defs_8h_a8959037b9d093e95c1a7c149e97f05f4}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+IF\+\_\+3\+\_\+\+ADDR}~UINT8\+\_\+C(0x4E)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a87d2aaa6be026d161f71ad564e591b38}\label{bmi160__defs_8h_a87d2aaa6be026d161f71ad564e591b38}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+IF\+\_\+4\+\_\+\+ADDR}~UINT8\+\_\+C(0x4F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a59ca6e34a911d218df03009e0e06b0cd}\label{bmi160__defs_8h_a59ca6e34a911d218df03009e0e06b0cd}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+ENABLE\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x50)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8b751409d51a6ed248ed935036eda929}\label{bmi160__defs_8h_a8b751409d51a6ed248ed935036eda929}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+ENABLE\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x51)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad32340932478c21602ed51f6cfe6e3c7}\label{bmi160__defs_8h_ad32340932478c21602ed51f6cfe6e3c7}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+ENABLE\+\_\+2\+\_\+\+ADDR}~UINT8\+\_\+C(0x52)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3d97911b5dc96f200f9c7f5f65bea34a}\label{bmi160__defs_8h_a3d97911b5dc96f200f9c7f5f65bea34a}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+OUT\+\_\+\+CTRL\+\_\+\+ADDR}~UINT8\+\_\+C(0x53)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa10c5c3522a5eb7e604de18d9bcce9f3}\label{bmi160__defs_8h_aa10c5c3522a5eb7e604de18d9bcce9f3}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+LATCH\+\_\+\+ADDR}~UINT8\+\_\+C(0x54)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a762f00dfe286175ec299785e6185b7e8}\label{bmi160__defs_8h_a762f00dfe286175ec299785e6185b7e8}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+MAP\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x55)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aabd996bdc247d25c041347ea9176f3cb}\label{bmi160__defs_8h_aabd996bdc247d25c041347ea9176f3cb}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+MAP\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x56)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5be32e9db43497cd6aaf873b338e51c1}\label{bmi160__defs_8h_a5be32e9db43497cd6aaf873b338e51c1}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+MAP\+\_\+2\+\_\+\+ADDR}~UINT8\+\_\+C(0x57)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4917102c70f7b842998104c0446c4656}\label{bmi160__defs_8h_a4917102c70f7b842998104c0446c4656}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+DATA\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x58)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0131a7499b0267d56b6580f23b3c5c54}\label{bmi160__defs_8h_a0131a7499b0267d56b6580f23b3c5c54}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+DATA\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x59)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af5881a5500415a6d51694ce56c86f791}\label{bmi160__defs_8h_af5881a5500415a6d51694ce56c86f791}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+LOWHIGH\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x5A)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a416303aa46c8e65e1c658e9a02ccff2d}\label{bmi160__defs_8h_a416303aa46c8e65e1c658e9a02ccff2d}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+LOWHIGH\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x5B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a59ffa34390fb6c61d029aa7b369ac407}\label{bmi160__defs_8h_a59ffa34390fb6c61d029aa7b369ac407}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+LOWHIGH\+\_\+2\+\_\+\+ADDR}~UINT8\+\_\+C(0x5C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a37401d610a660f7486109df62e40309a}\label{bmi160__defs_8h_a37401d610a660f7486109df62e40309a}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+LOWHIGH\+\_\+3\+\_\+\+ADDR}~UINT8\+\_\+C(0x5D)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a747c0d8bfded0c824476301d1b5b5359}\label{bmi160__defs_8h_a747c0d8bfded0c824476301d1b5b5359}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+LOWHIGH\+\_\+4\+\_\+\+ADDR}~UINT8\+\_\+C(0x5E)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a554d26cf525940dd329de0d436191721}\label{bmi160__defs_8h_a554d26cf525940dd329de0d436191721}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+MOTION\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x5F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9ef7141c29101075f2e4292a5ff5dbbe}\label{bmi160__defs_8h_a9ef7141c29101075f2e4292a5ff5dbbe}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+MOTION\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x60)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac4d8b4638e82cfae8c497d52a78b9fe0}\label{bmi160__defs_8h_ac4d8b4638e82cfae8c497d52a78b9fe0}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+MOTION\+\_\+2\+\_\+\+ADDR}~UINT8\+\_\+C(0x61)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abe5e28142c36e2fb7725a73c0df8d101}\label{bmi160__defs_8h_abe5e28142c36e2fb7725a73c0df8d101}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+MOTION\+\_\+3\+\_\+\+ADDR}~UINT8\+\_\+C(0x62)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1f80a40d5d59b0b03d92d0e1af632661}\label{bmi160__defs_8h_a1f80a40d5d59b0b03d92d0e1af632661}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+TAP\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x63)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad52653db951c9e50f531c34e4ea48ac1}\label{bmi160__defs_8h_ad52653db951c9e50f531c34e4ea48ac1}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+TAP\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x64)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8b33996964701316546242a71fbcaf29}\label{bmi160__defs_8h_a8b33996964701316546242a71fbcaf29}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+ORIENT\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x65)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a04842cdfaa79eccb5b0b81a11a53a626}\label{bmi160__defs_8h_a04842cdfaa79eccb5b0b81a11a53a626}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+ORIENT\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x66)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4096fc60c631f4286ab3dcea78cf2d26}\label{bmi160__defs_8h_a4096fc60c631f4286ab3dcea78cf2d26}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+FLAT\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x67)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aeb4c6f40397c45c47f4fb01a00eba3c7}\label{bmi160__defs_8h_aeb4c6f40397c45c47f4fb01a00eba3c7}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+FLAT\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x68)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a303c0e8f22e30e69acd777787cb37a87}\label{bmi160__defs_8h_a303c0e8f22e30e69acd777787cb37a87}} 
+\#define {\bfseries BMI160\+\_\+\+FOC\+\_\+\+CONF\+\_\+\+ADDR}~UINT8\+\_\+C(0x69)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a97a19dff5556b74b2b5f17daf3eee32a}\label{bmi160__defs_8h_a97a19dff5556b74b2b5f17daf3eee32a}} 
+\#define {\bfseries BMI160\+\_\+\+CONF\+\_\+\+ADDR}~UINT8\+\_\+C(0x6A)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abd1d65272c66409ecb76971f5d3cbbd8}\label{bmi160__defs_8h_abd1d65272c66409ecb76971f5d3cbbd8}} 
+\#define {\bfseries BMI160\+\_\+\+IF\+\_\+\+CONF\+\_\+\+ADDR}~UINT8\+\_\+C(0x6B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5fc3dfba87c210ecaa5c042d04616dc4}\label{bmi160__defs_8h_a5fc3dfba87c210ecaa5c042d04616dc4}} 
+\#define {\bfseries BMI160\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+ADDR}~UINT8\+\_\+C(0x6D)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a67a2ea34a18832c3ac80ee0ec6c379cb}\label{bmi160__defs_8h_a67a2ea34a18832c3ac80ee0ec6c379cb}} 
+\#define {\bfseries BMI160\+\_\+\+OFFSET\+\_\+\+ADDR}~UINT8\+\_\+C(0x71)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a70357590da5d5cd100988f41bad3a00f}\label{bmi160__defs_8h_a70357590da5d5cd100988f41bad3a00f}} 
+\#define {\bfseries BMI160\+\_\+\+OFFSET\+\_\+\+CONF\+\_\+\+ADDR}~UINT8\+\_\+C(0x77)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2e2c35e9beb1c0d5dd71d98a66e26928}\label{bmi160__defs_8h_a2e2c35e9beb1c0d5dd71d98a66e26928}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+STEP\+\_\+\+CNT\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x78)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_adb18f18d95fc277718ae0a7edadd64f9}\label{bmi160__defs_8h_adb18f18d95fc277718ae0a7edadd64f9}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+STEP\+\_\+\+CONFIG\+\_\+0\+\_\+\+ADDR}~UINT8\+\_\+C(0x7A)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abb32f04d439df5f992fcffd673e6f47d}\label{bmi160__defs_8h_abb32f04d439df5f992fcffd673e6f47d}} 
+\#define {\bfseries BMI160\+\_\+\+INT\+\_\+\+STEP\+\_\+\+CONFIG\+\_\+1\+\_\+\+ADDR}~UINT8\+\_\+C(0x7B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac8ef3d7ac342adf5b427f50be510a281}\label{bmi160__defs_8h_ac8ef3d7ac342adf5b427f50be510a281}} 
+\#define {\bfseries BMI160\+\_\+\+COMMAND\+\_\+\+REG\+\_\+\+ADDR}~UINT8\+\_\+C(0x7E)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aed4465b2eefcec1977f42a487925400a}\label{bmi160__defs_8h_aed4465b2eefcec1977f42a487925400a}} 
+\#define {\bfseries BMI160\+\_\+\+SPI\+\_\+\+COMM\+\_\+\+TEST\+\_\+\+ADDR}~UINT8\+\_\+C(0x7F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1334216e9908f5c65a81383f173071a7}\label{bmi160__defs_8h_a1334216e9908f5c65a81383f173071a7}} 
+\#define {\bfseries BMI160\+\_\+\+INTL\+\_\+\+PULLUP\+\_\+\+CONF\+\_\+\+ADDR}~UINT8\+\_\+C(0x85)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_af4d2a350d6b0ff213f6a1e12ea19287c}{BMI160\+\_\+\+OK}}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a113e992fe6d1e68380c1f4cdbec5c961}\label{bmi160__defs_8h_a113e992fe6d1e68380c1f4cdbec5c961}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+NULL\+\_\+\+PTR}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae20060354d6542724f6b11a6fb4bd29b}\label{bmi160__defs_8h_ae20060354d6542724f6b11a6fb4bd29b}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+COM\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a883f533fdaa5e1e4f37796b5d923da33}\label{bmi160__defs_8h_a883f533fdaa5e1e4f37796b5d923da33}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+DEV\+\_\+\+NOT\+\_\+\+FOUND}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/3)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4b5ffb703bf75a959fa4c2f0c197e264}\label{bmi160__defs_8h_a4b5ffb703bf75a959fa4c2f0c197e264}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/4)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a157b4c051c96abc47a345410c9ff402b}\label{bmi160__defs_8h_a157b4c051c96abc47a345410c9ff402b}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+INVALID\+\_\+\+INPUT}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/5)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8366966576c2b8248940ba50c56209fc}\label{bmi160__defs_8h_a8366966576c2b8248940ba50c56209fc}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+\+BW\+\_\+\+INVALID}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4fb1469d92ac2c6cb9da08f517e30c73}\label{bmi160__defs_8h_a4fb1469d92ac2c6cb9da08f517e30c73}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+GYRO\+\_\+\+ODR\+\_\+\+BW\+\_\+\+INVALID}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/7)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a71385737fd45f28608c51dc195f12f31}\label{bmi160__defs_8h_a71385737fd45f28608c51dc195f12f31}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+LWP\+\_\+\+PRE\+\_\+\+FLTR\+\_\+\+INT\+\_\+\+INVALID}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/8)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1fa9e9d76f45d0286fd9870f1342f84c}\label{bmi160__defs_8h_a1fa9e9d76f45d0286fd9870f1342f84c}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+LWP\+\_\+\+PRE\+\_\+\+FLTR\+\_\+\+INVALID}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/9)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a05c9e7624f6ae14a0310a1088c48359a}\label{bmi160__defs_8h_a05c9e7624f6ae14a0310a1088c48359a}} 
+\#define {\bfseries BMI160\+\_\+\+E\+\_\+\+AUX\+\_\+\+NOT\+\_\+\+FOUND}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ada907e2071786abaa4687391a9f9b202}\label{bmi160__defs_8h_ada907e2071786abaa4687391a9f9b202}} 
+\#define {\bfseries BMI160\+\_\+\+FOC\+\_\+\+FAILURE}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/11)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a79e39743b3891dde4f1289c011d0def6}\label{bmi160__defs_8h_a79e39743b3891dde4f1289c011d0def6}} 
+\#define {\bfseries BMI160\+\_\+\+READ\+\_\+\+WRITE\+\_\+\+LENGHT\+\_\+\+INVALID}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/12)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ API warning codes}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af389fd440ae4b3ba35047def57de34f4}\label{bmi160__defs_8h_af389fd440ae4b3ba35047def57de34f4}} 
+\#define {\bfseries BMI160\+\_\+\+W\+\_\+\+GYRO\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abd4a05d414a54500ad5266fe2f825a98}\label{bmi160__defs_8h_abd4a05d414a54500ad5266fe2f825a98}} 
+\#define {\bfseries BMI160\+\_\+\+W\+\_\+\+ACCEl\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+FAIL}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(2)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a9b1ce1ee2b5e13f3962d88d5ee22ed4a}{BMI160\+\_\+\+CHIP\+\_\+\+ID}}~UINT8\+\_\+C(0x\+D1)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_abf3bc19b4d686da1c0b0cb1adfb517ad}{BMI160\+\_\+\+SOFT\+\_\+\+RESET\+\_\+\+CMD}}~UINT8\+\_\+C(0xb6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2a7dcb0fa7135cf0f5db7f711a3fb742}\label{bmi160__defs_8h_a2a7dcb0fa7135cf0f5db7f711a3fb742}} 
+\#define {\bfseries BMI160\+\_\+\+SOFT\+\_\+\+RESET\+\_\+\+DELAY\+\_\+\+MS}~UINT8\+\_\+C(1)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a2dd866883d73204ecb2476f8aaedb80c}{BMI160\+\_\+\+START\+\_\+\+FOC\+\_\+\+CMD}}~UINT8\+\_\+C(0x03)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a66af790beb1a220233110f17a0033212}{BMI160\+\_\+\+NVM\+\_\+\+BACKUP\+\_\+\+EN}}~UINT8\+\_\+C(0x\+A0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a275141adc118918204503ef513c57bc0}\label{bmi160__defs_8h_a275141adc118918204503ef513c57bc0}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+DELAY\+\_\+\+MS}~UINT8\+\_\+C(5)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6422eea8bb0df53c5a5ab65aae653dc2}\label{bmi160__defs_8h_a6422eea8bb0df53c5a5ab65aae653dc2}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+DELAY\+\_\+\+MS}~UINT8\+\_\+C(81)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa60956b8aa1f1c6257d4ae3ebaf6a92c}\label{bmi160__defs_8h_aa60956b8aa1f1c6257d4ae3ebaf6a92c}} 
+\#define {\bfseries BMI160\+\_\+\+ONE\+\_\+\+MS\+\_\+\+DELAY}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2d6aa8ea8d5c4e9539c2f52d59ee6aba}\label{bmi160__defs_8h_a2d6aa8ea8d5c4e9539c2f52d59ee6aba}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+COM\+\_\+\+DELAY}~UINT8\+\_\+C(10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aac8f9d719c002e1bca63ebf05a2b9e0a}\label{bmi160__defs_8h_aac8f9d719c002e1bca63ebf05a2b9e0a}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+DELAY}~UINT8\+\_\+C(20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a000a8a5cf52bc9cfa0c6ff7196cdbbfb}\label{bmi160__defs_8h_a000a8a5cf52bc9cfa0c6ff7196cdbbfb}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+DELAY}~UINT8\+\_\+C(50)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a7dabbfd6478deaaa67cd39dc0134d73d}{BMI160\+\_\+\+ACCEL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+CONFIG}}~UINT8\+\_\+C(0x2C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a49a59bf963d6dc2834cd911cc112dec3}\label{bmi160__defs_8h_a49a59bf963d6dc2834cd911cc112dec3}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+POSITIVE\+\_\+\+EN}~UINT8\+\_\+C(0x0D)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a79308c5a2702e94a31e12f618ccb51f5}\label{bmi160__defs_8h_a79308c5a2702e94a31e12f618ccb51f5}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+NEGATIVE\+\_\+\+EN}~UINT8\+\_\+C(0x09)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af92c97439f4e92c9be7069c5b0524937}\label{bmi160__defs_8h_af92c97439f4e92c9be7069c5b0524937}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+LIMIT}~UINT16\+\_\+C(8192)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_ac5789aefd9bd556464f243d3c9dc8959}{BMI160\+\_\+\+ACCEL\+\_\+\+NORMAL\+\_\+\+MODE}}~UINT8\+\_\+C(0x11)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8b92c4101ce7ca73cdcf83be416019a3}\label{bmi160__defs_8h_a8b92c4101ce7ca73cdcf83be416019a3}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+LOWPOWER\+\_\+\+MODE}~UINT8\+\_\+C(0x12)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a71dd09cd210dcc4b660e3435749fad99}\label{bmi160__defs_8h_a71dd09cd210dcc4b660e3435749fad99}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+SUSPEND\+\_\+\+MODE}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae41bb163674e4cc5a5caadc2e057d3f3}\label{bmi160__defs_8h_ae41bb163674e4cc5a5caadc2e057d3f3}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+SUSPEND\+\_\+\+MODE}~UINT8\+\_\+C(0x14)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0ad5e737dd53327427fb254f84c18ae9}\label{bmi160__defs_8h_a0ad5e737dd53327427fb254f84c18ae9}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+NORMAL\+\_\+\+MODE}~UINT8\+\_\+C(0x15)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4435acbf0622b270c509be93f21933a0}\label{bmi160__defs_8h_a4435acbf0622b270c509be93f21933a0}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FASTSTARTUP\+\_\+\+MODE}~UINT8\+\_\+C(0x17)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac313170330573cb026435da4b9d43cb6}\label{bmi160__defs_8h_ac313170330573cb026435da4b9d43cb6}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+SUSPEND\+\_\+\+MODE}~UINT8\+\_\+C(0x18)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0707a87349d0fee68fbc608558531aa7}\label{bmi160__defs_8h_a0707a87349d0fee68fbc608558531aa7}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+NORMAL\+\_\+\+MODE}~UINT8\+\_\+C(0x19)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aac7c4384ba992b56bf170460f08a3036}\label{bmi160__defs_8h_aac7c4384ba992b56bf170460f08a3036}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+LOWPOWER\+\_\+\+MODE}~UINT8\+\_\+C(0x1A)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a0fa496d6c7feff6f6bbb0484dc11f55a}{BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+2G}}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abb3a6e215f13d9b1854a030c9685db45}\label{bmi160__defs_8h_abb3a6e215f13d9b1854a030c9685db45}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+4G}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ace352c7d76a5d628e8e65f834372593f}\label{bmi160__defs_8h_ace352c7d76a5d628e8e65f834372593f}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+8G}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae7d6e1ca3977b7b813af2122444a76cb}\label{bmi160__defs_8h_ae7d6e1ca3977b7b813af2122444a76cb}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+16G}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a734000c5e8373b843fdb9b9571fe338d}\label{bmi160__defs_8h_a734000c5e8373b843fdb9b9571fe338d}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+2000\+\_\+\+DPS}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a79266333f8642d1a6a885f94eef4318e}\label{bmi160__defs_8h_a79266333f8642d1a6a885f94eef4318e}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+1000\+\_\+\+DPS}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a30dbe4bd43e174df5da7e4381f398463}\label{bmi160__defs_8h_a30dbe4bd43e174df5da7e4381f398463}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+500\+\_\+\+DPS}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1c1f35ae975d659f8ce8b78f646bf832}\label{bmi160__defs_8h_a1c1f35ae975d659f8ce8b78f646bf832}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+250\+\_\+\+DPS}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aedc4abdc5a6ade1c57cac4a4793f8f9c}\label{bmi160__defs_8h_aedc4abdc5a6ade1c57cac4a4793f8f9c}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+125\+\_\+\+DPS}~UINT8\+\_\+C(0x04)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a04ea5f6829dc4bad24322cc23b39e532}{BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+OSR4\+\_\+\+AVG1}}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6096b5dd9c2f551bb43be95e13ef54d6}\label{bmi160__defs_8h_a6096b5dd9c2f551bb43be95e13ef54d6}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+OSR2\+\_\+\+AVG2}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7ee87d077b27fcdc245bf07048ee4ff6}\label{bmi160__defs_8h_a7ee87d077b27fcdc245bf07048ee4ff6}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+NORMAL\+\_\+\+AVG4}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_adeae27cbbfe8254c8aecb83868115c93}\label{bmi160__defs_8h_adeae27cbbfe8254c8aecb83868115c93}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+RES\+\_\+\+AVG8}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a167b0246c0a2fbdae74131af85c001a8}\label{bmi160__defs_8h_a167b0246c0a2fbdae74131af85c001a8}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+RES\+\_\+\+AVG16}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2cc94dacdb046a8fd1ebe9ea6b018875}\label{bmi160__defs_8h_a2cc94dacdb046a8fd1ebe9ea6b018875}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+RES\+\_\+\+AVG32}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6f712c97b5f425a4c570e43462fcc832}\label{bmi160__defs_8h_a6f712c97b5f425a4c570e43462fcc832}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+RES\+\_\+\+AVG64}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a70186c9ea1f147b2926f9e0afd811ae6}\label{bmi160__defs_8h_a70186c9ea1f147b2926f9e0afd811ae6}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+RES\+\_\+\+AVG128}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4a834728fd117f6f6edabab0095efa81}\label{bmi160__defs_8h_a4a834728fd117f6f6edabab0095efa81}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+BW\+\_\+\+OSR4\+\_\+\+MODE}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3fcf4265191036116dda593b609b65eb}\label{bmi160__defs_8h_a3fcf4265191036116dda593b609b65eb}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+BW\+\_\+\+OSR2\+\_\+\+MODE}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4028fa7fa0a355397a08fa60ad837c7e}\label{bmi160__defs_8h_a4028fa7fa0a355397a08fa60ad837c7e}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+BW\+\_\+\+NORMAL\+\_\+\+MODE}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a54f7a91bb4a5fd061e1d739687e61ca6}\label{bmi160__defs_8h_a54f7a91bb4a5fd061e1d739687e61ca6}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+\+RESERVED}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a54b65f05fc54c0182ba463040b4ac22b}\label{bmi160__defs_8h_a54b65f05fc54c0182ba463040b4ac22b}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+0\+\_\+78\+HZ}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a941890b8e55fd52933eaf89e17c38c01}\label{bmi160__defs_8h_a941890b8e55fd52933eaf89e17c38c01}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+1\+\_\+56\+HZ}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a31023fb022ed76e4dd36820c21e87136}\label{bmi160__defs_8h_a31023fb022ed76e4dd36820c21e87136}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+3\+\_\+12\+HZ}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad67677e1a3506f57188c5c00ac870dee}\label{bmi160__defs_8h_ad67677e1a3506f57188c5c00ac870dee}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+6\+\_\+25\+HZ}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac61e3dcb315e93307d3a1f063ca06eda}\label{bmi160__defs_8h_ac61e3dcb315e93307d3a1f063ca06eda}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+12\+\_\+5\+HZ}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2cde60c5b12d3e68b53c9daa6d949458}\label{bmi160__defs_8h_a2cde60c5b12d3e68b53c9daa6d949458}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+25\+HZ}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a990233eb7690761310eb521d540617c3}\label{bmi160__defs_8h_a990233eb7690761310eb521d540617c3}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+50\+HZ}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a34b26d39cd5ec5850b498d472aa08ac2}\label{bmi160__defs_8h_a34b26d39cd5ec5850b498d472aa08ac2}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+100\+HZ}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aca88b82152826e96c302caa316e13356}\label{bmi160__defs_8h_aca88b82152826e96c302caa316e13356}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+200\+HZ}~UINT8\+\_\+C(0x09)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a96c669ade0e522069eff2faed9df4d85}\label{bmi160__defs_8h_a96c669ade0e522069eff2faed9df4d85}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+400\+HZ}~UINT8\+\_\+C(0x0A)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abc3cf45201e36aae177f473754d9525e}\label{bmi160__defs_8h_abc3cf45201e36aae177f473754d9525e}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+800\+HZ}~UINT8\+\_\+C(0x0B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a069eabf954946fd31623671a53b2f122}\label{bmi160__defs_8h_a069eabf954946fd31623671a53b2f122}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+1600\+HZ}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a46b08e69846e2f57c5d5da587a4c6679}\label{bmi160__defs_8h_a46b08e69846e2f57c5d5da587a4c6679}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+\+RESERVED0}~UINT8\+\_\+C(0x0D)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a48124de5225ab6b32def3a1a6c221989}\label{bmi160__defs_8h_a48124de5225ab6b32def3a1a6c221989}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+\+RESERVED1}~UINT8\+\_\+C(0x0E)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac2dee8b01cf5ccb72c071ede8ca46a3d}\label{bmi160__defs_8h_ac2dee8b01cf5ccb72c071ede8ca46a3d}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+\+RESERVED2}~UINT8\+\_\+C(0x0F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_afa2cabd8a081b387e74d44835dfc00fa}\label{bmi160__defs_8h_afa2cabd8a081b387e74d44835dfc00fa}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+\+RESERVED}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8ecd2a2cf76830ee800a8cf3df6b8015}\label{bmi160__defs_8h_a8ecd2a2cf76830ee800a8cf3df6b8015}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+25\+HZ}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a461c9ee1ff2950d6fad7525c95c68dca}\label{bmi160__defs_8h_a461c9ee1ff2950d6fad7525c95c68dca}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+50\+HZ}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0d744555983a1fdac0b2cf86fdc269bb}\label{bmi160__defs_8h_a0d744555983a1fdac0b2cf86fdc269bb}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+100\+HZ}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abb8fe68672255147587e67c8c697440c}\label{bmi160__defs_8h_abb8fe68672255147587e67c8c697440c}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+200\+HZ}~UINT8\+\_\+C(0x09)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aabbb115500afe521b9fa2ceb96a12b39}\label{bmi160__defs_8h_aabbb115500afe521b9fa2ceb96a12b39}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+400\+HZ}~UINT8\+\_\+C(0x0A)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a281ccb250c43a83e144f5263f89af0a5}\label{bmi160__defs_8h_a281ccb250c43a83e144f5263f89af0a5}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+800\+HZ}~UINT8\+\_\+C(0x0B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7f8e828d30bdb04372aad6553d24ec5f}\label{bmi160__defs_8h_a7f8e828d30bdb04372aad6553d24ec5f}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+1600\+HZ}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_afe414a2ff3c8be986b301bcc0abe1bb0}\label{bmi160__defs_8h_afe414a2ff3c8be986b301bcc0abe1bb0}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+3200\+HZ}~UINT8\+\_\+C(0x0D)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a72e36404fc2c0b25dfeb72f5560b2ad8}\label{bmi160__defs_8h_a72e36404fc2c0b25dfeb72f5560b2ad8}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+\+RESERVED}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af41502d7eeb37b270d47d5b11ae56d80}\label{bmi160__defs_8h_af41502d7eeb37b270d47d5b11ae56d80}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+0\+\_\+78\+HZ}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a20c277c0f056a8752720da526ad79f67}\label{bmi160__defs_8h_a20c277c0f056a8752720da526ad79f67}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+1\+\_\+56\+HZ}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_af929e9d2bcc83a8b1cc3df37357037ef}\label{bmi160__defs_8h_af929e9d2bcc83a8b1cc3df37357037ef}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+3\+\_\+12\+HZ}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0681076c22fd0a9a639405d8bdfc01fb}\label{bmi160__defs_8h_a0681076c22fd0a9a639405d8bdfc01fb}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+6\+\_\+25\+HZ}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2d9271d686328a6891b4201fc91ecb49}\label{bmi160__defs_8h_a2d9271d686328a6891b4201fc91ecb49}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+12\+\_\+5\+HZ}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abf889693d4efafd634337b0fa9f16253}\label{bmi160__defs_8h_abf889693d4efafd634337b0fa9f16253}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+25\+HZ}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a59feecef159d66f7d5e0bcfbd757addf}\label{bmi160__defs_8h_a59feecef159d66f7d5e0bcfbd757addf}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+50\+HZ}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3ae3892662467322d8ba9351e0018317}\label{bmi160__defs_8h_a3ae3892662467322d8ba9351e0018317}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+100\+HZ}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_afe5dfab6a9b951489b5473e3da61fc9f}\label{bmi160__defs_8h_afe5dfab6a9b951489b5473e3da61fc9f}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+200\+HZ}~UINT8\+\_\+C(0x09)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9b5fe869787a0db042de4a2566c44094}\label{bmi160__defs_8h_a9b5fe869787a0db042de4a2566c44094}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+400\+HZ}~UINT8\+\_\+C(0x0A)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1835cbbc574c439915747ec6b1054197}\label{bmi160__defs_8h_a1835cbbc574c439915747ec6b1054197}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+ODR\+\_\+800\+HZ}~UINT8\+\_\+C(0x0B)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a540b6f3402745084559fe8ab5e49358d}\label{bmi160__defs_8h_a540b6f3402745084559fe8ab5e49358d}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ODR\+\_\+\+MAX}~UINT8\+\_\+C(15)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6b3c388426f200137f1e25a1f941842f}\label{bmi160__defs_8h_a6b3c388426f200137f1e25a1f941842f}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+MAX}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7f92c16d53a6cb6beea0fb950a768882}\label{bmi160__defs_8h_a7f92c16d53a6cb6beea0fb950a768882}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+\+MAX}~UINT8\+\_\+C(12)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a05da7bc4f9c675a9b8a169ff4b249fc5}\label{bmi160__defs_8h_a05da7bc4f9c675a9b8a169ff4b249fc5}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ODR\+\_\+\+MAX}~UINT8\+\_\+C(13)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a146572f10533fef6b87a2fce673e6516}\label{bmi160__defs_8h_a146572f10533fef6b87a2fce673e6516}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+BW\+\_\+\+MAX}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a27350c09b79e96129757f9d9a6b0d98d}\label{bmi160__defs_8h_a27350c09b79e96129757f9d9a6b0d98d}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+RANGE\+\_\+\+MAX}~UINT8\+\_\+C(4)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_ae2319ad46cc6f9a25cc7c78eb07dbe89}{BMI160\+\_\+\+FIFO\+\_\+\+TIME\+\_\+\+ENABLE}}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a74c9c603c47ec1718234cf19f09a9d5a}\label{bmi160__defs_8h_a74c9c603c47ec1718234cf19f09a9d5a}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT2\+\_\+\+ENABLE}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ab63dfa023d6037bfe67bf1a93d23444b}\label{bmi160__defs_8h_ab63dfa023d6037bfe67bf1a93d23444b}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT1\+\_\+\+ENABLE}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aff5df1f7b7d0f191a40b7ec1df3149c2}\label{bmi160__defs_8h_aff5df1f7b7d0f191a40b7ec1df3149c2}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+ENABLE}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac4e3d459bf26abaa9d60e81696e98476}\label{bmi160__defs_8h_ac4e3d459bf26abaa9d60e81696e98476}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+M\+\_\+\+ENABLE}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aff37091ce48abe9f406346c640c07c12}\label{bmi160__defs_8h_aff37091ce48abe9f406346c640c07c12}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+A\+\_\+\+ENABLE}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aaf3cf8dd9b1555a5ca8aecaaa482826d}\label{bmi160__defs_8h_aaf3cf8dd9b1555a5ca8aecaaa482826d}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+M\+\_\+\+A\+\_\+\+ENABLE}~UINT8\+\_\+C(0x60)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ada4e3f778a106fbd06971a9ced0a835c}\label{bmi160__defs_8h_ada4e3f778a106fbd06971a9ced0a835c}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+G\+\_\+\+ENABLE}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0a9ff2dc768d7e1666f6e84b77c5ab33}\label{bmi160__defs_8h_a0a9ff2dc768d7e1666f6e84b77c5ab33}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+M\+\_\+\+G\+\_\+\+ENABLE}~UINT8\+\_\+C(0x\+A0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac45863acb594eea33497d012fd891c6d}\label{bmi160__defs_8h_ac45863acb594eea33497d012fd891c6d}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+G\+\_\+\+A\+\_\+\+ENABLE}~UINT8\+\_\+C(0x\+C0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0f00c65ce17c7e613467bb9d60e159f6}\label{bmi160__defs_8h_a0f00c65ce17c7e613467bb9d60e159f6}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+M\+\_\+\+G\+\_\+\+A\+\_\+\+ENABLE}~UINT8\+\_\+C(0x\+E0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9ee8bd2cd66417682d96a7d12ff83555}\label{bmi160__defs_8h_a9ee8bd2cd66417682d96a7d12ff83555}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+BYTES\+\_\+\+OVERREAD}~UINT8\+\_\+C(25)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a689a5e28a9983db9788d52dd7090000a}\label{bmi160__defs_8h_a689a5e28a9983db9788d52dd7090000a}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+G\+\_\+\+LENGTH}~UINT8\+\_\+C(6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4029e2af8a0dff0e3526360f4867823c}\label{bmi160__defs_8h_a4029e2af8a0dff0e3526360f4867823c}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+A\+\_\+\+LENGTH}~UINT8\+\_\+C(6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6bbbc1fe8c4466ac972b0d7fbc5e2449}\label{bmi160__defs_8h_a6bbbc1fe8c4466ac972b0d7fbc5e2449}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+M\+\_\+\+LENGTH}~UINT8\+\_\+C(8)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad2abcf8ac64d5b5dcfb0e5da48c8757e}\label{bmi160__defs_8h_ad2abcf8ac64d5b5dcfb0e5da48c8757e}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+GA\+\_\+\+LENGTH}~UINT8\+\_\+C(12)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a76669848a65bbe1719de77f28cc25848}\label{bmi160__defs_8h_a76669848a65bbe1719de77f28cc25848}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+MA\+\_\+\+LENGTH}~UINT8\+\_\+C(14)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a79889269378645db60f1e4c867566415}\label{bmi160__defs_8h_a79889269378645db60f1e4c867566415}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+MG\+\_\+\+LENGTH}~UINT8\+\_\+C(14)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a93fb696c9a7675a88e2552be2e912de4}\label{bmi160__defs_8h_a93fb696c9a7675a88e2552be2e912de4}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+MGA\+\_\+\+LENGTH}~UINT8\+\_\+C(20)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a275ef7c14d144f6ec01b3bc0fae3903f}{BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+SKIP\+\_\+\+FRAME}}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0e3ed9aa1d91b0b39cdfbd051f536ae9}\label{bmi160__defs_8h_a0e3ed9aa1d91b0b39cdfbd051f536ae9}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+SENSOR\+\_\+\+TIME}~UINT8\+\_\+C(0x44)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a381cf18e6311cb5fd776898d25292fe7}\label{bmi160__defs_8h_a381cf18e6311cb5fd776898d25292fe7}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+INPUT\+\_\+\+CONFIG}~UINT8\+\_\+C(0x48)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4a387507756d1516bc47d2e75b3bd8c2}\label{bmi160__defs_8h_a4a387507756d1516bc47d2e75b3bd8c2}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+OVER\+\_\+\+READ}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4307d175d5a9cf70de4d45aa571e0967}\label{bmi160__defs_8h_a4307d175d5a9cf70de4d45aa571e0967}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+A}~UINT8\+\_\+C(0x84)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a76478bd0568baeca74e96d94559616a5}\label{bmi160__defs_8h_a76478bd0568baeca74e96d94559616a5}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+G}~UINT8\+\_\+C(0x88)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a836bbe3f4fa1cc66d2cdc63599e457ba}\label{bmi160__defs_8h_a836bbe3f4fa1cc66d2cdc63599e457ba}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+G\+\_\+A}~UINT8\+\_\+C(0x8C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a12f1abc25c721fa5818967798cab3abb}\label{bmi160__defs_8h_a12f1abc25c721fa5818967798cab3abb}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+M}~UINT8\+\_\+C(0x90)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3629a99b7b1d164166c2e6706a8a5d87}\label{bmi160__defs_8h_a3629a99b7b1d164166c2e6706a8a5d87}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+M\+\_\+A}~UINT8\+\_\+C(0x94)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aacdd3add0e856b8236dfce2b63a2045a}\label{bmi160__defs_8h_aacdd3add0e856b8236dfce2b63a2045a}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+M\+\_\+G}~UINT8\+\_\+C(0x98)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a98733cef1fc46ed5bd2cecd959f9b453}\label{bmi160__defs_8h_a98733cef1fc46ed5bd2cecd959f9b453}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+M\+\_\+\+G\+\_\+A}~UINT8\+\_\+C(0x9C)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a812b7d5c6a7422870132ccd0ffc93dc7}{BMI160\+\_\+\+SENSOR\+\_\+\+TIME\+\_\+\+LENGTH}}~UINT8\+\_\+C(3)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a4f329587cf4c651dd2c1a3e142ecf3f2}{BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ZERO}}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abe307d1ce8f7a6c24813334e298faf10}\label{bmi160__defs_8h_abe307d1ce8f7a6c24813334e298faf10}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ONE}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6740e8922e5725ee2821a7e74f1c7988}\label{bmi160__defs_8h_a6740e8922e5725ee2821a7e74f1c7988}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+TWO}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5c8afc8487a8d232ffe31d4146e0bc7c}\label{bmi160__defs_8h_a5c8afc8487a8d232ffe31d4146e0bc7c}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+THREE}~UINT8\+\_\+C(0x30)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a497aac4b0c622493d007de088e33865d}\label{bmi160__defs_8h_a497aac4b0c622493d007de088e33865d}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+FOUR}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a73c29074e92d1a499256662fbbdd5ee1}\label{bmi160__defs_8h_a73c29074e92d1a499256662fbbdd5ee1}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+FIVE}~UINT8\+\_\+C(0x50)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6d5d6c8ba67cb94a6d722213cf9b2125}\label{bmi160__defs_8h_a6d5d6c8ba67cb94a6d722213cf9b2125}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+SIX}~UINT8\+\_\+C(0x60)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abc5a6ea9c91ed5e20772d7e86e2e4e7a}\label{bmi160__defs_8h_abc5a6ea9c91ed5e20772d7e86e2e4e7a}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+SEVEN}~UINT8\+\_\+C(0x70)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7ff8587c0f4258bd35372fe785286a5e}\label{bmi160__defs_8h_a7ff8587c0f4258bd35372fe785286a5e}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ZERO}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9f93831e43b796ed14876e785273e892}\label{bmi160__defs_8h_a9f93831e43b796ed14876e785273e892}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ONE}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a392e1bc6ea925fd61c6d157a11c825f3}\label{bmi160__defs_8h_a392e1bc6ea925fd61c6d157a11c825f3}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+TWO}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a24e6602c26036980711f83b6acc7248f}\label{bmi160__defs_8h_a24e6602c26036980711f83b6acc7248f}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+THREE}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5dc1c4df330ef88099d2e059df977d15}\label{bmi160__defs_8h_a5dc1c4df330ef88099d2e059df977d15}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+FOUR}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a64b4fb2fa051774be778ae35e16cdcd9}\label{bmi160__defs_8h_a64b4fb2fa051774be778ae35e16cdcd9}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+FIVE}~UINT8\+\_\+C(0x05)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5282afda869526c3fd06340596dd708b}\label{bmi160__defs_8h_a5282afda869526c3fd06340596dd708b}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+SIX}~UINT8\+\_\+C(0x06)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a757652443221e9d23bd66ff9cb507cfa}\label{bmi160__defs_8h_a757652443221e9d23bd66ff9cb507cfa}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+SEVEN}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8599371c1d67a5be8cb4b70918ef81ca}\label{bmi160__defs_8h_a8599371c1d67a5be8cb4b70918ef81ca}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+FILT\+\_\+\+EN}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7e2bb2061f9d1f789cb97969a0287004}\label{bmi160__defs_8h_a7e2bb2061f9d1f789cb97969a0287004}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+FILT\+\_\+\+EN}~UINT8\+\_\+C(0x08)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_af231127278abf7cebfb5be7b7bdd457c}{FIFO\+\_\+\+CONFIG\+\_\+\+MSB\+\_\+\+CHECK}}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_abb4b11b255e8e00c97239c6503ef0fe0}\label{bmi160__defs_8h_abb4b11b255e8e00c97239c6503ef0fe0}} 
+\#define {\bfseries FIFO\+\_\+\+CONFIG\+\_\+\+LSB\+\_\+\+CHECK}~UINT8\+\_\+C(0x00)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_abcc4a3d04e5d244b5b29ca5a524f72f8}{BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+DISABLED}}~UINT8\+\_\+C(0x00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7561419240a5b71e397e1e87401f7b20}\label{bmi160__defs_8h_a7561419240a5b71e397e1e87401f7b20}} 
+\#define {\bfseries BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+POSITIVE\+\_\+G}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3ee0c3b4fc0e9907862ffceb867ea1ad}\label{bmi160__defs_8h_a3ee0c3b4fc0e9907862ffceb867ea1ad}} 
+\#define {\bfseries BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+NEGATIVE\+\_\+G}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a427f531e1e359ef75a71eb4fc7d7cdad}\label{bmi160__defs_8h_a427f531e1e359ef75a71eb4fc7d7cdad}} 
+\#define {\bfseries BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+0G}~UINT8\+\_\+C(0x03)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_addc2d6f47c3ce1728b7f5ff4659c9936}{BMI160\+\_\+\+SENSOR\+\_\+\+TIME\+\_\+\+LSB\+\_\+\+BYTE}}~UINT8\+\_\+C(0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3ed9cc2d244a36a750ba5c33ec1fdad5}\label{bmi160__defs_8h_a3ed9cc2d244a36a750ba5c33ec1fdad5}} 
+\#define {\bfseries BMI160\+\_\+\+SENSOR\+\_\+\+TIME\+\_\+\+XLSB\+\_\+\+BYTE}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a792dc6b9673ea3b579879b941b20f746}\label{bmi160__defs_8h_a792dc6b9673ea3b579879b941b20f746}} 
+\#define {\bfseries BMI160\+\_\+\+SENSOR\+\_\+\+TIME\+\_\+\+MSB\+\_\+\+BYTE}~UINT8\+\_\+C(2)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a7669dd8a0828db96bc2f15268615cbea}{BMI160\+\_\+\+SPI\+\_\+\+INTF}}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7ff0a301765134f306d18dd96f910e65}\label{bmi160__defs_8h_a7ff0a301765134f306d18dd96f910e65}} 
+\#define {\bfseries BMI160\+\_\+\+I2\+C\+\_\+\+INTF}~UINT8\+\_\+C(0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2932257a429d7ebc78ee6229b1c5eebe}\label{bmi160__defs_8h_a2932257a429d7ebc78ee6229b1c5eebe}} 
+\#define {\bfseries BMI160\+\_\+\+SPI\+\_\+\+RD\+\_\+\+MASK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6cdb31ae685fa7fe527d0bd84e78d303}\label{bmi160__defs_8h_a6cdb31ae685fa7fe527d0bd84e78d303}} 
+\#define {\bfseries BMI160\+\_\+\+SPI\+\_\+\+WR\+\_\+\+MASK}~UINT8\+\_\+C(0x7F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a78cc1644392413daad7b3ddb452079d0}\label{bmi160__defs_8h_a78cc1644392413daad7b3ddb452079d0}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+SEL}~UINT8\+\_\+C(0x01)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a45a3194d3c6acc1c113372f1dfe2119f}\label{bmi160__defs_8h_a45a3194d3c6acc1c113372f1dfe2119f}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+SEL}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a276783ee54eacafb67b4be5fd840804f}\label{bmi160__defs_8h_a276783ee54eacafb67b4be5fd840804f}} 
+\#define {\bfseries BMI160\+\_\+\+TIME\+\_\+\+SEL}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a233cc16d1d36d1a19c4cb1ecdf63abc3}\label{bmi160__defs_8h_a233cc16d1d36d1a19c4cb1ecdf63abc3}} 
+\#define {\bfseries BMI160\+\_\+\+SEN\+\_\+\+SEL\+\_\+\+MASK}~UINT8\+\_\+C(0x07)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a00bb827e01a1f1728808310d7ff8cf8c}\label{bmi160__defs_8h_a00bb827e01a1f1728808310d7ff8cf8c}} 
+\#define {\bfseries BMI160\+\_\+\+ERR\+\_\+\+REG\+\_\+\+MASK}~UINT8\+\_\+C(0x0F)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0ffc3965496ffae10dad1cbad804fcec}\label{bmi160__defs_8h_a0ffc3965496ffae10dad1cbad804fcec}} 
+\#define {\bfseries BMI160\+\_\+\+I2\+C\+\_\+\+ADDR}~UINT8\+\_\+C(0x69)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8abfd873a0e1afc8d6351afa8e00b6b8}\label{bmi160__defs_8h_a8abfd873a0e1afc8d6351afa8e00b6b8}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+BMM150\+\_\+\+I2\+C\+\_\+\+ADDR}~UINT8\+\_\+C(0x13)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a2a7dfe0a3449f8de94492db6c5c583d4}{BMI160\+\_\+\+ONE}}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa20dcdb86226d5516525e106d179c42b}\label{bmi160__defs_8h_aa20dcdb86226d5516525e106d179c42b}} 
+\#define {\bfseries BMI160\+\_\+\+TWO}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2a063064dabc43df2d7695522ffe660e}\label{bmi160__defs_8h_a2a063064dabc43df2d7695522ffe660e}} 
+\#define {\bfseries BMI160\+\_\+\+THREE}~UINT8\+\_\+C(3)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a50373801ef8008d6fcca87e230956686}\label{bmi160__defs_8h_a50373801ef8008d6fcca87e230956686}} 
+\#define {\bfseries BMI160\+\_\+\+FOUR}~UINT8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5fbaed14bb677eb5ae23e0aad2f966d9}\label{bmi160__defs_8h_a5fbaed14bb677eb5ae23e0aad2f966d9}} 
+\#define {\bfseries BMI160\+\_\+\+FIVE}~UINT8\+\_\+C(5)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a13b4ae52315e2ba9d7d95e63fd95133b}{BMI160\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+MARGIN}}~UINT8\+\_\+C(16)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_acec4be0cc0e26afdb3e9cca966c7ce6f}{BMI160\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+VALUE}}~UINT8\+\_\+C(0x\+B0)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a1cb70ce7c488c25243ca3931d011f18b}{BMI160\+\_\+\+ACCEL\+\_\+\+MIN\+\_\+\+OFFSET}}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/128)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa8eb5175d8e1e5a5f61283775406b63a}\label{bmi160__defs_8h_aa8eb5175d8e1e5a5f61283775406b63a}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+MAX\+\_\+\+OFFSET}~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(127)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_ade59f84da0584739322abd88bd54f48f}{BMI160\+\_\+\+GYRO\+\_\+\+MIN\+\_\+\+OFFSET}}~INT16\+\_\+C(-\/512)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_afe392094fe2446275417f2abe77a2ed4}\label{bmi160__defs_8h_afe392094fe2446275417f2abe77a2ed4}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+MAX\+\_\+\+OFFSET}~INT16\+\_\+C(511)
+\item 
+\#define \mbox{\hyperlink{bmi160__defs_8h_a24eae9eaaced47fc02adb6b4394c994a}{BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+POS}}~UINT8\+\_\+C(5)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a4df2ae7c5859a274d386dc871fa20fae}\label{bmi160__defs_8h_a4df2ae7c5859a274d386dc871fa20fae}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2fcb9a31f1cf0fdd03318b0b9a2aa0a7}\label{bmi160__defs_8h_a2fcb9a31f1cf0fdd03318b0b9a2aa0a7}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+WTM\+\_\+\+INT\+\_\+\+POS}~UINT8\+\_\+C(6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad0fffd324a2c44033870b04b74393b5a}\label{bmi160__defs_8h_ad0fffd324a2c44033870b04b74393b5a}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+WTM\+\_\+\+INT\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa8f3467cc644f5694d41de1e1f95740d}\label{bmi160__defs_8h_aa8f3467cc644f5694d41de1e1f95740d}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+PIN1\+\_\+\+POS}~UINT8\+\_\+C(5)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a32834ed3b62bc8d9482cf840f71eaf52}\label{bmi160__defs_8h_a32834ed3b62bc8d9482cf840f71eaf52}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+PIN1\+\_\+\+MSK}~UINT8\+\_\+C(0x20)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_adc689cf578ba61a3dcd2802059621373}\label{bmi160__defs_8h_adc689cf578ba61a3dcd2802059621373}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+PIN2\+\_\+\+POS}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6b95c8c255257954b1e781537a74dd9f}\label{bmi160__defs_8h_a6b95c8c255257954b1e781537a74dd9f}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+PIN2\+\_\+\+MSK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a725c66240cf475e325942db76bae919f}\label{bmi160__defs_8h_a725c66240cf475e325942db76bae919f}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+WTM\+\_\+\+INT\+\_\+\+PIN1\+\_\+\+POS}~UINT8\+\_\+C(6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a580a9309278a6129a6cd2ce97c66af7c}\label{bmi160__defs_8h_a580a9309278a6129a6cd2ce97c66af7c}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+WTM\+\_\+\+INT\+\_\+\+PIN1\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a80ace5848f843602f28a44494af12d94}\label{bmi160__defs_8h_a80ace5848f843602f28a44494af12d94}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+WTM\+\_\+\+INT\+\_\+\+PIN2\+\_\+\+POS}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6b4e4e1250cd55454d79f568879be744}\label{bmi160__defs_8h_a6b4e4e1250cd55454d79f568879be744}} 
+\#define {\bfseries BMI160\+\_\+\+FIFO\+\_\+\+WTM\+\_\+\+INT\+\_\+\+PIN2\+\_\+\+MSK}~UINT8\+\_\+C(0x04)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a03ea983bcbdb1d9937f542376e288160}\label{bmi160__defs_8h_a03ea983bcbdb1d9937f542376e288160}} 
+\#define {\bfseries BMI160\+\_\+\+MANUAL\+\_\+\+MODE\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(7)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac8125ab286ffebc871df5ed2fadbc515}\label{bmi160__defs_8h_ac8125ab286ffebc871df5ed2fadbc515}} 
+\#define {\bfseries BMI160\+\_\+\+MANUAL\+\_\+\+MODE\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_add93de5c3722f6410e51ea2a013237fc}\label{bmi160__defs_8h_add93de5c3722f6410e51ea2a013237fc}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+READ\+\_\+\+BURST\+\_\+\+POS}~UINT8\+\_\+C(0)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad051d28abd8d4a88a0f242877c1e35a0}\label{bmi160__defs_8h_ad051d28abd8d4a88a0f242877c1e35a0}} 
+\#define {\bfseries BMI160\+\_\+\+AUX\+\_\+\+READ\+\_\+\+BURST\+\_\+\+MSK}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ad9bcf2d017c50dbce0d4382d7efc7970}\label{bmi160__defs_8h_ad9bcf2d017c50dbce0d4382d7efc7970}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+POS}~UINT8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa1e0f637272c0d414db28f080a682579}\label{bmi160__defs_8h_aa1e0f637272c0d414db28f080a682579}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+MSK}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a387bbc13f7e60b72108879ee69f949ee}\label{bmi160__defs_8h_a387bbc13f7e60b72108879ee69f949ee}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+STATUS\+\_\+\+POS}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac11c0780ac78d0a7928ab5c03848ee11}\label{bmi160__defs_8h_ac11c0780ac78d0a7928ab5c03848ee11}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+STATUS\+\_\+\+MSK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a1d88c38054d203078ed80e1f0c16f2df}\label{bmi160__defs_8h_a1d88c38054d203078ed80e1f0c16f2df}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FOC\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8df6df72a09d1980e8bbeb1aff03f25f}\label{bmi160__defs_8h_a8df6df72a09d1980e8bbeb1aff03f25f}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+FOC\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a27f8da3e91c71d99b7ad73012e26644d}\label{bmi160__defs_8h_a27f8da3e91c71d99b7ad73012e26644d}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FOC\+\_\+\+X\+\_\+\+CONF\+\_\+\+POS}~UINT8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aebc1fe1880f7c7a2b4026cdbc3d429ea}\label{bmi160__defs_8h_aebc1fe1880f7c7a2b4026cdbc3d429ea}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FOC\+\_\+\+X\+\_\+\+CONF\+\_\+\+MSK}~UINT8\+\_\+C(0x30)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9c7293d4302f78339f98fb4b422afe78}\label{bmi160__defs_8h_a9c7293d4302f78339f98fb4b422afe78}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FOC\+\_\+\+Y\+\_\+\+CONF\+\_\+\+POS}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa9bc96b94b6ed260b379a095d8ba17ac}\label{bmi160__defs_8h_aa9bc96b94b6ed260b379a095d8ba17ac}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FOC\+\_\+\+Y\+\_\+\+CONF\+\_\+\+MSK}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a115fc8d8894a6083ceff5e3bb32977bf}\label{bmi160__defs_8h_a115fc8d8894a6083ceff5e3bb32977bf}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+FOC\+\_\+\+Z\+\_\+\+CONF\+\_\+\+MSK}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ab5a0093d018ea8effc4b2c4e907224d0}\label{bmi160__defs_8h_ab5a0093d018ea8effc4b2c4e907224d0}} 
+\#define {\bfseries BMI160\+\_\+\+FOC\+\_\+\+STATUS\+\_\+\+POS}~UINT8\+\_\+C(3)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a79ebad8ebd7912dc7824f528ba275e24}\label{bmi160__defs_8h_a79ebad8ebd7912dc7824f528ba275e24}} 
+\#define {\bfseries BMI160\+\_\+\+FOC\+\_\+\+STATUS\+\_\+\+MSK}~UINT8\+\_\+C(0x08)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8f08cc9710bb5f1ab48ce7de274323cd}\label{bmi160__defs_8h_a8f08cc9710bb5f1ab48ce7de274323cd}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+X\+\_\+\+MSK}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5112558942ef44634935214cff4ea1db}\label{bmi160__defs_8h_a5112558942ef44634935214cff4ea1db}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+Y\+\_\+\+POS}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a0559afaa1994d587ef2aca2536edbce4}\label{bmi160__defs_8h_a0559afaa1994d587ef2aca2536edbce4}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+Y\+\_\+\+MSK}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a10daef0914722ed1a754e97b5ff12d4e}\label{bmi160__defs_8h_a10daef0914722ed1a754e97b5ff12d4e}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+Z\+\_\+\+POS}~UINT8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a82bf2db4e0a3d3c5a670c09b94bce2fd}\label{bmi160__defs_8h_a82bf2db4e0a3d3c5a670c09b94bce2fd}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+Z\+\_\+\+MSK}~UINT8\+\_\+C(0x30)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_adeadc580ccde4cb23a689144c0cd2234}\label{bmi160__defs_8h_adeadc580ccde4cb23a689144c0cd2234}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(7)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a95f59f5723b5c40ca7345cf21c3602e8}\label{bmi160__defs_8h_a95f59f5723b5c40ca7345cf21c3602e8}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x80)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a001db816ec8f1f0d5bc4f0df10e50ebd}\label{bmi160__defs_8h_a001db816ec8f1f0d5bc4f0df10e50ebd}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+OFFSET\+\_\+\+EN\+\_\+\+POS}~UINT8\+\_\+C(6)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a3d1c26e7e9c211d9b7fb5f06752d5f28}\label{bmi160__defs_8h_a3d1c26e7e9c211d9b7fb5f06752d5f28}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+OFFSET\+\_\+\+EN\+\_\+\+MSK}~UINT8\+\_\+C(0x40)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a6ac9d80ea31a05f8e0a5d42b5dfe400f}\label{bmi160__defs_8h_a6ac9d80ea31a05f8e0a5d42b5dfe400f}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+POS}~UINT16\+\_\+C(8)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a87835724f4837a600733fb0fd97c50f5}\label{bmi160__defs_8h_a87835724f4837a600733fb0fd97c50f5}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+OFFSET\+\_\+\+MSK}~UINT16\+\_\+C(0x0300)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae20562f3e6cfd2007c8abe289aec34d1}\label{bmi160__defs_8h_ae20562f3e6cfd2007c8abe289aec34d1}} 
+\#define {\bfseries BMI160\+\_\+\+NVM\+\_\+\+UPDATE\+\_\+\+POS}~UINT8\+\_\+C(1)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a38e17802b208ac0a044cabe6743a4d0d}\label{bmi160__defs_8h_a38e17802b208ac0a044cabe6743a4d0d}} 
+\#define {\bfseries BMI160\+\_\+\+NVM\+\_\+\+UPDATE\+\_\+\+MSK}~UINT8\+\_\+C(0x02)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae5bb88d446693af76c0c95f90c97deaa}\label{bmi160__defs_8h_ae5bb88d446693af76c0c95f90c97deaa}} 
+\#define {\bfseries BMI160\+\_\+\+NVM\+\_\+\+STATUS\+\_\+\+POS}~UINT8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa85cb3c445a54b88f6e1b79925ba0efd}\label{bmi160__defs_8h_aa85cb3c445a54b88f6e1b79925ba0efd}} 
+\#define {\bfseries BMI160\+\_\+\+NVM\+\_\+\+STATUS\+\_\+\+MSK}~UINT8\+\_\+C(0x10)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_acf0d1209c24a6e31c92aaa50f3b140e3}\label{bmi160__defs_8h_acf0d1209c24a6e31c92aaa50f3b140e3}} 
+\#define {\bfseries BMI160\+\_\+\+MAG\+\_\+\+POWER\+\_\+\+MODE\+\_\+\+MSK}~UINT8\+\_\+C(0x03)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a5ad84275b8a5e70a03b79321ef9660fc}\label{bmi160__defs_8h_a5ad84275b8a5e70a03b79321ef9660fc}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+POWER\+\_\+\+MODE\+\_\+\+MSK}~UINT8\+\_\+C(0x30)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a9260468e22febc6f591dd890fc4cc64b}\label{bmi160__defs_8h_a9260468e22febc6f591dd890fc4cc64b}} 
+\#define {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+POWER\+\_\+\+MODE\+\_\+\+POS}~UINT8\+\_\+C(4)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae1a70802e3c7f22ce0c513921e3b8378}\label{bmi160__defs_8h_ae1a70802e3c7f22ce0c513921e3b8378}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+POWER\+\_\+\+MODE\+\_\+\+MSK}~UINT8\+\_\+C(0x0C)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a318c6b398af4cc6ef5a790e518d97356}\label{bmi160__defs_8h_a318c6b398af4cc6ef5a790e518d97356}} 
+\#define {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+POWER\+\_\+\+MODE\+\_\+\+POS}~UINT8\+\_\+C(2)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae8ae164dcb0653a569eea40417548772}\label{bmi160__defs_8h_ae8ae164dcb0653a569eea40417548772}} 
+\#define {\bfseries BMI160\+\_\+\+GET\+\_\+\+BITS}(regvar,  bitname)~    ((regvar \& bitname\#\#\+\_\+\+MSK) $>$$>$ bitname\#\#\+\_\+\+POS)
+\item 
+\#define {\bfseries BMI160\+\_\+\+SET\+\_\+\+BITS}(regvar,  bitname,  val)
+\item 
+\#define {\bfseries BMI160\+\_\+\+SET\+\_\+\+BITS\+\_\+\+POS\+\_\+0}(reg\+\_\+data,  bitname,  data)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a2abc7483ef16bd7adc4585275c1429a9}\label{bmi160__defs_8h_a2abc7483ef16bd7adc4585275c1429a9}} 
+\#define {\bfseries BMI160\+\_\+\+GET\+\_\+\+BITS\+\_\+\+POS\+\_\+0}(reg\+\_\+data,  bitname)~(reg\+\_\+data \& (bitname\#\#\+\_\+\+MSK))
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{UTILITY MACROS}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa2d6b68a0783dd06a3e7a05e4209a1a0}\label{bmi160__defs_8h_aa2d6b68a0783dd06a3e7a05e4209a1a0}} 
+\#define {\bfseries BMI160\+\_\+\+SET\+\_\+\+LOW\+\_\+\+BYTE}~UINT16\+\_\+C(0x00\+FF)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aa7fd7fd5d8181ecfdf51850a267815ba}\label{bmi160__defs_8h_aa7fd7fd5d8181ecfdf51850a267815ba}} 
+\#define {\bfseries BMI160\+\_\+\+SET\+\_\+\+HIGH\+\_\+\+BYTE}~UINT16\+\_\+C(0x\+FF00)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_aae8a5b8dcc17f8f6ed1e5a1337e69231}\label{bmi160__defs_8h_aae8a5b8dcc17f8f6ed1e5a1337e69231}} 
+\#define {\bfseries BMI160\+\_\+\+GET\+\_\+\+LSB}(var)~(uint8\+\_\+t)(var \& BMI160\+\_\+\+SET\+\_\+\+LOW\+\_\+\+BYTE)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ac696cc2b17043f8260272dab9871a4ce}\label{bmi160__defs_8h_ac696cc2b17043f8260272dab9871a4ce}} 
+\#define {\bfseries BMI160\+\_\+\+GET\+\_\+\+MSB}(var)~(uint8\+\_\+t)((var \& BMI160\+\_\+\+SET\+\_\+\+HIGH\+\_\+\+BYTE) $>$$>$ 8)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}\label{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}} 
+enum \mbox{\hyperlink{bmi160__defs_8h_a7b3af5add146ac219291062b4259ac98}{bmi160\+\_\+int\+\_\+status\+\_\+sel}} \{ \newline
+{\bfseries BMI160\+\_\+\+INT\+\_\+\+STATUS\+\_\+0} = 1
+, {\bfseries BMI160\+\_\+\+INT\+\_\+\+STATUS\+\_\+1} = 2
+, {\bfseries BMI160\+\_\+\+INT\+\_\+\+STATUS\+\_\+2} = 4
+, {\bfseries BMI160\+\_\+\+INT\+\_\+\+STATUS\+\_\+3} = 8
+, \newline
+{\bfseries BMI160\+\_\+\+INT\+\_\+\+STATUS\+\_\+\+ALL} = 15
+ \}
+\begin{DoxyCompactList}\small\item\em bmi160 interrupt status selection enum. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a93437d4f3e46ba2cac7d4d8eacc65183}\label{bmi160__defs_8h_a93437d4f3e46ba2cac7d4d8eacc65183}} 
+enum \mbox{\hyperlink{bmi160__defs_8h_a93437d4f3e46ba2cac7d4d8eacc65183}{bmi160\+\_\+select\+\_\+sensor}} \{ {\bfseries BMI160\+\_\+\+ACCEL\+\_\+\+ONLY} = 1
+, {\bfseries BMI160\+\_\+\+GYRO\+\_\+\+ONLY}
+, {\bfseries BMI160\+\_\+\+BOTH\+\_\+\+ACCEL\+\_\+\+AND\+\_\+\+GYRO}
+ \}
+\begin{DoxyCompactList}\small\item\em bmi160 sensor select structure \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{bmi160__defs_8h_a2848f0e52d05d3d523358c2fe43a33b6}{bmi160\+\_\+step\+\_\+detect\+\_\+mode}} \{ {\bfseries BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+NORMAL}
+, {\bfseries BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+SENSITIVE}
+, {\bfseries BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+ROBUST}
+, \mbox{\hyperlink{bmi160__defs_8h_a2848f0e52d05d3d523358c2fe43a33b6af96600f7fbb44542607196899eddbcc6}{BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+USER\+\_\+\+DEFINE}}
+ \}
+\begin{DoxyCompactList}\small\item\em bmi160 sensor step detector mode structure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bmi160__defs_8h_ae821dbe5173f715ffc59be21aba26087}\label{bmi160__defs_8h_ae821dbe5173f715ffc59be21aba26087}} 
+enum \mbox{\hyperlink{bmi160__defs_8h_ae821dbe5173f715ffc59be21aba26087}{bm160\+\_\+aux\+\_\+read\+\_\+len}} \{ {\bfseries BMI160\+\_\+\+AUX\+\_\+\+READ\+\_\+\+LEN\+\_\+0}
+, {\bfseries BMI160\+\_\+\+AUX\+\_\+\+READ\+\_\+\+LEN\+\_\+1}
+, {\bfseries BMI160\+\_\+\+AUX\+\_\+\+READ\+\_\+\+LEN\+\_\+2}
+, {\bfseries BMI160\+\_\+\+AUX\+\_\+\+READ\+\_\+\+LEN\+\_\+3}
+ \}
+\begin{DoxyCompactList}\small\item\em enum for auxiliary burst read selection \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afa}{bmi160\+\_\+int\+\_\+channel}} \{ \mbox{\hyperlink{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaa350db53ae7e4c7d7d3854f0230396147}{BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+\+NONE}}
+, \mbox{\hyperlink{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaa45614e948eb70a2a4d0375266ef0de33}{BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+1}}
+, \mbox{\hyperlink{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaae1521fccc177a295612b5a1c97ebc409}{BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+2}}
+, \mbox{\hyperlink{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaabdb2809ae1d1115b6d7be7d29a744d9d}{BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+\+BOTH}}
+ \}
+\begin{DoxyCompactList}\small\item\em bmi160 interrupt channel selection structure \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021a}{bmi160\+\_\+int\+\_\+types}} \{ \newline
+\mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aab3700084b19073ec53bd02d876a07273}{BMI160\+\_\+\+ACC\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa676fb1392e8b7c398e7d9515fbd70be7}{BMI160\+\_\+\+ACC\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa7cd643b99a7f78488f82ae28e5ad811d}{BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaf5da0bf8ad69e643104716388a58e7b6}{BMI160\+\_\+\+ACC\+\_\+\+DOUBLE\+\_\+\+TAP\+\_\+\+INT}}
+, \newline
+\mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa136e5a900a22932b50008225bfbc83d7}{BMI160\+\_\+\+ACC\+\_\+\+SINGLE\+\_\+\+TAP\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaa224b883922ec12015e20179bffdac5d}{BMI160\+\_\+\+ACC\+\_\+\+ORIENT\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa0f3f2a6915d62bf642d7e47cdd04eb90}{BMI160\+\_\+\+ACC\+\_\+\+FLAT\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa25357b173668b22988d69741eccfe3fb}{BMI160\+\_\+\+ACC\+\_\+\+HIGH\+\_\+\+G\+\_\+\+INT}}
+, \newline
+\mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa4285a1eba8b1a967b190f51d5786eb84}{BMI160\+\_\+\+ACC\+\_\+\+LOW\+\_\+\+G\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa82d10bc83133052bb8c8eeb509d46db3}{BMI160\+\_\+\+ACC\+\_\+\+SLOW\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa1273300cbbc9e760e08d8a266938ac23}{BMI160\+\_\+\+ACC\+\_\+\+GYRO\+\_\+\+DATA\+\_\+\+RDY\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa772fc9366fc535bf296854cd88a653e3}{BMI160\+\_\+\+ACC\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT}}
+, \newline
+\mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa32f283c5d234384dd4a78fbbfbd63254}{BMI160\+\_\+\+ACC\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+WATERMARK\+\_\+\+INT}}
+, \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaf578c806fe420229e92ccda8d6030b0b}{BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT\+\_\+\+PIN}}
+ \}
+\item 
+enum \mbox{\hyperlink{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8e}{bmi160\+\_\+any\+\_\+sig\+\_\+motion\+\_\+active\+\_\+interrupt\+\_\+state}} \{ \mbox{\hyperlink{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea4a04c57eec795c815ef09d00418229ba}{BMI160\+\_\+\+BOTH\+\_\+\+ANY\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+DISABLED}} = -\/1
+, \mbox{\hyperlink{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea185fcfb2edfd42c149f25cc4508c0f2f}{BMI160\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+ENABLED}}
+, \mbox{\hyperlink{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea3f88fdeb0f8089c07a5f358bd8869419}{BMI160\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+ENABLED}}
+ \}
+\begin{DoxyCompactList}\small\item\em bmi160 active state of any \& sig motion interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a7bceb3d83ec32e919d6044ea7649c7cf}\label{bmi160__defs_8h_a7bceb3d83ec32e919d6044ea7649c7cf}} 
+typedef int8\+\_\+t($\ast$ {\bfseries bmi160\+\_\+com\+\_\+fptr\+\_\+t}) (uint8\+\_\+t dev\+\_\+addr, uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$data, uint16\+\_\+t len)
+\item 
+\mbox{\Hypertarget{bmi160__defs_8h_a8c1a06c19b61a7ce61e319781f4b4fa5}\label{bmi160__defs_8h_a8c1a06c19b61a7ce61e319781f4b4fa5}} 
+typedef void($\ast$ {\bfseries bmi160\+\_\+delay\+\_\+fptr\+\_\+t}) (uint32\+\_\+t period)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copyright (c) 2020 Bosch Sensortec GmbH. All rights reserved.
+
+BSD-\/3-\/\+Clause
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+
+
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}\+AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+\begin{DoxyDate}{Date}
+10/01/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+3.\+8.\+1 
+\end{DoxyVersion}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bmi160__defs_8h_aa1d1af9b8669b3d2b959d9a974a19cac}\label{bmi160__defs_8h_aa1d1af9b8669b3d2b959d9a974a19cac}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACCEL\_BW\_MASK@{BMI160\_ACCEL\_BW\_MASK}}
+\index{BMI160\_ACCEL\_BW\_MASK@{BMI160\_ACCEL\_BW\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ACCEL\_BW\_MASK}{BMI160\_ACCEL\_BW\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+MASK~UINT8\+\_\+C(0x70)}
+
+Mask definitions \mbox{\Hypertarget{bmi160__defs_8h_a04ea5f6829dc4bad24322cc23b39e532}\label{bmi160__defs_8h_a04ea5f6829dc4bad24322cc23b39e532}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACCEL\_BW\_OSR4\_AVG1@{BMI160\_ACCEL\_BW\_OSR4\_AVG1}}
+\index{BMI160\_ACCEL\_BW\_OSR4\_AVG1@{BMI160\_ACCEL\_BW\_OSR4\_AVG1}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ACCEL\_BW\_OSR4\_AVG1}{BMI160\_ACCEL\_BW\_OSR4\_AVG1}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ACCEL\+\_\+\+BW\+\_\+\+OSR4\+\_\+\+AVG1~UINT8\+\_\+C(0x00)}
+
+Bandwidth settings \mbox{\Hypertarget{bmi160__defs_8h_a4f329587cf4c651dd2c1a3e142ecf3f2}\label{bmi160__defs_8h_a4f329587cf4c651dd2c1a3e142ecf3f2}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACCEL\_FIFO\_DOWN\_ZERO@{BMI160\_ACCEL\_FIFO\_DOWN\_ZERO}}
+\index{BMI160\_ACCEL\_FIFO\_DOWN\_ZERO@{BMI160\_ACCEL\_FIFO\_DOWN\_ZERO}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ACCEL\_FIFO\_DOWN\_ZERO}{BMI160\_ACCEL\_FIFO\_DOWN\_ZERO}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ACCEL\+\_\+\+FIFO\+\_\+\+DOWN\+\_\+\+ZERO~UINT8\+\_\+C(0x00)}
+
+FIFO DOWN selection \mbox{\Hypertarget{bmi160__defs_8h_a1cb70ce7c488c25243ca3931d011f18b}\label{bmi160__defs_8h_a1cb70ce7c488c25243ca3931d011f18b}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACCEL\_MIN\_OFFSET@{BMI160\_ACCEL\_MIN\_OFFSET}}
+\index{BMI160\_ACCEL\_MIN\_OFFSET@{BMI160\_ACCEL\_MIN\_OFFSET}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ACCEL\_MIN\_OFFSET}{BMI160\_ACCEL\_MIN\_OFFSET}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ACCEL\+\_\+\+MIN\+\_\+\+OFFSET~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(-\/128)}
+
+BMI160 offset values for xyz axes of accel \mbox{\Hypertarget{bmi160__defs_8h_ac5789aefd9bd556464f243d3c9dc8959}\label{bmi160__defs_8h_ac5789aefd9bd556464f243d3c9dc8959}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACCEL\_NORMAL\_MODE@{BMI160\_ACCEL\_NORMAL\_MODE}}
+\index{BMI160\_ACCEL\_NORMAL\_MODE@{BMI160\_ACCEL\_NORMAL\_MODE}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ACCEL\_NORMAL\_MODE}{BMI160\_ACCEL\_NORMAL\_MODE}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ACCEL\+\_\+\+NORMAL\+\_\+\+MODE~UINT8\+\_\+C(0x11)}
+
+Power mode settings \mbox{\Hypertarget{bmi160__defs_8h_a0fa496d6c7feff6f6bbb0484dc11f55a}\label{bmi160__defs_8h_a0fa496d6c7feff6f6bbb0484dc11f55a}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACCEL\_RANGE\_2G@{BMI160\_ACCEL\_RANGE\_2G}}
+\index{BMI160\_ACCEL\_RANGE\_2G@{BMI160\_ACCEL\_RANGE\_2G}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ACCEL\_RANGE\_2G}{BMI160\_ACCEL\_RANGE\_2G}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ACCEL\+\_\+\+RANGE\+\_\+2G~UINT8\+\_\+C(0x03)}
+
+Range settings \mbox{\Hypertarget{bmi160__defs_8h_a7dabbfd6478deaaa67cd39dc0134d73d}\label{bmi160__defs_8h_a7dabbfd6478deaaa67cd39dc0134d73d}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACCEL\_SELF\_TEST\_CONFIG@{BMI160\_ACCEL\_SELF\_TEST\_CONFIG}}
+\index{BMI160\_ACCEL\_SELF\_TEST\_CONFIG@{BMI160\_ACCEL\_SELF\_TEST\_CONFIG}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ACCEL\_SELF\_TEST\_CONFIG}{BMI160\_ACCEL\_SELF\_TEST\_CONFIG}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ACCEL\+\_\+\+SELF\+\_\+\+TEST\+\_\+\+CONFIG~UINT8\+\_\+C(0x2C)}
+
+Self test configurations \mbox{\Hypertarget{bmi160__defs_8h_afac91bc86f7f95c4d5a71f434ae351d4}\label{bmi160__defs_8h_afac91bc86f7f95c4d5a71f434ae351d4}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ANY\_MOTION\_X\_INT\_EN\_MASK@{BMI160\_ANY\_MOTION\_X\_INT\_EN\_MASK}}
+\index{BMI160\_ANY\_MOTION\_X\_INT\_EN\_MASK@{BMI160\_ANY\_MOTION\_X\_INT\_EN\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ANY\_MOTION\_X\_INT\_EN\_MASK}{BMI160\_ANY\_MOTION\_X\_INT\_EN\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+X\+\_\+\+INT\+\_\+\+EN\+\_\+\+MASK~UINT8\+\_\+C(0x01)}
+
+Mask definitions for INT\+\_\+\+EN registers \mbox{\Hypertarget{bmi160__defs_8h_a1b51914c4aa2a54b65fdebd397a51e55}\label{bmi160__defs_8h_a1b51914c4aa2a54b65fdebd397a51e55}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_AUX\_PMU\_SUSPEND@{BMI160\_AUX\_PMU\_SUSPEND}}
+\index{BMI160\_AUX\_PMU\_SUSPEND@{BMI160\_AUX\_PMU\_SUSPEND}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_AUX\_PMU\_SUSPEND}{BMI160\_AUX\_PMU\_SUSPEND}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+AUX\+\_\+\+PMU\+\_\+\+SUSPEND~UINT8\+\_\+C(0x00)}
+
+PMU status Macros \mbox{\Hypertarget{bmi160__defs_8h_a9b1ce1ee2b5e13f3962d88d5ee22ed4a}\label{bmi160__defs_8h_a9b1ce1ee2b5e13f3962d88d5ee22ed4a}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_CHIP\_ID@{BMI160\_CHIP\_ID}}
+\index{BMI160\_CHIP\_ID@{BMI160\_CHIP\_ID}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_CHIP\_ID}{BMI160\_CHIP\_ID}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+CHIP\+\_\+\+ID~UINT8\+\_\+C(0x\+D1)}
+
+BMI160 unique chip identifier \mbox{\Hypertarget{bmi160__defs_8h_a7816523ed378ea390f06548a0945da8c}\label{bmi160__defs_8h_a7816523ed378ea390f06548a0945da8c}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_CHIP\_ID\_ADDR@{BMI160\_CHIP\_ID\_ADDR}}
+\index{BMI160\_CHIP\_ID\_ADDR@{BMI160\_CHIP\_ID\_ADDR}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_CHIP\_ID\_ADDR}{BMI160\_CHIP\_ID\_ADDR}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+CHIP\+\_\+\+ID\+\_\+\+ADDR~UINT8\+\_\+C(0x00)}
+
+BMI160 Register map \mbox{\Hypertarget{bmi160__defs_8h_a2117fe81ed0cba84d58c7b0ee2890026}\label{bmi160__defs_8h_a2117fe81ed0cba84d58c7b0ee2890026}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ENABLE@{BMI160\_ENABLE}}
+\index{BMI160\_ENABLE@{BMI160\_ENABLE}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ENABLE}{BMI160\_ENABLE}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ENABLE~UINT8\+\_\+C(0x01)}
+
+Enable/disable bit value \mbox{\Hypertarget{bmi160__defs_8h_a6730f066cb2cba414f99e124bc3f3243}\label{bmi160__defs_8h_a6730f066cb2cba414f99e124bc3f3243}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_BYTE\_COUNTER\_MASK@{BMI160\_FIFO\_BYTE\_COUNTER\_MASK}}
+\index{BMI160\_FIFO\_BYTE\_COUNTER\_MASK@{BMI160\_FIFO\_BYTE\_COUNTER\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_BYTE\_COUNTER\_MASK}{BMI160\_FIFO\_BYTE\_COUNTER\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+BYTE\+\_\+\+COUNTER\+\_\+\+MASK~UINT8\+\_\+C(0x07)}
+
+Fifo byte counter mask definitions \mbox{\Hypertarget{bmi160__defs_8h_acec4be0cc0e26afdb3e9cca966c7ce6f}\label{bmi160__defs_8h_acec4be0cc0e26afdb3e9cca966c7ce6f}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_FLUSH\_VALUE@{BMI160\_FIFO\_FLUSH\_VALUE}}
+\index{BMI160\_FIFO\_FLUSH\_VALUE@{BMI160\_FIFO\_FLUSH\_VALUE}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_FLUSH\_VALUE}{BMI160\_FIFO\_FLUSH\_VALUE}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+VALUE~UINT8\+\_\+C(0x\+B0)}
+
+BMI160 fifo flush Command \mbox{\Hypertarget{bmi160__defs_8h_a24eae9eaaced47fc02adb6b4394c994a}\label{bmi160__defs_8h_a24eae9eaaced47fc02adb6b4394c994a}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_FULL\_INT\_POS@{BMI160\_FIFO\_FULL\_INT\_POS}}
+\index{BMI160\_FIFO\_FULL\_INT\_POS@{BMI160\_FIFO\_FULL\_INT\_POS}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_FULL\_INT\_POS}{BMI160\_FIFO\_FULL\_INT\_POS}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT\+\_\+\+POS~UINT8\+\_\+C(5)}
+
+BMI160 fifo full interrupt position and mask \mbox{\Hypertarget{bmi160__defs_8h_a7a083688109d0de391990b1ab7e37a9f}\label{bmi160__defs_8h_a7a083688109d0de391990b1ab7e37a9f}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_GYRO@{BMI160\_FIFO\_GYRO}}
+\index{BMI160\_FIFO\_GYRO@{BMI160\_FIFO\_GYRO}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_GYRO}{BMI160\_FIFO\_GYRO}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+GYRO~UINT8\+\_\+C(0x80)}
+
+Mask definitions for FIFO\+\_\+\+CONFIG register \mbox{\Hypertarget{bmi160__defs_8h_a275ef7c14d144f6ec01b3bc0fae3903f}\label{bmi160__defs_8h_a275ef7c14d144f6ec01b3bc0fae3903f}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_HEAD\_SKIP\_FRAME@{BMI160\_FIFO\_HEAD\_SKIP\_FRAME}}
+\index{BMI160\_FIFO\_HEAD\_SKIP\_FRAME@{BMI160\_FIFO\_HEAD\_SKIP\_FRAME}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_HEAD\_SKIP\_FRAME}{BMI160\_FIFO\_HEAD\_SKIP\_FRAME}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+HEAD\+\_\+\+SKIP\+\_\+\+FRAME~UINT8\+\_\+C(0x40)}
+
+FIFO Header Data definitions \mbox{\Hypertarget{bmi160__defs_8h_a13b4ae52315e2ba9d7d95e63fd95133b}\label{bmi160__defs_8h_a13b4ae52315e2ba9d7d95e63fd95133b}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_LEVEL\_MARGIN@{BMI160\_FIFO\_LEVEL\_MARGIN}}
+\index{BMI160\_FIFO\_LEVEL\_MARGIN@{BMI160\_FIFO\_LEVEL\_MARGIN}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_LEVEL\_MARGIN}{BMI160\_FIFO\_LEVEL\_MARGIN}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+MARGIN~UINT8\+\_\+C(16)}
+
+BMI160 fifo level Margin \mbox{\Hypertarget{bmi160__defs_8h_a31dbd18b2682ec44c9b7a4816305a4c0}\label{bmi160__defs_8h_a31dbd18b2682ec44c9b7a4816305a4c0}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_TAG\_INTR\_MASK@{BMI160\_FIFO\_TAG\_INTR\_MASK}}
+\index{BMI160\_FIFO\_TAG\_INTR\_MASK@{BMI160\_FIFO\_TAG\_INTR\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_TAG\_INTR\_MASK}{BMI160\_FIFO\_TAG\_INTR\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INTR\+\_\+\+MASK~UINT8\+\_\+C(0x\+FC)}
+
+Mask definition for FIFO Header Data Tag \mbox{\Hypertarget{bmi160__defs_8h_ae2319ad46cc6f9a25cc7c78eb07dbe89}\label{bmi160__defs_8h_ae2319ad46cc6f9a25cc7c78eb07dbe89}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_TIME\_ENABLE@{BMI160\_FIFO\_TIME\_ENABLE}}
+\index{BMI160\_FIFO\_TIME\_ENABLE@{BMI160\_FIFO\_TIME\_ENABLE}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FIFO\_TIME\_ENABLE}{BMI160\_FIFO\_TIME\_ENABLE}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FIFO\+\_\+\+TIME\+\_\+\+ENABLE~UINT8\+\_\+C(0x02)}
+
+FIFO\+\_\+\+CONFIG Definitions \mbox{\Hypertarget{bmi160__defs_8h_a02ab73cdf38aa5db5c13bcd78a77c5c3}\label{bmi160__defs_8h_a02ab73cdf38aa5db5c13bcd78a77c5c3}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FLAT\_THRES\_MASK@{BMI160\_FLAT\_THRES\_MASK}}
+\index{BMI160\_FLAT\_THRES\_MASK@{BMI160\_FLAT\_THRES\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FLAT\_THRES\_MASK}{BMI160\_FLAT\_THRES\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FLAT\+\_\+\+THRES\+\_\+\+MASK~UINT8\+\_\+C(0x3F)}
+
+Mask definitions for INT\+\_\+\+FLAT register \mbox{\Hypertarget{bmi160__defs_8h_abcc4a3d04e5d244b5b29ca5a524f72f8}\label{bmi160__defs_8h_abcc4a3d04e5d244b5b29ca5a524f72f8}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FOC\_ACCEL\_DISABLED@{BMI160\_FOC\_ACCEL\_DISABLED}}
+\index{BMI160\_FOC\_ACCEL\_DISABLED@{BMI160\_FOC\_ACCEL\_DISABLED}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_FOC\_ACCEL\_DISABLED}{BMI160\_FOC\_ACCEL\_DISABLED}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+FOC\+\_\+\+ACCEL\+\_\+\+DISABLED~UINT8\+\_\+C(0x00)}
+
+BMI160 accel FOC configurations \mbox{\Hypertarget{bmi160__defs_8h_ade59f84da0584739322abd88bd54f48f}\label{bmi160__defs_8h_ade59f84da0584739322abd88bd54f48f}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_GYRO\_MIN\_OFFSET@{BMI160\_GYRO\_MIN\_OFFSET}}
+\index{BMI160\_GYRO\_MIN\_OFFSET@{BMI160\_GYRO\_MIN\_OFFSET}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_GYRO\_MIN\_OFFSET}{BMI160\_GYRO\_MIN\_OFFSET}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+GYRO\+\_\+\+MIN\+\_\+\+OFFSET~INT16\+\_\+C(-\/512)}
+
+BMI160 offset values for xyz axes of gyro \mbox{\Hypertarget{bmi160__defs_8h_ae8861d03a0a3ade0fcae71bb3cd8a8e8}\label{bmi160__defs_8h_ae8861d03a0a3ade0fcae71bb3cd8a8e8}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_INT1\_EDGE\_CTRL\_MASK@{BMI160\_INT1\_EDGE\_CTRL\_MASK}}
+\index{BMI160\_INT1\_EDGE\_CTRL\_MASK@{BMI160\_INT1\_EDGE\_CTRL\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_INT1\_EDGE\_CTRL\_MASK}{BMI160\_INT1\_EDGE\_CTRL\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+INT1\+\_\+\+EDGE\+\_\+\+CTRL\+\_\+\+MASK~UINT8\+\_\+C(0x01)}
+
+Mask definitions for INT\+\_\+\+OUT\+\_\+\+CTRL register \mbox{\Hypertarget{bmi160__defs_8h_a51544fcc449956ca90583712c925476a}\label{bmi160__defs_8h_a51544fcc449956ca90583712c925476a}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_INT1\_INPUT\_EN\_MASK@{BMI160\_INT1\_INPUT\_EN\_MASK}}
+\index{BMI160\_INT1\_INPUT\_EN\_MASK@{BMI160\_INT1\_INPUT\_EN\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_INT1\_INPUT\_EN\_MASK}{BMI160\_INT1\_INPUT\_EN\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+INT1\+\_\+\+INPUT\+\_\+\+EN\+\_\+\+MASK~UINT8\+\_\+C(0x10)}
+
+Mask definitions for INT\+\_\+\+LATCH register \mbox{\Hypertarget{bmi160__defs_8h_aa005c70bc3b802914442340743d80f0b}\label{bmi160__defs_8h_aa005c70bc3b802914442340743d80f0b}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_INT1\_LOW\_G\_MASK@{BMI160\_INT1\_LOW\_G\_MASK}}
+\index{BMI160\_INT1\_LOW\_G\_MASK@{BMI160\_INT1\_LOW\_G\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_INT1\_LOW\_G\_MASK}{BMI160\_INT1\_LOW\_G\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+INT1\+\_\+\+LOW\+\_\+\+G\+\_\+\+MASK~UINT8\+\_\+C(0x01)}
+
+Mask definitions for INT\+\_\+\+MAP register \mbox{\Hypertarget{bmi160__defs_8h_ab9ebc291f5229b2d4acd7b10962cf086}\label{bmi160__defs_8h_ab9ebc291f5229b2d4acd7b10962cf086}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_LATCH\_DUR\_NONE@{BMI160\_LATCH\_DUR\_NONE}}
+\index{BMI160\_LATCH\_DUR\_NONE@{BMI160\_LATCH\_DUR\_NONE}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_LATCH\_DUR\_NONE}{BMI160\_LATCH\_DUR\_NONE}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+LATCH\+\_\+\+DUR\+\_\+\+NONE~UINT8\+\_\+C(0x00)}
+
+Latch Duration \mbox{\Hypertarget{bmi160__defs_8h_acf0a3a10eb2a9a9e01581eb2af7d48c0}\label{bmi160__defs_8h_acf0a3a10eb2a9a9e01581eb2af7d48c0}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_LOW\_G\_HYST\_MASK@{BMI160\_LOW\_G\_HYST\_MASK}}
+\index{BMI160\_LOW\_G\_HYST\_MASK@{BMI160\_LOW\_G\_HYST\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_LOW\_G\_HYST\_MASK}{BMI160\_LOW\_G\_HYST\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+LOW\+\_\+\+G\+\_\+\+HYST\+\_\+\+MASK~UINT8\+\_\+C(0x03)}
+
+Mask definitions for INT\+\_\+\+LOWHIGH register \mbox{\Hypertarget{bmi160__defs_8h_a66af790beb1a220233110f17a0033212}\label{bmi160__defs_8h_a66af790beb1a220233110f17a0033212}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_NVM\_BACKUP\_EN@{BMI160\_NVM\_BACKUP\_EN}}
+\index{BMI160\_NVM\_BACKUP\_EN@{BMI160\_NVM\_BACKUP\_EN}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_NVM\_BACKUP\_EN}{BMI160\_NVM\_BACKUP\_EN}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+NVM\+\_\+\+BACKUP\+\_\+\+EN~UINT8\+\_\+C(0x\+A0)}
+
+NVM backup enabling command \mbox{\Hypertarget{bmi160__defs_8h_af4d2a350d6b0ff213f6a1e12ea19287c}\label{bmi160__defs_8h_af4d2a350d6b0ff213f6a1e12ea19287c}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_OK@{BMI160\_OK}}
+\index{BMI160\_OK@{BMI160\_OK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_OK}{BMI160\_OK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+OK~\mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga1eaa7db37089dcdfb60227725c9c1585}{INT8\+\_\+C}}(0)}
+
+Error code definitions \mbox{\Hypertarget{bmi160__defs_8h_a2a7dfe0a3449f8de94492db6c5c583d4}\label{bmi160__defs_8h_a2a7dfe0a3449f8de94492db6c5c583d4}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ONE@{BMI160\_ONE}}
+\index{BMI160\_ONE@{BMI160\_ONE}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ONE}{BMI160\_ONE}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ONE~UINT8\+\_\+C(1)}
+
+BMI160 Length definitions \mbox{\Hypertarget{bmi160__defs_8h_a2e598bf2d2baaab3375d488c08907ae2}\label{bmi160__defs_8h_a2e598bf2d2baaab3375d488c08907ae2}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ORIENT\_MODE\_MASK@{BMI160\_ORIENT\_MODE\_MASK}}
+\index{BMI160\_ORIENT\_MODE\_MASK@{BMI160\_ORIENT\_MODE\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_ORIENT\_MODE\_MASK}{BMI160\_ORIENT\_MODE\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+ORIENT\+\_\+\+MODE\+\_\+\+MASK~UINT8\+\_\+C(0x03)}
+
+Mask definitions for INT\+\_\+\+ORIENT register \mbox{\Hypertarget{bmi160__defs_8h_a812b7d5c6a7422870132ccd0ffc93dc7}\label{bmi160__defs_8h_a812b7d5c6a7422870132ccd0ffc93dc7}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SENSOR\_TIME\_LENGTH@{BMI160\_SENSOR\_TIME\_LENGTH}}
+\index{BMI160\_SENSOR\_TIME\_LENGTH@{BMI160\_SENSOR\_TIME\_LENGTH}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SENSOR\_TIME\_LENGTH}{BMI160\_SENSOR\_TIME\_LENGTH}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SENSOR\+\_\+\+TIME\+\_\+\+LENGTH~UINT8\+\_\+C(3)}
+
+FIFO sensor time length definitions \mbox{\Hypertarget{bmi160__defs_8h_addc2d6f47c3ce1728b7f5ff4659c9936}\label{bmi160__defs_8h_addc2d6f47c3ce1728b7f5ff4659c9936}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SENSOR\_TIME\_LSB\_BYTE@{BMI160\_SENSOR\_TIME\_LSB\_BYTE}}
+\index{BMI160\_SENSOR\_TIME\_LSB\_BYTE@{BMI160\_SENSOR\_TIME\_LSB\_BYTE}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SENSOR\_TIME\_LSB\_BYTE}{BMI160\_SENSOR\_TIME\_LSB\_BYTE}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SENSOR\+\_\+\+TIME\+\_\+\+LSB\+\_\+\+BYTE~UINT8\+\_\+C(0)}
+
+Array Parameter Defin\+Itions \mbox{\Hypertarget{bmi160__defs_8h_a4666d90bd35d9ab7e6f68e2817041c0e}\label{bmi160__defs_8h_a4666d90bd35d9ab7e6f68e2817041c0e}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SET\_BITS@{BMI160\_SET\_BITS}}
+\index{BMI160\_SET\_BITS@{BMI160\_SET\_BITS}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SET\_BITS}{BMI160\_SET\_BITS}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SET\+\_\+\+BITS(\begin{DoxyParamCaption}\item[{}]{regvar,  }\item[{}]{bitname,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((regvar \& \string~bitname\#\#\_MSK) | \(\backslash\)}
+\DoxyCodeLine{     ((val << bitname\#\#\_POS) \& bitname\#\#\_MSK))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{bmi160__defs_8h_a9bc88bdad542eb1902765cf39abddd4d}\label{bmi160__defs_8h_a9bc88bdad542eb1902765cf39abddd4d}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SET\_BITS\_POS\_0@{BMI160\_SET\_BITS\_POS\_0}}
+\index{BMI160\_SET\_BITS\_POS\_0@{BMI160\_SET\_BITS\_POS\_0}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SET\_BITS\_POS\_0}{BMI160\_SET\_BITS\_POS\_0}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SET\+\_\+\+BITS\+\_\+\+POS\+\_\+0(\begin{DoxyParamCaption}\item[{}]{reg\+\_\+data,  }\item[{}]{bitname,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((reg\_data \& \string~(bitname\#\#\_MSK)) | \(\backslash\)}
+\DoxyCodeLine{     (data \& bitname\#\#\_MSK))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{bmi160__defs_8h_a7a1a61594926351ee97b44e348b2f2d3}\label{bmi160__defs_8h_a7a1a61594926351ee97b44e348b2f2d3}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SIG\_MOTION\_SEL\_MASK@{BMI160\_SIG\_MOTION\_SEL\_MASK}}
+\index{BMI160\_SIG\_MOTION\_SEL\_MASK@{BMI160\_SIG\_MOTION\_SEL\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SIG\_MOTION\_SEL\_MASK}{BMI160\_SIG\_MOTION\_SEL\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+SEL\+\_\+\+MASK~UINT8\+\_\+C(0x02)}
+
+Mask definitions for INT\+\_\+\+SIG\+\_\+\+MOTION register \mbox{\Hypertarget{bmi160__defs_8h_ad5145d47829b56ffe20b393497f4b4c5}\label{bmi160__defs_8h_ad5145d47829b56ffe20b393497f4b4c5}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SLOPE\_INT\_DUR\_MASK@{BMI160\_SLOPE\_INT\_DUR\_MASK}}
+\index{BMI160\_SLOPE\_INT\_DUR\_MASK@{BMI160\_SLOPE\_INT\_DUR\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SLOPE\_INT\_DUR\_MASK}{BMI160\_SLOPE\_INT\_DUR\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SLOPE\+\_\+\+INT\+\_\+\+DUR\+\_\+\+MASK~UINT8\+\_\+C(0x03)}
+
+Mask definitions for INT\+\_\+\+MOTION register \mbox{\Hypertarget{bmi160__defs_8h_abf3bc19b4d686da1c0b0cb1adfb517ad}\label{bmi160__defs_8h_abf3bc19b4d686da1c0b0cb1adfb517ad}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SOFT\_RESET\_CMD@{BMI160\_SOFT\_RESET\_CMD}}
+\index{BMI160\_SOFT\_RESET\_CMD@{BMI160\_SOFT\_RESET\_CMD}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SOFT\_RESET\_CMD}{BMI160\_SOFT\_RESET\_CMD}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SOFT\+\_\+\+RESET\+\_\+\+CMD~UINT8\+\_\+C(0xb6)}
+
+Soft reset command \mbox{\Hypertarget{bmi160__defs_8h_a7669dd8a0828db96bc2f15268615cbea}\label{bmi160__defs_8h_a7669dd8a0828db96bc2f15268615cbea}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SPI\_INTF@{BMI160\_SPI\_INTF}}
+\index{BMI160\_SPI\_INTF@{BMI160\_SPI\_INTF}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_SPI\_INTF}{BMI160\_SPI\_INTF}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+SPI\+\_\+\+INTF~UINT8\+\_\+C(1)}
+
+Interface settings \mbox{\Hypertarget{bmi160__defs_8h_a2dd866883d73204ecb2476f8aaedb80c}\label{bmi160__defs_8h_a2dd866883d73204ecb2476f8aaedb80c}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_START\_FOC\_CMD@{BMI160\_START\_FOC\_CMD}}
+\index{BMI160\_START\_FOC\_CMD@{BMI160\_START\_FOC\_CMD}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_START\_FOC\_CMD}{BMI160\_START\_FOC\_CMD}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+START\+\_\+\+FOC\+\_\+\+CMD~UINT8\+\_\+C(0x03)}
+
+Start FOC command \mbox{\Hypertarget{bmi160__defs_8h_af4b1e34040cb1e325b73254d88345fab}\label{bmi160__defs_8h_af4b1e34040cb1e325b73254d88345fab}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_STEP\_COUNT\_EN\_BIT\_MASK@{BMI160\_STEP\_COUNT\_EN\_BIT\_MASK}}
+\index{BMI160\_STEP\_COUNT\_EN\_BIT\_MASK@{BMI160\_STEP\_COUNT\_EN\_BIT\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_STEP\_COUNT\_EN\_BIT\_MASK}{BMI160\_STEP\_COUNT\_EN\_BIT\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+STEP\+\_\+\+COUNT\+\_\+\+EN\+\_\+\+BIT\+\_\+\+MASK~UINT8\+\_\+C(0x08)}
+
+Mask definitions for STEP\+\_\+\+CONF register \mbox{\Hypertarget{bmi160__defs_8h_a248e62bd9276cbfa500e319f7112a26b}\label{bmi160__defs_8h_a248e62bd9276cbfa500e319f7112a26b}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_TAP\_DUR\_MASK@{BMI160\_TAP\_DUR\_MASK}}
+\index{BMI160\_TAP\_DUR\_MASK@{BMI160\_TAP\_DUR\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_TAP\_DUR\_MASK}{BMI160\_TAP\_DUR\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+TAP\+\_\+\+DUR\+\_\+\+MASK~UINT8\+\_\+C(0x07)}
+
+Mask definitions for INT\+\_\+\+TAP register \mbox{\Hypertarget{bmi160__defs_8h_a97db755aaed0487f05eb426ce24c6108}\label{bmi160__defs_8h_a97db755aaed0487f05eb426ce24c6108}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_TAP\_SRC\_INT\_MASK@{BMI160\_TAP\_SRC\_INT\_MASK}}
+\index{BMI160\_TAP\_SRC\_INT\_MASK@{BMI160\_TAP\_SRC\_INT\_MASK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{BMI160\_TAP\_SRC\_INT\_MASK}{BMI160\_TAP\_SRC\_INT\_MASK}}
+{\footnotesize\ttfamily \#define BMI160\+\_\+\+TAP\+\_\+\+SRC\+\_\+\+INT\+\_\+\+MASK~UINT8\+\_\+C(0x08)}
+
+Mask definitions for INT\+\_\+\+DATA register \mbox{\Hypertarget{bmi160__defs_8h_af231127278abf7cebfb5be7b7bdd457c}\label{bmi160__defs_8h_af231127278abf7cebfb5be7b7bdd457c}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!FIFO\_CONFIG\_MSB\_CHECK@{FIFO\_CONFIG\_MSB\_CHECK}}
+\index{FIFO\_CONFIG\_MSB\_CHECK@{FIFO\_CONFIG\_MSB\_CHECK}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{FIFO\_CONFIG\_MSB\_CHECK}{FIFO\_CONFIG\_MSB\_CHECK}}
+{\footnotesize\ttfamily \#define FIFO\+\_\+\+CONFIG\+\_\+\+MSB\+\_\+\+CHECK~UINT8\+\_\+C(0x80)}
+
+Definitions to check validity of FIFO frames 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8e}\label{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8e}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!bmi160\_any\_sig\_motion\_active\_interrupt\_state@{bmi160\_any\_sig\_motion\_active\_interrupt\_state}}
+\index{bmi160\_any\_sig\_motion\_active\_interrupt\_state@{bmi160\_any\_sig\_motion\_active\_interrupt\_state}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{bmi160\_any\_sig\_motion\_active\_interrupt\_state}{bmi160\_any\_sig\_motion\_active\_interrupt\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8e}{bmi160\+\_\+any\+\_\+sig\+\_\+motion\+\_\+active\+\_\+interrupt\+\_\+state}}}
+
+
+
+bmi160 active state of any \& sig motion interrupt. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_BOTH\_ANY\_SIG\_MOTION\_DISABLED@{BMI160\_BOTH\_ANY\_SIG\_MOTION\_DISABLED}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_BOTH\_ANY\_SIG\_MOTION\_DISABLED@{BMI160\_BOTH\_ANY\_SIG\_MOTION\_DISABLED}}}\mbox{\Hypertarget{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea4a04c57eec795c815ef09d00418229ba}\label{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea4a04c57eec795c815ef09d00418229ba}} 
+BMI160\+\_\+\+BOTH\+\_\+\+ANY\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+DISABLED&Both any \& sig motion are disabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ANY\_MOTION\_ENABLED@{BMI160\_ANY\_MOTION\_ENABLED}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ANY\_MOTION\_ENABLED@{BMI160\_ANY\_MOTION\_ENABLED}}}\mbox{\Hypertarget{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea185fcfb2edfd42c149f25cc4508c0f2f}\label{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea185fcfb2edfd42c149f25cc4508c0f2f}} 
+BMI160\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+ENABLED&Any-\/motion selected \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_SIG\_MOTION\_ENABLED@{BMI160\_SIG\_MOTION\_ENABLED}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_SIG\_MOTION\_ENABLED@{BMI160\_SIG\_MOTION\_ENABLED}}}\mbox{\Hypertarget{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea3f88fdeb0f8089c07a5f358bd8869419}\label{bmi160__defs_8h_a2dbd8944210312a35e4f04c8328e0f8ea3f88fdeb0f8089c07a5f358bd8869419}} 
+BMI160\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+ENABLED&Sig-\/motion selected \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afa}\label{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afa}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!bmi160\_int\_channel@{bmi160\_int\_channel}}
+\index{bmi160\_int\_channel@{bmi160\_int\_channel}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{bmi160\_int\_channel}{bmi160\_int\_channel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afa}{bmi160\+\_\+int\+\_\+channel}}}
+
+
+
+bmi160 interrupt channel selection structure 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_INT\_CHANNEL\_NONE@{BMI160\_INT\_CHANNEL\_NONE}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_INT\_CHANNEL\_NONE@{BMI160\_INT\_CHANNEL\_NONE}}}\mbox{\Hypertarget{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaa350db53ae7e4c7d7d3854f0230396147}\label{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaa350db53ae7e4c7d7d3854f0230396147}} 
+BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+\+NONE&Un-\/map both channels \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_INT\_CHANNEL\_1@{BMI160\_INT\_CHANNEL\_1}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_INT\_CHANNEL\_1@{BMI160\_INT\_CHANNEL\_1}}}\mbox{\Hypertarget{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaa45614e948eb70a2a4d0375266ef0de33}\label{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaa45614e948eb70a2a4d0375266ef0de33}} 
+BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+1&interrupt Channel 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_INT\_CHANNEL\_2@{BMI160\_INT\_CHANNEL\_2}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_INT\_CHANNEL\_2@{BMI160\_INT\_CHANNEL\_2}}}\mbox{\Hypertarget{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaae1521fccc177a295612b5a1c97ebc409}\label{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaae1521fccc177a295612b5a1c97ebc409}} 
+BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+2&interrupt Channel 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_INT\_CHANNEL\_BOTH@{BMI160\_INT\_CHANNEL\_BOTH}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_INT\_CHANNEL\_BOTH@{BMI160\_INT\_CHANNEL\_BOTH}}}\mbox{\Hypertarget{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaabdb2809ae1d1115b6d7be7d29a744d9d}\label{bmi160__defs_8h_a19bdb7f063d3483ce62dd3da99186afaabdb2809ae1d1115b6d7be7d29a744d9d}} 
+BMI160\+\_\+\+INT\+\_\+\+CHANNEL\+\_\+\+BOTH&Map both channels \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021a}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021a}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!bmi160\_int\_types@{bmi160\_int\_types}}
+\index{bmi160\_int\_types@{bmi160\_int\_types}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{bmi160\_int\_types}{bmi160\_int\_types}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021a}{bmi160\+\_\+int\+\_\+types}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_ANY\_MOTION\_INT@{BMI160\_ACC\_ANY\_MOTION\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_ANY\_MOTION\_INT@{BMI160\_ACC\_ANY\_MOTION\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aab3700084b19073ec53bd02d876a07273}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aab3700084b19073ec53bd02d876a07273}} 
+BMI160\+\_\+\+ACC\+\_\+\+ANY\+\_\+\+MOTION\+\_\+\+INT&Slope/\+Any-\/motion interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_SIG\_MOTION\_INT@{BMI160\_ACC\_SIG\_MOTION\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_SIG\_MOTION\_INT@{BMI160\_ACC\_SIG\_MOTION\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa676fb1392e8b7c398e7d9515fbd70be7}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa676fb1392e8b7c398e7d9515fbd70be7}} 
+BMI160\+\_\+\+ACC\+\_\+\+SIG\+\_\+\+MOTION\+\_\+\+INT&Significant motion interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_STEP\_DETECT\_INT@{BMI160\_STEP\_DETECT\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_STEP\_DETECT\_INT@{BMI160\_STEP\_DETECT\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa7cd643b99a7f78488f82ae28e5ad811d}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa7cd643b99a7f78488f82ae28e5ad811d}} 
+BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+INT&Step detector interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_DOUBLE\_TAP\_INT@{BMI160\_ACC\_DOUBLE\_TAP\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_DOUBLE\_TAP\_INT@{BMI160\_ACC\_DOUBLE\_TAP\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaf5da0bf8ad69e643104716388a58e7b6}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaf5da0bf8ad69e643104716388a58e7b6}} 
+BMI160\+\_\+\+ACC\+\_\+\+DOUBLE\+\_\+\+TAP\+\_\+\+INT&double tap interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_SINGLE\_TAP\_INT@{BMI160\_ACC\_SINGLE\_TAP\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_SINGLE\_TAP\_INT@{BMI160\_ACC\_SINGLE\_TAP\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa136e5a900a22932b50008225bfbc83d7}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa136e5a900a22932b50008225bfbc83d7}} 
+BMI160\+\_\+\+ACC\+\_\+\+SINGLE\+\_\+\+TAP\+\_\+\+INT&single tap interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_ORIENT\_INT@{BMI160\_ACC\_ORIENT\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_ORIENT\_INT@{BMI160\_ACC\_ORIENT\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaa224b883922ec12015e20179bffdac5d}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaa224b883922ec12015e20179bffdac5d}} 
+BMI160\+\_\+\+ACC\+\_\+\+ORIENT\+\_\+\+INT&orientation interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_FLAT\_INT@{BMI160\_ACC\_FLAT\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_FLAT\_INT@{BMI160\_ACC\_FLAT\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa0f3f2a6915d62bf642d7e47cdd04eb90}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa0f3f2a6915d62bf642d7e47cdd04eb90}} 
+BMI160\+\_\+\+ACC\+\_\+\+FLAT\+\_\+\+INT&flat interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_HIGH\_G\_INT@{BMI160\_ACC\_HIGH\_G\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_HIGH\_G\_INT@{BMI160\_ACC\_HIGH\_G\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa25357b173668b22988d69741eccfe3fb}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa25357b173668b22988d69741eccfe3fb}} 
+BMI160\+\_\+\+ACC\+\_\+\+HIGH\+\_\+\+G\+\_\+\+INT&high-\/g interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_LOW\_G\_INT@{BMI160\_ACC\_LOW\_G\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_LOW\_G\_INT@{BMI160\_ACC\_LOW\_G\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa4285a1eba8b1a967b190f51d5786eb84}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa4285a1eba8b1a967b190f51d5786eb84}} 
+BMI160\+\_\+\+ACC\+\_\+\+LOW\+\_\+\+G\+\_\+\+INT&low-\/g interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_SLOW\_NO\_MOTION\_INT@{BMI160\_ACC\_SLOW\_NO\_MOTION\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_SLOW\_NO\_MOTION\_INT@{BMI160\_ACC\_SLOW\_NO\_MOTION\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa82d10bc83133052bb8c8eeb509d46db3}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa82d10bc83133052bb8c8eeb509d46db3}} 
+BMI160\+\_\+\+ACC\+\_\+\+SLOW\+\_\+\+NO\+\_\+\+MOTION\+\_\+\+INT&slow/no-\/motion interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_GYRO\_DATA\_RDY\_INT@{BMI160\_ACC\_GYRO\_DATA\_RDY\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_GYRO\_DATA\_RDY\_INT@{BMI160\_ACC\_GYRO\_DATA\_RDY\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa1273300cbbc9e760e08d8a266938ac23}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa1273300cbbc9e760e08d8a266938ac23}} 
+BMI160\+\_\+\+ACC\+\_\+\+GYRO\+\_\+\+DATA\+\_\+\+RDY\+\_\+\+INT&data ready interrupt ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_GYRO\_FIFO\_FULL\_INT@{BMI160\_ACC\_GYRO\_FIFO\_FULL\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_GYRO\_FIFO\_FULL\_INT@{BMI160\_ACC\_GYRO\_FIFO\_FULL\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa772fc9366fc535bf296854cd88a653e3}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa772fc9366fc535bf296854cd88a653e3}} 
+BMI160\+\_\+\+ACC\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+FULL\+\_\+\+INT&fifo full interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_ACC\_GYRO\_FIFO\_WATERMARK\_INT@{BMI160\_ACC\_GYRO\_FIFO\_WATERMARK\_INT}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_ACC\_GYRO\_FIFO\_WATERMARK\_INT@{BMI160\_ACC\_GYRO\_FIFO\_WATERMARK\_INT}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa32f283c5d234384dd4a78fbbfbd63254}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aa32f283c5d234384dd4a78fbbfbd63254}} 
+BMI160\+\_\+\+ACC\+\_\+\+GYRO\+\_\+\+FIFO\+\_\+\+WATERMARK\+\_\+\+INT&fifo watermark interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_FIFO\_TAG\_INT\_PIN@{BMI160\_FIFO\_TAG\_INT\_PIN}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_FIFO\_TAG\_INT\_PIN@{BMI160\_FIFO\_TAG\_INT\_PIN}}}\mbox{\Hypertarget{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaf578c806fe420229e92ccda8d6030b0b}\label{bmi160__defs_8h_ac5bcf51ff50dbf41e9d6885c0ccd021aaf578c806fe420229e92ccda8d6030b0b}} 
+BMI160\+\_\+\+FIFO\+\_\+\+TAG\+\_\+\+INT\+\_\+\+PIN&fifo tagging feature support \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{bmi160__defs_8h_a2848f0e52d05d3d523358c2fe43a33b6}\label{bmi160__defs_8h_a2848f0e52d05d3d523358c2fe43a33b6}} 
+\index{bmi160\_defs.h@{bmi160\_defs.h}!bmi160\_step\_detect\_mode@{bmi160\_step\_detect\_mode}}
+\index{bmi160\_step\_detect\_mode@{bmi160\_step\_detect\_mode}!bmi160\_defs.h@{bmi160\_defs.h}}
+\doxysubsubsection{\texorpdfstring{bmi160\_step\_detect\_mode}{bmi160\_step\_detect\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmi160__defs_8h_a2848f0e52d05d3d523358c2fe43a33b6}{bmi160\+\_\+step\+\_\+detect\+\_\+mode}}}
+
+
+
+bmi160 sensor step detector mode structure 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMI160\_STEP\_DETECT\_USER\_DEFINE@{BMI160\_STEP\_DETECT\_USER\_DEFINE}!bmi160\_defs.h@{bmi160\_defs.h}}\index{bmi160\_defs.h@{bmi160\_defs.h}!BMI160\_STEP\_DETECT\_USER\_DEFINE@{BMI160\_STEP\_DETECT\_USER\_DEFINE}}}\mbox{\Hypertarget{bmi160__defs_8h_a2848f0e52d05d3d523358c2fe43a33b6af96600f7fbb44542607196899eddbcc6}\label{bmi160__defs_8h_a2848f0e52d05d3d523358c2fe43a33b6af96600f7fbb44542607196899eddbcc6}} 
+BMI160\+\_\+\+STEP\+\_\+\+DETECT\+\_\+\+USER\+\_\+\+DEFINE&Non recommended User defined setting \\
+\hline
+
+\end{DoxyEnumFields}

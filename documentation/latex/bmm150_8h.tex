@@ -1,0 +1,83 @@
+\hypertarget{bmm150_8h}{}\doxysection{inc/bmm150.h File Reference}
+\label{bmm150_8h}\index{inc/bmm150.h@{inc/bmm150.h}}
+{\ttfamily \#include \char`\"{}bmm150\+\_\+defs.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gab4897d93fb8406c61d6bfab44de8c054}{bmm150\+\_\+init}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is the entry point, Call this API before using other APIs. This API reads the chip-\/id of the sensor which is the first step to verify the sensor and also it configures the read mechanism of SPI and I2C interface. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga88285b4abe005f21a5cc9392dddb9de9}{bmm150\+\_\+set\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the given data to the register address of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gac3b65c846fa1d826b2addbbef4292a9c}{bmm150\+\_\+get\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the data from the given register address of sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gad53c0f1cab22067aaff73d0f172a9dbe}{bmm150\+\_\+soft\+\_\+reset}} (const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to perform soft-\/reset of the sensor where all the registers are reset to their default values except 0x4B. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6b8ebfb4d731d5880ef87ecffc72a43b}{bmm150\+\_\+set\+\_\+op\+\_\+mode}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to set the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga6e4a56abf879bb4ad9a263d79974d120}{bmm150\+\_\+get\+\_\+op\+\_\+mode}} (uint8\+\_\+t $\ast$op\+\_\+mode, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to get the power mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gafbd9773c2f5c5645d60231f0ba7e8626}{bmm150\+\_\+set\+\_\+presetmode}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to set the preset mode of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga96ceb625f7af0bf71a8a7ad8aa67fe2b}{bmm150\+\_\+set\+\_\+sensor\+\_\+settings}} (uint16\+\_\+t desired\+\_\+settings, const struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API sets the sensor settings based on the desired\+\_\+settings and the dev structure configuration. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_ga12db4420b434ac786c10494dd3f80e7f}{bmm150\+\_\+get\+\_\+sensor\+\_\+settings}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API gets all the sensor settings and updates the dev structure. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabdb1f4947a1e2639326420a9fc7a2b12}{bmm150\+\_\+read\+\_\+mag\+\_\+data}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the magnetometer data from registers 0x42 to 0x49 and updates the dev structure with compensated mag data in micro-\/tesla. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gaabaad6846eae116f278af4c87d432b2f}{bmm150\+\_\+perform\+\_\+self\+\_\+test}} (uint8\+\_\+t self\+\_\+test\+\_\+mode, struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to perform the complete self test (both normal and advanced) for the BMM150 sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gadee930eb8e5ef947b87ee8c217780143}{bmm150\+\_\+get\+\_\+interrupt\+\_\+status}} (struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API obtains the status flags of all interrupt which is used to check for the assertion of interrupts. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___b_p-_b_a_s_s_e_n_s_o_r_s_m_k_i_i_gabc0895a5c1c847e18e33daf5cd69c1b6}{bmm150\+\_\+aux\+\_\+mag\+\_\+data}} (uint8\+\_\+t $\ast$aux\+\_\+data, struct \mbox{\hyperlink{structbmm150__dev}{bmm150\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to compensate the raw mag data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copyright (c) 2020 Bosch Sensortec GmbH. All rights reserved.
+
+BSD-\/3-\/\+Clause
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+
+
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}\+AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+\begin{DoxyDate}{Date}
+10/01/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+3
+\end{DoxyVersion}
+\hypertarget{bmm150_8h_BMI160}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{BMI160 on BP-\/\+BASSENSORSMKII connected to MSP432}\label{bmm150_8h_BMI160}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ BMI160 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Signal }&\cellcolor{\tableheadbgcolor}\textbf{ BMI160 }&\cellcolor{\tableheadbgcolor}\textbf{ MSP432 }\\\cline{1-3}
+\endhead
+SDO &BMI160 pin 1 &3.\+3V (I2C address = 0x69) \\\cline{1-3}
+ASDx &BMI160 pin 2 &P6.\+4 I2C data SDA\+\_\+S \\\cline{1-3}
+ASCx &BMI160 pin 3 &P6.\+5 I2C clock SCL\+\_\+S \\\cline{1-3}
+INT1 &BMI160 pin 4 &P4.\+1 input from the interrupt pin \\\cline{1-3}
+VDDIO &BMI160 pin 5 &3.\+3V \\\cline{1-3}
+GNDIO &BMI160 pin 6 &ground \\\cline{1-3}
+GND &BMI160 pin 7 &ground \\\cline{1-3}
+VDD &BMI160 pin 8 &3.\+3V \\\cline{1-3}
+INT2 &BMI160 pin 9 &P5.\+0/\+ERB cannot be used on RSLK due to conflict with right shaft encoder \\\cline{1-3}
+OCSB &BMI160 pin 10 &not connected (unused SPI for slave) \\\cline{1-3}
+OSDO &BMI160 pin 11 &not connected (unused SPI for slave) \\\cline{1-3}
+CSB &BMI160 pin 12 &3.\+3V (protocol select = I2C) \\\cline{1-3}
+SCX &BMI160 pin 13 &I2C clock to BMM150 Three-\/\+Axis Geomagnetic Sensor slave (I2C address = 0x13) \\\cline{1-3}
+SDX &BMI160 pin 14 &I2C data to BMM150 Three-\/\+Axis Geomagnetic Sensor slave (I2C address = 0x13) \\\cline{1-3}
+\end{longtabu}

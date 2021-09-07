@@ -1,0 +1,2506 @@
+\hypertarget{group___math}{}\doxysection{Math}
+\label{group___math}\index{Math@{Math}}
+
+
+Math functions.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcomplex}{complex}}
+\begin{DoxyCompactList}\small\item\em a complex number has a real and imaginary part \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___math_ga598a3330b3c21701223ee0ca14316eca}\label{group___math_ga598a3330b3c21701223ee0ca14316eca}} 
+\#define \mbox{\hyperlink{group___math_ga598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+14159265358979323846264338327950288
+\begin{DoxyCompactList}\small\item\em PI is ratio of circumference to diameter of a circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_gabdf785e04495ffe30f316ac526bcae12}\label{group___math_gabdf785e04495ffe30f316ac526bcae12}} 
+\#define \mbox{\hyperlink{group___math_gabdf785e04495ffe30f316ac526bcae12}{TX0\+FIFOSIZE}}~64
+\begin{DoxyCompactList}\small\item\em Size of the Tx\+Fifo0, can hold 0 to TX0\+FIFOSIZE-\/1 elements, must be a power of 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_gae68463d3e90d2f00b15c73bdb92bb0f7}\label{group___math_gae68463d3e90d2f00b15c73bdb92bb0f7}} 
+\#define \mbox{\hyperlink{group___math_gae68463d3e90d2f00b15c73bdb92bb0f7}{FIFOSUCCESS}}~1
+\begin{DoxyCompactList}\small\item\em return value on success \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga5e32948644a47e4f3ce03dbfd93fbcaa}\label{group___math_ga5e32948644a47e4f3ce03dbfd93fbcaa}} 
+\#define \mbox{\hyperlink{group___math_ga5e32948644a47e4f3ce03dbfd93fbcaa}{FIFOFAIL}}~0
+\begin{DoxyCompactList}\small\item\em return value on failure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga3223b8e91da6fbcfe60f76b70402ef2a}\label{group___math_ga3223b8e91da6fbcfe60f76b70402ef2a}} 
+\#define \mbox{\hyperlink{group___math_ga3223b8e91da6fbcfe60f76b70402ef2a}{RX0\+FIFOSIZE}}~16
+\begin{DoxyCompactList}\small\item\em Size of the Rx\+Fifo0, can hold 0 to RX0\+FIFOSIZE-\/1 elements, must be a power of 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga0240ac851181b84ac374872dc5434ee4}\label{group___math_ga0240ac851181b84ac374872dc5434ee4}} 
+\#define \mbox{\hyperlink{group___math_ga0240ac851181b84ac374872dc5434ee4}{N}}~360
+\begin{DoxyCompactList}\small\item\em counts/rotation, just one edge of one tach \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_gaf316c33cc298530f245e8b55330e86b5}\label{group___math_gaf316c33cc298530f245e8b55330e86b5}} 
+\#define \mbox{\hyperlink{group___math_gaf316c33cc298530f245e8b55330e86b5}{D}}~70000
+\begin{DoxyCompactList}\small\item\em wheel diameter 0.\+0001cm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga649b8f01fd6c0f47ff3cbddaeba63bfb}\label{group___math_ga649b8f01fd6c0f47ff3cbddaeba63bfb}} 
+\#define \mbox{\hyperlink{group___math_ga649b8f01fd6c0f47ff3cbddaeba63bfb}{W}}~140000
+\begin{DoxyCompactList}\small\item\em wheel base 0.\+0001 cm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_gac4cf4b2ab929bd23951a8676eeac086b}\label{group___math_gac4cf4b2ab929bd23951a8676eeac086b}} 
+\#define \mbox{\hyperlink{group___math_gac4cf4b2ab929bd23951a8676eeac086b}{C}}~219910
+\begin{DoxyCompactList}\small\item\em wheel circumference 0.\+0001cm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga598a3330b3c21701223ee0ca14316eca}\label{group___math_ga598a3330b3c21701223ee0ca14316eca}} 
+\#define \mbox{\hyperlink{group___math_ga598a3330b3c21701223ee0ca14316eca}{PI}}~8192
+\begin{DoxyCompactList}\small\item\em representation of pi radians \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga4912c64aec0c943b7985db6cb61ff83a}\label{group___math_ga4912c64aec0c943b7985db6cb61ff83a}} 
+\#define \mbox{\hyperlink{group___math_ga4912c64aec0c943b7985db6cb61ff83a}{TWOPI}}~(2$\ast$\mbox{\hyperlink{group___math_ga598a3330b3c21701223ee0ca14316eca}{PI}})
+\begin{DoxyCompactList}\small\item\em 6.\+28... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga1711232abf72723b5216c206e6bbb175}\label{group___math_ga1711232abf72723b5216c206e6bbb175}} 
+\#define \mbox{\hyperlink{group___math_ga1711232abf72723b5216c206e6bbb175}{NORTH}}~4096
+\begin{DoxyCompactList}\small\item\em direction that is north \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga072a1ef1143314441742097b799be322}\label{group___math_ga072a1ef1143314441742097b799be322}} 
+\#define \mbox{\hyperlink{group___math_ga072a1ef1143314441742097b799be322}{EAST}}~0
+\begin{DoxyCompactList}\small\item\em direction that is east \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_gaf3830320fe6287f717dca9669f417950}\label{group___math_gaf3830320fe6287f717dca9669f417950}} 
+\#define \mbox{\hyperlink{group___math_gaf3830320fe6287f717dca9669f417950}{SOUTH}}~-\/4096
+\begin{DoxyCompactList}\small\item\em direction that is south \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga755da365a2f771fdb9e15af22fee7d74}\label{group___math_ga755da365a2f771fdb9e15af22fee7d74}} 
+\#define \mbox{\hyperlink{group___math_ga755da365a2f771fdb9e15af22fee7d74}{WEST}}~-\/8192
+\begin{DoxyCompactList}\small\item\em direction that is west \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga366f8ce059270987f00bcb23c257fb7d}\label{group___math_ga366f8ce059270987f00bcb23c257fb7d}} 
+\#define \mbox{\hyperlink{group___math_ga366f8ce059270987f00bcb23c257fb7d}{XYTOLERANCE}}~10000
+\begin{DoxyCompactList}\small\item\em tolerance in x,y goal seeking, 1 cm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga16237058dff97699eb4b43ac7b0bd747}\label{group___math_ga16237058dff97699eb4b43ac7b0bd747}} 
+\#define \mbox{\hyperlink{group___math_ga16237058dff97699eb4b43ac7b0bd747}{THETATOLERANCE}}~(4096/90)
+\begin{DoxyCompactList}\small\item\em tolerance in angle goal seeking, 1 deg \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___math_ga0b2a0daddea33756a14a7257a2736a8b}\label{group___math_ga0b2a0daddea33756a14a7257a2736a8b}} 
+\#define {\bfseries PROFILE0}~($\ast$((volatile uint8\+\_\+t $\ast$)(0x42000000+32$\ast$0x4\+C23+4$\ast$5)))  /$\ast$ Port 4.\+5 Output $\ast$/
+\item 
+\mbox{\Hypertarget{group___math_ga366578aacfd119da00541842492325b1}\label{group___math_ga366578aacfd119da00541842492325b1}} 
+\#define {\bfseries PROFILE0\+\_\+\+BIT}~0x01
+\item 
+\mbox{\Hypertarget{group___math_gab8c18c111896144b1e96cb70331ffe7b}\label{group___math_gab8c18c111896144b1e96cb70331ffe7b}} 
+\#define {\bfseries PROFILE1}~($\ast$((volatile uint8\+\_\+t $\ast$)(0x42000000+32$\ast$0x4\+C23+4$\ast$7)))  /$\ast$ Port 4.\+7 Output $\ast$/
+\item 
+\mbox{\Hypertarget{group___math_ga239c11ec743c4ec3f2121df9fa30110a}\label{group___math_ga239c11ec743c4ec3f2121df9fa30110a}} 
+\#define {\bfseries PROFILE1\+\_\+\+BIT}~0x01
+\item 
+\mbox{\Hypertarget{group___math_ga2e07d09436abbadb351aeb9c10b5cf27}\label{group___math_ga2e07d09436abbadb351aeb9c10b5cf27}} 
+\#define {\bfseries PROFILE2}~($\ast$((volatile uint8\+\_\+t $\ast$)(0x42000000+32$\ast$0x4\+C42+4$\ast$4)))  /$\ast$ Port 5.\+4 Output $\ast$/
+\item 
+\mbox{\Hypertarget{group___math_ga2091bfcd965961c77ae1566ef9f40b43}\label{group___math_ga2091bfcd965961c77ae1566ef9f40b43}} 
+\#define {\bfseries PROFILE2\+\_\+\+BIT}~0x01
+\item 
+\mbox{\Hypertarget{group___math_ga3a569ad641d99c86e604e08d33b91443}\label{group___math_ga3a569ad641d99c86e604e08d33b91443}} 
+\#define {\bfseries PROFILE3}~($\ast$((volatile uint8\+\_\+t $\ast$)(0x42000000+32$\ast$0x4\+C42+4$\ast$5)))  /$\ast$ Port 5.\+5 Output $\ast$/
+\item 
+\mbox{\Hypertarget{group___math_gae81d106e5937a20ac75fb6610d32d9c3}\label{group___math_gae81d106e5937a20ac75fb6610d32d9c3}} 
+\#define {\bfseries PROFILE3\+\_\+\+BIT}~0x01
+\item 
+\mbox{\Hypertarget{group___math_gabb2808a5a3420f5e5336125bf84205db}\label{group___math_gabb2808a5a3420f5e5336125bf84205db}} 
+\#define {\bfseries PROFILE4}~($\ast$((volatile uint8\+\_\+t $\ast$)(0x42000000+32$\ast$0x4\+C22+4$\ast$0)))  /$\ast$ Port 3.\+0 Output $\ast$/
+\item 
+\mbox{\Hypertarget{group___math_ga5426743615db112fb83804a93bdb3fb8}\label{group___math_ga5426743615db112fb83804a93bdb3fb8}} 
+\#define {\bfseries PROFILE4\+\_\+\+BIT}~0x01
+\item 
+\mbox{\Hypertarget{group___math_gac514917c6b7e1d421e217dd8f5f9d993}\label{group___math_gac514917c6b7e1d421e217dd8f5f9d993}} 
+\#define {\bfseries PROFILE5}~($\ast$((volatile uint8\+\_\+t $\ast$)(0x42000000+32$\ast$0x4\+C43+4$\ast$6)))  /$\ast$ Port 6.\+6 Output $\ast$/
+\item 
+\mbox{\Hypertarget{group___math_gac548e125721a0083e38c372b9ea52143}\label{group___math_gac548e125721a0083e38c372b9ea52143}} 
+\#define {\bfseries PROFILE5\+\_\+\+BIT}~0x01
+\item 
+\mbox{\Hypertarget{group___math_ga4355fd6e98561ebf3e69ce526d5f29c9}\label{group___math_ga4355fd6e98561ebf3e69ce526d5f29c9}} 
+\#define {\bfseries PROFILE6}~($\ast$((volatile uint8\+\_\+t $\ast$)(0x42000000+32$\ast$0x4\+C03+4$\ast$3)))  /$\ast$ Port 2.\+3 Output $\ast$/
+\item 
+\mbox{\Hypertarget{group___math_ga8e04f15d7a4c0cf088456b91bfe4cdc4}\label{group___math_ga8e04f15d7a4c0cf088456b91bfe4cdc4}} 
+\#define {\bfseries PROFILE6\+\_\+\+BIT}~0x01
+\item 
+\mbox{\Hypertarget{group___math_ga2f44027184ab49a2b6caa7da4846ecaf}\label{group___math_ga2f44027184ab49a2b6caa7da4846ecaf}} 
+\#define {\bfseries Profile\+\_\+\+Set0}()~(PROFILE0 = PROFILE0\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga17d7a89560ebcac8ce27eebebe072981}\label{group___math_ga17d7a89560ebcac8ce27eebebe072981}} 
+\#define {\bfseries Profile\+\_\+\+Clear0}()~(PROFILE0 = 0x00)
+\item 
+\mbox{\Hypertarget{group___math_ga9195ba0f10af557d4e2d2481087aaa22}\label{group___math_ga9195ba0f10af557d4e2d2481087aaa22}} 
+\#define {\bfseries Profile\+\_\+\+Toggle0}()~(PROFILE0 $^\wedge$= PROFILE0\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_gafa3a4c95d14a96a8cc8abefee4dc8347}\label{group___math_gafa3a4c95d14a96a8cc8abefee4dc8347}} 
+\#define {\bfseries Profile\+\_\+\+Set1}()~(PROFILE1 = PROFILE1\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_gabfc0ec5951770c33b7f984dfe1544301}\label{group___math_gabfc0ec5951770c33b7f984dfe1544301}} 
+\#define {\bfseries Profile\+\_\+\+Clear1}()~(PROFILE1 = 0x00)
+\item 
+\mbox{\Hypertarget{group___math_ga771b3b1fce3791dc62662fe4c90af3e1}\label{group___math_ga771b3b1fce3791dc62662fe4c90af3e1}} 
+\#define {\bfseries Profile\+\_\+\+Toggle1}()~(PROFILE1 $^\wedge$= PROFILE1\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga6d86d77a2d13b16be6e76227f09ee259}\label{group___math_ga6d86d77a2d13b16be6e76227f09ee259}} 
+\#define {\bfseries Profile\+\_\+\+Set2}()~(PROFILE2 = PROFILE2\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga56019a8ce9e08a1aa47297e14a578b65}\label{group___math_ga56019a8ce9e08a1aa47297e14a578b65}} 
+\#define {\bfseries Profile\+\_\+\+Clear2}()~(PROFILE2 = 0x00)
+\item 
+\mbox{\Hypertarget{group___math_gaa6ef49214870c7ec08a77ded1e40bd84}\label{group___math_gaa6ef49214870c7ec08a77ded1e40bd84}} 
+\#define {\bfseries Profile\+\_\+\+Toggle2}()~(PROFILE2 $^\wedge$= PROFILE2\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_gabf8b70998098b97542145de1ad25a380}\label{group___math_gabf8b70998098b97542145de1ad25a380}} 
+\#define {\bfseries Profile\+\_\+\+Set3}()~(PROFILE3 = PROFILE3\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga7cb6147f0d9ca394a82907835615a729}\label{group___math_ga7cb6147f0d9ca394a82907835615a729}} 
+\#define {\bfseries Profile\+\_\+\+Clear3}()~(PROFILE3 = 0x00)
+\item 
+\mbox{\Hypertarget{group___math_gaee379885f36d2616f5a572065838810d}\label{group___math_gaee379885f36d2616f5a572065838810d}} 
+\#define {\bfseries Profile\+\_\+\+Toggle3}()~(PROFILE3 $^\wedge$= PROFILE3\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga1f59b29ec4359717ababb27cbfad24ec}\label{group___math_ga1f59b29ec4359717ababb27cbfad24ec}} 
+\#define {\bfseries Profile\+\_\+\+Set4}()~(PROFILE4 = PROFILE4\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_gac99cabc1bcd658f967b1d6885acb42a7}\label{group___math_gac99cabc1bcd658f967b1d6885acb42a7}} 
+\#define {\bfseries Profile\+\_\+\+Clear4}()~(PROFILE4 = 0x00)
+\item 
+\mbox{\Hypertarget{group___math_gab8b373006cd94ca8e7b4297d0baa1cfb}\label{group___math_gab8b373006cd94ca8e7b4297d0baa1cfb}} 
+\#define {\bfseries Profile\+\_\+\+Toggle4}()~(PROFILE4 $^\wedge$= PROFILE4\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga2eb3a72d403c285b0cc1d6ac5642bded}\label{group___math_ga2eb3a72d403c285b0cc1d6ac5642bded}} 
+\#define {\bfseries Profile\+\_\+\+Set5}()~(PROFILE5 = PROFILE5\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga3a9cd31510d21a91a07105265781b012}\label{group___math_ga3a9cd31510d21a91a07105265781b012}} 
+\#define {\bfseries Profile\+\_\+\+Clear5}()~(PROFILE5 = 0x00)
+\item 
+\mbox{\Hypertarget{group___math_ga57a69b034e57eb22d53811300987fb3e}\label{group___math_ga57a69b034e57eb22d53811300987fb3e}} 
+\#define {\bfseries Profile\+\_\+\+Toggle5}()~(PROFILE5 $^\wedge$= PROFILE5\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_gaf1afbf686042907830750b977acc089b}\label{group___math_gaf1afbf686042907830750b977acc089b}} 
+\#define {\bfseries Profile\+\_\+\+Set6}()~(PROFILE6 = PROFILE6\+\_\+\+BIT)
+\item 
+\mbox{\Hypertarget{group___math_ga6d954bfc68734535dd73f42c8d232c68}\label{group___math_ga6d954bfc68734535dd73f42c8d232c68}} 
+\#define {\bfseries Profile\+\_\+\+Clear6}()~(PROFILE6 = 0x00)
+\item 
+\mbox{\Hypertarget{group___math_ga5cf089db366d09452e47cacab9e830e0}\label{group___math_ga5cf089db366d09452e47cacab9e830e0}} 
+\#define {\bfseries Profile\+\_\+\+Toggle6}()~(PROFILE6 $^\wedge$= PROFILE6\+\_\+\+BIT)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___math_ga65a78ae0ccb51b7f003f6a694247cd78}\label{group___math_ga65a78ae0ccb51b7f003f6a694247cd78}} 
+typedef struct \mbox{\hyperlink{structcomplex}{complex}} {\bfseries complex\+\_\+t}
+\item 
+\mbox{\Hypertarget{group___math_ga549830a020cd88214f3023fdc9342c7f}\label{group___math_ga549830a020cd88214f3023fdc9342c7f}} 
+typedef uint8\+\_\+t \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em 8-\/bit fuzzy variable having values from true (255,254,253,...,2,1,0) false \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___math_ga8a4285c43463011b934d1dc0a3859496}{Robot\+State}} \{ \newline
+\mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496ace07053ab96611cd775428c007e656d5}{ISSTOPPED}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496ad6fe78e0386eac3ae353deeea8cc594d}{GOFORWARD}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a6d29aaa5d43a8a093bab2eb5cb507024}{HARDRIGHT}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a197222c68aa4452dbfdff4f9dceb6319}{HARDLEFT}}
+, \newline
+\mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a3dbc276b101f7ed5681985d862403b5f}{SOFTRIGHT}}
+, \mbox{\hyperlink{group___math_gga8a4285c43463011b934d1dc0a3859496a089e76cbc1d5480e2dbaeb6478948b1f}{SOFTLEFT}}
+ \}
+\begin{DoxyCompactList}\small\item\em robot state \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___math_gaacc2094ed70be2908e2a418d23359cdb}{Odometry\+Command}} \{ \newline
+\mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdba679ee5320d66c8322e310daeb2ee99b8}{STOP}}
+, \mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdbabfd8096bb487bcc6e415690aa471e07c}{FORWARDTOX}}
+, \mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdbaac75e57abf4c81fe1d59596950c77a51}{FORWARDTOY}}
+, \mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdbae205a455dad48f89553db33164a364cf}{LEFTTOTH}}
+, \newline
+\mbox{\hyperlink{group___math_ggaacc2094ed70be2908e2a418d23359cdba891f6209cf73e4ed66044e2781328993}{RIGHTTOTH}}
+ \}
+\begin{DoxyCompactList}\small\item\em Odometry Commands. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___math_ga5e88b13c91baf6c42b8a3022523a5b33}{TExa\+Smode}} \{ \newline
+\mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5c5be91c4c56f94911a6c849fc4135aa}{SCOPE}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33aeca8e6e241f883036595c3518bda6c8e}{LOGICANALYZER}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33abfabb00d2222f910e0a3a988c550a611}{LOGICANALYZER\+\_\+\+P1}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a9ac7c5e3e4d7c4743d052d691276afb6}{LOGICANALYZER\+\_\+\+P2}}
+, \newline
+\mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ae77fd8fa5d24a5312398123d88a0cad1}{LOGICANALYZER\+\_\+\+P3}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a049e3d754b35c93415e923a0691adf2e}{LOGICANALYZER\+\_\+\+P4}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ae8635e8a1d8ea863e1f364b2c8bba49c}{LOGICANALYZER\+\_\+\+P5}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a6b4e57be460a9808328c5842bdeac46e}{LOGICANALYZER\+\_\+\+P6}}
+, \newline
+\mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a14cf15bbefa6ddef4325a854bddc48c9}{LOGICANALYZER\+\_\+\+P7}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a16f233467935687078e64c8630648e05}{LOGICANALYZER\+\_\+\+P8}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33abcfde76f0dab0b4a060c1c3388f94431}{LOGICANALYZER\+\_\+\+P9}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5846ea94f1cafa82ab2a929c64cf0c9a}{LOGICANALYZER\+\_\+\+P10}}
+, \newline
+\mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac409d0afd51d6bca2d9de4cdf497b45c}{LOGICANALYZER\+\_\+\+P4\+\_\+765432}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5909e21119b9785bcb19d921a7dad77d}{LOGICANALYZER\+\_\+\+P4\+\_\+765320}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac6f4c59538504d2744c80ceb4eeb5503}{LOGICANALYZER\+\_\+\+P2\+\_\+7654}}
+, \mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac898c102cf956ed75ae546af61689fbe}{LOGICANALYZER\+\_\+\+P27\+\_\+\+P26\+\_\+\+P82\+\_\+\+P92\+\_\+\+P104\+\_\+\+P105}}
+, \newline
+\mbox{\hyperlink{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a33fa471babbf301e6ddb8f67ada01fe2}{LOGICANALYZER\+\_\+\+P55\+\_\+\+P54\+\_\+\+P27\+\_\+\+P26\+\_\+\+P37\+\_\+\+P36}}
+ \}
+\begin{DoxyCompactList}\small\item\em specifies the TExaS modes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___math_ga7e6991842a107b203a304c191d574591}{fft}} (\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$v, int n, \mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$tmp)
+\begin{DoxyCompactList}\small\item\em fft \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga4ad1f9b6c8ed4f2fdb439e795c3c0e3a}{ifft}} (\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$v, int n, \mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$tmp)
+\begin{DoxyCompactList}\small\item\em Inverse fft. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1065279652513ffaf4285d64c23f8c3c}{Tx\+Fifo0\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize Tx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_ga3794146989f0f2ae5bf7497e574aaaec}{Tx\+Fifo0\+\_\+\+Put}} (char data)
+\begin{DoxyCompactList}\small\item\em Put into Tx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_ga046913ef7f02e9348b18a5572919bf5d}{Tx\+Fifo0\+\_\+\+Get}} (char $\ast$datapt)
+\begin{DoxyCompactList}\small\item\em Get into Tx\+Fifo0. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___math_ga5f33f9642a00824e986634be918d6754}{Tx\+Fifo0\+\_\+\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Current size of Tx\+Fifo0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga06eb53f9cade465c55296709e95d4114}{Rx\+Fifo0\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize Rx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_ga92f3417eb801d56616b076240d69a1b3}{Rx\+Fifo0\+\_\+\+Put}} (char data)
+\begin{DoxyCompactList}\small\item\em Put into Rx\+Fifo0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___math_gac7c45c957c34358649129833a8e4944a}{Rx\+Fifo0\+\_\+\+Get}} (char $\ast$datapt)
+\begin{DoxyCompactList}\small\item\em Get into Rx\+Fifo0. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___math_ga5df480c504a961365182a947dff8b868}{Rx\+Fifo0\+\_\+\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Current size of Rx\+Fifo0. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group___math_ga585d66cf23f64b1e470007ddd099e35e}{fixed\+\_\+sin}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em decimal fixed-\/point sin \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group___math_ga93731bdd1474e8414ecfbbb6c3bf4ae1}{fixed\+\_\+cos}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em decimal fixed-\/point cos \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga4e056d1c21233a9777eb87c2552b1440}{fixed\+\_\+sin2}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em binary fixed-\/point sin \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga5b1395587dae647ecf1be2beb57aa6ed}{fixed\+\_\+cos2}} (int32\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em binary fixed-\/point cos \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga82d9a7093bd3b7918d355b3284346802}{not}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1)
+\begin{DoxyCompactList}\small\item\em Complement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga80c32cc652c6e87036e30b75b64d9b0c}{or}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2)
+\begin{DoxyCompactList}\small\item\em Fuzzy or. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga062ad2061883d8d7cdb0aa9d07ac1d82}{or3}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u3)
+\begin{DoxyCompactList}\small\item\em Fuzzy or. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_gab1ba04b9574077fd061d648f7b6c66fb}{and}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2)
+\begin{DoxyCompactList}\small\item\em Fuzzy and. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_gaa4d65305d09b58f7c12e93272097d7b7}{and3}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u1, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u2, \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} u3)
+\begin{DoxyCompactList}\small\item\em Fuzzy and. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gac86399f7281d31defb0c53bc1f8276e7}{umin32}} (uint32\+\_\+t u1, uint32\+\_\+t u2)
+\begin{DoxyCompactList}\small\item\em minimum \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga6f07812bace46b2508dbebfe1f73cdff}{min32}} (int32\+\_\+t n1, int32\+\_\+t n2, int32\+\_\+t n3)
+\begin{DoxyCompactList}\small\item\em minimum \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga5ef897aa479083ee0735ff044e1b7a38}{Min\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga3147baa2bec716bdc731a1542d5e7c8b}{Center\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t CENTER, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_gae8bf90094c65b2e5e16c93a16c7055a4}{Left\+Right\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t LEFT, const int32\+\_\+t RIGHT, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} \mbox{\hyperlink{group___math_ga92d909efc7baf21dc50b0030d986d626}{Max\+Fuzzification}} (int32\+\_\+t crisp, const int32\+\_\+t MIN, const int32\+\_\+t MAX)
+\begin{DoxyCompactList}\small\item\em Fuzzification. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{group___math_ga224391a7d27869607dc73d463a0b5c8a}{Fuzzy\+Char}} (\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} fuz)
+\begin{DoxyCompactList}\small\item\em convert fuzzy variable to ASCII character \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gac28327f99b7d0312192606455fdfb49f}{LPF\+\_\+\+Init}} (uint32\+\_\+t initial, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initialize first LPF. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga5f516bb95e5f68543674b7766febed43}{LPF\+\_\+\+Calc}} (uint32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em FIR low pass filter. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gabe2603c167f6e3dd69ba704c399eb42f}{Noise}} (void)
+\begin{DoxyCompactList}\small\item\em calculate amount of random noise \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gabcb3c4786ebdec7965864e68ad07d04b}{LPF\+\_\+\+Init2}} (uint32\+\_\+t initial, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initialize second LPF. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gaf1c031fec10c4752e76c7ba504700131}{LPF\+\_\+\+Calc2}} (uint32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em FIR low pass filter. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga3f39976e26c40a899c2c8cf5188600f8}{Noise2}} (void)
+\begin{DoxyCompactList}\small\item\em calculate amount of random noise \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga6ca6d50b606281a8154861e92048eb35}{LPF\+\_\+\+Init3}} (uint32\+\_\+t initial, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initialize third LPF. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gae74bc77a41e61bfccfc2e771be99aef2}{LPF\+\_\+\+Calc3}} (uint32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em FIR low pass filter. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gada6fd6e7cdc0f6693eba470245f6576a}{Noise3}} (void)
+\begin{DoxyCompactList}\small\item\em calculate amount of random noise \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gab880f5c671175cde000252f8d38f8bda}{Median}} (int32\+\_\+t newdata)
+\begin{DoxyCompactList}\small\item\em Median filter. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga1aa4775b51155a2f1d8baff67b9230be}{isqrt}} (uint32\+\_\+t s)
+\begin{DoxyCompactList}\small\item\em square root \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga02038c8bfaf26fb3cf26f87c700ace21}{Odometry\+\_\+\+Init}} (int32\+\_\+t initx, int32\+\_\+t inity, int32\+\_\+t init\+Theta)
+\begin{DoxyCompactList}\small\item\em Initialize odometry module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga57e039201476eac111718cd0389008e2}{Odometry\+\_\+\+Update}} (int32\+\_\+t LCount, int32\+\_\+t RCount)
+\begin{DoxyCompactList}\small\item\em Compute new position/angle of the robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga65bc6118c80d609922568caef39d5534}{Odometry\+\_\+\+Set\+Power}} (uint32\+\_\+t fast, uint32\+\_\+t slow)
+\begin{DoxyCompactList}\small\item\em Set power levels. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga445ed3ce2b8e40f5f1b289c5f2e10877}{Odometry\+\_\+\+GetX}} (void)
+\begin{DoxyCompactList}\small\item\em Get X position. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_gada122c001d23df57126239baedd3dd41}{Odometry\+\_\+\+GetY}} (void)
+\begin{DoxyCompactList}\small\item\em Get y position. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___math_ga010212b0f335a235e37853f1566eb789}{Odometry\+\_\+\+Get\+Angle}} (void)
+\begin{DoxyCompactList}\small\item\em Get theta angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1ef75bf637013d317fd67af7d24d9487}{Odometry\+\_\+\+Get}} (int32\+\_\+t $\ast$x, int32\+\_\+t $\ast$y, int32\+\_\+t $\ast$theta)
+\begin{DoxyCompactList}\small\item\em Get the current robot position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gaca159286d03bad83e4e2fc74a6e3700a}{Update\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em update position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga9fdb7496922bfb0c2ae56d7104c04701}{Display}} (void)
+\begin{DoxyCompactList}\small\item\em OLED output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga6ad9dab3cc94b0686b23feab2651be89}{Wait\+Until\+Bumper\+Touched}} (void)
+\begin{DoxyCompactList}\small\item\em Wait until bumper touched. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga26dd48a17bfa7e00662f4243b373903c}{Stop\+Until\+Bumper\+Touched}} (void)
+\begin{DoxyCompactList}\small\item\em Stop and wait until bumper touched. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga0321334343b11ceb82d4c0b3928a3568}{Forward\+Until\+Crash}} (void)
+\begin{DoxyCompactList}\small\item\em Go until bumper touched. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga229d2f3384b996c6934c7c8285487297}{Forward\+UntilX}} (int32\+\_\+t desiredX)
+\begin{DoxyCompactList}\small\item\em Forward Until X goal. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga2b083e4a98e3da0f1e24567106672570}{Forward\+UntilY}} (int32\+\_\+t desiredY)
+\begin{DoxyCompactList}\small\item\em Forward Until Y goal. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga47488781167f4a2b93cd7fdc2f862c59}{Soft\+Left\+Until\+Th}} (int32\+\_\+t desired\+Th)
+\begin{DoxyCompactList}\small\item\em Soft Left Until Theta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1cb6e48d29c4e844c7fe377dfb96ac01}{Forward\+Until\+XStart}} (int32\+\_\+t thedesiredX)
+\begin{DoxyCompactList}\small\item\em start going Forward Until X \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gad1e3cf20ecb159bdbf93ba0f48d3d6d1}{Forward\+Until\+XStatus}} (void)
+\begin{DoxyCompactList}\small\item\em check status of Forward Until X command \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga9a85769742970a3c73e420a95995b610}{Forward\+Until\+YStart}} (int32\+\_\+t thedesiredY)
+\begin{DoxyCompactList}\small\item\em start going Forward Until Y \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_ga959131ec407a757e0b5d52a9025c4a87}{Forward\+Until\+YStatus}} (void)
+\begin{DoxyCompactList}\small\item\em check status of Forward Until Y command \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1c5406d6e8a5d440d0a293cc331abd09}{Soft\+Left\+Until\+Th\+Start}} (int32\+\_\+t thedesired\+Th)
+\begin{DoxyCompactList}\small\item\em start going Forward Until Y \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gafc7799ed6f9df6cf864de783d8c20651}{Forward\+Until\+Th\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em check status of soft left until theta command \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___math_gab7c3f2212f4dd0a6a17dca002ed7478d}{Check\+Goal}} (void)
+\begin{DoxyCompactList}\small\item\em check status of odometry command \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga488202ff7b48ae2cef60717e78540d22}{Profile\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Stop the logic analyzer or scope. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___math_ga29c955d6df8bff9bdea2ea6be449213a}{Profile\+\_\+\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em status of all Profile pins \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gac5f5edc29f553eac7589c658d1c08ef5}{TExa\+S\+\_\+\+Init}} (enum \mbox{\hyperlink{group___math_ga5e88b13c91baf6c42b8a3022523a5b33}{TExa\+Smode}} mode)
+\begin{DoxyCompactList}\small\item\em Initialize logic analyzer or scope. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gadeb7fccbbb1881b866ba3ad16712294c}{TExa\+S\+\_\+\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em Stop the logic analyzer or scope. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga1956a36415c3dcd2df5f68e5feb1c54d}{TExa\+S\+\_\+\+Task0}} (void)
+\begin{DoxyCompactList}\small\item\em toggle bit 0 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gad625fa4120b4cf970a4545517f05481d}{TExa\+S\+\_\+\+Task1}} (void)
+\begin{DoxyCompactList}\small\item\em toggle bit 1 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gadec1e2ded8292c19e341ebf873d2d455}{TExa\+S\+\_\+\+Task2}} (void)
+\begin{DoxyCompactList}\small\item\em toggle bit 2 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gab2cb179efa5577e32813435376f7b8f1}{TExa\+S\+\_\+\+Task3}} (void)
+\begin{DoxyCompactList}\small\item\em toggle bit 3 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gab59ea6d3077ab859dd41a37b40253f3e}{TExa\+S\+\_\+\+Task4}} (void)
+\begin{DoxyCompactList}\small\item\em toggle bit 4 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga38ed800557809cf9c85df5f440d469e5}{TExa\+S\+\_\+\+Task5}} (void)
+\begin{DoxyCompactList}\small\item\em toggle bit 5 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga278002f54056da03e4cae02baa70a9fd}{TExa\+S\+\_\+\+Task6}} (void)
+\begin{DoxyCompactList}\small\item\em toggle bit 6 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga3d31c706b90d3156910d6da229f15e5f}{TExa\+S\+\_\+\+Set}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em specify logic analyzer output \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga46145d89ba6be5894bb7f29f1bbc65e4}{TExa\+S\+\_\+\+Set0}} (void)
+\begin{DoxyCompactList}\small\item\em Bit0 set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gad2baf012e7fe32af2f2893400219946b}{TExa\+S\+\_\+\+Set1}} (void)
+\begin{DoxyCompactList}\small\item\em Bit1 set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga343599a9b7727394c00c67924d601b41}{TExa\+S\+\_\+\+Set2}} (void)
+\begin{DoxyCompactList}\small\item\em Bit2 set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga27c5f2fb57ee49159cb8275847f2ab5b}{TExa\+S\+\_\+\+Set3}} (void)
+\begin{DoxyCompactList}\small\item\em Bit3 set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gad15b5a7bad5415929e9ff92bb0c0f0de}{TExa\+S\+\_\+\+Set4}} (void)
+\begin{DoxyCompactList}\small\item\em Bit4 set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gac527055bac7642610dec1081beb68317}{TExa\+S\+\_\+\+Set5}} (void)
+\begin{DoxyCompactList}\small\item\em Bit5 set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gabe1a5cea692d6ddb6fddbc35f35926db}{TExa\+S\+\_\+\+Set6}} (void)
+\begin{DoxyCompactList}\small\item\em Bit5 set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga557cdfa1e0d493cdfc7106a034c7e450}{TExa\+S\+\_\+\+Clear0}} (void)
+\begin{DoxyCompactList}\small\item\em Bit0 cleared low. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga37f6a72d74ec91d2fa2b5bf149c17392}{TExa\+S\+\_\+\+Clear1}} (void)
+\begin{DoxyCompactList}\small\item\em Bit1 cleared low. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_gafda97ee912d530d3c0c5695869fc4955}{TExa\+S\+\_\+\+Clear2}} (void)
+\begin{DoxyCompactList}\small\item\em Bit2 cleared low. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga49361f2461c5a25e966f904bf57919db}{TExa\+S\+\_\+\+Clear3}} (void)
+\begin{DoxyCompactList}\small\item\em Bit3 cleared low. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga5b64480daeb41b3755160fb21eb57f76}{TExa\+S\+\_\+\+Clear4}} (void)
+\begin{DoxyCompactList}\small\item\em Bit4 cleared low. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga8418143a137cbb6ff108d89820f96cb1}{TExa\+S\+\_\+\+Clear5}} (void)
+\begin{DoxyCompactList}\small\item\em Bit5 cleared low. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___math_ga32e8f15744b7c8b0428a99ef790c10c7}{TExa\+S\+\_\+\+Clear6}} (void)
+\begin{DoxyCompactList}\small\item\em Bit6 cleared low. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Math functions. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___math_gaacc2094ed70be2908e2a418d23359cdb}\label{group___math_gaacc2094ed70be2908e2a418d23359cdb}} 
+\index{Math@{Math}!OdometryCommand@{OdometryCommand}}
+\index{OdometryCommand@{OdometryCommand}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{OdometryCommand}{OdometryCommand}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___math_gaacc2094ed70be2908e2a418d23359cdb}{Odometry\+Command}}}
+
+
+
+Odometry Commands. 
+
+These are possible odometry commands \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOP@{STOP}!Math@{Math}}\index{Math@{Math}!STOP@{STOP}}}\mbox{\Hypertarget{group___math_ggaacc2094ed70be2908e2a418d23359cdba679ee5320d66c8322e310daeb2ee99b8}\label{group___math_ggaacc2094ed70be2908e2a418d23359cdba679ee5320d66c8322e310daeb2ee99b8}} 
+STOP&stop robot \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARDTOX@{FORWARDTOX}!Math@{Math}}\index{Math@{Math}!FORWARDTOX@{FORWARDTOX}}}\mbox{\Hypertarget{group___math_ggaacc2094ed70be2908e2a418d23359cdbabfd8096bb487bcc6e415690aa471e07c}\label{group___math_ggaacc2094ed70be2908e2a418d23359cdbabfd8096bb487bcc6e415690aa471e07c}} 
+FORWARDTOX&move forward straight until X is matched within tolerance XYTOLERANCE \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARDTOY@{FORWARDTOY}!Math@{Math}}\index{Math@{Math}!FORWARDTOY@{FORWARDTOY}}}\mbox{\Hypertarget{group___math_ggaacc2094ed70be2908e2a418d23359cdbaac75e57abf4c81fe1d59596950c77a51}\label{group___math_ggaacc2094ed70be2908e2a418d23359cdbaac75e57abf4c81fe1d59596950c77a51}} 
+FORWARDTOY&move forward straight until Y is matched within tolerance XYTOLERANCE \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFTTOTH@{LEFTTOTH}!Math@{Math}}\index{Math@{Math}!LEFTTOTH@{LEFTTOTH}}}\mbox{\Hypertarget{group___math_ggaacc2094ed70be2908e2a418d23359cdbae205a455dad48f89553db33164a364cf}\label{group___math_ggaacc2094ed70be2908e2a418d23359cdbae205a455dad48f89553db33164a364cf}} 
+LEFTTOTH&turn left until theta is matched within tolerance THETATOLERANCE \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHTTOTH@{RIGHTTOTH}!Math@{Math}}\index{Math@{Math}!RIGHTTOTH@{RIGHTTOTH}}}\mbox{\Hypertarget{group___math_ggaacc2094ed70be2908e2a418d23359cdba891f6209cf73e4ed66044e2781328993}\label{group___math_ggaacc2094ed70be2908e2a418d23359cdba891f6209cf73e4ed66044e2781328993}} 
+RIGHTTOTH&turn right until theta is matched within tolerance THETATOLERANCE \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group___math_ga8a4285c43463011b934d1dc0a3859496}\label{group___math_ga8a4285c43463011b934d1dc0a3859496}} 
+\index{Math@{Math}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{RobotState}{RobotState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___math_ga8a4285c43463011b934d1dc0a3859496}{Robot\+State}}}
+
+
+
+robot state 
+
+These are possible robot motions for odometry system \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISSTOPPED@{ISSTOPPED}!Math@{Math}}\index{Math@{Math}!ISSTOPPED@{ISSTOPPED}}}\mbox{\Hypertarget{group___math_gga8a4285c43463011b934d1dc0a3859496ace07053ab96611cd775428c007e656d5}\label{group___math_gga8a4285c43463011b934d1dc0a3859496ace07053ab96611cd775428c007e656d5}} 
+ISSTOPPED&stopped \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOFORWARD@{GOFORWARD}!Math@{Math}}\index{Math@{Math}!GOFORWARD@{GOFORWARD}}}\mbox{\Hypertarget{group___math_gga8a4285c43463011b934d1dc0a3859496ad6fe78e0386eac3ae353deeea8cc594d}\label{group___math_gga8a4285c43463011b934d1dc0a3859496ad6fe78e0386eac3ae353deeea8cc594d}} 
+GOFORWARD&going forward \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDRIGHT@{HARDRIGHT}!Math@{Math}}\index{Math@{Math}!HARDRIGHT@{HARDRIGHT}}}\mbox{\Hypertarget{group___math_gga8a4285c43463011b934d1dc0a3859496a6d29aaa5d43a8a093bab2eb5cb507024}\label{group___math_gga8a4285c43463011b934d1dc0a3859496a6d29aaa5d43a8a093bab2eb5cb507024}} 
+HARDRIGHT&turning hard right \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDLEFT@{HARDLEFT}!Math@{Math}}\index{Math@{Math}!HARDLEFT@{HARDLEFT}}}\mbox{\Hypertarget{group___math_gga8a4285c43463011b934d1dc0a3859496a197222c68aa4452dbfdff4f9dceb6319}\label{group___math_gga8a4285c43463011b934d1dc0a3859496a197222c68aa4452dbfdff4f9dceb6319}} 
+HARDLEFT&turning hard left \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SOFTRIGHT@{SOFTRIGHT}!Math@{Math}}\index{Math@{Math}!SOFTRIGHT@{SOFTRIGHT}}}\mbox{\Hypertarget{group___math_gga8a4285c43463011b934d1dc0a3859496a3dbc276b101f7ed5681985d862403b5f}\label{group___math_gga8a4285c43463011b934d1dc0a3859496a3dbc276b101f7ed5681985d862403b5f}} 
+SOFTRIGHT&turning soft right \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SOFTLEFT@{SOFTLEFT}!Math@{Math}}\index{Math@{Math}!SOFTLEFT@{SOFTLEFT}}}\mbox{\Hypertarget{group___math_gga8a4285c43463011b934d1dc0a3859496a089e76cbc1d5480e2dbaeb6478948b1f}\label{group___math_gga8a4285c43463011b934d1dc0a3859496a089e76cbc1d5480e2dbaeb6478948b1f}} 
+SOFTLEFT&turning soft left \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group___math_ga5e88b13c91baf6c42b8a3022523a5b33}\label{group___math_ga5e88b13c91baf6c42b8a3022523a5b33}} 
+\index{Math@{Math}!TExaSmode@{TExaSmode}}
+\index{TExaSmode@{TExaSmode}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaSmode}{TExaSmode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___math_ga5e88b13c91baf6c42b8a3022523a5b33}{TExa\+Smode}}}
+
+
+
+specifies the TExaS modes 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCOPE@{SCOPE}!Math@{Math}}\index{Math@{Math}!SCOPE@{SCOPE}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5c5be91c4c56f94911a6c849fc4135aa}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5c5be91c4c56f94911a6c849fc4135aa}} 
+SCOPE&creates a 10 k\+Hz 8-\/bit oscilloscope on J3.\+26/\+P4.4/\+A9 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER@{LOGICANALYZER}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER@{LOGICANALYZER}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33aeca8e6e241f883036595c3518bda6c8e}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33aeca8e6e241f883036595c3518bda6c8e}} 
+LOGICANALYZER&creates a 10 k\+Hz 7-\/bit logic analyzer \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P1@{LOGICANALYZER\_P1}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P1@{LOGICANALYZER\_P1}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33abfabb00d2222f910e0a3a988c550a611}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33abfabb00d2222f910e0a3a988c550a611}} 
+LOGICANALYZER\+\_\+\+P1&creates a 10 k\+Hz 7-\/bit logic analyzer on P1.\+6-\/\+P1.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P2@{LOGICANALYZER\_P2}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P2@{LOGICANALYZER\_P2}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a9ac7c5e3e4d7c4743d052d691276afb6}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a9ac7c5e3e4d7c4743d052d691276afb6}} 
+LOGICANALYZER\+\_\+\+P2&creates a 10 k\+Hz 7-\/bit logic analyzer on P2.\+6-\/\+P2.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P3@{LOGICANALYZER\_P3}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P3@{LOGICANALYZER\_P3}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ae77fd8fa5d24a5312398123d88a0cad1}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ae77fd8fa5d24a5312398123d88a0cad1}} 
+LOGICANALYZER\+\_\+\+P3&creates a 10 k\+Hz 7-\/bit logic analyzer on P3.\+6-\/\+P3.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P4@{LOGICANALYZER\_P4}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P4@{LOGICANALYZER\_P4}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a049e3d754b35c93415e923a0691adf2e}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a049e3d754b35c93415e923a0691adf2e}} 
+LOGICANALYZER\+\_\+\+P4&creates a 10 k\+Hz 7-\/bit logic analyzer on P4.\+6-\/\+P4.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P5@{LOGICANALYZER\_P5}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P5@{LOGICANALYZER\_P5}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ae8635e8a1d8ea863e1f364b2c8bba49c}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ae8635e8a1d8ea863e1f364b2c8bba49c}} 
+LOGICANALYZER\+\_\+\+P5&creates a 10 k\+Hz 7-\/bit logic analyzer on P5.\+6-\/\+P5.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P6@{LOGICANALYZER\_P6}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P6@{LOGICANALYZER\_P6}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a6b4e57be460a9808328c5842bdeac46e}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a6b4e57be460a9808328c5842bdeac46e}} 
+LOGICANALYZER\+\_\+\+P6&creates a 10 k\+Hz 7-\/bit logic analyzer on P6.\+6-\/\+P6.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P7@{LOGICANALYZER\_P7}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P7@{LOGICANALYZER\_P7}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a14cf15bbefa6ddef4325a854bddc48c9}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a14cf15bbefa6ddef4325a854bddc48c9}} 
+LOGICANALYZER\+\_\+\+P7&creates a 10 k\+Hz 7-\/bit logic analyzer on P7.\+6-\/\+P7.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P8@{LOGICANALYZER\_P8}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P8@{LOGICANALYZER\_P8}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a16f233467935687078e64c8630648e05}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a16f233467935687078e64c8630648e05}} 
+LOGICANALYZER\+\_\+\+P8&creates a 10 k\+Hz 7-\/bit logic analyzer on P8.\+6-\/\+P8.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P9@{LOGICANALYZER\_P9}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P9@{LOGICANALYZER\_P9}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33abcfde76f0dab0b4a060c1c3388f94431}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33abcfde76f0dab0b4a060c1c3388f94431}} 
+LOGICANALYZER\+\_\+\+P9&creates a 10 k\+Hz 7-\/bit logic analyzer on P9.\+6-\/\+P9.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P10@{LOGICANALYZER\_P10}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P10@{LOGICANALYZER\_P10}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5846ea94f1cafa82ab2a929c64cf0c9a}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5846ea94f1cafa82ab2a929c64cf0c9a}} 
+LOGICANALYZER\+\_\+\+P10&creates a 10 k\+Hz 7-\/bit logic analyzer on P10.\+6-\/\+P10.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P4\_765432@{LOGICANALYZER\_P4\_765432}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P4\_765432@{LOGICANALYZER\_P4\_765432}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac409d0afd51d6bca2d9de4cdf497b45c}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac409d0afd51d6bca2d9de4cdf497b45c}} 
+LOGICANALYZER\+\_\+\+P4\+\_\+765432&creates a 10 k\+Hz 6-\/bit logic analyzer on P4.\+7-\/\+P4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P4\_765320@{LOGICANALYZER\_P4\_765320}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P4\_765320@{LOGICANALYZER\_P4\_765320}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5909e21119b9785bcb19d921a7dad77d}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a5909e21119b9785bcb19d921a7dad77d}} 
+LOGICANALYZER\+\_\+\+P4\+\_\+765320&creates a 10 k\+Hz 6-\/bit logic analyzer on P4.\+7-\/5,3-\/2,0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P2\_7654@{LOGICANALYZER\_P2\_7654}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P2\_7654@{LOGICANALYZER\_P2\_7654}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac6f4c59538504d2744c80ceb4eeb5503}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac6f4c59538504d2744c80ceb4eeb5503}} 
+LOGICANALYZER\+\_\+\+P2\+\_\+7654&creates a 10 k\+Hz 4-\/bit logic analyzer on P2.\+7-\/\+P2.\+4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P27\_P26\_P82\_P92\_P104\_P105@{LOGICANALYZER\_P27\_P26\_P82\_P92\_P104\_P105}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P27\_P26\_P82\_P92\_P104\_P105@{LOGICANALYZER\_P27\_P26\_P82\_P92\_P104\_P105}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac898c102cf956ed75ae546af61689fbe}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33ac898c102cf956ed75ae546af61689fbe}} 
+LOGICANALYZER\+\_\+\+P27\+\_\+\+P26\+\_\+\+P82\+\_\+\+P92\+\_\+\+P104\+\_\+\+P105&creates a 10 k\+Hz 6-\/bit logic analyzer on P2.\+7, P2.\+6, P8.\+2, P9.\+2, P10.\+5, P10.\+4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOGICANALYZER\_P55\_P54\_P27\_P26\_P37\_P36@{LOGICANALYZER\_P55\_P54\_P27\_P26\_P37\_P36}!Math@{Math}}\index{Math@{Math}!LOGICANALYZER\_P55\_P54\_P27\_P26\_P37\_P36@{LOGICANALYZER\_P55\_P54\_P27\_P26\_P37\_P36}}}\mbox{\Hypertarget{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a33fa471babbf301e6ddb8f67ada01fe2}\label{group___math_gga5e88b13c91baf6c42b8a3022523a5b33a33fa471babbf301e6ddb8f67ada01fe2}} 
+LOGICANALYZER\+\_\+\+P55\+\_\+\+P54\+\_\+\+P27\+\_\+\+P26\+\_\+\+P37\+\_\+\+P36&creates a 10 k\+Hz 6-\/bit logic analyzer on P5.\+5, P5.\+4, P2.\+7, P2.\+6, P3.\+7, P3.\+6 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___math_gab1ba04b9574077fd061d648f7b6c66fb}\label{group___math_gab1ba04b9574077fd061d648f7b6c66fb}} 
+\index{Math@{Math}!and@{and}}
+\index{and@{and}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{and()}{and()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} and (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u1,  }\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u2 }\end{DoxyParamCaption})}
+
+
+
+Fuzzy and. 
+
+Fuzzy logic and 
+\begin{DoxyParams}{Parameters}
+{\em u1} & is a fuzzy variable \\
+\hline
+{\em u2} & is a fuzzy variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+minimum of u1 u2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gaa4d65305d09b58f7c12e93272097d7b7}\label{group___math_gaa4d65305d09b58f7c12e93272097d7b7}} 
+\index{Math@{Math}!and3@{and3}}
+\index{and3@{and3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{and3()}{and3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} and3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u1,  }\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u2,  }\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u3 }\end{DoxyParamCaption})}
+
+
+
+Fuzzy and. 
+
+Fuzzy logic and 
+\begin{DoxyParams}{Parameters}
+{\em u1} & is a fuzzy variable \\
+\hline
+{\em u2} & is a fuzzy variable \\
+\hline
+{\em u3} & is a fuzzy variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+minimum of u1 u2 u3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga3147baa2bec716bdc731a1542d5e7c8b}\label{group___math_ga3147baa2bec716bdc731a1542d5e7c8b}} 
+\index{Math@{Math}!CenterFuzzification@{CenterFuzzification}}
+\index{CenterFuzzification@{CenterFuzzification}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{CenterFuzzification()}{CenterFuzzification()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} Center\+Fuzzification (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{crisp,  }\item[{const int32\+\_\+t}]{MIN,  }\item[{const int32\+\_\+t}]{CENTER,  }\item[{const int32\+\_\+t}]{MAX }\end{DoxyParamCaption})}
+
+
+
+Fuzzification. 
+
+Fuzzy logic fuzzification, converting crisp input to fuzzy variable.~\newline
+ If crisp is less than MIN, then fuzzy is false.~\newline
+ If crisp is between MIN and CENTER, then fuzzy is linear.~\newline
+ If crisp is CENTER, then fuzzy is true.~\newline
+ If crisp is between CENTER and max, then fuzzy is linear.~\newline
+ If crisp is greater than MAX, then fuzzy is false.~\newline
+ 255 ~\newline
+ $\vert$.................... -\/ ~\newline
+ $\vert$................. / ... ~\newline
+ $\vert$.............. / ........ \textbackslash{} ~\newline
+ $\vert$........... / .............. \textbackslash{} ~\newline
+ $\vert$........ / .................... \textbackslash{} ~\newline
+ $\vert$-\/-\/-\/-\/-\/--- ........................-\/-\/-\/-\/-\/-\/---~\newline
+ 0.....MIN ... CENTER ....... MAX ~\newline
+ ~\newline
+ \begin{DoxyNote}{Note}
+MIN must be less than CENTER, and CENTER must be less than MAX. Constants must not be equal. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em crisp} & is a crisp input \\
+\hline
+{\em MIN} & is threshold value for the crisp input \\
+\hline
+{\em CENTER} & is a second threshold value for the crisp input \\
+\hline
+{\em MAX} & is a third threshold value for the crisp input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fuzzy value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gab7c3f2212f4dd0a6a17dca002ed7478d}\label{group___math_gab7c3f2212f4dd0a6a17dca002ed7478d}} 
+\index{Math@{Math}!CheckGoal@{CheckGoal}}
+\index{CheckGoal@{CheckGoal}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{CheckGoal()}{CheckGoal()}}
+{\footnotesize\ttfamily uint32\+\_\+t Check\+Goal (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+check status of odometry command 
+
+Odometry command to check status of any odometry command. Assumes Forward\+Until\+XStart Forward\+Until\+YStart or Soft\+Left\+Until\+Th\+Start has been issued 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if done or error, false if still running ok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga9fdb7496922bfb0c2ae56d7104c04701}\label{group___math_ga9fdb7496922bfb0c2ae56d7104c04701}} 
+\index{Math@{Math}!Display@{Display}}
+\index{Display@{Display}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily void Display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+OLED output. 
+
+Show current state on OLED 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+uses SSD1306.\+c 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga7e6991842a107b203a304c191d574591}\label{group___math_ga7e6991842a107b203a304c191d574591}} 
+\index{Math@{Math}!fft@{fft}}
+\index{fft@{fft}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{fft()}{fft()}}
+{\footnotesize\ttfamily void fft (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$}]{v,  }\item[{int}]{n,  }\item[{\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$}]{tmp }\end{DoxyParamCaption})}
+
+
+
+fft 
+
+discrete Fast Fourier Transform, Converts time to frequency domain ~\newline
+ Assume the input is real data sampled at fs ~\newline
+ Place n measurements into the real part of array v ~\newline
+ Set the imaginary part of array v to 0 ~\newline
+ Call \mbox{\hyperlink{group___math_ga7e6991842a107b203a304c191d574591}{fft()}} and the results are returned back in array v ~\newline
+ If the input is real only, then the transform will contain ~\newline
+ Index 0 $<$= k $<$ n/2 complex components of frequency f=k/fs ~\newline
+ E.\+g., k=0 represents the DC component of the input ~\newline
+ Index n/2 $<$= k $<$ n are complex conjugates of the first half ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em v} & array of input data in complex form \\
+\hline
+{\em n} & size of the two arrays 2, 4, 8, ..., 2048 \\
+\hline
+{\em tmp} & temporary array of data in complex form \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+n is a power of two from 2 to 2048 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga93731bdd1474e8414ecfbbb6c3bf4ae1}\label{group___math_ga93731bdd1474e8414ecfbbb6c3bf4ae1}} 
+\index{Math@{Math}!fixed\_cos@{fixed\_cos}}
+\index{fixed\_cos@{fixed\_cos}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{fixed\_cos()}{fixed\_cos()}}
+{\footnotesize\ttfamily int16\+\_\+t fixed\+\_\+cos (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{theta }\end{DoxyParamCaption})}
+
+
+
+decimal fixed-\/point cos 
+
+decimal fixed-\/point cos$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em theta} & -\/3142 to 3142, angle is in units radians/1000 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/10000 to +10000, fixed point resolution 1/10000 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+input theta=-\/1571 means 90 degrees (pi/2 radians) 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga5b1395587dae647ecf1be2beb57aa6ed}\label{group___math_ga5b1395587dae647ecf1be2beb57aa6ed}} 
+\index{Math@{Math}!fixed\_cos2@{fixed\_cos2}}
+\index{fixed\_cos2@{fixed\_cos2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{fixed\_cos2()}{fixed\_cos2()}}
+{\footnotesize\ttfamily int32\+\_\+t fixed\+\_\+cos2 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{theta }\end{DoxyParamCaption})}
+
+
+
+binary fixed-\/point cos 
+
+binaryfixed-\/point cos$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em theta} & -\/8192 to 8191, angle is in units 2$\ast$pi/16384 radians (-\/pi to +pi) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/65536 to +65536, fixed point resolution 1/65536 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+input theta=4096 means 90 degrees (pi/2 radians) 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga585d66cf23f64b1e470007ddd099e35e}\label{group___math_ga585d66cf23f64b1e470007ddd099e35e}} 
+\index{Math@{Math}!fixed\_sin@{fixed\_sin}}
+\index{fixed\_sin@{fixed\_sin}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{fixed\_sin()}{fixed\_sin()}}
+{\footnotesize\ttfamily int16\+\_\+t fixed\+\_\+sin (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{theta }\end{DoxyParamCaption})}
+
+
+
+decimal fixed-\/point sin 
+
+decimal fixed-\/point sin$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em theta} & -\/3142 to 3142, angle is in units radians/1000 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/10000 to +10000, fixed point resolution 1/10000 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+input theta=1571 means 90 degrees (pi/2 radians) 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga4e056d1c21233a9777eb87c2552b1440}\label{group___math_ga4e056d1c21233a9777eb87c2552b1440}} 
+\index{Math@{Math}!fixed\_sin2@{fixed\_sin2}}
+\index{fixed\_sin2@{fixed\_sin2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{fixed\_sin2()}{fixed\_sin2()}}
+{\footnotesize\ttfamily int32\+\_\+t fixed\+\_\+sin2 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{theta }\end{DoxyParamCaption})}
+
+
+
+binary fixed-\/point sin 
+
+binary fixed-\/point sin$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em theta} & -\/8192 to 8191, angle is in units 2$\ast$pi/16384 radians (-\/pi to +pi) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/65536 to +65536, fixed point resolution 1/65536 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+input theta=-\/4096 means -\/90 degrees (pi/2 radians) 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga0321334343b11ceb82d4c0b3928a3568}\label{group___math_ga0321334343b11ceb82d4c0b3928a3568}} 
+\index{Math@{Math}!ForwardUntilCrash@{ForwardUntilCrash}}
+\index{ForwardUntilCrash@{ForwardUntilCrash}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilCrash()}{ForwardUntilCrash()}}
+{\footnotesize\ttfamily uint32\+\_\+t Forward\+Until\+Crash (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Go until bumper touched. 
+
+Go straight until bumper touched (crash) 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+uses bump.\+c 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gafc7799ed6f9df6cf864de783d8c20651}\label{group___math_gafc7799ed6f9df6cf864de783d8c20651}} 
+\index{Math@{Math}!ForwardUntilThStatus@{ForwardUntilThStatus}}
+\index{ForwardUntilThStatus@{ForwardUntilThStatus}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilThStatus()}{ForwardUntilThStatus()}}
+{\footnotesize\ttfamily uint32\+\_\+t Forward\+Until\+Th\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+check status of soft left until theta command 
+
+Odometry command to check status of soft left until theta command. Assumes Soft\+Left\+Until\+Th\+Start has been issued 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if done or error, false if still running ok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga229d2f3384b996c6934c7c8285487297}\label{group___math_ga229d2f3384b996c6934c7c8285487297}} 
+\index{Math@{Math}!ForwardUntilX@{ForwardUntilX}}
+\index{ForwardUntilX@{ForwardUntilX}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilX()}{ForwardUntilX()}}
+{\footnotesize\ttfamily uint32\+\_\+t Forward\+UntilX (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{desiredX }\end{DoxyParamCaption})}
+
+
+
+Forward Until X goal. 
+
+Odometry command to Go straight until X goal has been reached. This routine will run until goal is met. 
+\begin{DoxyParams}{Parameters}
+{\em desiredX} & desired X position in units of 0.\+0001cm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success, nonzero is failure (crash=bump sensor or 0x\+FF=going wrong way) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga1cb6e48d29c4e844c7fe377dfb96ac01}\label{group___math_ga1cb6e48d29c4e844c7fe377dfb96ac01}} 
+\index{Math@{Math}!ForwardUntilXStart@{ForwardUntilXStart}}
+\index{ForwardUntilXStart@{ForwardUntilXStart}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilXStart()}{ForwardUntilXStart()}}
+{\footnotesize\ttfamily void Forward\+Until\+XStart (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{thedesiredX }\end{DoxyParamCaption})}
+
+
+
+start going Forward Until X 
+
+Odometry command to Go straight until X goal has been reached. This routine will start the command, but return immediately 
+\begin{DoxyParams}{Parameters}
+{\em thedesiredX} & desired X position in units of 0.\+0001cm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gad1e3cf20ecb159bdbf93ba0f48d3d6d1}\label{group___math_gad1e3cf20ecb159bdbf93ba0f48d3d6d1}} 
+\index{Math@{Math}!ForwardUntilXStatus@{ForwardUntilXStatus}}
+\index{ForwardUntilXStatus@{ForwardUntilXStatus}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilXStatus()}{ForwardUntilXStatus()}}
+{\footnotesize\ttfamily uint32\+\_\+t Forward\+Until\+XStatus (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+check status of Forward Until X command 
+
+Odometry command to check status of Go straight until X command. Assumes Forward\+Until\+XStart has been issued 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if done or error, false if still running ok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga2b083e4a98e3da0f1e24567106672570}\label{group___math_ga2b083e4a98e3da0f1e24567106672570}} 
+\index{Math@{Math}!ForwardUntilY@{ForwardUntilY}}
+\index{ForwardUntilY@{ForwardUntilY}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilY()}{ForwardUntilY()}}
+{\footnotesize\ttfamily uint32\+\_\+t Forward\+UntilY (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{desiredY }\end{DoxyParamCaption})}
+
+
+
+Forward Until Y goal. 
+
+Odometry command to Go straight until Y goal has been reached. This routine will run until goal is met. 
+\begin{DoxyParams}{Parameters}
+{\em desiredY} & desired Y position in units of 0.\+0001cm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success, nonzero is failure (crash=bump sensor or 0x\+FF=going wrong way) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga9a85769742970a3c73e420a95995b610}\label{group___math_ga9a85769742970a3c73e420a95995b610}} 
+\index{Math@{Math}!ForwardUntilYStart@{ForwardUntilYStart}}
+\index{ForwardUntilYStart@{ForwardUntilYStart}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilYStart()}{ForwardUntilYStart()}}
+{\footnotesize\ttfamily void Forward\+Until\+YStart (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{thedesiredY }\end{DoxyParamCaption})}
+
+
+
+start going Forward Until Y 
+
+Odometry command to Go straight until Y goal has been reached. This routine will start the command, but return immediately 
+\begin{DoxyParams}{Parameters}
+{\em thedesiredY} & desired Y position in units of 0.\+0001cm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga959131ec407a757e0b5d52a9025c4a87}\label{group___math_ga959131ec407a757e0b5d52a9025c4a87}} 
+\index{Math@{Math}!ForwardUntilYStatus@{ForwardUntilYStatus}}
+\index{ForwardUntilYStatus@{ForwardUntilYStatus}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ForwardUntilYStatus()}{ForwardUntilYStatus()}}
+{\footnotesize\ttfamily uint32\+\_\+t Forward\+Until\+YStatus (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+check status of Forward Until Y command 
+
+Odometry command to check status of Go straight until Y command. Assumes Forward\+Until\+YStart has been issued 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if done or error, false if still running ok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga224391a7d27869607dc73d463a0b5c8a}\label{group___math_ga224391a7d27869607dc73d463a0b5c8a}} 
+\index{Math@{Math}!FuzzyChar@{FuzzyChar}}
+\index{FuzzyChar@{FuzzyChar}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{FuzzyChar()}{FuzzyChar()}}
+{\footnotesize\ttfamily char Fuzzy\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{fuz }\end{DoxyParamCaption})}
+
+
+
+convert fuzzy variable to ASCII character 
+
+Fuzzy logic display helper function return \textquotesingle{}a\textquotesingle{} + (25$\ast$fuz)/255; 
+\begin{DoxyParams}{Parameters}
+{\em fuz} & is a fuzzy variable having values from 0(false) to 255(true) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ASCII character from \textquotesingle{}a\textquotesingle{} to \textquotesingle{}z\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga4ad1f9b6c8ed4f2fdb439e795c3c0e3a}\label{group___math_ga4ad1f9b6c8ed4f2fdb439e795c3c0e3a}} 
+\index{Math@{Math}!ifft@{ifft}}
+\index{ifft@{ifft}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{ifft()}{ifft()}}
+{\footnotesize\ttfamily void ifft (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$}]{v,  }\item[{int}]{n,  }\item[{\mbox{\hyperlink{structcomplex}{complex\+\_\+t}} $\ast$}]{tmp }\end{DoxyParamCaption})}
+
+
+
+Inverse fft. 
+
+discrete Inverse Fast Fourier Transform, Converts frequency to time domain ~\newline
+ Assume the input is complex data with components k=0 to n-\/1 ~\newline
+ Index 0 $<$= k $<$ n-\/1 complex components of frequency f=k/fs ~\newline
+ E.\+g., k=0 represents the DC component of the input ~\newline
+ Place n complex values into the array v ~\newline
+ Typically the index n/2 $<$= k $<$ n are complex conjugates of the first half~\newline
+ Call \mbox{\hyperlink{group___math_ga4ad1f9b6c8ed4f2fdb439e795c3c0e3a}{ifft()}} and the results are returned back in array v ~\newline
+ If the input is real only, then the transform will contain ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em v} & array of input data in complex form \\
+\hline
+{\em n} & size of the two arrays 2, 4, 8, ..., 2048 \\
+\hline
+{\em tmp} & temporary array of data in complex form \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+n is a power of two from 2 to 2048 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga1aa4775b51155a2f1d8baff67b9230be}\label{group___math_ga1aa4775b51155a2f1d8baff67b9230be}} 
+\index{Math@{Math}!isqrt@{isqrt}}
+\index{isqrt@{isqrt}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{isqrt()}{isqrt()}}
+{\footnotesize\ttfamily uint32\+\_\+t isqrt (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+square root 
+
+Newton\textquotesingle{}s method square root 
+\begin{DoxyParams}{Parameters}
+{\em s} & is an integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is an integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gae8bf90094c65b2e5e16c93a16c7055a4}\label{group___math_gae8bf90094c65b2e5e16c93a16c7055a4}} 
+\index{Math@{Math}!LeftRightFuzzification@{LeftRightFuzzification}}
+\index{LeftRightFuzzification@{LeftRightFuzzification}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{LeftRightFuzzification()}{LeftRightFuzzification()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} Left\+Right\+Fuzzification (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{crisp,  }\item[{const int32\+\_\+t}]{MIN,  }\item[{const int32\+\_\+t}]{LEFT,  }\item[{const int32\+\_\+t}]{RIGHT,  }\item[{const int32\+\_\+t}]{MAX }\end{DoxyParamCaption})}
+
+
+
+Fuzzification. 
+
+Fuzzy logic fuzzification, converting crisp input to fuzzy variable.~\newline
+ If crisp is less than MIN, then fuzzy is false. ~\newline
+ If crisp is between MIN and LEFT, then fuzzy is linear. ~\newline
+ If crisp is between LEFT and RIGHT, then fuzzy is true. ~\newline
+ If crisp is between RIGHT and max, then fuzzy is linear. ~\newline
+ If crisp is greater than MAX, then fuzzy is false. ~\newline
+ 255 ~\newline
+ $\vert$.................... -\/--- ~\newline
+ $\vert$................. / ...... ~\newline
+ $\vert$.............. / ........... \textbackslash{} ~\newline
+ $\vert$........... / ................. \textbackslash{} ~\newline
+ $\vert$........ / ....................... \textbackslash{} ~\newline
+ $\vert$-\/-\/-\/-\/-\/--- ...........................-\/-\/-\/-\/-\/-\/---~\newline
+ 0.....MIN ... LEFT RIGHT.... MAX ~\newline
+ ~\newline
+ \begin{DoxyNote}{Note}
+Constants must be ordered\+: MIN$<$LEFT$<$RIGHT$<$MAX. Constants must not be equal. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em crisp} & is a crisp input \\
+\hline
+{\em MIN} & is threshold value for the crisp input \\
+\hline
+{\em LEFT} & is a second threshold value for the crisp input \\
+\hline
+{\em RIGHT} & is a third threshold value for the crisp input \\
+\hline
+{\em MAX} & is a fourth threshold value for the crisp input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fuzzy value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga5f516bb95e5f68543674b7766febed43}\label{group___math_ga5f516bb95e5f68543674b7766febed43}} 
+\index{Math@{Math}!LPF\_Calc@{LPF\_Calc}}
+\index{LPF\_Calc@{LPF\_Calc}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{LPF\_Calc()}{LPF\_Calc()}}
+{\footnotesize\ttfamily uint32\+\_\+t LPF\+\_\+\+Calc (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{newdata }\end{DoxyParamCaption})}
+
+
+
+FIR low pass filter. 
+
+First LPF, calculate one filter output~\newline
+ Called at sampling rate 
+\begin{DoxyParams}{Parameters}
+{\em newdata} & new ADC data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result filter output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gaf1c031fec10c4752e76c7ba504700131}\label{group___math_gaf1c031fec10c4752e76c7ba504700131}} 
+\index{Math@{Math}!LPF\_Calc2@{LPF\_Calc2}}
+\index{LPF\_Calc2@{LPF\_Calc2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{LPF\_Calc2()}{LPF\_Calc2()}}
+{\footnotesize\ttfamily uint32\+\_\+t LPF\+\_\+\+Calc2 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{newdata }\end{DoxyParamCaption})}
+
+
+
+FIR low pass filter. 
+
+Second LPF, calculate one filter output~\newline
+ Called at sampling rate 
+\begin{DoxyParams}{Parameters}
+{\em newdata} & new ADC data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result filter output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gae74bc77a41e61bfccfc2e771be99aef2}\label{group___math_gae74bc77a41e61bfccfc2e771be99aef2}} 
+\index{Math@{Math}!LPF\_Calc3@{LPF\_Calc3}}
+\index{LPF\_Calc3@{LPF\_Calc3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{LPF\_Calc3()}{LPF\_Calc3()}}
+{\footnotesize\ttfamily uint32\+\_\+t LPF\+\_\+\+Calc3 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{newdata }\end{DoxyParamCaption})}
+
+
+
+FIR low pass filter. 
+
+Third LPF, calculate one filter output~\newline
+ Called at sampling rate 
+\begin{DoxyParams}{Parameters}
+{\em newdata} & new ADC data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result filter output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gac28327f99b7d0312192606455fdfb49f}\label{group___math_gac28327f99b7d0312192606455fdfb49f}} 
+\index{Math@{Math}!LPF\_Init@{LPF\_Init}}
+\index{LPF\_Init@{LPF\_Init}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{LPF\_Init()}{LPF\_Init()}}
+{\footnotesize\ttfamily void LPF\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{initial,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Initialize first LPF. 
+
+Initialize first LPF~\newline
+ Set all data to an initial value~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em initial} & value to preload into MACQ \\
+\hline
+{\em size} & depth of the filter, 2 to 512 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+all three filters share the same size 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gabcb3c4786ebdec7965864e68ad07d04b}\label{group___math_gabcb3c4786ebdec7965864e68ad07d04b}} 
+\index{Math@{Math}!LPF\_Init2@{LPF\_Init2}}
+\index{LPF\_Init2@{LPF\_Init2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{LPF\_Init2()}{LPF\_Init2()}}
+{\footnotesize\ttfamily void LPF\+\_\+\+Init2 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{initial,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Initialize second LPF. 
+
+Initialize second LPF~\newline
+ Set all data to an initial value~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em initial} & value to preload into MACQ \\
+\hline
+{\em size} & depth of the filter, 2 to 512 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+all three filters share the same size 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga6ca6d50b606281a8154861e92048eb35}\label{group___math_ga6ca6d50b606281a8154861e92048eb35}} 
+\index{Math@{Math}!LPF\_Init3@{LPF\_Init3}}
+\index{LPF\_Init3@{LPF\_Init3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{LPF\_Init3()}{LPF\_Init3()}}
+{\footnotesize\ttfamily void LPF\+\_\+\+Init3 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{initial,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Initialize third LPF. 
+
+Initialize third LPF~\newline
+ Set all data to an initial value~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em initial} & value to preload into MACQ \\
+\hline
+{\em size} & depth of the filter, 2 to 512 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+all three filters share the same size 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga92d909efc7baf21dc50b0030d986d626}\label{group___math_ga92d909efc7baf21dc50b0030d986d626}} 
+\index{Math@{Math}!MaxFuzzification@{MaxFuzzification}}
+\index{MaxFuzzification@{MaxFuzzification}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{MaxFuzzification()}{MaxFuzzification()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} Max\+Fuzzification (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{crisp,  }\item[{const int32\+\_\+t}]{MIN,  }\item[{const int32\+\_\+t}]{MAX }\end{DoxyParamCaption})}
+
+
+
+Fuzzification. 
+
+Fuzzy logic fuzzification, converting crisp input to fuzzy variable.~\newline
+ If crisp is less than MIN, then fuzzy is false.~\newline
+ If crisp is between MIN and MAX, then fuzzy is linear.~\newline
+ If crisp is greater than MAX, then fuzzy is true.~\newline
+ 255 ~\newline
+ $\vert$........................-\/-\/-\/-\/-\/-\/--- ~\newline
+ $\vert$...................... / ~\newline
+ $\vert$................... / ~\newline
+ $\vert$................ / ~\newline
+ $\vert$............. / ~\newline
+ $\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/--- ~\newline
+ 0..........MIN.......MAX ~\newline
+ ~\newline
+ \begin{DoxyNote}{Note}
+MIN must be less than MAX 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em crisp} & is a crisp input \\
+\hline
+{\em MIN} & is threshold value for the crisp input \\
+\hline
+{\em MAX} & is another threshold value for the crisp input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fuzzy value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gab880f5c671175cde000252f8d38f8bda}\label{group___math_gab880f5c671175cde000252f8d38f8bda}} 
+\index{Math@{Math}!Median@{Median}}
+\index{Median@{Median}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Median()}{Median()}}
+{\footnotesize\ttfamily int32\+\_\+t Median (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{newdata }\end{DoxyParamCaption})}
+
+
+
+Median filter. 
+
+3-\/wide non recursive Median filter ~\newline
+ Called with new data at sampling rate 
+\begin{DoxyParams}{Parameters}
+{\em newdata} & new ADC data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result filter output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga6f07812bace46b2508dbebfe1f73cdff}\label{group___math_ga6f07812bace46b2508dbebfe1f73cdff}} 
+\index{Math@{Math}!min32@{min32}}
+\index{min32@{min32}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{min32()}{min32()}}
+{\footnotesize\ttfamily int32\+\_\+t min32 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{n1,  }\item[{int32\+\_\+t}]{n2,  }\item[{int32\+\_\+t}]{n3 }\end{DoxyParamCaption})}
+
+
+
+minimum 
+
+32-\/bit signed minimum 
+\begin{DoxyParams}{Parameters}
+{\em n1} & is a 32-\/bit signed number \\
+\hline
+{\em n2} & is a 32-\/bit signed number \\
+\hline
+{\em n3} & is a 32-\/bit signed number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+minimum of n1 n2 n3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga5ef897aa479083ee0735ff044e1b7a38}\label{group___math_ga5ef897aa479083ee0735ff044e1b7a38}} 
+\index{Math@{Math}!MinFuzzification@{MinFuzzification}}
+\index{MinFuzzification@{MinFuzzification}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{MinFuzzification()}{MinFuzzification()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} Min\+Fuzzification (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{crisp,  }\item[{const int32\+\_\+t}]{MIN,  }\item[{const int32\+\_\+t}]{MAX }\end{DoxyParamCaption})}
+
+
+
+Fuzzification. 
+
+Fuzzy logic fuzzification, converting crisp input to fuzzy variable.~\newline
+ If crisp is less than MIN, then fuzzy is true.~\newline
+ If crisp is between MIN and MAX, then fuzzy is linear.~\newline
+ If crisp is greater than MAX, then fuzzy is false.~\newline
+ 255 ~\newline
+ $\vert$-\/-\/-\/-\/-\/-\/-\/--- ~\newline
+ $\vert$........... \textbackslash{} ~\newline
+ $\vert$.............. \textbackslash{} ~\newline
+ $\vert$................. \textbackslash{} ~\newline
+ $\vert$.................... \textbackslash{} ~\newline
+ $\vert$....................... -\/-\/-\/-\/-\/-\/-\/---~\newline
+ 0..........MIN.......MAX ~\newline
+ ~\newline
+ \begin{DoxyNote}{Note}
+MIN must be less than MAX. Constants must not be equal. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em crisp} & is a crisp input \\
+\hline
+{\em MIN} & is threshold value for the crisp input \\
+\hline
+{\em MAX} & is another threshold value for the crisp input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fuzzy value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gabe2603c167f6e3dd69ba704c399eb42f}\label{group___math_gabe2603c167f6e3dd69ba704c399eb42f}} 
+\index{Math@{Math}!Noise@{Noise}}
+\index{Noise@{Noise}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Noise()}{Noise()}}
+{\footnotesize\ttfamily int32\+\_\+t Noise (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+calculate amount of random noise 
+
+First LPF, calculate noise as standard deviation~\newline
+ Called every time the buffer refills 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+standard deviation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga3f39976e26c40a899c2c8cf5188600f8}\label{group___math_ga3f39976e26c40a899c2c8cf5188600f8}} 
+\index{Math@{Math}!Noise2@{Noise2}}
+\index{Noise2@{Noise2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Noise2()}{Noise2()}}
+{\footnotesize\ttfamily int32\+\_\+t Noise2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+calculate amount of random noise 
+
+Second LPF, calculate noise as standard deviation~\newline
+ Called every time the buffer refills 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+standard deviation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gada6fd6e7cdc0f6693eba470245f6576a}\label{group___math_gada6fd6e7cdc0f6693eba470245f6576a}} 
+\index{Math@{Math}!Noise3@{Noise3}}
+\index{Noise3@{Noise3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Noise3()}{Noise3()}}
+{\footnotesize\ttfamily int32\+\_\+t Noise3 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+calculate amount of random noise 
+
+Third LPF, calculate noise as standard deviation~\newline
+ Called every time the buffer refills 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+standard deviation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga82d9a7093bd3b7918d355b3284346802}\label{group___math_ga82d9a7093bd3b7918d355b3284346802}} 
+\index{Math@{Math}!not@{not}}
+\index{not@{not}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{not()}{not()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} not (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u1 }\end{DoxyParamCaption})}
+
+
+
+Complement. 
+
+Fuzzy logic complement 
+\begin{DoxyParams}{Parameters}
+{\em u1} & is a fuzzy variable having values from 0(false) to 255(true) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+255-\/u1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga1ef75bf637013d317fd67af7d24d9487}\label{group___math_ga1ef75bf637013d317fd67af7d24d9487}} 
+\index{Math@{Math}!Odometry\_Get@{Odometry\_Get}}
+\index{Odometry\_Get@{Odometry\_Get}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Odometry\_Get()}{Odometry\_Get()}}
+{\footnotesize\ttfamily void Odometry\+\_\+\+Get (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{x,  }\item[{int32\+\_\+t $\ast$}]{y,  }\item[{int32\+\_\+t $\ast$}]{theta }\end{DoxyParamCaption})}
+
+
+
+Get the current robot position. 
+
+Get the current robot position. 
+\begin{DoxyParams}{Parameters}
+{\em x} & is pointer to store x position of the robot (units of 0.\+0001cm) \\
+\hline
+{\em y} & is pointer to store y position of the robot (units of 0.\+0001cm) \\
+\hline
+{\em theta} & is pointer to store angle (or direction) of the robot (units of 2$\ast$pi/16384 radians) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Assumes \mbox{\hyperlink{group___math_ga02038c8bfaf26fb3cf26f87c700ace21}{Odometry\+\_\+\+Init()}} has been called at least once~\newline
+ 
+
+Typically \mbox{\hyperlink{group___math_ga57e039201476eac111718cd0389008e2}{Odometry\+\_\+\+Update()}} is being called periodically (so LCount and RCount are less than 30) 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga010212b0f335a235e37853f1566eb789}\label{group___math_ga010212b0f335a235e37853f1566eb789}} 
+\index{Math@{Math}!Odometry\_GetAngle@{Odometry\_GetAngle}}
+\index{Odometry\_GetAngle@{Odometry\_GetAngle}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Odometry\_GetAngle()}{Odometry\_GetAngle()}}
+{\footnotesize\ttfamily int32\+\_\+t Odometry\+\_\+\+Get\+Angle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get theta angle. 
+
+Fetch value of the current theta angle of the robot 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+position units of 2$\ast$pi/16384 radians 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga445ed3ce2b8e40f5f1b289c5f2e10877}\label{group___math_ga445ed3ce2b8e40f5f1b289c5f2e10877}} 
+\index{Math@{Math}!Odometry\_GetX@{Odometry\_GetX}}
+\index{Odometry\_GetX@{Odometry\_GetX}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Odometry\_GetX()}{Odometry\_GetX()}}
+{\footnotesize\ttfamily int32\+\_\+t Odometry\+\_\+\+GetX (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get X position. 
+
+Fetch value of the current X position of the robot 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+position in units of 0.\+0001cm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gada122c001d23df57126239baedd3dd41}\label{group___math_gada122c001d23df57126239baedd3dd41}} 
+\index{Math@{Math}!Odometry\_GetY@{Odometry\_GetY}}
+\index{Odometry\_GetY@{Odometry\_GetY}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Odometry\_GetY()}{Odometry\_GetY()}}
+{\footnotesize\ttfamily int32\+\_\+t Odometry\+\_\+\+GetY (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get y position. 
+
+Fetch value of the current y position of the robot 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+position in units of 0.\+0001cm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga02038c8bfaf26fb3cf26f87c700ace21}\label{group___math_ga02038c8bfaf26fb3cf26f87c700ace21}} 
+\index{Math@{Math}!Odometry\_Init@{Odometry\_Init}}
+\index{Odometry\_Init@{Odometry\_Init}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Odometry\_Init()}{Odometry\_Init()}}
+{\footnotesize\ttfamily void Odometry\+\_\+\+Init (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{initx,  }\item[{int32\+\_\+t}]{inity,  }\item[{int32\+\_\+t}]{init\+Theta }\end{DoxyParamCaption})}
+
+
+
+Initialize odometry module. 
+
+Initialize odometry module by specifying the initial position/angle of the robot. Angles range from (-\/pi to +pi) signified by -\/8192 to +8191. 
+\begin{DoxyParams}{Parameters}
+{\em initx} & initial x position of the robot (units of 0.\+0001cm) \\
+\hline
+{\em inity} & initial y position of the robot (units of 0.\+0001cm) \\
+\hline
+{\em init\+Theta} & initial angle of the robot (units of 2$\ast$pi/16384 radians) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga65bc6118c80d609922568caef39d5534}\label{group___math_ga65bc6118c80d609922568caef39d5534}} 
+\index{Math@{Math}!Odometry\_SetPower@{Odometry\_SetPower}}
+\index{Odometry\_SetPower@{Odometry\_SetPower}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Odometry\_SetPower()}{Odometry\_SetPower()}}
+{\footnotesize\ttfamily void Odometry\+\_\+\+Set\+Power (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{fast,  }\item[{uint32\+\_\+t}]{slow }\end{DoxyParamCaption})}
+
+
+
+Set power levels. 
+
+Specifies two power levels to use during odometry task, and PWM levels must be between 0 to 14,998. Obviously, the power level must be high enough to move robot 
+\begin{DoxyParams}{Parameters}
+{\em fast} & PWM level for moving forward \\
+\hline
+{\em slow} & PWM level for turning \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga57e039201476eac111718cd0389008e2}\label{group___math_ga57e039201476eac111718cd0389008e2}} 
+\index{Math@{Math}!Odometry\_Update@{Odometry\_Update}}
+\index{Odometry\_Update@{Odometry\_Update}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Odometry\_Update()}{Odometry\_Update()}}
+{\footnotesize\ttfamily void Odometry\+\_\+\+Update (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{LCount,  }\item[{int32\+\_\+t}]{RCount }\end{DoxyParamCaption})}
+
+
+
+Compute new position/angle of the robot. 
+
+Inputs are wheel tachometer counts (n counts/rotation), and outputs are private global variable of new position/angle 
+\begin{DoxyParams}{Parameters}
+{\em LCount} & number of left wheel tachometer counts from the last update \\
+\hline
+{\em RCount} & number of right wheel tachometer counts from the last update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga80c32cc652c6e87036e30b75b64d9b0c}\label{group___math_ga80c32cc652c6e87036e30b75b64d9b0c}} 
+\index{Math@{Math}!or@{or}}
+\index{or@{or}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{or()}{or()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} or (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u1,  }\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u2 }\end{DoxyParamCaption})}
+
+
+
+Fuzzy or. 
+
+Fuzzy logic or 
+\begin{DoxyParams}{Parameters}
+{\em u1} & is a fuzzy variable \\
+\hline
+{\em u2} & is a fuzzy variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+maximum of u1 u2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga062ad2061883d8d7cdb0aa9d07ac1d82}\label{group___math_ga062ad2061883d8d7cdb0aa9d07ac1d82}} 
+\index{Math@{Math}!or3@{or3}}
+\index{or3@{or3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{or3()}{or3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}} or3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u1,  }\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u2,  }\item[{\mbox{\hyperlink{group___math_ga549830a020cd88214f3023fdc9342c7f}{fuz\+\_\+t}}}]{u3 }\end{DoxyParamCaption})}
+
+
+
+Fuzzy or. 
+
+Fuzzy logic or 
+\begin{DoxyParams}{Parameters}
+{\em u1} & is a fuzzy variable \\
+\hline
+{\em u2} & is a fuzzy variable \\
+\hline
+{\em u3} & is a fuzzy variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+maximum of u1 u2 u3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga29c955d6df8bff9bdea2ea6be449213a}\label{group___math_ga29c955d6df8bff9bdea2ea6be449213a}} 
+\index{Math@{Math}!Profile\_Get@{Profile\_Get}}
+\index{Profile\_Get@{Profile\_Get}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Profile\_Get()}{Profile\_Get()}}
+{\footnotesize\ttfamily uint8\+\_\+t Profile\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+status of all Profile pins 
+
+Return the current status of all Profile pins. Profile 0 is in bit 0. Profile 1 is in bit 1, and so on. The most significant bit is set to tell the PC that these values are data and not standard ASCII characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+7-\/bit status of all Profile pins
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{group___math_ga488202ff7b48ae2cef60717e78540d22}{Profile\+\_\+\+Init()}} has been called 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga488202ff7b48ae2cef60717e78540d22}\label{group___math_ga488202ff7b48ae2cef60717e78540d22}} 
+\index{Math@{Math}!Profile\_Init@{Profile\_Init}}
+\index{Profile\_Init@{Profile\_Init}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{Profile\_Init()}{Profile\_Init()}}
+{\footnotesize\ttfamily void Profile\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the logic analyzer or scope. 
+
+Initialize all Profile pins for GPIO output, which correspond with unused Booster\+Pack pins. The Profile pins can be set, cleared, or toggled at strategic times and observed with a logic analyzer. This function should be called once at the beginning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Data sent at 10 k\+Hz 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gac7c45c957c34358649129833a8e4944a}\label{group___math_gac7c45c957c34358649129833a8e4944a}} 
+\index{Math@{Math}!RxFifo0\_Get@{RxFifo0\_Get}}
+\index{RxFifo0\_Get@{RxFifo0\_Get}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{RxFifo0\_Get()}{RxFifo0\_Get()}}
+{\footnotesize\ttfamily int Rx\+Fifo0\+\_\+\+Get (\begin{DoxyParamCaption}\item[{char $\ast$}]{datapt }\end{DoxyParamCaption})}
+
+
+
+Get into Rx\+Fifo0. 
+
+Remove one 8-\/bit element from Rx\+Fifo0.
+
+Returns the oldest value, first in first out \begin{DoxyWarning}{Warning}
+Rx\+Fifo0\+\_\+\+Get itself need not be reentrant, but Rx\+Fifo0\+\_\+\+Get must be thread-\/safe with Rx\+Fifo0\+\_\+\+Put 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em datapt} & pointer to a 8-\/bit storage location, into which to store the removed data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FIFOSUCCESS if ok, FIFOFAIL if empty and data could not be removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga06eb53f9cade465c55296709e95d4114}\label{group___math_ga06eb53f9cade465c55296709e95d4114}} 
+\index{Math@{Math}!RxFifo0\_Init@{RxFifo0\_Init}}
+\index{RxFifo0\_Init@{RxFifo0\_Init}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{RxFifo0\_Init()}{RxFifo0\_Init()}}
+{\footnotesize\ttfamily void Rx\+Fifo0\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize Rx\+Fifo0. 
+
+The Rx\+Fifo0 FIFO is used by the receive channel. Incoming data are stored into this FIFO.
+
+Can hold 0 to RX0\+FIFOSIZE-\/1 elements, first in first out. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga92f3417eb801d56616b076240d69a1b3}\label{group___math_ga92f3417eb801d56616b076240d69a1b3}} 
+\index{Math@{Math}!RxFifo0\_Put@{RxFifo0\_Put}}
+\index{RxFifo0\_Put@{RxFifo0\_Put}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{RxFifo0\_Put()}{RxFifo0\_Put()}}
+{\footnotesize\ttfamily int Rx\+Fifo0\+\_\+\+Put (\begin{DoxyParamCaption}\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+Put into Rx\+Fifo0. 
+
+Add one 8-\/bit element to Rx\+Fifo0.
+
+Can hold 0 to RX0\+FIFOSIZE-\/1 elements, first in first out \begin{DoxyWarning}{Warning}
+Rx\+Fifo0\+\_\+\+Put itself need not be reentrant, but Rx\+Fifo0\+\_\+\+Put must be thread-\/safe with Rx\+Fifo0\+\_\+\+Get 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & 8-\/bit value to store into Rx\+Fifo0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FIFOSUCCESS if ok, FIFOFAIL if full and could not be saved 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga5df480c504a961365182a947dff8b868}\label{group___math_ga5df480c504a961365182a947dff8b868}} 
+\index{Math@{Math}!RxFifo0\_Size@{RxFifo0\_Size}}
+\index{RxFifo0\_Size@{RxFifo0\_Size}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{RxFifo0\_Size()}{RxFifo0\_Size()}}
+{\footnotesize\ttfamily uint16\+\_\+t Rx\+Fifo0\+\_\+\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Current size of Rx\+Fifo0. 
+
+Return the number of elements in Rx\+Fifo0.
+
+Can hold 0 to RX0\+FIFOSIZE-\/1 elements 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of elements in Rx\+Fifo0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga47488781167f4a2b93cd7fdc2f862c59}\label{group___math_ga47488781167f4a2b93cd7fdc2f862c59}} 
+\index{Math@{Math}!SoftLeftUntilTh@{SoftLeftUntilTh}}
+\index{SoftLeftUntilTh@{SoftLeftUntilTh}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{SoftLeftUntilTh()}{SoftLeftUntilTh()}}
+{\footnotesize\ttfamily uint32\+\_\+t Soft\+Left\+Until\+Th (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{desired\+Th }\end{DoxyParamCaption})}
+
+
+
+Soft Left Until Theta. 
+
+Odometry command to soft left until theta goal has been reached. This routine will run until goal is met. 
+\begin{DoxyParams}{Parameters}
+{\em desired\+Th} & desired theta position in units of 2$\ast$pi/16384 radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success, nonzero is failure (crash=bump sensor or 0x\+FF=going wrong way) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga1c5406d6e8a5d440d0a293cc331abd09}\label{group___math_ga1c5406d6e8a5d440d0a293cc331abd09}} 
+\index{Math@{Math}!SoftLeftUntilThStart@{SoftLeftUntilThStart}}
+\index{SoftLeftUntilThStart@{SoftLeftUntilThStart}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{SoftLeftUntilThStart()}{SoftLeftUntilThStart()}}
+{\footnotesize\ttfamily void Soft\+Left\+Until\+Th\+Start (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{thedesired\+Th }\end{DoxyParamCaption})}
+
+
+
+start going Forward Until Y 
+
+Odometry command to soft left until theta goal has been reached. This routine will start the command, but return immediately 
+\begin{DoxyParams}{Parameters}
+{\em thedesired\+Th} & desired theta position in units of 2$\ast$pi/16384 radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga26dd48a17bfa7e00662f4243b373903c}\label{group___math_ga26dd48a17bfa7e00662f4243b373903c}} 
+\index{Math@{Math}!StopUntilBumperTouched@{StopUntilBumperTouched}}
+\index{StopUntilBumperTouched@{StopUntilBumperTouched}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{StopUntilBumperTouched()}{StopUntilBumperTouched()}}
+{\footnotesize\ttfamily void Stop\+Until\+Bumper\+Touched (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop and wait until bumper touched. 
+
+Stop and wait until bumper touched 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+uses bump.\+c 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga557cdfa1e0d493cdfc7106a034c7e450}\label{group___math_ga557cdfa1e0d493cdfc7106a034c7e450}} 
+\index{Math@{Math}!TExaS\_Clear0@{TExaS\_Clear0}}
+\index{TExaS\_Clear0@{TExaS\_Clear0}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Clear0()}{TExaS\_Clear0()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Clear0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit0 cleared low. 
+
+Clear logic analyzer bit 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga37f6a72d74ec91d2fa2b5bf149c17392}\label{group___math_ga37f6a72d74ec91d2fa2b5bf149c17392}} 
+\index{Math@{Math}!TExaS\_Clear1@{TExaS\_Clear1}}
+\index{TExaS\_Clear1@{TExaS\_Clear1}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Clear1()}{TExaS\_Clear1()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Clear1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit1 cleared low. 
+
+Clear logic analyzer bit 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gafda97ee912d530d3c0c5695869fc4955}\label{group___math_gafda97ee912d530d3c0c5695869fc4955}} 
+\index{Math@{Math}!TExaS\_Clear2@{TExaS\_Clear2}}
+\index{TExaS\_Clear2@{TExaS\_Clear2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Clear2()}{TExaS\_Clear2()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Clear2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit2 cleared low. 
+
+Clear logic analyzer bit 2
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga49361f2461c5a25e966f904bf57919db}\label{group___math_ga49361f2461c5a25e966f904bf57919db}} 
+\index{Math@{Math}!TExaS\_Clear3@{TExaS\_Clear3}}
+\index{TExaS\_Clear3@{TExaS\_Clear3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Clear3()}{TExaS\_Clear3()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Clear3 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit3 cleared low. 
+
+Clear logic analyzer bit 3
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga5b64480daeb41b3755160fb21eb57f76}\label{group___math_ga5b64480daeb41b3755160fb21eb57f76}} 
+\index{Math@{Math}!TExaS\_Clear4@{TExaS\_Clear4}}
+\index{TExaS\_Clear4@{TExaS\_Clear4}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Clear4()}{TExaS\_Clear4()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Clear4 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit4 cleared low. 
+
+Clear logic analyzer bit 4
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga8418143a137cbb6ff108d89820f96cb1}\label{group___math_ga8418143a137cbb6ff108d89820f96cb1}} 
+\index{Math@{Math}!TExaS\_Clear5@{TExaS\_Clear5}}
+\index{TExaS\_Clear5@{TExaS\_Clear5}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Clear5()}{TExaS\_Clear5()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Clear5 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit5 cleared low. 
+
+Clear logic analyzer bit 5
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga32e8f15744b7c8b0428a99ef790c10c7}\label{group___math_ga32e8f15744b7c8b0428a99ef790c10c7}} 
+\index{Math@{Math}!TExaS\_Clear6@{TExaS\_Clear6}}
+\index{TExaS\_Clear6@{TExaS\_Clear6}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Clear6()}{TExaS\_Clear6()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Clear6 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit6 cleared low. 
+
+Clear logic analyzer bit 6
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gac5f5edc29f553eac7589c658d1c08ef5}\label{group___math_gac5f5edc29f553eac7589c658d1c08ef5}} 
+\index{Math@{Math}!TExaS\_Init@{TExaS\_Init}}
+\index{TExaS\_Init@{TExaS\_Init}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Init()}{TExaS\_Init()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Init (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{group___math_ga5e88b13c91baf6c42b8a3022523a5b33}{TExa\+Smode}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Initialize logic analyzer or scope. 
+
+Initialize scope or logic analyzer, triggered by periodic timer
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & is SCOPE or LOGICANALYZER \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This module only runs at 48 MHz~\newline
+ Uses UART0, EUSCI\+\_\+\+A0 to pass data to PC~\newline
+ Uses ADC J3.\+26/\+P4.4/\+A9 in scope mode~\newline
+ Uses Timer32 periodic interrupts for 10 k\+Hz sampling 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+TExa\+S\+\_\+\+Init must be called before calling any other TExaS functions
+\end{DoxyWarning}
+Virtual 7-\/bit logic analyzer or 8-\/bit scope sampling J3.\+26/\+P4.4/\+A9 \mbox{\Hypertarget{group___math_ga3d31c706b90d3156910d6da229f15e5f}\label{group___math_ga3d31c706b90d3156910d6da229f15e5f}} 
+\index{Math@{Math}!TExaS\_Set@{TExaS\_Set}}
+\index{TExaS\_Set@{TExaS\_Set}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set()}{TExaS\_Set()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+specify logic analyzer output 
+
+Specify all seven bits of logic analyzer
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is a 7-\/bit number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga46145d89ba6be5894bb7f29f1bbc65e4}\label{group___math_ga46145d89ba6be5894bb7f29f1bbc65e4}} 
+\index{Math@{Math}!TExaS\_Set0@{TExaS\_Set0}}
+\index{TExaS\_Set0@{TExaS\_Set0}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set0()}{TExaS\_Set0()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit0 set high. 
+
+Set logic analyzer bit 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gad2baf012e7fe32af2f2893400219946b}\label{group___math_gad2baf012e7fe32af2f2893400219946b}} 
+\index{Math@{Math}!TExaS\_Set1@{TExaS\_Set1}}
+\index{TExaS\_Set1@{TExaS\_Set1}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set1()}{TExaS\_Set1()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit1 set high. 
+
+Set logic analyzer bit 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga343599a9b7727394c00c67924d601b41}\label{group___math_ga343599a9b7727394c00c67924d601b41}} 
+\index{Math@{Math}!TExaS\_Set2@{TExaS\_Set2}}
+\index{TExaS\_Set2@{TExaS\_Set2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set2()}{TExaS\_Set2()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit2 set high. 
+
+Set logic analyzer bit 2
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga27c5f2fb57ee49159cb8275847f2ab5b}\label{group___math_ga27c5f2fb57ee49159cb8275847f2ab5b}} 
+\index{Math@{Math}!TExaS\_Set3@{TExaS\_Set3}}
+\index{TExaS\_Set3@{TExaS\_Set3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set3()}{TExaS\_Set3()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set3 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit3 set high. 
+
+Set logic analyzer bit 3
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gad15b5a7bad5415929e9ff92bb0c0f0de}\label{group___math_gad15b5a7bad5415929e9ff92bb0c0f0de}} 
+\index{Math@{Math}!TExaS\_Set4@{TExaS\_Set4}}
+\index{TExaS\_Set4@{TExaS\_Set4}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set4()}{TExaS\_Set4()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set4 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit4 set high. 
+
+Set logic analyzer bit 4
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gac527055bac7642610dec1081beb68317}\label{group___math_gac527055bac7642610dec1081beb68317}} 
+\index{Math@{Math}!TExaS\_Set5@{TExaS\_Set5}}
+\index{TExaS\_Set5@{TExaS\_Set5}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set5()}{TExaS\_Set5()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set5 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit5 set high. 
+
+Set logic analyzer bit 5
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gabe1a5cea692d6ddb6fddbc35f35926db}\label{group___math_gabe1a5cea692d6ddb6fddbc35f35926db}} 
+\index{Math@{Math}!TExaS\_Set6@{TExaS\_Set6}}
+\index{TExaS\_Set6@{TExaS\_Set6}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Set6()}{TExaS\_Set6()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Set6 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Bit5 set high. 
+
+Set logic analyzer bit 5
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gadeb7fccbbb1881b866ba3ad16712294c}\label{group___math_gadeb7fccbbb1881b866ba3ad16712294c}} 
+\index{Math@{Math}!TExaS\_Stop@{TExaS\_Stop}}
+\index{TExaS\_Stop@{TExaS\_Stop}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Stop()}{TExaS\_Stop()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the logic analyzer or scope. 
+
+Stop scope or logic analyzer functionality
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Data sent at 10 k\+Hz 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga1956a36415c3dcd2df5f68e5feb1c54d}\label{group___math_ga1956a36415c3dcd2df5f68e5feb1c54d}} 
+\index{Math@{Math}!TExaS\_Task0@{TExaS\_Task0}}
+\index{TExaS\_Task0@{TExaS\_Task0}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Task0()}{TExaS\_Task0()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Task0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+toggle bit 0 
+
+Toggle logic analyzer bit 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gad625fa4120b4cf970a4545517f05481d}\label{group___math_gad625fa4120b4cf970a4545517f05481d}} 
+\index{Math@{Math}!TExaS\_Task1@{TExaS\_Task1}}
+\index{TExaS\_Task1@{TExaS\_Task1}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Task1()}{TExaS\_Task1()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Task1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+toggle bit 1 
+
+Toggle logic analyzer bit 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gadec1e2ded8292c19e341ebf873d2d455}\label{group___math_gadec1e2ded8292c19e341ebf873d2d455}} 
+\index{Math@{Math}!TExaS\_Task2@{TExaS\_Task2}}
+\index{TExaS\_Task2@{TExaS\_Task2}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Task2()}{TExaS\_Task2()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Task2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+toggle bit 2 
+
+Toggle logic analyzer bit 2
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gab2cb179efa5577e32813435376f7b8f1}\label{group___math_gab2cb179efa5577e32813435376f7b8f1}} 
+\index{Math@{Math}!TExaS\_Task3@{TExaS\_Task3}}
+\index{TExaS\_Task3@{TExaS\_Task3}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Task3()}{TExaS\_Task3()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Task3 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+toggle bit 3 
+
+Toggle logic analyzer bit 3
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_gab59ea6d3077ab859dd41a37b40253f3e}\label{group___math_gab59ea6d3077ab859dd41a37b40253f3e}} 
+\index{Math@{Math}!TExaS\_Task4@{TExaS\_Task4}}
+\index{TExaS\_Task4@{TExaS\_Task4}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Task4()}{TExaS\_Task4()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Task4 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+toggle bit 4 
+
+Toggle logic analyzer bit 4
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga38ed800557809cf9c85df5f440d469e5}\label{group___math_ga38ed800557809cf9c85df5f440d469e5}} 
+\index{Math@{Math}!TExaS\_Task5@{TExaS\_Task5}}
+\index{TExaS\_Task5@{TExaS\_Task5}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Task5()}{TExaS\_Task5()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Task5 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+toggle bit 5 
+
+Toggle logic analyzer bit 5
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga278002f54056da03e4cae02baa70a9fd}\label{group___math_ga278002f54056da03e4cae02baa70a9fd}} 
+\index{Math@{Math}!TExaS\_Task6@{TExaS\_Task6}}
+\index{TExaS\_Task6@{TExaS\_Task6}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TExaS\_Task6()}{TExaS\_Task6()}}
+{\footnotesize\ttfamily void TExa\+S\+\_\+\+Task6 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+toggle bit 6 
+
+Toggle logic analyzer bit 6
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Logic analyzer data sent at 10 k\+Hz 
+
+Only used with TExa\+S\+\_\+\+Init(\+LOGICANALYZER); initialization 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga046913ef7f02e9348b18a5572919bf5d}\label{group___math_ga046913ef7f02e9348b18a5572919bf5d}} 
+\index{Math@{Math}!TxFifo0\_Get@{TxFifo0\_Get}}
+\index{TxFifo0\_Get@{TxFifo0\_Get}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TxFifo0\_Get()}{TxFifo0\_Get()}}
+{\footnotesize\ttfamily int Tx\+Fifo0\+\_\+\+Get (\begin{DoxyParamCaption}\item[{char $\ast$}]{datapt }\end{DoxyParamCaption})}
+
+
+
+Get into Tx\+Fifo0. 
+
+Remove one 8-\/bit element from Tx\+Fifo0.
+
+Returns the oldest value, first in first out \begin{DoxyWarning}{Warning}
+Tx\+Fifo0\+\_\+\+Get itself need not be reentrant, but Tx\+Fifo0\+\_\+\+Get must be thread-\/safe with Tx\+Fifo0\+\_\+\+Put 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em datapt} & pointer to a 8-\/bit storage location, into which to store the removed data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FIFOSUCCESS if ok, FIFOFAIL if empty and data could not be removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga1065279652513ffaf4285d64c23f8c3c}\label{group___math_ga1065279652513ffaf4285d64c23f8c3c}} 
+\index{Math@{Math}!TxFifo0\_Init@{TxFifo0\_Init}}
+\index{TxFifo0\_Init@{TxFifo0\_Init}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TxFifo0\_Init()}{TxFifo0\_Init()}}
+{\footnotesize\ttfamily void Tx\+Fifo0\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize Tx\+Fifo0. 
+
+The Tx\+Fifo0 FIFO is used by the transmit channel. Outgoing data are stored into this FIFO.
+
+Can hold 0 to TX0\+FIFOSIZE-\/1 elements, first in first out. 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga3794146989f0f2ae5bf7497e574aaaec}\label{group___math_ga3794146989f0f2ae5bf7497e574aaaec}} 
+\index{Math@{Math}!TxFifo0\_Put@{TxFifo0\_Put}}
+\index{TxFifo0\_Put@{TxFifo0\_Put}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TxFifo0\_Put()}{TxFifo0\_Put()}}
+{\footnotesize\ttfamily int Tx\+Fifo0\+\_\+\+Put (\begin{DoxyParamCaption}\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+Put into Tx\+Fifo0. 
+
+Add one 8-\/bit element to Tx\+Fifo0.
+
+Can hold 0 to TX0\+FIFOSIZE-\/1 elements, first in first out \begin{DoxyWarning}{Warning}
+Tx\+Fifo0\+\_\+\+Put itself need not be reentrant, but Tx\+Fifo0\+\_\+\+Put must be thread-\/safe with Tx\+Fifo0\+\_\+\+Get 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & 8-\/bit value to store into Tx\+Fifo0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FIFOSUCCESS if ok, FIFOFAIL if full and could not be saved 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_ga5f33f9642a00824e986634be918d6754}\label{group___math_ga5f33f9642a00824e986634be918d6754}} 
+\index{Math@{Math}!TxFifo0\_Size@{TxFifo0\_Size}}
+\index{TxFifo0\_Size@{TxFifo0\_Size}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{TxFifo0\_Size()}{TxFifo0\_Size()}}
+{\footnotesize\ttfamily uint16\+\_\+t Tx\+Fifo0\+\_\+\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Current size of Tx\+Fifo0. 
+
+Return the number of elements in Tx\+Fifo0.
+
+Can hold 0 to TX0\+FIFOSIZE-\/1 elements 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of elements in Tx\+Fifo0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gac86399f7281d31defb0c53bc1f8276e7}\label{group___math_gac86399f7281d31defb0c53bc1f8276e7}} 
+\index{Math@{Math}!umin32@{umin32}}
+\index{umin32@{umin32}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{umin32()}{umin32()}}
+{\footnotesize\ttfamily uint32\+\_\+t umin32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{u1,  }\item[{uint32\+\_\+t}]{u2 }\end{DoxyParamCaption})}
+
+
+
+minimum 
+
+32-\/bit unsigned minimum 
+\begin{DoxyParams}{Parameters}
+{\em u1} & is a 32-\/bit unsigned number \\
+\hline
+{\em u2} & is a 32-\/bit unsigned number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+minimum of u1 u2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___math_gaca159286d03bad83e4e2fc74a6e3700a}\label{group___math_gaca159286d03bad83e4e2fc74a6e3700a}} 
+\index{Math@{Math}!UpdatePosition@{UpdatePosition}}
+\index{UpdatePosition@{UpdatePosition}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{UpdatePosition()}{UpdatePosition()}}
+{\footnotesize\ttfamily void Update\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+update position 
+
+Take wheel counts and update position 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Must be called periodically so wheel counts are 5 to 20. If both wheel counts are routinely below 5, update less frequently. If either wheel count is routinely above 20, update more frequently. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___math_ga6ad9dab3cc94b0686b23feab2651be89}\label{group___math_ga6ad9dab3cc94b0686b23feab2651be89}} 
+\index{Math@{Math}!WaitUntilBumperTouched@{WaitUntilBumperTouched}}
+\index{WaitUntilBumperTouched@{WaitUntilBumperTouched}!Math@{Math}}
+\doxysubsubsection{\texorpdfstring{WaitUntilBumperTouched()}{WaitUntilBumperTouched()}}
+{\footnotesize\ttfamily void Wait\+Until\+Bumper\+Touched (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Wait until bumper touched. 
+
+Wait until bumper touched 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+uses bump.\+c 
+\end{DoxyNote}

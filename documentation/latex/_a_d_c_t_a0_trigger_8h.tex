@@ -1,0 +1,56 @@
+\hypertarget{_a_d_c_t_a0_trigger_8h}{}\doxysection{inc/\+ADCTA0\+Trigger.h File Reference}
+\label{_a_d_c_t_a0_trigger_8h}\index{inc/ADCTA0Trigger.h@{inc/ADCTA0Trigger.h}}
+
+
+Initialize 14-\/bit ADC0.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_s_p432_ga7d42e48cd4c2c7c3c78114e01031d2fb}{ADC0\+\_\+\+Init\+TA0\+Trigger\+Ch6}} (void($\ast$task)(uint16\+\_\+t result), uint16\+\_\+t period)
+\begin{DoxyCompactList}\small\item\em Initialize timer-\/triggered ADC sampling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initialize 14-\/bit ADC0. 
+
+ADC input, timer trigger interrupting system, 14-\/bit conversion~\newline
+ With timer-\/triggered sampling, there is no jitter. The ADC14 allows two possible references\+: 2.\+5V or 3.\+3V. The internal 2.\+5V reference is lower noise, but limits the range to 0 to 2.\+5V.$>$ The other possibility is to use the analog voltage supply at 3.\+3V, making the ADC range 0 to 3.\+3V. In this driver, the 2.\+5V range is selected.~\newline
+
+\begin{DoxyItemize}
+\item sample just P4.\+7/\+A6 ~\newline
+ \begin{DoxyVersion}{Version}
+TI-\/\+RSLK MAX v1.\+1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Daniel Valvano and Jonathan Valvano 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2019 by Jonathan W. Valvano, \href{mailto:valvano@mail.utexas.edu}{\texttt{ valvano@mail.\+utexas.\+edu}}, 
+\end{DoxyCopyright}
+\begin{DoxyWarning}{Warning}
+AS-\/\+IS 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+For more information see \href{http://users.ece.utexas.edu/~valvano/}{\texttt{ http\+://users.\+ece.\+utexas.\+edu/$\sim$valvano/}} 
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+July 11, 2019 \hypertarget{_a_d_c_t_a0_trigger_8h_ADCpin}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{ADC pin used for this example}\label{_a_d_c_t_a0_trigger_8h_ADCpin}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ ADC channel }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Pin }&\cellcolor{\tableheadbgcolor}\textbf{ ADC channel }\\\cline{1-2}
+\endhead
+P4.\+7 &A6 \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyDate}
+
+\end{DoxyItemize}

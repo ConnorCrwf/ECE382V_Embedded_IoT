@@ -1,0 +1,89 @@
+Sept 2, 2021 \begin{DoxyAuthor}{Author}
+Jonathan Valvano, PhD 
+
+Daniel Valvano, BS
+\end{DoxyAuthor}
+\hypertarget{index_sec1}{}\doxysection{Overview}\label{index_sec1}
+\begin{DoxyParagraph}{}
+Internet of Things (IoT) is ubiquitous in the computing world. Connected devices allow remote data acquisition, distributed processing, and remote actuation. The focus of this class will be low-\/level technology to implement IoT devices. By exposing fundamental operational behavior, students, when facing a design problem, will be empowered to either select an appropriate existing technology, or to develop new technologies. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Each category will begin with fundamental operational theory. The second step will be to present reference designs that utilize the technology. The third step will be able to evaluate performance, such as electrical power, computational performance, communication bandwidth, system reliability, and network diameter. The course will discuss similarities and differences in the technologies. The course will conclude with an open-\/ended and interactive discussion of future trends in IoT.
+\end{DoxyParagraph}
+\hypertarget{index_sec2}{}\doxysection{Hardware}\label{index_sec2}
+\begin{DoxyParagraph}{}
+The hardware used in these projects include \begin{DoxyItemize}
+\item MSP432 Launch\+Pad (MSP-\/\+EXP432\+P401R) \item RSLK Max (TIRSLK-\/\+EVM) \item CC3100 Booster\+Pack (CC3100\+BOOST) \item CC2650 Booster\+Pack (BOOSTXL-\/\+CC2650\+MA) \item CC2650 Launch\+Pad (LAUNCHXL-\/\+CC2650) \item Educational Booster\+Pack MKII (BOOSTXL-\/\+EDUMKII) \item Building Automation Sensor (BP-\/\+BASSENSORSMKII) \item Adafruit FONA Cellular Module 2G (obsolete) \item Seeed HC12 (SKU 113990039)~\newline
+\end{DoxyItemize}
+These project utilize the MSP432 Launch\+Pad. For more information see~\newline
+ \href{https://www.ti.com/tool/MSP-EXP432P401R}{\texttt{ https\+://www.\+ti.\+com/tool/\+MSP-\/\+EXP432\+P401R}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{MSP432.jpg}
+\doxyfigcaption{TI MSP432 Launch\+Pad}
+\end{DoxyImage}
+
+\end{DoxyParagraph}
+The CC2650 implements Bluetooth Low Energy. For more information see~\newline
+ \href{https://www.ti.com/tool/LAUNCHXL-CC2650}{\texttt{ https\+://www.\+ti.\+com/tool/\+LAUNCHXL-\/\+CC2650}}~\newline
+ and \href{https://www.ti.com/tool/BOOSTXL-CC2650MA}{\texttt{ https\+://www.\+ti.\+com/tool/\+BOOSTXL-\/\+CC2650\+MA}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{CC2650.jpg}
+\doxyfigcaption{TI CC2650 Booster\+Pack}
+\end{DoxyImage}
+
+
+The CC3100 implements wifi. For more information see~\newline
+ \href{https://www.ti.com/tool/CC3100BOOST}{\texttt{ https\+://www.\+ti.\+com/tool/\+CC3100\+BOOST}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{CC3100.png}
+\doxyfigcaption{TI CC3100 Booster\+Pack}
+\end{DoxyImage}
+
+
+The RSLK Max is a full-\/featured robot platform, shown here with CC2650. For more information see~\newline
+ \href{https://www.ti.com/tool/TIRSLK-EVM}{\texttt{ https\+://www.\+ti.\+com/tool/\+TIRSLK-\/\+EVM}}~\newline
+ \href{https://training.ti.com/ti-robotics-system-learning-kit-max}{\texttt{ https\+://training.\+ti.\+com/ti-\/robotics-\/system-\/learning-\/kit-\/max}}~\newline
+ and \href{https://university.ti.com/en/faculty/ti-robotics-system-learning-kit/ti-rslk-max-edition-curriculum}{\texttt{ https\+://university.\+ti.\+com/en/faculty/ti-\/robotics-\/system-\/learning-\/kit/ti-\/rslk-\/max-\/edition-\/curriculum}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{RSLK_CC2650.png}
+\doxyfigcaption{TI CC3100 Booster\+Pack}
+\end{DoxyImage}
+
+
+The Building Automation Sensor BP-\/\+BASSENSORSMKII includes a wide range of sensors. The booster includes TMP117 Temperature, HDC2080 Temperature/\+Humidity, OPT3001 Light intensity, DRV5055A Hall Effect, and BMI160/\+BMM150 9-\/axis IMU. For more information see~\newline
+ \href{https://www.ti.com/tool/BP-BASSENSORSMKII}{\texttt{ https\+://www.\+ti.\+com/tool/\+BP-\/\+BASSENSORSMKII}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{BASSENSORSMKII.png}
+\doxyfigcaption{BP-\/\+BASSENSORSMKII}
+\end{DoxyImage}
+
+
+The Educational Booster\+Pack MKII is simple platform with lots of I/O, shown here with the CC2650 Booster\+Pack. For more information see~\newline
+ \href{https://www.ti.com/tool/BOOSTXL-EDUMKII}{\texttt{ https\+://www.\+ti.\+com/tool/\+BOOSTXL-\/\+EDUMKII}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{Fitness.png}
+\doxyfigcaption{TI Educational Booster\+Pack MKII}
+\end{DoxyImage}
+
+
+The Seeed HC12 implements sub\+GHz IEEE 15.\+4 communication, shown here connected to the MSP432 Launch\+Pad. For more information see ~\newline
+ \href{https://www.seeedstudio.com/433Mhz-Wireless-Serial-Transceiver-Module-1-Kilometer-p-1733.html}{\texttt{ https\+://www.\+seeedstudio.\+com/433\+Mhz-\/\+Wireless-\/\+Serial-\/\+Transceiver-\/\+Module-\/1-\/\+Kilometer-\/p-\/1733.\+html}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{HC12.jpg}
+\doxyfigcaption{Seeed HC12}
+\end{DoxyImage}
+
+
+Adafruit FONA Cellular Module 2G can send and receive SMS text messages. For more information see~\newline
+ \href{https://www.adafruit.com/product/1946}{\texttt{ https\+://www.\+adafruit.\+com/product/1946}}  
+\begin{DoxyImage}
+\includegraphics[width=10cm]{Fona.jpg}
+\doxyfigcaption{Adafruit FONA Cellular Module 2G}
+\end{DoxyImage}
+\hypertarget{index_sec3}{}\doxysection{Modules}\label{index_sec3}
+\begin{DoxyParagraph}{}
+The documentation is divided into modules. \begin{DoxyItemize}
+\item MSP432 contains the MSP432 peripherals \item BLE contains Bluetooth Low Energy Application Processor with CC2650 \item RSLK describes software for the TI-\/\+RSLK MAX robot \item BP-\/\+BASSENSORSMKII describes software for the Building Automation Sensors Booster\+Pack \item MKII describes software for the Educational Booster\+Pack MKII \item Math contains math functions, TExaS scope, and logic analyzer \item Fona describes software for the Adafruit FONA Cellular Module 2G ~\newline
+ \end{DoxyItemize}
+
+\end{DoxyParagraph}

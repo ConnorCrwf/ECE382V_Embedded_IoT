@@ -1,0 +1,105 @@
+\hypertarget{structbmi160__fifo__frame}{}\doxysection{bmi160\+\_\+fifo\+\_\+frame Struct Reference}
+\label{structbmi160__fifo__frame}\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+
+
+This structure holds the information for usage of FIFO by the user.  
+
+
+
+
+{\ttfamily \#include $<$bmi160\+\_\+defs.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{structbmi160__fifo__frame_abe222f6d3581e7920dcad5306cc906a8}{data}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a1892eba2086d12ac2b09005aeb09ea3b}{length}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a48bbe4556f407edfdd5350d95a389283}{fifo\+\_\+time\+\_\+enable}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a77484dcc21f549b073a68792489615e5}{fifo\+\_\+header\+\_\+enable}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a0d164ddff28b24701a5469803bef9dc7}{fifo\+\_\+data\+\_\+enable}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_ad1a1da7b2246f5baedc7cf4efb4ecfa3}{accel\+\_\+byte\+\_\+start\+\_\+idx}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a682831c8ba0b189ea5e62562e5b54065}{gyro\+\_\+byte\+\_\+start\+\_\+idx}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a09d61ef51ede59cf0eae931e3182c981}{aux\+\_\+byte\+\_\+start\+\_\+idx}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a5d2d85bf444702f9aaad515187ba7153}{sensor\+\_\+time}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structbmi160__fifo__frame_a2345f76dc6c90d05cda8624cdb15cf59}{skipped\+\_\+frame\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This structure holds the information for usage of FIFO by the user. 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structbmi160__fifo__frame_ad1a1da7b2246f5baedc7cf4efb4ecfa3}\label{structbmi160__fifo__frame_ad1a1da7b2246f5baedc7cf4efb4ecfa3}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!accel\_byte\_start\_idx@{accel\_byte\_start\_idx}}
+\index{accel\_byte\_start\_idx@{accel\_byte\_start\_idx}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{accel\_byte\_start\_idx}{accel\_byte\_start\_idx}}
+{\footnotesize\ttfamily uint16\+\_\+t accel\+\_\+byte\+\_\+start\+\_\+idx}
+
+Will be equal to length when no more frames are there to parse \mbox{\Hypertarget{structbmi160__fifo__frame_a09d61ef51ede59cf0eae931e3182c981}\label{structbmi160__fifo__frame_a09d61ef51ede59cf0eae931e3182c981}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!aux\_byte\_start\_idx@{aux\_byte\_start\_idx}}
+\index{aux\_byte\_start\_idx@{aux\_byte\_start\_idx}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{aux\_byte\_start\_idx}{aux\_byte\_start\_idx}}
+{\footnotesize\ttfamily uint16\+\_\+t aux\+\_\+byte\+\_\+start\+\_\+idx}
+
+Will be equal to length when no more frames are there to parse \mbox{\Hypertarget{structbmi160__fifo__frame_abe222f6d3581e7920dcad5306cc906a8}\label{structbmi160__fifo__frame_abe222f6d3581e7920dcad5306cc906a8}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!data@{data}}
+\index{data@{data}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ data}
+
+Data buffer of user defined length is to be mapped here \mbox{\Hypertarget{structbmi160__fifo__frame_a0d164ddff28b24701a5469803bef9dc7}\label{structbmi160__fifo__frame_a0d164ddff28b24701a5469803bef9dc7}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!fifo\_data\_enable@{fifo\_data\_enable}}
+\index{fifo\_data\_enable@{fifo\_data\_enable}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{fifo\_data\_enable}{fifo\_data\_enable}}
+{\footnotesize\ttfamily uint8\+\_\+t fifo\+\_\+data\+\_\+enable}
+
+Streaming of the Accelerometer, Gyroscope sensor data or both in FIFO \mbox{\Hypertarget{structbmi160__fifo__frame_a77484dcc21f549b073a68792489615e5}\label{structbmi160__fifo__frame_a77484dcc21f549b073a68792489615e5}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!fifo\_header\_enable@{fifo\_header\_enable}}
+\index{fifo\_header\_enable@{fifo\_header\_enable}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{fifo\_header\_enable}{fifo\_header\_enable}}
+{\footnotesize\ttfamily uint8\+\_\+t fifo\+\_\+header\+\_\+enable}
+
+Enabling of the FIFO header to stream in header mode \mbox{\Hypertarget{structbmi160__fifo__frame_a48bbe4556f407edfdd5350d95a389283}\label{structbmi160__fifo__frame_a48bbe4556f407edfdd5350d95a389283}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!fifo\_time\_enable@{fifo\_time\_enable}}
+\index{fifo\_time\_enable@{fifo\_time\_enable}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{fifo\_time\_enable}{fifo\_time\_enable}}
+{\footnotesize\ttfamily uint8\+\_\+t fifo\+\_\+time\+\_\+enable}
+
+FIFO time enable \mbox{\Hypertarget{structbmi160__fifo__frame_a682831c8ba0b189ea5e62562e5b54065}\label{structbmi160__fifo__frame_a682831c8ba0b189ea5e62562e5b54065}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!gyro\_byte\_start\_idx@{gyro\_byte\_start\_idx}}
+\index{gyro\_byte\_start\_idx@{gyro\_byte\_start\_idx}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{gyro\_byte\_start\_idx}{gyro\_byte\_start\_idx}}
+{\footnotesize\ttfamily uint16\+\_\+t gyro\+\_\+byte\+\_\+start\+\_\+idx}
+
+Will be equal to length when no more frames are there to parse \mbox{\Hypertarget{structbmi160__fifo__frame_a1892eba2086d12ac2b09005aeb09ea3b}\label{structbmi160__fifo__frame_a1892eba2086d12ac2b09005aeb09ea3b}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!length@{length}}
+\index{length@{length}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily uint16\+\_\+t length}
+
+While calling the API \char`\"{}bmi160\+\_\+get\+\_\+fifo\+\_\+data\char`\"{} , length stores number of bytes in FIFO to be read (specified by user as input) and after execution of the API ,number of FIFO data bytes available is provided as an output to user \mbox{\Hypertarget{structbmi160__fifo__frame_a5d2d85bf444702f9aaad515187ba7153}\label{structbmi160__fifo__frame_a5d2d85bf444702f9aaad515187ba7153}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!sensor\_time@{sensor\_time}}
+\index{sensor\_time@{sensor\_time}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{sensor\_time}{sensor\_time}}
+{\footnotesize\ttfamily uint32\+\_\+t sensor\+\_\+time}
+
+Value of FIFO sensor time time \mbox{\Hypertarget{structbmi160__fifo__frame_a2345f76dc6c90d05cda8624cdb15cf59}\label{structbmi160__fifo__frame_a2345f76dc6c90d05cda8624cdb15cf59}} 
+\index{bmi160\_fifo\_frame@{bmi160\_fifo\_frame}!skipped\_frame\_count@{skipped\_frame\_count}}
+\index{skipped\_frame\_count@{skipped\_frame\_count}!bmi160\_fifo\_frame@{bmi160\_fifo\_frame}}
+\doxysubsubsection{\texorpdfstring{skipped\_frame\_count}{skipped\_frame\_count}}
+{\footnotesize\ttfamily uint8\+\_\+t skipped\+\_\+frame\+\_\+count}
+
+Value of Skipped frame counts 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{bmi160__defs_8h}{bmi160\+\_\+defs.\+h}}\end{DoxyCompactItemize}
