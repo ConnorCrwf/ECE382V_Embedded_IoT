@@ -82,6 +82,8 @@ void SysTick_Handler(void){
   Time = Time + 1;
   uint8_t ThisInput = LaunchPad_Input();   // either button
   if(ThisInput){
+    //toggle P4.0
+    P4->OUT ^= 0x01;
     if((Time%100) == 0){ // 1 Hz
       HC12data = HC12data^0x01; // toggle '0' to '1'
       if(HC12data == 0x31){
@@ -95,6 +97,8 @@ void SysTick_Handler(void){
   }
   in = UART1_InCharNonBlock();
   if(in){
+    //toggle P4.1
+    P4->OUT ^= 0x02;
     switch(in){
       case '0':
         printf("R0\n");
@@ -117,6 +121,13 @@ void HC12_ReadAllInput(void){uint8_t in;
     in = UART1_InCharNonBlock();
   }
 }
+
+void LogicScope_Init(void){
+  P4->SEL0 &= ~0x03;
+  P4->SEL1 &= ~0x03;    // 1) configure P4.1, P4.0 as GPIO
+  P4->DIR |= 0x03;      //    make P4.1, P4.0 out
+}
+
 void HC12_Init(uint32_t baud){
   P3->SEL0 &= ~0x01;
   P3->SEL1 &= ~0x01;    // configure P3.0 as GPIO
@@ -156,6 +167,7 @@ void main(void){
   Time = MainCount = 0;
   SysTick_Init(480000,2);   // set up SysTick for 100 Hz interrupts
   LaunchPad_Init();         // P1.0 is red LED on LaunchPad
+  LogicScope_Init();
   UART0_Initprintf();       // serial port to PC for debugging
   EnableInterrupts();
   printf("\nSeeed_HC12 example -Valvano\n");
