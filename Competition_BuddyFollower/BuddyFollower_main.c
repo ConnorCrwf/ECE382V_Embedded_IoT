@@ -167,6 +167,7 @@ fuz_t BuddyToTheLeft,BuddyToTheRight;   // turn sets
 #define fs 100   // controller speed
 
 void Fuzzification(void){
+    //output is integers between 0 and 255, they're used in FuzzyLogic
   BuddyTooClose = MinFuzzification(Distance,TOOCLOSE,DESIRED-TOLERANCE);
   OK = CenterFuzzification(Distance,TOOCLOSE,DESIRED,TOOFAR);
   BuddyTooFar = MaxFuzzification(Distance,DESIRED+TOLERANCE,TOOFAR);
@@ -211,6 +212,7 @@ void Defuzzification(void){
   if(NoBuddy >128){
     Motor_Stop();
   }else{
+      //TODO: ask how this works and why we're dividing
     Power = (GAIN*(Forward-Backward))/(Forward+Hover+Backward);
     Direction =(STEERING*(TurnLeft-TurnRight))/(TurnLeft+GoStraight+TurnRight);
     if(Power > MINDUTY){
@@ -254,6 +256,8 @@ const blink_t Blinks[6]={
   {FR_RGHT+BK_RGHT,0,0x20},                // Mode=4, right, active
   {FR_LEFT+BK_LEFT,0,0x20}                 // Mode=5, left, active
 };
+
+//Called with a Timer Interrupt
 void FuzzyControl(void){
 uint8_t in;
 static int count=0;

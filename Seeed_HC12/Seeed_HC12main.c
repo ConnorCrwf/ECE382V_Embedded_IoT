@@ -85,6 +85,7 @@ void SysTick_Handler(void){
     if((Time%100) == 0){ // 1 Hz
       HC12data = HC12data^0x01; // toggle '0' to '1'
       if(HC12data == 0x31){
+          //TODO Pete - write sequence of data here
         printf("S1\n");
       }else{
         printf("S0\n");

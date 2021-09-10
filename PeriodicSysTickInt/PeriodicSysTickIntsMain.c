@@ -73,6 +73,8 @@ int main(void){
 }
 
 uint32_t High=120000,Low=360000;
+
+//TODO what is frequency of this loop?
 void SysTick_Handler2(void){ // PWM
   LEDOUT ^= 0x01;   // toggle red LED
   if(LEDOUT){  // if high
