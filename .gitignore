@@ -9,7 +9,8 @@
 #.jxbrowser-data/
 #.metadata/
 #**/*.org.eclipse.core.resources.prefs
-#*.prefs
+*.prefs
+.project
 #RemoteSystemsTempFiles/
 
 ## Ignore Visual Studio temporary files, build results, and

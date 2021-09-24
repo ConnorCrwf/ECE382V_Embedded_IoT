@@ -73,6 +73,16 @@ volatile uint32_t Time,MainCount;
 // n=0x4C22, b=0
 // bit banded address is 0x4200.0000 + 32*n + 4*b
 #define SET (*((volatile uint8_t *)(0x42098440)))
+
+// #define STARTER // uncomment to use start code
+#define LAB1E   // uncomment to use part E code
+// #define LAB1F   // uncomment to use part F code
+
+/* lab 1 part e globals */
+const char* msg = "Hello World!";
+uint8_t midx = 0;
+uint8_t led = 0;
+
 char HC12data;
 // every 10ms
 void SysTick_Handler(void){
@@ -81,11 +91,13 @@ void SysTick_Handler(void){
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
   uint8_t ThisInput = LaunchPad_Input();   // either button
+
+#ifdef STARTER
+/* begin starter code */
   if(ThisInput){
     if((Time%100) == 0){ // 1 Hz
       HC12data = HC12data^0x01; // toggle '0' to '1'
-      if(HC12data == 0x31){
-          //TODO Pete - write sequence of data here
+      if(HC12data == '1'){
         printf("S1\n");
       }else{
         printf("S0\n");
@@ -93,8 +105,22 @@ void SysTick_Handler(void){
       UART1_OutChar(HC12data);
     }
   }
+#elif defined LAB1E
+/* begin reliability testing code */
+  if (ThisInput){
+      if((Time%100) == 0){ // 1 Hz
+        printf("Sending: %c\n", msg[midx]);
+        UART1_OutChar(msg[midx++]);
+        if (midx == sizeof(msg)) midx = 0;
+      }
+  }
+#elif defined LAB1F
+/* begin custom protocol code */
+#endif
+
   in = UART1_InCharNonBlock();
   if(in){
+#ifdef STARTER
     switch(in){
       case '0':
         printf("R0\n");
@@ -105,6 +131,11 @@ void SysTick_Handler(void){
         LaunchPad_Output(BLUE);
         break;
     }
+#else
+    led ^= 0x01;
+    printf("read: %c\n", in);
+    LaunchPad_Output(led ? BLUE : 0);
+#endif
   }
   LEDOUT ^= 0x01;       // toggle P1.0
 }
