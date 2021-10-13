@@ -86,72 +86,66 @@ uint8_t led = 0;
 
 /* lab 1 message structs */
 typedef struct Header {
-    uint8_t src_id;
-    uint8_t dst_id;
+    uint32_t src_id;
+    uint32_t dst_id;
     uint32_t fcnt;
-    uint8_t len;
+    uint32_t len;
 } header_t;
 
 typedef struct Footer {
-    uint8_t err_chk;
+    uint32_t err_chk;
+    uint32_t magic;
 } footer_t;
+
+#define MAX_MSG_LEN (UINT8_MAX)
+#define MAX_PACKET_LEN (sizeof(header_t) + MAX_MSG_LEN + sizeof(footer_t))
 
 uint32_t G_FRAME_COUNT = 0;
 uint32_t G_UNSENT_BYTES = 0;
-const char header_compare[] = {0xde, 0xad, 0xbe, 0xef, 0x00};
 
-bool G_HEADER_SENT = false;
-bool G_BUF_SENT = false;
+const uint8_t header_compare[] = {0xde, 0xad, 0xbe, 0xef, 0x00};
+
 header_t G_SEND_HEADER;
-char G_SEND_BUF[UINT8_MAX];
 footer_t G_SEND_FOOTER;
-char * G_S_HEADER_PTR = (char *)&G_SEND_HEADER;
-char * G_S_BUF_PTR = (char *)&G_SEND_BUF;
-char * G_S_FOOTER_PTR = (char *)&G_SEND_FOOTER;
+char G_SEND_BUF[MAX_PACKET_LEN];
+char * G_SEND_PTR = NULL;
 
 /*
     sets up message send data structures
     returns without doing anything if previous message is not
     finished sending
 */
-void send_msg(uint8_t src_id, uint8_t dst_id, char* msg, uint8_t len)
+void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
 {
     if (G_UNSENT_BYTES > 0) return;
     G_SEND_HEADER.src_id = src_id;
     G_SEND_HEADER.dst_id = dst_id;
     G_SEND_HEADER.len = len;
     G_SEND_HEADER.fcnt = ++G_FRAME_COUNT;
-    G_SEND_FOOTER.err_chk = 0x00;
-    for (uint8_t i = 0; i < len; ++i) {
-        G_SEND_FOOTER.err_chk ^= msg[i];
-        G_SEND_BUF[i] = msg[i];
-    }
+    G_SEND_FOOTER.err_chk = 0x88888888; /* TODO */
+    G_SEND_FOOTER.magic = 0x88888888;
+    memcpy(G_SEND_BUF, &G_SEND_HEADER, sizeof(header_t));
+    memcpy(G_SEND_BUF+sizeof(header_t), msg, len);
+    memcpy(G_SEND_BUF+sizeof(header_t)+len, &G_SEND_FOOTER, sizeof(footer_t));
+    G_SEND_PTR = G_SEND_BUF;
     // while (G_UNSENT_BYTES > 0);
-    G_HEADER_SENT = false;
-    G_BUF_SENT = false;
-    G_S_HEADER_PTR = (char *)&G_SEND_HEADER;
-    G_S_BUF_PTR = (char *)&G_SEND_BUF;
-    G_S_FOOTER_PTR = (char *)&G_SEND_FOOTER;
     UART1_OutString(header_compare);
     G_UNSENT_BYTES = sizeof(header_t) + len + sizeof(footer_t);
 }
 
-bool G_HEADER_RECV = false;
-uint8_t G_RECV_LEN = 0;
-header_t G_RECV_HEADER;
-char G_RECV_BUF[UINT8_MAX];
-footer_t G_RECV_FOOTER;
-char * G_R_HEADER_PTR = (char *)&G_RECV_HEADER + 4;
-char * G_R_BUF_PTR = (char *)&G_RECV_BUF;
-char * G_R_FOOTER_PTR = (char *)&G_RECV_FOOTER;
+char G_RECV_BUF[MAX_PACKET_LEN];
+char * G_RECV_PTR = NULL;
 
-bool G_RECV_START = false;
-bool got_incoming_header(char in)
+uint32_t G_UNRECV_BYTES = 0;
+void parse_incoming_header(char in)
 {
     static int cnt = 0;
     if (in == header_compare[cnt]) ++cnt;
     else cnt = 0;
-    return (cnt == 4);
+    if (cnt == 4) {
+        G_UNRECV_BYTES = sizeof(header_t);
+        G_RECV_PTR = G_RECV_BUF;
+    }
 }
 
 char HC12data;
@@ -189,15 +183,8 @@ void SysTick_Handler(void){
 #elif defined LAB1F
   /* handle sending three distinct components of a packet */
   if (G_UNSENT_BYTES > 0) {
-      if (!G_HEADER_SENT) {
-          UART1_OutChar(*G_S_HEADER_PTR);
-          G_HEADER_SENT = (++G_S_HEADER_PTR == G_S_HEADER_PTR + sizeof(header_t));
-      } else if (!G_BUF_SENT) {
-          UART1_OutChar(*G_S_BUF_PTR);
-          G_BUF_SENT = (++G_S_BUF_PTR == G_S_BUF_PTR + G_SEND_HEADER.len);
-      } else { // send footer
-          UART1_OutChar(*G_S_FOOTER_PTR);
-      }
+      UART1_OutChar(*G_SEND_PTR);
+      ++G_SEND_PTR;
       --G_UNSENT_BYTES;
   }
 #endif
@@ -220,35 +207,20 @@ void SysTick_Handler(void){
     printf("read: %c\n", in);
     LaunchPad_Output(led ? BLUE : 0);
 #elif defined LAB1F
-    G_RECV_START |= got_incoming_header(in);
-    if (G_RECV_START) {
-        if (!G_HEADER_RECV) {
-            *G_R_HEADER_PTR = in;
-            G_HEADER_RECV = (++G_R_HEADER_PTR == (char *)&G_RECV_HEADER + sizeof(header_t));
-            if (G_HEADER_RECV) G_RECV_LEN = G_RECV_HEADER.len;
-        } else if (G_RECV_LEN > 0) {
-            *G_R_BUF_PTR = in;
-            --G_RECV_LEN;
-        } else {
-            *G_R_FOOTER_PTR = in;
-            if (G_R_FOOTER_PTR == (char *)&G_RECV_FOOTER + sizeof(footer_t)) {
-                *G_R_BUF_PTR = 0;
-                /*
-                    message has been fully received
-                */
-                printf("RECV:\nSrc ID: %d, Dst ID: %d, Frame Count: %d\nMSG: %s\n",
-                       G_RECV_HEADER.src_id,
-                       G_RECV_HEADER.dst_id,
-                       G_RECV_HEADER.fcnt,
-                       G_RECV_BUF);
-                // reset receiving structs and variables
-                G_HEADER_RECV = false;
-                G_RECV_LEN = 0;
-                G_R_HEADER_PTR = (char *)&G_RECV_HEADER + 4;
-                G_R_BUF_PTR = (char *)&G_RECV_BUF;
-                G_R_FOOTER_PTR = (char *)&G_RECV_FOOTER;
+    if (G_UNRECV_BYTES > 0) {
+        *G_RECV_PTR = in;
+        if (--G_UNRECV_BYTES == 0) {
+            if (*(uint32_t*)(G_RECV_PTR-sizeof(uint32_t)) == 0x88888888) {
+                /* got magic in footer, terminate message */
+                printf("msg recv'd: sender: %ld\n", ((header_t*)(G_RECV_BUF))->src_id);
+            } else {
+                /* we're not done yet... */
+                G_UNRECV_BYTES += ((header_t*)(G_RECV_BUF))->len;
             }
         }
+        ++G_RECV_PTR;
+    } else {
+        parse_incoming_header(in);
     }
 #endif
   }
