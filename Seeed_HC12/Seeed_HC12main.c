@@ -100,15 +100,16 @@ typedef struct Footer {
 #define MAX_MSG_LEN (UINT8_MAX)
 #define MAX_PACKET_LEN (sizeof(header_t) + MAX_MSG_LEN + sizeof(footer_t))
 
-uint32_t G_FRAME_COUNT = 0;
-uint32_t G_UNSENT_BYTES = 0;
-
 const uint8_t header_compare[] = {0xde, 0xad, 0xbe, 0xef, 0x00};
 
 header_t G_SEND_HEADER;
 footer_t G_SEND_FOOTER;
+uint32_t G_FRAME_COUNT = 0;
+int32_t G_UNSENT_BYTES = 0;
 char G_SEND_BUF[MAX_PACKET_LEN];
 char * G_SEND_PTR = NULL;
+
+#define MY_ID 1234
 
 /*
     sets up message send data structures
@@ -118,15 +119,26 @@ char * G_SEND_PTR = NULL;
 void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
 {
     if (G_UNSENT_BYTES > 0) return;
+    printf("sending message\n");
+
+    /* set up data in header */
     G_SEND_HEADER.src_id = src_id;
     G_SEND_HEADER.dst_id = dst_id;
     G_SEND_HEADER.len = len;
     G_SEND_HEADER.fcnt = ++G_FRAME_COUNT;
+
+    /* set up data in footer */
     G_SEND_FOOTER.err_chk = 0x88888888; /* TODO */
     G_SEND_FOOTER.magic = 0x88888888;
+
+    //destination pointer, source pointer, length
     memcpy(G_SEND_BUF, &G_SEND_HEADER, sizeof(header_t));
-    memcpy(G_SEND_BUF+sizeof(header_t), msg, len);
+    // memcpy(G_SEND_BUF+sizeof(header_t), msg, len);
+    for (int i = 0; i < len; ++i) {
+        G_SEND_BUF[16+i] = 0x11;
+    }
     memcpy(G_SEND_BUF+sizeof(header_t)+len, &G_SEND_FOOTER, sizeof(footer_t));
+
     G_SEND_PTR = G_SEND_BUF;
     // while (G_UNSENT_BYTES > 0);
     UART1_OutString(header_compare);
@@ -136,7 +148,7 @@ void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
 char G_RECV_BUF[MAX_PACKET_LEN];
 char * G_RECV_PTR = NULL;
 
-uint32_t G_UNRECV_BYTES = 0;
+int32_t G_UNRECV_BYTES = 0;
 void parse_incoming_header(char in)
 {
     static int cnt = 0;
@@ -144,6 +156,7 @@ void parse_incoming_header(char in)
     else cnt = 0;
     if (cnt == 4) {
         G_UNRECV_BYTES = sizeof(header_t);
+        printf("header_t size: %d\n", sizeof(header_t));
         G_RECV_PTR = G_RECV_BUF;
     }
 }
@@ -156,7 +169,7 @@ void SysTick_Handler(void){
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
   uint8_t ThisInput = LaunchPad_Input();   // either button
-  if (ThisInput) send_msg(0, 1, "Hello World!", 12);
+  if (ThisInput) send_msg(MY_ID, 0, "Hello World!", 12);
 
 #ifdef STARTER
 /* begin starter code */
@@ -204,18 +217,21 @@ void SysTick_Handler(void){
     }
 #elif defined LAB1E
     led ^= 0x01;
-    printf("read: %c\n", in);
+    printf("read: %2X\n", in);
     LaunchPad_Output(led ? BLUE : 0);
 #elif defined LAB1F
     if (G_UNRECV_BYTES > 0) {
         *G_RECV_PTR = in;
-        if (--G_UNRECV_BYTES == 0) {
-            if (*(uint32_t*)(G_RECV_PTR-sizeof(uint32_t)) == 0x88888888) {
+        --G_UNRECV_BYTES;
+        printf("in: %2X, unrecv: %d\n", in, G_UNRECV_BYTES);
+        if (G_UNRECV_BYTES == 0) {
+            if (in == 0x88) {
                 /* got magic in footer, terminate message */
                 printf("msg recv'd: sender: %ld\n", ((header_t*)(G_RECV_BUF))->src_id);
             } else {
                 /* we're not done yet... */
-                G_UNRECV_BYTES += ((header_t*)(G_RECV_BUF))->len;
+                G_UNRECV_BYTES = 12 + sizeof(footer_t);
+                printf("unrecv: %d\n", G_UNRECV_BYTES);
             }
         }
         ++G_RECV_PTR;
