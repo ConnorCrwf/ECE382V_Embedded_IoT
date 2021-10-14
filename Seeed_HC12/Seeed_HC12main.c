@@ -133,10 +133,7 @@ void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
 
     //destination pointer, source pointer, length
     memcpy(G_SEND_BUF, &G_SEND_HEADER, sizeof(header_t));
-    // memcpy(G_SEND_BUF+sizeof(header_t), msg, len);
-    for (int i = 0; i < len; ++i) {
-        G_SEND_BUF[16+i] = 0x11;
-    }
+    memcpy(G_SEND_BUF+sizeof(header_t), msg, len);
     memcpy(G_SEND_BUF+sizeof(header_t)+len, &G_SEND_FOOTER, sizeof(footer_t));
 
     G_SEND_PTR = G_SEND_BUF;
@@ -156,7 +153,6 @@ void parse_incoming_header(char in)
     else cnt = 0;
     if (cnt == 4) {
         G_UNRECV_BYTES = sizeof(header_t);
-        printf("header_t size: %d\n", sizeof(header_t));
         G_RECV_PTR = G_RECV_BUF;
     }
 }
@@ -202,8 +198,8 @@ void SysTick_Handler(void){
   }
 #endif
 
-  in = UART1_InCharNonBlock();
-  if(in){
+  if(UART1_InStatus()){
+      in = UART1_InChar();
 #ifdef STARTER
     switch(in){
       case '0':
@@ -230,7 +226,7 @@ void SysTick_Handler(void){
                 printf("msg recv'd: sender: %ld\n", ((header_t*)(G_RECV_BUF))->src_id);
             } else {
                 /* we're not done yet... */
-                G_UNRECV_BYTES = 12 + sizeof(footer_t);
+                G_UNRECV_BYTES = ((header_t*)(G_RECV_BUF))->len + sizeof(footer_t);
                 printf("unrecv: %d\n", G_UNRECV_BYTES);
             }
         }
