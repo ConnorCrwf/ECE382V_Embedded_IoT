@@ -186,25 +186,27 @@ void parse_incoming_header(char in)
     if (cnt == 4) {
         G_UNRECV_BYTES = sizeof(header_t);
         G_RECV_PTR = G_RECV_BUF;
+        cnt = 0;
     }
 }
 
 void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
 {
-    printf("src_id: %d\n", hdr->src_id);
-    printf("dst_id: %d\n", hdr->dst_id);
+//    printf("src_id: %d\n", hdr->src_id);
+//    printf("dst_id: %d\n", hdr->dst_id);
     printf("fcnt: %d\n", hdr->fcnt);
-    printf("len: %d\n", hdr->len);
-    printf("message: ");
-    for(int i = 0; i < hdr->len; i++)
-    {
-        printf("%c", msg[i]);
+//    printf("len: %d\n", hdr->len);
+//    printf("message: ");
+//    for(int i = 0; i < hdr->len; i++)
+//    {
+//        printf("%c", msg[i]);
+//    }
+    if (ftr->err_chk != crcFast(msg, hdr->len)) {
+        printf("crc mismatch!\n");
     }
-    int err_chk = crcFast(msg, hdr->len);
-    printf("\nS err chk: %X\n", ftr->err_chk);
-    printf("\nR err chk: %X\n", err_chk);
 
-    send_msg(MY_ID, hdr->src_id, "msg recv'd", 10);
+    /* ping pong message */
+    send_msg(hdr->dst_id, hdr->src_id, "msg recv'd", 10);
 }
 
 char HC12data;
@@ -215,7 +217,7 @@ void SysTick_Handler(void){
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
   uint8_t ThisInput = LaunchPad_Input();   // either button
-  if (ThisInput) send_msg(MY_ID, 2, "Hello World!", 12);
+  if (ThisInput) send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), "Hello World!", 12);
 
   /* handle sending three distinct components of a packet */
   if (G_UNSENT_BYTES > 0) {
@@ -229,30 +231,29 @@ void SysTick_Handler(void){
 
   if(UART1_InStatus()){
       in = UART1_InChar();
-
-    if (G_UNRECV_BYTES > 0) {
-        *G_RECV_PTR = in;
-        --G_UNRECV_BYTES;
-//        printf("in: %2X, unrecv: %d\n", in, G_UNRECV_BYTES);
-        if (G_UNRECV_BYTES == 0) {
-            if (in == 0x88) {
-                /* got magic in footer, terminate message */
-//                printf("msg recv'd: sender: %ld\n", ((header_t*)(G_RECV_BUF))->src_id);
-                if (((header_t*)(G_RECV_BUF))->dst_id == MY_ID) {
-                    on_incoming_message(((header_t*)(G_RECV_BUF)),(uint8_t*)(G_RECV_BUF+sizeof(header_t)),(footer_t*)(G_RECV_BUF+sizeof(header_t)+((header_t*)(G_RECV_BUF))->len));
-                }
-            }
-            else {
-                /* we're not done yet... */
-                G_UNRECV_BYTES = ((header_t*)(G_RECV_BUF))->len + sizeof(footer_t);
-                printf("unrecv: %d\n", G_UNRECV_BYTES);
-            }
-        }
-        ++G_RECV_PTR;
-    } else {
-        parse_incoming_header(in);
-    }
-
+      if (G_UNRECV_BYTES > 0) {
+          *G_RECV_PTR = in;
+          --G_UNRECV_BYTES;
+          if (G_UNRECV_BYTES == 0) {
+              if (in == 0x88) {
+                  /* got magic in footer, terminate message */
+                  header_t* hdr = (header_t*)(G_RECV_BUF);
+                  if (hdr->dst_id == MY_ID) {
+                      on_incoming_message(
+                              ((header_t*)(G_RECV_BUF)),
+                              (uint8_t*)(G_RECV_BUF+sizeof(header_t)),
+                              (footer_t*)(G_RECV_BUF+sizeof(header_t)+hdr->len)
+                      );
+                  }
+              } else {
+                  /* we're not done yet... */
+                  G_UNRECV_BYTES = ((header_t*)(G_RECV_BUF))->len + sizeof(footer_t);
+              }
+          }
+          ++G_RECV_PTR;
+      } else {
+          parse_incoming_header(in);
+      }
   }
   LEDOUT ^= 0x01;       // toggle P1.0
 }
@@ -300,15 +301,16 @@ void HC12_Init(uint32_t baud){
  * main.c
  */
 void main(void){
+  DisableInterrupts();
   Clock_Init48MHz();        // running on crystal
   Time = MainCount = 0;
   SysTick_Init(480000,2);   // set up SysTick for 100 Hz interrupts
   LaunchPad_Init();         // P1.0 is red LED on LaunchPad
   UART0_Initprintf();       // serial port to PC for debugging
   crcInit();
-  EnableInterrupts();
-  printf("\nSeeed_HC12 example -Valvano\n");
   HC12_Init(UART1_BAUD_9600);
+  printf("\nConnor and Pete Init Done\n");
+  EnableInterrupts();
   while(1){
     WaitForInterrupt();
      // foreground thread
