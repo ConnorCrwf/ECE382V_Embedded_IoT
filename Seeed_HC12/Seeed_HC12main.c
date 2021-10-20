@@ -79,6 +79,36 @@ volatile uint32_t Time,MainCount;
 // #define LAB1E   // uncomment to use part E code
 #define LAB1F   // uncomment to use part F code
 
+typedef uint8_t crc;
+#define POLYNOMIAL 0xD8  /* 11011 followed by 0's */
+#define WIDTH  (8 * sizeof(crc))
+#define TOPBIT (1 << (WIDTH - 1))
+crc crcTable[256];
+void crcInit(void){ crc remainder;
+  for(int dividend = 0; dividend < 256; ++dividend){
+    remainder = dividend << (WIDTH - 8);
+    for(uint8_t bit = 8; bit > 0; --bit){
+      if(remainder&TOPBIT){
+        remainder = (remainder << 1)^POLYNOMIAL;
+      }else{
+        remainder = (remainder << 1);
+      }
+    }
+    crcTable[dividend] = remainder;
+  }
+}
+
+crc crcFast(uint8_t const message[], int nBytes){
+  uint8_t data;
+  crc remainder = 0;
+  for(int byte = 0; byte < nBytes; ++byte) {
+    data = message[byte]^(remainder >> (WIDTH - 8));
+    remainder = crcTable[data]^(remainder << 8);
+  }
+  return (remainder);
+}
+
+
 /* lab 1 part e globals */
 const char* msg = "Hello World!";
 uint8_t midx = 0;
@@ -128,7 +158,8 @@ void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
     G_SEND_HEADER.fcnt = ++G_FRAME_COUNT;
 
     /* set up data in footer */
-    G_SEND_FOOTER.err_chk = 0x88888888; /* TODO */
+//    G_SEND_FOOTER.err_chk = 0x88888888; /* TODO */
+    G_SEND_FOOTER.err_chk = crcFast(msg, len);
     G_SEND_FOOTER.magic = 0x88888888;
 
     //destination pointer, source pointer, length
@@ -141,6 +172,7 @@ void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
     UART1_OutString(header_compare);
     G_UNSENT_BYTES = sizeof(header_t) + len + sizeof(footer_t);
 }
+
 
 char G_RECV_BUF[MAX_PACKET_LEN];
 char * G_RECV_PTR = NULL;
@@ -164,6 +196,15 @@ void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
     printf("fcnt: %d\n", hdr->fcnt);
     printf("len: %d\n", hdr->len);
     printf("message: ");
+    for(int i = 0; i < hdr->len; i++)
+    {
+        printf("%c", msg[i]);
+    }
+    int err_chk = crcFast(msg, hdr->len);
+    printf("\nS err chk: %X\n", ftr->err_chk);
+    printf("\nR err chk: %X\n", err_chk);
+
+    send_msg(MY_ID, hdr->src_id, "msg recv'd", 10);
 }
 
 char HC12data;
@@ -174,66 +215,34 @@ void SysTick_Handler(void){
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
   uint8_t ThisInput = LaunchPad_Input();   // either button
-  if (ThisInput) send_msg(MY_ID, 0, "Hello World!", 12);
+  if (ThisInput) send_msg(MY_ID, 2, "Hello World!", 12);
 
-#ifdef STARTER
-/* begin starter code */
-  if(ThisInput){
-    if((Time%100) == 0){ // 1 Hz
-      HC12data = HC12data^0x01; // toggle '0' to '1'
-      if(HC12data == '1'){
-        printf("S1\n");
-      }else{
-        printf("S0\n");
-      }
-      UART1_OutChar(HC12data);
-    }
-  }
-#elif defined LAB1E
-/* begin reliability testing code */
-  if (ThisInput){
-      if((Time%100) == 0){ // 1 Hz
-        printf("Sending: %c\n", msg[midx]);
-        UART1_OutChar(msg[midx++]);
-        if (midx == sizeof(msg)) midx = 0;
-      }
-  }
-#elif defined LAB1F
   /* handle sending three distinct components of a packet */
   if (G_UNSENT_BYTES > 0) {
       UART1_OutChar(*G_SEND_PTR);
       ++G_SEND_PTR;
       --G_UNSENT_BYTES;
+      if (G_UNSENT_BYTES == 0) {
+          printf("msg sent\n");
+      }
   }
-#endif
 
   if(UART1_InStatus()){
       in = UART1_InChar();
-#ifdef STARTER
-    switch(in){
-      case '0':
-        printf("R0\n");
-        LaunchPad_Output(0); // off
-        break;
-      case '1':
-        printf("R1\n");
-        LaunchPad_Output(BLUE);
-        break;
-    }
-#elif defined LAB1E
-    led ^= 0x01;
-    printf("read: %2X\n", in);
-    LaunchPad_Output(led ? BLUE : 0);
-#elif defined LAB1F
+
     if (G_UNRECV_BYTES > 0) {
         *G_RECV_PTR = in;
         --G_UNRECV_BYTES;
-        printf("in: %2X, unrecv: %d\n", in, G_UNRECV_BYTES);
+//        printf("in: %2X, unrecv: %d\n", in, G_UNRECV_BYTES);
         if (G_UNRECV_BYTES == 0) {
             if (in == 0x88) {
                 /* got magic in footer, terminate message */
-                printf("msg recv'd: sender: %ld\n", ((header_t*)(G_RECV_BUF))->src_id);
-            } else {
+//                printf("msg recv'd: sender: %ld\n", ((header_t*)(G_RECV_BUF))->src_id);
+                if (((header_t*)(G_RECV_BUF))->dst_id == MY_ID) {
+                    on_incoming_message(((header_t*)(G_RECV_BUF)),(uint8_t*)(G_RECV_BUF+sizeof(header_t)),(footer_t*)(G_RECV_BUF+sizeof(header_t)+((header_t*)(G_RECV_BUF))->len));
+                }
+            }
+            else {
                 /* we're not done yet... */
                 G_UNRECV_BYTES = ((header_t*)(G_RECV_BUF))->len + sizeof(footer_t);
                 printf("unrecv: %d\n", G_UNRECV_BYTES);
@@ -243,7 +252,7 @@ void SysTick_Handler(void){
     } else {
         parse_incoming_header(in);
     }
-#endif
+
   }
   LEDOUT ^= 0x01;       // toggle P1.0
 }
@@ -296,6 +305,7 @@ void main(void){
   SysTick_Init(480000,2);   // set up SysTick for 100 Hz interrupts
   LaunchPad_Init();         // P1.0 is red LED on LaunchPad
   UART0_Initprintf();       // serial port to PC for debugging
+  crcInit();
   EnableInterrupts();
   printf("\nSeeed_HC12 example -Valvano\n");
   HC12_Init(UART1_BAUD_9600);
