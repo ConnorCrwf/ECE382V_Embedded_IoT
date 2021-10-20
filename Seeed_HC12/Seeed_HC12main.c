@@ -109,7 +109,7 @@ int32_t G_UNSENT_BYTES = 0;
 char G_SEND_BUF[MAX_PACKET_LEN];
 char * G_SEND_PTR = NULL;
 
-#define MY_ID 1234
+#define MY_ID 1
 
 /*
     sets up message send data structures
@@ -155,6 +155,15 @@ void parse_incoming_header(char in)
         G_UNRECV_BYTES = sizeof(header_t);
         G_RECV_PTR = G_RECV_BUF;
     }
+}
+
+void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
+{
+    printf("src_id: %d\n", hdr->src_id);
+    printf("dst_id: %d\n", hdr->dst_id);
+    printf("fcnt: %d\n", hdr->fcnt);
+    printf("len: %d\n", hdr->len);
+    printf("message: ");
 }
 
 char HC12data;
