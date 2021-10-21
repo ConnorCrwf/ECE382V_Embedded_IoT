@@ -63,6 +63,7 @@ policies, either expressed or implied, of the FreeBSD Project.
 #include "msp.h"
 #include "..\inc\CortexM.h"
 #include "..\inc\SysTickInts.h"
+#include "..\inc\TimerA0.h"
 #include "..\inc\LaunchPad.h"
 #include "..\inc\Clock.h"
 #include "..\inc\UART0.h"
@@ -75,10 +76,7 @@ volatile uint32_t Time,MainCount;
 // bit banded address is 0x4200.0000 + 32*n + 4*b
 #define SET (*((volatile uint8_t *)(0x42098440)))
 
-// #define STARTER // uncomment to use start code
-// #define LAB1E   // uncomment to use part E code
-#define LAB1F   // uncomment to use part F code
-
+/* crc calculation code from valvano */
 typedef uint8_t crc;
 #define POLYNOMIAL 0xD8  /* 11011 followed by 0's */
 #define WIDTH  (8 * sizeof(crc))
@@ -141,12 +139,23 @@ char * G_SEND_PTR = NULL;
 
 #define MY_ID 1
 
+typedef struct Ping {
+    uint32_t tsent;
+    uint32_t sender;
+    uint8_t msg[MAX_MSG_LEN - 2*sizeof(uint32_t)]
+} ping_t;
+
+volatile bool SEND_PINGS = false;
+
+volatile uint32_t SEC_COUNT = 0;
+volatile uint32_t TOT_BYTES_SEC = 0;
+
 /*
     sets up message send data structures
     returns without doing anything if previous message is not
     finished sending
 */
-void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
+void send_msg(uint32_t src_id, uint32_t dst_id, const uint8_t* msg, uint32_t len)
 {
     if (G_UNSENT_BYTES > 0) return;
     printf("sending message\n");
@@ -166,6 +175,7 @@ void send_msg(uint32_t src_id, uint32_t dst_id, char* msg, uint32_t len)
     memcpy(G_SEND_BUF, &G_SEND_HEADER, sizeof(header_t));
     memcpy(G_SEND_BUF+sizeof(header_t), msg, len);
     memcpy(G_SEND_BUF+sizeof(header_t)+len, &G_SEND_FOOTER, sizeof(footer_t));
+    TOT_BYTES_SEC+=len;
 
     G_SEND_PTR = G_SEND_BUF;
     // while (G_UNSENT_BYTES > 0);
@@ -190,73 +200,93 @@ void parse_incoming_header(char in)
     }
 }
 
+volatile uint32_t LATENCY_SEC = 0;
+volatile uint32_t LATENCY_CNT = 0;
+
 void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
 {
-//    printf("src_id: %d\n", hdr->src_id);
-//    printf("dst_id: %d\n", hdr->dst_id);
-    printf("fcnt: %d\n", hdr->fcnt);
-//    printf("len: %d\n", hdr->len);
-//    printf("message: ");
-//    for(int i = 0; i < hdr->len; i++)
-//    {
-//        printf("%c", msg[i]);
-//    }
     if (ftr->err_chk != crcFast(msg, hdr->len)) {
         printf("crc mismatch!\n");
+    } else {
+        TOT_BYTES_SEC+=hdr->len;
     }
 
     /* ping pong message */
-    send_msg(hdr->dst_id, hdr->src_id, "msg recv'd", 10);
+    ping_t* pingback = (ping_t*) msg;
+    if (pingback->sender == MY_ID) {
+        LATENCY_SEC += Time - pingback->tsent;
+        ++LATENCY_CNT;
+        if (SEND_PINGS) {
+            ping_t pingout = {Time, MY_ID, "Hello World!"};
+            send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
+        }
+    } else {
+        send_msg(hdr->dst_id, hdr->src_id, msg, sizeof(ping_t));
+    }
 }
 
-char HC12data;
-// every 10ms
+// every 1ms
 void SysTick_Handler(void){
-  uint8_t in;
   LEDOUT ^= 0x01;       // toggle P1.0
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
-  uint8_t ThisInput = LaunchPad_Input();   // either button
-  if (ThisInput) send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), "Hello World!", 12);
-
-  /* handle sending three distinct components of a packet */
-  if (G_UNSENT_BYTES > 0) {
-      UART1_OutChar(*G_SEND_PTR);
-      ++G_SEND_PTR;
-      --G_UNSENT_BYTES;
-      if (G_UNSENT_BYTES == 0) {
-          printf("msg sent\n");
-      }
+  ++SEC_COUNT;
+  if (SEC_COUNT == 1000) {
+      printf("bps: %ld\n", TOT_BYTES_SEC*8);
+      printf("avg lat: %ld\n", LATENCY_SEC/LATENCY_CNT);
+      TOT_BYTES_SEC = SEC_COUNT = LATENCY_SEC = LATENCY_CNT = 0;
   }
-
-  if(UART1_InStatus()){
-      in = UART1_InChar();
-      if (G_UNRECV_BYTES > 0) {
-          *G_RECV_PTR = in;
-          --G_UNRECV_BYTES;
-          if (G_UNRECV_BYTES == 0) {
-              if (in == 0x88) {
-                  /* got magic in footer, terminate message */
-                  header_t* hdr = (header_t*)(G_RECV_BUF);
-                  if (hdr->dst_id == MY_ID) {
-                      on_incoming_message(
-                              ((header_t*)(G_RECV_BUF)),
-                              (uint8_t*)(G_RECV_BUF+sizeof(header_t)),
-                              (footer_t*)(G_RECV_BUF+sizeof(header_t)+hdr->len)
-                      );
-                  }
-              } else {
-                  /* we're not done yet... */
-                  G_UNRECV_BYTES = ((header_t*)(G_RECV_BUF))->len + sizeof(footer_t);
-              }
-          }
-          ++G_RECV_PTR;
-      } else {
-          parse_incoming_header(in);
+  uint8_t ThisInput = LaunchPad_Input();   // either button
+  if (ThisInput) {
+      /* start/stop ping with button press */
+      SEND_PINGS = !SEND_PINGS;
+      if (SEND_PINGS) {
+          ping_t pingout = {Time, MY_ID, "Hello World!"};
+          send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
       }
   }
   LEDOUT ^= 0x01;       // toggle P1.0
 }
+
+/* runs at 9.6KHz (UART at 96000 baud supports theoretical 9600 bytes/s) */
+void PeriodicTask(void){
+    /* send  */
+    if (G_UNSENT_BYTES > 0) {
+        UART1_OutChar(*G_SEND_PTR);
+        ++G_SEND_PTR;
+        --G_UNSENT_BYTES;
+    }
+
+    /* receive */
+    if(UART1_InStatus()){
+        uint8_t in = UART1_InChar();
+        if (G_UNRECV_BYTES > 0) {
+            *G_RECV_PTR = in;
+            --G_UNRECV_BYTES;
+            if (G_UNRECV_BYTES == 0) {
+                if (in == 0x88) {
+                    /* got magic in footer, terminate message */
+                    header_t* hdr = (header_t*)(G_RECV_BUF);
+                    if (hdr->dst_id == MY_ID) {
+                        on_incoming_message(
+                                ((header_t*)(G_RECV_BUF)),
+                                (uint8_t*)(G_RECV_BUF+sizeof(header_t)),
+                                (footer_t*)(G_RECV_BUF+sizeof(header_t)+hdr->len)
+                        );
+                    }
+                } else {
+                    /* we're not done yet... */
+                    G_UNRECV_BYTES = ((header_t*)(G_RECV_BUF))->len + sizeof(footer_t);
+                }
+            }
+            ++G_RECV_PTR;
+        } else {
+            parse_incoming_header(in);
+        }
+    }
+}
+
+char HC12data;
 
 void HC12_ReadAllInput(void){uint8_t in;
 // flush receiver buffer
@@ -304,12 +334,13 @@ void main(void){
   DisableInterrupts();
   Clock_Init48MHz();        // running on crystal
   Time = MainCount = 0;
-  SysTick_Init(480000,2);   // set up SysTick for 100 Hz interrupts
+  SysTick_Init(48000000/1000,1);   // set up SysTick for 1KHz interrupts, priority 1
+  TimerA0_Init(&PeriodicTask,12000000/9600);  // set up TimerA0 for 9.6KHz interrupts
   LaunchPad_Init();         // P1.0 is red LED on LaunchPad
   UART0_Initprintf();       // serial port to PC for debugging
   crcInit();
   HC12_Init(UART1_BAUD_9600);
-  printf("\nConnor and Pete Init Done\n");
+  printf("\nLab1 Init Done\n");
   EnableInterrupts();
   while(1){
     WaitForInterrupt();
