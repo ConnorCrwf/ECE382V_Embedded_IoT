@@ -142,7 +142,7 @@ char * G_SEND_PTR = NULL;
 typedef struct Ping {
     uint32_t tsent;
     uint32_t sender;
-    uint8_t msg[MAX_MSG_LEN - 2*sizeof(uint32_t)]
+    uint8_t msg[MAX_MSG_LEN - 2*sizeof(uint32_t)];
 } ping_t;
 
 volatile bool SEND_PINGS = false;
@@ -158,7 +158,7 @@ volatile uint32_t TOT_BYTES_SEC = 0;
 void send_msg(uint32_t src_id, uint32_t dst_id, const uint8_t* msg, uint32_t len)
 {
     if (G_UNSENT_BYTES > 0) return;
-    printf("sending message\n");
+    // printf("sending message\n");
 
     /* set up data in header */
     G_SEND_HEADER.src_id = src_id;
@@ -214,12 +214,13 @@ void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
     /* ping pong message */
     ping_t* pingback = (ping_t*) msg;
     if (pingback->sender == MY_ID) {
-        LATENCY_SEC += Time - pingback->tsent;
-        ++LATENCY_CNT;
-        if (SEND_PINGS) {
-            ping_t pingout = {Time, MY_ID, "Hello World!"};
-            send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
-        }
+//        LATENCY_SEC += (Time - pingback->tsent)/2;
+//        ++LATENCY_CNT;
+        printf("ping: %ld ms\n", (Time - pingback->tsent)/2);
+        // if (SEND_PINGS) {
+//            ping_t pingout = {Time, MY_ID, "Hello World!"};
+//            send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
+        // }
     } else {
         send_msg(hdr->dst_id, hdr->src_id, msg, sizeof(ping_t));
     }
@@ -230,24 +231,26 @@ void SysTick_Handler(void){
   LEDOUT ^= 0x01;       // toggle P1.0
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
-  ++SEC_COUNT;
-  if (SEC_COUNT == 1000) {
-      printf("bps: %ld\n", TOT_BYTES_SEC*8);
-      printf("avg lat: %ld\n", LATENCY_SEC/LATENCY_CNT);
-      TOT_BYTES_SEC = SEC_COUNT = LATENCY_SEC = LATENCY_CNT = 0;
-  }
+//  ++SEC_COUNT;
+//  if (SEC_COUNT == 10000) {
+//      printf("bw: %ld bps\n", TOT_BYTES_SEC*8/10);
+//      if (LATENCY_CNT) printf("lat: %ld ms\n", LATENCY_SEC/LATENCY_CNT);
+//      TOT_BYTES_SEC = SEC_COUNT = LATENCY_SEC = LATENCY_CNT = 0;
+//  }
   uint8_t ThisInput = LaunchPad_Input();   // either button
   if (ThisInput) {
-      /* start/stop ping with button press */
-      SEND_PINGS = !SEND_PINGS;
-      if (SEND_PINGS) {
+//      /* start/stop ping with button press */
+//      SEND_PINGS = !SEND_PINGS;
+//      if (SEND_PINGS) {
           ping_t pingout = {Time, MY_ID, "Hello World!"};
           send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
-      }
+//      }
   }
   LEDOUT ^= 0x01;       // toggle P1.0
 }
 
+#define RX_TIMEOUT 9600
+uint32_t RX_TIMEOUT_CNT = 0;
 /* runs at 9.6KHz (UART at 96000 baud supports theoretical 9600 bytes/s) */
 void PeriodicTask(void){
     /* send  */
@@ -282,6 +285,16 @@ void PeriodicTask(void){
             ++G_RECV_PTR;
         } else {
             parse_incoming_header(in);
+        }
+    } else {
+        if (G_UNRECV_BYTES > 0) {
+            /* time out after 1 second */
+            if (++RX_TIMEOUT_CNT == RX_TIMEOUT) {
+                printf("recv timeout, missing %ld bytes\n", G_UNRECV_BYTES);
+                G_UNRECV_BYTES = 0;
+            }
+        } else {
+            RX_TIMEOUT_CNT = 0;
         }
     }
 }
