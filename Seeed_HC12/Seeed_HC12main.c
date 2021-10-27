@@ -64,6 +64,7 @@ policies, either expressed or implied, of the FreeBSD Project.
 const char* msg = "Hello World!";
 
 #define MY_ID 1
+#define DEST_ID 2
 
 /**
  * main.c
@@ -105,30 +106,36 @@ void SysTick_Handler(void){
 //      SEND_PINGS = !SEND_PINGS;
 //      if (SEND_PINGS) {
           ping_t pingout = {Time, MY_ID, "Hello World!"};
-          send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
+          //create message which is then sent out one char at a time with every trigger of the Periodic task
+          //send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
+          send_msg(MY_ID, DEST_ID, &pingout, sizeof(ping_t));
 //      }
   }
   LEDOUT ^= 0x01;       // toggle P1.0
 }
 
-/* runs at 9.6KHz (UART at 96000 baud supports theoretical 9600 bytes/s) */
+/* Period Task to process bytes received
+runs at 9.6KHz (UART at 96000 baud supports theoretical 9600 bytes/s) 
+*/
 void PeriodicTask(void){
-    /* send  */
+    /* send to the other device  */
     if (G_UNSENT_BYTES > 0) {
+        //UART outputs the pointer
         UART1_OutChar(*G_SEND_PTR);
         ++G_SEND_PTR;
         --G_UNSENT_BYTES;
     }
 
-    /* receive */
+    /* Checkt if we've received anything */
     if(UART1_InStatus()){
+        // loads bytes in as they come, one char at a time
         uint8_t in = UART1_InChar();
-        if (G_UNRECV_BYTES > 0) {
+        if (G_UNRECV_BYTES > 0) { //checks if there are some char bytes left in the pipeline then decrements it
             *G_RECV_PTR = in;
             --G_UNRECV_BYTES;
+            // checks if there are no char bytes left in pipeline
             if (G_UNRECV_BYTES == 0) {
-                if (in == 0x88) {
-                    /* got magic in footer, terminate message */
+                if (in == 0x88) { /* got magic in footer, terminate message */
                     header_t* hdr = (header_t*)(G_RECV_BUF);
                     if (hdr->dst_id == MY_ID) {
                         on_incoming_message(
@@ -137,17 +144,22 @@ void PeriodicTask(void){
                                 (footer_t*)(G_RECV_BUF+sizeof(header_t)+hdr->len)
                         );
                     }
-                } else {
-                    /* we're not done yet... */
+                } else {  /* we're not done yet...TODO not done with what yet? */   
+                    //TODO what's the purpose of this sizeof(footer_t)? why doesn't footer have a length
                     G_UNRECV_BYTES = ((header_t*)(G_RECV_BUF))->len + sizeof(footer_t);
                 }
             }
+            //increments pointer to look for next byte coming in once periodic task runs again
             ++G_RECV_PTR;
-        } else {
+        } else {  
+            // sets G_UNRECV_BYTES = sizeof(header_t) once the header coming in has been compared to deadbeef check value
+            // this is important, otherwise the above if g_unrecv_bytes > 0 will never be met
             parse_incoming_header(in);
         }
-    } else {
-        if (G_UNRECV_BYTES > 0) {
+    } 
+    else {  //if nothing is detected as coming in
+        if (G_UNRECV_BYTES > 0) { /*but if still haven't received all the bytes we should have, 
+            then we probably lost some bytes in the transmission */
             /* time out after 1 second */
             if (++RX_TIMEOUT_CNT == RX_TIMEOUT) {
                 printf("recv timeout, missing %ld bytes\n", G_UNRECV_BYTES);
@@ -177,10 +189,15 @@ void send_msg(uint32_t src_id, uint32_t dst_id, const uint8_t* msg, uint32_t len
 
     /* set up data in footer */
 //    G_SEND_FOOTER.err_chk = 0x88888888; /* TODO */
+    //calculates err_chk to be sent anda compared with calculation of error check on receiver side in the fcn on_incoming_msg
     G_SEND_FOOTER.err_chk = crcFast(msg, len);
     G_SEND_FOOTER.magic = 0x88888888;
 
     //destination pointer, source pointer, length
+    //destination is set to appropriate buffer memory position and then incremented to appropriate position in buffer memory for msg and footer
+    //copies the source pointer data into the desitnation pointer to be sent out
+    //this G_SEND_PTR is sent out when the Periodic Timer is triggered and if G_UNSENT_BYTES > 0 
+    //G_UNSENT_BYTES is made to be > 0 when parse_incoming_header is called and the header compare evalutes to true
     memcpy(G_SEND_BUF, &G_SEND_HEADER, sizeof(header_t));
     memcpy(G_SEND_BUF+sizeof(header_t), msg, len);
     memcpy(G_SEND_BUF+sizeof(header_t)+len, &G_SEND_FOOTER, sizeof(footer_t));
@@ -188,6 +205,8 @@ void send_msg(uint32_t src_id, uint32_t dst_id, const uint8_t* msg, uint32_t len
 
     G_SEND_PTR = G_SEND_BUF;
     // while (G_UNSENT_BYTES > 0);
+    // TODO Does this create a bottleneck/issue for the Periodictimer since the header compare may still be getting sent or processed 
+    // while the G_SEND_BUFFER is also being sent ?
     UART1_OutString(header_compare);
     G_UNSENT_BYTES = sizeof(header_t) + len + sizeof(footer_t);
 }
@@ -206,6 +225,7 @@ void parse_incoming_header(char in)
 
 void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
 {
+    
     if (ftr->err_chk != crcFast(msg, hdr->len)) {
         printf("crc mismatch!\n");
     } else {
@@ -214,7 +234,7 @@ void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
 
     /* ping pong message */
     ping_t* pingback = (ping_t*) msg;
-    if (pingback->sender == MY_ID) {
+    if (pingback->sender == MY_ID) {  //checks to see if the message received is a result of a ping initialized by THIS device
 //        LATENCY_SEC += (Time - pingback->tsent)/2;
 //        ++LATENCY_CNT;
         printf("ping: %ld ms\n", (Time - pingback->tsent)/2);
@@ -222,7 +242,11 @@ void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
 //            ping_t pingout = {Time, MY_ID, "Hello World!"};
 //            send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
         // }
-    } else {
+    } else {   //if message coming in is not a result of a ping initialized by THIS device, sends message back to device that originally sent message
+       
+        //src_id, dst_id and other characteristics of the header are set once the button is pressed and the send_msg command is called
+        //src_id is in destination parameter spot of send_msg function since that's where we want to send the message back to 
+        //it's reversed of way it is set in the send_msg command of SysTick_Handler
         send_msg(hdr->dst_id, hdr->src_id, msg, sizeof(ping_t));
     }
 }
