@@ -62,6 +62,7 @@ policies, either expressed or implied, of the FreeBSD Project.
 
 /* lab 1 part e globals */
 const char* msg = "Hello World!";
+const char* returnMsg;
 
 #define MY_ID 1
 #define DEST_ID 2
@@ -91,7 +92,7 @@ void main(void){
 // every 1ms
 volatile bool SEND_PINGS = false;
 void SysTick_Handler(void){
-  LEDOUT ^= 0x01;       // toggle P1.0
+  LEDOUT ^= 0x01;       // toggle P1.0 (i think this is just red)
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
 //  ++SEC_COUNT;
@@ -128,16 +129,24 @@ void PeriodicTask(void){
 
     /* Checkt if we've received anything */
     if(UART1_InStatus()){
+        LaunchPad_Output(BLUE);
+
         // loads bytes in as they come, one char at a time
         uint8_t in = UART1_InChar();
         if (G_UNRECV_BYTES > 0) { //checks if there are some char bytes left in the pipeline then decrements it
             *G_RECV_PTR = in;
             --G_UNRECV_BYTES;
             // checks if there are no char bytes left in pipeline
+            //we only get into this once the full message is received
             if (G_UNRECV_BYTES == 0) {
                 if (in == 0x88) { /* got magic in footer, terminate message */
-                    header_t* hdr = (header_t*)(G_RECV_BUF);
+                    header_t* hdr = (header_t*)(G_RECV_BUF);  //TODO why are we typecasting G_RECV_BUF?
                     if (hdr->dst_id == MY_ID) {
+                        //TODO should we also check if hdr->src_id == DEST_ID to make sure we don't get anything from other devices?
+                        printf("*replay message = %c\n", *G_RECV_BUF);
+                        printf("*replay message = %c\n", G_RECV_BUF);
+                        printf("*replay message = %c\n", intToAscii(*G_RECV_BUF));
+                        printf("*replay message = %c\n", intToAscii(G_RECV_BUF));
                         on_incoming_message(
                                 ((header_t*)(G_RECV_BUF)),
                                 (uint8_t*)(G_RECV_BUF+sizeof(header_t)),
@@ -161,12 +170,14 @@ void PeriodicTask(void){
         if (G_UNRECV_BYTES > 0) { /*but if still haven't received all the bytes we should have, 
             then we probably lost some bytes in the transmission */
             /* time out after 1 second */
+            LaunchPad_Output(RED);
             if (++RX_TIMEOUT_CNT == RX_TIMEOUT) {
                 printf("recv timeout, missing %ld bytes\n", G_UNRECV_BYTES);
                 G_UNRECV_BYTES = 0;
             }
         } else {
             RX_TIMEOUT_CNT = 0;
+            LaunchPad_Output(0);
         }
     }
 }
@@ -237,12 +248,21 @@ void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
     if (pingback->sender == MY_ID) {  //checks to see if the message received is a result of a ping initialized by THIS device
 //        LATENCY_SEC += (Time - pingback->tsent)/2;
 //        ++LATENCY_CNT;
-        printf("ping: %ld ms\n", (Time - pingback->tsent)/2);
+        printf("ping: %ld ms\n", (Time - pingback->tsent)/2);   
+        printf("no timeout, missing %ld bytes\n", 0);
+        printf("reply message check is %ld\n", msg);
+        printf("reply message check is: %.*ld\n", (int)sizeof(msg), msg);
+        printf("reply message check is %s\n", msg);
+        printf("reply message check is: %.*s\n", (int)sizeof(msg), (char)msg);
+        printf("*replay message = %c\n", *msg);
+            //printf("%c\n", *name++);
         // if (SEND_PINGS) {
 //            ping_t pingout = {Time, MY_ID, "Hello World!"};
 //            send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
         // }
     } else {   //if message coming in is not a result of a ping initialized by THIS device, sends message back to device that originally sent message
+
+        //TODO before we send, should we also check if MY_ID matches the hdr_dst_id?
        
         //src_id, dst_id and other characteristics of the header are set once the button is pressed and the send_msg command is called
         //src_id is in destination parameter spot of send_msg function since that's where we want to send the message back to 
@@ -251,3 +271,6 @@ void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
     }
 }
 
+int intToAscii(int number) {
+    return '0' + number;
+}

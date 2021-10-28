@@ -76,6 +76,7 @@ volatile uint32_t LATENCY_CNT = 0;
 void send_msg(uint32_t src_id, uint32_t dst_id, const uint8_t* msg, uint32_t len);
 void parse_incoming_header(char in);
 void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr);
+int intToAscii(int number);
 
 void SysTick_Handler(void);
 void PeriodicTask(void);
