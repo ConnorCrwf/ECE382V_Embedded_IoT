@@ -143,10 +143,6 @@ void PeriodicTask(void){
                     header_t* hdr = (header_t*)(G_RECV_BUF);  //TODO why are we typecasting G_RECV_BUF?
                     if (hdr->dst_id == MY_ID) {
                         //TODO should we also check if hdr->src_id == DEST_ID to make sure we don't get anything from other devices?
-                        printf("*replay message = %c\n", *G_RECV_BUF);
-                        printf("*replay message = %c\n", G_RECV_BUF);
-                        printf("*replay message = %c\n", intToAscii(*G_RECV_BUF));
-                        printf("*replay message = %c\n", intToAscii(G_RECV_BUF));
                         on_incoming_message(
                                 ((header_t*)(G_RECV_BUF)),
                                 (uint8_t*)(G_RECV_BUF+sizeof(header_t)),
@@ -248,13 +244,11 @@ void on_incoming_message(header_t* hdr, uint8_t* msg, footer_t* ftr)
     if (pingback->sender == MY_ID) {  //checks to see if the message received is a result of a ping initialized by THIS device
 //        LATENCY_SEC += (Time - pingback->tsent)/2;
 //        ++LATENCY_CNT;
+        printf("My ID: %ld , Destination ID: %ld \n", MY_ID, DEST_ID);
         printf("ping: %ld ms\n", (Time - pingback->tsent)/2);   
         printf("no timeout, missing %ld bytes\n", 0);
-        printf("reply message check is %ld\n", msg);
-        printf("reply message check is: %.*ld\n", (int)sizeof(msg), msg);
-        printf("reply message check is %s\n", msg);
-        printf("reply message check is: %.*s\n", (int)sizeof(msg), (char)msg);
-        printf("*replay message = %c\n", *msg);
+        printf("reply message check is: %s\n", pingback->msg);
+//        printf("*replay message = %c\n", *pingback->msg);  //only prints first char
             //printf("%c\n", *name++);
         // if (SEND_PINGS) {
 //            ping_t pingout = {Time, MY_ID, "Hello World!"};
