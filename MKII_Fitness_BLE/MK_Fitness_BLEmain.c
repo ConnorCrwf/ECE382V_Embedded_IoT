@@ -73,6 +73,11 @@ uint32_t SoundRMS;            // Root Mean Square average of most recent sound s
 uint32_t LightData;           // 100 lux
 int32_t  TemperatureData;     // 0.1C
 uint8_t  TemperatureByteData; // 1C
+
+/* Step 7 variables */
+uint32_t Data1;
+uint32_t Data2;
+
 // semaphores
 int32_t NewData;  // true when new numbers to display on top of LCD
 int32_t LCDmutex; // exclusive access to LCD
@@ -166,6 +171,7 @@ void Task1_Init(void){
   Magnitude = sqrt32(AccX*AccX + AccY*AccY + AccZ*AccZ);
   EWMA = Magnitude;                // this is a guess; there are many options
   Steps = 0;
+  Data2 = 0;
   LostTask1Data = 0;
 }
 // *********Task1*********
@@ -223,6 +229,7 @@ void Task2(void){uint32_t data;
   drawaxes();
   while(1){
 
+    ++Data2;
     
     data = OS_FIFO_Get();
     TExaS_Task2();     // records system time in array, toggles virtual logic analyzer
@@ -525,9 +532,23 @@ void Bluetooth_WritePlotState(void){ // called on a SNP Characteristic Write Ind
   BSP_Buzzer_Set(512);           // beep until next call of task3
   ReDrawAxes = 1;                // redraw axes on next call of display task
 }
+
 void Bluetooth_Steps(void){ // called on SNP CCCD Updated Indication
-  OutValue("\n\rCCCD=",AP_GetNotifyCCCD(0));
+  OutValue("\n\rCCCD Steps=",AP_GetNotifyCCCD(0));
 }
+
+void Bluetooth_ReadData1(void){
+  OutValue("\n\rRead Data1=",Data1);
+}
+
+void Bluetooth_WriteData1(void){
+    OutValue("\n\rWrite Data1=",Data1);
+}
+
+void Bluetooth_Data2(void){ // called on SNP CCCD Updated Indication
+  OutValue("\n\rCCCD Data2=",AP_GetNotifyCCCD(1));
+}
+
 extern uint16_t edXNum; // actual variable within TExaS
 void Bluetooth_Init(void){volatile int r;
   EnableInterrupts();
@@ -543,6 +564,11 @@ void Bluetooth_Init(void){volatile int r;
   Lab6_AddCharacteristic(0xFFF5,4,&LightData,0x01,0x02,"Light",&Bluetooth_ReadLight,0);
   Lab6_AddCharacteristic(0xFFF6,2,&edXNum,0x02,0x08,"edXNum",0,&TExaS_Grade);
   Lab6_AddNotifyCharacteristic(0xFFF7,2,&Steps,"Number of Steps",&Bluetooth_Steps);
+
+  /* Step 7 code */
+  Lab6_AddCharacteristic(0xFFF8,4,&Data1,0x03,0x0A,"step7_1",&Bluetooth_ReadData1,&Bluetooth_WriteData1);
+  Lab6_AddNotifyCharacteristic(0xFFF9,4,&Data2,"step7_2",&Bluetooth_Data2);
+
   Lab6_RegisterService();
   Lab6_StartAdvertisement();
   Lab6_GetStatus();

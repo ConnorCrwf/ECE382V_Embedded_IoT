@@ -161,7 +161,7 @@ uint8_t NPI_GATTSetDeviceName[] = {
   0x35,0x8C,      // SNP Set GATT Parameter (0x8C)
   0x01,           // Generic Access Service
   0x00,0x00,      // Device Name
-  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',' ','0','0','1',
+  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',' ','0','0','7',
   0x77};          // FCS (calculated by AP_SendMessageResponse)
 uint8_t NPI_GATTSetDeviceNameJacki[] = {
 // students need to write this as part of Lab 19
