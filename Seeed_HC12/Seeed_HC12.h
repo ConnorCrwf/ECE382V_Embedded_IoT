@@ -43,6 +43,7 @@ typedef struct Footer {
     uint32_t magic;
 } footer_t;
 
+//total of 255 bytes
 typedef struct Ping {
     uint32_t tsent;
     uint32_t sender;
