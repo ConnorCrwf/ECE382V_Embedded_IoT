@@ -69,7 +69,6 @@ const char* returnMsg;
 
 uint32_t clock_freq = 48000000;
 uint32_t interrupt_rate_sysTick = 1000;  //1kHz
-uint32_t interrupt_rate_sysTick = 1000;  //1kHz
 
 uint32_t timer_freq = 24000000;
 uint32_t microSec_units = 2;

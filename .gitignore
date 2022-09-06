@@ -4,6 +4,7 @@
 .xdchelp
 .config
 .launches
+org.eclipse.core.resources.prefs
 
 #/.metadata/
 #.jxbrowser-data/
