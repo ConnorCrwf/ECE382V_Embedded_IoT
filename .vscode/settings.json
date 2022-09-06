@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"*.machine": "xml",
+		"uart1.h": "c"
+	}
+}
