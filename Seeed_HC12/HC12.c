@@ -7,14 +7,28 @@
 
 #include "HC12.h"
 
-void HC12_ReadAllInput(void){uint8_t in;
+void LogicScope_Init(void){
+  P4->SEL0 &= ~0x03;
+  P4->SEL1 &= ~0x03;    // 1) configure P4.1, P4.0 as GPIO
+  P4->DIR |= 0x03;      //    make P4.1, P4.0 out
+}
+
+void HC12_ReadAllInput(void){
+  uint8_t in;
 // flush receiver buffer
   in = UART1_InCharNonBlock();
   while(in){
     UART0_OutChar(in);
     in = UART1_InCharNonBlock();
   }
+
+  //old main branch code
+  // P4->SEL0 &= ~0x03;
+  // P4->SEL1 &= ~0x03;    // 1) configure P4.1, P4.0 as GPIO
+  // P4->DIR |= 0x03;      //    make P4.1, P4.0 out
+  // P4->OUT = 0x00;  //initialize to low
 }
+
 void HC12_Init(uint32_t baud){
   P3->SEL0 &= ~0x01;
   P3->SEL1 &= ~0x01;    // configure P3.0 as GPIO

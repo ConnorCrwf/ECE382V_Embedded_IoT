@@ -67,6 +67,15 @@ const char* returnMsg;
 #define MY_ID 1
 #define DEST_ID 2
 
+uint32_t clock_freq = 48000000;
+uint32_t interrupt_rate_sysTick = 1000;  //1kHz
+uint32_t interrupt_rate_sysTick = 1000;  //1kHz
+
+uint32_t timer_freq = 24000000;
+uint32_t microSec_units = 2;
+uint32_t interrupt_rate_timer = 9600; //9.6kHz
+
+
 /**
  * main.c
  */
@@ -74,9 +83,10 @@ void main(void){
   DisableInterrupts();
   Clock_Init48MHz();        // running on crystal
   Time = MainCount = 0;
-  SysTick_Init(48000000/1000,1);   // set up SysTick for 1KHz interrupts, priority 1
-  TimerA0_Init(&PeriodicTask,12000000/9600);  // set up TimerA0 for 9.6KHz interrupts
+  SysTick_Init(clock_freq/interrupt_rate_sysTick,1);   // set up SysTick for 1KHz interrupts, priority 1
+  TimerA0_Init(&PeriodicTask,(timer_freq/microSec_units)/interrupt_rate_timer);  // set up TimerA0 for 9.6KHz interrupts
   LaunchPad_Init();         // P1.0 is red LED on LaunchPad
+//   LogicScope_Init();
   UART0_Initprintf();       // serial port to PC for debugging
   crcInit();
   HC12_Init(UART1_BAUD_9600);
@@ -89,9 +99,17 @@ void main(void){
   }
 }
 
+
+volatile bool SEND_PINGS = true;
+// #define DEBUG;
+
 // every 1ms
-volatile bool SEND_PINGS = false;
 void SysTick_Handler(void){
+  #ifdef DEBUG
+  uint8_t in; 
+  bool client = true;
+  #endif
+
   LEDOUT ^= 0x01;       // toggle P1.0 (i think this is just red)
   LEDOUT ^= 0x01;       // toggle P1.0
   Time = Time + 1;
@@ -103,16 +121,72 @@ void SysTick_Handler(void){
 //  }
   uint8_t ThisInput = LaunchPad_Input();   // either button
   if (ThisInput) {
+        // Check out response to button press on oscilloscope
+        // toggle P4.0
+        // P4->OUT ^= 0x01;
+
 //      /* start/stop ping with button press */
 //      SEND_PINGS = !SEND_PINGS;
-//      if (SEND_PINGS) {
+     if (SEND_PINGS) {
           ping_t pingout = {Time, MY_ID, "Hello World!"};
           //create message which is then sent out one char at a time with every trigger of the Periodic task
           //send_msg(MY_ID, (MY_ID == 1 ? 2 : 1), &pingout, sizeof(ping_t));
           send_msg(MY_ID, DEST_ID, &pingout, sizeof(ping_t));
-//      }
+     }
+     // code from old main branch
+     #ifdef DEBUG
+        if((Time%5000) == 0){ // 1 Hz
+        //      HC12data = HC12data^0x01; // toggle '0' to '1'
+        //      if(HC12data == 0x31){
+        //          //set P4.0
+        //          P4->OUT ^= 0x01;
+        //          //TODO Pete - write sequence of data here
+        //        printf("S1\n");
+        //      }else{
+        //        printf("S0\n");
+        //      }
+            P4->OUT = 0x01;
+            LaunchPad_Output(BLUE);
+            HC12data = 0x31; // set to 1
+            Time_Sent = Time;
+            UART1_OutChar(HC12data);
+            }
+     #endif
   }
+  else {
+    //      P4->OUT = 0x00;
+  }
+
+  #ifdef DEBUG
+    in = UART1_InCharNonBlock();
+    if(in){
+        switch(in){
+    //      case '0':
+    //        printf("R0\n");
+    //        LaunchPad_Output(0); // off
+    //        break;
+        case '1':
+            if(client) {
+                //toggle P4.0
+                P4->OUT = 0x00; //toggle and turn BLUE Led off once it receives a 1
+                printf("Latency: %d ms", (Time - Time_Sent));
+    //            printf("R1\n");
+                LaunchPad_Output(0); //toggle off once the client
+            }else {   //if server then send a UART1 back to
+                HC12data = 0x31;
+                UART1_OutChar(HC12data);
+                LaunchPad_Output(RED);
+            }
+    //        printf("R1\n");
+            break;
+        }
+    }
+  #endif
+  //always at end of SysTick
   LEDOUT ^= 0x01;       // toggle P1.0
+  #ifdef DEBUG
+    LaunchPad_Output(0); // off
+  #endif
 }
 
 /* Period Task to process bytes received
@@ -129,6 +203,8 @@ void PeriodicTask(void){
 
     /* Checkt if we've received anything */
     if(UART1_InStatus()){
+        // //toggle P4.1
+        // P4->OUT ^= 0x02;
         LaunchPad_Output(BLUE);
 
         // loads bytes in as they come, one char at a time

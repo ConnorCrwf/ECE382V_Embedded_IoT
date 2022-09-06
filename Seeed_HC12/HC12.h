@@ -24,6 +24,7 @@
 
 char HC12data;
 
+void LogicScope_Init(void);
 void HC12_Init(uint32_t baud);
 void HC12_ReadAllInput(void);
 

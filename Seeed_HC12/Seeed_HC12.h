@@ -24,7 +24,7 @@
 
 
 
-volatile uint32_t Time,MainCount;
+volatile uint32_t Time, MainCount, Time_Sent;
 
 #define MAX_MSG_LEN (UINT8_MAX)
 #define MAX_PACKET_LEN (sizeof(header_t) + MAX_MSG_LEN + sizeof(footer_t))
