@@ -5,7 +5,13 @@
 #Code Composer files that let the program know that folders in directory are Code Composer projects
 .launches
 .settings
+**/.settings/**
+#These three file types should be removed from above .settings related ignore but just to be safe
 org.eclipse.core.resources.prefs
+org.eclipse.cdt.codan.core.prefs
+org.eclipse.cdt.debug.core.prefs
+#if they accidentally got in to repo then use following command to remove them from git but leave them in file directory
+# git rm -r --cached **/.settings/** 
 \Debug
 
 #/.metadata/
