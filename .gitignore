@@ -1,10 +1,12 @@
 #Code Composer
-\Debug
 \Release
 .xdchelp
 .config
+#Code Composer files that let the program know that folders in directory are Code Composer projects
 .launches
+.settings
 org.eclipse.core.resources.prefs
+\Debug
 
 #/.metadata/
 #.jxbrowser-data/
